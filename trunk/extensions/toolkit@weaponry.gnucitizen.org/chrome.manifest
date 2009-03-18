@@ -1,0 +1,3 @@
+content     toolkit     file:chrome/content/
+
+overlay     chrome://app/content/main.xul     chrome://toolkit/content/main-overlay.xul

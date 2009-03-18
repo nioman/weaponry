@@ -1,0 +1,3 @@
+content     pythonessentials     file:chrome/content/
+
+overlay     chrome://app/content/main.xul     chrome://pythonessentials/content/main-overlay.xul

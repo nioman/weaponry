@@ -1,0 +1,13 @@
+.close-button {
+list-style-image: url(moz-icon://stock/gtk-close?size=8);
+}
+
+.close-button label {
+display: none;
+}
+
+#main-help-about-app image {
+width: 16px;
+height: 16px;
+list-style-image: url(main.png);
+}

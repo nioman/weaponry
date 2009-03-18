@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+<?xml-stylesheet href="chrome://toolkit/content/toolkit.css" type="text/css"?>
+<page xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+	title="Toolkit">
+
+	<toolkit id="toolkit" xmlns=""/>
+
+	<script type="application/x-javascript" src="chrome://toolkit/content/toolkit.js"/>
+
+	<vbox flex="1">
+		<hbox align="center">
+			<label value="Filter:"/>
+			<textbox id="toolkit-filter-textbox" value="" flex="1" oninput="toolkit_filter_textbox_change()"/>
+		</hbox>
+		<richlistbox id="toolkit-toolkit-richlistbox" datasources="#toolkit" ref="*" querytype="xml" flex="1">
+			<template>
+				<query id="toolkit-toolkit-richlistbox-query" expr="module[contains(@description, '')]"/>
+				<action>
+					<richlistitem uri="?" moduleuri="?uri" ondblclick="toolkit_toolkit_richlistitem_dblclick(this)">
+						<hbox>
+							<vbox>
+								<label class="toolkit-module-name" value="?name"/>
+								<label class="toolkit-module-description" value="?description"/>
+							</vbox>
+						</hbox>
+					</richlistitem>
+				</action>
+			</template>
+		</richlistbox>
+	</vbox>
+
+</page>

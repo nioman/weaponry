@@ -1,0 +1,40 @@
+tabmanager { -moz-binding: url(tags.xml#tabmanager); }
+integratedbrowser { -moz-binding: url(tags.xml#integratedbrowser); }
+integratedtabbrowser { -moz-binding: url(tags.xml#integratedtabbrowser); }
+browsernavigationbox { -moz-binding: url(tags.xml#browsernavigationbox); }
+
+/* ---------------------------------------- */
+
+#tabmanager-tabs tab {
+-moz-binding: url(tags.xml#_tab-extension);
+}
+
+#tabmanager-tabs tab #_tab-extension-toolbarbutton {
+list-style-image: url(moz-icon://stock/gtk-close?size=8);
+}
+
+#integratedbrowser-browser {
+background: white;
+}
+
+#integratedtabbrowser-tabmanager tabpanels {
+margin: 0;
+padding: 0;
+}
+
+/* ---------------------------------------- */
+
+#browsernavigationbox-go-button { list-style-image: url(moz-icon://stock/gtk-go-forward-ltr?size=menu); }
+#browsernavigationbox-go-button[disabled="true"] { list-style-image: url(moz-icon://stock/gtk-go-forward-ltr?size=menu&state=disabled); }
+
+#browsernavigationbox-back-button { list-style-image: url(moz-icon://stock/gtk-go-back-ltr?size=menu); }
+#browsernavigationbox-back-button[disabled="true"] { list-style-image: url(moz-icon://stock/gtk-go-back-ltr?size=menu&state=disabled); }
+
+#browsernavigationbox-stop-button { list-style-image: url(moz-icon://stock/gtk-stop?size=menu); }
+#browsernavigationbox-stop-button[disabled="true"] { list-style-image: url(moz-icon://stock/gtk-stop?size=menu&state=disabled); }
+
+#browsernavigationbox-reload-button { list-style-image: url(moz-icon://stock/gtk-refresh?size=menu); }
+#browsernavigationbox-reload-button[disabled="true"] { list-style-image: url(moz-icon://stock/gtk-refresh?size=menu&state=disabled); }
+
+#browsernavigationbox-forward-button { list-style-image: url(moz-icon://stock/gtk-go-forward-ltr?size=menu); }
+#browsernavigationbox-forward-button[disabled="true"] { list-style-image: url(moz-icon://stock/gtk-go-forward-ltr?size=menu&state=disabled); }

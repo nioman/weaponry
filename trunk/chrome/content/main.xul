@@ -1,0 +1,84 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+<?xml-stylesheet href="tags.css" type="text/css"?>
+<?xml-stylesheet href="main.css" type="text/css"?>
+<!DOCTYPE window [
+<!ENTITY % brandDTD SYSTEM "chrome://branding/locale/brand.dtd">%brandDTD;
+]>
+<window xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+	id="main" windowtype="app:main" title="&brandFullName;"
+	width="600" height="400"
+	screenX="5" screenY="5"
+        persist="screenX screenY width height sizemode"
+	onclose="return main_quit_command()">
+
+	<script type="application/x-javascript" src="lib/xal.js"/>
+	<script type="application/x-javascript" src="main.js"/>
+
+	<menubar id="main-menubar">
+		<menu id="main-app-menu" label="App">
+			<menupopup id="main-app-menu-popup">
+				<menuitem id="main-app-menu-popup-quit" label="Quit" oncommand="main_quit_command()"/>
+			</menupopup>
+		</menu>
+		<menu id="main-view-menu" label="View">
+			<menupopup id="main-view-menu-popup">
+				<menuitem id="main-view-show-navigation-bar" label="Show Navigation Bar" type="checkbox" checked="false" persist="checked" oncommand="main_show_navigation_bar()"/>
+			</menupopup>
+		</menu>
+		<menu id="main-tools-menu" label="Tools">
+			<menupopup id="main-tools-menu-popup">
+				<menuitem id="main-tools-open-error-console" label="Open Error Console" oncommand="main_open_error_console_command()"/>
+				<menuitem id="main-tools-open-dom-inspector" label="Open DOM Inspector" oncommand="main_open_dom_inspector_command()"/>
+				<menuseparator/>
+				<menuitem id="main-tools-open-extension-manager" label="Open Extension Manager" oncommand="main_open_extension_manager_command()"/>
+				<menuitem id="main-tools-open-configuration-manager" label="Open Configuration Manager" oncommand="main_open_configuration_manager_command()"/>
+			</menupopup>
+		</menu>
+		<menu id="main-help-menu" label="Help">
+			<menupopup id="main-help-menu-popup">
+				<menuitem id="main-help-about-app" label="About &brandShortName;" class="menuitem-iconic" oncommand="main_about_app_command()"/>
+			</menupopup>
+		</menu>
+	</menubar>
+
+	<hbox flex="1">
+		<vbox id="main-sidebar" width="200" persist="width">
+			<toolbox id="main-sidebar-toolbox">
+				<toolbar id="main-sidebar-toolbar" flex="1" align="center">
+					<toolbarbutton id="main-sidebar-toolbar-select-button" label="Sidebar" type="menu">
+						<menupopup id="main-sidebar-select-popup"/>
+					</toolbarbutton>
+					<box id="main-sidebar-toolbar-buttons" flex="1" pack="end">
+						<toolbarbutton id="main-sidebar-toolbar-buttons-close" class="close-button" label="Close" oncommand="main_sidebar_toolbar_buttons_close()"/>
+					</box>
+				</toolbar>
+			</toolbox>
+			<iframe id="main-sidebar-iframe" src="sidebar.xul" flex="1"/>
+		</vbox>
+		<splitter id="main-sidebar-splitter" collapse="before" resizeafter="grow" state="collapsed" persist="state" ondblclick="main_sidebar_splitter_double_click()"/>
+		<vbox flex="1">
+			<integratedtabbrowser id="main-browser" flex="1"/>
+			<splitter id="main-bottombar-splitter" collapse="after" resizebefore="grow" state="collapsed" persist="state" ondblclick="main_bottombar_splitter_double_click()"/>
+			<vbox id="main-bottombar" height="200" persist="height">
+				<toolbox id="main-bottombar-toolbox">
+					<toolbar id="main-bottombar-toolbar" flex="1" align="center">
+						<toolbarbutton id="main-bottombar-toolbar-select-button" label="Bottombar" type="menu">
+							<menupopup id="main-bottombar-select-popup"/>
+						</toolbarbutton>
+						<box id="main-bottombar-toolbar-buttons" flex="1" pack="end">
+							<toolbarbutton id="main-bottombar-toolbar-buttons-close" class="close-button" label="Close" oncommand="main_bottombar_toolbar_buttons_close()"/>
+						</box>
+					</toolbar>
+				</toolbox>
+				<iframe id="main-bottombar-iframe" src="bottombar.xul" flex="1"/>
+			</vbox>
+		</vbox>
+	</hbox>
+
+	<statusbar id="main-status-bar">
+		<statusbarpanel id="main-status-bar-status-panel" label="" crop="end" flex="1"/>
+		<statusbarpanel id="main-status-bar-buttons-panel" label=""/>
+	</statusbar>
+
+</window>

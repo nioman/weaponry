@@ -1,0 +1,15 @@
+.detach-button image {
+width: 16px;
+height: 16px;
+list-style-image: url(chrome://uienhancements/content/icon-detach.png);
+}
+
+.detach-button label {
+display: none;
+}
+
+#main-help-about-app image {
+width: 16px;
+height: 16px;
+list-style-image: url(chrome://uienhancements/content/icon-weaponry.png);
+}
