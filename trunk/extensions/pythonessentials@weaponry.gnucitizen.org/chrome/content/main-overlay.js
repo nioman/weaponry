@@ -20,11 +20,3 @@ function pythonessentials_open_python_shell() {
 		term.prompt();
 	}});
 }
-
-/**
- * PYTHON ESSENTIALS ABOUT PYTHON
- **/
-function pythonessentials_about_python() {
-	// get a reference to the browser and open a new tab
-	document.getElementById('main-browser').openTab('about:python', 'about:python', true);
-}

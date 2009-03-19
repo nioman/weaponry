@@ -9,8 +9,4 @@
 		<menuitem id="pythonessentials-main-overlay-tools-menu-popup-open-python-shell" class="menuitem-iconic" image="chrome://pythonessentials/content/python.ico" label="Open Python Shell" oncommand="pythonessentials_open_python_shell()"/>
 	</menupopup>
 
-	<menupopup id="main-help-menu-popup">
-		<menuitem id="pythonessentials-main-overlay-help-menu-popup-about-python" class="menuitem-iconic" label="About Python" image="chrome://pythonessentials/content/python.ico" insertbefore="main-help-about-app" oncommand="pythonessentials_about_python()"/>
-	</menupopup>
-
 </overlay>

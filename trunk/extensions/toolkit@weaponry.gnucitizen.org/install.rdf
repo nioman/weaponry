@@ -7,7 +7,7 @@
 		<em:name>Toolkit</em:name>
 		<em:version>0.1</em:version>
 		<em:description>Weaponry Toolkit Support</em:description>
-		<em:iconURL>chrome://toolkit/content/icon.png</em:iconURL>
+		<em:iconURL>chrome://toolkit/content/toolkit.png</em:iconURL>
 		<em:creator>Petko D. (pdp) Petkov</em:creator>
 
 		<em:targetApplication>
