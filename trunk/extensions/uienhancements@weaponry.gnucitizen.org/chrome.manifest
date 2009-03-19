@@ -1,3 +1,0 @@
-content     uienhancements     file:chrome/content/
-
-overlay     chrome://app/content/main.xul     chrome://uienhancements/content/main-overlay.xul

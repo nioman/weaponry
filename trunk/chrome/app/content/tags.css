@@ -10,7 +10,13 @@ browsernavigationbox { -moz-binding: url(tags.xml#browsernavigationbox); }
 }
 
 #tabmanager-tabs tab #_tab-extension-toolbarbutton {
-list-style-image: url(moz-icon://stock/gtk-close?size=8);
+margin-left: 2px;
+}
+
+#tabmanager-tabs tab #_tab-extension-toolbarbutton image {
+width: 16px;
+height: 16px;
+list-style-image: url(chrome://app/content/icon-close.png);
 }
 
 #integratedbrowser-browser {
@@ -24,17 +30,17 @@ padding: 0;
 
 /* ---------------------------------------- */
 
-#browsernavigationbox-go-button { list-style-image: url(moz-icon://stock/gtk-go-forward-ltr?size=menu); }
-#browsernavigationbox-go-button[disabled="true"] { list-style-image: url(moz-icon://stock/gtk-go-forward-ltr?size=menu&state=disabled); }
+#browsernavigationbox-go-button image { list-style-image: url(chrome://app/content/icon-go.png); width:16px; height:16px; }
+#browsernavigationbox-go-button[disabled="true"] { }
 
-#browsernavigationbox-back-button { list-style-image: url(moz-icon://stock/gtk-go-back-ltr?size=menu); }
-#browsernavigationbox-back-button[disabled="true"] { list-style-image: url(moz-icon://stock/gtk-go-back-ltr?size=menu&state=disabled); }
+#browsernavigationbox-back-button image { list-style-image: url(chrome://app/content/icon-back.png); width:16px; height:16px; }
+#browsernavigationbox-back-button[disabled="true"] { }
 
-#browsernavigationbox-stop-button { list-style-image: url(moz-icon://stock/gtk-stop?size=menu); }
-#browsernavigationbox-stop-button[disabled="true"] { list-style-image: url(moz-icon://stock/gtk-stop?size=menu&state=disabled); }
+#browsernavigationbox-stop-button image { list-style-image: url(chrome://app/content/icon-stop.png); width:16px; height:16px; }
+#browsernavigationbox-stop-button[disabled="true"] { }
 
-#browsernavigationbox-reload-button { list-style-image: url(moz-icon://stock/gtk-refresh?size=menu); }
-#browsernavigationbox-reload-button[disabled="true"] { list-style-image: url(moz-icon://stock/gtk-refresh?size=menu&state=disabled); }
+#browsernavigationbox-reload-button image { list-style-image: url(chrome://app/content/icon-reload.png); width:16px; height:16px; }
+#browsernavigationbox-reload-button[disabled="true"] { }
 
-#browsernavigationbox-forward-button { list-style-image: url(moz-icon://stock/gtk-go-forward-ltr?size=menu); }
-#browsernavigationbox-forward-button[disabled="true"] { list-style-image: url(moz-icon://stock/gtk-go-forward-ltr?size=menu&state=disabled); }
+#browsernavigationbox-forward-button image { list-style-image: url(chrome://app/content/icon-forward.png); width:16px; height:16px; }
+#browsernavigationbox-forward-button[disabled="true"] { }

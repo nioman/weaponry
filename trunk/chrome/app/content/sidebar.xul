@@ -1,6 +1,7 @@
 <?xml version="1.0"?>
 <?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
-<?xml-stylesheet href="sidebar.css" type="text/css"?>
+<?xml-stylesheet href="chrome://app/content/sidebar.css" type="text/css"?>
+<?xml-stylesheet href="chrome://branding/content/brand.css" type="text/css"?>
 <page xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
 	id="sidebar">
 

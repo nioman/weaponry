@@ -1,5 +1,17 @@
-.close-button {
-list-style-image: url(moz-icon://stock/gtk-close?size=8);
+.detach-button image {
+width: 16px;
+height: 16px;
+list-style-image: url(chrome://app/content/icon-detach.png);
+}
+
+.detach-button label {
+display: none;
+}
+
+.close-button image {
+width: 16px;
+height: 16px;
+list-style-image: url(chrome://app/content/icon-close.png);
 }
 
 .close-button label {
@@ -9,5 +21,5 @@ display: none;
 #main-help-about-app image {
 width: 16px;
 height: 16px;
-list-style-image: url(main.png);
+list-style-image: url(chrome://app/content/icon-main.png);
 }
