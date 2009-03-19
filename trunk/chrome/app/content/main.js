@@ -1,4 +1,42 @@
 /**
+ * GET PREF
+ **/
+function get_pref(pref, type) {
+	var preferences_service = Components.classes['@mozilla.org/preferences-service;1']
+	                                    .getService(Components.interfaces.nsIPrefBranch);
+
+	if (typeof(type) == 'undefined') {
+		type = 'char';
+	}
+
+	switch(type) {
+		case 'int': return preferences_service.getIntPref(pref); 
+		case 'bool': return preferences_service.getBoolPref(pref);
+		case 'char': return preferences_service.getCharPref(pref);
+		default: throw 'unrecognized type ' + type;
+	}
+}
+
+/**
+ * SET PREF
+ **/
+function set_pref(pref, value, type) {
+	var preferences_service = Components.classes['@mozilla.org/preferences-service;1']
+	                                    .getService(Components.interfaces.nsIPrefBranch);
+
+	if (typeof(type) == 'undefined') {
+		type = 'char';
+	}
+
+	switch(type) {
+		case 'int': return preferences_service.setIntPref(pref, value); 
+		case 'bool': return preferences_service.setBoolPref(pref, value);
+		case 'char': return preferences_service.setCharPref(pref, value);
+		default: throw 'unrecognized type ' + type;
+	}
+}
+
+/**
  * TOGGLE SIDEBAR
  **/
 function toggle_sidebar(e) {
@@ -43,7 +81,10 @@ function main_quit_command() {
 	//	return false;
 	//}
 
-	Xal.quit();
+	var app_startup = Components.classes['@mozilla.org/toolkit/app-startup;1']
+	                            .getService(Components.interfaces.nsIAppStartup);
+
+	app_startup.quit(Components.interfaces.nsIAppStartup.eForceQuit); 
 }
 
 /**
@@ -80,13 +121,6 @@ function main_open_error_console_command() {
 }
 
 /**
- * MAIN OPEN DOM INSPECTOR COMMAND
- **/
-function main_open_dom_inspector_command() {
-	Xal.inspect_document_dom();
-}
-
-/**
  * MAIN OPEN EXTENSION MANAGER COMMAND
  **/
 function main_open_extension_manager_command() {
@@ -110,7 +144,7 @@ function main_open_configuration_manager_command() {
  * MAIN ABOUT APP COMMAND
  **/
 function main_about_app_command() {
-	document.getElementById('main-browser').openTab(Xal.get_pref('app.about.homepage'), 'about:homepage', true);
+	document.getElementById('main-browser').openTab(get_pref('app.about.homepage'), 'about:homepage', true);
 }
 
 /**
@@ -203,7 +237,7 @@ function onload() {
 	}, true);
 
 	// load homepage
-	document.getElementById('main-browser').openTab(Xal.get_pref('app.starup.homepage'), 'app:homepage', true);
+	document.getElementById('main-browser').openTab(get_pref('app.starup.homepage'), 'app:homepage', true);
 }
 
 /**

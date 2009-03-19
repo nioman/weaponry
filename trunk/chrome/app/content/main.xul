@@ -13,7 +13,6 @@
         persist="screenX screenY width height sizemode"
 	onclose="return main_quit_command()">
 
-	<script type="application/x-javascript" src="chrome://app/content/lib/xal.js"/>
 	<script type="application/x-javascript" src="chrome://app/content/main.js"/>
 
 	<menubar id="main-menubar">
@@ -30,7 +29,6 @@
 		<menu id="main-tools-menu" label="Tools">
 			<menupopup id="main-tools-menu-popup">
 				<menuitem id="main-tools-open-error-console" label="Open Error Console" oncommand="main_open_error_console_command()"/>
-				<menuitem id="main-tools-open-dom-inspector" label="Open DOM Inspector" oncommand="main_open_dom_inspector_command()"/>
 				<menuseparator/>
 				<menuitem id="main-tools-open-extension-manager" label="Open Extension Manager" oncommand="main_open_extension_manager_command()"/>
 				<menuitem id="main-tools-open-configuration-manager" label="Open Configuration Manager" oncommand="main_open_configuration_manager_command()"/>
