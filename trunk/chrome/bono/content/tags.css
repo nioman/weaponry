@@ -1,0 +1,10 @@
+tabmanager { -moz-binding: url(chrome://bono/content/tags.xml#tabmanager); }
+integratedbrowser { -moz-binding: url(chrome://bono/content/tags.xml#integratedbrowser); }
+integratedtabbrowser { -moz-binding: url(chrome://bono/content/tags.xml#integratedtabbrowser); }
+browsernavigationbox { -moz-binding: url(chrome://bono/content/tags.xml#browsernavigationbox); }
+
+/* ---------------------------------------- */
+
+#tabmanager-tabs tab {
+-moz-binding: url(chrome://bono/content/tags.xml#_tab-extension);
+}

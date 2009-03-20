@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
-<?xml-stylesheet href="chrome://app/content/tags.css" type="text/css"?>
-<?xml-stylesheet href="chrome://app/skin/bottombar.css" type="text/css"?>
+<?xml-stylesheet href="chrome://bono/content/tags.css" type="text/css"?>
+<?xml-stylesheet href="chrome://bono/skin/bottombar.css" type="text/css"?>
 <?xml-stylesheet href="chrome://branding/skin/brand.css" type="text/css"?>
 <!DOCTYPE window [
 <!ENTITY % brandDTD SYSTEM "chrome://branding/locale/brand.dtd">%brandDTD;
@@ -8,7 +8,7 @@
 <page xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
 	id="bottombar">
 
-	<script type="application/x-javascript" src="chrome://app/content/bottombar.js"/>
+	<script type="application/x-javascript" src="chrome://bono/content/bottombar.js"/>
 
 	<vbox pack="center">
 		<hbox pack="center">

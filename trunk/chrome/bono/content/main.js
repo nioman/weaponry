@@ -144,7 +144,7 @@ function main_open_configuration_manager_command() {
  * MAIN ABOUT APP COMMAND
  **/
 function main_about_app_command() {
-	document.getElementById('main-browser').openTab(get_pref('app.about.homepage'), 'about:homepage', true);
+	document.getElementById('main-browser').openTab(get_pref('bono.about.homepage'), 'about:homepage', true);
 }
 
 /**
@@ -154,8 +154,8 @@ function main_sidebar_toolbar_buttons_detach() {
 	var ifr = document.getElementById('main-sidebar-iframe');
 	var src = ifr.getAttribute('src');
 
-	if (src != 'chrome://app/content/sidebar.xul' && src != 'sidebar.xul') {
-		ifr.setAttribute('src', 'chrome://app/content/sidebar.xul');
+	if (src != 'chrome://bono/content/sidebar.xul' && src != 'sidebar.xul') {
+		ifr.setAttribute('src', 'chrome://bono/content/sidebar.xul');
 		document.getElementById('main-sidebar-toolbar-select-button').setAttribute('label', 'Sidebar');
 
 		var w = window.open(
@@ -192,8 +192,8 @@ function main_bottombar_toolbar_buttons_detach() {
 	var ifr = document.getElementById('main-bottombar-iframe');
 	var src = ifr.getAttribute('src');
 
-	if (src != 'chrome://app/content/bottombar.xul' && src != 'bottombar.xul') {
-		ifr.setAttribute('src', 'chrome://app/content/bottombar.xul');
+	if (src != 'chrome://bono/content/bottombar.xul' && src != 'bottombar.xul') {
+		ifr.setAttribute('src', 'chrome://bono/content/bottombar.xul');
 		document.getElementById('main-bottombar-toolbar-select-button').setAttribute('label', 'Sidebar');
 
 		var w = window.open(
@@ -237,7 +237,7 @@ function onload() {
 	}, true);
 
 	// load homepage
-	document.getElementById('main-browser').openTab(get_pref('app.starup.homepage'), 'app:homepage', true);
+	document.getElementById('main-browser').openTab(get_pref('bono.starup.homepage'), 'startup:homepage', true);
 }
 
 /**

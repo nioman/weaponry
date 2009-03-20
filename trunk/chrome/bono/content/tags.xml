@@ -7,7 +7,7 @@
 	<!-- copied from chrome://global/content/bindings/tabbox.xml with some modifications -->
 	<binding id="_tab-extension" display="xul:tab" extends="chrome://global/content/bindings/tabbox.xml#tab">
 		<resources>
-			<stylesheet src="tags.css"/>
+			<stylesheet src="chrome://bono/content/tags.css"/>
 		</resources>
 		<content>
 			<xul:hbox class="tab-middle box-inherit" xbl:inherits="align,dir,pack,orient,selected" flex="1">
@@ -36,7 +36,7 @@
 
 	<binding id="tabmanager">
 		<resources>
-			<stylesheet src="tags.css"/>
+			<stylesheet src="chrome://bono/content/tags.css"/>
 		</resources>
 		<content>
 			<xul:tabbox id="tabmanager-tabbox" xbl:inherits="flex">
@@ -191,7 +191,7 @@
 
 	<binding id="browsernavigationbox">
 		<resources>
-			<stylesheet src="tags.css"/>
+			<stylesheet src="chrome://bono/content/tags.css"/>
 		</resources>
 		<content>
 			<xul:toolbox id="browsernavigationbox-toolbox" orient="horizontal" flex="1">
@@ -327,7 +327,7 @@
 
 	<binding id="integratedbrowser">
 		<resources>
-			<stylesheet src="tags.css"/>
+			<stylesheet src="chrome://bono/content/tags.css"/>
 		</resources>
 		<content>
 			<xul:vbox xbl:inherits="flex">
@@ -359,7 +359,7 @@
 
 	<binding id="integratedtabbrowser">
 		<resources>
-			<stylesheet src="tags.css"/>
+			<stylesheet src="chrome://bono/content/tags.css"/>
 		</resources>
 		<content>
 			<xul:tabmanager id="integratedtabbrowser-tabmanager" xbl:inherits="flex"/>

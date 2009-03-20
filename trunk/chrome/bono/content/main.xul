@@ -1,18 +1,18 @@
 <?xml version="1.0"?>
-<?xml-stylesheet href="chrome://app/content/tags.css" type="text/css"?>
-<?xml-stylesheet href="chrome://app/skin/main.css" type="text/css"?>
+<?xml-stylesheet href="chrome://bono/content/tags.css" type="text/css"?>
+<?xml-stylesheet href="chrome://bono/skin/main.css" type="text/css"?>
 <?xml-stylesheet href="chrome://branding/skin/brand.css" type="text/css"?>
 <!DOCTYPE window [
 <!ENTITY % brandDTD SYSTEM "chrome://branding/locale/brand.dtd">%brandDTD;
 ]>
 <window xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
-	id="main" windowtype="app:main" title="&brandFullName;"
+	id="main" windowtype="bono:main" title="&brandFullName;"
 	width="600" height="400"
 	screenX="5" screenY="5"
         persist="screenX screenY width height sizemode"
 	onclose="return main_quit_command()">
 
-	<script type="application/x-javascript" src="chrome://app/content/main.js"/>
+	<script type="application/x-javascript" src="chrome://bono/content/main.js"/>
 
 	<menubar id="main-menubar">
 		<menu id="main-app-menu" label="App">
