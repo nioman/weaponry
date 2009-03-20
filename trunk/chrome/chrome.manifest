@@ -1,6 +1,6 @@
-content     bono                 file:app/content/
-locale      bono en-US           file:app/locale/en-US/
-skin        bono classic/1.0     file:app/skin/
+content     bono                 file:bono/content/
+locale      bono en-US           file:bono/locale/en-US/
+skin        bono classic/1.0     file:bono/skin/
 
 content     branding                 file:branding/content/
 locale      branding en-US           file:branding/locale/en-US/

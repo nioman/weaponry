@@ -67,6 +67,5 @@ pref('browser.link.open_newwindow.restriction', 0);
 /**
  * XULRUNNER
  **/
-pref('toolkit.defaultChromeURI', 'chrome://app/content/main.xul');
-pref('toolkit.singletonWindowType', 'app:main');
-pref('browser.chromeURL', 'chrome://app/content/browser.xul');
+pref('toolkit.defaultChromeURI', 'chrome://bono/content/main.xul');
+pref('toolkit.singletonWindowType', 'bono:main');
