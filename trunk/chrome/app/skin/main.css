@@ -1,0 +1,28 @@
+@import url(chrome://global/skin/);
+@import url(chrome://app/skin/tags.css);
+
+.detach-button image {
+width: 16px;
+height: 16px;
+list-style-image: url(chrome://skin/content/icon-detach.png);
+}
+
+.detach-button label {
+display: none;
+}
+
+.close-button image {
+width: 16px;
+height: 16px;
+list-style-image: url(chrome://skin/content/icon-close.png);
+}
+
+.close-button label {
+display: none;
+}
+
+#main-help-about-app image {
+width: 16px;
+height: 16px;
+list-style-image: url(chrome://skin/content/icon-main.png);
+}

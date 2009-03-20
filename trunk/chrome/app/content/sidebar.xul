@@ -1,9 +1,14 @@
 <?xml version="1.0"?>
-<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
-<?xml-stylesheet href="chrome://app/content/sidebar.css" type="text/css"?>
-<?xml-stylesheet href="chrome://branding/content/brand.css" type="text/css"?>
+<?xml-stylesheet href="chrome://app/content/tags.css" type="text/css"?>
+<?xml-stylesheet href="chrome://app/skin/sidebar.css" type="text/css"?>
+<?xml-stylesheet href="chrome://branding/skin/brand.css" type="text/css"?>
+<!DOCTYPE window [
+<!ENTITY % brandDTD SYSTEM "chrome://branding/locale/brand.dtd">%brandDTD;
+]>
 <page xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
 	id="sidebar">
+
+	<script type="application/x-javascript" src="chrome://app/content/sidebar.js"/>
 
 	<vbox pack="center">
 		<hbox pack="center">
