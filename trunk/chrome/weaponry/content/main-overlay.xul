@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!DOCTYPE overlay [
+<!ENTITY % mainOverlayDTD SYSTEM "chrome://weaponry/locale/main-overlay.dtd">%mainOverlayDTD;
+]>
+<overlay xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+
+	<script type="application/x-javascript" src="chrome://weaponry/content/main-overlay.js"/>
+  
+	<menupopup id="main-sidebar-select-popup">
+		<menuitem observes="weaponry-toolkit-sidebar-broadcaster"/>
+	</menupopup>
+
+	<broadcasterset> 
+		<broadcaster
+			id="weaponry-toolkit-sidebar-broadcaster" 
+			label="&weaponryToolkitSidebarBroadcasterLabel;"
+			contenturi="chrome://weaponry/content/toolkit.xul"
+			contenttitle="&weaponryToolkitSidebarBroadcasterContentTitle;"
+			oncommand="toggle_sidebar(this);"/>
+	</broadcasterset>
+
+</overlay>

@@ -1,0 +1,5 @@
+<!ENTITY browsernavigationboxBackButtonLabel "Back">
+<!ENTITY browsernavigationboxForwardButtonLabel "Forward">
+<!ENTITY browsernavigationboxReloadButtonLabel "Reload">
+<!ENTITY browsernavigationboxStopButtonLabel "Stop">
+<!ENTITY browsernavigationboxGoButtonLabel "Go">

@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://weaponry/skin/toolkit.css" type="text/css"?>
+<!DOCTYPE page [
+<!ENTITY % toolkitDTD SYSTEM "chrome://weaponry/locale/toolkit.dtd">%toolkitDTD;
+]>
+<page xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+	title="&weaponryToolkitPageTitle;">
+
+	<toolkit id="toolkit" xmlns=""/>
+
+	<script type="application/x-javascript" src="chrome://weaponry/content/toolkit.js"/>
+
+	<vbox flex="1">
+		<hbox align="center">
+			<label value="&weaponryToolkitFilterLabel;:"/>
+			<textbox id="weaponry-toolkit-filter-textbox" value="" flex="1" oninput="weaponry_toolkit_filter_textbox_change()"/>
+		</hbox>
+		<richlistbox id="weaponry-toolkit-richlistbox" datasources="#toolkit" ref="*" querytype="xml" flex="1">
+			<template>
+				<query id="weaponry-toolkit-richlistbox-query" expr="module[contains(@description, '')]"/>
+				<action>
+					<richlistitem uri="?" moduleuri="?uri" ondblclick="weaponry_toolkit_richlistitem_dblclick(this)">
+						<hbox>
+							<vbox>
+								<label class="weaponry-toolkit-module-name" value="?name"/>
+								<label class="weaponry-toolkit-module-description" value="?description"/>
+							</vbox>
+						</hbox>
+					</richlistitem>
+				</action>
+			</template>
+		</richlistbox>
+	</vbox>
+
+</page>

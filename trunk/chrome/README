@@ -1,0 +1,9 @@
+This folder contains the application chrome. The following
+subfolders can be found here:
+
+	./bono     - a reusable UI core
+	./branding - files related to the brand
+	./weaponry - the core weaponry files
+
+Most of the core application functionalities should be
+placed inside the ./weaponry subfolder.

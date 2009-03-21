@@ -3,8 +3,6 @@ integratedbrowser { -moz-binding: url(chrome://bono/content/tags.xml#integratedb
 integratedtabbrowser { -moz-binding: url(chrome://bono/content/tags.xml#integratedtabbrowser); }
 browsernavigationbox { -moz-binding: url(chrome://bono/content/tags.xml#browsernavigationbox); }
 
-/* ---------------------------------------- */
-
 #tabmanager-tabs tab {
 -moz-binding: url(chrome://bono/content/tags.xml#_tab-extension);
 }

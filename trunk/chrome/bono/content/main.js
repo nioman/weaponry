@@ -2,13 +2,16 @@
  * GET PREF
  **/
 function get_pref(pref, type) {
+	// get reference to the preferences service
 	var preferences_service = Components.classes['@mozilla.org/preferences-service;1']
 	                                    .getService(Components.interfaces.nsIPrefBranch);
 
+	// the default type is char
 	if (typeof(type) == 'undefined') {
 		type = 'char';
 	}
 
+	// based on the type we read int, bool or char
 	switch(type) {
 		case 'int': return preferences_service.getIntPref(pref); 
 		case 'bool': return preferences_service.getBoolPref(pref);
@@ -21,13 +24,16 @@ function get_pref(pref, type) {
  * SET PREF
  **/
 function set_pref(pref, value, type) {
+	// get reference to the preferences service
 	var preferences_service = Components.classes['@mozilla.org/preferences-service;1']
 	                                    .getService(Components.interfaces.nsIPrefBranch);
 
+	// the default type is char
 	if (typeof(type) == 'undefined') {
 		type = 'char';
 	}
 
+	// based on the type we write int, bool or char
 	switch(type) {
 		case 'int': return preferences_service.setIntPref(pref, value); 
 		case 'bool': return preferences_service.setBoolPref(pref, value);
@@ -41,16 +47,20 @@ function set_pref(pref, value, type) {
  **/
 function toggle_sidebar(e) {
 	try {
+		// treat e as an element
 		var contenturi = e.getAttribute('contenturi');
 		var contenttitle = e.getAttribute('contenttitle');
 	} catch (e) {
+		// treat e as an object
 		var contenturi = e.contenturi;
 		var contenttitle = e.contenttitle;
 	}
 
+	// do the toggling
 	document.getElementById('main-sidebar-iframe').setAttribute('src', contenturi);
 	document.getElementById('main-sidebar-toolbar-select-button').setAttribute('label', contenttitle);
 
+	// always open
 	document.getElementById('main-sidebar-splitter').setAttribute('state', 'open');
 }
 
@@ -59,16 +69,20 @@ function toggle_sidebar(e) {
  **/
 function toggle_bottombar(e) {
 	try {
+		// treat e as an element
 		var contenturi = e.getAttribute('contenturi');
 		var contenttitle = e.getAttribute('contenttitle');
 	} catch (e) {
+		// treat e as an object
 		var contenturi = e.contenturi;
 		var contenttitle = e.contenttitle;
 	}
 
+	// do the toggling
 	document.getElementById('main-bottombar-iframe').setAttribute('src', contenturi);
 	document.getElementById('main-bottombar-toolbar-select-button').setAttribute('label', contenttitle);
 
+	// always open
 	document.getElementById('main-bottombar-splitter').setAttribute('state', 'open');
 }
 
@@ -76,14 +90,11 @@ function toggle_bottombar(e) {
  * MAIN QUIT COMMAND
  **/
 function main_quit_command() {
-	// TODO: uncomment this before release
-	//if (!confirm('Are you sure you want to quit?')) {
-	//	return false;
-	//}
-
+	// get reference to the app-startip service
 	var app_startup = Components.classes['@mozilla.org/toolkit/app-startup;1']
 	                            .getService(Components.interfaces.nsIAppStartup);
 
+	// force quit
 	app_startup.quit(Components.interfaces.nsIAppStartup.eForceQuit); 
 }
 
@@ -91,10 +102,12 @@ function main_quit_command() {
  * SHOW NAVIGATION BAR
  **/
 function main_show_navigation_bar() {
+	// get reference to the things we are going to work with
 	var e = document.getElementById('main-view-show-navigation-bar');
 	var c = e.getAttribute('checked') == 'true' ? true : false;
 	var b = document.getElementById('main-browser');
 
+	// if main-view-show-navigation-bar is checked
 	if (c == true) {
 		// show location bars
 		for (var i = 0; i < b.tabManager.tabs.childNodes.length; i++) {
@@ -114,6 +127,7 @@ function main_show_navigation_bar() {
  * MAIN OPEN ERROR CONSOLE COMMAND
  **/
 function main_open_error_console_command() {
+	// open the error console window
 	window.open(
 		'chrome://global/content/console.xul',
 		'',
@@ -124,6 +138,7 @@ function main_open_error_console_command() {
  * MAIN OPEN EXTENSION MANAGER COMMAND
  **/
 function main_open_extension_manager_command() {
+	// open the extension manager window
 	var w = window.open(
 		'chrome://mozapps/content/extensions/extensions.xul?type=extensions',
 		'',
@@ -134,6 +149,7 @@ function main_open_extension_manager_command() {
  * MAIN OPEN CONFIGURATION MANAGER COMMAND
  **/
 function main_open_configuration_manager_command() {
+	// open the about:config window
 	window.open(
 		'about:config',
 		'',
@@ -144,6 +160,7 @@ function main_open_configuration_manager_command() {
  * MAIN ABOUT APP COMMAND
  **/
 function main_about_app_command() {
+	// show the about page for the current application
 	document.getElementById('main-browser').openTab(get_pref('bono.about.homepage'), 'about:homepage', true);
 }
 
@@ -151,13 +168,20 @@ function main_about_app_command() {
  * MAIN SIDEBAR TOOLBAR BUTTONS DETACH
  **/
 function main_sidebar_toolbar_buttons_detach() {
+	// locate the sidebar iframe and its source attribute
 	var ifr = document.getElementById('main-sidebar-iframe');
 	var src = ifr.getAttribute('src');
 
-	if (src != 'chrome://bono/content/sidebar.xul' && src != 'sidebar.xul') {
+	// if the sidebar contains anything different from chrome://bono/content/sidebar.xul
+	if (src != 'chrome://bono/content/sidebar.xul') {
+		// restore the original sidebar
 		ifr.setAttribute('src', 'chrome://bono/content/sidebar.xul');
-		document.getElementById('main-sidebar-toolbar-select-button').setAttribute('label', 'Sidebar');
 
+		// restore the original label
+		var btn = document.getElementById('main-sidebar-toolbar-select-button');
+		btn.setAttribute('label', btn.getAttribute('originalLabel'));
+
+		// open the content of the sidebar into a new window
 		var w = window.open(
 			src,
 			'',
@@ -169,6 +193,7 @@ function main_sidebar_toolbar_buttons_detach() {
  * MAIN SIDEBAR TOOLBAR BUTTONS CLOSE
  **/
 function main_sidebar_toolbar_buttons_close() {
+	// get a reference to the sidebar and collapse its state
 	document.getElementById('main-sidebar-splitter').setAttribute('state', 'collapsed');
 }
 
@@ -176,12 +201,15 @@ function main_sidebar_toolbar_buttons_close() {
  * MAIN SIDEBAR SPLITTER DOUBLE CLICK
  **/
 function main_sidebar_splitter_double_click() {
-	var s = document.getElementById('main-sidebar-splitter');
+	// get a reference to the sidebar splitter
+	var e = document.getElementById('main-sidebar-splitter');
 
-	if (s.getAttribute('state') == 'collapsed') {
-		s.setAttribute('state', 'open');
-	} else {
-		s.setAttribute('state', 'collapsed');
+	if (e.getAttribute('state') == 'collapsed') { // if state is collapsed...
+		// ...make it open
+		e.setAttribute('state', 'open');
+	} else { // else if state is open...
+		// ...make it collapsed
+		e.setAttribute('state', 'collapsed');
 	}
 }
 
@@ -189,13 +217,20 @@ function main_sidebar_splitter_double_click() {
  * MAIN BOTTOMBAR TOOLBAR BUTTONS DETACH
  **/
 function main_bottombar_toolbar_buttons_detach() {
+	// locate the bottombar iframe and its source attribute
 	var ifr = document.getElementById('main-bottombar-iframe');
 	var src = ifr.getAttribute('src');
 
-	if (src != 'chrome://bono/content/bottombar.xul' && src != 'bottombar.xul') {
+	// if the bottombar contains anything different from chrome://bono/content/bottombar.xul
+	if (src != 'chrome://bono/content/bottombar.xul') {
+		// restore the original bottombar
 		ifr.setAttribute('src', 'chrome://bono/content/bottombar.xul');
-		document.getElementById('main-bottombar-toolbar-select-button').setAttribute('label', 'Sidebar');
 
+		// restore the original label
+		var btn = document.getElementById('main-bottombar-toolbar-select-button');
+		btn.setAttribute('label', btn.getAttribute('originalLabel'));
+
+		// open the content of the bottombar into a new window
 		var w = window.open(
 			src,
 			'',
@@ -207,6 +242,7 @@ function main_bottombar_toolbar_buttons_detach() {
  * MAIN BOTTOMBAR TOOLBAR BUTTONS CLOSE
  **/
 function main_bottombar_toolbar_buttons_close() {
+	// get a reference to the bottombar and collapse its state
 	document.getElementById('main-bottombar-splitter').setAttribute('state', 'collapsed');
 }
 
@@ -214,12 +250,15 @@ function main_bottombar_toolbar_buttons_close() {
  * MAIN BOTTOMBAR SPLITTER DOUBLE CLICK
  **/
 function main_bottombar_splitter_double_click() {
-	var s = document.getElementById('main-bottombar-splitter');
+	// get a reference to the bottombar splitter
+	var e = document.getElementById('main-bottombar-splitter');
 
-	if (s.getAttribute('state') == 'collapsed') {
-		s.setAttribute('state', 'open');
-	} else {
-		s.setAttribute('state', 'collapsed');
+	if (e.getAttribute('state') == 'collapsed') { // if state is collapsed...
+		// ...make it open
+		e.setAttribute('state', 'open');
+	} else { // else if state is open...
+		// ...make it collapsed
+		e.setAttribute('state', 'collapsed');
 	}
 }
 

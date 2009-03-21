@@ -1,4 +1,8 @@
 <?xml version="1.0"?>
+<!DOCTYPE bindings [
+<!ENTITY % tagsDTD SYSTEM "chrome://bono/locale/tags.dtd">%tagsDTD;
+<!ENTITY % brandDTD SYSTEM "chrome://branding/locale/brand.dtd">%brandDTD;
+]>
 <bindings
 	xmlns="http://www.mozilla.org/xbl"
 	xmlns:xbl="http://www.mozilla.org/xbl"
@@ -196,12 +200,12 @@
 		<content>
 			<xul:toolbox id="browsernavigationbox-toolbox" orient="horizontal" flex="1">
 				<xul:toolbar id="browsernavigationbox-toolbar" flex="1">
-					<xul:toolbarbutton id="browsernavigationbox-back-button" label="Back" disabled="true"/>
-					<xul:toolbarbutton id="browsernavigationbox-forward-button" label="Forward" disabled="true"/>
-					<xul:toolbarbutton id="browsernavigationbox-reload-button" label="Reload"/>
-					<xul:toolbarbutton id="browsernavigationbox-stop-button" label="Stop" disabled="true"/>
+					<xul:toolbarbutton id="browsernavigationbox-back-button" label="&browsernavigationboxBackButtonLabel;" disabled="true"/>
+					<xul:toolbarbutton id="browsernavigationbox-forward-button" label="&browsernavigationboxForwardButtonLabel;" disabled="true"/>
+					<xul:toolbarbutton id="browsernavigationbox-reload-button" label="&browsernavigationboxReloadButtonLabel;"/>
+					<xul:toolbarbutton id="browsernavigationbox-stop-button" label="&browsernavigationboxStopButtonLabel;" disabled="true"/>
 					<xul:textbox id="browsernavigationbox-location-bar" value="" flex="1"/>
-					<xul:toolbarbutton id="browsernavigationbox-go-button" label="Go"/>
+					<xul:toolbarbutton id="browsernavigationbox-go-button" label="&browsernavigationboxGoButtonLabel;"/>
 				</xul:toolbar>
 			</xul:toolbox>
 		</content>
@@ -387,42 +391,6 @@
 
 					// open tab
 					var tab = this.tabManager.openTab(browser, undefined, true);
-
-					// favicon web progress listener
-					function FaviconWebProgressListener() {}
-					FaviconWebProgressListener.prototype = {
-						QueryInterface: function(iid) {
-							if (iid.equals(Components.interfaces.nsIWebProgressListener) ||
-							    iid.equals(Components.interfaces.nsISupportsWeakReference) ||
-							    iid.equals(Components.interfaces.nsISupports)) {
-								return this;
-							}
-					    
-							throw Components.results.NS_ERROR_NO_INTERFACE;
-						},
-						onStateChange: function(webProgress, request, stateFlags, status) {
-							const WPL = Components.interfaces.nsIWebProgressListener;
-
-							if (stateFlags & WPL.STATE_START && stateFlags & WPL.STATE_IS_NETWORK) {
-								// TODO: change icon to default icon
-								tab.tabIcon.setAttribute('src', 'http://www.gnucitizen.org/favicon.ico');
-							} else if (stateFlags & WPL.STATE_STOP && stateFlags & WPL.STATE_IS_NETWORK) {
-								// TODO: detect if there is favicon and load it, if not display default
-								// TODO: make sure that we can load favicons from meta tags
-								tab.tabIcon.setAttribute('src', browser.browser.currentURI.prePath + '/favicon.ico');
-							}
-						},
-						onLocationChange: function(webProgress, request, location) {},
-						onProgressChange: function(webProgress, request, curSelf, maxSelf, curTotal, maxTotal) {},
-						onStatusChange: function(webProgress, request, status, message) {},
-						onSecurityChange: function(webProgress, request, state) {},
-					}
-
-					// install the favicon web progress listener
-					browser.faviconProgressListener = new FaviconWebProgressListener(); 
-
-					// wire the favicon progress listener
-					browser.browser.addProgressListener(browser.faviconProgressListener, Components.interfaces.nsIWebProgress.NOTIFY_ALL);
 
 					// add DOMTitleChanged event listener to browser
 					browser.browser.addEventListener('DOMTitleChanged', function () {

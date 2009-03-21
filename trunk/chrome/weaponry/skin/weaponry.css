@@ -1,0 +1,8 @@
+html, body {
+margin: 0;
+padding:0;
+width: 100%;
+height: 100%;
+background: #485753 url(chrome://weaponry/skin/weaponry.png) 50% 50% no-repeat;
+background: #FFFFFF url(chrome://weaponry/skin/weaponry.png) 50% 50% no-repeat;
+}

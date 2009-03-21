@@ -1,0 +1,16 @@
+<!ENTITY mainAppMenuLabel "App">
+<!ENTITY mainAppMenuPopupQuitLabel "Quit">
+<!ENTITY mainViewMenuLabel "View">
+<!ENTITY mainViewShowNavigationBarLabel "Show Navigation Bar">
+<!ENTITY mainToolsMenuLabel "Tools">
+<!ENTITY mainToolsOpenErrorConsoleLabel "Open Error Console">
+<!ENTITY mainToolsOpenExtensionManagerLabel "Open Extension Manager">
+<!ENTITY mainToolsOpenConfigurationManagerLabel "Open Configuration Manager">
+<!ENTITY mainHelpMenuLabel "Help">
+<!ENTITY mainHelpAboutAppLabel "About">
+<!ENTITY mainSidebarToolbarSelectButtonLabel "Sidebar">
+<!ENTITY mainSidebarToolbarButtonsDetachLabel "Detach">
+<!ENTITY mainSidebarToolbarButtonsCloseLabel "Close">
+<!ENTITY mainBottombarToolbarSelectButtonLabel "Bottombar">
+<!ENTITY mainBottombarToolbarButtonsDetachLabel "Detach">
+<!ENTITY mainBottombarToolbarButtonsCloseLabel "Close">

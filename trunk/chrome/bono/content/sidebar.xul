@@ -3,6 +3,7 @@
 <?xml-stylesheet href="chrome://bono/skin/sidebar.css" type="text/css"?>
 <?xml-stylesheet href="chrome://branding/skin/brand.css" type="text/css"?>
 <!DOCTYPE window [
+<!ENTITY % sidebarDTD SYSTEM "chrome://bono/locale/sidebar.dtd">%sidebarDTD;
 <!ENTITY % brandDTD SYSTEM "chrome://branding/locale/brand.dtd">%brandDTD;
 ]>
 <page xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"

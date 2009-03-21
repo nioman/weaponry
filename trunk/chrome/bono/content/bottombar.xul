@@ -3,6 +3,7 @@
 <?xml-stylesheet href="chrome://bono/skin/bottombar.css" type="text/css"?>
 <?xml-stylesheet href="chrome://branding/skin/brand.css" type="text/css"?>
 <!DOCTYPE window [
+<!ENTITY % bottombarDTD SYSTEM "chrome://bono/locale/bottombar.dtd">%bottombarDTD;
 <!ENTITY % brandDTD SYSTEM "chrome://branding/locale/brand.dtd">%brandDTD;
 ]>
 <page xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"

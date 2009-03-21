@@ -1,3 +1,0 @@
-content     toolkit     file:chrome/content/
-
-overlay     chrome://bono/content/main.xul     chrome://toolkit/content/main-overlay.xul

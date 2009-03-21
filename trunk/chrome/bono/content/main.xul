@@ -3,6 +3,7 @@
 <?xml-stylesheet href="chrome://bono/skin/main.css" type="text/css"?>
 <?xml-stylesheet href="chrome://branding/skin/brand.css" type="text/css"?>
 <!DOCTYPE window [
+<!ENTITY % mainDTD SYSTEM "chrome://bono/locale/main.dtd">%mainDTD;
 <!ENTITY % brandDTD SYSTEM "chrome://branding/locale/brand.dtd">%brandDTD;
 ]>
 <window xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
@@ -15,27 +16,27 @@
 	<script type="application/x-javascript" src="chrome://bono/content/main.js"/>
 
 	<menubar id="main-menubar">
-		<menu id="main-app-menu" label="App">
+		<menu id="main-app-menu" label="&mainAppMenuLabel;">
 			<menupopup id="main-app-menu-popup">
-				<menuitem id="main-app-menu-popup-quit" label="Quit" oncommand="main_quit_command()"/>
+				<menuitem id="main-app-menu-popup-quit" label="&mainAppMenuPopupQuitLabel;" oncommand="main_quit_command()"/>
 			</menupopup>
 		</menu>
-		<menu id="main-view-menu" label="View">
+		<menu id="main-view-menu" label="&mainViewMenuLabel;">
 			<menupopup id="main-view-menu-popup">
-				<menuitem id="main-view-show-navigation-bar" label="Show Navigation Bar" type="checkbox" checked="false" persist="checked" oncommand="main_show_navigation_bar()"/>
+				<menuitem id="main-view-show-navigation-bar" label="&mainViewShowNavigationBarLabel;" type="checkbox" checked="false" persist="checked" oncommand="main_show_navigation_bar()"/>
 			</menupopup>
 		</menu>
-		<menu id="main-tools-menu" label="Tools">
+		<menu id="main-tools-menu" label="&mainToolsMenuLabel;">
 			<menupopup id="main-tools-menu-popup">
-				<menuitem id="main-tools-open-error-console" label="Open Error Console" oncommand="main_open_error_console_command()"/>
+				<menuitem id="main-tools-open-error-console" label="&mainToolsOpenErrorConsoleLabel;" oncommand="main_open_error_console_command()"/>
 				<menuseparator/>
-				<menuitem id="main-tools-open-extension-manager" label="Open Extension Manager" oncommand="main_open_extension_manager_command()"/>
-				<menuitem id="main-tools-open-configuration-manager" label="Open Configuration Manager" oncommand="main_open_configuration_manager_command()"/>
+				<menuitem id="main-tools-open-extension-manager" label="&mainToolsOpenExtensionManagerLabel;" oncommand="main_open_extension_manager_command()"/>
+				<menuitem id="main-tools-open-configuration-manager" label="&mainToolsOpenConfigurationManagerLabel;" oncommand="main_open_configuration_manager_command()"/>
 			</menupopup>
 		</menu>
-		<menu id="main-help-menu" label="Help">
+		<menu id="main-help-menu" label="&mainHelpMenuLabel;">
 			<menupopup id="main-help-menu-popup">
-				<menuitem id="main-help-about-app" label="About &brandShortName;" class="menuitem-iconic" oncommand="main_about_app_command()"/>
+				<menuitem id="main-help-about-app" label="&mainHelpAboutAppLabel; &brandShortName;" class="menuitem-iconic" oncommand="main_about_app_command()"/>
 			</menupopup>
 		</menu>
 	</menubar>
@@ -44,16 +45,16 @@
 		<vbox id="main-sidebar" width="200" persist="width">
 			<toolbox id="main-sidebar-toolbox">
 				<toolbar id="main-sidebar-toolbar" flex="1" align="center">
-					<toolbarbutton id="main-sidebar-toolbar-select-button" label="Sidebar" type="menu">
+					<toolbarbutton id="main-sidebar-toolbar-select-button" label="&mainSidebarToolbarSelectButtonLabel;" originalLabel="&mainSidebarToolbarSelectButtonLabel;" type="menu">
 						<menupopup id="main-sidebar-select-popup"/>
 					</toolbarbutton>
 					<box id="main-sidebar-toolbar-buttons" flex="1" pack="end">
-						<toolbarbutton id="main-sidebar-toolbar-buttons-detach" class="detach-button" label="Detach" oncommand="main_sidebar_toolbar_buttons_detach()"/>
-						<toolbarbutton id="main-sidebar-toolbar-buttons-close" class="close-button" label="Close" oncommand="main_sidebar_toolbar_buttons_close()"/>
+						<toolbarbutton id="main-sidebar-toolbar-buttons-detach" class="detach-button" label="&mainSidebarToolbarButtonsDetachLabel;" oncommand="main_sidebar_toolbar_buttons_detach()"/>
+						<toolbarbutton id="main-sidebar-toolbar-buttons-close" class="close-button" label="&mainSidebarToolbarButtonsCloseLabel;" oncommand="main_sidebar_toolbar_buttons_close()"/>
 					</box>
 				</toolbar>
 			</toolbox>
-			<iframe id="main-sidebar-iframe" src="sidebar.xul" flex="1"/>
+			<iframe id="main-sidebar-iframe" src="chrome://bono/content/sidebar.xul" flex="1"/>
 		</vbox>
 		<splitter id="main-sidebar-splitter" collapse="before" resizeafter="grow" state="collapsed" persist="state" ondblclick="main_sidebar_splitter_double_click()"/>
 		<vbox flex="1">
@@ -62,23 +63,23 @@
 			<vbox id="main-bottombar" height="200" persist="height">
 				<toolbox id="main-bottombar-toolbox">
 					<toolbar id="main-bottombar-toolbar" flex="1" align="center">
-						<toolbarbutton id="main-bottombar-toolbar-select-button" label="Bottombar" type="menu">
+						<toolbarbutton id="main-bottombar-toolbar-select-button" label="&mainBottombarToolbarSelectButtonLabel;" originalLabel="&mainBottombarToolbarSelectButtonLabel;" type="menu">
 							<menupopup id="main-bottombar-select-popup"/>
 						</toolbarbutton>
 						<box id="main-bottombar-toolbar-buttons" flex="1" pack="end">
-							<toolbarbutton id="main-bottombar-toolbar-buttons-detach" class="detach-button" label="Detach" oncommand="main_bottombar_toolbar_buttons_detach()"/>
-							<toolbarbutton id="main-bottombar-toolbar-buttons-close" class="close-button" label="Close" oncommand="main_bottombar_toolbar_buttons_close()"/>
+							<toolbarbutton id="main-bottombar-toolbar-buttons-detach" class="detach-button" label="&mainBottombarToolbarButtonsDetachLabel;" oncommand="main_bottombar_toolbar_buttons_detach()"/>
+							<toolbarbutton id="main-bottombar-toolbar-buttons-close" class="close-button" label="&mainBottombarToolbarButtonsCloseLabel;" oncommand="main_bottombar_toolbar_buttons_close()"/>
 						</box>
 					</toolbar>
 				</toolbox>
-				<iframe id="main-bottombar-iframe" src="bottombar.xul" flex="1"/>
+				<iframe id="main-bottombar-iframe" src="chrome://bono/content/bottombar.xul" flex="1"/>
 			</vbox>
 		</vbox>
 	</hbox>
 
 	<statusbar id="main-status-bar">
-		<statusbarpanel id="main-status-bar-status-panel" label="" crop="end" flex="1"/>
-		<statusbarpanel id="main-status-bar-buttons-panel" label=""/>
+		<statusbarpanel id="main-status-bar-status-panel" crop="end" flex="1"/>
+		<statusbarpanel id="main-status-bar-buttons-panel"/>
 	</statusbar>
 
 </window>
