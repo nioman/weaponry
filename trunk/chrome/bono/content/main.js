@@ -102,24 +102,14 @@ function main_quit_command() {
  * SHOW NAVIGATION BAR
  **/
 function main_show_navigation_bar() {
+	// if main-view-show-navigation-bar is checked, show location bars, else hide them
 	// get reference to the things we are going to work with
 	var e = document.getElementById('main-view-show-navigation-bar');
-	var c = e.getAttribute('checked') == 'true' ? true : false;
-	var b = document.getElementById('main-browser');
-
-	// if main-view-show-navigation-bar is checked
-	if (c == true) {
-		// show location bars
-		for (var i = 0; i < b.tabManager.tabs.childNodes.length; i++) {
-			var tab = b.tabManager.tabs.childNodes[i];
-			tab.tabContent.browserNavigationBox.setAttribute('collapsed', 'false');
-		}
-	} else {
-		// hide location bars
-		for (var i = 0; i < b.tabManager.tabs.childNodes.length; i++) {
-			var tab = b.tabManager.tabs.childNodes[i];
-			tab.tabContent.browserNavigationBox.setAttribute('collapsed', 'true');
-		}
+	var c = e.getAttribute('checked') == 'true' ? 'true' : 'false';
+	var n = document.getElementById('main-browser').tabManager.tabs.childNodes;
+	
+	for (var i = 0; i < n.length; i++) {
+		n[i].tabContent.browserNavigationBox.setAttribute('collapsed', c);
 	}
 }
 
@@ -203,14 +193,9 @@ function main_sidebar_toolbar_buttons_close() {
 function main_sidebar_splitter_double_click() {
 	// get a reference to the sidebar splitter
 	var e = document.getElementById('main-sidebar-splitter');
-
-	if (e.getAttribute('state') == 'collapsed') { // if state is collapsed...
-		// ...make it open
-		e.setAttribute('state', 'open');
-	} else { // else if state is open...
-		// ...make it collapsed
-		e.setAttribute('state', 'collapsed');
-	}
+	
+	// if state is collapsed make it open, else make it collapsed
+	e.setAttribute('state', e.getAttribute('state') == 'collapsed' ? 'open' : 'collapsed');
 }
 
 /**
@@ -252,14 +237,9 @@ function main_bottombar_toolbar_buttons_close() {
 function main_bottombar_splitter_double_click() {
 	// get a reference to the bottombar splitter
 	var e = document.getElementById('main-bottombar-splitter');
-
-	if (e.getAttribute('state') == 'collapsed') { // if state is collapsed...
-		// ...make it open
-		e.setAttribute('state', 'open');
-	} else { // else if state is open...
-		// ...make it collapsed
-		e.setAttribute('state', 'collapsed');
-	}
+	
+	// if state is collapsed make it open, else make it collapsed
+	e.setAttribute('state', e.getAttribute('state') == 'collapsed' ? 'open' : 'collapsed');
 }
 
 /**
@@ -270,10 +250,8 @@ function onload() {
 	main_show_navigation_bar()
 
 	// listen when new tab is spawned
-	document.getElementById('main-browser').addEventListener('TabOpen', function () {
-		// decide if navigation bar needs displaying
-		main_show_navigation_bar()
-	}, true);
+	// decide if navigation bar needs displaying
+	document.getElementById('main-browser').addEventListener('TabOpen', main_show_navigation_bar, true);
 
 	// load homepage
 	document.getElementById('main-browser').openTab(get_pref('bono.starup.homepage'), 'startup:homepage', true);
