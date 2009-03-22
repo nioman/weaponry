@@ -62,7 +62,7 @@ function toggle_sidebar(e) {
 		var contenturi = e.contenturi;
 		var contenttitle = e.contenttitle;
 	}
-
+alert('test');
 	// do the toggling
 	document.getElementById('main-sidebar-iframe').setAttribute('src', contenturi);
 	document.getElementById('main-sidebar-toolbar-select-button').setAttribute('label', contenttitle);
