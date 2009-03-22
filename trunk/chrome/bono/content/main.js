@@ -43,6 +43,13 @@ function set_pref(pref, value, type) {
 }
 
 /**
+ * Open window
+ **/
+function open_window(src){
+	return window.open(src, '', 'menubar=yes,location=yes,resizable=yes,scrollbars=yes,status=yes,chrome');
+}
+
+/**
  * TOGGLE SIDEBAR
  **/
 function toggle_sidebar(e) {
@@ -117,33 +124,21 @@ function main_show_navigation_bar() {
  * MAIN OPEN ERROR CONSOLE COMMAND
  **/
 function main_open_error_console_command() {
-	// open the error console window
-	window.open(
-		'chrome://global/content/console.xul',
-		'',
-		'menubar=yes,location=yes,resizable=yes,scrollbars=yes,status=yes,chrome');
+	open_window('chrome://global/content/console.xul');
 }
 
 /**
  * MAIN OPEN EXTENSION MANAGER COMMAND
  **/
 function main_open_extension_manager_command() {
-	// open the extension manager window
-	var w = window.open(
-		'chrome://mozapps/content/extensions/extensions.xul?type=extensions',
-		'',
-		'menubar=yes,location=yes,resizable=yes,scrollbars=yes,status=yes,chrome');
+	open_window('chrome://mozapps/content/extensions/extensions.xul?type=extensions');
 }
 
 /**
  * MAIN OPEN CONFIGURATION MANAGER COMMAND
  **/
 function main_open_configuration_manager_command() {
-	// open the about:config window
-	window.open(
-		'about:config',
-		'',
-		'menubar=yes,location=yes,resizable=yes,scrollbars=yes,status=yes,chrome');
+	open_window('about:config');
 }
 
 /**
@@ -172,10 +167,7 @@ function main_sidebar_toolbar_buttons_detach() {
 		btn.setAttribute('label', btn.getAttribute('originalLabel'));
 
 		// open the content of the sidebar into a new window
-		var w = window.open(
-			src,
-			'',
-			'menubar=yes,location=yes,resizable=yes,scrollbars=yes,status=yes,chrome');
+		open_window(src);
 	}
 }
 
@@ -216,10 +208,7 @@ function main_bottombar_toolbar_buttons_detach() {
 		btn.setAttribute('label', btn.getAttribute('originalLabel'));
 
 		// open the content of the bottombar into a new window
-		var w = window.open(
-			src,
-			'',
-			'menubar=yes,location=yes,resizable=yes,scrollbars=yes,status=yes,chrome');
+		open_window(src);
 	}
 }
 
