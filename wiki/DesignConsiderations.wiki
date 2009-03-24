@@ -1,9 +1,4 @@
-#summary This page discusses the overall design of the Weaponry system.
-
-= Introduction =
-
-This page discussed the overall design of the Weaponry system. We are going to look into the main structure blocks. Feel free to add your suggestions/comments.
-
+#summary This page discussed the overall design of the Weaponry system. We are going to look into the main structure blocks. Feel free to add your suggestions/comments.
 
 = Workspaces =
 
