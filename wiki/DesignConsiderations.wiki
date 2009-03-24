@@ -58,6 +58,6 @@ Sometimes developers may want to provide additional functionalities to a workspa
 Registration process of new sidebars and bottombars should be trivial.
 
 
-= Themeing =
+= Theming =
 
 The core UI needs to be written in such a way that whole blocks can be replaced without affecting any of the extensions. For example, some environments may require the need to use minimalistic environments (mobile phones) it should be possible to change the core default view in a such a way that applications still work. We might need to add support APIs just to do this.
