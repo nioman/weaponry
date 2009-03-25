@@ -3,13 +3,13 @@
 <?xml-stylesheet href="chrome://bono/skin/main.css" type="text/css"?>
 <?xml-stylesheet href="chrome://branding/skin/brand.css" type="text/css"?>
 <!DOCTYPE window [
-<!ENTITY % mainDTD SYSTEM "chrome://bono/locale/main.dtd">%mainDTD;
 <!ENTITY % brandDTD SYSTEM "chrome://branding/locale/brand.dtd">%brandDTD;
+<!ENTITY % mainDTD SYSTEM "chrome://bono/locale/main.dtd">%mainDTD;
 ]>
 <window xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
 	id="main" windowtype="bono:main" title="&brandFullName;"
-	width="600" height="400"
 	screenX="5" screenY="5"
+	width="840" height="480"
         persist="screenX screenY width height sizemode"
 	onclose="return main_quit_command()">
 

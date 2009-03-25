@@ -109,12 +109,12 @@ function main_quit_command() {
  * SHOW NAVIGATION BAR
  **/
 function main_show_navigation_bar() {
-	// if main-view-show-navigation-bar is checked, show location bars, else hide them
-	// get reference to the things we are going to work with
+	// get a reference to the things we are going to work with
 	var e = document.getElementById('main-view-show-navigation-bar');
-	var c = e.getAttribute('checked') == 'true' ? 'true' : 'false';
+	var c = (e.hasAttribute('checked') && e.getAttribute('checked') == 'true') ? 'false' : 'true';
 	var n = document.getElementById('main-browser').tabManager.tabs.childNodes;
-	
+
+	// for each tab navigation bar set the collapsed state to the state of c
 	for (var i = 0; i < n.length; i++) {
 		n[i].tabContent.browserNavigationBox.setAttribute('collapsed', c);
 	}
@@ -250,8 +250,8 @@ function onload() {
  * ON UNLOAD
  **/
 function onunload() {
-	// persist main-view-menu-popup-show-navigation-bar checked property due to bug 15232
-	var e = document.getElementById('main-view-menu-popup-show-navigation-bar');
+	// persist main-view-show-navigation-bar checked property due to bug 15232
+	var e = document.getElementById('main-view-show-navigation-bar');
 
 	if (!e.hasAttribute('checked')) {
 		e.setAttribute('checked', 'false');

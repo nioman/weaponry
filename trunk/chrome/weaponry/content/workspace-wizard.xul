@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://weaponry/skin/workspace-wizard.css" type="text/css"?>
+<!DOCTYPE wizard [
+<!ENTITY % workspaceWizardDTD SYSTEM "chrome://weaponry/locale/workspace-wizard.dtd">%workspaceWizardDTD;
+]>
+<wizard xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+	title="&weaponryWorkspaceWizardTitle;">
+
+	<script type="application/x-javascript" src="chrome://weaponry/content/workspace-wizard.js"/>
+
+	<wizardpage id="introduction">
+		<description>&workspaceWizardDescription;</description>
+	</wizardpage>
+
+</wizard>

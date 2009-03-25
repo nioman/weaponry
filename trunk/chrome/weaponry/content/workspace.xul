@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://weaponry/skin/workspace.css" type="text/css"?>
+<!DOCTYPE page [
+<!ENTITY % workspaceDTD SYSTEM "chrome://weaponry/locale/workspace.dtd">%workspaceDTD;
+]>
+<page xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+	id="weaponry-workspace-page"
+	title="&weaponryWorkspacePageTitle;">
+
+	<script type="application/x-javascript" src="chrome://weaponry/content/workspace.js"/>
+
+</page>

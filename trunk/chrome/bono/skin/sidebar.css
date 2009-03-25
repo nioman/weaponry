@@ -1,7 +1,7 @@
 @import url(chrome://global/skin/);
 @import url(chrome://bono/skin/tags.css);
 
-#sidebar-image {
+#sidebar-central-image {
 width: 200px;
 height: 300px;
 margin-top: 50px;

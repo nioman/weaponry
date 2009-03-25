@@ -1,10 +1,16 @@
 <?xml version="1.0"?>
+<?xml-stylesheet href="chrome://weaponry/skin/main-overlay.css" type="text/css"?>
 <!DOCTYPE overlay [
 <!ENTITY % mainOverlayDTD SYSTEM "chrome://weaponry/locale/main-overlay.dtd">%mainOverlayDTD;
 ]>
 <overlay xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
 
 	<script type="application/x-javascript" src="chrome://weaponry/content/main-overlay.js"/>
+
+	<menupopup id="main-app-menu-popup">
+		<menuitem id="weaponry-main-app-menu-popup-create-workspace" insertbefore="main-app-menu-popup-quit" label="&weaponryMainAppMenuPopupCreateWorkspace;" oncommand="weaponry_create_workspace_command()"/>
+		<menuseparator insertbefore="main-app-menu-popup-quit"/>
+	</menupopup>
   
 	<menupopup id="main-sidebar-select-popup">
 		<menuitem observes="weaponry-toolkit-sidebar-broadcaster"/>
