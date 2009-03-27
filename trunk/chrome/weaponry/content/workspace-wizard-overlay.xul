@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://weaponry/skin/main-overlay.css" type="text/css"?>
+<!DOCTYPE overlay [
+<!ENTITY % workspace-wizard-overlay-dtd SYSTEM "chrome://weaponry/locale/workspace-wizard-overlay.dtd">%workspace-wizard-overlay-dtd;
+]>
+<overlay xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+
+	<script type="application/x-javascript" src="chrome://weaponry/content/workspace-wizard-overlay.js"/>
+
+	<menupopup id="workspace-wizard-workspace-type-menupopup">
+		<menuitem id="workspace-wizard-workspace-type-standard-infrastructure-penetration-test" label="&workspace-wizard-workspace-type-standard-infrastructure-penetration-test;" value="standard-infrastructure-penetration-test"/>
+	</menupopup>
+
+</overlay>

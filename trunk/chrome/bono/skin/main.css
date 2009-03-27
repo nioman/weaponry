@@ -1,6 +1,8 @@
 @import url(chrome://global/skin/);
 @import url(chrome://bono/skin/tags.css);
 
+/* ---------------------------------------- */
+
 .detach-button image {
 width: 16px;
 height: 16px;
@@ -11,6 +13,8 @@ list-style-image: url(chrome://bono/skin/icon-detach.png);
 display: none;
 }
 
+/* ---------------------------------------- */
+
 .close-button image {
 width: 16px;
 height: 16px;
@@ -20,6 +24,8 @@ list-style-image: url(chrome://bono/skin/icon-close.png);
 .close-button label {
 display: none;
 }
+
+/* ---------------------------------------- */
 
 #main-help-about-app image {
 width: 16px;

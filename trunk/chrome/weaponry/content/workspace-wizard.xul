@@ -1,15 +1,32 @@
 <?xml version="1.0"?>
 <?xml-stylesheet href="chrome://weaponry/skin/workspace-wizard.css" type="text/css"?>
 <!DOCTYPE wizard [
-<!ENTITY % workspaceWizardDTD SYSTEM "chrome://weaponry/locale/workspace-wizard.dtd">%workspaceWizardDTD;
+<!ENTITY % workspace-wizard-dtd SYSTEM "chrome://weaponry/locale/workspace-wizard.dtd">%workspace-wizard-dtd;
 ]>
 <wizard xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
-	title="&weaponryWorkspaceWizardTitle;">
+	title="&workspace-wizard-title;"
+	onwizardfinish="return workspace_wizard_finish()">
 
 	<script type="application/x-javascript" src="chrome://weaponry/content/workspace-wizard.js"/>
 
-	<wizardpage id="introduction">
-		<description>&workspaceWizardDescription;</description>
+	<strinbundleset id="workspace-wizard-strinbundleset">
+		<stringbundle id="workspace-wizard-properties" src="chrome://weaponry/locale/workspace-wizard.properties"/>
+	</strinbundleset>
+
+	<wizardpage id="workspace-wizard-workspace-setup" onpageadvanced="return workspace_wizard_workspace_setup_advanced()">
+		<notificationbox id="workspace-wizard-workspace-setup-notificationbox">
+			<description id="workspace-wizard-workspace-setup-description">&workspace-wizard-workspace-setup-description;</description>
+			<label id="workspace-wizard-choose-workspace-name" value="&workspace-wizard-choose-workspace-name;"/>
+				<textbox id="workspace-wizard-workspace-name" oninput="return workspace_wizard_workspace_name_change()" onchange="return workspace_wizard_workspace_name_change()"/>
+			<label id="workspace-wizard-choose-workspace-type" value="&workspace-wizard-choose-workspace-type;"/>
+			<menulist id="workspace-wizard-workspace-type">
+				<menupopup id="workspace-wizard-workspace-type-menupopup"/>
+			</menulist>
+		</notificationbox>
+	</wizardpage>
+
+	<wizardpage id="workspace-wizard-workspace-finish" onpageadvanced="return workspace_wizard_workspace_finish_advanced()">
+		<description id="workspace-wizard-workspace-finish-description">&workspace-wizard-workspace-finish-description;</description>
 	</wizardpage>
 
 </wizard>

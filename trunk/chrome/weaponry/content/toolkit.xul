@@ -1,10 +1,10 @@
 <?xml version="1.0"?>
 <?xml-stylesheet href="chrome://weaponry/skin/toolkit.css" type="text/css"?>
 <!DOCTYPE page [
-<!ENTITY % toolkitDTD SYSTEM "chrome://weaponry/locale/toolkit.dtd">%toolkitDTD;
+<!ENTITY % toolkit-dtd SYSTEM "chrome://weaponry/locale/toolkit.dtd">%toolkit-dtd;
 ]>
 <page xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
-	title="&weaponryToolkitPageTitle;">
+	title="&weaponry-toolkit-page-title;">
 
 	<toolkit id="toolkit" xmlns=""/>
 
@@ -12,7 +12,7 @@
 
 	<vbox flex="1">
 		<hbox align="center">
-			<label value="&weaponryToolkitFilterLabel;:"/>
+			<label value="&weaponry-toolkit-filter-label;:"/>
 			<textbox id="weaponry-toolkit-filter-textbox" value="" flex="1" oninput="weaponry_toolkit_filter_textbox_change()"/>
 		</hbox>
 		<richlistbox id="weaponry-toolkit-richlistbox" datasources="#toolkit" ref="*" querytype="xml" flex="1">

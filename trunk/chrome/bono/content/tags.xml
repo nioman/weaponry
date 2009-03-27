@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE bindings [
-<!ENTITY % tagsDTD SYSTEM "chrome://bono/locale/tags.dtd">%tagsDTD;
-<!ENTITY % brandDTD SYSTEM "chrome://branding/locale/brand.dtd">%brandDTD;
+<!ENTITY % tags-dtd SYSTEM "chrome://bono/locale/tags.dtd">%tags-dtd;
+<!ENTITY % brand-dtd SYSTEM "chrome://branding/locale/brand.dtd">%brand-dtd;
 ]>
 <bindings
 	xmlns="http://www.mozilla.org/xbl"
@@ -200,12 +200,12 @@
 		<content>
 			<xul:toolbox id="browsernavigationbox-toolbox" orient="horizontal" flex="1">
 				<xul:toolbar id="browsernavigationbox-toolbar" flex="1">
-					<xul:toolbarbutton id="browsernavigationbox-back-button" label="&browsernavigationboxBackButtonLabel;" disabled="true"/>
-					<xul:toolbarbutton id="browsernavigationbox-forward-button" label="&browsernavigationboxForwardButtonLabel;" disabled="true"/>
-					<xul:toolbarbutton id="browsernavigationbox-reload-button" label="&browsernavigationboxReloadButtonLabel;"/>
-					<xul:toolbarbutton id="browsernavigationbox-stop-button" label="&browsernavigationboxStopButtonLabel;" disabled="true"/>
+					<xul:toolbarbutton id="browsernavigationbox-back-button" label="&browsernavigationbox-back-button-label;" disabled="true"/>
+					<xul:toolbarbutton id="browsernavigationbox-forward-button" label="&browsernavigationbox-forward-button-label;" disabled="true"/>
+					<xul:toolbarbutton id="browsernavigationbox-reload-button" label="&browsernavigationbox-reload-button-label;"/>
+					<xul:toolbarbutton id="browsernavigationbox-stop-button" label="&browsernavigationbox-stop-button-label;" disabled="true"/>
 					<xul:textbox id="browsernavigationbox-location-bar" value="" flex="1"/>
-					<xul:toolbarbutton id="browsernavigationbox-go-button" label="&browsernavigationboxGoButtonLabel;"/>
+					<xul:toolbarbutton id="browsernavigationbox-go-button" label="&browsernavigationbox-go-button-label;"/>
 				</xul:toolbar>
 			</xul:toolbox>
 		</content>

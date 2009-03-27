@@ -1,8 +1,12 @@
 @import url(chrome://global/skin/);
 
+/* ---------------------------------------- */
+
 .weaponry-toolkit-module-name {
 font-weight: bold;
 }
+
+/* ---------------------------------------- */
 
 #weaponry-toolkit-richlistbox richlistitem {
 border-bottom: 1px dotted #CCCCCC;

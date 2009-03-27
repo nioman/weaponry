@@ -1,3 +1,29 @@
+// workspace
+var workspace = {
+	// get workspace option
+	get_option: function (name) {
+		var statement = window.workspacedb.createStatement('SELECT value FROM workspace_options WHERE key = ?1');
+		statement.bindStringParameter(0, name);
+
+		if (statement.executeStep()) {
+			return statement.getString(0);
+		}
+	},
+	// get workspace options
+	get_options: function (name) {
+		var statement = window.workspacedb.createStatement('SELECT value FROM workspace_options WHERE key = ?1');
+		statement.bindStringParameter(0, name);
+
+		var retr = [];
+
+		while (statement.executeStep()) {
+			retr.push(statement.getString(0));
+		}
+
+		return retr;
+	}
+};
+
 // non-polluting function block
 (function () {
 	// parse query
@@ -25,6 +51,12 @@
 
 		file.append(query.workspacedb);
 
+		// ...check for workspace existance
+		if (!file.exists()) { // if workspace does not exist...
+			// ...just return
+			return;
+		}
+
 		// ...get a reference to the storage service
 		var storageService = Components.classes['@mozilla.org/storage/service;1']
 		                               .getService(Components.interfaces.mozIStorageService);
@@ -32,16 +64,26 @@
 		// ...open database
 		window.workspacedb = storageService.openDatabase(file);
 
-		// TODO:...query for supported subspaces
+		// ...get workspace types
+		var types = workspace.get_options('workspace.type');
+
+		// ...add types to query subspaces
+		if (query.subspaces) { // if there are subspaces in the query...
+			// ...append types to subspaces
+			query.subspaces += types.join(',');
+		} else { // otherwise...
+			// ...use types as query subspaces only
+			query.subspaces = types.join(',');
+		}
 	}
 
 	// get a reference to the workspace page
-	var page = document.getElementById('weaponry-workspace-page');
+	var page = document.getElementById('workspace');
 
 	// subspace generator
 	if (query.subspaces) { // if subspace declarations are found...
 		// ...foreach subspace name...
-		for each (var subspace_name in query.subspaces.split(',')) {
+		for each (var subspace_name in query.subspaces.replace(/,+/g, ',').split(',')) {
 			// ...create a new subspace
 			var subspace = document.createElement('box');
 			subspace.setAttribute('id', 'subspace-' + subspace_name);
@@ -52,3 +94,9 @@
 		}
 	}
 })();
+
+// load event
+window.addEventListener('load', function () {
+	// change the title of the document to the name of the workspace
+	document.title = document.title + ' ' + workspace.get_option('workspace.name');
+}, true);
