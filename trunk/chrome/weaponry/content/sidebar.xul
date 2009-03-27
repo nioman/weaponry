@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://weaponry/content/common.css" type="text/css"?>
+<?xml-stylesheet href="chrome://weaponry/skin/sidebar.css" type="text/css"?>
+<?xml-stylesheet href="chrome://branding/skin/brand.css" type="text/css"?>
+<!DOCTYPE window [
+<!ENTITY % brand-dtd SYSTEM "chrome://branding/locale/brand.dtd">%brand-dtd;
+<!ENTITY % sidebar-dtd SYSTEM "chrome://weaponry/locale/sidebar.dtd">%sidebar-dtd;
+]>
+<page xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+	id="sidebar">
+
+	<script type="application/x-javascript" src="chrome://weaponry/content/sidebar.js"/>
+
+	<strinbundleset id="sidebar-strinbundleset">
+		<stringbundle id="sidebar-properties" src="chrome://weaponry/locale/sidebar.properties"/>
+	</strinbundleset>
+
+	<vbox id="sidebar-central-vbox">
+		<hbox id="sidebar-central-hbox">
+			<image id="sidebar-central-image"/>
+		</hbox>
+	</vbox>
+
+</page>

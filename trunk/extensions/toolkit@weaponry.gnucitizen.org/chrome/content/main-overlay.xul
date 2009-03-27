@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://toolkit/skin/main-overlay.css" type="text/css"?>
+<!DOCTYPE overlay [
+<!ENTITY % main-overlay-dtd SYSTEM "chrome://toolkit/locale/main-overlay.dtd">%main-overlay-dtd;
+]>
+<overlay xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+
+	<script type="application/x-javascript" src="chrome://toolkit/content/main-overlay.js"/>
+
+	<menupopup id="main-sidebar-select-popup">
+		<menuitem observes="toolkit-sidebar-broadcaster"/>
+	</menupopup>
+
+	<broadcasterset> 
+		<broadcaster
+			id="toolkit-sidebar-broadcaster" 
+			label="&toolkit-sidebar-broadcaster-label;"
+			contenturi="chrome://toolkit/content/toolkit.xul"
+			contenttitle="&toolkit-sidebar-broadcaster-content-title;"
+			oncommand="return toggle_sidebar(this);"/>
+	</broadcasterset>
+
+</overlay>

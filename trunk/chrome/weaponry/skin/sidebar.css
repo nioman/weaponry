@@ -1,0 +1,20 @@
+@import url(chrome://global/skin/);
+@import url(chrome://weaponry/skin/common.css);
+
+/* -------------------------------------------------------------------------------- */
+
+#sidebar-central-vbox {
+-moz-box-pack: center;
+}
+
+#sidebar-central-hbox {
+-moz-box-pack: center;
+}
+
+#sidebar-central-image {
+width: 200px;
+height: 300px;
+margin-top: 50px;
+margin-bottom: 10px;
+list-style-image: url(chrome://weaponry/skin/icon-sidebar.png);
+}
