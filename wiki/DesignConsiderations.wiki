@@ -1,18 +1,25 @@
-#summary This page discussed the overall design of the Weaponry system. We are going to look into the main structure blocks. Feel free to add your suggestions/comments.
+#summary This page discusses the overall design of the Weaponry system. We are going to look into the main structure blocks. Feel free to add your suggestions/comments.
+
+http://weaponry.googlecode.com/svn/trunk/chrome/weaponry/skin/splash.png
+
+= Core UI =
+
+The Core UI is the base of the system and therefore it needs to be solid, extensible, stable and reliable. It needs to be written in such a way that whole blocks can be replaced without affecting any of the extensions. For example, some environments may require the need to use minimalistic interfaces (mobile phones for example) and as such it should be possible to change the core default view in a such a way that extensions written for the system always work regardless the fact that certain visual blocks could be missing.
+
+= Extensions =
+
+The whole system should be written from ground up with hot-pluggable extensions and components. Several core extensions needs to be provided in order to ensure that the system has a minimal set of functionalities. That way we ensure that the platform always stays fresh and dynamic.
+
 
 = Workspaces =
 
-The workspace is an XUL page which contains a number of APIs and a reference to a persistent storage (perhaps sqlite). The workspace is the primary way for starting a pentesting/mashup/development task. The environment should be able to work with several workspaces open at the same time (presumably opened in different tabs or windows).
+The workspace is an XUL page which contains a number of APIs and a reference to a persistent storage. The workspace is the primary way for starting a pentesting/mashup/development task. The environment should be able to work with several workspaces open at the same time, presumably opened in different tabs or windows.
 
-Workspaces can be extended by any other extensions with the help of overlays. Overlays can interact with the workspace by either manipulating the DOM or by using the APIs introduced by the core components or by any other pluggable component (xpt extensions). Workspace APIs should provide access to the persistent storage and also the ability to load and save the storage data. Extension authors should not deal with storing/saving and loading their data. It all should be transparent and handled the core system! However, extension authors should be able to provide the ability to export the data in their own format (perhaps custom reporting engines, etc).
+Workspaces can be extended by any other extensions with the help of overlays. Overlays can interact with the workspace by either manipulating the DOM or by using the APIs introduced by the core components or by any other pluggable component (xpt extensions). Workspace APIs should provide access to the persistent storage and also the ability to load and save the storage data. Extension authors should not deal with storing/saving and loading their data. It all should be transparent and handled by the core system! However, extension authors should be able to provide the ability to export the data in their own format (perhaps custom reporting engines, etc).
 
 It should be possible to merge workspaces. If we start one web application security project and one infrastructure security project, we should be able to merge both into a new project. It might be also beneficial to be able to create pseudo workspaces which are merely abstract interfaces to one or more workspaces. This would mean that changes in any of the workspaces should result into changes in the pseudo workspace.
 
 Extensions which overlay the workspace should provide additional functionalities in terms of APIs and of course GUI elements rendered inside the workspace page. For example, if the workspace is of type "standard infrastructure test", extensions should be able to add buttons, features and in general UI for launching tools which interact with the targets and potentially the workspace persistent storage, i.e. a DNS enumeration extension should hook its own UI controls into the workspace so that the user can click on a button to launch the enumeration tool which in turn should merge its findings with the persistent storage.
-
-*NOTES:* It is preferable to have a standard workspace environment for many kinds of workspaces. It is not clear yet how to create workspaces of different kinds but a possible suggestion is to have some kind of wizard which allows the user to first choose a name for the workspace and second to select the workspace type. Extensions authors should be able to overlay the wizard and as such provide additional workspace types and of course, wizard functionalities. It is important to make sure that it is straightforward to add new wizard pages.
-
-The reason why we need different workspace types is because we may want to do different kinds of projects. One project could be related to normal pentesting while another could be related to malware research. Workspace extensions should be able to differentiate the type of workspace my using simple overlays without the need to use any code.
 
 
 = Toolkit =
@@ -51,8 +58,3 @@ Certain extensions might want to get status reports from services or even use da
 Sometimes developers may want to provide additional functionalities to a workspace, a toolkit or a tab that contains a service without the need to overlay it. For example, some toolkits may write their findings by using microformats. An extension author may decide to create a sidebar for capturing any microformat data and import it into any arbitrary workspace. It is obvious that this type of application functionality should feel more like part of the core environment rather then being part of a workspace or overlay of a particular tool. This is where sidebars and bottombars come into place.
 
 Registration process of new sidebars and bottombars should be trivial.
-
-
-= Theming =
-
-The core UI needs to be written in such a way that whole blocks can be replaced without affecting any of the extensions. For example, some environments may require the need to use minimalistic environments (mobile phones) it should be possible to change the core default view in a such a way that applications still work. We might need to add support APIs just to do this.
