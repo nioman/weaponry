@@ -1,6 +1,0 @@
-This folder contains the core weaponry components. Each
-component should consists of a main source file, an idl
-file and a compiled idl (xpt) file.
-
-Compiled modules such as .pyo should not be placed into
-this folder or the source code respository.

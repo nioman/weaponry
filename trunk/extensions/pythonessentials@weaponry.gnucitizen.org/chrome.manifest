@@ -1,3 +1,0 @@
-content     pythonessentials     file:chrome/content/
-
-overlay     chrome://bono/content/main.xul     chrome://pythonessentials/content/main-overlay.xul
