@@ -157,9 +157,9 @@ function main_about_app() {
 }
 
 /**
- * MAIN SIDEBAR TOOLBAR BUTTONS DETACH
+ * MAIN SIDEBAR DETACH
  **/
-function main_sidebar_toolbar_buttons_detach() {
+function main_sidebar_detach() {
 	// locate the sidebar iframe and its source attribute
 	var ifr = document.getElementById('main-sidebar-iframe');
 	var src = ifr.getAttribute('src');
@@ -175,13 +175,16 @@ function main_sidebar_toolbar_buttons_detach() {
 
 		// open the content of the sidebar into a new window
 		open_window(src);
+
+		// close sidebar
+		main_sidebar_close();
 	}
 }
 
 /**
- * MAIN SIDEBAR TOOLBAR BUTTONS CLOSE
+ * MAIN SIDEBAR CLOSE
  **/
-function main_sidebar_toolbar_buttons_close() {
+function main_sidebar_close() {
 	// get a reference to the sidebar and collapse its state
 	document.getElementById('main-sidebar-splitter').setAttribute('state', 'collapsed');
 }
@@ -198,9 +201,9 @@ function main_sidebar_splitter_double_click() {
 }
 
 /**
- * MAIN BOTTOMBAR TOOLBAR BUTTONS DETACH
+ * MAIN BOTTOMBAR DETACH
  **/
-function main_bottombar_toolbar_buttons_detach() {
+function main_bottombar_detach() {
 	// locate the bottombar iframe and its source attribute
 	var ifr = document.getElementById('main-bottombar-iframe');
 	var src = ifr.getAttribute('src');
@@ -216,13 +219,16 @@ function main_bottombar_toolbar_buttons_detach() {
 
 		// open the content of the bottombar into a new window
 		open_window(src);
+
+		// close bottombar
+		main_bottombar_close();
 	}
 }
 
 /**
- * MAIN BOTTOMBAR TOOLBAR BUTTONS CLOSE
+ * MAIN BOTTOMBAR CLOSE
  **/
-function main_bottombar_toolbar_buttons_close() {
+function main_bottombar_close() {
 	// get a reference to the bottombar and collapse its state
 	document.getElementById('main-bottombar-splitter').setAttribute('state', 'collapsed');
 }

@@ -16,7 +16,7 @@ function wizard_get_workspace_raw_type() {
  * WIZARD GET WORKSPACE NICE NAME
  **/
 function wizard_get_workspace_nice_name() {
-	return wizard_get_workspace_raw_name();
+	return wizard_get_workspace_raw_name().replace(/\W/g, '_').replace(/_+/g, '_').replace(/^_+|_+$/, '').toLowerCase();
 }
 
 /**
@@ -31,8 +31,8 @@ function wizard_get_workspace_path_name() {
  **/
 function wizard_workspace_exists() {
 	var file = Components.classes['@mozilla.org/file/directory_service;1']
-			     .getService(Components.interfaces.nsIProperties)
-			     .get('ProfD', Components.interfaces.nsIFile);
+	                     .getService(Components.interfaces.nsIProperties)
+	                     .get('ProfD', Components.interfaces.nsIFile);
 
 	file.append(wizard_get_workspace_path_name());
 
@@ -109,13 +109,13 @@ function wizard_workspace_name_change() {
  **/
 function wizard_workspace_finish_advanced() {
 	var file = Components.classes['@mozilla.org/file/directory_service;1']
-			     .getService(Components.interfaces.nsIProperties)
-			     .get('ProfD', Components.interfaces.nsIFile);
+	                     .getService(Components.interfaces.nsIProperties)
+	                     .get('ProfD', Components.interfaces.nsIFile);
 
 	file.append(wizard_get_workspace_path_name());
 
 	var storageService = Components.classes['@mozilla.org/storage/service;1']
-				       .getService(Components.interfaces.mozIStorageService);
+	                               .getService(Components.interfaces.mozIStorageService);
 
 	window.workspacedb = storageService.openDatabase(file);
 	window.workspacedb.executeSimpleSQL("CREATE TABLE workspace_options (id INTEGER PRIMARY KEY, key TEXT, value TEXT)");

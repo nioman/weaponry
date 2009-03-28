@@ -44,17 +44,34 @@ var workspace = {
 
 	// initialize workspace database
 	if (query.workspacedb) { // if a workspacedb declaration is found...
-		// ...get a reference to the directory service
-		var file = Components.classes['@mozilla.org/file/directory_service;1']
-		                     .getService(Components.interfaces.nsIProperties)
-		                     .get('ProfD', Components.interfaces.nsIFile);
+		// ...open worksace
+		try { // try...
+			// ...get a reference to a file
+			var file = Components.classes['@mozilla.org/file/local;1']
+					     .createInstance(Components.interfaces.nsILocalFile);
 
-		file.append(query.workspacedb);
+			// ...init file with workspacedb path
+			file.initWithPath(query.workspacedb);
 
-		// ...check for workspace existance
-		if (!file.exists()) { // if workspace does not exist...
-			// ...just return
-			return;
+			// ...check for workspace existance
+			if (!file.exists()) { // if workspace does not exist...
+				// ...throw an exception
+				throw 'Workspace Not Found!';
+			}
+		} catch(e) { // else if exception was thrown...
+			// ...get a reference to the directory service
+			var file = Components.classes['@mozilla.org/file/directory_service;1']
+					     .getService(Components.interfaces.nsIProperties)
+					     .get('ProfD', Components.interfaces.nsIFile);
+
+			// ..init file with workspacedb path
+			file.append(query.workspacedb);
+
+			// ...check for workspace existance
+			if (!file.exists()) { // if workspace does not exist...
+				// ...return
+				return;
+			}
 		}
 
 		// ...get a reference to the storage service

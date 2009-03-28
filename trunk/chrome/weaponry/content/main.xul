@@ -15,9 +15,9 @@
 
 	<script type="application/x-javascript" src="chrome://weaponry/content/main.js"/>
 
-	<strinbundleset id="main-strinbundleset">
+	<stringbundleset id="main-stringbundleset">
 		<stringbundle id="main-properties" src="chrome://weaponry/locale/main.properties"/>
-	</strinbundleset>
+	</stringbundleset>
 
 	<menubar id="main-menubar">
 		<menu id="main-app-menu" label="&main-app-menu-label;">
@@ -53,15 +53,15 @@
 						<menupopup id="main-sidebar-select-popup"/>
 					</toolbarbutton>
 					<box id="main-sidebar-toolbar-buttons" flex="1" pack="end">
-						<toolbarbutton id="main-sidebar-toolbar-detach-button" class="detach-button" label="&main-sidebar-toolbar-detach-button-label;" oncommand="return main_sidebar_toolbar_buttons_detach()"/>
-						<toolbarbutton id="main-sidebar-toolbar-close-button" class="close-button" label="&main-sidebar-toolbar-close-button-label;" oncommand="return main_sidebar_toolbar_buttons_close()"/>
+						<toolbarbutton id="main-sidebar-toolbar-detach-button" class="detach-button" label="&main-sidebar-toolbar-detach-button-label;" oncommand="return main_sidebar_detach()"/>
+						<toolbarbutton id="main-sidebar-toolbar-close-button" class="close-button" label="&main-sidebar-toolbar-close-button-label;" oncommand="return main_sidebar_close()"/>
 					</box>
 				</toolbar>
 			</toolbox>
 			<iframe id="main-sidebar-iframe" src="chrome://weaponry/content/sidebar.xul" flex="1"/>
 		</vbox>
 		<splitter id="main-sidebar-splitter" collapse="before" resizeafter="grow" state="collapsed" persist="state" ondblclick="main_sidebar_splitter_double_click()"/>
-		<vbox flex="1">
+		<vbox id="main-area" flex="1">
 			<integratedtabbrowser id="main-browser" flex="1"/>
 			<splitter id="main-bottombar-splitter" collapse="after" resizebefore="grow" state="collapsed" persist="state" ondblclick="main_bottombar_splitter_double_click()"/>
 			<vbox id="main-bottombar" height="200" persist="height">
@@ -71,8 +71,8 @@
 							<menupopup id="main-bottombar-select-popup"/>
 						</toolbarbutton>
 						<box id="main-bottombar-toolbar-buttons" flex="1" pack="end">
-							<toolbarbutton id="main-bottombar-toolbar-detach-button" class="detach-button" label="&main-bottombar-toolbar-detach-button-label;" oncommand="return main_bottombar_toolbar_buttons_detach()"/>
-							<toolbarbutton id="main-bottombar-toolbar-close-button" class="close-button" label="&main-bottombar-toolbar-close-button-label;" oncommand="return main_bottombar_toolbar_buttons_close()"/>
+							<toolbarbutton id="main-bottombar-toolbar-detach-button" class="detach-button" label="&main-bottombar-toolbar-detach-button-label;" oncommand="return main_bottombar_detach()"/>
+							<toolbarbutton id="main-bottombar-toolbar-close-button" class="close-button" label="&main-bottombar-toolbar-close-button-label;" oncommand="return main_bottombar_close()"/>
 						</box>
 					</toolbar>
 				</toolbox>
