@@ -45,15 +45,17 @@ function set_pref(pref, value, type) {
 /**
  * OPEN CONTENT
  **/
-function open_content(uri, name) {
-	document.getElementById('main-browser').openTab(uri, name, true);
+function open_content(uri, name, args) {
+	// get a reference to main-browser and open a focused tab with uri, name and args
+	document.getElementById('main-browser').openTab(uri, true, args);
 }
 
 /**
- * Open window
+ * OPEN WINDOW
  **/
-function open_window(src){
-	return window.open(src, '', 'menubar=yes,location=yes,resizable=yes,scrollbars=yes,status=yes,chrome');
+function open_window(uri){
+	// open a window with all basic properties
+	return window.open(uri, '', 'menubar=yes,location=yes,resizable=yes,scrollbars=yes,status=yes,chrome');
 }
 
 /**
@@ -104,12 +106,8 @@ function toggle_bottombar(e) {
  * MAIN QUIT
  **/
 function main_quit() {
-	// get reference to the app-startip service
-	var app_startup = Components.classes['@mozilla.org/toolkit/app-startup;1']
-	                            .getService(Components.interfaces.nsIAppStartup);
-
-	// force quit
-	app_startup.quit(Components.interfaces.nsIAppStartup.eForceQuit); 
+	// just close the window but do not close other open windows
+	window.close();
 }
 
 /**
@@ -153,7 +151,7 @@ function main_open_configuration_manager() {
  **/
 function main_about_app() {
 	// show the about page for the current application
-	document.getElementById('main-browser').openTab(get_pref('weaponry.about.page'), 'weaponry:about:page', true);
+	document.getElementById('main-browser').openTab(get_pref('weaponry.about.page'), true);
 }
 
 /**
@@ -256,7 +254,7 @@ function onload() {
 	document.getElementById('main-browser').addEventListener('TabOpen', main_show_navigation_bar, true);
 
 	// load startup page
-	document.getElementById('main-browser').openTab(get_pref('weaponry.starup.page'), 'weaponry:startup:page', true);
+	document.getElementById('main-browser').openTab(get_pref('weaponry.starup.page'), true);
 }
 
 /**

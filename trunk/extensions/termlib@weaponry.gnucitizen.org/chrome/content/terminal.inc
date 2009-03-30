@@ -1,10 +1,12 @@
 /**
- * OPEN TERMINAL
+ * TERMLIB API
  **/
-function openTerminal(options) {
-	if (!options) {
-		options = {};
-	}
+var Termlib = {
+	openTerminal: function (options) {
+		if (!options) {
+			options = {};
+		}
 
-	return window.openDialog('chrome://termlib/content/terminal.htm', '', 'resizable=no,chrome', options);
-}
+		return window.openDialog('chrome://termlib/content/terminal.htm', '', 'resizable=no,chrome', options);
+	},
+};

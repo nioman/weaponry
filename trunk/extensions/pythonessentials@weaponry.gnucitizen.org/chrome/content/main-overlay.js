@@ -7,7 +7,7 @@ function pythonessentials_open_python_shell() {
 	                           .getService(Components.interfaces.pyIShell);
 
 	// open a new terminal with a handle
-	var w = openTerminal({title:'Python Shell', handler:function () {
+	var w = Termlib.openTerminal({title:'Python Shell', handler:function () {
 		var term = this;
 		var line = term.lineBuffer;
 		term.newLine();

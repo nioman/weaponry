@@ -36,6 +36,7 @@ function workspaces_open_workspace() {
 
 		var main_window = wm.getMostRecentWindow('weaponry:main');
 
+		//main_window.open_content('chrome://workspaces/content/workspace.xul', null, {workspacedb:path});
 		main_window.open_content('chrome://workspaces/content/workspace.xul?workspacedb=' + escape(path));
 	}
 }

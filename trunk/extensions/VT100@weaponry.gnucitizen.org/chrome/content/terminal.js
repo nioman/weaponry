@@ -19,7 +19,7 @@ function onload() {
 
 	if (!options.handler) {
 		options.handler = function (ch) {
-			this.write(ch);
+			// pass
 		}
 	}
 
@@ -49,6 +49,10 @@ function onload() {
 
 		options.handler.call(window.term, ch);
 	}
+
+	var e = document.createEvent('Events');
+	e.initEvent('TerminalReady', true, false);
+	document.dispatchEvent(e)
 }
 
 /**

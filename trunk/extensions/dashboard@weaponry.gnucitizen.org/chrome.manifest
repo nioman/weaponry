@@ -1,0 +1,4 @@
+content     dashboard                              file:chrome/content/
+locale      dashboard en-US                        file:chrome/locale/en-US/
+skin        dashboard classic/1.0                  file:chrome/skin/
+overlay     chrome://weaponry/content/main.xul     chrome://dashboard/content/main-overlay.xul

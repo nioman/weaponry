@@ -42,6 +42,10 @@ function onload() {
 		document.title = 'Invaders Must Die';
 		TermlibInvaders.start(window.term);
 	}
+
+	var e = document.createEvent('Events');
+	e.initEvent('TerminalReady', true, false);
+	document.dispatchEvent(e)
 }
 
 /**

@@ -345,6 +345,16 @@
 			<property name="browserNavigationBox" onget="return document.getAnonymousNodes(this)[0].childNodes[0]"/>
 			<property name="notificationBox" onget="return document.getAnonymousNodes(this)[0].childNodes[1]"/>
 			<property name="browser" onget="return document.getAnonymousNodes(this)[0].childNodes[1].childNodes[0]"/>
+			<method name="loadURI">
+				<parameter name="URI"/>
+				<parameter name="args"/>
+				<body><![CDATA[
+					// load the specified URI
+					this.browser.loadURI(URI);
+
+					// TODO: asign args to window.arguments
+				]]></body>
+			</method>
 			<constructor><![CDATA[
 				// wire browser to the navigation bar
 				this.browserNavigationBox.wire(this.browser);
@@ -372,10 +382,9 @@
 			<property name="tabManager" onget="return document.getAnonymousNodes(this)[0]"/>
 			<method name="openTab">
 				<parameter name="URI"/>
+				<parameter name="focus"/>
+				<parameter name="args"/>
 				<body><![CDATA[
-					// TODO: add support for having window names
-					// TODO: the focus parameter of this.tabManager.openTab needs to be controlled from this function
-
 					// if no URI given than use about:blank
 					if (typeof(URI) == 'undefined') {
 						URI = 'about:blank';
@@ -384,23 +393,28 @@
 					// asign some constants
 					const NSXUL = 'http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul';
 
-					// create browser
-					var browser = document.createElementNS(NSXUL, 'integratedbrowser');
-					browser.setAttribute('src', URI);
-					browser.setAttribute('flex', 1);
+					// create integratedbrowser
+					var integratedbrowser = document.createElementNS(NSXUL, 'integratedbrowser');
+					integratedbrowser.setAttribute('flex', 1);
 
 					// open tab
-					var tab = this.tabManager.openTab(browser, undefined, true);
+					var tab = this.tabManager.openTab(integratedbrowser, undefined, focus);
 
-					// add DOMTitleChanged event listener to browser
-					browser.browser.addEventListener('DOMTitleChanged', function () {
+					// load URI
+					integratedbrowser.loadURI(URI, args);
+
+					// add DOMTitleChanged event listener to integratedbrowser
+					integratedbrowser.browser.addEventListener('DOMTitleChanged', function () {
 						tab.setAttribute('label', this.contentTitle ? this.contentTitle : undefined);
 					}, true);
 
 					// add click event listener to browser
-					browser.browser.addEventListener('click', function () {
+					integratedbrowser.browser.addEventListener('click', function () {
 						// TODO: add code to handle when user clicks on <A> with target attributes
 					}, true);
+
+					// return the newly created tab
+					return tab;
 				]]></body>
 			</method>
 			<constructor><![CDATA[
