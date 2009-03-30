@@ -349,10 +349,48 @@
 				<parameter name="URI"/>
 				<parameter name="args"/>
 				<body><![CDATA[
-					// TODO: asign args to window.arguments
+					// make a global shortcut to the browser
+					var browser = this.browser;
+
+					// deal with args
+					if (typeof(args) != 'undefined') { // if args provides...
+						// ...define a progress listener
+						var progressListener = null;
+
+						// ...register a new progress listener class
+						function ProgressListener() {}
+						ProgressListener.prototype = {
+							QueryInterface: function(iid) {
+								if (iid.equals(Components.interfaces.nsIProgressListener) ||
+								    iid.equals(Components.interfaces.nsISupportsWeakReference) ||
+								    iid.equals(Components.interfaces.nsISupports)) {
+									return this;
+								}
+						    
+								throw Components.results.NS_ERROR_NO_INTERFACE;
+							},
+							onLocationChange: function(webProgress, request, location) {
+								// set the window arguments
+								browser.contentWindow.wrappedJSObject.arguments = [args];
+
+								// remove the progress listener once we are done with setting up the args
+								browser.removeProgressListener(progressListener);
+							},
+							onStateChange: function(webProgress, request, stateFlags, status) {},
+							onProgressChange: function(webProgress, request, curSelf, maxSelf, curTotal, maxTotal) {},
+							onStatusChange: function(webProgress, request, status, message) {},
+							onSecurityChange: function(webProgress, request, state) {},
+						}
+
+						// ...create an instance of a progress listener
+						progressListener = new ProgressListener();
+
+						// ...add progress listener to the browser
+						browser.addProgressListener(progressListener, Components.interfaces.nsIWebProgress.NOTIFY_ALL);
+					}
 
 					// load the specified URI
-					this.browser.loadURI(URI);
+					browser.loadURI(URI);
 				]]></body>
 			</method>
 			<constructor><![CDATA[
