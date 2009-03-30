@@ -300,7 +300,7 @@
 					// if we have been wired...
 					if (typeof(this.progressListener) != 'undefined') {
 						// ...unwire by removing the progressListener
-						this.removeProgressListener(this.progressListener);
+						this.browser.removeProgressListener(this.progressListener);
 
 						// ...and by also removing the button and textbox events
 						this.backButton.onclick = undefined;
@@ -349,10 +349,10 @@
 				<parameter name="URI"/>
 				<parameter name="args"/>
 				<body><![CDATA[
+					// TODO: asign args to window.arguments
+
 					// load the specified URI
 					this.browser.loadURI(URI);
-
-					// TODO: asign args to window.arguments
 				]]></body>
 			</method>
 			<constructor><![CDATA[
