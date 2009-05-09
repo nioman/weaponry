@@ -1,0 +1,6 @@
+<!ENTITY tools-extension-manager-name "Extension Manager">
+<!ENTITY tools-extension-manager-description "Manager for Weaponry Addons">
+<!ENTITY tools-configuration-manager-name "Configuration Manager">
+<!ENTITY tools-configuration-manager-description "Manager for the Preferences Subsystem">
+<!ENTITY tools-error-console-name "Error Console">
+<!ENTITY tools-error-console-description "System Error Console">

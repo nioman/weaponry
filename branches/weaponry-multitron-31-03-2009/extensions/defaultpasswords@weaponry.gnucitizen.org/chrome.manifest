@@ -1,0 +1,4 @@
+content     defaultpasswords                          file:chrome/content/
+locale      defaultpasswords en-US                    file:chrome/locale/en-US/
+skin        defaultpasswords classic/1.0              file:chrome/skin/
+overlay     chrome://weaponry/content/toolkit.xul     chrome://defaultpasswords/content/toolkit.xul

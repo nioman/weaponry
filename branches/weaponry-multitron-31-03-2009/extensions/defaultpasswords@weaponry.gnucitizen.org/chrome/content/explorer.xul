@@ -1,0 +1,103 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://global/skin" type="text/css"?>
+<page xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+	title="Default Passwords Explorer"
+	width="500" height="500">
+
+	<passwords id="passwords" xmlns="">
+		<entry vendor="3Com" username="admin" password="synnet"/>
+		<entry vendor="3Com" username="read" password="synnet"/>
+		<entry vendor="3Com" username="write" password="synnet"/>
+		<entry vendor="3Com" username="monitor" password="monitor"/>
+		<entry vendor="3Com" username="manager" password="manager"/>
+		<entry vendor="3Com" username="security" password="security"/>
+		<entry vendor="3Com_Office_Connect_5x0_ISDN_Routers" username="n/a" password="PASSWORD"/>
+		<entry vendor="3comCellPlex7000" username="tech" password="tech"/>
+		<entry vendor="3comCoreBuilder7000/6000/3500/2500" username="debug" password="synnet"/>
+		<entry vendor="3comCoreBuilder7000/6000/3500/2500" username="tech" password="tech"/>
+		<entry vendor="3comHiPerARCv4.1.x" username="adm" password="[blank]"/>
+		<entry vendor="3ComLANplex2500" username="debug" password="synnet"/>
+		<entry vendor="3ComLANplex2500" username="tech" password="tech"/>
+		<entry vendor="3comLinkSwitch2000/2700" username="tech" password="tech"/>
+		<entry vendor="3comSuperStackIISwitch" username="2200" password="debug"/>
+		<entry vendor="3comSuperStackIISwitch" username="2700" password="tech"/>
+		<entry vendor="ACC(Ericsson)" username="netman" password="netman"/>
+		<entry vendor="ADC_Kentrox_Pacesetter_Router" username="n/a" password="secret"/>
+		<entry vendor="All_Zyxel_equipment" username="n/a" password="1234"/>
+		<entry vendor="AT&amp;T_3B2_firmware" username="n/a" password="mcp"/>
+		<entry vendor="AXIS200/240[netcam]" username="root" password="pass"/>
+		<entry vendor="Bay_routers" username="Manager" password="[blank]"/>
+		<entry vendor="Bay_routers" username="User" password="[blank]"/>
+		<entry vendor="Bay350T_Switch" username="n/a" password="NetICs"/>
+		<entry vendor="BaySuperstackII" username="security" password="security"/>
+		<entry vendor="BRASX/I01_(DataCom)" username="n/a" password="letmein"/>
+		<entry vendor="BreezeCOM_adapters2.x(console_only)" username="n/a" password="laflaf"/>
+		<entry vendor="BreezeCOM_adapters3.x(console_only)" username="n/a" password="Master"/>
+		<entry vendor="BreezeCOM_adapters4.x(console_only)" username="n/a" password="Super"/>
+		<entry vendor="Cayman_DSL" username="n/a" password="[blank]"/>
+		<entry vendor="Crystalview_outsideview32" username="n/a" password="crystal"/>
+		<entry vendor="digiCorp_(viper?)" username="n/a" password="BRIDGE"/>
+		<entry vendor="digiCorp_(viper?)" username="n/a" password="password"/>
+		<entry vendor="DLink_hub/switches" username="D-Link" password="D-Link"/>
+		<entry vendor="Flowpoint_DSL_installed_by_Covad" username="n/a" password="password"/>
+		<entry vendor="Flowpoint_DSL2000" username="admin" password="admin"/>
+		<entry vendor="Jetform_design" username="Jetform" password="n/a"/>
+		<entry vendor="Lantronics_Terminal_server_port" username="7000" password="n/a"/>
+		<entry vendor="Lantronics_Terminal_server_port" username="7000" password="n/a"/>
+		<entry vendor="Linksys_DSL" username="n/a" password="admin"/>
+		<entry vendor="Livingston_IRX_router" username="!root" password="[blank]"/>
+		<entry vendor="Livingston_officerouter" username="!root" password="[blank]"/>
+		<entry vendor="Livingston_portmaster2/3" username="!root" password="[blank]"/>
+		<entry vendor="Microplex_print_server" username="root" password="root"/>
+		<entry vendor="Motorola-Cablerouter" username="cablecom" password="router"/>
+		<entry vendor="Netopia_7100" username="[blank]" password="[blank]"/>
+		<entry vendor="Netopia_9500" username="netopia" password="netopia"/>
+		<entry vendor="Orbitor_console" username="n/a" password="password"/>
+		<entry vendor="Orbitor_console" username="n/a" password="BRIDGE"/>
+		<entry vendor="Osicom(Datacom)" username="sysadm" password="sysadm"/>
+		<entry vendor="Shiva" username="root" password="[blank]"/>
+		<entry vendor="Shiva" username="Guest" password="[blank]"/>
+		<entry vendor="SpeedstreamDSL(Efficient)" username="n/a" password="admin"/>
+		<entry vendor="UClinux_for_UCsimm" username="root" password="uClinux"/>
+		<entry vendor="Webramp" username="wradmin" password="trancell"/>
+		<entry vendor="Alteon ACEswitch 180e (web)" username="admin" password="admin"/>
+		<entry vendor="Alteon ACEswitch 180e (telnet)" username="admin" password="[blank]"/>
+		<entry vendor="NETPrint (all)" username="n/a" password="sysadm"/>
+		<entry vendor="Xylan Omniswitch" username="admin" password="switch"/>
+		<entry vendor="Xylan Omniswitch" username="diag" password="switch"/>
+		<entry vendor="AcceleratedDSL CPE and DSLAM" username="sysadm" password="anicust"/>
+		<entry vendor="Arrowpoint" username="admin" password="system"/>
+		<entry vendor="Cabletron (routers &amp; switches)" username="[blank]" password="[blank]"/>
+	</passwords>
+
+	<script type="application/x-javascript" src="chrome://defaultpasswords/content/explorer.js"/>
+
+	<vbox flex="1">
+		<hbox align="center">
+			<label value="Filter:"/>
+			<textbox id="explorer-filter-textbox" value="" flex="1" oninput="explorer_filter_textbox_change()"/>
+		</hbox>
+		<tree flex="1">
+			<treecols>
+				<treecol label="Vendor" primary="true" flex="5"/>
+				<treecol label="Username" flex="1"/>
+				<treecol label="Password" flex="1"/>
+			</treecols>
+			<treechildren id="explorer-tree" datasources="#passwords" ref="*" querytype="xml">
+				<template>
+					<query id="explorer-query" expr="entry[contains(@vendor, '')]"/>
+					<action>
+						<treeitem uri="?">
+							<treerow>
+								<treecell label="?vendor"/>
+								<treecell label="?username"/>
+								<treecell label="?password"/>
+							</treerow>
+						</treeitem>
+					</action>
+				</template>
+			</treechildren>
+		</tree>
+	</vbox>
+
+</page>

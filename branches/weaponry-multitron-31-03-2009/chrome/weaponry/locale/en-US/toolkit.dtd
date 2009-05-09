@@ -1,0 +1,7 @@
+<!ENTITY toolkit-title "Toolkit">
+<!ENTITY toolkit-filter-label "Filter:">
+<!ENTITY toolkit-extension-manager-name "Extension Manager">
+<!ENTITY toolkit-extension-manager-description "Manager for Weaponry Addons">
+<!ENTITY toolkit-configuration-manager-name "Configuration Manager">
+<!ENTITY toolkit-configuration-manager-description "Manager for the Preferences Subsystem">
+<!ENTITY toolkit-error-console-name "Error Console">

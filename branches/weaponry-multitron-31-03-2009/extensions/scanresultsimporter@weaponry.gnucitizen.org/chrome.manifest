@@ -1,0 +1,4 @@
+content     scanresultsimporter                      file:chrome/content/
+locale      scanresultsimporter en-US                file:chrome/locale/en-US/
+skin        scanresultsimporter classic/1.0          file:chrome/skin/
+overlay     chrome://weaponry/content/toolkit.xul    chrome://scanresultsimporter/content/toolkit.xul

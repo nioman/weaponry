@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://weaponry/skin/main.css" type="text/css"?>
+<?xml-stylesheet href="chrome://branding/skin/brand.css" type="text/css"?>
+<!DOCTYPE window [
+<!ENTITY % brand-dtd SYSTEM "chrome://branding/locale/brand.dtd">%brand-dtd;
+<!ENTITY % main-dtd SYSTEM "chrome://weaponry/locale/main.dtd">%main-dtd;
+]>
+<window xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+	id="main" windowtype="weaponry:main" title="&main-title;"
+	screenX="5" screenY="5"
+	width="300" height="600"
+        persist="screenX screenY width height sizemode"
+	onclose="return main_quit()">
+
+	<script type="application/x-javascript" src="chrome://weaponry/content/main.js"/>
+
+	<stringbundleset id="main-stringbundleset">
+		<stringbundle id="main-properties" src="chrome://weaponry/locale/main.properties"/>
+	</stringbundleset>
+
+	<iframe id="main-toolkit" src="chrome://weaponry/content/toolkit.xul" flex="1"/>
+
+</window>

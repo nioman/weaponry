@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE bindings [
-<!ENTITY % common-dtd SYSTEM "chrome://weaponry/locale/common.dtd">%common-dtd;
 <!ENTITY % brand-dtd SYSTEM "chrome://branding/locale/brand.dtd">%brand-dtd;
+<!ENTITY % common-dtd SYSTEM "chrome://weaponry/locale/common.dtd">%common-dtd;
 ]>
 <bindings
 	xmlns="http://www.mozilla.org/xbl"
