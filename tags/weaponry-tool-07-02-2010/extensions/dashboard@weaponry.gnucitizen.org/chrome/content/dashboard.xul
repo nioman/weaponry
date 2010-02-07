@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://dashboard/skin/dashboard.css" type="text/css"?>
+<!DOCTYPE page [
+<!ENTITY % dashboard-dtd SYSTEM "chrome://dashboard/locale/dashboard.dtd">%dashboard-dtd;
+]>
+<page xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+	id="dashboard"
+	title="&dashboard-title;">
+
+	<script type="application/x-javascript" src="chrome://dashboard/content/dashboard.js"/>
+
+</page>

@@ -1,0 +1,20 @@
+@import url(chrome://global/skin/);
+@import url(chrome://weaponry/skin/common.css);
+
+/* -------------------------------------------------------------------------------- */
+
+#bottombar-central-vbox {
+-moz-box-pack: center;
+}
+
+#bottombar-central-hbox {
+-moz-box-pack: center;
+}
+
+#bottombar-central-image {
+width: 200px;
+height: 300px;
+margin-top: 10px;
+margin-bottom: 10px;
+list-style-image: url(chrome://weaponry/skin/icon-recycle.png);
+}

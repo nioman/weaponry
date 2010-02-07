@@ -1,0 +1,7 @@
+#include "nsISupports.idl"
+
+[scriptable, uuid(25fe37f5-dccd-4d85-a8dc-567821129859)]
+interface cmdIObserver: nsISupports {
+	void onresult(in wstring data);
+	void onfinish();
+};

@@ -1,0 +1,89 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://weaponry/content/common.css" type="text/css"?>
+<?xml-stylesheet href="chrome://weaponry/skin/main.css" type="text/css"?>
+<?xml-stylesheet href="chrome://branding/skin/brand.css" type="text/css"?>
+<!DOCTYPE window [
+<!ENTITY % brand-dtd SYSTEM "chrome://branding/locale/brand.dtd">%brand-dtd;
+<!ENTITY % main-dtd SYSTEM "chrome://weaponry/locale/main.dtd">%main-dtd;
+]>
+<window xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+	id="main" windowtype="weaponry:main" title="&main-title;"
+	screenX="5" screenY="5"
+	width="840" height="480"
+        persist="screenX screenY width height sizemode"
+	onclose="return main_quit()">
+
+	<script type="application/x-javascript" src="chrome://weaponry/content/main.js"/>
+
+	<stringbundleset id="main-stringbundleset">
+		<stringbundle id="main-properties" src="chrome://weaponry/locale/main.properties"/>
+	</stringbundleset>
+
+	<menubar id="main-menubar">
+		<menu id="main-app-menu" label="&main-app-menu-label;">
+			<menupopup id="main-app-menu-popup">
+				<menuitem id="main-app-quit" label="&main-app-quit-label;" class="menuitem-iconic" oncommand="return main_quit()"/>
+			</menupopup>
+		</menu>
+		<menu id="main-view-menu" label="&main-view-menu-label;">
+			<menupopup id="main-view-menu-popup">
+				<menuitem id="main-view-show-navigation-bar" label="&main-view-show-navigation-bar-label;" class="menuitem-iconic" type="checkbox" checked="false" persist="checked" oncommand="return main_show_navigation_bar()"/>
+			</menupopup>
+		</menu>
+		<menu id="main-tools-menu" label="&main-tools-menu-label;">
+			<menupopup id="main-tools-menu-popup">
+				<menuitem id="main-tools-open-error-console" label="&main-tools-open-error-console-label;" class="menuitem-iconic" oncommand="return main_open_error_console()"/>
+				<menuseparator/>
+				<menuitem id="main-tools-open-extension-manager" label="&main-tools-open-extension-manager-label;" class="menuitem-iconic" oncommand="return main_open_extension_manager()"/>
+				<menuitem id="main-tools-open-configuration-manager" label="&main-tools-open-configuration-manager-label;" class="menuitem-iconic" oncommand="return main_open_configuration_manager()"/>
+			</menupopup>
+		</menu>
+		<menu id="main-help-menu" label="&main-help-menu-label;">
+			<menupopup id="main-help-menu-popup">
+				<menuitem id="main-help-about-app" label="&main-help-about-app-label;" class="menuitem-iconic" oncommand="return main_about_app()"/>
+			</menupopup>
+		</menu>
+	</menubar>
+
+	<hbox flex="1">
+		<vbox id="main-sidebar" width="200" persist="width">
+			<toolbox id="main-sidebar-toolbox">
+				<toolbar id="main-sidebar-toolbar" flex="1" align="center">
+					<toolbarbutton id="main-sidebar-toolbar-select-button" label="&main-sidebar-toolbar-select-button-label;" originalLabel="&main-sidebar-toolbar-select-button-label;" type="menu">
+						<menupopup id="main-sidebar-select-popup"/>
+					</toolbarbutton>
+					<box id="main-sidebar-toolbar-buttons" flex="1" pack="end">
+						<toolbarbutton id="main-sidebar-toolbar-detach-button" class="detach-button" label="&main-sidebar-toolbar-detach-button-label;" oncommand="return main_sidebar_detach()"/>
+						<toolbarbutton id="main-sidebar-toolbar-close-button" class="close-button" label="&main-sidebar-toolbar-close-button-label;" oncommand="return main_sidebar_close()"/>
+					</box>
+				</toolbar>
+			</toolbox>
+			<iframe id="main-sidebar-iframe" src="chrome://weaponry/content/sidebar.xul" flex="1"/>
+		</vbox>
+		<splitter id="main-sidebar-splitter" collapse="before" resizeafter="grow" state="collapsed" persist="state" ondblclick="main_sidebar_splitter_double_click()"/>
+		<vbox id="main-area" flex="1">
+			<integratedtabbrowser id="main-browser" flex="1"/>
+			<splitter id="main-bottombar-splitter" collapse="after" resizebefore="grow" state="collapsed" persist="state" ondblclick="main_bottombar_splitter_double_click()"/>
+			<vbox id="main-bottombar" height="200" persist="height">
+				<toolbox id="main-bottombar-toolbox">
+					<toolbar id="main-bottombar-toolbar" flex="1" align="center">
+						<toolbarbutton id="main-bottombar-toolbar-select-button" label="&main-bottombar-toolbar-select-button-label;" originalLabel="&main-bottombar-toolbar-select-button-label;" type="menu">
+							<menupopup id="main-bottombar-select-popup"/>
+						</toolbarbutton>
+						<box id="main-bottombar-toolbar-buttons" flex="1" pack="end">
+							<toolbarbutton id="main-bottombar-toolbar-detach-button" class="detach-button" label="&main-bottombar-toolbar-detach-button-label;" oncommand="return main_bottombar_detach()"/>
+							<toolbarbutton id="main-bottombar-toolbar-close-button" class="close-button" label="&main-bottombar-toolbar-close-button-label;" oncommand="return main_bottombar_close()"/>
+						</box>
+					</toolbar>
+				</toolbox>
+				<iframe id="main-bottombar-iframe" src="chrome://weaponry/content/bottombar.xul" flex="1"/>
+			</vbox>
+		</vbox>
+	</hbox>
+
+	<statusbar id="main-status-bar">
+		<statusbarpanel id="main-status-bar-status-panel" crop="end" flex="1"/>
+		<statusbarpanel id="main-status-bar-buttons-panel"/>
+	</statusbar>
+
+</window>
