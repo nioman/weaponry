@@ -1,5 +1,0 @@
-<!ENTITY wizard-title "Workspace Wizard">
-<!ENTITY wizard-workspace-setup-description "This wizard will help you create a new workspace.">
-<!ENTITY wizard-choose-workspace-name "Choose workspace name.">
-<!ENTITY wizard-choose-workspace-type "Choose workspace type.">
-<!ENTITY wizard-workspace-finish-description "Your workspace is about to be created. If you want to change your workspace details just click the on the back button. Keep in mind that you will be able to introduce additional features of your workspace at runtime.">

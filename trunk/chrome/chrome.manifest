@@ -1,7 +1,0 @@
-content     weaponry                 file:weaponry/content/
-locale      weaponry en-US           file:weaponry/locale/en-US/
-skin        weaponry classic/1.0     file:weaponry/skin/
-
-content     branding                 file:branding/content/
-locale      branding en-US           file:branding/locale/en-US/
-skin        branding classic/1.0     file:branding/skin/

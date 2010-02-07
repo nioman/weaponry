@@ -1,4 +1,0 @@
-content     toolkit                             file:chrome/content/
-locale      toolkit en-US                       file:chrome/locale/en-US/
-skin        toolkit classic/1.0                 file:chrome/skin/
-overlay     chrome://weaponry/content/main.xul  chrome://toolkit/content/main-overlay.xul
