@@ -1,5 +1,0 @@
-#summary The following document discusses how Weaponry can be extended.
-
-http://weaponry.googlecode.com/svn/trunk/chrome/weaponry/skin/splash.png
-
-= Introduction =
