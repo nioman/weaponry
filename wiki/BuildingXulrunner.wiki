@@ -27,7 +27,7 @@ Once you have Mercurial all you need to do is to get the latest source (i.e. {{{
 
 First we need the following requirements:
 
- * [http://developer.apple.com/technologies/tools/xcode.html XCode] (comes with your mac's dvd)
+ * [http://developer.apple.com/technologies/tools/xcode.html XCode] (comes with your Mac's dvd)
  * [http://www.macports.org/ Mac Ports]
 
 From the Mac Ports you need gmake, coreutils, libidl and autoconfg213. This is how you install them:
@@ -43,7 +43,7 @@ Put the mozilla source at a convenient place and change your working directory t
 
 == Building Debug Version ==
 
-You need to create a file called .mozconfig inside the mozilla source with the following contents:
+You need to create a file called .mozconfig inside the mozilla source with the following content:
 
 {{{
 mk_add_options MOZ_CO_PROJECT=xulrunner
@@ -128,17 +128,19 @@ The only change is that the following two lines are disabled:
 
 First we need the following requirements:
 
- * Microsoft Visual Studio (Express editions are ok to use)
- * Microsoft Windows 7 SDK
- * Microsoft  Windows 2003 SDK
- * Mozilla Build
- * Java Development Kit
+ * [http://www.microsoft.com/express/Downloads/#2008-Visual-CPP Microsoft Visual Studio] (Express editions are ok to use)
+ * [http://www.microsoft.com/downloads/details.aspx?FamilyID=c17ba869-9671-4330-a63e-1fd44e0e2505&displaylang=en Microsoft Windows 7 SDK]
+ * [http://www.microsoft.com/downloads/details.aspx?familyid=a55b6b43-e24f-4ea3-a93e-40c0ec4f68e5&displaylang=en Microsoft  Windows 2003 SDK]
+ * [http://ftp.mozilla.org/pub/mozilla.org/mozilla/libraries/win32/MozillaBuildSetup-Latest.exe Mozilla Build]
+ * [http://java.sun.com/javase/downloads/widget/jdk6.jsp Java Development Kit]
+
+Install all dependencies using the settings that come by default.
+
+Fire up the build environment by simply opening cmd.exe, going to c:\mozilla-build\ and executing any of the following scripts depending on which version of Visual Studio you have: start-msvc6.bat, start-msvc71.bat, start-msvc8.bat or start-msvc9.bat. If you use VS 2008 Express you need msvc9.bat.
 
 == Building Debug Version ==
 
-First of all you need to fire up the environment. To do that simply open cmd.exe, go to c:\mozilla-build\ and execute any of the following scripts depending on which version of Visual Studio you have: start-msvc6.bat, start-msvc71.bat, start-msvc8.bat or start-msvc9.bat. If you use VS 2008 Express you need msvc9.bat
-
-You need to create a file called .mozconfig inside the mozilla source with the following contents:
+As usual, you need to create a file called .mozconfig inside the mozilla source with the following content:
 
 {{{
 mk_add_options MOZ_CO_PROJECT=xulrunner
@@ -152,10 +154,32 @@ ac_add_options --disable-installer
 ac_add_options --enable-application=xulrunner
 }}}
 
-Start the build by running: make -f client.mk build
+Start the build process by running: {{{make -f client.mk build}}}
 
 Once the build is finished check obj-xul-dbg/dist/
 
 == Building Release Version ==
+
+Nothing changes except the .mozconfig file which should look something similar to the following:
+
+{{{
+mk_add_options MOZ_CO_PROJECT=xulrunner
+mk_add_options MOZ_OBJDIR=@TOPSRCDIR@/obj-xul-dbg
+mk_add_options MOZ_MAKE_FLAGS="-s -j4"
+
+#ac_add_options --enable-debug
+#ac_add_options --disable-optimize
+#ac_add_options --disable-crashreporter
+ac_add_options --disable-installer
+ac_add_options --enable-application=xulrunner
+}}}
+
+The only change is that the following three lines are disabled:
+
+{{{
+#ac_add_options --enable-debug
+#ac_add_options --disable-optimize
+#ac_add_options --disable-crashreporter
+}}}
 
 = Building on Linux (Ubuntu) =
