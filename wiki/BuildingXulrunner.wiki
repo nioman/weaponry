@@ -16,12 +16,12 @@ If you plan to use Mercurial you will need the mercurial client (i.e. hg) first.
   The simplest way to get Mercurial is to download and install the [http://ftp.mozilla.org/pub/mozilla.org/mozilla/libraries/win32/MozillaBuildSetup-Latest.exe Mozilla Build], which you will need anyway if you plan to build on Windows.
 
   * Mercurial on Mac OS
-  The simplest way to get Mercurial is to install the [http://www.macports.org/ Mac Ports] and get it with the port command (i.e. sudo port install mercurial +universal).
+  The simplest way to get Mercurial is to install the [http://www.macports.org/ Mac Ports] and get it with the port command (i.e. {{{sudo port install mercurial +universal}}}).
 
   * Mercurial on Linux
-  Mercurial is pretty much native on Linux. Get it via whichever package manager you use (i.e. apt-get install mercurial).
+  Mercurial is pretty much native on Linux. Get it via whichever package manager you use (i.e. {{{apt-get install mercurial}}}).
 
-Once you have Mercurial all you need to do is to get the latest source (i.e. hg clone http://hg.mozilla.org/releases/mozilla-1.9.2/ mozilla-1.9.2).
+Once you have Mercurial all you need to do is to get the latest source (i.e. {{{hg clone http://hg.mozilla.org/releases/mozilla-1.9.2/ mozilla-1.9.2}}}).
 
 = Building on Mac OS X (Snow Leopard) =
 
