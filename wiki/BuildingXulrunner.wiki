@@ -10,7 +10,7 @@ This page describes how to build xulrunner from source.
 
 Before you even start thinking about building you need to get the xulrunner/mozilla source. There are several ways you can do that. First, you can simply visit http://developer.mozilla.org/en/XULRunner and get it from there. You can also use Mercurial to get the latest development trunk.
 
-If you plan to use Mercurial you will need the mercurial client (i.e. {{hg}}) first.
+If you plan to use Mercurial you will need the mercurial client (i.e. {{{hg}}}) first.
 
   * Mercurial on Windows
   The simplest way to get Mercurial is to download and install the [http://ftp.mozilla.org/pub/mozilla.org/mozilla/libraries/win32/MozillaBuildSetup-Latest.exe Mozilla Build], which you will need anyway if you plan to build on Windows.
