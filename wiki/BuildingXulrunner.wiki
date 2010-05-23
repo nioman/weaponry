@@ -27,14 +27,12 @@ Once you have Mercurial all you need to do is to get the latest source (i.e. {{{
 
 First we need the following requirements:
 
- * Mac Ports
  * XCode
+ * Mac Ports
  * sudo port install gmake +universal
  * sudo port install coreutils +universal
  * sudo port install libidl +universal
  * sudo port install autoconf213 +universal
- * sudo port install mercurial +universal
- * the latest source (i.e. hg clone http://hg.mozilla.org/releases/mozilla-1.9.2/ mozilla-1.9.2)
 
 == Building Debug Version ==
 
@@ -124,11 +122,8 @@ The only change is that the following two lines are disabled:
 First we need the following requirements:
 
  * Microsoft Visual Studio 2008 Express
- * Microsoft Windows 7 SDK (i.e. http://www.microsoft.com/downloads/details.aspx?familyid=C17BA869-9671-4330-A63E-1FD44E0E2505&displaylang=en)
- * Mozilla Build Tookit (i.e http://ftp.mozilla.org/pub/mozilla.org/mozilla/libraries/win32/http://ftp.mozilla.org/pub/mozilla.org/mozilla/libraries/win32/MozillaBuildSetup-Latest.exe)
- * the latest source (i.e. hg clone http://hg.mozilla.org/releases/mozilla-1.9.2/ mozilla-1.9.2)
-
-*Make sure that the mozilla build tools (c:\mozilla-build\) are located before Cygwin in the PATH environment variable! You may not need to bother with this even if you have Cygwin installed.*
+ * Microsoft Windows 7 SDK
+ * Mozilla Build
 
 == Building Debug Version ==
 
