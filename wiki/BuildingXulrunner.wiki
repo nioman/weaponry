@@ -78,7 +78,7 @@ STRIP="strip -x -S"
 CROSS_COMPILE=1
 }}}
 
-Run {{{./configure}}} and start the build process by executing {{{make -f client.mk build}}}
+Start the build process by executing {{{make -f client.mk build}}}
 
 Once the build is finished check obj-xul-dbg/dist/XUL.framework for the XUL.framework.
 
