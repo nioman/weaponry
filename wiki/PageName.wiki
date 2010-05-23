@@ -1,6 +1,6 @@
 #summary This page provides a collection of various tips and tricks which can be used when writing Weaponry extensions.
 
-http://websecurify.googlecode.com/svn/wiki/weaponry.small.png
+http://weaponry.googlecode.com/svn/wiki/weaponry.small.png
 
 = Introduction =
 
