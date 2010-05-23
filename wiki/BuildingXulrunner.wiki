@@ -27,8 +27,8 @@ Once you have Mercurial all you need to do is to get the latest source (i.e. {{{
 
 First we need the following requirements:
 
- * XCode
- * Mac Ports
+ * [http://developer.apple.com/technologies/tools/xcode.html XCode] (comes with your mac's dvd)
+ * [http://www.macports.org/ Mac Ports]
 
 From the Mac Ports you need gmake, coreutils, libidl and autoconfg213. This is how you install them:
 
@@ -38,6 +38,8 @@ sudo port install coreutils +universal
 sudo port install libidl +universal
 sudo port install autoconf213 +universal
 }}}
+
+Put the mozilla source at a convenient place and change your working directory to it.
 
 == Building Debug Version ==
 
@@ -75,7 +77,7 @@ STRIP="strip -x -S"
 CROSS_COMPILE=1
 }}}
 
-Start the build by running: make -f client.mk build
+Run {{{./configure}} and start the build process by running executing {{{make -f client.mk build}}}
 
 Once the build is finished check obj-xul-dbg/dist/XUL.framework for the XUL.framework.
 
@@ -126,9 +128,11 @@ The only change is that the following two lines are disabled:
 
 First we need the following requirements:
 
- * Microsoft Visual Studio 2008 Express
+ * Microsoft Visual Studio (Express editions are ok to use)
  * Microsoft Windows 7 SDK
+ * Microsoft  Windows 2003 SDK
  * Mozilla Build
+ * Java Development Kit
 
 == Building Debug Version ==
 
