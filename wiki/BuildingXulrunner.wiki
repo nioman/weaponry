@@ -241,3 +241,9 @@ The only change is that the following two lines are disabled:
 #ac_add_options --enable-debug
 #ac_add_options --disable-optimize
 }}}
+
+= Notes =
+
+Although if you follow these instructions you should be able to compile xulrunner for the three main platforms, your build may still fail for unknown reasons. The best way to approach the problem is to look at the error messages and try to find a solution. Hacking the source is often not the best option. Errors are usually due to dependency or configuration problems. Try to adjust your environment until you get it right.
+
+_Best of luck._
