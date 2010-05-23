@@ -160,7 +160,7 @@ ac_add_options --enable-application=xulrunner
 
 Start the build process by running: {{{make -f client.mk build}}}
 
-Once the build is finished check obj-xul-dbg/dist/
+Once the build is finished check obj-xul-dbg/dist/bin for xulrunner.
 
 == Building Release Version ==
 
