@@ -1,0 +1,158 @@
+#summary This page describes how to build xulrunner from source.
+
+http://weaponry.googlecode.com/svn/wiki/weaponry.png
+
+= Introduction =
+
+This page describes how to build xulrunner from source.
+
+= Obtaining the Source =
+
+Before you even start thinking about building you need to get the xulrunner/mozilla source. There are several ways you can do that. First, you can simply visit http://developer.mozilla.org/en/XULRunner and get it from there. You can also use Mercurial to get the latest development releases.
+
+If you plan to use Mercurial you will need the mercurial client (i.e. hg) first.
+
+== Mercurial on Windows ==
+
+The simplest way to get Mercurial is to download and install the Mozilla Build (http://ftp.mozilla.org/pub/mozilla.org/mozilla/libraries/win32/MozillaBuildSetup-Latest.exe), which you will need anyway if you plan to build on Windows.
+
+== Mercurial on Mac OS ==
+
+The simplest way to get Mercurial is to install the Mac Ports (http://www.macports.org/) and get it with the port command (i.e. sudo port install mercurial +universal).
+
+== Mercurial on Linux ==
+
+Mercurial is pretty much native on Linux. Get it via whichever package manager you use (i.e. apt-get install mercurial).
+
+= Building on Mac OS X (Snow Leopard) =
+
+First we need the following requirements:
+
+ * Mac Ports
+ * XCode
+ * sudo port install gmake +universal
+ * sudo port install coreutils +universal
+ * sudo port install libidl +universal
+ * sudo port install autoconf213 +universal
+ * sudo port install mercurial +universal
+ * the latest source (i.e. hg clone http://hg.mozilla.org/releases/mozilla-1.9.2/ mozilla-1.9.2)
+
+== Building Debug Version ==
+
+You need to create a file called .mozconfig inside the mozilla source with the following contents:
+
+{{{
+mk_add_options MOZ_CO_PROJECT=xulrunner
+mk_add_options MOZ_OBJDIR=@TOPSRCDIR@/obj-xul-dbg
+mk_add_options MOZ_MAKE_FLAGS="-s -j4"
+
+ac_add_options --enable-debug
+ac_add_options --disable-optimize
+ac_add_options --disable-crashreporter
+ac_add_options --disable-installer
+ac_add_options --enable-application=xulrunner
+ac_add_options --with-macos-sdk=/Developer/SDKs/MacOSX10.5.sdk
+ac_add_options --target=i386-apple-darwin8.0.0
+ac_add_options --enable-macos-target=10.5
+
+#CC="gcc-4.0 -arch i386"
+#CXX="g++-4.0 -arch i386"
+CC="gcc-4.2 -arch i386"
+CXX="g++-4.2 -arch i386"
+
+#HOST_CC="gcc-4.0"
+#HOST_CXX="g++-4.0"
+HOST_CC="gcc-4.2"
+HOST_CXX="g++-4.2"
+
+RANLIB=ranlib
+AR=ar
+AS=$CC
+LD=ld
+STRIP="strip -x -S"
+CROSS_COMPILE=1
+}}}
+
+Start the build by running: make -f client.mk build
+
+Once the build is finished check obj-xul-dbg/dist/XUL.framework for the XUL.framework.
+
+== Building Release Version ==
+
+Nothing changes except the .mozconfig file which should look something similar to the following:
+
+{{{
+mk_add_options MOZ_CO_PROJECT=xulrunner
+mk_add_options MOZ_OBJDIR=@TOPSRCDIR@/obj-xul-res
+mk_add_options MOZ_MAKE_FLAGS="-s -j4"
+
+#ac_add_options --enable-debug
+#ac_add_options --disable-optimize
+ac_add_options --disable-crashreporter
+ac_add_options --disable-installer
+ac_add_options --enable-application=xulrunner
+ac_add_options --with-macos-sdk=/Developer/SDKs/MacOSX10.5.sdk
+ac_add_options --target=i386-apple-darwin8.0.0
+ac_add_options --enable-macos-target=10.5
+
+#CC="gcc-4.0 -arch i386"
+#CXX="g++-4.0 -arch i386"
+CC="gcc-4.2 -arch i386"
+CXX="g++-4.2 -arch i386"
+
+#HOST_CC="gcc-4.0"
+#HOST_CXX="g++-4.0"
+HOST_CC="gcc-4.2"
+HOST_CXX="g++-4.2"
+
+RANLIB=ranlib
+AR=ar
+AS=$CC
+LD=ld
+STRIP="strip -x -S"
+CROSS_COMPILE=1
+}}}
+
+The only change is that the following two lines are disabled:
+
+{{{
+#ac_add_options --enable-debug
+#ac_add_options --disable-optimize
+}}}
+
+= Building on Windows (XP) =
+
+First we need the following requirements:
+
+ * Microsoft Visual Studio 2008 Express
+ * Microsoft Windows 7 SDK (i.e. http://www.microsoft.com/downloads/details.aspx?familyid=C17BA869-9671-4330-A63E-1FD44E0E2505&displaylang=en)
+ * Mozilla Build Tookit (i.e http://ftp.mozilla.org/pub/mozilla.org/mozilla/libraries/win32/http://ftp.mozilla.org/pub/mozilla.org/mozilla/libraries/win32/MozillaBuildSetup-Latest.exe)
+ * the latest source (i.e. hg clone http://hg.mozilla.org/releases/mozilla-1.9.2/ mozilla-1.9.2)
+
+*Make sure that the mozilla build tools (c:\mozilla-build\) are located before Cygwin in the PATH environment variable! You may not need to bother with this even if you have Cygwin installed.*
+
+== Building Debug Version ==
+
+First of all you need to fire up the environment. To do that simply open cmd.exe, go to c:\mozilla-build\ and execute any of the following scripts depending on which version of Visual Studio you have: start-msvc6.bat, start-msvc71.bat, start-msvc8.bat or start-msvc9.bat. If you use VS 2008 Express you need msvc9.bat
+
+You need to create a file called .mozconfig inside the mozilla source with the following contents:
+
+{{{
+mk_add_options MOZ_CO_PROJECT=xulrunner
+mk_add_options MOZ_OBJDIR=@TOPSRCDIR@/obj-xul-dbg
+mk_add_options MOZ_MAKE_FLAGS="-s -j4"
+
+ac_add_options --enable-debug
+ac_add_options --disable-optimize
+ac_add_options --disable-crashreporter
+ac_add_options --disable-installer
+ac_add_options --enable-application=xulrunner
+}}}
+
+Start the build by running: make -f client.mk build
+
+Once the build is finished check obj-xul-dbg/dist/
+
+== Building Release Version ==
+
+= Building on Linux (Ubuntu) =
