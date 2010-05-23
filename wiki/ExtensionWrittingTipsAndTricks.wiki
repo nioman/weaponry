@@ -1,0 +1,184 @@
+#summary This page provides a collection of various tips and tricks which can be used when writing Weaponry extensions.
+
+http://weaponry.googlecode.com/svn/wiki/weaponry.png
+
+= Introduction =
+
+This page provides a collection of various tips and tricks which can be used when writing Weaponry extensions.
+
+== Hijacking XMLHttpRequest from Chrome Code ==
+
+This code is only useful when you need to hijack the XMLHttpRequest from chrome code.
+
+{{{
+	$iframe.addEventListener('DOMContentLoaded', function (event) {
+		// this checks if the page is from HTTP, we don't want to modify chrome or about pages
+		if (!(new String(event.target.location)).match(/^https?:\/\//i)) {
+			return;
+		}
+		
+		var unsafeWindow = event.target.defaultView.wrappedJSObject;
+		
+		unsafeWindow.XMLHttpRequest.prototype.originalOpen = unsafeWindow.XMLHttpRequest.prototype.open;
+		
+		unsafeWindow.XMLHttpRequest.prototype.open = function () {
+			unsafeWindow.XMLHttpRequest.prototype.originalOpen.apply(this, Array.prototype.slice.call(arguments));
+			
+			// do something with the XMLHttpRequest
+		};
+	}, false);
+}}}
+
+== Getting Top Level Window from Documents Loaded from Iframe or Browser Elements ==
+
+Sometimes you may need to access the top level chrome window from a documented loaded by an iframe or browser element. This is how you do it.
+
+{{{
+	window.top.QueryInterface(Components.interfaces.nsIInterfaceRequestor)
+		.getInterface(Components.interfaces.nsIWebNavigation)
+		.QueryInterface(Components.interfaces.nsIDocShellTreeItem)
+		.rootTreeItem
+		.QueryInterface(Components.interfaces.nsIInterfaceRequestor)
+		.getInterface(Components.interfaces.nsIDOMWindow);
+}}}
+
+== Custom Trees with Checkboxes ==
+
+XUL Trees are quite complicated. The easiest way to work with them it assign a custom view and dynamically generate the tree content. This is an example of custom tree view which also supports checkboxes:
+
+{{{
+	var $tree = document.getElementById('tree');
+
+	$tree.transactionParameters = {
+		data: [],
+	
+		insertParameter: function (type, name, value, encode) {
+			this.data.push({type:type, name:name, value:value, encode:encode});
+		
+			this.treebox.rowCountChanged(this.data.length - 1, 1);
+		},
+	
+		clearParameters: function () {
+			this.data = [];
+		
+			this.treebox.invalidate();
+		},
+	
+		get rowCount() {
+			return this.data.length;
+		},
+	
+		getCellText: function (row, column) {
+			switch (column.id) {
+				case 'type-col'  : return this.data[row].type  ;
+				case 'name-col'  : return this.data[row].name  ;
+				case 'value-col' : return this.data[row].value ;
+			}
+		},
+	
+		setCellText: function (row, column, value) {
+			xal.logMessage(column);
+			switch (column.id) {
+				case 'type-col'  : this.data[row].type  = value ; break ;
+				case 'name-col'  : this.data[row].name  = value ; break ;
+				case 'value-col' : this.data[row].value = value ; break ;
+			}
+		},
+	
+		getCellValue: function (row, column) {
+			if (column.id == 'encode-col') {
+				return this.data[row].encode;
+			}
+		},
+	
+		setCellValue: function (row, column, value) {
+			if (column.id == 'encode-col') {
+				this.data[row].encode = value;
+			
+				this.treebox.invalidateRow(row);
+			}
+		},
+	
+		setTree: function (treebox) {
+			this.treebox = treebox;
+		},
+	
+		isEditable: function (row, column) {
+			if (column.id == 'type-col') {
+				return false;
+			}
+		
+			return true;
+		},
+	
+		isContainer: function (row) {
+			return false;
+		},
+	
+		isSeparator: function (row) {
+			return false;
+		},
+	
+		isSorted: function (row) {
+			return false;
+		},
+	
+		getLevel: function (row) {
+			return 0;
+		},
+	
+		cycleHeader         : function () {},
+		getImageSrc         : function () {},
+		getRowProperties    : function () {},
+		getCellProperties   : function () {},
+		getColumnProperties : function () {},
+	};
+
+	$tree.view = $tree.transactionParameters;
+}}}
+
+In order to display the checkbox you have to also skin the tree with a CSS similar to the following:
+
+{{{
+	#tree-children::-moz-tree-checkbox {
+		list-style-image: none;
+	}
+
+	#tree-children::-moz-tree-checkbox(checked) {
+		list-style-image: url(chrome://global/skin/checkbox/cbox-check.gif);
+	}
+
+	#tree-children::-moz-tree-checkbox(disabled) {
+		list-style-image: url(chrome://global/skin/checkbox/cbox-check-dis.gif);
+	}
+}}}
+
+And here is a sample tree:
+
+{{{
+	<tree id="tree" seltype="single" editable="true" flex="1">
+		<treecols id="tree-cols">
+			<treecol id="type-col" label="&type-col-label;" editable="true" flex="1"/>
+			<splitter class="tree-splitter" persist="ordinal"/>
+			<treecol id="name-col" label="&name-col-label;" editable="true" flex="5"/>
+			<splitter class="tree-splitter" persist="ordinal"/>
+			<treecol id="value-col" label="&value-col-label;" editable="true" flex="5"/>
+			<splitter class="tree-splitter" persist="ordinal"/>
+			<treecol id="encode-col" label="&encode-col-label;" type="checkbox" editable="true" flex="1"/>
+			<splitter class="tree-splitter" persist="ordinal"/>
+		</treecols>
+	
+		<treechildren id="tree-children"/>
+	</tree>
+}}}
+
+== Creating a Socket that goes over the default proxy ==
+
+{{{
+	var ioService            = common.getService('@mozilla.org/network/io-service;1', 'nsIIOService');
+	var protocolProxyService = common.getService('@mozilla.org/network/protocol-proxy-service;1', 'nsIProtocolProxyService');
+	var transportService     = common.getService('@mozilla.org/network/socket-transport-service;1', 'nsISocketTransportService');
+	
+	var url    = ioService.newURI('https://mozilla.org', null, null);
+	var socket = transportService.createTransport([], 0, 'mozilla.org', 2000, protocolProxyService.resolve(url, 0));
+}}}
