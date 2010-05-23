@@ -1,4 +1,5 @@
 #summary This page describes how to build xulrunner from source.
+#labels Featured
 
 http://weaponry.googlecode.com/svn/wiki/weaponry.png
 
