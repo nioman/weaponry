@@ -168,7 +168,7 @@ Nothing changes except the .mozconfig file which should look something similar t
 
 {{{
 mk_add_options MOZ_CO_PROJECT=xulrunner
-mk_add_options MOZ_OBJDIR=@TOPSRCDIR@/obj-xul-dbg
+mk_add_options MOZ_OBJDIR=@TOPSRCDIR@/obj-xul-res
 mk_add_options MOZ_MAKE_FLAGS="-s -j4"
 
 ac_add_options --disable-activex
@@ -188,3 +188,56 @@ The only change is that the following two lines are disabled:
 }}}
 
 = Building on Linux (Ubuntu) =
+
+Building xulrunner for linux is often extremely easy. There are a number of dependencies but in general you need:
+
+  * libidl
+  * Java, Python, Perl and couple of other tools
+  * the linux essential build utils such as make, gcc, autoconfg, etc.
+
+As a general rule of the thumb, just try to run a build. If the build fails you will get a message of what dependency you are missing.
+
+== Building Debug Version ==
+
+As usual, you need to create a file called .mozconfig inside the mozilla source with the following content:
+
+{{{
+mk_add_options MOZ_CO_PROJECT=xulrunner
+mk_add_options MOZ_OBJDIR=@TOPSRCDIR@/obj-xul-dbg
+mk_add_options MOZ_MAKE_FLAGS="-s -j4"
+
+ac_add_options --disable-tests
+ac_add_options --enable-debug
+ac_add_options --disable-optimize
+ac_add_options --disable-crashreporter
+ac_add_options --disable-installer
+ac_add_options --enable-application=xulrunner
+}}}
+
+Start the build process by running: {{{make -f client.mk build}}}
+
+Once the build is finished check obj-xul-dbg/dist/bin for xulrunner.
+
+== Building Release Version ==
+
+Nothing changes except the .mozconfig file which should look something similar to the following:
+
+{{{
+mk_add_options MOZ_CO_PROJECT=xulrunner
+mk_add_options MOZ_OBJDIR=@TOPSRCDIR@/obj-xul-res
+mk_add_options MOZ_MAKE_FLAGS="-s -j4"
+
+ac_add_options --disable-tests
+#ac_add_options --enable-debug
+#ac_add_options --disable-optimize
+ac_add_options --disable-crashreporter
+ac_add_options --disable-installer
+ac_add_options --enable-application=xulrunner
+}}}
+
+The only change is that the following two lines are disabled:
+
+{{{
+#ac_add_options --enable-debug
+#ac_add_options --disable-optimize
+}}}
