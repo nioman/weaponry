@@ -169,17 +169,16 @@ mk_add_options MOZ_MAKE_FLAGS="-s -j4"
 
 #ac_add_options --enable-debug
 #ac_add_options --disable-optimize
-#ac_add_options --disable-crashreporter
+ac_add_options --disable-crashreporter
 ac_add_options --disable-installer
 ac_add_options --enable-application=xulrunner
 }}}
 
-The only change is that the following three lines are disabled:
+The only change is that the following two lines are disabled:
 
 {{{
 #ac_add_options --enable-debug
 #ac_add_options --disable-optimize
-#ac_add_options --disable-crashreporter
 }}}
 
 = Building on Linux (Ubuntu) =
