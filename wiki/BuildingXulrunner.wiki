@@ -14,7 +14,7 @@ Before you even start thinking about building you need to get the xulrunner/mozi
 If you plan to use Mercurial you will need the Mercurial client (i.e. {{{hg}}}) first.
 
   * Mercurial on Windows
-  The simplest way to get Mercurial is to download and install the [http://ftp.mozilla.org/pub/mozilla.org/mozilla/libraries/win32/MozillaBuildSetup-Latest.exe Mozilla Build], which you will need anyway if you plan to build on Windows. MozillaBuildSetup-1.4.exe, which could be also MozillaBuildSetup-Latest.exe, is slightly broken. You need to remove {{{c:\mozilla-build\vim\vim72\install.exe}}} to make it work
+  The simplest way to get Mercurial is to download and install the [http://ftp.mozilla.org/pub/mozilla.org/mozilla/libraries/win32/MozillaBuildSetup-Latest.exe Mozilla Build], which you will need anyway if you plan to build on Windows.
 
   * Mercurial on Mac OS
   The simplest way to get Mercurial is to install the [http://www.macports.org/ Mac Ports] and get it with the port command (i.e. {{{sudo port install mercurial +universal}}}).
@@ -139,6 +139,8 @@ First we need the following requirements:
 
 Install all dependencies using the settings that come by default.
 
+MozillaBuildSetup-1.4.exe, which could be also MozillaBuildSetup-Latest.exe, is slightly broken. You need to remove {{{c:\mozilla-build\vim\vim72\install.exe}}} to make it work correctly.
+
 Fire up the build environment by simply opening cmd.exe, going to c:\mozilla-build\ and executing any of the following scripts depending on which version of Visual Studio you have: start-msvc6.bat, start-msvc71.bat, start-msvc8.bat or start-msvc9.bat. If you use VS 2008 Express you need msvc9.bat.
 
 == Building Debug Version ==
@@ -149,7 +151,6 @@ As usual, you need to create a file called .mozconfig inside the mozilla source 
 mk_add_options MOZ_CO_PROJECT=xulrunner
 mk_add_options MOZ_OBJDIR=@TOPSRCDIR@/obj-xul-dbg
 mk_add_options MOZ_MAKE_FLAGS="-s -j4"
-mk_add_options WIN32_REDIST_DIR="C:/Program Files/Microsoft Visual Studio 9.0/VC/redist/x86/Microsoft.VC90.CRT"
 
 ac_add_options --disable-activex
 ac_add_options --disable-tests
@@ -160,7 +161,13 @@ ac_add_options --disable-installer
 ac_add_options --enable-application=xulrunner
 }}}
 
-The WIN32_REDIST_DIR option hold the path to the VC redistributable runtime. You need this in order for the build process to automatically copy the files that are required to satisfy the VC dependencies. Keep in mind that the example above is for VC9. If you use other version of Visual C, you need to change the path accordingly.
+Before you start the building process you need to setup WIN32_REDIST_DIR environment variable, which holds the path to the VC redistributable runtime. You need this in order for the build process to automatically copy the files that are required to satisfy the VC dependencies. This is how we do it:
+
+{{{
+export WIN32_REDIST_DIR="$VCINSTALLDIR\\redist\\x86\\Microsoft.VC90.CRT"
+}}}
+
+Keep in mind that the example above is for VC9. If you use other version of Visual C, you need to change the path accordingly.
 
 Start the build process by running: {{{make -f client.mk build}}}
 
