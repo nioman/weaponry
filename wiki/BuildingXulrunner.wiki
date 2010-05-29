@@ -149,6 +149,7 @@ As usual, you need to create a file called .mozconfig inside the mozilla source 
 mk_add_options MOZ_CO_PROJECT=xulrunner
 mk_add_options MOZ_OBJDIR=@TOPSRCDIR@/obj-xul-dbg
 mk_add_options MOZ_MAKE_FLAGS="-s -j4"
+mk_add_options WIN32_REDIST_DIR="C:/Program Files/Microsoft Visual Studio 9.0/VC/redist/x86/Microsoft.VC90.CRT"
 
 ac_add_options --disable-activex
 ac_add_options --disable-tests
@@ -158,6 +159,8 @@ ac_add_options --disable-crashreporter
 ac_add_options --disable-installer
 ac_add_options --enable-application=xulrunner
 }}}
+
+The WIN32_REDIST_DIR option hold the path to the VC redistributable runtime. You need this in order for the build process to automatically copy the files that are required to satisfy the VC dependencies. Keep in mind that the example above is for VC9. If you use other version of Visual C, you need to change the path accordingly.
 
 Start the build process by running: {{{make -f client.mk build}}}
 
@@ -171,6 +174,7 @@ Nothing changes except the .mozconfig file which should look something similar t
 mk_add_options MOZ_CO_PROJECT=xulrunner
 mk_add_options MOZ_OBJDIR=@TOPSRCDIR@/obj-xul-res
 mk_add_options MOZ_MAKE_FLAGS="-s -j4"
+mk_add_options WIN32_REDIST_DIR="C:/Program Files/Microsoft Visual Studio 9.0/VC/redist/x86/Microsoft.VC90.CRT"
 
 ac_add_options --disable-activex
 ac_add_options --disable-tests
