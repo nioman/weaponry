@@ -314,7 +314,7 @@ Keep in mind that you may want to modify the MOZ_OBJDIR option to point to a fol
 
 {{{
 mk_add_options MOZ_OBJDIR=@TOPSRCDIR@/obj-xul-lin-dbg
-}}
+}}}
 
 ... will be the linux dbg object folder while
 
