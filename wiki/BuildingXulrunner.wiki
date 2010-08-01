@@ -330,6 +330,11 @@ If you are stuck, the best way is to get help from the mozilla community. The tw
 
 You can also check the [http://hg.mozilla.org/build/buildbot-configs/file buildbot] for examples and ideas of how to build your project.
 
+Alternatively, you can check the Mozilla Developer Center:
+
+* [http://mdn.beonex.com/en/Configuring_Build_Options Configuring Build Options]
+* [http://mdn.beonex.com/en/Building_Firefox_with_Debug_Symbols Building with Debug Symbols]
+
 = Notes =
 
 Although if you follow these instructions you should be able to compile xulrunner for the three main platforms, your build may still fail for unknown reasons. The best way to approach the problem is to look at the error messages and try to find a solution. Hacking the source is often not the best option. Errors are usually due to dependency or configuration problems. Try to adjust your environment until you get it right.
