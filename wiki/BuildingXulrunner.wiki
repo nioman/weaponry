@@ -299,6 +299,15 @@ To build with symbols you need the following options in your mozconfig:
  export CXXFLAGS="-gstabs+"
 }}}
 
+= Using Multiple Configuration Setups =
+
+It is possible to use multiple mozconfig files to build different versions and applications from the same source tree. This is how it is done:
+
+{{{
+export MOZCONFIG=/path/to/mozilla/mozconfig-application
+make -f client.mk build
+}}}
+
 = Notes =
 
 Although if you follow these instructions you should be able to compile xulrunner for the three main platforms, your build may still fail for unknown reasons. The best way to approach the problem is to look at the error messages and try to find a solution. Hacking the source is often not the best option. Errors are usually due to dependency or configuration problems. Try to adjust your environment until you get it right.
