@@ -63,6 +63,7 @@ ac_add_options --enable-application=xulrunner
 ac_add_options --with-macos-sdk=/Developer/SDKs/MacOSX10.5.sdk
 ac_add_options --target=i386-apple-darwin8.0.0
 ac_add_options --enable-macos-target=10.5
+#ac_add_options --enable-jemalloc
 
 #CC="gcc-4.0 -arch i386"
 #CXX="g++-4.0 -arch i386"
@@ -105,6 +106,7 @@ ac_add_options --enable-application=xulrunner
 ac_add_options --with-macos-sdk=/Developer/SDKs/MacOSX10.5.sdk
 ac_add_options --target=i386-apple-darwin8.0.0
 ac_add_options --enable-macos-target=10.5
+#ac_add_options --enable-jemalloc
 
 #CC="gcc-4.0 -arch i386"
 #CXX="g++-4.0 -arch i386"
@@ -175,15 +177,24 @@ ac_add_options --disable-optimize
 ac_add_options --disable-crashreporter
 ac_add_options --disable-installer
 ac_add_options --enable-application=xulrunner
+ac_add_options --enable-jemalloc
 }}}
 
-Before you start the building process you need to setup WIN32_REDIST_DIR environment variable, which holds the path to the VC redistributable runtime. You need this in order for the build process to automatically copy the files that are required to satisfy the VC dependencies. This is how we do it:
+Notice the option:
+
+{{{
+ac_add_options --enable-jemalloc
+}}}
+
+This enables jemalloc which in theory should be better allocator than the default one. However, if for some reason your build fails and you want to disable this option you need to do a few more things. Before you start the building process you need to setup WIN32_REDIST_DIR environment variable, which holds the path to the VC redistributable runtime. You need this in order for the build process to automatically copy the files that are required to satisfy the VC dependencies. This is how we do it:
 
 {{{
 export WIN32_REDIST_DIR="$VCINSTALLDIR\\redist\\x86\\Microsoft.VC90.CRT"
 }}}
 
 Keep in mind that the example above is for VC9. If you use other version of Visual C, you need to change the path accordingly.
+
+Keep in mind that the above is only required if you want to use the default allocator but not jemalloc!
 
 You may also need to setup the path to JDK (i.e. JAVA_HOME). This is how you can do this:
 
@@ -214,6 +225,7 @@ ac_add_options --disable-tests
 ac_add_options --disable-crashreporter
 ac_add_options --disable-installer
 ac_add_options --enable-application=xulrunner
+ac_add_options --enable-jemalloc
 }}}
 
 The only change is that the following tree lines are disabled:
@@ -259,6 +271,7 @@ ac_add_options --disable-optimize
 ac_add_options --disable-crashreporter
 ac_add_options --disable-installer
 ac_add_options --enable-application=xulrunner
+ac_add_options --enable-jemalloc
 }}}
 
 Start the build process by running: {{{make -f client.mk build}}}
@@ -281,6 +294,7 @@ ac_add_options --disable-tests
 ac_add_options --disable-crashreporter
 ac_add_options --disable-installer
 ac_add_options --enable-application=xulrunner
+ac_add_options --enable-jemalloc
 }}}
 
 The only change is that the following tree lines are disabled:
