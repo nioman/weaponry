@@ -332,8 +332,8 @@ You can also check the [http://hg.mozilla.org/build/buildbot-configs/file buildb
 
 Alternatively, you can check the Mozilla Developer Center:
 
-* [http://mdn.beonex.com/en/Configuring_Build_Options Configuring Build Options]
-* [http://mdn.beonex.com/en/Building_Firefox_with_Debug_Symbols Building with Debug Symbols]
+  * [http://mdn.beonex.com/en/Configuring_Build_Options Configuring Build Options]
+  * [http://mdn.beonex.com/en/Building_Firefox_with_Debug_Symbols Building with Debug Symbols]
 
 = Notes =
 
