@@ -194,7 +194,7 @@ export WIN32_REDIST_DIR="$VCINSTALLDIR\\redist\\x86\\Microsoft.VC90.CRT"
 
 Keep in mind that the example above is for VC9. If you use other version of Visual C, you need to change the path accordingly.
 
-Keep in mind that the above is only required if you want to use the default allocator but not jemalloc!
+As a reminder, the above is only required if you want to use the default allocator but not jemalloc!
 
 You may also need to setup the path to JDK (i.e. JAVA_HOME). This is how you can do this:
 
