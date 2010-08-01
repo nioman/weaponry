@@ -312,7 +312,9 @@ make -f client.mk build
 
 = Getting Help =
 
-If you are stuck, the best way is to get help from the mozilla community. The two most common places where you can find good technical answers are [mozilla.dev.platform http://groups.google.com/group/mozilla.dev.platform/topics] and [mozilla.dev.builds http://groups.google.com/group/mozilla.dev.builds/topics] newsgroups.
+If you are stuck, the best way is to get help from the mozilla community. The two most common places where you can find good technical answers are [http://groups.google.com/group/mozilla.dev.platform/topics mozilla.dev.platform] and [http://groups.google.com/group/mozilla.dev.builds/topics mozilla.dev.builds] newsgroups.
+
+You can also check the [http://hg.mozilla.org/build/buildbot-configs/file buildbot] for examples and ideas of how to build your project.
 
 = Notes =
 
