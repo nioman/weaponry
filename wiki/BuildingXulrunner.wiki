@@ -3,6 +3,8 @@
 
 http://weaponry.googlecode.com/svn/wiki/weaponry.png
 
+<wiki:toc max_depth="1"/>
+
 = Introduction =
 
 This page describes how to build xulrunner from source.
@@ -307,6 +309,10 @@ It is possible to use multiple mozconfig files to build different versions and a
 export MOZCONFIG=/path/to/mozilla/mozconfig-application
 make -f client.mk build
 }}}
+
+= Getting Help =
+
+If you are stuck, the best way is to get help from the mozilla community. The two most common places where you can find good technical answers are [mozilla.dev.platform http://groups.google.com/group/mozilla.dev.platform/topics] and [mozilla.dev.builds http://groups.google.com/group/mozilla.dev.builds/topics] newsgroups.
 
 = Notes =
 
