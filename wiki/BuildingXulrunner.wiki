@@ -310,6 +310,20 @@ export MOZCONFIG=/path/to/mozilla/mozconfig-application
 make -f client.mk build
 }}}
 
+Keep in mind that you may want to modify the MOZ_OBJDIR option to point to a folder specific to each build so that they don't end up overriding each others files. For example:
+
+{{{
+mk_add_options MOZ_OBJDIR=@TOPSRCDIR@/obj-xul-lin-dbg
+}}
+
+... will be the linux dbg object folder while
+
+{{{
+mk_add_options MOZ_OBJDIR=@TOPSRCDIR@/obj-xul-mac-res
+}}}
+
+... will be the mac res object folder.
+
 = Getting Help =
 
 If you are stuck, the best way is to get help from the mozilla community. The two most common places where you can find good technical answers are [http://groups.google.com/group/mozilla.dev.platform/topics mozilla.dev.platform] and [http://groups.google.com/group/mozilla.dev.builds/topics mozilla.dev.builds] newsgroups.
