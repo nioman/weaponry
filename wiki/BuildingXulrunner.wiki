@@ -130,6 +130,16 @@ The only change is that the following tree lines are disabled:
 #ac_add_options --disable-optimize
 }}}
 
+== Building With Symbols ==
+
+To build with symbols you need the following options in your mozconfig:
+
+{{{
+ export MOZ_DEBUG_SYMBOLS=1 
+ export CFLAGS="-gdwarf-2"
+ export CXXFLAGS="-gdwarf-2"
+}}}
+
 = Building on Windows (XP) =
 
 First we need the following requirements:
@@ -212,6 +222,15 @@ The only change is that the following tree lines are disabled:
 #ac_add_options --disable-optimize
 }}}
 
+== Building With Symbols ==
+
+To build with symbols you need the following options in your mozconfig:
+
+{{{
+export MOZ_DEBUG_SYMBOLS=1
+ac_add_options --enable-debugger-info-modules=yes
+}}}
+
 = Building on Linux (Ubuntu) =
 
 Building xulrunner for linux is often extremely easy. There are a number of dependencies but in general you need:
@@ -268,6 +287,16 @@ The only change is that the following tree lines are disabled:
 #ac_add_options --enable-logging
 #ac_add_options --enable-debug
 #ac_add_options --disable-optimize
+}}}
+
+== Building With Symbols ==
+
+To build with symbols you need the following options in your mozconfig:
+
+{{{
+ export MOZ_DEBUG_SYMBOLS=1
+ export CFLAGS="-gstabs+"
+ export CXXFLAGS="-gstabs+"
 }}}
 
 = Notes =
