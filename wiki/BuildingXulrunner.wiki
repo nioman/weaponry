@@ -156,7 +156,7 @@ First we need the following requirements:
 
 Install all dependencies using the settings that come by default.
 
-MozillaBuildSetup-1.4.exe, which could be also MozillaBuildSetup-Latest.exe, is slightly broken. You need to remove {{{c:\mozilla-build\vim\vim72\install.exe}}} to make it work correctly.
+MozillaBuildSetup-Latest.exe, is slightly broken. You need to remove {{{c:\mozilla-build\vim\vim72\install.exe}}} to make it work correctly.
 
 Fire up the build environment by simply opening cmd.exe, going to {{{c:\mozilla-build\}}} and executing any of the following scripts depending on which version of Visual Studio you have: start-msvc6.bat, start-msvc71.bat, start-msvc8.bat or start-msvc9.bat. If you use VS 2008 Express you need start-msvc9.bat.
 
