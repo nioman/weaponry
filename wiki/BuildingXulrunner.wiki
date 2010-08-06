@@ -149,7 +149,6 @@ To build with symbols you need the following options in your mozconfig:
 First we need the following requirements:
 
  * [http://www.microsoft.com/express/Downloads/#2008-Visual-CPP Microsoft Visual Studio 2008]
- * [http://www.microsoft.com/downloads/details.aspx?FamilyId=FBEE1648-7106-44A7-9649-6D9F6D58056E Microsoft Visual Studio 2008 SP1 ]
  * [http://www.microsoft.com/downloads/details.aspx?FamilyID=c17ba869-9671-4330-a63e-1fd44e0e2505&displaylang=en Microsoft Windows 7 SDK]
  * [http://www.microsoft.com/downloads/details.aspx?familyid=a55b6b43-e24f-4ea3-a93e-40c0ec4f68e5&displaylang=en Microsoft  Windows 2003 SDK]
  * [http://ftp.mozilla.org/pub/mozilla.org/mozilla/libraries/win32/MozillaBuildSetup-Latest.exe Mozilla Build]
