@@ -206,7 +206,7 @@ It is important to provide the correct path as this is just an example.
 
 Start the build process by running: {{{make -f client.mk build}}}
 
-Once the build is finished {{{check obj-xul-dbg/dist/bin}}} for xulrunner.
+Once the build is finished check {{{obj-xul-dbg/dist/bin}}} for xulrunner.
 
 == Building Release Version ==
 
