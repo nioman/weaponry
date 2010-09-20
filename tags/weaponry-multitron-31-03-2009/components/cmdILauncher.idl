@@ -1,7 +1,0 @@
-#include "nsISupports.idl"
-#include "cmdIObserver.idl"
-
-[scriptable, uuid(25fe37f5-dccd-4d85-a8dc-003221129859)]
-interface cmdILauncher: nsISupports {
-	void launch(in wstring cmd, in cmdIObserver observer);
-};

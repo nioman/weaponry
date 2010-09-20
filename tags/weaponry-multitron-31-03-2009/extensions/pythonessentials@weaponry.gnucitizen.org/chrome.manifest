@@ -1,4 +1,0 @@
-content     pythonessentials                          file:chrome/content/
-locale      pythonessentials en-US                    file:chrome/locale/en-US/
-skin        pythonessentials classic/1.0              file:chrome/skin/
-overlay     chrome://weaponry/content/toolkit.xul     chrome://pythonessentials/content/toolkit.xul
