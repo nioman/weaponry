@@ -1,0 +1,16 @@
+#!/bin/sh
+
+CWD="`pwd`"
+BWD="`dirname $0`"
+
+cd "$BWD"
+
+BWD="`pwd`"
+
+cd "$BWD/dep/nspr/"
+make clean
+
+cd "$BWD/dep/js/src/"
+make clean
+
+rm -rf "$BWD/obj/"

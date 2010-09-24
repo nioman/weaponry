@@ -1,0 +1,21 @@
+#!/bin/sh
+
+CWD="`pwd`"
+BWD="`dirname $0`"
+
+cd "$BWD"
+
+BWD="`pwd`"
+
+cd "$BWD/dep/nspr/"
+make
+make install
+
+mkdir -p "$BWD/dep/js/src/dist/include/"
+
+cp -rf "$BWD/obj/nspr/include/nspr/" "$BWD/dep/js/src/dist/include/nsprpub/"
+cp -rf "$BWD/ovl/js.cpp" "$BWD/dep/js/src/shell/js.cpp"
+
+cd "$BWD/dep/js/src/"
+make NSPR_LIBS="$BWD/obj/nspr/lib/libnspr4.a"
+make install
