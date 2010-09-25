@@ -19,3 +19,7 @@ cp -rf "$BWD/ovl/js.cpp" "$BWD/dep/js/src/shell/js.cpp"
 cd "$BWD/dep/js/src/"
 make NSPR_LIBS="$BWD/obj/nspr/lib/libnspr4.a"
 make install
+
+mkdir -p "$BWD/obj/bin/"
+
+cp "$BWD/dep/js/src/shell/js" "$BWD/obj/bin/acidmonkey"
