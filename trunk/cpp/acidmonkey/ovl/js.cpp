@@ -471,7 +471,7 @@ Process(JSContext *cx, JSObject *obj, char *filename, JSBool forceTTY)
             char *line;
             {
                 JSAutoSuspendRequest suspended(cx);
-                line = GetLine(file, startline == lineno ? "weaponry> " : "");
+                line = GetLine(file, startline == lineno ? "acidmonkey> " : "");
             }
             if (!line) {
                 if (errno) {
@@ -559,7 +559,7 @@ usage(void)
 {
     fprintf(gErrFile, "%s\n", JS_GetImplementationVersion());
 //    fprintf(gErrFile, "usage: js [-zKPswWxCijmd] [-t timeoutSeconds] [-c stackchunksize] [-o option] [-v version] [-f scriptfile] [-e script] [-S maxstacksize] "
-    fprintf(gErrFile, "usage: weaponry [-zKPswWxCijmd] [-o option] [-v version] [-f scriptfile] [-e script] "
+    fprintf(gErrFile, "usage: acidmonkey [-zKPswWxCijmd] [-o option] [-v version] [-f scriptfile] [-e script] "
 #ifdef JS_GC_ZEAL
 "[-Z gczeal] "
 #endif
@@ -4970,7 +4970,7 @@ global_resolve(JSContext *cx, JSObject *obj, jsid id, uintN flags,
 }
 
 JSClass global_class = {
-    "__weaponry__", JSCLASS_NEW_RESOLVE | JSCLASS_GLOBAL_FLAGS | JSCLASS_HAS_PRIVATE,
+    "__acidmonkey__", JSCLASS_NEW_RESOLVE | JSCLASS_GLOBAL_FLAGS | JSCLASS_HAS_PRIVATE,
     JS_PropertyStub,  JS_PropertyStub,
     JS_PropertyStub,  JS_PropertyStub,
     global_enumerate, (JSResolveOp) global_resolve,
@@ -4987,8 +4987,8 @@ JSClass superglobal_class = {
     JSCLASS_NO_OPTIONAL_MEMBERS
 };
 
-JSClass weaponry_weaponry_class = {
-    "__weaponry__", JSCLASS_NEW_RESOLVE | JSCLASS_GLOBAL_FLAGS | JSCLASS_HAS_PRIVATE,
+JSClass acidmonkey_acidmonkey_class = {
+    "__acidmonkey__", JSCLASS_NEW_RESOLVE | JSCLASS_GLOBAL_FLAGS | JSCLASS_HAS_PRIVATE,
     JS_PropertyStub,  JS_PropertyStub,
     JS_PropertyStub,  JS_PropertyStub,
     global_enumerate, (JSResolveOp) global_resolve,
@@ -5174,7 +5174,7 @@ NewGlobalObject(JSContext *cx, JSAutoCrossCompartmentCall &call)
     if (!call.enter(cx, superglob))
         return NULL;
 
-	JSObject *glob = JS_DefineObject(cx, superglob, "__weaponry__", &global_class, NULL, 0);
+	JSObject *glob = JS_DefineObject(cx, superglob, "__acidmonkey__", &global_class, NULL, 0);
 	
 	if (!glob)
 		return NULL;
