@@ -1,13 +1,17 @@
-#summary the following page summarises the purpose and usage of some of the more popular mozilla technologies
+#summary The following page summarises the purpose and usage of some of the more popular mozilla technologies.
+
+http://weaponry.googlecode.com/svn/wiki/weaponry.png
+
+<wiki:toc max_depth="1"/>
 
 = Introduction =
 
-Add your content here.
+he following page summarises the purpose and usage of some of the more popular mozilla technologies.
 
+= Tips and Tricks =
 
-= Details =
+== Getting Proper Errors from NSPR ==
 
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
+{{{
+printf("%s: %s\n", PR_ErrorToName(PR_GetError()), PR_ErrorToString(PR_GetError(), PR_LANGUAGE_I_DEFAULT));
+}}}
