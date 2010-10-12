@@ -471,7 +471,7 @@ Process(JSContext *cx, JSObject *obj, char *filename, JSBool forceTTY)
             char *line;
             {
                 JSAutoSuspendRequest suspended(cx);
-                line = GetLine(file, startline == lineno ? "js> " : "");
+                line = GetLine(file, startline == lineno ? "acidmonkey> " : "");
             }
             if (!line) {
                 if (errno) {
@@ -558,7 +558,8 @@ static int
 usage(void)
 {
     fprintf(gErrFile, "%s\n", JS_GetImplementationVersion());
-    fprintf(gErrFile, "usage: js [-zKPswWxCijmd] [-t timeoutSeconds] [-c stackchunksize] [-o option] [-v version] [-f scriptfile] [-e script] [-S maxstacksize] "
+//    fprintf(gErrFile, "usage: js [-zKPswWxCijmd] [-t timeoutSeconds] [-c stackchunksize] [-o option] [-v version] [-f scriptfile] [-e script] [-S maxstacksize] "
+    fprintf(gErrFile, "usage: acidmonkey [-zKPswWxCijmd] [-o option] [-v version] [-f scriptfile] [-e script] "
 #ifdef JS_GC_ZEAL
 "[-Z gczeal] "
 #endif
@@ -647,12 +648,12 @@ ProcessArgs(JSContext *cx, JSObject *obj, char **argv, int argc)
             break;
         }
         switch (argv[i][1]) {
-          case 'c':
+//          case 'c':
           case 'f':
           case 'e':
           case 'v':
-          case 'S':
-          case 't':
+//          case 'S':
+//          case 't':
             ++i;
             break;
           default:;
@@ -768,19 +769,19 @@ ProcessArgs(JSContext *cx, JSObject *obj, char **argv, int argc)
             }
             break;
 
-        case 't':
-            if (++i == argc)
-                return usage();
+//        case 't':
+//            if (++i == argc)
+//                return usage();
+//
+//            if (!SetTimeoutValue(cx, atof(argv[i])))
+//                return JS_FALSE;
+//
+//            break;
 
-            if (!SetTimeoutValue(cx, atof(argv[i])))
-                return JS_FALSE;
-
-            break;
-
-        case 'c':
-            /* set stack chunk size */
-            gStackChunkSize = atoi(argv[++i]);
-            break;
+//        case 'c':
+//            /* set stack chunk size */
+//            gStackChunkSize = atoi(argv[++i]);
+//            break;
 
         case 'f':
             if (++i == argc)
@@ -822,13 +823,13 @@ ProcessArgs(JSContext *cx, JSObject *obj, char **argv, int argc)
             isInteractive = forceTTY = JS_TRUE;
             break;
 
-        case 'S':
-            if (++i == argc)
-                return usage();
-
-            /* Set maximum stack size. */
-            gMaxStackSize = atoi(argv[i]);
-            break;
+//        case 'S':
+//            if (++i == argc)
+//                return usage();
+//
+//            /* Set maximum stack size. */
+//            gMaxStackSize = atoi(argv[i]);
+//            break;
 
         case 'd':
             js_SetDebugMode(cx, JS_TRUE);
@@ -4969,7 +4970,25 @@ global_resolve(JSContext *cx, JSObject *obj, jsid id, uintN flags,
 }
 
 JSClass global_class = {
+    "__acidmonkey__", JSCLASS_NEW_RESOLVE | JSCLASS_GLOBAL_FLAGS | JSCLASS_HAS_PRIVATE,
+    JS_PropertyStub,  JS_PropertyStub,
+    JS_PropertyStub,  JS_PropertyStub,
+    global_enumerate, (JSResolveOp) global_resolve,
+    JS_ConvertStub,   its_finalize,
+    JSCLASS_NO_OPTIONAL_MEMBERS
+};
+
+JSClass superglobal_class = {
     "global", JSCLASS_NEW_RESOLVE | JSCLASS_GLOBAL_FLAGS | JSCLASS_HAS_PRIVATE,
+		JS_PropertyStub  , JS_PropertyStub,
+		JS_PropertyStub  , JS_PropertyStub,
+		JS_EnumerateStub , JS_ResolveStub,
+		JS_ConvertStub   , JS_FinalizeStub,
+    JSCLASS_NO_OPTIONAL_MEMBERS
+};
+
+JSClass acidmonkey_acidmonkey_class = {
+    "__acidmonkey__", JSCLASS_NEW_RESOLVE | JSCLASS_GLOBAL_FLAGS | JSCLASS_HAS_PRIVATE,
     JS_PropertyStub,  JS_PropertyStub,
     JS_PropertyStub,  JS_PropertyStub,
     global_enumerate, (JSResolveOp) global_resolve,
@@ -5148,15 +5167,22 @@ DestroyContext(JSContext *cx, bool withGC)
 static JSObject *
 NewGlobalObject(JSContext *cx, JSAutoCrossCompartmentCall &call)
 {
-    JSObject *glob = JS_NewCompartmentAndGlobalObject(cx, &global_class, NULL);
-    if (!glob)
+	JSObject *superglob = JS_NewCompartmentAndGlobalObject(cx, &superglobal_class, NULL);
+    
+    if (!superglob)
         return NULL;
-    if (!call.enter(cx, glob))
+    if (!call.enter(cx, superglob))
         return NULL;
 
+	JSObject *glob = JS_DefineObject(cx, superglob, "__acidmonkey__", &global_class, NULL, 0);
+	
+	if (!glob)
+		return NULL;
+		
 #ifdef LAZY_STANDARD_CLASSES
-    JS_SetGlobalObject(cx, glob);
+    JS_SetGlobalObject(cx, superglob);
 #else
+	
     if (!JS_InitStandardClasses(cx, glob))
         return NULL;
 #endif
@@ -5184,7 +5210,7 @@ NewGlobalObject(JSContext *cx, JSAutoCrossCompartmentCall &call)
                            its_setter, JSPROP_READONLY))
         return NULL;
 
-    return glob;
+    return superglob;
 }
 
 int
