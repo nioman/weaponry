@@ -126,7 +126,7 @@ STRIP="strip -x -S"
 CROSS_COMPILE=1
 }}}
 
-The only change is that the following tree lines are disabled:
+The only main change is that the following tree lines are disabled:
 
 {{{
 #ac_add_options --enable-logging
@@ -228,7 +228,7 @@ ac_add_options --enable-application=xulrunner
 ac_add_options --enable-jemalloc
 }}}
 
-The only change is that the following tree lines are disabled:
+The only main change is that the following tree lines are disabled:
 
 {{{
 #ac_add_options --enable-logging
@@ -297,7 +297,7 @@ ac_add_options --enable-application=xulrunner
 ac_add_options --enable-jemalloc
 }}}
 
-The only change is that the following tree lines are disabled:
+The only main change is that the following tree lines are disabled:
 
 {{{
 #ac_add_options --enable-logging
