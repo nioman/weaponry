@@ -50,7 +50,7 @@ You need to create a file called .mozconfig inside the mozilla source with the f
 
 {{{
 mk_add_options MOZ_CO_PROJECT=xulrunner
-mk_add_options MOZ_OBJDIR=@TOPSRCDIR@/obj-xul-dbg
+mk_add_options MOZ_OBJDIR=@TOPSRCDIR@/obj-xul-mac-dbg
 mk_add_options MOZ_MAKE_FLAGS="-s -j4"
 
 ac_add_options --disable-tests
@@ -85,7 +85,7 @@ CROSS_COMPILE=1
 
 Start the build process by executing {{{make -f client.mk build}}}
 
-Once the build is finished check {{{obj-xul-dbg/dist/XUL.framework}}} for the XUL.framework.
+Once the build is finished check {{{obj-xul-mac-dbg/dist/XUL.framework}}} for the XUL.framework.
 
 == Building Release Version ==
 
@@ -93,7 +93,7 @@ Nothing changes except the .mozconfig file which should look something similar t
 
 {{{
 mk_add_options MOZ_CO_PROJECT=xulrunner
-mk_add_options MOZ_OBJDIR=@TOPSRCDIR@/obj-xul-res
+mk_add_options MOZ_OBJDIR=@TOPSRCDIR@/obj-xul-mac-res
 mk_add_options MOZ_MAKE_FLAGS="-s -j4"
 
 ac_add_options --disable-tests
@@ -166,7 +166,7 @@ As usual, you need to create a file called .mozconfig inside the mozilla source 
 
 {{{
 mk_add_options MOZ_CO_PROJECT=xulrunner
-mk_add_options MOZ_OBJDIR=@TOPSRCDIR@/obj-xul-dbg
+mk_add_options MOZ_OBJDIR=@TOPSRCDIR@/obj-xul-win-dbg
 mk_add_options MOZ_MAKE_FLAGS="-s -j4"
 
 ac_add_options --disable-activex
@@ -206,7 +206,7 @@ It is important to provide the correct path as this is just an example.
 
 Start the build process by running: {{{make -f client.mk build}}}
 
-Once the build is finished check {{{obj-xul-dbg/dist/bin}}} for xulrunner.
+Once the build is finished check {{{obj-xul-win-dbg/dist/bin}}} for xulrunner.
 
 == Building Release Version ==
 
@@ -214,7 +214,7 @@ Nothing changes except the .mozconfig file which should look something similar t
 
 {{{
 mk_add_options MOZ_CO_PROJECT=xulrunner
-mk_add_options MOZ_OBJDIR=@TOPSRCDIR@/obj-xul-res
+mk_add_options MOZ_OBJDIR=@TOPSRCDIR@/obj-xul-win-res
 mk_add_options MOZ_MAKE_FLAGS="-s -j4"
 
 ac_add_options --disable-activex
@@ -261,7 +261,7 @@ As usual, you need to create a file called .mozconfig inside the mozilla source 
 
 {{{
 mk_add_options MOZ_CO_PROJECT=xulrunner
-mk_add_options MOZ_OBJDIR=@TOPSRCDIR@/obj-xul-dbg
+mk_add_options MOZ_OBJDIR=@TOPSRCDIR@/obj-xul-lin-dbg
 mk_add_options MOZ_MAKE_FLAGS="-s -j4"
 
 ac_add_options --disable-tests
@@ -276,7 +276,7 @@ ac_add_options --enable-jemalloc
 
 Start the build process by running: {{{make -f client.mk build}}}
 
-Once the build is finished check {{{obj-xul-dbg/dist/bin}}} for xulrunner.
+Once the build is finished check {{{obj-xul-lin-dbg/dist/bin}}} for xulrunner.
 
 == Building Release Version ==
 
@@ -284,7 +284,7 @@ Nothing changes except the .mozconfig file which should look something similar t
 
 {{{
 mk_add_options MOZ_CO_PROJECT=xulrunner
-mk_add_options MOZ_OBJDIR=@TOPSRCDIR@/obj-xul-res
+mk_add_options MOZ_OBJDIR=@TOPSRCDIR@/obj-xul-lin-res
 mk_add_options MOZ_MAKE_FLAGS="-s -j4"
 
 ac_add_options --disable-tests
