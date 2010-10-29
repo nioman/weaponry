@@ -18,7 +18,7 @@ If you plan to use Mercurial you will need the Mercurial client (i.e. {{{hg}}}) 
   * Mercurial on Windows
   The simplest way to get Mercurial is to download and install the [http://ftp.mozilla.org/pub/mozilla.org/mozilla/libraries/win32/MozillaBuildSetup-Latest.exe Mozilla Build], which you will need anyway if you plan to build on Windows.
 
-  * Mercurial on Mac OS
+  * Mercurial on Mac
   The simplest way to get Mercurial is to install the [http://www.macports.org/ Mac Ports] and get it with the port command (i.e. {{{sudo port install mercurial +universal}}}).
 
   * Mercurial on Linux
