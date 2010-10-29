@@ -7,3 +7,15 @@ http://weaponry.googlecode.com/svn/wiki/weaponry.png
 = Introduction =
 
 This page describes how to build pyxpcom from source.
+
+= Obtaining the Source =
+
+First, you will need the xulrunner sdk and the pyxpcom sources. You can get the sdk by compiling it yourself from source (see BuildingXulrunner) or by downloading the precompiled binaries from here http://developer.mozilla.org/en/XULRunner.
+
+TODO TODO TODO
+
+{{{
+make CXXFLAGS="-arch i386 -fshort-wchar"
+}}}
+
+TODO TODO TODO
