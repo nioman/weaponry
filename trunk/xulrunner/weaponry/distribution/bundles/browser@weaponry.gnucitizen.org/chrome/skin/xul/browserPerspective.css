@@ -1,0 +1,131 @@
+/**
+ *  browserPerspective.css
+ *  Copyright (C) 2007-2011  GNUCITIZEN
+ *  
+ *  This program is free software; you can redistribute it and/or modify
+ *  it under the terms of the GNU General Public License as published by
+ *  the Free Software Foundation; either version 2 of the License, or
+ *  (at your option) any later version.
+ *  
+ *  This program is distributed in the hope that it will be useful,
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *  GNU General Public License for more details.
+ *  
+ *  You should have received a copy of the GNU General Public License
+ *  along with this program; if not, write to the Free Software
+ *  Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+ */
+
+@import url("chrome://global/skin/");
+
+/* ------------------------------------------------------------------------ */
+
+#browser-perspective-tabs-richtabbox > .richtabbox-container .richtabpanel-toolbarbutton[checked="true"] {
+	/* pass */
+}
+
+#browser-perspective-tabs-richtabbox > .richtabbox-container .richtabpanel-toolbarbutton:not([checked="true"]) {
+	/* pass */
+}
+
+/* ------------------------------------------------------------------------ */
+
+#browser-perspective-open-tab-toolbarbutton > image {
+	margin: 0px;
+}
+
+#browser-perspective-open-tab-toolbarbutton > label {
+	display: none;
+}
+
+/* ------------------------------------------------------------------------ */
+
+#browser-perspective-open-tab-toolbarbutton {
+	/* pass */
+}
+
+#browser-perspective-open-tab-toolbarbutton:not([disabled="true"]):hover {
+	/* pass */
+}
+
+#browser-perspective-open-tab-toolbarbutton[disabled="true"] {
+	/* pass */
+}
+
+#browser-perspective-open-tab-toolbarbutton:not([disabled="true"]):hover:active {
+	/* pass */
+}
+
+#browser-perspective-open-tab-toolbarbutton > image {
+	/* pass */
+}
+
+/* ------------------------------------------------------------------------ */
+
+[ostype="Darwin"] #browser-perspective-open-tab-toolbarbutton {
+	list-style-image: url("images/open.mac.still.png");
+}
+
+[ostype="Darwin"] #browser-perspective-open-tab-toolbarbutton:not([disabled="true"]):hover {
+	list-style-image: url("images/open.mac.hovered.png");
+}
+
+[ostype="Darwin"] #browser-perspective-open-tab-toolbarbutton[disabled="true"] {
+	list-style-image: url("images/open.mac.disabled.png");
+}
+
+[ostype="Darwin"] #browser-perspective-open-tab-toolbarbutton:not([disabled="true"]):hover:active {
+	list-style-image: url("images/open.mac.pressed.png");
+}
+
+[ostype="Darwin"] #browser-perspective-open-tab-toolbarbutton > image {
+	/* pass */
+}
+
+/* ------------------------------------------------------------------------ */
+
+[ostype="Linux"] #browser-perspective-open-tab-toolbarbutton {
+	list-style-image: url("moz-icon://stock/gtk-add?size=16");
+}
+
+[ostype="Linux"] #browser-perspective-open-tab-toolbarbutton:not([disabled="true"]):hover {
+	/* pass */
+}
+
+[ostype="Linux"] #browser-perspective-open-tab-toolbarbutton[disabled="true"] {
+	/* pass */
+}
+
+[ostype="Linux"] #browser-perspective-open-tab-toolbarbutton:not([disabled="true"]):hover:active {
+	/* pass */
+}
+
+[ostype="Linux"] #browser-perspective-open-tab-toolbarbutton > image {
+	/* pass */
+}
+
+/* ------------------------------------------------------------------------ */
+
+[ostype="WINNT"] #browser-perspective-open-tab-toolbarbutton {
+	list-style-image: url("images/open.win.still.png");
+}
+
+[ostype="WINNT"] #browser-perspective-open-tab-toolbarbutton:not([disabled="true"]):hover {
+	list-style-image: url("images/open.win.hovered.png");
+}
+
+[ostype="WINNT"] #browser-perspective-open-tab-toolbarbutton[disabled="true"] {
+	list-style-image: url("images/open.win.disabled.png");
+}
+
+[ostype="WINNT"] #browser-perspective-open-tab-toolbarbutton:not([disabled="true"]):hover:active {
+	list-style-image: url("images/open.win.pressed.png");
+}
+
+[ostype="WINNT"] #browser-perspective-open-tab-toolbarbutton > image {
+	/* pass */
+}
+
+/*  GNUCITIZEN (Information Security Think Tank)
+ **********************************************/

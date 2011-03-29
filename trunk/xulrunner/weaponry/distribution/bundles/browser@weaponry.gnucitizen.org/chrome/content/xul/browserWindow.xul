@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<!--
+ *  browserWindow.xul
+ *  Copyright (C) 2007-2011  GNUCITIZEN
+ *  
+ *  This program is free software; you can redistribute it and/or modify
+ *  it under the terms of the GNU General Public License as published by
+ *  the Free Software Foundation; either version 2 of the License, or
+ *  (at your option) any later version.
+ *  
+ *  This program is distributed in the hope that it will be useful,
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *  GNU General Public License for more details.
+ *  
+ *  You should have received a copy of the GNU General Public License
+ *  along with this program; if not, write to the Free Software
+ *  Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+-->
+<?xul-overlay href="chrome://common.weaponry.gnucitizen.org/content/ovl/common.xul"?>
+<?xul-overlay href="chrome://browser.weaponry.gnucitizen.org/content/ovl/fileMenu.xul"?>
+<?xul-overlay href="chrome://browser.weaponry.gnucitizen.org/content/ovl/viewMenu.xul"?>
+<?xml-stylesheet href="chrome://browser.weaponry.gnucitizen.org/content/css/bindings.css" type="text/css"?>
+<?xml-stylesheet href="chrome://browser.weaponry.gnucitizen.org/skin/xul/browserWindow.css" type="text/css"?>
+<!DOCTYPE window SYSTEM "chrome://browser.weaponry.gnucitizen.org/locale/xul/browserWindow.dtd">
+<window xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+	id="browser-window" title="&browser-window-title;" windowtype="browser.weaponry.gnucitizen.org:browser-window"
+	width="800" height="640" screenX="100" screenY="100" persist="width height screenX screenY sizemode">
+	
+	<script type="application/x-javascript" src="chrome://browser.weaponry.gnucitizen.org/content/inc/common.js"/>
+	<script type="application/x-javascript" src="chrome://browser.weaponry.gnucitizen.org/content/xul/browserWindow.js"/>
+	
+	<stringbundleset id="browser-window-stringbundleset">
+		<stringbundle id="browser-window-properties-stringbundle" src="chrome://browser.weaponry.gnucitizen.org/locale/xul/browserWindow.properties"/>
+	</stringbundleset>
+	
+	<menubar id="browser-window-menubar">
+		<menu id="file-menu"/>
+		<menu id="edit-menu"/>
+		<menu id="view-menu"/>
+		<menu id="tools-menu"/>
+		<menu id="window-menu"/>
+		<menu id="help-menu"/>
+	</menubar>
+	
+	<vbox id="browser-window-content-vbox" flex="1">
+		<iframe id="browser-window-content-iframe" src="chrome://browser.weaponry.gnucitizen.org/content/xul/browserPerspective.xul" flex="1"/>
+	</vbox>
+	
+	<box id="common-box"/>
+	
+</window>
+<!--
+ *  GNUCITIZEN (Information Security Think Tank)
+ ***********************************************
+-->

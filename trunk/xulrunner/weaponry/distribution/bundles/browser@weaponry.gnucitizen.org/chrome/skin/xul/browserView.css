@@ -1,0 +1,271 @@
+/**
+ *  browserView.css
+ *  Copyright (C) 2007-2011  GNUCITIZEN
+ *  
+ *  This program is free software; you can redistribute it and/or modify
+ *  it under the terms of the GNU General Public License as published by
+ *  the Free Software Foundation; either version 2 of the License, or
+ *  (at your option) any later version.
+ *  
+ *  This program is distributed in the hope that it will be useful,
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *  GNU General Public License for more details.
+ *  
+ *  You should have received a copy of the GNU General Public License
+ *  along with this program; if not, write to the Free Software
+ *  Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+ */
+
+@import url("chrome://global/skin/");
+
+/* ------------------------------------------------------------------------ */
+
+#browser-view-navigation-toolbar {
+	padding: 2px 3px 2px 0px;
+	-moz-box-align: center;
+}
+
+/* ------------------------------------------------------------------------ */
+
+#browser-view-back-toolbarbutton    ,
+#browser-view-forward-toolbarbutton ,
+#browser-view-reload-toolbarbutton  ,
+#browser-view-stop-toolbarbutton    ,
+#browser-view-go-toolbarbutton      {
+	border: 0px;
+	margin: 0px;
+	padding: 0px;
+	-moz-appearance: none;
+	-moz-box-align: center;
+}
+
+#browser-view-back-toolbarbutton > *    ,
+#browser-view-forward-toolbarbutton > * ,
+#browser-view-reload-toolbarbutton > *  ,
+#browser-view-stop-toolbarbutton > *    ,
+#browser-view-go-toolbarbutton > *      {
+	border: 0px;
+	margin: 0px;
+	padding: 0px;
+}
+
+/* ------------------------------------------------------------------------ */
+
+#browser-view-back-toolbarbutton {
+	opacity: 0.99;
+	-moz-margin-end: 0px;
+	-moz-margin-start: 0px;
+}
+
+.big > #browser-view-back-toolbarbutton {
+	list-style-image: url("images/navigation-buttons.big.png");
+}
+
+.small > #browser-view-back-toolbarbutton {
+	list-style-image: url("images/navigation-buttons.small.png");
+}
+
+#browser-view-back-toolbarbutton {
+	-moz-image-region: rect(0px 37px 35px 0px);
+	-moz-image-region: rect(4px 37px 29px 0px);
+}
+
+#browser-view-back-toolbarbutton:not([disabled="true"]):hover {
+	-moz-image-region: rect(70px 37px 105px 0px);
+	-moz-image-region: rect(74px 37px 99px 0px);
+}
+
+#browser-view-back-toolbarbutton[disabled="true"] {
+	-moz-image-region: rect(35px 37px 70px 0px);
+	-moz-image-region: rect(39px 37px 64px 0px);
+}
+
+#browser-view-back-toolbarbutton:not([disabled="true"]):hover:active {
+	-moz-image-region: rect(105px 37px 140px 0px);
+	-moz-image-region: rect(109px 37px 134px 0px);
+}
+
+#browser-view-back-toolbarbutton > label {
+	display: none;
+}
+
+/* ------------------------------------------------------------------------ */
+
+#browser-view-forward-toolbarbutton {
+	-moz-margin-end: 0px;
+	-moz-margin-start: -8px;
+}
+
+.big > #browser-view-forward-toolbarbutton {
+	list-style-image: url("images/navigation-buttons.big.png");
+}
+
+.small > #browser-view-forward-toolbarbutton {
+	list-style-image: url("images/navigation-buttons.small.png");
+}
+
+#browser-view-forward-toolbarbutton {
+	-moz-image-region: rect(0px 71px 35px 37px);
+	-moz-image-region: rect(4px 71px 29px 37px);
+}
+
+#browser-view-forward-toolbarbutton:not([disabled="true"]):hover {
+	-moz-image-region: rect(70px 71px 105px 37px);
+	-moz-image-region: rect(74px 71px 99px 37px);
+}
+
+#browser-view-forward-toolbarbutton[disabled="true"] {
+	-moz-image-region: rect(35px 71px 70px 37px);
+	-moz-image-region: rect(39px 71px 64px 37px);
+}
+
+#browser-view-forward-toolbarbutton:not([disabled="true"]):hover:active {
+	-moz-image-region: rect(105px 71px 140px 37px);
+	-moz-image-region: rect(109px 71px 134px 37px);
+}
+
+#browser-view-forward-toolbarbutton > label {
+	display: none;
+}
+
+/* ------------------------------------------------------------------------ */
+
+#browser-view-reload-toolbarbutton {
+	-moz-margin-end: 0px;
+	-moz-margin-start: -5px;
+	-moz-image-region: rect(0px 36px 30px 0px);
+	-moz-image-region: rect(2px 36px 27px 0px);
+	list-style-image: url("images/reload-button.png");
+}
+
+#browser-view-reload-toolbarbutton:not([disabled="true"]):hover {
+	-moz-image-region: rect(30px 36px 60px 0px);
+	-moz-image-region: rect(32px 36px 57px 0px);
+}
+
+#browser-view-reload-toolbarbutton[disabled="true"] {
+	-moz-image-region: rect(90px 36px 120px 0px);
+	-moz-image-region: rect(92px 36px 117px 0px);
+}
+
+#browser-view-reload-toolbarbutton:not([disabled="true"]):hover:active {
+	-moz-image-region: rect(60px 36px 90px 0px);
+	-moz-image-region: rect(62px 36px 87px 0px);
+}
+
+#browser-view-reload-toolbarbutton > label {
+	display: none;
+}
+
+/* ------------------------------------------------------------------------ */
+
+#browser-view-stop-toolbarbutton {
+	-moz-margin-end: -2px;
+	-moz-margin-start: -5px;
+	-moz-image-region: rect(0px 36px 30px 0px);
+	-moz-image-region: rect(2px 36px 27px 0px);
+	list-style-image: url("images/stop-button.png");
+}
+
+#browser-view-stop-toolbarbutton:not([disabled="true"]):hover {
+	-moz-image-region: rect(30px 36px 60px 0px);
+	-moz-image-region: rect(32px 36px 57px 0px);
+}
+
+#browser-view-stop-toolbarbutton[disabled="true"] {
+	-moz-image-region: rect(90px 36px 120px 0px);
+	-moz-image-region: rect(92px 36px 117px 0px);
+}
+
+#browser-view-stop-toolbarbutton:not([disabled="true"]):hover:active {
+	-moz-image-region: rect(60px 36px 90px 0px);
+	-moz-image-region: rect(62px 36px 87px 0px);
+}
+
+#browser-view-stop-toolbarbutton > label {
+	display: none;
+}
+
+/* ------------------------------------------------------------------------ */
+
+#browser-view-content-macthrob {
+	width: 16px;
+	height: 26px;
+	background: url("images/macthrob.gif") 50% 50% no-repeat;
+}
+
+/* ------------------------------------------------------------------------ */
+
+#browser-view-go-toolbarbutton {
+	display: none;
+}
+
+/* ------------------------------------------------------------------------ */
+
+#browser-view-content-browser {
+	background: white;
+}
+
+/* ------------------------------------------------------------------------ */
+
+[ostype="Darwin"] #browser-view-navigation-toolbox {
+	/* pass */
+}
+
+[ostype="Darwin"] #browser-view-navigation-toolbar {
+	-moz-appearance: -moz-mac-unified-toolbar;
+}
+
+[ostype="Darwin"] #browser-view-statusbar {
+	/* pass */
+}
+
+[ostype="Darwin"][parentwindowtype="browser.weaponry.gnucitizen.org:browser-perspective"] #browser-view-navigation-toolbar {
+	-moz-appearance: none;
+	background: -moz-mac-chrome-inactive;
+}
+
+/* ------------------------------------------------------------------------ */
+
+[ostype="Linux"] #browser-view-navigation-toolbox {
+	/* pass */
+}
+
+[ostype="Linux"] #browser-view-navigation-toolbar {
+	/* pass */
+}
+
+[ostype="Linux"] #browser-view-statusbar {
+	padding: 2px;
+}
+
+[ostype="Linux"][parentwindowtype="browser.weaponry.gnucitizen.org:browser-perspective"] #browser-view-navigation-toolbar {
+	/* pass */
+}
+
+/* ------------------------------------------------------------------------ */
+
+[ostype="WINNT"] #browser-view-navigation-toolbox {
+	border: 0px;
+	-moz-appearance: none;
+	background: transparent;
+}
+
+[ostype="WINNT"] #browser-view-navigation-toolbar {
+	border: 0px;
+	-moz-appearance: none;
+	background: transparent;
+	padding: 2px 0px 2px 0px;
+}
+
+[ostype="WINNT"] #browser-view-statusbar {
+	padding: 2px;
+}
+
+[ostype="WINNT"][parentwindowtype="browser.weaponry.gnucitizen.org:browser-perspective"] #browser-view-navigation-toolbar {
+	/* pass */
+}
+
+/*  GNUCITIZEN (Information Security Think Tank)
+ **********************************************/
