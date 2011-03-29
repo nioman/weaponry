@@ -1,0 +1,24 @@
+#
+# chrome registration
+#
+
+content      branding                                                                        file:branding/content/
+resource     branding                                                                        file:branding/
+locale       branding en-US                                                                  file:branding/locale/en-US/
+skin         branding classic/1.0                                                            file:branding/skin/
+
+overlay      chrome://common.weaponry.gnucitizen.org/content/ovl/helpMenu.xul                chrome://support.websecurify.gnucitizen.org/content/ovl/helpMenu.xul
+overlay      chrome://common.weaponry.gnucitizen.org/content/ovl/toolsMenu.xul               chrome://preferences.weaponry.gnucitizen.org/content/ovl/toolsMenu.xul
+overlay      chrome://common.weaponry.gnucitizen.org/content/ovl/toolsMenu.xul               chrome://tasks.weaponry.gnucitizen.org/content/ovl/toolsMenu.xul
+overlay      chrome://browser.weaponry.gnucitizen.org/content/xul/browserPerspective.xul     chrome://basic.acidbrowser.gnucitizen.org/content/ovl/browserPerspective.xul
+
+#
+# xpcom registration
+#
+
+interfaces     ../components/IAcidbrowserService.xpt
+
+component      {a91a2ebc-8bef-4515-aba9-ba093869d048}      ../components/AcidbrowserService.js
+contract       @acidbrowser.gnucitizen.org/service;1       {a91a2ebc-8bef-4515-aba9-ba093869d048}
+
+category       profile-after-change AcidbrowserService     @acidbrowser.gnucitizen.org/service;1
