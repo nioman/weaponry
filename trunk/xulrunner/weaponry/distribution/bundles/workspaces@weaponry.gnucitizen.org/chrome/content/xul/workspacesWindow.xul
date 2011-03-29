@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<!--
+ *  workspacesWindow.xul
+ *  Copyright (C) 2007-2011  GNUCITIZEN
+ *  
+ *  This program is free software; you can redistribute it and/or modify
+ *  it under the terms of the GNU General Public License as published by
+ *  the Free Software Foundation; either version 2 of the License, or
+ *  (at your option) any later version.
+ *  
+ *  This program is distributed in the hope that it will be useful,
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *  GNU General Public License for more details.
+ *  
+ *  You should have received a copy of the GNU General Public License
+ *  along with this program; if not, write to the Free Software
+ *  Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+-->
+<?xul-overlay href="chrome://common.weaponry.gnucitizen.org/content/ovl/common.xul"?>
+<?xml-stylesheet href="chrome://workspaces.weaponry.gnucitizen.org/skin/xul/workspacesWindow.css" type="text/css"?>
+<!DOCTYPE window SYSTEM "chrome://workspaces.weaponry.gnucitizen.org/locale/xul/workspacesWindow.dtd">
+<window xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+	id="workspaces-window" title="&workspaces-window-title;" windowtype="workspaces.weaponry.gnucitizen.org:workspaces-window"
+	width="400" height="400" screenX="100" screenY="100" persist="width height screenX screenY sizemode">
+	
+	<script type="application/x-javascript" src="chrome://workspaces.weaponry.gnucitizen.org/content/inc/common.js"/>
+	<script type="application/x-javascript" src="chrome://workspaces.weaponry.gnucitizen.org/content/xul/workspacesWindow.js"/>
+	
+	<stringbundleset id="workspaces-window-stringbundleset">
+		<stringbundle id="workspaces-window-properties-stringbundle" src="chrome://workspaces.weaponry.gnucitizen.org/locale/xul/workspacesWindow.properties"/>
+	</stringbundleset>
+	
+	<menubar id="workspaces-window-menubar" hidden="true"/>
+	
+	<hbox id="workspaces-window-content-vbox" flex="1">
+		<iframe id="workspaces-window-content-iframe" src="chrome://workspaces.weaponry.gnucitizen.org/content/xul/workspacesPage.xul" flex="1"/>
+	</hbox>
+	
+	<box id="common-box"/>
+	
+</window>
+<!--
+ *  GNUCITIZEN (Information Security Think Tank)
+ ***********************************************
+-->

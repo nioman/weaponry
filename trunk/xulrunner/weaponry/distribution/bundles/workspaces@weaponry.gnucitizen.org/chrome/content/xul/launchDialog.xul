@@ -1,0 +1,74 @@
+<?xml version="1.0"?>
+<!--
+ *  launchDialog.xul
+ *  Copyright (C) 2007-2011  GNUCITIZEN
+ *  
+ *  This program is free software; you can redistribute it and/or modify
+ *  it under the terms of the GNU General Public License as published by
+ *  the Free Software Foundation; either version 2 of the License, or
+ *  (at your option) any later version.
+ *  
+ *  This program is distributed in the hope that it will be useful,
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *  GNU General Public License for more details.
+ *  
+ *  You should have received a copy of the GNU General Public License
+ *  along with this program; if not, write to the Free Software
+ *  Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+-->
+<?xul-overlay href="chrome://common.weaponry.gnucitizen.org/content/ovl/common.xul"?>
+<?xml-stylesheet href="chrome://workspaces.weaponry.gnucitizen.org/skin/xul/launchDialog.css" type="text/css"?>
+<!DOCTYPE dialog SYSTEM "chrome://workspaces.weaponry.gnucitizen.org/locale/xul/launchDialog.dtd">
+<dialog xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+	id="launch-dialog" title="&launch-dialog-title;" dialogtype="workspaces.weaponry.gnucitizen.org:test-dialog"
+	width="550" height="350" screenX="100" screenY="100" persist="width height screenX screenY sizemode"
+	buttons="cancel,accept">
+	
+	<script type="application/x-javascript" src="chrome://workspaces.weaponry.gnucitizen.org/content/inc/common.js"/>
+	<script type="application/x-javascript" src="chrome://workspaces.weaponry.gnucitizen.org/content/xul/launchDialog.js"/>
+	
+	<stringbundleset id="launch-dialog-stringbundleset">
+		<stringbundle id="launch-dialog-properties-stringbundle" src="chrome://workspaces.weaponry.gnucitizen.org/locale/xul/launchDialog.properties"/>
+	</stringbundleset>
+	
+	<vbox id="launch-dialog-content-vbox" flex="1">
+		<description id="launch-dialog-directions-description">&launch-dialog-directions-description-text;</description>
+		
+		<grid id="launch-dialog-grid" flex="1">
+			<columns id="launch-dialog-grid-columns">
+				<column id="launch-dialog-grid-labels-column"/>
+				<column id="launch-dialog-grid-fields-column" flex="1"/>
+			</columns>
+			
+			<rows id="launch-dialog-grid-rows">
+				<row id="launch-dialog-grid-workspace-row">
+					<vbox id="launch-dialog-workspace-label-vbox">
+						<label id="launch-dialog-workspace-label" value="&launch-dialog-workspace-label-value;"/>
+					</vbox>
+					
+					<vbox id="launch-dialog-workspace-field-vbox">
+						<textbox id="launch-dialog-workspace-textbox" type="autocomplete" autocompletesearch="weaponry-workspaces" tabindex="2" flex="1" oninput="return handleWorkspaceInputEvent(event);"/>
+					</vbox>
+				</row>
+				
+				<row id="launch-dialog-grid-workspace-options-row">
+					<vbox id="launch-dialog-workspace-options-label-vbox">
+						<spacer id="launch-dialog-workspace-options-label-spacer"/>
+					</vbox>
+					
+					<hbox id="launch-dialog-workspace-options-field-hbox">
+						<checkbox id="launch-dialog-customize-workspace-name-checkbox" label="&launch-dialog-customize-workspace-name-checkbox;" tabindex="3" onclick="return handleCustomizeWorkspaceNameClickEvent(event);"/>
+					</hbox>
+				</row>
+			</rows>
+		</grid>
+	</vbox>
+	
+	<box id="common-box"/>
+	
+</dialog>
+<!--
+ *  GNUCITIZEN (Information Security Think Tank)
+ ***********************************************
+-->

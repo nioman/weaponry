@@ -1,0 +1,157 @@
+<?xml version="1.0"?>
+<!--
+ *  basedataroll.xml
+ *  Copyright (C) 2007-2011  GNUCITIZEN
+ *  
+ *  This program is free software; you can redistribute it and/or modify
+ *  it under the terms of the GNU General Public License as published by
+ *  the Free Software Foundation; either version 2 of the License, or
+ *  (at your option) any later version.
+ *  
+ *  This program is distributed in the hope that it will be useful,
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *  GNU General Public License for more details.
+ *  
+ *  You should have received a copy of the GNU General Public License
+ *  along with this program; if not, write to the Free Software
+ *  Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+-->
+<!DOCTYPE bindings SYSTEM "chrome://common.weaponry.gnucitizen.org/locale/xbl/basedataroll.dtd">
+<bindings
+	xmlns="http://www.mozilla.org/xbl"
+	xmlns:xbl="http://www.mozilla.org/xbl"
+	xmlns:xul="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+	
+	<binding id="basedataroll" extends="chrome://common.weaponry.gnucitizen.org/content/xbl/basedatabox.xml#basedatabox">
+		<implementation>
+			<property name="$content">
+				<getter><![CDATA[
+					throw new Error('not implemented: $content');
+				]]></getter>
+			</property>
+			
+			<method name="refresh">
+				<body><![CDATA[
+					if (this._fireEvent('refresh')) {
+						let $content = this.$content;
+						let $nodes = $content.childNodes;
+						let length = $nodes.length;
+						
+						let i;
+						
+						for (i = 0; i < length; i += 1) {
+							$nodes[i].firstChild.refresh();
+						}
+					}
+				]]></body>
+			</method>
+			
+			<method name="rebuild">
+				<body><![CDATA[
+					if (this._fireEvent('rebuild')) {
+						let $content = this.$content;
+						let $nodes = $content.childNodes;
+						let length = $nodes.length;
+						
+						let i;
+						
+						for (i = 0; i < length; i += 1) {
+							$nodes[i].firstChild.rebuild();
+						}
+					}
+				]]></body>
+			</method>
+			
+			<constructor>
+				<action><![CDATA[
+					let self = this;
+					
+					this.dataView.buildItem = function (data, refresh) {
+						throw new Error('not implemented: dataView.buildItem');
+					};
+					
+					this.dataView.basedatarollOldInsertDataRow = this.dataView.insertDataRow;
+					this.dataView.basedatarollOldAppendDataRow = this.dataView.appendDataRow;
+					this.dataView.basedatarollOldUpdateDataRow = this.dataView.updateDataRow;
+					this.dataView.basedatarollOldRemoveDataRow = this.dataView.removeDataRow;
+					this.dataView.basedatarollOldRinseDataRows = this.dataView.rinseDataRows;
+					this.dataView.basedatarollOldClearDataRows = this.dataView.clearDataRows;
+					
+					this.dataView.insertDataRow = function (data, row, refresh) {
+						let pos = this.basedatarollOldInsertDataRow.apply(this, arguments);
+						let dataRow = this.obtainDataRow(pos);
+						let $content = self.$content;
+						
+						$content.insertBefore(this.buildItem(dataRow, refresh), $content.childNodes[row]);
+						
+						return pos;
+					};
+					
+					this.dataView.appendDataRow = function (data, refresh) {
+						let pos = this.basedatarollOldAppendDataRow.apply(this, arguments);
+						let dataRow = this.obtainDataRow(pos);
+						let $content = self.$content;
+						
+						$content.appendChild(this.buildItem(dataRow, refresh));
+						
+						return pos;
+					};
+					
+					this.dataView.updateDataRow = function (data, row, refresh) {
+						let dataRow = this.basedatarollOldUpdateDataRow.apply(this, arguments);
+						let $content = self.$content;
+						
+						$content.childNodes[row].firstChild.update(dataRow, refresh);
+						
+						return dataRow;
+					};
+					
+					this.dataView.removeDataRow = function (row) {
+						let result = this.basedatarollOldRemoveDataRow.apply(this, arguments);
+						let $content = self.$content;
+						
+						$content.removeChild($content.childNodes[row]);
+						
+						return result;
+					};
+					
+					this.dataView.rinseDataRows = function (row, count) {
+						let result = this.basedatarollOldRinseDataRows.apply(this, arguments);
+						let $content = self.$content;
+						
+						let i;
+						
+						for (i = 0; i < count; i += 1) {
+							$content.removeChild($content.childNodes[row + i]);
+						}
+						
+						return result;
+					};
+					
+					this.dataView.clearDataRows = function () {
+						let result = this.basedatarollOldClearDataRows.apply(this, arguments);
+						let $content = self.$content;
+						
+						while ($content.hasChildNodes()) {
+						    $content.removeChild($content.lastChild);
+						}
+						
+						return result;
+					};
+				]]></action>
+			</constructor>
+			
+			<destructor>
+				<action><![CDATA[
+					// pass
+				]]></action>
+			</destructor>
+		</implementation>
+	</binding>
+	
+</bindings>
+<!--
+ *  GNUCITIZEN (Information Security Think Tank)
+ ***********************************************
+-->

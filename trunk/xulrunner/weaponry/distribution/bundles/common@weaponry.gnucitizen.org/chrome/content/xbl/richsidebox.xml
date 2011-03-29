@@ -1,0 +1,289 @@
+<?xml version="1.0"?>
+<!--
+ *  richsidebox.xml
+ *  Copyright (C) 2007-2011  GNUCITIZEN
+ *  
+ *  This program is free software; you can redistribute it and/or modify
+ *  it under the terms of the GNU General Public License as published by
+ *  the Free Software Foundation; either version 2 of the License, or
+ *  (at your option) any later version.
+ *  
+ *  This program is distributed in the hope that it will be useful,
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *  GNU General Public License for more details.
+ *  
+ *  You should have received a copy of the GNU General Public License
+ *  along with this program; if not, write to the Free Software
+ *  Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+-->
+<!DOCTYPE bindings SYSTEM "chrome://common.weaponry.gnucitizen.org/locale/xbl/richsidebox.dtd">
+<bindings
+	xmlns="http://www.mozilla.org/xbl"
+	xmlns:xbl="http://www.mozilla.org/xbl"
+	xmlns:xul="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+	
+	<binding id="richsidepanel" extends="chrome://common.weaponry.gnucitizen.org/content/xbl/basebox.xml#basebox">
+		<content>
+			<xul:vbox class="richsidepanel-container" flex="1">
+				<xul:notificationbox class="richsidepanel-notificationbox" flex="1">
+					<xul:vbox class="richsidepanel-content" flex="1">
+						<children/>
+					</xul:vbox>
+				</xul:notificationbox>
+			</xul:vbox>
+		</content>
+		
+		<implementation>
+			<property name="$container">
+				<getter><![CDATA[
+					return document.getAnonymousNodes(this)[0];
+				]]></getter>
+			</property>
+			
+			<property name="$notificationbox">
+				<getter><![CDATA[
+					return this.$container.childNodes[0];
+				]]></getter>
+			</property>
+			
+			<property name="$content">
+				<getter><![CDATA[
+					return this.$notificationbox.childNodes[0];
+				]]></getter>
+			</property>
+			
+			<property name="$richlistitem">
+				<getter><![CDATA[
+					if (!this.$realRichlistitem) {
+						this.$realRichlistitem = document.createElement('richlistitem');
+						
+						this.$realRichlistitem.setAttribute('class', 'richsidepanel-richlistitem');
+						
+						this._bindAttributes(this, this.$realRichlistitem, ['richtabpanelid=id']);
+						
+						let $image = document.createElement('image');
+						
+						$image.setAttribute('class', 'richsidepanel-image');
+						
+						this._bindAttributes(this, $image, ['src=icon']);
+						
+						this.$realRichlistitem.appendChild($image);
+						
+						let $label = document.createElement('label');
+						
+						$label.setAttribute('class', 'richsidepanel-label');
+						
+						this._bindAttributes(this, $label, ['value=label']);
+						
+						this.$realRichlistitem.appendChild($label);
+					}
+					
+					return this.$realRichlistitem;
+				]]></getter>
+			</property>
+			
+			<constructor>
+				<action><![CDATA[
+					let self = this;
+					
+					let processSrcAttribute = function () {
+						if (self.hasAttribute('src') && self.childNodes.length == 0) {
+							self.$iframe = document.createElement('iframe');
+							
+							self.$iframe.setAttribute('src', self.getAttribute('src'));
+							self.$iframe.setAttribute('flex', '1');
+							
+							self.$iframe.iWasHere = true;
+							
+							self.appendChild(self.$iframe);
+							
+							self.$iframe.addEventListener('DOMTitleChanged', function (event) {
+								if (event.target != self.$iframe.contentDocument) {
+									return;
+								}
+								
+								if (!self.hasAttribute('label')) {
+									self.setAttribute('label', event.target.title);
+								}
+							}, false);
+						} else
+						if (self.firstChild && 'iWasHere' in self.firstChild && self.firstChild.iWasHere == true) {
+							self.$iframe.setAttribute('src', self.getAttribute('src'));
+						}
+					};
+					
+					processSrcAttribute();
+					
+					this.addEventListener('DOMAttrModified', function (event) {
+						if (event.target == this && event.attrName == 'url') {
+							processSrcAttribute();
+						}
+					}, false);
+				]]></action>
+			</constructor>
+			
+			<destructor>
+				<action><![CDATA[
+					// pass
+				]]></action>
+			</destructor>
+		</implementation>
+	</binding>
+	
+	<binding id="richsidebox" extends="chrome://common.weaponry.gnucitizen.org/content/xbl/basebox.xml#basebox">
+		<content>
+			<xul:vbox class="richsidebox-container" flex="1">
+				<xul:notificationbox class="richsidebox-notificationbox" flex="1">
+					<xul:hbox class="richsidebox-content" flex="1">
+						<xul:richlistbox class="richsidebox-richlistbox" flex="1" xbl:inherits="width=richlistboxwidth"/>
+						
+						<xul:splitter class="richsidebox-splitter" resize="after" collapse="before" xbl:inherits="state=splitterstate">
+							<xul:grippy class="richsidebox-grippy"/>
+						</xul:splitter>
+						
+						<xul:deck class="richsidebox-deck" flex="5" xbl:inherits="width=deckwidth">
+							<children includes="richsidepanel"/>
+						</xul:deck>
+					</xul:hbox>
+				</xul:notificationbox>
+			</xul:vbox>
+		</content>
+		
+		<implementation>
+			<property name="$container">
+				<getter><![CDATA[
+					return document.getAnonymousNodes(this)[0];
+				]]></getter>
+			</property>
+			
+			<property name="$notificationbox">
+				<getter><![CDATA[
+					return this.$container.childNodes[0];
+				]]></getter>
+			</property>
+			
+			<property name="$content">
+				<getter><![CDATA[
+					return this.$notificationbox.childNodes[0];
+				]]></getter>
+			</property>
+			
+			<property name="$richlistbox">
+				<getter><![CDATA[
+					return this.$content.childNodes[0];
+				]]></getter>
+			</property>
+			
+			<property name="$splitter">
+				<getter><![CDATA[
+					return this.$content.childNodes[1];
+				]]></getter>
+			</property>
+			
+			<property name="$deck">
+				<getter><![CDATA[
+					return this.$content.childNodes[2];
+				]]></getter>
+			</property>
+			
+			<property name="selectedPanel">
+				<getter><![CDATA[
+					return this.childNodes[this.$deck.selectedIndex];
+				]]></getter>
+				
+				<setter><![CDATA[
+					try {
+						val.$richlistitem.parentNode.selectedItem = val.$richlistitem;
+					} catch (e) {
+						// pass
+					}
+					
+					this.$deck.selectedPanel = val;
+					
+					// NOTE: no focus
+					/*
+					if (val.firstChild) {
+						val.firstChild.focus();
+					} else {
+						val.focus();
+					}
+					*/
+					//
+				]]></setter>
+			</property>
+			
+			<method name="_wireNode">
+				<parameter name="$element"/>
+				
+				<body><![CDATA[
+					if ($element.nextSibling) {
+						this.$richlistbox.insertBefore($element.$richlistitem, $element.nextSibling.$richlistitem);
+					} else {
+						this.$richlistbox.insertBefore($element.$richlistitem, null);
+					}
+					
+					let event = document.createEvent('Event');
+					
+					event.initEvent('richsidepanelCreated', true, false);
+					
+					this.parentNode.dispatchEvent(event);
+				]]></body>
+			</method>
+			
+			<method name="_unwireNode">
+				<parameter name="$element"/>
+				
+				<body><![CDATA[
+					if ($element.$richlistitem.previousSibling) {
+						$element.$richlistitem.previousSibling.click();
+					} else
+					if ($element.$richlistitem.nextSibling) {
+						$element.$richlistitem.nextSibling.click();
+					}
+					
+					this.$richlistbox.removeChild($element.$richlistitem);
+					
+					let event = document.createEvent('Event');
+					
+					event.initEvent('richsidepanelDestroyed', true, false);
+					
+					this.parentNode.dispatchEvent(event);
+				]]></body>
+			</method>
+			
+			<constructor>
+				<action><![CDATA[
+					let self = this;
+					
+					this.$richlistbox.addEventListener('select', function (event) {
+						self.selectedPanel = self.childNodes[event.target.selectedIndex];
+					}, false);
+					
+					if (this.firstChild) {
+						this.selectedPanel = this.firstChild;
+					}
+					
+					if (this.hasAttribute('persist')) {
+						this.setAttribute('persist', this.getAttribute('persist') + ' richlistboxwidth splitterstate deckwidth');
+					} else {
+						this.setAttribute('persist', 'richlistboxwidth splitterstate deckwidth');
+					}
+				]]></action>
+			</constructor>
+			
+			<destructor>
+				<action><![CDATA[
+					this.setAttribute('richlistboxwidth', 'width' in this.$richlistbox ? this.$richlistbox.width : '200');
+					this.setAttribute('splitterstate', 'state' in this.$splitter ? this.$splitter.state : 'open');
+					this.setAttribute('deckwidth', 'width' in this.$deck ? this.$deck.width : '200');
+				]]></action>
+			</destructor>
+		</implementation>
+	</binding>
+	
+</bindings>
+<!--
+ *  GNUCITIZEN (Information Security Think Tank)
+ ***********************************************
+-->

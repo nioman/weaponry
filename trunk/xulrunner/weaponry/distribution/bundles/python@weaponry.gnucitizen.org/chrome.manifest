@@ -1,0 +1,20 @@
+#
+# chrome registration
+#
+
+content      python.weaponry.gnucitizen.org                 file:chrome/content/
+resource     python.weaponry.gnucitizen.org                 file:chrome/
+locale       python.weaponry.gnucitizen.org en-US           file:chrome/locale/en-US/
+skin         python.weaponry.gnucitizen.org classic/1.0     file:chrome/skin/
+
+content      sites.python.weaponry.gnucitizen.org           file:sites/
+resource     sites.python.weaponry.gnucitizen.org           file:sites/
+
+#
+# xpcom registration
+#
+
+interfaces     components/IWeaponryPythonService.xpt
+
+component      {29ab8bf0-5ec9-11df-a08a-0800200c9a66}        components/WeaponryPythonService.js
+contract       @python.weaponry.gnucitizen.org/service;1     {29ab8bf0-5ec9-11df-a08a-0800200c9a66}

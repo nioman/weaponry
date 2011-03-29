@@ -1,0 +1,168 @@
+<?xml version="1.0"?>
+<!--
+ *  basedatabox.xml
+ *  Copyright (C) 2007-2011  GNUCITIZEN
+ *  
+ *  This program is free software; you can redistribute it and/or modify
+ *  it under the terms of the GNU General Public License as published by
+ *  the Free Software Foundation; either version 2 of the License, or
+ *  (at your option) any later version.
+ *  
+ *  This program is distributed in the hope that it will be useful,
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *  GNU General Public License for more details.
+ *  
+ *  You should have received a copy of the GNU General Public License
+ *  along with this program; if not, write to the Free Software
+ *  Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+-->
+<!DOCTYPE bindings SYSTEM "chrome://common.weaponry.gnucitizen.org/locale/xbl/basedatabox.dtd">
+<bindings
+	xmlns="http://www.mozilla.org/xbl"
+	xmlns:xbl="http://www.mozilla.org/xbl"
+	xmlns:xul="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+	
+	<binding id="basedatabox" extends="chrome://common.weaponry.gnucitizen.org/content/xbl/basecomputebox.xml#basecomputebox">
+		<implementation>
+			<constructor>
+				<action><![CDATA[
+					let self = this;
+					
+					this.dataView = {
+						data: [],
+						
+						obtainDataLen: function () {
+							return this.data.length;
+						},
+						
+						obtainDataRow: function (row) {
+							return this.data[row];
+						},
+						
+						obtainDataPos: function (data) {
+							let dataLength = this.obtainDataLen();
+							
+							let i, element, wasSuccessful, field;
+							
+							for (i = 0; i < dataLength; i += 1) {
+								element = this.obtainDataRow(i);
+								wasSuccessful = true;
+								
+								for (field in data) {
+									if (element[field] != data[field]) {
+										wasSuccessful = false;
+										
+										break;
+									}
+								}
+								
+								if (wasSuccessful) {
+									return i;
+								}
+							}
+							
+							return null;
+						},
+						
+						createDataRow: function (data) {
+							self.computeFields(data);
+							
+							return data;
+						},
+						
+						insertDataRow: function (data, row) {
+							this.data.splice(row, 0, this.createDataRow(data));
+							
+							return row;
+						},
+						
+						appendDataRow: function (data) {
+							this.data.push(this.createDataRow(data));
+							
+							return this.data.length - 1;
+						},
+						
+						updateDataRow: function (data, row) {
+							let newData = this.data[row];
+							let dataRow = this.createDataRow(data);
+							
+							let property;
+							
+							for (property in dataRow) {
+								newData[property] = dataRow[property];
+							}
+							
+							this.data[row] = newData;
+							
+							return newData;
+						},
+						
+						removeDataRow: function (row) {
+							this.data.splice(row, 1);
+						},
+						
+						rinseDataRows: function (row, count) {
+							this.data.splice(row, count < 0 ? 0 : count);
+						},
+						
+						clearDataRows: function () {
+							this.data = [];
+						}
+					};
+					
+					this.obtainDataLen = function () {
+						return this.dataView.obtainDataLen.apply(this.dataView, arguments);
+					};
+					
+					this.obtainDataRow = function () {
+						return this.dataView.obtainDataRow.apply(this.dataView, arguments);
+					};
+					
+					this.obtainDataPos = function () {
+						return this.dataView.obtainDataPos.apply(this.dataView, arguments);
+					};
+					
+					this.createDataRow = function () {
+						return this.dataView.createDataRow.apply(this.dataView, arguments);
+					};
+					
+					this.insertDataRow = function () {
+						return this.dataView.insertDataRow.apply(this.dataView, arguments);
+					};
+					
+					this.appendDataRow = function () {
+						return this.dataView.appendDataRow.apply(this.dataView, arguments);
+					};
+					
+					this.updateDataRow = function () {
+						return this.dataView.updateDataRow.apply(this.dataView, arguments);
+					};
+					
+					this.removeDataRow = function () {
+						return this.dataView.removeDataRow.apply(this.dataView, arguments);
+					};
+					
+					this.rinseDataRows = function () {
+						return this.dataView.rinseDataRows.apply(this.dataView, arguments);
+					};
+					
+					this.clearDataRows = function () {
+						return this.dataView.clearDataRows.apply(this.dataView, arguments);
+					};
+				]]></action>
+			</constructor>
+			
+			<destructor>
+				<action><![CDATA[
+					// pass
+				]]></action>
+			</destructor>
+		</implementation>
+	</binding>
+	
+</bindings>
+<!--
+ *  GNUCITIZEN (Information Security Think Tank)
+ ***********************************************
+-->

@@ -1,0 +1,300 @@
+/**
+ *  IWeaponryWorkspace.idl
+ *  Copyright (C) 2007-2011  GNUCITIZEN
+ *  
+ *  This program is free software; you can redistribute it and/or modify
+ *  it under the terms of the GNU General Public License as published by
+ *  the Free Software Foundation; either version 2 of the License, or
+ *  (at your option) any later version.
+ *  
+ *  This program is distributed in the hope that it will be useful,
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *  GNU General Public License for more details.
+ *  
+ *  You should have received a copy of the GNU General Public License
+ *  along with this program; if not, write to the Free Software
+ *  Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+ */
+
+#include "nsISupports.idl"
+#include "mozIStorageConnection.idl"
+#include "nsIFile.idl"
+#include "nsIDOMWindow.idl"
+#include "nsISimpleEnumerator.idl"
+
+/* ------------------------------------------------------------------------ */
+
+interface IWeaponryWorkspaceHolder;
+interface IWeaponryWorkspaceStatementResultCallbackHandler;
+interface IWeaponryWorkspaceStatementCompletionCallbackHandler;
+interface IWeaponryWorkspaceStatementErrorCallbackHandler;
+interface IWeaponryWorkspacePropertyResultCallbackHandler;
+interface IWeaponryWorkspacePropertyCompletionCallbackHandler;
+interface IWeaponryWorkspaceTableItemResultCallbackHandler;
+interface IWeaponryWorkspaceTableItemCompletionCallbackHandler;
+interface IWeaponryWorkspaceCallbackHandler;
+interface IWeaponryWorkspaceCompletionCallbackHandler;
+interface IWeaponryWorkspaceTableAPI;
+interface IWeaponryWorkspacePrototype;
+interface IWeaponryWorkspace;
+
+/* ------------------------------------------------------------------------ */
+
+[scriptable, uuid(76b083a0-0b46-11df-8a39-0800200c9a66)]
+interface IWeaponryWorkspaceHolder : nsISupports {
+	IWeaponryWorkspace getWorkspace();
+	
+	void setWorkspace(in IWeaponryWorkspace workspace);
+	
+	void unsetWorkspace(in IWeaponryWorkspace workspace);
+};
+
+/* ------------------------------------------------------------------------ */
+
+[scriptable, function, uuid(a8167090-086b-11df-8a39-0800200c9a66)]
+interface IWeaponryWorkspaceStatementResultCallbackHandler : nsISupports {
+	void handle(in AString result, in IWeaponryWorkspace workspace);
+};
+
+/* ------------------------------------------------------------------------ */
+
+[scriptable, function, uuid(aa23d750-086c-11df-8a39-0800200c9a66)]
+interface IWeaponryWorkspaceStatementCompletionCallbackHandler : nsISupports {
+	void handle(in AString reason, in IWeaponryWorkspace workspace);
+};
+
+/* ------------------------------------------------------------------------ */
+
+[scriptable, function, uuid(842a2950-086c-11df-8a39-0800200c9a66)]
+interface IWeaponryWorkspaceStatementErrorCallbackHandler : nsISupports {
+	void handle(in AString error, in IWeaponryWorkspace workspace);
+};
+
+/* ------------------------------------------------------------------------ */
+
+[scriptable, function, uuid(19e1f7b0-8361-11df-8395-0800200c9a66)]
+interface IWeaponryWorkspacePropertyResultCallbackHandler : nsISupports {
+	void handle(in AString result, in IWeaponryWorkspace workspace);
+};
+
+/* ------------------------------------------------------------------------ */
+
+[scriptable, function, uuid(203efef0-8361-11df-8395-0800200c9a66)]
+interface IWeaponryWorkspacePropertyCompletionCallbackHandler : nsISupports {
+	void handle(in AString reason, in IWeaponryWorkspace workspace);
+};
+
+/* ------------------------------------------------------------------------ */
+
+[scriptable, function, uuid(07fdd920-8360-11df-8395-0800200c9a66)]
+interface IWeaponryWorkspaceTableItemResultCallbackHandler : nsISupports {
+	void handle(in AString result, in IWeaponryWorkspace workspace);
+};
+
+/* ------------------------------------------------------------------------ */
+
+[scriptable, function, uuid(1141d3b0-8360-11df-8395-0800200c9a66)]
+interface IWeaponryWorkspaceTableItemCompletionCallbackHandler : nsISupports {
+	void handle(in long rowId, in IWeaponryWorkspace workspace);
+};
+
+/* ------------------------------------------------------------------------ */
+
+[scriptable, function, uuid(324bdd40-0605-11df-8a39-0800200c9a66)]
+interface IWeaponryWorkspaceCallbackHandler : nsISupports {
+	void handle(in IWeaponryWorkspace workspace);
+};
+
+/* ------------------------------------------------------------------------ */
+
+[scriptable, function, uuid(a523ee20-2ec3-11df-9aae-0800200c9a66)]
+interface IWeaponryWorkspaceCompletionCallbackHandler : nsISupports {
+	void handle(in IWeaponryWorkspace workspace);
+};
+
+/* ------------------------------------------------------------------------ */
+
+[scriptable, uuid(b5a5bfe0-82be-11df-8395-0800200c9a66)]
+interface IWeaponryWorkspaceTableAPI : nsISupports {
+	attribute AString recordNotification;
+	
+	attribute AString updateNotification;
+	
+	attribute AString deleteNotification;
+	
+	/* -------------------------------------------------------------------- */
+	
+	attribute IWeaponryWorkspace workspace;
+	
+	/* -------------------------------------------------------------------- */
+	
+	AString retrieveTableItem(in AString table, in AString parameters);
+	
+	void retrieveTableItemAsynchronously(in AString table, in AString parameters, in IWeaponryWorkspaceTableItemResultCallbackHandler resultHandler, in IWeaponryWorkspaceTableItemCompletionCallbackHandler completionHandler);
+	
+	/* -------------------------------------------------------------------- */
+	
+	long insertTableItem(in AString table, in AString parameters);
+	
+	void insertTableItemAsynchronously(in AString table, in AString parameters, in IWeaponryWorkspaceTableItemCompletionCallbackHandler completionHandler);
+	
+	/* -------------------------------------------------------------------- */
+	
+	long recordTableItem(in AString table, in AString parameters);
+	
+	void recordTableItemAsynchronously(in AString table, in AString parameters, in IWeaponryWorkspaceTableItemCompletionCallbackHandler completionHandler);
+	
+	/* -------------------------------------------------------------------- */
+	
+	long updateTableItem(in AString table, in AString parameters);
+	
+	void updateTableItemAsynchronously(in AString table, in AString parameters, in IWeaponryWorkspaceTableItemCompletionCallbackHandler completionHandler);
+	
+	/* -------------------------------------------------------------------- */
+	
+	long deleteTableItem(in AString table, in AString parameters);
+	
+	void deleteTableItemAsynchronously(in AString table, in AString parameters, in IWeaponryWorkspaceTableItemCompletionCallbackHandler completionHandler);
+	
+	/* -------------------------------------------------------------------- */
+	
+	nsISimpleEnumerator enumerateTableItems(in AString table, in AString parameters);
+	
+	void enumerateTableItemsAsynchronously(in AString table, in AString parameters, in IWeaponryWorkspaceTableItemResultCallbackHandler resultHandler, in IWeaponryWorkspaceTableItemCompletionCallbackHandler completionHandler);
+};
+
+/* ------------------------------------------------------------------------ */
+
+[scriptable, uuid(d0b562b0-0d05-11df-8a39-0800200c9a66)]
+interface IWeaponryWorkspacePrototype : nsISupports {
+	readonly attribute mozIStorageConnection connection;
+	
+	/* -------------------------------------------------------------------- */
+	
+	readonly attribute nsIFile file;
+	
+	/* -------------------------------------------------------------------- */
+	
+	readonly attribute AString name;
+	
+	/* -------------------------------------------------------------------- */
+	
+	readonly attribute AString path;
+	
+	/* -------------------------------------------------------------------- */
+	
+	readonly attribute AString fileUrl;
+	
+	/* -------------------------------------------------------------------- */
+	
+	readonly attribute AString thumbnailUri;
+	
+	/* -------------------------------------------------------------------- */
+	
+	void rename(in AString name);
+	
+	void delete();
+	
+	/* -------------------------------------------------------------------- */
+	
+	nsIDOMWindow getWindow();
+	
+	nsIDOMWindow openWindow();
+	
+	/* -------------------------------------------------------------------- */
+	
+	nsISimpleEnumerator executeStatement(in AString expression, in AString parameters);
+	
+	void executeStatementAsynchronously(in AString expression, in AString parameters, in IWeaponryWorkspaceStatementResultCallbackHandler resultHandler, [optional] in IWeaponryWorkspaceStatementCompletionCallbackHandler completionHandler, [optional] in IWeaponryWorkspaceStatementErrorCallbackHandler errorHandler);
+	
+	/* -------------------------------------------------------------------- */
+	
+	AString getProperty(in AString key);
+	
+	void getPropertyAsynchronously(in AString key, in IWeaponryWorkspacePropertyResultCallbackHandler resultHandler, [optional] in IWeaponryWorkspacePropertyCompletionCallbackHandler completionHandler);
+	
+	/* -------------------------------------------------------------------- */
+	
+	void setProperty(in AString key, in AString value);
+	
+	void setPropertyAsynchronously(in AString key, in AString value, [optional] in IWeaponryWorkspacePropertyCompletionCallbackHandler completionHandler);
+	
+	/* -------------------------------------------------------------------- */
+	
+	void delProperty(in AString key);
+	
+	void delPropertyAsynchronously(in AString key, [optional] in IWeaponryWorkspacePropertyCompletionCallbackHandler completionHandler);
+	
+	/* -------------------------------------------------------------------- */
+	
+	nsISimpleEnumerator enumerateProperties(in AString lookup);
+	
+	void enumeratePropertiesAsynchronously(in AString lookup, in IWeaponryWorkspacePropertyResultCallbackHandler handler, [optional] in IWeaponryWorkspacePropertyCompletionCallbackHandler completionHandler);
+	
+	/* -------------------------------------------------------------------- */
+	
+	AString retrieveTableItem(in AString table, in AString parameters);
+	
+	void retrieveTableItemAsynchronously(in AString table, in AString parameters, in IWeaponryWorkspaceTableItemResultCallbackHandler handler, [optional] in IWeaponryWorkspaceTableItemCompletionCallbackHandler completionHandler);
+	
+	/* -------------------------------------------------------------------- */
+	
+	long insertTableItem(in AString table, in AString parameters);
+	
+	void insertTableItemAsynchronously(in AString table, in AString parameters, in IWeaponryWorkspaceTableItemCompletionCallbackHandler completionHandler);
+	
+	/* -------------------------------------------------------------------- */
+	
+	long updateTableItem(in AString table, in AString parameters);
+	
+	void updateTableItemAsynchronously(in AString table, in AString parameters, in IWeaponryWorkspaceTableItemCompletionCallbackHandler completionHandler);
+	
+	/* -------------------------------------------------------------------- */
+	
+	long deleteTableItem(in AString table, in AString parameters);
+	
+	void deleteTableItemAsynchronously(in AString table, in AString parameters, in IWeaponryWorkspaceTableItemCompletionCallbackHandler completionHandler);
+	
+	/* -------------------------------------------------------------------- */
+	
+	nsISimpleEnumerator enumerateTableItems(in AString table, in AString parameters);
+	
+	void enumerateTableItemsAsynchronously(in AString table, in AString parameters, in IWeaponryWorkspaceTableItemResultCallbackHandler handler, [optional] in IWeaponryWorkspaceTableItemCompletionCallbackHandler completionHandler);
+};
+
+/* ------------------------------------------------------------------------ */
+
+[scriptable, uuid(438d48a0-0605-11df-8a39-0800200c9a66)]
+interface IWeaponryWorkspace : IWeaponryWorkspacePrototype {
+	[optional] readonly attribute IWeaponryWorkspacePrototype workspacePrototype;
+	
+	/* -------------------------------------------------------------------- */
+	
+	readonly attribute AString id;
+	
+	/* -------------------------------------------------------------------- */
+	
+	void initWithConnection(in mozIStorageConnection connection);
+	
+	void initWithFile(in nsIFile file);
+	
+	void initWithName(in AString name);
+	
+	/* -------------------------------------------------------------------- */
+	
+	void create();
+	
+	void destroy();
+	
+	/* -------------------------------------------------------------------- */
+	
+	boolean sameAs(in IWeaponryWorkspace workspace);
+	
+	/* -------------------------------------------------------------------- */
+	
+	IWeaponryWorkspaceTableAPI getTableAPI(in AString notificationPrefix);
+};
+
+/*  GNUCITIZEN (Information Security Think Tank)
+ **********************************************/

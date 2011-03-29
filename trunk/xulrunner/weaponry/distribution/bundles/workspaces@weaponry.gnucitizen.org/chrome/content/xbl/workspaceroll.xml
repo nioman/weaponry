@@ -1,0 +1,89 @@
+<?xml version="1.0"?>
+<!--
+ *  workspaceroll.xml
+ *  Copyright (C) 2007-2011  GNUCITIZEN
+ *  
+ *  This program is free software; you can redistribute it and/or modify
+ *  it under the terms of the GNU General Public License as published by
+ *  the Free Software Foundation; either version 2 of the License, or
+ *  (at your option) any later version.
+ *  
+ *  This program is distributed in the hope that it will be useful,
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *  GNU General Public License for more details.
+ *  
+ *  You should have received a copy of the GNU General Public License
+ *  along with this program; if not, write to the Free Software
+ *  Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+-->
+<!DOCTYPE bindings SYSTEM "chrome://workspaces.weaponry.gnucitizen.org/locale/xbl/workspaceroll.dtd">
+<bindings
+	xmlns="http://www.mozilla.org/xbl"
+	xmlns:xbl="http://www.mozilla.org/xbl"
+	xmlns:xul="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+	
+	<binding id="workspaceroll" extends="chrome://common.weaponry.gnucitizen.org/content/xbl/dbroll.xml#dbroll">
+		<resources>
+			<stylesheet src="chrome://workspaces.weaponry.gnucitizen.org/content/css/bindings.css"/>
+		</resources>
+		
+		<implementation>
+			<method name="initializeConnection">
+				<parameter name="connection"/>
+				
+				<body><![CDATA[
+					if (connection) {
+						this.connection = connection;
+					} else
+					if (window.workspace) {
+						this.connection = window.workspace.connection;
+						
+						this.refresh();
+					}
+				]]></body>
+			</method>
+			
+			<constructor>
+				<action><![CDATA[
+					let self = this;
+					
+					this.workspaceTableEventObserver = {
+						observe: function (subject, topic, data) {
+							if (topic == 'weaponry-workspace-renamed') {
+								let workspace = subject.QueryInterface(Components.interfaces.IWeaponryWorkspace);
+								
+								if (workspace.sameAs(window.workspace)) {
+									self.initializeConnection(workspace.connection);
+								}
+							} else
+							if (topic == 'weaponry-workspace-table-updated') {
+								let workspace = subject.QueryInterface(Components.interfaces.IWeaponryWorkspace);
+								let table = self.hasAttribute('observabletable') ? self.getAttribute('observabletable') : self.getAttribute('table');
+								
+								if (workspace.sameAs(window.workspace) && data == table) {
+									self.refresh();
+								}
+							}
+						}
+					};
+					
+					weaponryCommon.observerService.addObserver(this.workspaceTableEventObserver, 'weaponry-workspace-renamed', false);
+					weaponryCommon.observerService.addObserver(this.workspaceTableEventObserver, 'weaponry-workspace-table-updated', false);
+				]]></action>
+			</constructor>
+			
+			<destructor>
+				<action><![CDATA[
+					weaponryCommon.observerService.removeObserver(this.workspaceTableEventObserver, 'weaponry-workspace-renamed');
+					weaponryCommon.observerService.removeObserver(this.workspaceTableEventObserver, 'weaponry-workspace-table-updated');
+				]]></action>
+			</destructor>
+		</implementation>
+	</binding>
+	
+</bindings>
+<!--
+ *  GNUCITIZEN (Information Security Think Tank)
+ ***********************************************
+-->
