@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<!--
+ *  browserPerspective.xul
+ *  Copyright (C) 2007-2011  GNUCITIZEN
+ *  
+ *  This program is free software; you can redistribute it and/or modify
+ *  it under the terms of the GNU General Public License as published by
+ *  the Free Software Foundation; either version 2 of the License, or
+ *  (at your option) any later version.
+ *  
+ *  This program is distributed in the hope that it will be useful,
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *  GNU General Public License for more details.
+ *  
+ *  You should have received a copy of the GNU General Public License
+ *  along with this program; if not, write to the Free Software
+ *  Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+-->
+<?xml-stylesheet href="chrome://basic.acidbrowser.gnucitizen.org/skin/ovl/browserPerspective.css" type="text/css"?>
+<!DOCTYPE overlay SYSTEM "chrome://basic.acidbrowser.gnucitizen.org/locale/ovl/browserPerspective.dtd">
+<overlay xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+	
+	<script type="application/x-javascript" src="chrome://basic.acidbrowser.gnucitizen.org/content/ovl/browserPerspective.js"/>
+	
+	<stringbundleset id="browser-perspective-stringbundleset">
+		<stringbundle id="acidbrowser-basic-browser-perspective-properties-stringbundle" src="chrome://basic.acidbrowser.gnucitizen.org/locale/ovl/browserPerspective.properties"/>
+	</stringbundleset>
+	
+	<commandset id="common-commandset">
+		<command id="acidbrowser-basic-browser-perspective-open-console-command" oncommand="return handleAcidbrowserBasicOpenConsoleCommandEvent(event);"/>
+	</commandset>
+	
+	<keyset id="common-keyset">
+		<key id="acidbrowser-basic-browser-perspective-open-console-key" modifiers="accel" key="s" command="acidbrowser-basic-browser-perspective-open-console-command"/>
+	</keyset>
+	
+	<page id="browser-perspective" title="&acidbrowser-basic-browser-perspective-title;"/>
+	
+	<vbox id="browser-perspective-content-vbox">
+		<panel id="acidbrowser-basic-browser-perspective-console-panel">
+			<console id="acidbrowser-basic-browser-perspective-main-console" type="acidbrowser" flex="1"/>
+		</panel>
+	</vbox>
+	
+</overlay>
+<!--
+ *  GNUCITIZEN (Information Security Think Tank)
+ ***********************************************
+-->

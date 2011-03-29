@@ -1,0 +1,8 @@
+#
+# chrome registration
+#
+
+content      main                 file:main/content/
+resource     main                 file:main/
+locale       main en-US           file:main/locale/en-US/
+skin         main classic/1.0     file:main/skin/
