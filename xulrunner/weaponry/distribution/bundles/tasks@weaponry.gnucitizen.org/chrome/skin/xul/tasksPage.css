@@ -1,0 +1,214 @@
+/**
+ *  tasksPage.css
+ *  Copyright (C) 2007-2011  GNUCITIZEN
+ *  
+ *  This program is free software; you can redistribute it and/or modify
+ *  it under the terms of the GNU General Public License as published by
+ *  the Free Software Foundation; either version 2 of the License, or
+ *  (at your option) any later version.
+ *  
+ *  This program is distributed in the hope that it will be useful,
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *  GNU General Public License for more details.
+ *  
+ *  You should have received a copy of the GNU General Public License
+ *  along with this program; if not, write to the Free Software
+ *  Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+ */
+
+@import url("chrome://global/skin/");
+
+/* ------------------------------------------------------------------------ */
+
+#tasks-page-splash-vbox {
+	-moz-box-pack: center;
+	-moz-box-align: center;
+}
+
+/* ------------------------------------------------------------------------ */
+
+#tasks-page-splash-image {
+	margin-bottom: 10px;
+}
+
+/* ------------------------------------------------------------------------ */
+
+#tasks-page-tasks-datalist richlistbox {
+	margin: 0px;
+	padding: 0px;
+	-moz-appearance: none;
+}
+
+#tasks-page-tasks-datalist richlistbox richlistitem {
+	padding: 5px;
+}
+
+/* ------------------------------------------------------------------------ */
+
+.tasks-page-item-stop-button   ,
+.tasks-page-item-pause-button  ,
+.tasks-page-item-resume-button ,
+.tasks-page-item-act-button    {
+	display: none;
+}
+
+/* ------------------------------------------------------------------------ */
+
+.tasks-page-item-hbox[taskIsStoppable="true"] .tasks-page-item-stop-button   ,
+.tasks-page-item-hbox[taskIsPausable="true"]  .tasks-page-item-pause-button  ,
+.tasks-page-item-hbox[taskIsPausable="true"]  .tasks-page-item-resume-button ,
+.tasks-page-item-hbox[taskIsActable="true"]   .tasks-page-item-act-button    {
+	display: block;
+}
+
+.tasks-page-item-hbox[taskState="created"]  .tasks-page-item-stop-button   ,
+.tasks-page-item-hbox[taskState="created"]  .tasks-page-item-pause-button  ,
+.tasks-page-item-hbox[taskState="created"]  .tasks-page-item-resume-button ,
+.tasks-page-item-hbox[taskState="running"]  .tasks-page-item-start-button  ,
+.tasks-page-item-hbox[taskState="running"]  .tasks-page-item-resume-button ,
+.tasks-page-item-hbox[taskState="stopped"]  .tasks-page-item-start-button  ,
+.tasks-page-item-hbox[taskState="stopped"]  .tasks-page-item-stop-button   ,
+.tasks-page-item-hbox[taskState="stopped"]  .tasks-page-item-pause-button  ,
+.tasks-page-item-hbox[taskState="stopped"]  .tasks-page-item-resume-button ,
+.tasks-page-item-hbox[taskState="paused"]   .tasks-page-item-start-button  ,
+.tasks-page-item-hbox[taskState="paused"]   .tasks-page-item-pause-button  ,
+.tasks-page-item-hbox[taskState="finished"] .tasks-page-item-start-button  ,
+.tasks-page-item-hbox[taskState="finished"] .tasks-page-item-stop-button   ,
+.tasks-page-item-hbox[taskState="finished"] .tasks-page-item-pause-button  ,
+.tasks-page-item-hbox[taskState="finished"] .tasks-page-item-resume-button {
+	display: none;
+}
+
+/* ------------------------------------------------------------------------ */
+
+.tasks-page-item-thumbnail-image {
+	width: 64px;
+	height: 64px;
+}
+
+/* ------------------------------------------------------------------------ */
+
+.tasks-page-item-details-vbox {
+	margin-left: 5px;
+	-moz-box-pack: center;
+}
+
+/* ------------------------------------------------------------------------ */
+
+.tasks-page-item-start-button  ,
+.tasks-page-item-stop-button   ,
+.tasks-page-item-pause-button  ,
+.tasks-page-item-resume-button ,
+.tasks-page-item-act-button    {
+	border: 0px;
+	margin: 0px;
+	padding: 0px;
+	min-width: 0px;
+	min-height: 0px;
+	-moz-appearance: none;
+	background-color: transparent;
+	list-style-image: url("images/buttons.png");
+}
+
+.tasks-page-item-start-button  hbox ,
+.tasks-page-item-stop-button   hbox ,
+.tasks-page-item-pause-button  hbox ,
+.tasks-page-item-resume-button hbox ,
+.tasks-page-item-act-button    hbox {
+	margin: 0px;
+	padding: 0px;
+}
+
+.tasks-page-item-start-button  label ,
+.tasks-page-item-stop-button   label ,
+.tasks-page-item-pause-button  label ,
+.tasks-page-item-resume-button label ,
+.tasks-page-item-act-button    label {
+	margin: 0px;
+	padding: 0px;
+	display: none;
+}
+
+.tasks-page-item-start-button {
+	-moz-image-region: rect(16px, 16px, 32px, 0px);
+}
+
+.tasks-page-item-start-button:hover {
+	-moz-image-region: rect(16px, 32px, 32px, 16px);
+}
+
+.tasks-page-item-start-button:hover:active {
+	-moz-image-region: rect(16px, 48px, 32px, 32px);
+}
+
+.tasks-page-item-stop-button {
+	-moz-image-region: rect(0px, 16px, 16px, 0px);
+}
+
+.tasks-page-item-stop-button:hover {
+	-moz-image-region: rect(0px, 32px, 16px, 16px);
+}
+
+.tasks-page-item-stop-button:hover:active {
+	-moz-image-region: rect(0px, 48px, 16px, 32px);
+}
+
+.tasks-page-item-pause-button {
+	-moz-image-region: rect(48px, 16px, 64px, 0px);
+}
+
+.tasks-page-item-pause-button:hover {
+	-moz-image-region: rect(48px, 32px, 64px, 16px);
+}
+
+.tasks-page-item-pause-button:hover:active {
+	-moz-image-region: rect(48px, 16px, 64px, 0px);
+}
+
+.tasks-page-item-resume-button {
+	-moz-image-region: rect(16px, 16px, 32px, 0px);
+}
+
+.tasks-page-item-resume-button:hover {
+	-moz-image-region: rect(16px, 32px, 32px, 16px);
+}
+
+.tasks-page-item-resume-button:hover:active {
+	-moz-image-region: rect(16px, 48px, 32px, 32px);
+}
+
+.tasks-page-item-act-button {
+	-moz-image-region: rect(32px, 16px, 48px, 0px);
+}
+
+.tasks-page-item-act-button:hover {
+	-moz-image-region: rect(32px, 32px, 48px, 16px);
+}
+
+.tasks-page-item-act-button:hover:active {
+	-moz-image-region: rect(32px, 48px, 48px, 32px);
+}
+
+/* ------------------------------------------------------------------------ */
+
+.tasks-page-item-status-label {
+	font-size: 80%;
+}
+
+/* ------------------------------------------------------------------------ */
+
+#tasks-page-action-toolbar {
+	border: 0px;
+	padding: 2px;
+	-moz-appearance: none;
+}
+
+/* ------------------------------------------------------------------------ */
+
+#tasks-page-clear-toolbarbutton > image {
+	display: none;
+}
+
+/*  GNUCITIZEN (Information Security Think Tank)
+ **********************************************/

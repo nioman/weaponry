@@ -1,0 +1,7 @@
+<!ENTITY tasks-page-title "Tasks">
+<!ENTITY tasks-page-item-start-button-label "Start">
+<!ENTITY tasks-page-item-pause-button-label "Pause">
+<!ENTITY tasks-page-item-resume-button-label "Resume">
+<!ENTITY tasks-page-item-stop-button-label "Stop">
+<!ENTITY tasks-page-item-act-button-label "Act">
+<!ENTITY tasks-page-splash-label-value "No tasks are currently available!">

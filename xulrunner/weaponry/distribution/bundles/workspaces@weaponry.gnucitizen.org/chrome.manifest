@@ -1,0 +1,46 @@
+#
+# chrome registration
+#
+
+content      workspaces.weaponry.gnucitizen.org                                                                                              file:chrome/content/
+resource     workspaces.weaponry.gnucitizen.org                                                                                              file:chrome/
+locale       workspaces.weaponry.gnucitizen.org en-US                                                                                        file:chrome/locale/en-US/
+skin         workspaces.weaponry.gnucitizen.org classic/1.0                                                                                  file:chrome/skin/
+
+content      sites.workspaces.weaponry.gnucitizen.org                                                                                        file:sites/
+resource     sites.workspaces.weaponry.gnucitizen.org                                                                                        file:sites/
+
+overlay      chrome://workspaces.weaponry.gnucitizen.org/content/xul/workspaceView.xul?view=summary.workspaces.weaponry.gnucitizen.org       chrome://workspaces.weaponry.gnucitizen.org/content/ovl/summaryWorkspaceView.xul
+overlay      chrome://workspaces.weaponry.gnucitizen.org/content/xul/workspaceView.xul?view=dashboard.workspaces.weaponry.gnucitizen.org     chrome://workspaces.weaponry.gnucitizen.org/content/ovl/dashboardWorkspaceView.xul
+
+#
+# chrome suggestions
+#
+
+#overlay     chrome://common.weaponry.gnucitizen.org/content/ovl/toolsMenu.xul     chrome://workspaces.weaponry.gnucitizen.org/content/ovl/toolsMenu.xul
+
+#
+# xpcom registration
+#
+
+interfaces     components/IWeaponryWorkspacesAutocomplete.xpt
+interfaces     components/IWeaponryWorkspaceUtilityLauncher.xpt
+interfaces     components/IWeaponryWorkspaceFileExporter.xpt
+interfaces     components/IWeaponryWorkspaceFileImporter.xpt
+interfaces     components/IWeaponryWorkspace.xpt
+interfaces     components/IWeaponryWorkspacesManager.xpt
+interfaces     components/IWeaponryWorkspacesService.xpt
+
+component      {f6a2fab0-045d-11df-8a39-0800200c9a66}                          components/WeaponryWorkspace.js
+contract       @workspaces.weaponry.gnucitizen.org/workspace;1                 {f6a2fab0-045d-11df-8a39-0800200c9a66}
+
+component      {632029b0-099a-11df-8a39-0800200c9a66}                          components/WeaponryWorkspacesAutocomplete.js
+contract       @mozilla.org/autocomplete/search;1?name=weaponry-workspaces     {632029b0-099a-11df-8a39-0800200c9a66}
+
+component      {0561d9e0-045e-11df-8a39-0800200c9a66}                          components/WeaponryWorkspacesManager.js
+contract       @workspaces.weaponry.gnucitizen.org/manager;1                   {0561d9e0-045e-11df-8a39-0800200c9a66}
+
+component      {ff50cfc0-045d-11df-8a39-0800200c9a66}                          components/WeaponryWorkspacesService.js
+contract       @workspaces.weaponry.gnucitizen.org/service;1                   {ff50cfc0-045d-11df-8a39-0800200c9a66}
+
+category       profile-after-change WeaponryWorkspacesManager                  @workspaces.weaponry.gnucitizen.org/manager;1

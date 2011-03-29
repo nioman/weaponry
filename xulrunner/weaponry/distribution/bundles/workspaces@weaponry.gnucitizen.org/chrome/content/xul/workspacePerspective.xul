@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<!--
+ *  workspacePerspective.xul
+ *  Copyright (C) 2007-2011  GNUCITIZEN
+ *  
+ *  This program is free software; you can redistribute it and/or modify
+ *  it under the terms of the GNU General Public License as published by
+ *  the Free Software Foundation; either version 2 of the License, or
+ *  (at your option) any later version.
+ *  
+ *  This program is distributed in the hope that it will be useful,
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *  GNU General Public License for more details.
+ *  
+ *  You should have received a copy of the GNU General Public License
+ *  along with this program; if not, write to the Free Software
+ *  Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+-->
+<?xul-overlay href="chrome://common.weaponry.gnucitizen.org/content/ovl/common.xul"?>
+<?xul-overlay href="chrome://workspaces.weaponry.gnucitizen.org/content/ovl/launchWorkspaceUtilityMenupopup.xul"?>
+<?xul-overlay href="chrome://workspaces.weaponry.gnucitizen.org/content/ovl/switchWorkspacePerspectiveMenupopup.xul"?>
+<?xml-stylesheet href="chrome://workspaces.weaponry.gnucitizen.org/content/css/bindings.css" type="text/css"?>
+<?xml-stylesheet href="chrome://workspaces.weaponry.gnucitizen.org/skin/xul/workspacePerspective.css" type="text/css"?>
+<!DOCTYPE page SYSTEM "chrome://workspaces.weaponry.gnucitizen.org/locale/xul/workspacePerspective.dtd">
+<page xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+	id="workspace-perspective" title="&workspace-perspective-title;" windowtype="workspaces.weaponry.gnucitizen.org:workspace-perspective"
+	width="700" height="600" screenX="100" screenY="100" persist="width height screenX screenY sizemode">
+	
+	<script type="application/x-javascript" src="chrome://workspaces.weaponry.gnucitizen.org/content/inc/common.js"/>
+	<script type="application/x-javascript" src="chrome://workspaces.weaponry.gnucitizen.org/content/xul/workspacePerspective.js"/>
+	
+	<stringbundleset id="workspace-perspective-stringbundleset">
+		<stringbundle id="workspace-perspective-properties-stringbundle" src="chrome://workspaces.weaponry.gnucitizen.org/locale/xul/workspacePerspective.properties"/>
+	</stringbundleset>
+	
+	<vbox id="workspace-perspective-content-vbox" flex="1">
+		<richtabbox id="workspace-perspective-tabs-richtabbox" flex="1">
+			<toolbar id="workspace-perspective-tabs-toolbar">
+				<toolbarbutton id="workspace-perspective-weaponry-workspaces-switch-workspace-perspective-toolbarbutton" label="&workspace-perspective-weaponry-workspaces-switch-workspace-perspective-toolbarbutton-label;" type="menu">
+					<menupopup id="weaponry-workspaces-switch-workspace-perspective-menupopup"/>
+				</toolbarbutton>
+				
+				<toolbarbutton id="workspace-perspective-weaponry-workspaces-launch-workspace-utility-toolbarbutton" label="&workspace-perspective-weaponry-workspaces-launch-workspace-utility-toolbarbutton-label;" type="menu">
+					<menupopup id="weaponry-workspaces-launch-workspace-utility-menupopup"/>
+				</toolbarbutton>
+			</toolbar>
+			
+			<richtabpanels id="workspace-perspective-tabs-richtabpanels"/>
+		</richtabbox>
+	</vbox>
+	
+	<box id="common-box"/>
+	
+</page>
+<!--
+ *  GNUCITIZEN (Information Security Think Tank)
+ ***********************************************
+-->

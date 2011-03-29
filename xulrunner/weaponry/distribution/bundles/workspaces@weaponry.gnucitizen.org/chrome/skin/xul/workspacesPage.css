@@ -1,0 +1,128 @@
+/**
+ *  workspacesPage.css
+ *  Copyright (C) 2007-2011  GNUCITIZEN
+ *  
+ *  This program is free software; you can redistribute it and/or modify
+ *  it under the terms of the GNU General Public License as published by
+ *  the Free Software Foundation; either version 2 of the License, or
+ *  (at your option) any later version.
+ *  
+ *  This program is distributed in the hope that it will be useful,
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *  GNU General Public License for more details.
+ *  
+ *  You should have received a copy of the GNU General Public License
+ *  along with this program; if not, write to the Free Software
+ *  Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+ */
+
+@import url("chrome://global/skin/");
+
+/* ------------------------------------------------------------------------ */
+
+#workspaces-page-splash-vbox {
+	-moz-box-pack: center;
+	-moz-box-align: center;
+}
+
+/* ------------------------------------------------------------------------ */
+
+#workspaces-page-splash-image {
+	margin-bottom: 10px;
+}
+
+/* ------------------------------------------------------------------------ */
+
+#workspaces-page-workspaces-datalist richlistbox {
+	margin: 0px;
+	padding: 0px;
+	-moz-appearance: none;
+}
+
+#workspaces-page-workspaces-datalist richlistbox richlistitem {
+	padding: 5px;
+}
+
+/* ------------------------------------------------------------------------ */
+
+.workspaces-page-item-thumbnail-image {
+	width: 64px;
+	height: 64px;
+}
+
+/* ------------------------------------------------------------------------ */
+
+.workspaces-page-item-details-vbox {
+	margin-left: 5px;
+	-moz-box-pack: center;
+}
+
+/* ------------------------------------------------------------------------ */
+
+.workspaces-page-item-rename-button ,
+.workspaces-page-item-delete-button ,
+.workspaces-page-item-open-button   {
+	border: 0px;
+	margin: 0px;
+	padding: 0px;
+	min-width: 0px;
+	min-height: 0px;
+	-moz-appearance: none;
+	background-color: transparent;
+	list-style-image: url("images/buttons.png");
+}
+
+.workspaces-page-item-rename-button hbox ,
+.workspaces-page-item-delete-button hbox ,
+.workspaces-page-item-open-button   hbox {
+	margin: 0px;
+	padding: 0px;
+}
+
+.workspaces-page-item-rename-button label ,
+.workspaces-page-item-delete-button label ,
+.workspaces-page-item-open-button   label {
+	margin: 0px;
+	padding: 0px;
+	display: none;
+}
+
+.workspaces-page-item-rename-button {
+	-moz-image-region: rect(80px, 16px, 96px, 0px);
+}
+
+.workspaces-page-item-rename-button:hover {
+	-moz-image-region: rect(80px, 32px, 96px, 16px);
+}
+
+.workspaces-page-item-rename-button:hover:active {
+	-moz-image-region: rect(80px, 48px, 96px, 32px);
+}
+
+.workspaces-page-item-delete-button {
+	-moz-image-region: rect(0px, 16px, 16px, 0px);
+}
+
+.workspaces-page-item-delete-button:hover {
+	-moz-image-region: rect(0px, 32px, 16px, 16px);
+}
+
+.workspaces-page-item-delete-button:hover:active {
+	-moz-image-region: rect(0px, 48px, 16px, 32px);
+}
+
+.workspaces-page-item-open-button {
+	-moz-image-region: rect(32px, 16px, 48px, 0px);
+}
+
+.workspaces-page-item-open-button:hover {
+	-moz-image-region: rect(32px, 32px, 48px, 16px);
+}
+
+.workspaces-page-item-open-button:hover:active {
+	-moz-image-region: rect(32px, 48px, 48px, 32px);
+}
+
+/*  GNUCITIZEN (Information Security Think Tank)
+ **********************************************/

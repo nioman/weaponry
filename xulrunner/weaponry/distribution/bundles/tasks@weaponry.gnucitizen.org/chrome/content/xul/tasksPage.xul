@@ -1,0 +1,81 @@
+<?xml version="1.0"?>
+<!--
+ *  tasksPage.xul
+ *  Copyright (C) 2007-2011  GNUCITIZEN
+ *  
+ *  This program is free software; you can redistribute it and/or modify
+ *  it under the terms of the GNU General Public License as published by
+ *  the Free Software Foundation; either version 2 of the License, or
+ *  (at your option) any later version.
+ *  
+ *  This program is distributed in the hope that it will be useful,
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *  GNU General Public License for more details.
+ *  
+ *  You should have received a copy of the GNU General Public License
+ *  along with this program; if not, write to the Free Software
+ *  Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+-->
+<?xul-overlay href="chrome://common.weaponry.gnucitizen.org/content/ovl/common.xul"?>
+<?xml-stylesheet href="chrome://tasks.weaponry.gnucitizen.org/skin/xul/tasksPage.css" type="text/css"?>
+<!DOCTYPE page SYSTEM "chrome://tasks.weaponry.gnucitizen.org/locale/xul/tasksPage.dtd">
+<page xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+	id="tasks-page" title="&tasks-page-title;" windowtype="tasks.weaponry.gnucitizen.org:tasks-page"
+	width="400" height="400" screenX="100" screenY="100" persist="width height screenX screenY sizemode">
+	
+	<script type="application/x-javascript" src="chrome://tasks.weaponry.gnucitizen.org/content/inc/common.js"/>
+	<script type="application/x-javascript" src="chrome://tasks.weaponry.gnucitizen.org/content/xul/tasksPage.js"/>
+	
+	<stringbundleset id="tasks-page-stringbundleset">
+		<stringbundle id="tasks-page-properties-stringbundle" src="chrome://tasks.weaponry.gnucitizen.org/locale/xul/tasksPage.properties"/>
+	</stringbundleset>
+	
+	<menupopup id="tasks-page-item-menupopup"/>
+	
+	<vbox id="tasks-page-content-vbox" flex="1">
+		<deck id="tasks-page-content-deck" flex="1">
+			<vbox id="tasks-page-splash-vbox" flex="1">
+				<image id="tasks-page-splash-image" src="chrome://tasks.weaponry.gnucitizen.org/skin/xul/images/task.png"/>
+				<label id="tasks-page-splash-label" value="&tasks-page-splash-label-value;"/>
+			</vbox>
+			
+			<vbox id="tasks-page-tasks-vbox" flex="1">
+				<datalist id="tasks-page-tasks-datalist" flex="1">
+					<hbox id="tasks-page-item-hbox" class="tasks-page-item-hbox" taskState="?state" taskType="?type" taskIsActable="?isActable" taskIsStoppable="?isStoppable" taskIsPausable="?isPausable" contextmenu="tasks-page-item-menupopup" flex="1" ondblclick="return handleActTaskCommandEvent(event);">
+						<image id="tasks-page-item-thumbnail-image" class="tasks-page-item-thumbnail-image" src="?thumbnailUri"/>
+						
+						<vbox id="tasks-page-item-details-vbox" class="tasks-page-item-details-vbox" flex="1">
+							<label id="tasks-page-item-title-label" class="tasks-page-item-title-label" value="?title" crop="right"/>
+							
+							<hbox id="tasks-page-item-active-hbox" class="tasks-page-item-active-hbox">
+								<progressmeter id="tasks-page-item-progress-progressmeter" class="tasks-page-item-progress-progressmeter" value="?progress" mode="?progressmeterMode" flex="1"/>
+								
+								<hbox id="tasks-page-item-buttons-hbox" class="tasks-page-item-buttons-hbox">
+									<button id="tasks-page-item-pause-button" class="tasks-page-item-start-button" label="&tasks-page-item-start-button-label;" tooltiptext="&tasks-page-item-start-button-label;" oncommand="return handleStartTaskCommandEvent(event);"/>
+									<button id="tasks-page-item-pause-button" class="tasks-page-item-pause-button" label="&tasks-page-item-pause-button-label;" tooltiptext="&tasks-page-item-pause-button-label;" oncommand="return handlePauseTaskCommandEvent(event);"/>
+									<button id="tasks-page-item-resume-button" class="tasks-page-item-resume-button" label="&tasks-page-item-resume-button-label;" tooltiptext="&tasks-page-item-resume-button-label;" oncommand="return handleResumeTaskCommandEvent(event);"/>
+									<button id="tasks-page-item-stop-button" class="tasks-page-item-stop-button" label="&tasks-page-item-stop-button-label;" tooltiptext="&tasks-page-item-stop-button-label;" oncommand="return handleStopTaskCommandEvent(event);"/>
+									<button id="tasks-page-item-act-button" class="tasks-page-item-act-button" label="&tasks-page-item-act-button-label;" tooltiptext="&tasks-page-item-act-button-label;" oncommand="return handleActTaskCommandEvent(event);"/>
+								</hbox>
+							</hbox>
+							
+							<label id="tasks-page-item-status-label" class="tasks-page-item-status-label" value="?status" crop="right"/>
+						</vbox>
+					</hbox>
+				</datalist>
+				
+				<toolbar id="tasks-page-action-toolbar">
+					<toolbarbutton id="tasks-page-clear-toolbarbutton" label="Clear" oncommand="return handleClearTasksCommandEvent(event);"/>
+				</toolbar>
+			</vbox>
+		</deck>
+	</vbox>
+	
+	<box id="common-box"/>
+	
+</page>
+<!--
+ *  GNUCITIZEN (Information Security Think Tank)
+ ***********************************************
+-->
