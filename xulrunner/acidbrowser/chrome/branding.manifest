@@ -7,7 +7,7 @@ resource     branding                                                           
 locale       branding en-US                                                                  file:branding/locale/en-US/
 skin         branding classic/1.0                                                            file:branding/skin/
 
-overlay      chrome://common.weaponry.gnucitizen.org/content/ovl/helpMenu.xul                chrome://support.websecurify.gnucitizen.org/content/ovl/helpMenu.xul
+overlay      chrome://common.weaponry.gnucitizen.org/content/ovl/helpMenu.xul                chrome://support.weaponry.gnucitizen.org/content/ovl/helpMenu.xul
 overlay      chrome://common.weaponry.gnucitizen.org/content/ovl/toolsMenu.xul               chrome://preferences.weaponry.gnucitizen.org/content/ovl/toolsMenu.xul
 overlay      chrome://common.weaponry.gnucitizen.org/content/ovl/toolsMenu.xul               chrome://tasks.weaponry.gnucitizen.org/content/ovl/toolsMenu.xul
 overlay      chrome://browser.weaponry.gnucitizen.org/content/xul/browserPerspective.xul     chrome://basic.acidbrowser.gnucitizen.org/content/ovl/browserPerspective.xul
