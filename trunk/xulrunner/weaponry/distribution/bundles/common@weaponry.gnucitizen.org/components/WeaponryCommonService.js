@@ -32,7 +32,7 @@ Components.utils.import('resource://gre/modules/XPCOMUtils.jsm');
 /* ------------------------------------------------------------------------ */
 
 function WeaponryCommonService() {
-	this.observerService = CC['@mozilla.org/observer-service;1'].getService(CI.nsIObserverService);
+	// pass
 }
 
 WeaponryCommonService.prototype = {
@@ -57,8 +57,10 @@ WeaponryCommonService.prototype = {
 	
 	observe: function (subject, topic, data) {
 		if (topic == 'app-startup') {
-			this.observerService.addObserver(this, 'profile-after-change', false);
-			this.observerService.addObserver(this, 'profile-before-change', false);
+			let observerService = CC['@mozilla.org/observer-service;1'].getService(CI.nsIObserverService);
+			
+			observerService.addObserver(this, 'profile-after-change', false);
+			observerService.addObserver(this, 'profile-before-change', false);
 		} else
 		if (topic == 'profile-after-change') {
 			this.initializeComponent(subject, topic, data);
@@ -71,11 +73,93 @@ WeaponryCommonService.prototype = {
 	/* -------------------------------------------------------------------- */
 	
 	initializeComponent: function (subject, topic, data) {
-		// pass
+		this.registerPreferencesSchemeViewers();
 	},
 	
 	deinitializeComponent: function (subject, topic, data) {
 		// pass
+	},
+	
+	/* -------------------------------------------------------------------- */
+	
+	registerPreferencesSchemeViewers: function () {
+		let prefService = CC['@mozilla.org/preferences-service;1'].getService(CI.nsIPrefService);
+		let schemeViewersItems = prefService.getBranch('org.gnucitizen.weaponry.common.schemeViewers')
+		let schemeViewers = {};
+		
+		schemeViewersItems.getChildList('', {}).forEach(function (item) {
+			let tokens = item.split('.');
+			
+			if (tokens.length != 3) {
+				Components.utils.reportError('unrecognized scheme viewer entry ' + item);
+				
+				return;
+			}
+			
+			let id = tokens[1];
+			let name = tokens[2];
+			
+			let value;
+			
+			switch (name) {
+				case 'scheme':
+					value = schemeViewersItems.getCharPref(item);
+					
+					break;
+				case 'uri':
+					value = schemeViewersItems.getCharPref(item);
+					
+					break;
+				case 'wrap':
+					value = schemeViewersItems.getBoolPref(item);
+					
+					break;
+				default:
+					Components.utils.reportError('unrecognized scheme viewer entry name ' + item);
+					
+					return;
+			}
+			
+			if (!schemeViewers[id]) {
+				schemeViewers[id] = {};
+			}
+			
+			schemeViewers[id][name] = value;
+		});
+		
+		let id;
+		let schemeViewer;
+		
+		for (id in schemeViewers) {
+			schemeViewer = schemeViewers[id];
+			
+			this.registerSchemeViewer(schemeViewer.scheme, schemeViewer.uri, schemeViewer.wrap);
+		}
+	},
+	
+	/* -------------------------------------------------------------------- */
+	
+	registerSchemeViewer: function (scheme, uri, wrap) {
+		let componentManager = Components.manager.QueryInterface(CI.nsIComponentRegistrar);
+		let schemeViewer = CC['@common.weaponry.gnucitizen.org/scheme-viewer;1'];
+		let classID = Components.ID(schemeViewer.number);
+		
+		let factory = {
+			createInstance: function (outer, iid) {
+				let instance = componentManager.createInstanceByContractID('@common.weaponry.gnucitizen.org/scheme-viewer;1', outer, iid);
+				
+				instance.QueryInterface(CI.IWeaponrySchemeViewer);
+				instance.init(scheme, uri, wrap);
+				
+				return instance;
+			}
+		};
+		
+		componentManager.registerFactory(classID, 'Weaponry Scheme Viewer for ' + scheme, '@mozilla.org/network/protocol;1?name=' + scheme, factory, false);
+	},
+	
+	unregisterSchemeViewer: function (scheme, uri) {
+		// NOTE: not implemented
 	}
 };
 
