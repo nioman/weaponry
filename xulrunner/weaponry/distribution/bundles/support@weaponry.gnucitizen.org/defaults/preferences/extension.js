@@ -22,17 +22,17 @@ pref('browser.chromeURL', 'chrome://browser.weaponry.gnucitizen.org/content/xul/
 pref('browser.hiddenWindowChromeURL', 'chrome://browser.weaponry.gnucitizen.org/content/xul/hiddenWindow.xul');
 
 // app update preferences
-//pref('app.update.url', 'https://weaponry.appspot.com/update/app.xml?product=%PRODUCT%&version=%VERSION%&build_id=%BUILD_ID%&build_target=%BUILD_TARGET%&locale=%LOCALE%&channel=%CHANNEL%&os_version=%OS_VERSION%&distribution=%DISTRIBUTION%&distribution_version=%DISTRIBUTION_VERSION%');
+pref('app.update.url', 'https://weaponryupdates.appspot.com/update/app.xml?product=%PRODUCT%&version=%VERSION%&build_id=%BUILD_ID%&build_target=%BUILD_TARGET%&locale=%LOCALE%&channel=%CHANNEL%&os_version=%OS_VERSION%&distribution=%DISTRIBUTION%&distribution_version=%DISTRIBUTION_VERSION%');
 pref('app.update.url.manual', 'http://weaponry.gnucitizen.com');
 pref('app.update.url.details', 'http://weaponry.gnucitizen.com');
 
 // extensions update preferences
-//pref('extensions.update.url', 'https://weaponry.appspot.com/update/ext.xml?req_version=%REQ_VERSION%&item_id=%ITEM_ID%&item_version=%ITEM_VERSION%&item_maxappversion=%ITEM_MAXAPPVERSION%&item_status=%ITEM_STATUS%&app_id=%APP_ID%&app_version=%APP_VERSION%&app_os=%APP_OS%&app_abi=%APP_ABI%&app_locale=%APP_LOCALE%&current_app_version=%CURRENT_APP_VERSION%&update_type=%UPDATE_TYPE%');
+pref('extensions.update.url', 'https://weaponryupdates.appspot.com/update/ext.xml?req_version=%REQ_VERSION%&item_id=%ITEM_ID%&item_version=%ITEM_VERSION%&item_maxappversion=%ITEM_MAXAPPVERSION%&item_status=%ITEM_STATUS%&app_id=%APP_ID%&app_version=%APP_VERSION%&app_os=%APP_OS%&app_abi=%APP_ABI%&app_locale=%APP_LOCALE%&current_app_version=%CURRENT_APP_VERSION%&update_type=%UPDATE_TYPE%');
 pref('extensions.update.url.manual', 'http://weaponry.gnucitizen.org');
 pref('extensions.update.url.details', 'http://weaponry.gnucitizen.org');
 
 // weaponry security CertOverrideService preferences
-pref('org.gnucitizen.weaponry.security.CertOverrideService.exceptions.add.3', 'weaponry.appspot.com:443');
+pref('org.gnucitizen.weaponry.security.CertOverrideService.exceptions.add.3', 'weaponryupdates.appspot.com:443');
 pref('org.gnucitizen.weaponry.security.CertOverrideService.exceptions.add.4', 'www.google.com:443');
 
 /*  GNUCITIZEN (Information Security Think Tank)
