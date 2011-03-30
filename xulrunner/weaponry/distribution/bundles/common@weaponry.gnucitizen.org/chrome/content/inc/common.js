@@ -1,5 +1,5 @@
 /**
- *  IWeaponryCommonService.idl
+ *  common.js
  *  Copyright (C) 2007-2011  GNUCITIZEN
  *  
  *  This program is free software; you can redistribute it and/or modify
@@ -17,20 +17,11 @@
  *  Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
  */
 
-#include "nsISupports.idl"
+const CHROMEBASE = 'common.weaponry.gnucitizen.org';
 
 /* ------------------------------------------------------------------------ */
 
-interface IWeaponryCommonService;
-
-/* ------------------------------------------------------------------------ */
-
-[scriptable, uuid(d4071a90-84fa-11df-8395-0800200c9a66)]
-interface IWeaponryCommonService : nsISupports {
-	void registerSchemeViewer(in AString scheme, in AString uri, in boolean wrap);
-	
-	void unregisterSchemeViewer(in AString scheme, in AString uri);
-};
+Components.utils.import('resource://' + CHROMEBASE + '/content/mod/weaponryCommon.jsm');
 
 /*  GNUCITIZEN (Information Security Think Tank)
  **********************************************/

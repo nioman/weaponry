@@ -204,6 +204,12 @@ let weaponryCommon = new function () {
 	};
 	
 	this.enumerateGetIfaces = function (subject) {
+		try {
+			subject.QueryInterface(CI.nsIInterfaceRequestor);
+		} catch (e) {
+			return [];
+		}
+		
 		let getInterfaces = [];
 		
 		for (let getInterface in CI) {
@@ -491,6 +497,15 @@ let weaponryCommon = new function () {
 	
 	this.openErrorConsoleWindow = function () {
 		return this.openWindowOnce(null, 'global:console', 'chrome://global/content/console.xul', null, 'all,chrome,resizable');
+	};
+	
+	/* -------------------------------------------------------------------- */
+	
+	this.getWindowDocumentCoreURI = function (window) {
+		let webNavigation = window.QueryInterface(CI.nsIInterfaceRequestor).getInterface(CI.nsIWebNavigation);
+		let docShell = webNavigation.QueryInterface(CI.nsIDocShell);
+		
+		return docShell.currentDocumentChannel.URI.spec;
 	};
 	
 	/* -------------------------------------------------------------------- */
