@@ -1,0 +1,93 @@
+/**
+ *  style.css
+ *  Copyright (C) 2007-2011  GNUCITIZEN
+ *  
+ *  This program is free software; you can redistribute it and/or modify
+ *  it under the terms of the GNU General Public License as published by
+ *  the Free Software Foundation; either version 2 of the License, or
+ *  (at your option) any later version.
+ *  
+ *  This program is distributed in the hope that it will be useful,
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *  GNU General Public License for more details.
+ *  
+ *  You should have received a copy of the GNU General Public License
+ *  along with this program; if not, write to the Free Software
+ *  Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+ */
+
+@import url("chrome://support.weaponry.gnucitizen.org/skin/gbl/style.css?angle=global");
+
+/* ------------------------------------------------------------------------ */
+
+richlistbox {
+	background: #ffffff;
+}
+
+/* ------------------------------------------------------------------------ */
+
+richlistbox > richlistitem[selected="true"] {
+	color: #ffffff;
+	background-image: none;
+	background-color: #2d2d38;
+}
+
+richlistbox:focus > richlistitem[selected="true"] {
+	color: #ffffff;
+	background-image: none;
+	background-color: #2d2d38;
+}
+
+richlistbox > richlistitem:not([selected="true"])                 ,
+richlistbox > richlistitem:nth-child(2n+1):not([selected="true"]) {
+	background-image: none;
+	background-color: transparent;
+}
+
+/* ------------------------------------------------------------------------ */
+
+@-moz-document url("chrome://mozapps/content/extensions/extensions.xul?type=extensions") {
+	richlistbox#extensionsView > richlistitem[selected="true"] {
+		color: #ffffff;
+		background-image: none;
+		background-color: #2d2d38;
+	}
+	
+	richlistbox#extensionsView:focus > richlistitem[selected="true"] {
+		color: #ffffff;
+		background-image: none;
+		background-color: #2d2d38;
+	}
+}
+
+/* ------------------------------------------------------------------------ */
+
+@-moz-document url("chrome://global/content/console.xul") {
+	:-moz-system-metric(windows-default-theme) #console-toolbox {
+		-moz-appearance: none;
+	}
+	
+	:-moz-system-metric(windows-default-theme) #console-toolbox > toolbar {
+		-moz-appearance: none;
+	}
+}
+
+/* ------------------------------------------------------------------------ */
+
+@-moz-document url("chrome://workspaces.weaponry.gnucitizen.org/content/xul/workspaceView.xul?view=issues.reports.weaponry.gnucitizen.org") {
+	#weaponry-reports-issues-workspace-view-details-richtabpanel .richtabpanel-content {
+		background: #ededed;
+	}
+}
+
+/* ------------------------------------------------------------------------ */
+
+@-moz-document url("chrome://workspaces.weaponry.gnucitizen.org/content/xul/workspaceView.xul?view=report.reports.weaponry.gnucitizen.org") {
+	#workspace-view-content-vbox {
+		background: #ededed;
+	}
+}
+
+/*  GNUCITIZEN (Information Security Think Tank)
+ **********************************************/
