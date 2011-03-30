@@ -4,13 +4,13 @@
      xmlns:em="http://www.mozilla.org/2004/em-rdf#">
 	
 	<Description about="urn:mozilla:install-manifest">
-		<em:id>support@websecurify.gnucitizen.org</em:id>
+		<em:id>support@weaponry.gnucitizen.org</em:id>
 		<em:version>0.8</em:version>
 		<em:type>2</em:type>
 		<em:creator>GNUCITIZEN</em:creator>
 		
-		<em:name>Websecurify Support</em:name>
-		<em:description>Websecurify Support</em:description>
+		<em:name>Weaponry Support</em:name>
+		<em:description>Weaponry Support</em:description>
 		
 		<em:targetApplication>
 			<Description>

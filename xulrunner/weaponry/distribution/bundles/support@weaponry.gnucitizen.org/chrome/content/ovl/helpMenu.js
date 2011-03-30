@@ -17,19 +17,19 @@
  *  Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
  */
 
-function handleWebsecurifyCommonHelpMenuOpenHelpWindowCommandEvent(event) {
+function handleWeaponrySupportHelpMenuOpenHelpWindowCommandEvent(event) {
 	window.open('http://code.google.com/p/weaponry/w/list');
 }
 
-function handleWebsecurifyCommonHelpMenuReportBugsCommandEvent(event) {
+function handleWeaponrySupportHelpMenuReportBugsCommandEvent(event) {
 	window.open('http://code.google.com/p/weaponry/issues/list');
 }
 
-function handleWebsecurifyCommonHelpMenuGotoWebsecurifyCommandEvent(event) {
+function handleWeaponrySupportHelpMenuGotoWeaponryCommandEvent(event) {
 	window.open('http://weaponry.gnucitizen.org');
 }
 
-function handleWebsecurifyCommonHelpMenuGotoGNUCITIZENCommandEvent(event) {
+function handleWeaponrySupportHelpMenuGotoGNUCITIZENCommandEvent(event) {
 	window.open('http://www.gnucitizen.com');
 }
 
