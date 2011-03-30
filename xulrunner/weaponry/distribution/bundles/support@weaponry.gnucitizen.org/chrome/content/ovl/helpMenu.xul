@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<!--
+ *  helpMenu.xul
+ *  Copyright (C) 2007-2011  GNUCITIZEN
+ *  
+ *  This program is free software; you can redistribute it and/or modify
+ *  it under the terms of the GNU General Public License as published by
+ *  the Free Software Foundation; either version 2 of the License, or
+ *  (at your option) any later version.
+ *  
+ *  This program is distributed in the hope that it will be useful,
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *  GNU General Public License for more details.
+ *  
+ *  You should have received a copy of the GNU General Public License
+ *  along with this program; if not, write to the Free Software
+ *  Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+-->
+<?xml-stylesheet href="chrome://support.weaponry.gnucitizen.org/skin/ovl/helpMenu.css" type="text/css"?>
+<!DOCTYPE overlay SYSTEM "chrome://support.weaponry.gnucitizen.org/locale/ovl/helpMenu.dtd">
+<overlay xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+	
+	<script type="application/x-javascript" src="chrome://support.weaponry.gnucitizen.org/content/ovl/helpMenu.js"/>
+	
+	<stringbundleset id="common-stringbundleset">
+		<stringbundle id="websecurify-common-help-menu-properties-stringbundle" src="chrome://support.weaponry.gnucitizen.org/locale/ovl/helpMenu.properties"/>
+	</stringbundleset>
+	
+	<menupopup id="help-menupopup">
+		<menuseparator id="websecurify-common-help-menu-help-section-menuseparator"/>
+		<menuitem id="websecurify-common-help-menu-help-menuitem" label="&websecurify-common-help-menu-help-menuitem-label;" oncommand="return handleWebsecurifyCommonHelpMenuOpenHelpWindowCommandEvent(event);"/>
+		<menuseparator id="websecurify-common-help-menu-feedback-section-menuseparator"/>
+		<menuitem id="websecurify-common-help-menu-report-bugs-menuitem" label="&websecurify-common-help-menu-report-bugs-menuitem-label;" oncommand="return handleWebsecurifyCommonHelpMenuReportBugsCommandEvent(event);"/>
+		<menuseparator id="websecurify-common-help-menu-custom-section-menuseparator"/>
+		<menuitem id="websecurify-common-help-menu-go-to-weaponry-menuitem" label="&websecurify-common-help-menu-go-to-weaponry-menuitem-label;" oncommand="return handleWebsecurifyCommonHelpMenuGotoWebsecurifyCommandEvent(event);"/>
+		<menuitem id="websecurify-common-help-menu-go-to-gnucitizen-menuitem" label="&websecurify-common-help-menu-go-to-gnucitizen-menuitem-label;" oncommand="return handleWebsecurifyCommonHelpMenuGotoGNUCITIZENCommandEvent(event);"/>
+	</menupopup>
+	
+</overlay>
+<!--
+ *  GNUCITIZEN (Information Security Think Tank)
+ ***********************************************
+-->
