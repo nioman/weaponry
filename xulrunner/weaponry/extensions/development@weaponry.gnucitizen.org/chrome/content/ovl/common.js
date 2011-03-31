@@ -43,7 +43,7 @@ function handleWeaponryDevelopmentLoadEvent(event) {
 		let $properties = document.getElementById('weaponry-development-common-properties-stringbundle');
 		
 		setTimeout(function () {
-			let result = alertCheck($properties.getString('development-extension-enabled-notification-message'), $properties.getString('development-extension-enabled-check-message'));
+			let result = alertCheck($properties.getString('development-extension-enabled-notification-message'), $properties.getString('development-extension-enabled-do-not-warn-message'));
 			
 			if (result.value == true) {
 				weaponryCommon.setPref('org.gnucitizen.weaponry.development.warn', false);

@@ -21,17 +21,17 @@
 pref('org.gnucitizen.weaponry.development.warn', true);
 pref('org.gnucitizen.weaponry.development.openErrorConsoleOnStartup', false);
 
-// app preferences
+// app update preferences
 pref("app.update.log", true);
 
-// browser preferences
+// browser dom preferences
 pref('browser.dom.window.dump.enabled', true);
 
-// javascript preferences
+// javascript options preferences
 pref('javascript.options.showInConsole', true);
 pref('javascript.options.strict', true);
 
-// nglayout preferences
+// nglayout debug preferences
 pref('nglayout.debug.disable_xul_cache', true);
 pref('nglayout.debug.disable_xul_fastload', true);
 
