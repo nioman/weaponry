@@ -74,6 +74,7 @@ WeaponryCommonService.prototype = {
 	
 	initializeComponent: function (subject, topic, data) {
 		this.registerPreferencesSchemeViewers();
+		this.registerPreferencesContentConverters();
 	},
 	
 	deinitializeComponent: function (subject, topic, data) {
@@ -84,7 +85,7 @@ WeaponryCommonService.prototype = {
 	
 	registerPreferencesSchemeViewers: function () {
 		let prefService = CC['@mozilla.org/preferences-service;1'].getService(CI.nsIPrefService);
-		let schemeViewersItems = prefService.getBranch('org.gnucitizen.weaponry.common.schemeViewers')
+		let schemeViewersItems = prefService.getBranch('org.gnucitizen.weaponry.common.schemeViewers');
 		let schemeViewers = {};
 		
 		schemeViewersItems.getChildList('', {}).forEach(function (item) {
@@ -139,6 +140,63 @@ WeaponryCommonService.prototype = {
 	
 	/* -------------------------------------------------------------------- */
 	
+	registerPreferencesContentConverters: function () {
+		let prefService = CC['@mozilla.org/preferences-service;1'].getService(CI.nsIPrefService);
+		let contentConvertersItems = prefService.getBranch('org.gnucitizen.weaponry.common.contentConverters');
+		let contentConverters = {};
+		
+		contentConvertersItems.getChildList('', {}).forEach(function (item) {
+			let tokens = item.split('.');
+			
+			if (tokens.length != 3) {
+				Components.utils.reportError('unrecognized content converter entry ' + item);
+				
+				return;
+			}
+			
+			let id = tokens[1];
+			let name = tokens[2];
+			
+			let value;
+			
+			switch (name) {
+				case 'mimeType':
+					value = contentConvertersItems.getCharPref(item);
+					
+					break;
+				case 'uri':
+					value = contentConvertersItems.getCharPref(item);
+					
+					break;
+				case 'wrap':
+					value = contentConvertersItems.getBoolPref(item);
+					
+					break;
+				default:
+					Components.utils.reportError('unrecognized content converter entry name ' + item);
+					
+					return;
+			}
+			
+			if (!contentConverters[id]) {
+				contentConverters[id] = {};
+			}
+			
+			contentConverters[id][name] = value;
+		});
+		
+		let id;
+		let contentConverter;
+		
+		for (id in contentConverters) {
+			contentConverter = contentConverters[id];
+			
+			this.registerContentConverter(contentConverter.scheme, contentConverter.uri, contentConverter.wrap);
+		}
+	},
+	
+	/* -------------------------------------------------------------------- */
+	
 	registerSchemeViewer: function (scheme, uri, wrap) {
 		let componentManager = Components.manager.QueryInterface(CI.nsIComponentRegistrar);
 		let schemeViewer = CC['@common.weaponry.gnucitizen.org/scheme-viewer;1'];
@@ -159,6 +217,31 @@ WeaponryCommonService.prototype = {
 	},
 	
 	unregisterSchemeViewer: function (scheme, uri) {
+		// NOTE: not implemented
+	},
+	
+	/* -------------------------------------------------------------------- */
+	
+	registerContentViewer: function (mimeType, uri) {
+		let componentManager = Components.manager.QueryInterface(CI.nsIComponentRegistrar);
+		let contentConverter = CC['@common.weaponry.gnucitizen.org/content-converter;1'];
+		let classID = Components.ID(contentConverter.number);
+		
+		let factory = {
+			createInstance: function (outer, iid) {
+				let instance = componentManager.createInstanceByContractID('@common.weaponry.gnucitizen.org/content-converter;1', outer, iid);
+				
+				instance.QueryInterface(CI.IWeaponryContentConverter);
+				instance.initWithUri(uri);
+				
+				return instance;
+			}
+		};
+		
+		componentManager.registerFactory(classID, 'Weaponry Content Converter for ' + mimeType, '@mozilla.org/streamconv;1?from=' + mimeType + '&to=*/*', factory, false);
+	},
+	
+	unregisterContentViewer: function (mimeType, uri) {
 		// NOTE: not implemented
 	}
 };
