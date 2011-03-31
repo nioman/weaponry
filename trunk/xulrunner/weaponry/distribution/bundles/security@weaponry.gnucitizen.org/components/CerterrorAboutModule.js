@@ -1,5 +1,5 @@
 /**  
- *  AboutCerterror.js
+ *  CerterrorAboutModule.js
  *  Copyright (C) 2007-2011  GNUCITIZEN
  *  
  *  This program is free software; you can redistribute it and/or modify
@@ -31,15 +31,15 @@ Components.utils.import('resource://gre/modules/XPCOMUtils.jsm');
 
 /* ------------------------------------------------------------------------ */
 
-function AboutCerterror() {
+function CerterrorAboutModule() {
 	// pass
 }
 
-AboutCerterror.prototype = {
-	classDescription: 'About Certerror',
+CerterrorAboutModule.prototype = {
+	classDescription: 'Certerror About Module',
 	classID: Components.ID('{31e6b110-c65b-11df-bd3b-0800200c9a66}'),
 	contractID: '@mozilla.org/network/protocol/about;1?what=certerror',
-	QueryInterface: XPCOMUtils.generateQI([CI.IAboutCerterror, CI.nsIAboutModule]),
+	QueryInterface: XPCOMUtils.generateQI([CI.ICerterrorAboutModule, CI.nsIAboutModule]),
 	
 	/* -------------------------------------------------------------------- */
 	
@@ -66,9 +66,9 @@ AboutCerterror.prototype = {
 /* ------------------------------------------------------------------------ */
 
 if (XPCOMUtils.generateNSGetFactory) {
-	var NSGetFactory = XPCOMUtils.generateNSGetFactory([AboutCerterror]);
+	var NSGetFactory = XPCOMUtils.generateNSGetFactory([CerterrorAboutModule]);
 } else {
-	var NSGetModule = XPCOMUtils.generateNSGetModule([AboutCerterror]);
+	var NSGetModule = XPCOMUtils.generateNSGetModule([CerterrorAboutModule]);
 }
 
 /*  GNUCITIZEN (Information Security Think Tank)
