@@ -17,10 +17,10 @@ overlay      chrome://pippki/content/certManager.xul          chrome://security.
 # xpcom registration
 #
 
-interfaces     components/IAboutCerterror.xpt
+interfaces     components/ICerterrorAboutModule.xpt
 interfaces     components/IWeaponryCertOverrideService.xpt
 
-component      {31e6b110-c65b-11df-bd3b-0800200c9a66}                    components/AboutCerterror.js
+component      {31e6b110-c65b-11df-bd3b-0800200c9a66}                    components/CerterrorAboutModule.js
 contract       @mozilla.org/network/protocol/about;1?what=certerror      {31e6b110-c65b-11df-bd3b-0800200c9a66}
 
 component      {6c367300-5a77-11df-a08a-0800200c9a66}                    components/WeaponryCertOverrideService.js
