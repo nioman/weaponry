@@ -205,6 +205,8 @@ $(document).ready(function () {
 			event.preventDefault();
 			
 			return false;
+		} else {
+			return true;
 		}
 	});
 });
