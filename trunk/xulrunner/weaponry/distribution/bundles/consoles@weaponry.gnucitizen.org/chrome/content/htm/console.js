@@ -93,7 +93,7 @@ function parseCommand(command) {
 	return tokens;
 }
 
-function executeCommand(command) {
+function executeConsoleCommand(command) {
 	let $entry = recordCommand(command);
 	
 	let tokens;
@@ -174,7 +174,7 @@ function executeCommand(command) {
 	};
 	
 	try {
-		weaponryConsoles.executeCommand(console, commandName, args, handler, window);
+		weaponryConsoles.executeConsoleCommand(console, commandName, args, handler, window);
 	} catch (e) {
 		Components.utils.reportError(e);
 		
@@ -193,7 +193,7 @@ function focusPrompt() {
 $(document).ready(function () {
 	$('#prompt').keypress(function (event) {
 		if (event.keyCode == KeyEvent.DOM_VK_RETURN) {
-			executeCommand(this.value);
+			executeConsoleCommand(this.value);
 			
 			this.value = '';
 			

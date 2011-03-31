@@ -44,8 +44,8 @@ let weaponryConsoles = new function () {
 	
 	/* -------------------------------------------------------------------- */
 	
-	this.executeCommand = function (console, command, args, handler, context) {
-		this.consolesService.executeCommand(console, command, JSON.stringify(args), handler, context);
+	this.executeConsoleCommand = function (console, command, args, handler, context) {
+		this.consolesService.executeConsoleCommand(console, command, JSON.stringify(args), handler, context);
 	};
 };
 

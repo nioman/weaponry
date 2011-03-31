@@ -31,7 +31,7 @@ interface IWeaponryConsolesService;
 
 [scriptable, uuid(28a2f4c0-558e-11e0-b8af-0800200c9a66)]
 interface IWeaponryConsolesService : nsISupports {
-	void executeCommand(in AString console, in AString command, in AString args, in IWeaponryConsolesCommandLauncherHandler handler, [optional] in nsISupports context);
+	void executeConsoleCommand(in AString console, in AString command, in AString args, in IWeaponryConsolesCommandLauncherHandler handler, [optional] in nsISupports subject);
 };
 
 /*  GNUCITIZEN (Information Security Think Tank)

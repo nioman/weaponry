@@ -45,7 +45,7 @@ interface IWeaponryConsolesCommandLauncher : nsISupports {
 	
 	/* -------------------------------------------------------------------- */
 	
-	void executeCommand(in AString console, in AString command, in AString args, in IWeaponryConsolesCommandLauncherHandler handler, [optional] in nsISupports context);
+	void executeConsoleCommand(in AString console, in AString command, in AString args, in IWeaponryConsolesCommandLauncherHandler handler, [optional] in nsISupports subject);
 };
 
 /*  GNUCITIZEN (Information Security Think Tank)

@@ -49,7 +49,7 @@ WeaponryConsolesService.prototype = {
 	
 	/* -------------------------------------------------------------------- */
 	
-	executeCommand: function (console, command, args, handler, context) {
+	executeConsoleCommand: function (console, command, args, handler, context) {
 		let launchers = weaponryCommon.retrieveComponents('weaponry-consoles-command-launchers', 'IWeaponryConsolesCommandLauncher');
 		let launchersLength = launchers.length;
 		
@@ -60,7 +60,7 @@ WeaponryConsolesService.prototype = {
 			launcher = launchers[i];
 			
 			if (launcher.supportsConsole(console) && launcher.supportsCommand(command)) {
-				launcher.executeCommand(console, command, args, handler, context);
+				launcher.executeConsoleCommand(console, command, args, handler, context);
 				
 				return;
 			}
