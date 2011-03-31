@@ -52,28 +52,32 @@ WeaponryPythonService.prototype = {
 	/* -------------------------------------------------------------------- */
 	
 	findPythonInterpeter: function () {
+		let file;
+		
 		switch (weaponryCommon.xulAppInfo.OS) {
 			case 'Darwin':
 				// TODO: take into consideration PATH and PYTHONPATH environment varaibles
 				
-				let file = weaponryCommon.createInstance('@mozilla.org/file/local;1', 'nsILocalFile');
+				file = weaponryCommon.createInstance('@mozilla.org/file/local;1', 'nsILocalFile');
 				
 				file.initWithPath('/usr/bin/python');
 				
-				return file;
+				break;
 			case 'Linux':
 				// TODO: take into consideration PATH and PYTHONPATH environment varaibles
 				
-				let file = weaponryCommon.createInstance('@mozilla.org/file/local;1', 'nsILocalFile');
+				file = weaponryCommon.createInstance('@mozilla.org/file/local;1', 'nsILocalFile');
 				
 				file.initWithPath('/usr/bin/python');
 				
-				return file;
+				break;
 			case 'WINNT':
 				throw new Error('not implemented'); // TODO: add code here
 			default:
 				throw new Error('cannot find python interpreter');
 		}
+		
+		return file;
 	},
 	
 	/* -------------------------------------------------------------------- */
