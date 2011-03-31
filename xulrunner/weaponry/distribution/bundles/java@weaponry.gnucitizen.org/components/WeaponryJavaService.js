@@ -55,6 +55,8 @@ WeaponryJavaService.prototype = {
 	findJavaInterpeter: function () {
 		switch (weaponryCommon.xulAppInfo.OS) {
 			case 'Darwin':
+				// TODO: take into consideration JAVAHOME and PATH environment variables
+				
 				let file = weaponryCommon.createInstance('@mozilla.org/file/local;1', 'nsILocalFile');
 				
 				file.initWithPath('/usr/bin/java');
