@@ -23,13 +23,13 @@ overlay      chrome://workspaces.weaponry.gnucitizen.org/content/xul/workspaceVi
 # xpcom registration
 #
 
-interfaces     components/IWeaponryWorkspacesAutocomplete.xpt
-interfaces     components/IWeaponryWorkspaceUtilityLauncher.xpt
 interfaces     components/IWeaponryWorkspaceFileExporter.xpt
 interfaces     components/IWeaponryWorkspaceFileImporter.xpt
+interfaces     components/IWeaponryWorkspacesAutocomplete.xpt
 interfaces     components/IWeaponryWorkspace.xpt
 interfaces     components/IWeaponryWorkspacesManager.xpt
 interfaces     components/IWeaponryWorkspacesService.xpt
+interfaces     components/IWeaponryWorkspaceUtilityLauncher.xpt
 
 component      {f6a2fab0-045d-11df-8a39-0800200c9a66}                          components/WeaponryWorkspace.js
 contract       @workspaces.weaponry.gnucitizen.org/workspace;1                 {f6a2fab0-045d-11df-8a39-0800200c9a66}

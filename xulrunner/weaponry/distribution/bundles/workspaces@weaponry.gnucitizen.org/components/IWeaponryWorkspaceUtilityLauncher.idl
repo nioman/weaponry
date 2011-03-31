@@ -31,7 +31,7 @@ interface IWeaponryWorkspaceUtilityLauncher;
 
 [scriptable, uuid(46a3b790-31cf-11df-9aae-0800200c9a66)]
 interface IWeaponryWorkspaceUtilityLauncher : nsISupports {
-	readonly attribute AString utilityName;
+	readonly attribute AString workspaceUtilityName;
 	
 	/* -------------------------------------------------------------------- */
 	

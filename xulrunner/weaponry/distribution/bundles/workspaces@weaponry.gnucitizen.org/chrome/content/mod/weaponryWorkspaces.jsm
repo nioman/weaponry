@@ -446,6 +446,18 @@ let weaponryWorkspaces = new function () {
 	
 	/* -------------------------------------------------------------------- */
 	
+	this.getWorkspaceFilename = function (name) {
+		try {
+			return this.workspacesService.getWorkspaceFilename(name).path;
+		} catch (e) {
+			Components.utils.reportError(e);
+			
+			return null;
+		}
+	};
+	
+	/* -------------------------------------------------------------------- */
+	
 	this.getWorkspaceFile = function (name) {
 		try {
 			return this.workspacesService.getWorkspaceFile(name).path;

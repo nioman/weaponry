@@ -17,16 +17,30 @@
  *  Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
  */
 
+function handleWeaponryWorkspacesLaunchWorkspaceUtilityMenipopupMenuitemClickEvent(event) {
+	let launcherId = this.getAttribute('launcherId');
+	
+	window.weaponryWorkspacesLaunchWorkspaceUtilityLaunchers[launcherId].launchWorkspaceUtility(window.workspace);
+}
+
+/* ------------------------------------------------------------------------ */
+
 function handleWeaponryWorkspacesLaunchWorkspaceUtilityMenupopupDOMContentLoadedEvent(event) {
 	if (event.target != document) {
 		return;
 	}
 	
+	window.weaponryWorkspacesLaunchWorkspaceUtilityLaunchers = {};
+	
 	let $utilityMenupopup = document.getElementById('weaponry-workspaces-launch-workspace-utility-menupopup');
 	let components = weaponryCommon.enumerateComponents('weaponry-workspace-utility-launchers');
 	let componentsLength = components.length;
 	
-	let i, component, launcher, $menuitem;
+	let i;
+	let component;
+	let launcher;
+	let launcherId;
+	let $menuitem;
 	
 	for (i = 0; i < componentsLength; i += 1) {
 		component = components[i];
@@ -37,18 +51,18 @@ function handleWeaponryWorkspacesLaunchWorkspaceUtilityMenupopupDOMContentLoaded
 			launcher = weaponryCommon.createInstance(component.contractID, 'IWeaponryWorkspaceUtilityLauncher');
 		}
 		
+		launcherId = launcher.workspaceUtilityName + ':' + component.contractID;
+		
+		window.weaponryWorkspacesLaunchWorkspaceUtilityLaunchers[launcherId] = launcher;
+		
 		$menuitem = document.createElement('menuitem');
 		
 		$menuitem.setAttribute('class', 'weaponry-workspaces-launch-workspace-utility-menupopup-menuitem');
-		$menuitem.setAttribute('label', launcher.utilityName);
+		$menuitem.setAttribute('label', launcher.workspaceUtilityName);
+		$menuitem.setAttribute('utilityLauncherId', launcherId);
 		$menuitem.setAttribute('utilityComponentType', component.type);
 		$menuitem.setAttribute('utilityComponentContractID', component.contractID);
-		
-		$menuitem.addEventListener('click', (function (launcher) {
-			return function (event) {
-				launcher.launchWorkspaceUtility(window.workspace);
-			};
-		})(launcher), false);
+		$menuitem.addEventListener('click', handleWeaponryWorkspacesLaunchWorkspaceUtilityMenipopupMenuitemClickEvent, false);
 		
 		$utilityMenupopup.appendChild($menuitem);
 	}
