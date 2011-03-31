@@ -1,5 +1,5 @@
 /**  
- *  AcidbrowserBasicCommandLauncher.js
+ *  AcidbrowserBasicConsoleCommandLauncher.js
  *  Copyright (C) 2007-2011  GNUCITIZEN
  *  
  *  This program is free software; you can redistribute it and/or modify
@@ -31,23 +31,23 @@ Components.utils.import('resource://gre/modules/XPCOMUtils.jsm');
 
 /* ------------------------------------------------------------------------ */
 
-function AcidbrowserBasicCommandLauncher() {
+function AcidbrowserBasicConsoleCommandLauncher() {
 	Components.utils.import('resource://common.weaponry.gnucitizen.org/content/mod/weaponryCommon.jsm');
 	Components.utils.import('resource://preferences.weaponry.gnucitizen.org/content/mod/weaponryPreferences.jsm');
 	
 	this.outputFolder = null;
 }
 
-AcidbrowserBasicCommandLauncher.prototype = {
-	classDescription: 'Acidbrowser Basic Command Launcher',
+AcidbrowserBasicConsoleCommandLauncher.prototype = {
+	classDescription: 'Acidbrowser Basic Console Command Launcher',
 	classID: Components.ID('{7fe854b0-5597-11e0-b8af-0800200c9a66}'),
-	contractID: '@basic.acidbrowser.gnucitizen.org/command-launcher;1',
-	QueryInterface: XPCOMUtils.generateQI([CI.IAcidbrowserBasicCommandLauncher, CI.IWeaponryConsolesCommandLauncher]),
+	contractID: '@basic.acidbrowser.gnucitizen.org/console-command-launcher;1',
+	QueryInterface: XPCOMUtils.generateQI([CI.IAcidbrowserBasicConsoleCommandLauncher, CI.IWeaponryConsolesCommandLauncher]),
 	
 	/* -------------------------------------------------------------------- */
 	
 	_xpcom_categories: [
-		{service:true, entry:'AcidbrowserBasicCommandLauncher', category:'weaponry-consoles-command-launchers'}
+		{service:true, entry:'AcidbrowserBasicConsoleCommandLauncher', category:'weaponry-consoles-command-launchers'}
 	],
 	
 	/* -------------------------------------------------------------------- */
@@ -172,7 +172,7 @@ AcidbrowserBasicCommandLauncher.prototype = {
 	
 	/* -------------------------------------------------------------------- */
 	
-	executeCommand: function (console, command, args, handler, context) {
+	executeConsoleCommand: function (console, command, args, handler, context) {
 		switch (command) {
 			case 'set_proxy':
 				this.doSetProxy(JSON.parse(args), handler, context);
@@ -211,9 +211,9 @@ AcidbrowserBasicCommandLauncher.prototype = {
 /* ------------------------------------------------------------------------ */
 
 if (XPCOMUtils.generateNSGetFactory) {
-	var NSGetFactory = XPCOMUtils.generateNSGetFactory([AcidbrowserBasicCommandLauncher]);
+	var NSGetFactory = XPCOMUtils.generateNSGetFactory([AcidbrowserBasicConsoleCommandLauncher]);
 } else {
-	var NSGetModule = XPCOMUtils.generateNSGetModule([AcidbrowserBasicCommandLauncher]);
+	var NSGetModule = XPCOMUtils.generateNSGetModule([AcidbrowserBasicConsoleCommandLauncher]);
 }
 
 /*  GNUCITIZEN (Information Security Think Tank)

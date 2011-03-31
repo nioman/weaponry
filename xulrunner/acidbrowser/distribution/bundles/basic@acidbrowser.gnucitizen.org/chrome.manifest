@@ -22,12 +22,12 @@ resource     sites.basic.acidbrowser.gnucitizen.org           file:sites/
 #
 
 interfaces     components/IAcidbrowserBasicAboutModule.xpt
-interfaces     components/IAcidbrowserBasicCommandLauncher.xpt
+interfaces     components/IAcidbrowserBasicConsoleCommandLauncher.xpt
 
-component      {187ddc80-4f04-11e0-b8af-0800200c9a66}                                  components/AcidbrowserBasicAboutModule.js
-contract       @mozilla.org/network/protocol/about;1?what=acidbrowser                  {187ddc80-4f04-11e0-b8af-0800200c9a66}
+component      {187ddc80-4f04-11e0-b8af-0800200c9a66}                                         components/AcidbrowserBasicAboutModule.js
+contract       @mozilla.org/network/protocol/about;1?what=acidbrowser                         {187ddc80-4f04-11e0-b8af-0800200c9a66}
 
-component      {7fe854b0-5597-11e0-b8af-0800200c9a66}                                  components/AcidbrowserBasicCommandLauncher.js
-contract       @basic.acidbrowser.gnucitizen.org/command-launcher;1                    {7fe854b0-5597-11e0-b8af-0800200c9a66}
+component      {7fe854b0-5597-11e0-b8af-0800200c9a66}                                         components/AcidbrowserBasicConsoleCommandLauncher.js
+contract       @basic.acidbrowser.gnucitizen.org/console-command-launcher;1                   {7fe854b0-5597-11e0-b8af-0800200c9a66}
 
-category       weaponry-consoles-command-launchers AcidbrowserBasicCommandLauncher     @basic.acidbrowser.gnucitizen.org/command-launcher;1
+category       weaponry-consoles-command-launchers AcidbrowserBasicConsoleCommandLauncher     @basic.acidbrowser.gnucitizen.org/console-command-launcher;1

@@ -72,7 +72,7 @@ Service.prototype = {
 	
 	initializeComponent: function (subject, topic, data) {
 		weaponryCommon.getService('@browser.weaponry.gnucitizen.org/service;1', 'IWeaponryBrowserService').registerDefaultContentHandlers();
-		weaponryCommon.getService('@viewers.weaponry.gnucitizen.org/service;1', 'IWeaponryViewersService').registerContentViewer('fuck/me', 'about:config');
+		weaponryCommon.getService('@common.weaponry.gnucitizen.org/service;1', 'IWeaponryViewersService').registerContentViewer('fuck/me', 'about:config');
 	},
 	
 	deinitializeComponent: function (subject, topic, data) {
