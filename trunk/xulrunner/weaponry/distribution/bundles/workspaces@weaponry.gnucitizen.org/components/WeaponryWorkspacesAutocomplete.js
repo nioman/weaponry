@@ -85,7 +85,7 @@ WeaponryWorkspacesAutocomplete.prototype = {
 			},
 			
 			removeValueAt: function(index) {
-				// pass
+				throw new Error('not implemented');
 			}
 		};
 		

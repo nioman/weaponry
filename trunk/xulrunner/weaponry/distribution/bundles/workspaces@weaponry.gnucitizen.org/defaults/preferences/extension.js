@@ -18,7 +18,7 @@
  */
 
 // weaponry workspaces preferences
-pref('org.gnucitizen.weaponry.workspaces.workspaceWindow.lastPerspective', '_default');
+pref('org.gnucitizen.weaponry.workspaces.lastPerspective', '_default');
 pref('org.gnucitizen.weaponry.workspaces.tableUpdateInterval', 5000);
 
 /*  GNUCITIZEN (Information Security Think Tank)

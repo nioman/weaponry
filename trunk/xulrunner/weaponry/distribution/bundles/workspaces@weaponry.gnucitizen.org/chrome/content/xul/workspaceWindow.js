@@ -29,13 +29,13 @@ function handleDOMContentLoadedEvent(event) {
 	let lastPerspective = '';
 	
 	if (window.workspace) {
-		lastPerspective = window.workspace.wrappedJSObject.getPropertyFast('org.gnucitizen.weaponry.workspaces.workspaceWindow.lastPerspective');
+		lastPerspective = window.workspace.wrappedJSObject.getPropertyFast('org.gnucitizen.weaponry.workspaces.lastPerspective');
 	}
 	
 	if (lastPerspective) {
 		lastPerspective = lastPerspective.value;
 	} else {
-		lastPerspective = weaponryCommon.getPref('org.gnucitizen.weaponry.workspaces.workspaceWindow.lastPerspective');
+		lastPerspective = weaponryCommon.getPref('org.gnucitizen.weaponry.workspaces.lastPerspective');
 		
 		if (!lastPerspective) {
 			lastPerspective = '_default';
@@ -108,9 +108,9 @@ function handleUnloadEvent(event) {
 	
 	let currentPerspective = weaponryWorkspaces.lookupWorkspaceWindowPerspective($contentIframe.contentWindow);
 	
-	window.workspace.wrappedJSObject.setPropertyFast('org.gnucitizen.weaponry.workspaces.workspaceWindow.lastPerspective', currentPerspective);
+	window.workspace.wrappedJSObject.setPropertyFast('org.gnucitizen.weaponry.workspaces.lastPerspective', currentPerspective);
 	
-	weaponryCommon.setPref('org.gnucitizen.weaponry.workspaces.workspaceWindow.lastPerspective', currentPerspective);
+	weaponryCommon.setPref('org.gnucitizen.weaponry.workspaces.lastPerspective', currentPerspective);
 	
 	window.workspacesObserver.unregister();
 	
