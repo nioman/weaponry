@@ -30,6 +30,8 @@ interface IWeaponryPreferencesService;
 interface IWeaponryPreferencesService : nsISupports {
 	void updateProxySettings(in boolean enable, in AString host, in long port, in AString types);
 	
+	/* -------------------------------------------------------------------- */
+	
 	nsIDOMWindow openPreferencesWindow();
 };
 

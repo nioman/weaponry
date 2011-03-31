@@ -70,7 +70,12 @@ function updateProtocolUi() {
 	let types = ['ssl', 'ftp', 'socks', 'gopher'];
 	let typesLength = types.length;
 	
-	let i, type, $proxyServerPref, $proxyPortPref, $backupServerPref, $backupPortPref;
+	let i;
+	let type;
+	let $proxyServerPref;
+	let $proxyPortPref;
+	let $backupServerPref;
+	let $backupPortPref;
 	
 	for (i = 0; i < typesLength; i += 1) {
 		type = types[i];
@@ -124,7 +129,12 @@ function handleBeforeacceptEvent(event) {
 		let types = ['ssl', 'ftp', 'socks', 'gopher'];
 		let typesLength = types.length;
 		
-		let i, type, $proxyServerPref, $proxyPortPref, $proxyBackupServerPref, $proxyBackupPortPref;
+		let i;
+		let type;
+		let $proxyServerPref;
+		let $proxyPortPref;
+		let $proxyBackupServerPref;
+		let $proxyBackupPortPref;
 		
 		for (i = 0; i < typesLength; i += 1) {
 			type = types[i];
@@ -165,7 +175,8 @@ function handleLoadEvent(event) {
 	let types = ['ssl', 'ftp', 'socks', 'gopher'];
 	let typesLength = types.length;
 	
-	let i, type;
+	let i;
+	let type;
 	
 	for (i = 0; i < typesLength; i += 1) {
 		let type = types[i];
