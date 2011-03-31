@@ -97,7 +97,7 @@ WeaponryPreferencesService.prototype = {
 			weaponryCommon.setPref('network.proxy.type', 0);
 		}
 		
-		// TODO: take into consideration types
+		// TODO: take into consideration types variable
 		weaponryCommon.setPref('network.proxy.share_proxy_settings', true);
 		//
 		
