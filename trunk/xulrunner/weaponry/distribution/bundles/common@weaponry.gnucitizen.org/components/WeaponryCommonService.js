@@ -191,7 +191,7 @@ WeaponryCommonService.prototype = {
 		for (id in contentConverters) {
 			contentConverter = contentConverters[id];
 			
-			this.registerContentConverter(contentConverter.scheme, contentConverter.uri, contentConverter.wrap);
+			this.registerContentConverter(contentConverter.mimeType, contentConverter.uri, contentConverter.wrap);
 		}
 	},
 	
