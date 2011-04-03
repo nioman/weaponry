@@ -18,9 +18,8 @@
  */
 
 locationbox > .locationbox-container {
-	height: 26px;
 	background: #ffffff;
-	-moz-border-radius: 5px;
+	-moz-border-radius: 4px;
 	padding: 0px 5px 0px 5px;
 	border: 1px solid ThreeDDarkShadow;
 }
@@ -28,7 +27,6 @@ locationbox > .locationbox-container {
 locationbox > .locationbox-container .locationbox-textbox {
 	border: 0px;
 	margin: 0px;
-	height: 26px;
 	-moz-appearance: none;
 }
 
@@ -41,7 +39,7 @@ locationbox > .locationbox-container .locationbox-textbox {
 /* ------------------------------------------------------------------------ */
 
 [ostype="Linux"] locationbox > .locationbox-container {
-	/* pass */
+	border: 1px solid ButtonFace;
 }
 
 /* ------------------------------------------------------------------------ */

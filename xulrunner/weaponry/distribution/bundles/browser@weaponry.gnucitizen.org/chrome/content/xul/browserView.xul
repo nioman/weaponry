@@ -67,14 +67,14 @@
 	<vbox id="browser-view-content-vbox" flex="1">
 		<toolbox id="browser-view-navigation-toolbox">
 			<toolbar id="browser-view-navigation-toolbar" class="small" flex="1">
-				<toolbarbutton id="browser-view-back-toolbarbutton" command="browser-view-back-command"/>
-				<toolbarbutton id="browser-view-forward-toolbarbutton" command="browser-view-forward-command"/>
-				<toolbarbutton id="browser-view-reload-toolbarbutton" command="browser-view-reload-command"/>
-				<toolbarbutton id="browser-view-stop-toolbarbutton" command="browser-view-stop-command"/>
+				<toolbarbutton id="browser-view-back-toolbarbutton" class="browser-view-navigation-button" command="browser-view-back-command"/>
+				<toolbarbutton id="browser-view-forward-toolbarbutton" class="browser-view-navigation-button" command="browser-view-forward-command"/>
+				<toolbarbutton id="browser-view-reload-toolbarbutton" class="browser-view-navigation-button" command="browser-view-reload-command"/>
+				<toolbarbutton id="browser-view-stop-toolbarbutton" class="browser-view-navigation-button" command="browser-view-stop-command"/>
 				<locationbox id="browser-view-content-locationbox" flex="1" onlocationchange="return handleLocationChangeEvent(event);">
 					<box id="browser-view-content-macthrob" collapsed="true"/>
 				</locationbox>
-				<toolbarbutton id="browser-view-go-toolbarbutton" command="browser-view-go-command"/>
+				<toolbarbutton id="browser-view-go-toolbarbutton" class="browser-view-navigation-button" command="browser-view-go-command"/>
 			</toolbar>
 		</toolbox>
 		
