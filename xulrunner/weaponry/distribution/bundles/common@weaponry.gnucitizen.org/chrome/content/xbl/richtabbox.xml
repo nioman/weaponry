@@ -328,6 +328,12 @@
 					} else {
 						val.focus();
 					}
+					
+					// NOTE: forces redraw in GTK/Linux
+					let domWindowUtils = window.QueryInterface(CI.nsIInterfaceRequestor).getInterface(CI.nsIDOMWindowUtils);
+					
+					domWindowUtils.redraw(1);
+					//
 				]]></setter>
 			</property>
 			

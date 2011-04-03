@@ -88,6 +88,10 @@ richtabbox > .richtabbox-container .richtabpanels-selectbutton > label {
 	background: -moz-linear-gradient(#797979, #8a8a8a);
 }
 
+[ostype="Darwin"] richtabbox > .richtabbox-container .richtabpanels-toolbar {
+	/* pass */
+}
+
 [ostype="Darwin"] richtabbox > .richtabbox-container .richtabpanel-toolbarbutton {
 	border: 0px;
 	-moz-appearance: none;
@@ -144,6 +148,11 @@ richtabbox > .richtabbox-container .richtabpanels-selectbutton > label {
 [ostype="Linux"] richtabbox > toolbar                                      ,
 [ostype="Linux"] richtabbox > .richtabbox-container .richtabpanels-toolbar {
 	/* pass */
+}
+
+[ostype="Linux"] richtabbox > .richtabbox-container .richtabpanels-toolbar {
+	-moz-appearance: none;
+	-moz-box-shadow: inset 0px -1px 0px ButtonFace;
 }
 
 [ostype="Linux"] richtabbox > .richtabbox-container .richtabpanel-toolbarbutton {
@@ -212,6 +221,10 @@ richtabbox > .richtabbox-container .richtabpanels-selectbutton > label {
 	padding-top: 2px;
 	padding-bottom: 1px;
 	-moz-appearance: none;
+}
+
+[ostype="WINNT"] richtabbox > .richtabbox-container .richtabpanels-toolbar {
+	/* pass */
 }
 
 [ostype="WINNT"] richtabbox > .richtabbox-container .richtabpanel-toolbarbutton {
