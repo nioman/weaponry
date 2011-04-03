@@ -21,31 +21,13 @@ locationbox > .locationbox-container {
 	background: #ffffff;
 	-moz-border-radius: 4px;
 	padding: 0px 5px 0px 5px;
-	border: 1px solid ThreeDDarkShadow;
+	border: 1px solid #9f9f9f;
 }
 
 locationbox > .locationbox-container .locationbox-textbox {
 	border: 0px;
 	margin: 0px;
 	-moz-appearance: none;
-}
-
-/* ------------------------------------------------------------------------ */
-
-[ostype="Darwin"] locationbox > .locationbox-container {
-	border: 1px solid -moz-mac-chrome-active;
-}
-
-/* ------------------------------------------------------------------------ */
-
-[ostype="Linux"] locationbox > .locationbox-container {
-	border: 1px solid ButtonFace;
-}
-
-/* ------------------------------------------------------------------------ */
-
-[ostype="WINNT"] locationbox > .locationbox-container {
-	/* pass */
 }
 
 /*  GNUCITIZEN (Information Security Think Tank)
