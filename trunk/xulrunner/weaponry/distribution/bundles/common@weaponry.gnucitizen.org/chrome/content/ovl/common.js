@@ -101,7 +101,16 @@ function handleCommonDOMContentLoadedEvent(event) {
 	let documentElement = document.documentElement;
 	let osType = weaponryCommon.xulRuntime.OS;
 	
-	documentElement.setAttribute('ostype', osType);
+	switch (osType) {
+		case 'Darwin':
+		case 'Linux':
+		case 'WINNT':
+			documentElement.setAttribute('ostype', osType);
+			
+			break;
+		default:
+			documentElement.setAttribute('ostype', 'other');
+	}
 	
 	if (window.parent != window) {
 		let parentDocumentElement = window.parent.document.documentElement;
