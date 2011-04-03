@@ -18,14 +18,34 @@
  */
 
 statusbox > .statusbox-container .statusbox-panel {
+	color: InfoText;
 	-moz-box-shadow: none;
 	-moz-appearance: none;
 	border-left-width: 0px;
-	background: ButtonFace;
 	-moz-window-shadow: none;
 	border-bottom-width: 0px;
-	border: 1px solid ButtonShadow;
+	background: InfoBackground;
 	-moz-border-radius-topright: 3px;
+}
+
+/* ------------------------------------------------------------------------ */
+
+[ostype="Darwin"] statusbox > .statusbox-container .statusbox-panel {
+	color: ButtonText;
+	background: ButtonFace;
+	border: 1px solid ButtonShadow;
+}
+
+/* ------------------------------------------------------------------------ */
+
+[ostype="Linux"] statusbox > .statusbox-container .statusbox-panel {
+	/* pass */
+}
+
+/* ------------------------------------------------------------------------ */
+
+[ostype="WINNT"] statusbox > .statusbox-container .statusbox-panel {
+	/* pass */
 }
 
 /*  GNUCITIZEN (Information Security Think Tank)
