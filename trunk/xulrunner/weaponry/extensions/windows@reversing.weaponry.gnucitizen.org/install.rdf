@@ -4,13 +4,13 @@
      xmlns:em="http://www.mozilla.org/2004/em-rdf#">
 	
 	<Description about="urn:mozilla:install-manifest">
-		<em:id>winre@weaponry.gnucitizen.org</em:id>
+		<em:id>windows@reversingweaponry.gnucitizen.org</em:id>
 		<em:version>0.8</em:version>
 		<em:type>2</em:type>
 		<em:creator>GNUCITIZEN</em:creator>
 		
-		<em:name>Weaponry Winre</em:name>
-		<em:description>Weaponry Winre</em:description>
+		<em:name>Weaponry Reversing (Windows)</em:name>
+		<em:description>Weaponry Reversing (Windows)</em:description>
 		
 		<em:targetApplication>
 			<Description>
