@@ -23,7 +23,6 @@
 
 #browser-view-navigation-toolbar {
 	-moz-box-align: center;
-	padding: 2px 3px 2px 0px;
 }
 
 /* ------------------------------------------------------------------------ */
@@ -85,6 +84,8 @@
 	height: 26px;
 }
 
+/* ------------------------------------------------------------------------ */
+
 #browser-view-content-macthrob {
 	width: 16px;
 	height: 16px;
@@ -109,8 +110,37 @@
 	/* pass */
 }
 
+[ostype="Darwin"] #browser-view-navigation-toolbox > toolbar {
+	/* pass */
+}
+
 [ostype="Darwin"] #browser-view-navigation-toolbar {
+	padding: 2px 2px 2px 0px;
 	-moz-appearance: -moz-mac-unified-toolbar;
+}
+
+[ostype="Darwin"] .browser-view-navigation-button {
+	/* pass */
+}
+
+[ostype="Darwin"] #browser-view-back-toolbarbutton {
+	/* pass */
+}
+
+[ostype="Darwin"] #browser-view-forward-toolbarbutton {
+	/* pass */
+}
+
+[ostype="Darwin"] #browser-view-reload-toolbarbutton {
+	/* pass */
+}
+
+[ostype="Darwin"] #browser-view-stop-toolbarbutton  {
+	/* pass */
+}
+
+[ostype="Darwin"] #browser-view-content-locationbox {
+	/* pass */
 }
 
 [ostype="Darwin"] #browser-view-statusbar {
@@ -125,11 +155,47 @@
 /* ------------------------------------------------------------------------ */
 
 [ostype="Linux"] #browser-view-navigation-toolbox {
-	/* pass */
+	min-height: 34px;
+	-moz-appearance: none;
+	background: -moz-ButtonHoverFace;
+	border-bottom: 1px solid ButtonFace;
+}
+
+[ostype="Linux"] #browser-view-navigation-toolbox > toolbar {
+	min-height: 34px;
+	-moz-appearance: none;
+	background: transparent;
 }
 
 [ostype="Linux"] #browser-view-navigation-toolbar {
-	/* pass */
+	padding: 2px 2px 2px 0px;
+}
+
+[ostype="Linux"] .browser-view-navigation-button {
+	width: auto;
+	height: auto;
+	-moz-appearance: toolbarbutton;
+}
+
+[ostype="Linux"] #browser-view-back-toolbarbutton {
+	list-style-image: url("moz-icon://stock/gtk-go-back?size=toolbar");
+}
+
+[ostype="Linux"] #browser-view-forward-toolbarbutton {
+	list-style-image: url("moz-icon://stock/gtk-go-forward?size=toolbar");
+}
+
+[ostype="Linux"] #browser-view-reload-toolbarbutton {
+	list-style-image: url("moz-icon://stock/gtk-refresh?size=toolbar");
+}
+
+[ostype="Linux"] #browser-view-stop-toolbarbutton  {
+	list-style-image: url("moz-icon://stock/gtk-stop?size=toolbar");
+}
+
+[ostype="Linux"] #browser-view-content-locationbox {
+	min-height: 34px;
+	height: -moz-calc(100%);
 }
 
 [ostype="Linux"] #browser-view-statusbar {
@@ -148,11 +214,39 @@
 	background: transparent;
 }
 
+[ostype="WINNT"] #browser-view-navigation-toolbox > toolbar {
+	/* pass */
+}
+
 [ostype="WINNT"] #browser-view-navigation-toolbar {
 	border: 0px;
 	-moz-appearance: none;
 	background: transparent;
 	padding: 2px 0px 2px 0px;
+}
+
+[ostype="WINNT"] .browser-view-navigation-button {
+	/* pass */
+}
+
+[ostype="WINNT"] #browser-view-back-toolbarbutton {
+	/* pass */
+}
+
+[ostype="WINNT"] #browser-view-forward-toolbarbutton {
+	/* pass */
+}
+
+[ostype="WINNT"] #browser-view-reload-toolbarbutton {
+	/* pass */
+}
+
+[ostype="WINNT"] #browser-view-stop-toolbarbutton  {
+	/* pass */
+}
+
+[ostype="WINNT"] #browser-view-content-locationbox {
+	/* pass */
 }
 
 [ostype="WINNT"] #browser-view-statusbar {
