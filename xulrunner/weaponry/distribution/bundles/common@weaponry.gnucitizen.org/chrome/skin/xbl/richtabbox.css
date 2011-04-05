@@ -174,7 +174,7 @@ richtabbox > .richtabbox-container .richtabpanels-selectbutton > label {
 }
 
 [ostype="Linux"] richtabbox > .richtabbox-container .richtabpanel-toolbarbutton[closable="true"] > image {
-	-moz-border-radius: 2px;
+	-moz-border-radius: 4px;
 	border: 1px solid transparent;
 	list-style-image: url("moz-icon://stock/gtk-close?size=menu");
 }
@@ -213,13 +213,15 @@ richtabbox > .richtabbox-container .richtabpanels-selectbutton > label {
 	border: 0px;
 	-moz-appearance: none;
 	background: transparent;
+	-moz-box-shadow: inset 0px -1px 0px ThreeDHighlight;
 }
 
 [ostype="WINNT"] richtabbox > toolbar                                      ,
 [ostype="WINNT"] richtabbox > .richtabbox-container .richtabpanels-toolbar {
 	border: 0px;
 	padding-top: 2px;
-	padding-bottom: 1px;
+	padding-bottom: 2px;
+	margin-bottom: -1px;
 	-moz-appearance: none;
 }
 
@@ -274,6 +276,10 @@ richtabbox > .richtabbox-container .richtabpanels-selectbutton > label {
 }
 
 /* ------------------------------------------------------------------------ */
+
+[ostype="WINNT"]:-moz-system-metric(windows-default-theme) richtabbox > .richtabbox-container .richtabbox-toolbox {
+	-moz-box-shadow: inset 0px -1px 0px ThreeDShadow;
+}
 
 [ostype="WINNT"]:-moz-system-metric(windows-default-theme) richtabbox > .richtabbox-container .richtabpanel-toolbarbutton[closable="true"] > image {
 	list-style-image: url("images/close.gloss.still.png");
