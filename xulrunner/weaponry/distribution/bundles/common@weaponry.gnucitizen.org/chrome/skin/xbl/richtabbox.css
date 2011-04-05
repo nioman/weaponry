@@ -147,12 +147,12 @@ richtabbox > .richtabbox-container .richtabpanels-selectbutton > label {
 
 [ostype="Linux"] richtabbox > toolbar                                      ,
 [ostype="Linux"] richtabbox > .richtabbox-container .richtabpanels-toolbar {
-	/* pass */
+	-moz-appearance: none;
+	-moz-box-shadow: inset 0px -1px 0px ButtonFace;
 }
 
 [ostype="Linux"] richtabbox > .richtabbox-container .richtabpanels-toolbar {
-	-moz-appearance: none;
-	-moz-box-shadow: inset 0px -1px 0px ButtonFace;
+	/* pass */
 }
 
 [ostype="Linux"] richtabbox > .richtabbox-container .richtabpanel-toolbarbutton {
