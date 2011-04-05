@@ -221,16 +221,14 @@ richtabbox > .richtabbox-container .richtabpanels-selectbutton > label {
 	border: 0px;
 	padding-top: 2px;
 	padding-bottom: 2px;
-	margin-bottom: -1px;
 	-moz-appearance: none;
 }
 
 [ostype="WINNT"] richtabbox > .richtabbox-container .richtabpanels-toolbar {
-	/* pass */
+	margin-bottom: -2px;
 }
 
 [ostype="WINNT"] richtabbox > .richtabbox-container .richtabpanel-toolbarbutton {
-	margin-right: 1px;
 	-moz-appearance: tab;
 	-moz-box-direction: reverse;
 }
@@ -278,6 +276,10 @@ richtabbox > .richtabbox-container .richtabpanels-selectbutton > label {
 /* ------------------------------------------------------------------------ */
 
 [ostype="WINNT"]:-moz-system-metric(windows-default-theme) richtabbox > .richtabbox-container .richtabbox-toolbox {
+	-moz-box-shadow: inset 0px -1px 0px ThreeDShadow;
+}
+
+[ostype="WINNT"]:-moz-system-metric(windows-default-theme) richtabbox > .richtabbox-container .richtabpanel-toolbarbutton:not([checked="true"]) {
 	-moz-box-shadow: inset 0px -1px 0px ThreeDShadow;
 }
 
