@@ -212,6 +212,7 @@
 	border: 0px;
 	-moz-appearance: none;
 	background: transparent;
+	border-bottom: 1px solid ThreeDHighlight;
 }
 
 [ostype="WINNT"] #browser-view-navigation-toolbox > toolbar {
