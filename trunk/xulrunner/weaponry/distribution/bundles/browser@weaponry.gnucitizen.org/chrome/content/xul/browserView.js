@@ -266,6 +266,8 @@ function handleDOMContentLoadedEvent(event) {
 	let $forwardCommand = document.getElementById('browser-view-forward-command');
 	let $reloadCommand = document.getElementById('browser-view-reload-command');
 	let $stopCommand = document.getElementById('browser-view-stop-command');
+	let $reloadButton = document.getElementById('browser-view-reload-toolbarbutton');
+	let $stopButton = document.getElementById('browser-view-stop-toolbarbutton');
 	let $contentLocationbox = document.getElementById('browser-view-content-locationbox');
 	let $contentMacthrob = document.getElementById('browser-view-content-macthrob');
 	let $contentBrowser = document.getElementById('browser-view-content-browser');
@@ -284,13 +286,17 @@ function handleDOMContentLoadedEvent(event) {
 	
 	window.webProgressListener = weaponryCommon.createProgressListener($contentBrowser, CI.nsIWebProgress.NOTIFY_ALL, {
 		onStateChange: function (webProgress, request, stateFlags, status) {
-			$reloadCommand.setAttribute('disabled', false);
-			
 			if (stateFlags & CI.nsIWebProgressListener.STATE_IS_NETWORK && stateFlags & CI.nsIWebProgressListener.STATE_START) {
+				$reloadCommand.setAttribute('disabled', true);
 				$stopCommand.setAttribute('disabled', false);
+				$reloadButton.hidden = true;
+				$stopButton.hidden = false;
 			} else
 			if (stateFlags & CI.nsIWebProgressListener.STATE_STOP) {
+				$reloadCommand.setAttribute('disabled', false);
 				$stopCommand.setAttribute('disabled', true);
+				$reloadButton.hidden = false;
+				$stopButton.hidden = true;
 			}
 			
 			if (stateFlags & CI.nsIWebProgressListener.STATE_IS_WINDOW) {
