@@ -44,7 +44,7 @@ locationbox > .locationbox-container .locationbox-textbox {
 /* ------------------------------------------------------------------------ */
 
 [ostype="WINNT"] locationbox > .locationbox-container {
-	-moz-border-radius: 4px;
+	-moz-border-radius: 2px;
 }
 
 /*  GNUCITIZEN (Information Security Think Tank)
