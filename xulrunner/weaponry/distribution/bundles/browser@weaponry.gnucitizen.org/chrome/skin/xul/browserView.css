@@ -256,7 +256,7 @@
 }
 
 [ostype="WINNT"] .browser-view-navigation-button[disabled="true"] {
-	/* pass */
+	opacity: 0.2;
 }
 
 [ostype="WINNT"] .browser-view-navigation-button:not([disabled="true"]):active {
@@ -280,6 +280,7 @@
 }
 
 [ostype="WINNT"] #browser-view-content-locationbox {
+	height: 22px;
 	margin-left: 2px;
 }
 
