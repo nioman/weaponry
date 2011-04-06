@@ -188,16 +188,32 @@
 	list-style-image: url("moz-icon://stock/gtk-go-back?size=toolbar");
 }
 
+[ostype="Linux"] #browser-view-back-toolbarbutton[disabled="true"] {
+	list-style-image: url("moz-icon://stock/gtk-go-back?size=toolbar&state=disabled");
+}
+
 [ostype="Linux"] #browser-view-forward-toolbarbutton {
 	list-style-image: url("moz-icon://stock/gtk-go-forward?size=toolbar");
+}
+
+[ostype="Linux"] #browser-view-forward-toolbarbutton[disabled="true"] {
+	list-style-image: url("moz-icon://stock/gtk-go-forward?size=toolbar&state=disabled");
 }
 
 [ostype="Linux"] #browser-view-reload-toolbarbutton {
 	list-style-image: url("moz-icon://stock/gtk-refresh?size=toolbar");
 }
 
+[ostype="Linux"] #browser-view-reload-toolbarbutton[disabled="true"] {
+	list-style-image: url("moz-icon://stock/gtk-refresh?size=toolbar&state=disabled");
+}
+
 [ostype="Linux"] #browser-view-stop-toolbarbutton  {
 	list-style-image: url("moz-icon://stock/gtk-stop?size=toolbar");
+}
+
+[ostype="Linux"] #browser-view-stop-toolbarbutton[disabled="true"]  {
+	list-style-image: url("moz-icon://stock/gtk-stop?size=toolbar&state=disabled");
 }
 
 [ostype="Linux"] #browser-view-content-locationbox {
