@@ -94,7 +94,7 @@
 }
 
 [ostype="Linux"] #browser-perspective-open-tab-toolbarbutton[disabled="true"] {
-	/* pass */
+	list-style-image: url("moz-icon://stock/gtk-add?size=16&state=disabled");
 }
 
 [ostype="Linux"] #browser-perspective-open-tab-toolbarbutton:not([disabled="true"]):hover:active {
