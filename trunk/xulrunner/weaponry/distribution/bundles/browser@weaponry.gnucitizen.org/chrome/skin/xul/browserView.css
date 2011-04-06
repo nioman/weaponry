@@ -97,8 +97,8 @@
 }
 
 [ostype="Darwin"] .browser-view-navigation-button {
+	opacity: 0.5;
 	height: 22px;
-	opacity: 0.8;
 	min-width: 22px;
 	-moz-border-radius: 3px;
 	border: 1px solid rgba(59, 59, 59, 0.9);
