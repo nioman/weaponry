@@ -33,6 +33,7 @@
 	</stringbundleset>
 	
 	<vbox id="history-page-content-vbox" flex="1">
+		<!-- TODO: add content here -->
 	</vbox>
 	
 	<box id="common-box"/>
