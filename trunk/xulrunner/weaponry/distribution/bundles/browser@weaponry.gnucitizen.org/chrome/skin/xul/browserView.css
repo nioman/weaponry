@@ -97,12 +97,11 @@
 }
 
 [ostype="Darwin"] .browser-view-navigation-button {
-	opacity: 0.5;
 	height: 22px;
 	min-width: 22px;
 	-moz-border-radius: 3px;
-	border: 1px solid rgba(59, 59, 59, 0.9);
-	box-shadow: 0px 1px rgba(255, 255, 255, 0.2);
+	border: 1px solid rgba(59, 59, 59, 0.5);
+	-moz-box-shadow: 0px 1px rgba(255, 255, 255, 0.2);
 	background: -moz-linear-gradient(top, #ffffff, #cccccc);
 }
 
@@ -295,8 +294,11 @@
 /* ------------------------------------------------------------------------ */
 
 [ostype="WINNT"]:-moz-system-metric(windows-default-theme) #browser-view-navigation-toolbox {
-	background: ButtonHighlight;
 	border-bottom: 1px solid ThreeDShadow;
+}
+
+[ostype="WINNT"][parentwindowtype="browser.weaponry.gnucitizen.org:browser-perspective"]:-moz-system-metric(windows-default-theme) #browser-view-navigation-toolbox {
+	background: ButtonHighlight;
 }
 
 /*  GNUCITIZEN (Information Security Think Tank)

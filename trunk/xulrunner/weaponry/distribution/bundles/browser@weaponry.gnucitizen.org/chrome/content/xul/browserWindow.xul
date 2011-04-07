@@ -38,6 +38,11 @@
 		<menu id="file-menu"/>
 		<menu id="edit-menu"/>
 		<menu id="view-menu"/>
+		
+		<menu id="browser-window-places-menu" label="&browser-window-places-menu-label;">
+			<menupopup id="browser-window-places-menupopup"/>
+		</menu>
+		
 		<menu id="tools-menu"/>
 		<menu id="window-menu"/>
 		<menu id="help-menu"/>

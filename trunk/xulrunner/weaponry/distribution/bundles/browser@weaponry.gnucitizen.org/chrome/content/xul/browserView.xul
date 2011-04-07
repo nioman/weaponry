@@ -71,9 +71,11 @@
 				<toolbarbutton id="browser-view-forward-toolbarbutton" class="browser-view-navigation-button" command="browser-view-forward-command"/>
 				<toolbarbutton id="browser-view-reload-toolbarbutton" class="browser-view-navigation-button" command="browser-view-reload-command"/>
 				<toolbarbutton id="browser-view-stop-toolbarbutton" class="browser-view-navigation-button" command="browser-view-stop-command"/>
+				
 				<locationbox id="browser-view-content-locationbox" flex="1" onlocationchange="return handleLocationChangeEvent(event);">
 					<box id="browser-view-content-macthrob" collapsed="true"/>
 				</locationbox>
+				
 				<toolbarbutton id="browser-view-go-toolbarbutton" class="browser-view-navigation-button" command="browser-view-go-command"/>
 			</toolbar>
 		</toolbox>

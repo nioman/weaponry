@@ -284,6 +284,8 @@ function handleDOMContentLoadedEvent(event) {
 	$contentBrowser.addEventListener('certProblem', handleContentBrowserCertProblemEvent, false);
 	$contentBrowser.addEventListener('sslError', handleContentBrowserSslErrorEvent, false);
 	
+	let faviconService = weaponryCommon.getService('@mozilla.org/browser/favicon-service;1', 'nsIFaviconService');
+	
 	window.webProgressListener = weaponryCommon.createProgressListener($contentBrowser, CI.nsIWebProgress.NOTIFY_ALL, {
 		onStateChange: function (webProgress, request, stateFlags, status) {
 			if (stateFlags & CI.nsIWebProgressListener.STATE_IS_NETWORK && stateFlags & CI.nsIWebProgressListener.STATE_START) {
@@ -323,6 +325,10 @@ function handleDOMContentLoadedEvent(event) {
 			
 			$backCommand.setAttribute('disabled', !$contentBrowser.canGoBack);
 			$forwardCommand.setAttribute('disabled', !$contentBrowser.canGoForward);
+			
+			if (location.schemeIs('http') || location.schemeIs('https')) {
+				weaponryCommon.recordFaviconForUrl(location);
+			}
 		}
 	});
 	
