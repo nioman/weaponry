@@ -43,6 +43,14 @@
 				<em:maxVersion>0.8</em:maxVersion>
 			</Description>
 		</em:targetApplication>
+		
+		<em:targetApplication>
+			<Description>
+				<em:id>webapps@gnucitizen.org</em:id>
+				<em:minVersion>0.8</em:minVersion>
+				<em:maxVersion>0.8</em:maxVersion>
+			</Description>
+		</em:targetApplication>
 	</Description>
 	
 </RDF>
