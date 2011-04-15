@@ -6,7 +6,7 @@ http://weaponry.googlecode.com/svn/wiki/weaponry.png
 
 = Introduction =
 
-he following page summarises the purpose and usage of some of the more popular mozilla technologies.
+The following page summarises the purpose and usage of some of the more popular mozilla technologies.
 
 = Tips and Tricks =
 
