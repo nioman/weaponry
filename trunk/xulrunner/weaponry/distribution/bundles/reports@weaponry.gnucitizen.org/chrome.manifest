@@ -1,0 +1,44 @@
+#
+# chrome registration
+#
+
+content      reports.weaponry.gnucitizen.org                                                                                           file:chrome/content/
+resource     reports.weaponry.gnucitizen.org                                                                                           file:chrome/
+locale       reports.weaponry.gnucitizen.org en-US                                                                                     file:chrome/locale/en-US/
+skin         reports.weaponry.gnucitizen.org classic/1.0                                                                               file:chrome/skin/
+
+content      sites.reports.weaponry.gnucitizen.org                                                                                     file:sites/
+resource     sites.reports.weaponry.gnucitizen.org                                                                                     file:sites/
+
+overlay      chrome://workspaces.weaponry.gnucitizen.org/content/xul/workspaceWindow.xul                                               chrome://reports.weaponry.gnucitizen.org/content/ovl/workspaceWindow.xul
+overlay      chrome://workspaces.weaponry.gnucitizen.org/content/xul/workspacePerspective.xul                                          chrome://reports.weaponry.gnucitizen.org/content/ovl/workspacePerspective.xul
+overlay      chrome://workspaces.weaponry.gnucitizen.org/content/xul/workspaceView.xul?view=issues.reports.weaponry.gnucitizen.org     chrome://reports.weaponry.gnucitizen.org/content/ovl/issuesWorkspaceView.xul
+overlay      chrome://workspaces.weaponry.gnucitizen.org/content/xul/workspaceView.xul?view=report.reports.weaponry.gnucitizen.org     chrome://reports.weaponry.gnucitizen.org/content/ovl/reportWorkspaceView.xul
+
+#
+# xpcom registration
+#
+
+interfaces     components/IWeaponryReportExploitLauncher.xpt
+interfaces     components/IWeaponryReportFileExporter.xpt
+interfaces     components/IWeaponryReportFileImporter.xpt
+interfaces     components/IWeaponryReportStreamExporter.xpt
+interfaces     components/IWeaponryReportStreamImporter.xpt
+interfaces     components/IWeaponryReportsService.xpt
+
+component      {10da96e0-09d1-11df-8a39-0800200c9a66}                              components/WeaponryReportCsvExporter.js
+contract       @reports.weaponry.gnucitizen.org/weaponry-report-csv-expoter;1      {10da96e0-09d1-11df-8a39-0800200c9a66}
+
+component      {5a464ab0-09de-11df-8a39-0800200c9a66}                              components/WeaponryReportHtmExporter.js
+contract       @reports.weaponry.gnucitizen.org/weaponry-report-htm-expoter;1      {5a464ab0-09de-11df-8a39-0800200c9a66}
+
+component      {b787b020-2454-11df-8a39-0800200c9a66}                              components/WeaponryReportJsonExporter.js
+contract       @reports.weaponry.gnucitizen.org/weaponry-report-json-expoter;1     {b787b020-2454-11df-8a39-0800200c9a66}
+
+component      {4fe67fe0-09de-11df-8a39-0800200c9a66}                              components/WeaponryReportXmlExporter.js
+contract       @reports.weaponry.gnucitizen.org/weaponry-report-xml-expoter;1      {4fe67fe0-09de-11df-8a39-0800200c9a66}
+
+component      {ce303510-083c-11df-8a39-0800200c9a66}                              components/WeaponryReportsService.js
+contract       @reports.weaponry.gnucitizen.org/service;1                          {ce303510-083c-11df-8a39-0800200c9a66}
+
+category       profile-after-change WeaponryReportsService                         @reports.weaponry.gnucitizen.org/service;1

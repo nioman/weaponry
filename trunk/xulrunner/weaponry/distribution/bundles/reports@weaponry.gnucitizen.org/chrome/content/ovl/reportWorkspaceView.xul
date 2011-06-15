@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<!--
+ *  reportWorkspaceView.xul
+ *  Copyright (C) 2007-2011  GNUCITIZEN
+ *  
+ *  This program is free software; you can redistribute it and/or modify
+ *  it under the terms of the GNU General Public License as published by
+ *  the Free Software Foundation; either version 2 of the License, or
+ *  (at your option) any later version.
+ *  
+ *  This program is distributed in the hope that it will be useful,
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *  GNU General Public License for more details.
+ *  
+ *  You should have received a copy of the GNU General Public License
+ *  along with this program; if not, write to the Free Software
+ *  Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+-->
+<?xml-stylesheet href="chrome://reports.weaponry.gnucitizen.org/skin/ovl/reportWorkspaceView.css" type="text/css"?>
+<!DOCTYPE overlay SYSTEM "chrome://reports.weaponry.gnucitizen.org/locale/ovl/reportWorkspaceView.dtd">
+<overlay xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+	
+	<script type="application/x-javascript" src="chrome://reports.weaponry.gnucitizen.org/content/ovl/reportWorkspaceView.js"/>
+	
+	<stringbundleset id="workspace-view-stringbundleset">
+		<stringbundle id="weaponry-reports-report-workspace-view-properties-stringbundle" src="chrome://reports.weaponry.gnucitizen.org/locale/ovl/reportWorkspaceView.properties"/>
+	</stringbundleset>
+	
+	<popupset id="common-popupset">
+		<menupopup id="weaponry-reports-report-workspace-view-report-item-menupopup">
+			<menuitem id="weaponry-reports-report-workspace-view-report-item-copy-menuitem" command="edit-menu-copy-command"/>
+		</menupopup>
+	</popupset>
+	
+	<vbox id="workspace-view-content-vbox">
+		<vbox id="weaponry-reports-report-workspace-view-content-vbox" flex="1">
+			<vbox id="weaponry-reports-report-workspace-view-report-vbox" flex="1">
+				<workspaceroll id="weaponry-reports-report-workspace-view-report-workspaceroll" table="weaponryReportIssuesExtendedView" observabletable="weaponryReportIssues" flex="1">
+					<vbox id="weaponry-reports-report-workspace-view-report-item" class="weaponry-reports-report-workspace-view-report-item" context="weaponry-reports-report-workspace-view-report-item-menupopup">
+						<vbox id="weaponry-reports-report-workspace-view-report-item-generals-vbox" class="weaponry-reports-report-workspace-view-report-item-generals-vbox" hidden="?hideIssueGenerals">
+							<htmlbox id="weaponry-reports-report-workspace-view-report-item-title-htmlbox" class="weaponry-reports-report-workspace-view-report-item-title-htmlbox" value="&lt;h3&gt;?title&lt;/h3&gt;"/>
+							<htmlbox id="weaponry-reports-report-workspace-view-report-item-explanation-htmlbox" class="weaponry-reports-report-workspace-view-report-item-explanation-htmlbox" value="?explanation"/>
+						</vbox>
+						
+						<vbox id="weaponry-reports-report-workspace-view-report-item-details-vbox" class="weaponry-reports-report-workspace-view-report-item-details-vbox">
+							<htmlbox id="weaponry-reports-report-workspace-view-report-item-description-htmlbox" class="weaponry-reports-report-workspace-view-report-item-description-htmlbox" value="?description"/>
+						</vbox>
+					</vbox>
+				</workspaceroll>
+			</vbox>
+		</vbox>
+	</vbox>
+	
+</overlay>
+<!--
+ *  GNUCITIZEN (Information Security Think Tank)
+ ***********************************************
+-->
