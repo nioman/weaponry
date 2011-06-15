@@ -1,0 +1,121 @@
+/**
+ *  issuesWorkspaceView.css
+ *  Copyright (C) 2007-2011  GNUCITIZEN
+ *  
+ *  This program is free software; you can redistribute it and/or modify
+ *  it under the terms of the GNU General Public License as published by
+ *  the Free Software Foundation; either version 2 of the License, or
+ *  (at your option) any later version.
+ *  
+ *  This program is distributed in the hope that it will be useful,
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *  GNU General Public License for more details.
+ *  
+ *  You should have received a copy of the GNU General Public License
+ *  along with this program; if not, write to the Free Software
+ *  Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+ */
+
+#weaponry-reports-issues-workspace-view-issues-workspacetree {
+	margin-top: 5px;
+}
+
+/* ------------------------------------------------------------------------ */
+
+#weaponry-reports-issues-workspace-view-issues-workspacetree treechildren::-moz-tree-image(critical-issue) {
+	padding-right: 5px;
+	list-style-image: url("images/critical-issue-16.png");
+}
+
+#weaponry-reports-issues-workspace-view-issues-workspacetree treechildren::-moz-tree-image(high-issue) {
+	padding-right: 5px;
+	list-style-image: url("images/high-issue-16.png");
+}
+
+#weaponry-reports-issues-workspace-view-issues-workspacetree treechildren::-moz-tree-image(medium-issue) {
+	padding-right: 5px;
+	list-style-image: url("images/medium-issue-16.png");
+}
+
+#weaponry-reports-issues-workspace-view-issues-workspacetree treechildren::-moz-tree-image(low-issue) {
+	padding-right: 5px;
+	list-style-image: url("images/low-issue-16.png");
+}
+
+#weaponry-reports-issues-workspace-view-issues-workspacetree treechildren::-moz-tree-image(informational-issue) {
+	padding-right: 5px;
+	list-style-image: url("images/informational-issue-16.png");
+}
+
+/* ------------------------------------------------------------------------ */
+
+#weaponry-reports-issues-workspace-view-details-richtabpanel .richtabpanel-content {
+	padding: 20px;
+	overflow: auto;
+}
+
+/* ------------------------------------------------------------------------ */
+
+#weaponry-reports-issues-workspace-view-details-templatebox {
+	padding: 20px;
+	background: white;
+	-moz-border-radius: 5px;
+	-moz-box-shadow: 1px 5px 10px gray;
+}
+
+/* ------------------------------------------------------------------------ */
+
+.weaponry-reports-issues-workspace-view-details-item {
+	margin: 10px;
+	max-width: 600px;
+}
+
+/* ------------------------------------------------------------------------ */
+
+.weaponry-reports-issues-workspace-view-details-item htmlbox {
+	padding-left: 5px;
+	border: 1px dotted transparent;
+}
+
+.weaponry-reports-issues-workspace-view-details-item htmlbox:hover {
+	border: 1px dotted #cccccc;
+}
+
+.weaponry-reports-issues-workspace-view-details-item htmlbox > .htmlbox-container pre {
+	max-width: 590px;
+	word-wrap: break-word;
+	white-space: pre-wrap;
+}
+
+/* ------------------------------------------------------------------------ */
+
+#weaponry-reports-issues-workspace-view-details-title-htmlbox > .htmlbox-container > .htmlbox-description > div       ,
+#weaponry-reports-issues-workspace-view-details-description-htmlbox > .htmlbox-container > .htmlbox-description > div {
+	cursor: text;
+	-moz-user-select: text;
+	-moz-user-focus: normal;
+}
+
+/* ------------------------------------------------------------------------ */
+
+[ostype="Darwin"] #weaponry-reports-issues-workspace-view-issues-workspacetree {
+	/* pass */
+}
+
+/* ------------------------------------------------------------------------ */
+
+[ostype="Linux"] #weaponry-reports-issues-workspace-view-issues-workspacetree {
+	/* pass */
+}
+
+/* ------------------------------------------------------------------------ */
+
+/* TODO: ensure that all similar styling situations have the same semantics */
+[ostype="WINNT"] #weaponry-reports-issues-workspace-view-issues-workspacetree {
+	margin-bottom: 5px;
+}
+/* */
+
+/*  GNUCITIZEN (Information Security Think Tank)
+ **********************************************/

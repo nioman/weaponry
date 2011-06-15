@@ -1,0 +1,71 @@
+<?xml version="1.0"?>
+<!--
+ *  issuesWorkspaceView.xul
+ *  Copyright (C) 2007-2011  GNUCITIZEN
+ *  
+ *  This program is free software; you can redistribute it and/or modify
+ *  it under the terms of the GNU General Public License as published by
+ *  the Free Software Foundation; either version 2 of the License, or
+ *  (at your option) any later version.
+ *  
+ *  This program is distributed in the hope that it will be useful,
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *  GNU General Public License for more details.
+ *  
+ *  You should have received a copy of the GNU General Public License
+ *  along with this program; if not, write to the Free Software
+ *  Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+-->
+<?xml-stylesheet href="chrome://reports.weaponry.gnucitizen.org/skin/ovl/issuesWorkspaceView.css" type="text/css"?>
+<!DOCTYPE overlay SYSTEM "chrome://reports.weaponry.gnucitizen.org/locale/ovl/issuesWorkspaceView.dtd">
+<overlay xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+	
+	<script type="application/x-javascript" src="chrome://reports.weaponry.gnucitizen.org/content/ovl/issuesWorkspaceView.js"/>
+	
+	<stringbundleset id="workspace-view-stringbundleset">
+		<stringbundle id="weaponry-reports-issues-workspace-view-properties-stringbundle" src="chrome://reports.weaponry.gnucitizen.org/locale/ovl/issuesWorkspaceView.properties"/>
+	</stringbundleset>
+	
+	<popupset id="common-popupset">
+		<menupopup id="weaponry-reports-issues-workspace-view-details-item-menupopup">
+			<menuitem id="weaponry-reports-issues-workspace-view-details-item-copy-menuitem" command="edit-menu-copy-command"/>
+		</menupopup>
+	</popupset>
+	
+	<vbox id="workspace-view-content-vbox">
+		<vbox id="weaponry-reports-issues-workspace-view-content-vbox" flex="1">
+			<workspacetree id="weaponry-reports-issues-workspace-view-issues-workspacetree" table="weaponryReportIssuesExtendedView" observabletable="weaponryReportIssues" groupby="title !summary" groupinclude="levelName level explanation" flex="1" persist="height" onselect="return handleWeaponryReportsIssuesWorkspacetreeSelectEvent(event);">
+				<workspacetreecol id="weaponry-reports-issues-workspace-view-issues-name-workspacetreecol" label="&weaponry-reports-issues-workspace-view-issues-name-workspacetreecol-label;" primary="true" field="_metaPath"/>
+			</workspacetree>
+			
+			<splitter id="weaponry-reports-issues-workspace-view-middle-splitter" resize="before" collapse="after" state="open" persist="state">
+				<grippy id="weaponry-reports-issues-workspace-view-middle-grippy"/>
+			</splitter>
+			
+			<richtabbox id="weaponry-reports-issues-workspace-view-details-richtabbox" flex="1" persist="height">
+				<toolbar id="weaponry-reports-issues-workspace-view-details-toolbar">
+					<toolbarbutton id="weaponry-reports-issues-workspace-view-exploit-toolbarbutton" label="&weaponry-reports-issues-workspace-view-exploit-toolbarbutton-label;" type="menu" disabled="true">
+						<menupopup id="weaponry-reports-issues-workspace-view-exploit-menupopup"/>
+					</toolbarbutton>
+				</toolbar>
+				
+				<richtabpanels id="weaponry-reports-issues-workspace-view-details-richtabpanels">
+					<richtabpanel id="weaponry-reports-issues-workspace-view-details-richtabpanel" label="&weaponry-reports-issues-workspace-view-details-richtabpanel-label;">
+						<templatebox id="weaponry-reports-issues-workspace-view-details-templatebox">
+							<vbox id="weaponry-reports-issues-workspace-view-details-item" class="weaponry-reports-issues-workspace-view-details-item" context="weaponry-reports-issues-workspace-view-details-item-menupopup">
+								<htmlbox id="weaponry-reports-issues-workspace-view-details-title-htmlbox" value="&lt;h3&gt;?title&lt;/h3&gt;"/>
+								<htmlbox id="weaponry-reports-issues-workspace-view-details-description-htmlbox" value="?description"/>
+							</vbox>
+						</templatebox>
+					</richtabpanel>
+				</richtabpanels>
+			</richtabbox>
+		</vbox>
+	</vbox>
+	
+</overlay>
+<!--
+ *  GNUCITIZEN (Information Security Think Tank)
+ ***********************************************
+-->
