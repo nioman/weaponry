@@ -1,0 +1,77 @@
+<?xml version="1.0"?>
+<!--
+ *  notesWorkspaceView.xul
+ *  Copyright (C) 2007-2011  GNUCITIZEN
+ *  
+ *  This program is free software; you can redistribute it and/or modify
+ *  it under the terms of the GNU General Public License as published by
+ *  the Free Software Foundation; either version 2 of the License, or
+ *  (at your option) any later version.
+ *  
+ *  This program is distributed in the hope that it will be useful,
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *  GNU General Public License for more details.
+ *  
+ *  You should have received a copy of the GNU General Public License
+ *  along with this program; if not, write to the Free Software
+ *  Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+-->
+<?xml-stylesheet href="chrome://notes.weaponry.gnucitizen.org/skin/ovl/notesWorkspaceView.css" type="text/css"?>
+<!DOCTYPE overlay SYSTEM "chrome://notes.weaponry.gnucitizen.org/locale/ovl/notesWorkspaceView.dtd">
+<overlay xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+	
+	<script type="application/x-javascript" src="chrome://notes.weaponry.gnucitizen.org/content/ovl/notesWorkspaceView.js"/>
+	
+	<stringbundleset id="workspace-view-stringbundleset">
+		<stringbundle id="weaponry-notes-workspace-view-properties-stringbundle" src="chrome://notes.weaponry.gnucitizen.org/locale/ovl/notesWorkspaceView.properties"/>
+	</stringbundleset>
+	
+	<vbox id="workspace-view-content-vbox">
+		<vbox id="weaponry-notes-transactions-workspace-view-content-vbox" flex="1">
+			<hbox id="weaponry-notes-workspace-view-buttons-hbox" pack="end">
+				<button id="weaponry-notes-workspace-view-add-button" label="&weaponry-notes-workspace-view-add-button-label;" oncommand="return handleAddNoteCommandEvent(event);"/>
+			</hbox>
+			
+			<workspacelist id="weaponry-notes-workspace-view-notes-workspacelist" table="weaponryNotes" flex="1">
+				<hbox id="weaponry-notes-workspace-view-basic-container-hbox" class="weaponry-notes-workspace-view-basic-container-hbox" flex="1">
+					<vbox id="weaponry-notes-workspace-view-basic-details-container-vbox" class="weaponry-notes-workspace-view-basic-details-container-vbox" flex="1">
+						<label id="weaponry-notes-workspace-view-timestamp-label" class="weaponry-notes-workspace-view-timestamp-label" value="?timestamp" crop="right"/>
+						<label id="weaponry-notes-workspace-view-text-label" class="weaponry-notes-workspace-view-text-label" value="?longText" crop="right"/>
+					</vbox>
+					
+					<hbox id="weaponry-notes-workspace-view-basic-container-button-hbox" class="weaponry-notes-workspace-view-basic-container-button-hbox">
+						<button id="weaponry-notes-workspace-view-open-button" class="weaponry-notes-workspace-view-open-button" label="&weaponry-notes-workspace-view-open-button-label;" tooltiptext="&weaponry-notes-workspace-view-open-button-label;" oncommand="return handleOpenNotesDataListItemCommandEvent(event);"/>
+					</hbox>
+				</hbox>
+				
+				<vbox id="weaponry-notes-workspace-view-advanced-container-vbox" class="weaponry-notes-workspace-view-advanced-container-vbox" flex="1">
+					<hbox id="weaponry-notes-workspace-view-advanced-container-button-hbox" class="weaponry-notes-workspace-view-advanced-container-button-hbox" align="right">
+						<button id="weaponry-notes-workspace-view-close-button" class="weaponry-notes-workspace-view-close-button" label="&weaponry-notes-workspace-view-close-button-label;" tooltiptext="&weaponry-notes-workspace-view-close-button-label;" oncommand="return handleCloseNotesDataListItemCommandEvent(event);"/>
+					</hbox>
+					
+					<groupbox id="weaponry-notes-workspace-view-details-groupbox" class="weaponry-notes-workspace-view-details-groupbox">
+						<caption id="weaponry-notes-workspace-view-details-groupbox-caption" class="weaponry-notes-workspace-view-details-groupbox-caption" label="&weaponry-notes-workspace-view-details-groupbox-caption-label;"/>
+						
+						<hbox id="weaponry-notes-workspace-view-details-groupbox-container-hbox" class="weaponry-notes-workspace-view-details-groupbox-container-hbox">
+							<vbox id="weaponry-notes-workspace-view-details-groupbox-subcontainer-vbox" class="weaponry-notes-workspace-view-details-groupbox-subcontainer-vbox" noteROWID="?_ROWID_" flex="1">
+								<label id="weaponry-notes-workspace-view-details-text-label" class="weaponry-notes-workspace-view-details-text-label" value="&weaponry-notes-workspace-view-details-text-label-value;"/>
+								<textbox id="weaponry-notes-workspace-view-details-text-textbox" class="weaponry-notes-workspace-view-details-text-textbox" value="?text" multiline="true" rows="20"/>
+								
+								<hbox id="weaponry-notes-workspace-view-details-buttons-hbox" class="weaponry-notes-workspace-view-details-buttons-hbox" align="right">
+									<button id="weaponry-notes-workspace-view-details-update-button" class="weaponry-notes-workspace-view-details-update-button" label="&weaponry-notes-workspace-view-details-update-button-label;" oncommand="return handleUpdateNotesDataListItemCommandEvent(event);"/>
+									<button id="weaponry-notes-workspace-view-details-delete-button" class="weaponry-notes-workspace-view-details-delete-button" label="&weaponry-notes-workspace-view-details-delete-button-label;" oncommand="return handleDeleteNotesDataListItemCommandEvent(event);"/>
+								</hbox>
+							</vbox>
+						</hbox>
+					</groupbox>
+				</vbox>
+			</workspacelist>
+		</vbox>
+	</vbox>
+	
+</overlay>
+<!--
+ *  GNUCITIZEN (Information Security Think Tank)
+ ***********************************************
+-->
