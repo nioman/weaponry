@@ -179,7 +179,7 @@ let weaponryCommon = new function () {
 	this.mozstorageService = this.getService('@mozilla.org/storage/service;1', 'mozIStorageService');
 	this.atomService = this.getService('@mozilla.org/atom-service;1', 'nsIAtomService');
 	this.cookieService = this.getService('@mozilla.org/cookieService;1', 'nsICookieService');
-	//this.faviconService = this.getService('@mozilla.org/browser/favicon-service;1', 'nsIFaviconService');
+	//this.faviconService = this.getService('@mozilla.org/browser/favicon-service;1', 'nsIFaviconService'); // TODO: uncomment this
 	
 	/* -------------------------------------------------------------------- */
 	
@@ -493,11 +493,11 @@ let weaponryCommon = new function () {
 	/* -------------------------------------------------------------------- */
 	
 	this.openAddOnsWindow = function () {
-		return this.openWindowOnce(null, 'Extension:Manager', 'chrome://mozapps/content/extensions/extensions.xul?type=extensions', null, 'all,chrome,resizable');
+		return this.openWindowOnce(null, 'Extension:Manager', 'chrome://mozapps/content/extensions/extensions.xul?type=extensions', null, 'all,chrome,resizable,centerscreen,toolbar=yes');
 	};
 	
 	this.openErrorConsoleWindow = function () {
-		return this.openWindowOnce(null, 'global:console', 'chrome://global/content/console.xul', null, 'all,chrome,resizable');
+		return this.openWindowOnce(null, 'global:console', 'chrome://global/content/console.xul', null, 'all,chrome,resizable,centerscreen,toolbar=yes');
 	};
 	
 	/* -------------------------------------------------------------------- */

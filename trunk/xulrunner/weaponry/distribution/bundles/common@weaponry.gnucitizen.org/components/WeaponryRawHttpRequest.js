@@ -377,11 +377,7 @@ WeaponryRawHttpRequest.prototype = {
 
 /* ------------------------------------------------------------------------ */
 
-if (XPCOMUtils.generateNSGetFactory) {
-	var NSGetFactory = XPCOMUtils.generateNSGetFactory([WeaponryRawHttpRequest]);
-} else {
-	var NSGetModule = XPCOMUtils.generateNSGetModule([WeaponryRawHttpRequest]);
-}
+var NSGetFactory = XPCOMUtils.generateNSGetFactory([WeaponryRawHttpRequest]);
 
 /*  GNUCITIZEN (Information Security Think Tank)
  **********************************************/

@@ -43,12 +43,6 @@ WeaponryCommonService.prototype = {
 	
 	/* -------------------------------------------------------------------- */
 	
-	_xpcom_categories: [
-		{service:true, entry:'WeaponryCommonService', category:'app-startup'}
-	],
-	
-	/* -------------------------------------------------------------------- */
-	
 	get wrappedJSObject () {
 		return this;
 	},
@@ -56,12 +50,6 @@ WeaponryCommonService.prototype = {
 	/* -------------------------------------------------------------------- */
 	
 	observe: function (subject, topic, data) {
-		if (topic == 'app-startup') {
-			let observerService = CC['@mozilla.org/observer-service;1'].getService(CI.nsIObserverService);
-			
-			observerService.addObserver(this, 'profile-after-change', false);
-			observerService.addObserver(this, 'profile-before-change', false);
-		} else
 		if (topic == 'profile-after-change') {
 			this.initializeComponent(subject, topic, data);
 		} else
@@ -248,11 +236,7 @@ WeaponryCommonService.prototype = {
 
 /* ------------------------------------------------------------------------ */
 
-if (XPCOMUtils.generateNSGetFactory) {
-	var NSGetFactory = XPCOMUtils.generateNSGetFactory([WeaponryCommonService]);
-} else {
-	var NSGetModule = XPCOMUtils.generateNSGetModule([WeaponryCommonService]);
-}
+var NSGetFactory = XPCOMUtils.generateNSGetFactory([WeaponryCommonService]);
 
 /*  GNUCITIZEN (Information Security Think Tank)
  **********************************************/

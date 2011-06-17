@@ -22,22 +22,23 @@ interfaces     components/IWeaponryBasicHttpRequest.xpt
 interfaces     components/IWeaponryRawHttpRequest.xpt
 interfaces     components/IWeaponryCommonService.xpt
 
-component      {b1ed27d0-cf35-11df-bd3b-0800200c9a66}                      components/WeaponryPushbackInputStream.js
-contract       @common.weaponry.gnucitizen.org/pushback-input-stream;1     {b1ed27d0-cf35-11df-bd3b-0800200c9a66}
+component      {b1ed27d0-cf35-11df-bd3b-0800200c9a66}                       components/WeaponryPushbackInputStream.js
+contract       @common.weaponry.gnucitizen.org/pushback-input-stream;1      {b1ed27d0-cf35-11df-bd3b-0800200c9a66}
 
-component      {482cd6e0-e47c-11df-bccf-0800200c9a66}                      components/WeaponryHeadServer.js
-contract       @common.weaponry.gnucitizen.org/head-server;1               {482cd6e0-e47c-11df-bccf-0800200c9a66}
+component      {482cd6e0-e47c-11df-bccf-0800200c9a66}                       components/WeaponryHeadServer.js
+contract       @common.weaponry.gnucitizen.org/head-server;1                {482cd6e0-e47c-11df-bccf-0800200c9a66}
 
-component      {3041d510-84fc-11df-8395-0800200c9a66}                      components/WeaponryCommonService.js
-contract       @common.weaponry.gnucitizen.org/service;1                   {3041d510-84fc-11df-8395-0800200c9a66}
+component      {3041d510-84fc-11df-8395-0800200c9a66}                       components/WeaponryCommonService.js
+contract       @common.weaponry.gnucitizen.org/service;1                    {3041d510-84fc-11df-8395-0800200c9a66}
 
-component      {484638d0-5e15-11df-a08a-0800200c9a66}                      components/WeaponryTerminalLauncher.js
-contract       @common.weaponry.gnucitizen.org/terminal-launcher;1         {484638d0-5e15-11df-a08a-0800200c9a66}
+component      {484638d0-5e15-11df-a08a-0800200c9a66}                       components/WeaponryTerminalLauncher.js
+contract       @common.weaponry.gnucitizen.org/terminal-launcher;1          {484638d0-5e15-11df-a08a-0800200c9a66}
 
-component      {a251af40-aeff-11df-94e2-0800200c9a66}                      components/WeaponryBasicHttpRequest.js
-contract       @common.weaponry.gnucitizen.org/basic-http-request;1        {a251af40-aeff-11df-94e2-0800200c9a66}
+component      {a251af40-aeff-11df-94e2-0800200c9a66}                       components/WeaponryBasicHttpRequest.js
+contract       @common.weaponry.gnucitizen.org/basic-http-request;1         {a251af40-aeff-11df-94e2-0800200c9a66}
 
-component      {59d45ec0-4947-11df-9879-0800200c9a66}                      components/WeaponryRawHttpRequest.js
-contract       @common.weaponry.gnucitizen.org/raw-http-request;1          {59d45ec0-4947-11df-9879-0800200c9a66}
+component      {59d45ec0-4947-11df-9879-0800200c9a66}                       components/WeaponryRawHttpRequest.js
+contract       @common.weaponry.gnucitizen.org/raw-http-request;1           {59d45ec0-4947-11df-9879-0800200c9a66}
 
-category       profile-after-change WeaponryCommonService                  @common.weaponry.gnucitizen.org/service;1
+category       profile-after-change WeaponryCommonService                   @common.weaponry.gnucitizen.org/service;1
+category       profile-before-change WeaponryCommonService                  @common.weaponry.gnucitizen.org/service;1

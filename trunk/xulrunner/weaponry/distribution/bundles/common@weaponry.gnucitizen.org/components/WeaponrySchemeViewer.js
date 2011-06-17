@@ -95,11 +95,7 @@ WeaponrySchemeViewer.prototype = {
 
 /* ------------------------------------------------------------------------ */
 
-if (XPCOMUtils.generateNSGetFactory) {
-	var NSGetFactory = XPCOMUtils.generateNSGetFactory([WeaponrySchemeViewer]);
-} else {
-	var NSGetModule = XPCOMUtils.generateNSGetModule([WeaponrySchemeViewer]);
-}
+var NSGetFactory = XPCOMUtils.generateNSGetFactory([WeaponrySchemeViewer]);
 
 /*  GNUCITIZEN (Information Security Think Tank)
  **********************************************/

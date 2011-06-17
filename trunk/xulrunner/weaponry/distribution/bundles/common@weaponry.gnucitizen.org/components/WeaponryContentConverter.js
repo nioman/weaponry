@@ -86,11 +86,7 @@ WeaponryContentConverter.prototype = {
 
 /* ------------------------------------------------------------------------ */
 
-if (XPCOMUtils.generateNSGetFactory) {
-	var NSGetFactory = XPCOMUtils.generateNSGetFactory([WeaponryContentConverter]);
-} else {
-	var NSGetModule = XPCOMUtils.generateNSGetModule([WeaponryContentConverter]);
-}
+var NSGetFactory = XPCOMUtils.generateNSGetFactory([WeaponryContentConverter]);
 
 /*  GNUCITIZEN (Information Security Think Tank)
  **********************************************/
