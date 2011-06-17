@@ -65,11 +65,7 @@ CerterrorAboutModule.prototype = {
 
 /* ------------------------------------------------------------------------ */
 
-if (XPCOMUtils.generateNSGetFactory) {
-	var NSGetFactory = XPCOMUtils.generateNSGetFactory([CerterrorAboutModule]);
-} else {
-	var NSGetModule = XPCOMUtils.generateNSGetModule([CerterrorAboutModule]);
-}
+var NSGetFactory = XPCOMUtils.generateNSGetFactory([CerterrorAboutModule]);
 
 /*  GNUCITIZEN (Information Security Think Tank)
  **********************************************/
