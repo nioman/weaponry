@@ -181,11 +181,7 @@ WeaponryCertOverrideService.prototype = {
 
 /* ------------------------------------------------------------------------ */
 
-if (XPCOMUtils.generateNSGetFactory) {
-	var NSGetFactory = XPCOMUtils.generateNSGetFactory([WeaponryCertOverrideService]);
-} else {
-	var NSGetModule = XPCOMUtils.generateNSGetModule([WeaponryCertOverrideService]);
-}
+var NSGetFactory = XPCOMUtils.generateNSGetFactory([WeaponryCertOverrideService]);
 
 /*  GNUCITIZEN (Information Security Think Tank)
  **********************************************/

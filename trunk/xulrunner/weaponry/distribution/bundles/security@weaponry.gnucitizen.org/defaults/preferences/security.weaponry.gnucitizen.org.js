@@ -1,5 +1,5 @@
 /**
- *  extension.js
+ *  security.weaponry.gnucitizen.org.js
  *  Copyright (C) 2007-2011  GNUCITIZEN
  *  
  *  This program is free software; you can redistribute it and/or modify
@@ -16,6 +16,9 @@
  *  along with this program; if not, write to the Free Software
  *  Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
  */
+
+// optional weaponry security preferences
+// org.gnucitizen.weaponry.security.CertOverrideService.enabled
 
 // weaponry security CertOverrideService preferences
 pref('org.gnucitizen.weaponry.security.CertOverrideService.exceptions.add.1', 'weaponry.gnucitizen.org:443');
