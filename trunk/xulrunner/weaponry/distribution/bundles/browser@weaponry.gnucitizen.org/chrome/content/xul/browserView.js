@@ -277,6 +277,12 @@ function handleDOMContentLoadedEvent(event) {
 	
 	document.originalTitle = document.title;
 	
+	let defaultTabURI = weaponryCommon.getPref('org.gnucitizen.weaponry.browser.defaultTabURI');
+	
+	if (defaultTabURI) {
+		$contentBrowser.setAttribute('src', defaultTabURI);
+	}
+	
 	$contentMenupopup.addEventListener('popupshowing', handleContentMenupopupPopupshowingEvent, false);
 	
 	$contentBrowser.addEventListener('DOMTitleChanged', handleContentBrowserDOMTitleChangedEvent, false);

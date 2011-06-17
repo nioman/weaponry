@@ -109,8 +109,18 @@
 	/* pass */
 }
 
+[ostype="Darwin"] .browser-view-navigation-button[disabled="true"] > image {
+	opacity: 0.4;
+}
+
 [ostype="Darwin"] .browser-view-navigation-button:not([disabled="true"]):active {
-	/* pass */
+	background: #b5b5b5;
+	text-shadow: 0px 1px rgba(255, 255, 255, .4);
+	-moz-box-shadow: inset rgba(0, 0, 0, 0.3) 0px -6px 10px, inset #000 0px 1px 3px, inset rgba(0, 0, 0, 0.2) 0px 1px 3px, 0px 1px rgba(255, 255, 255, .4);
+}
+
+[ostype="Darwin"] .browser-view-navigation-button > image {
+	margin-top: 1px;
 }
 
 [ostype="Darwin"] #browser-view-back-toolbarbutton {
@@ -179,7 +189,15 @@
 	/* pass */
 }
 
+[ostype="Linux"] .browser-view-navigation-button[disabled="true"] > image {
+	/* pass */
+}
+
 [ostype="Linux"] .browser-view-navigation-button:not([disabled="true"]):active {
+	/* pass */
+}
+
+[ostype="Linux"] .browser-view-navigation-button > image {
 	/* pass */
 }
 
@@ -258,7 +276,15 @@
 	opacity: 0.2;
 }
 
+[ostype="WINNT"] .browser-view-navigation-button[disabled="true"] > image {
+	/* pass */
+}
+
 [ostype="WINNT"] .browser-view-navigation-button:not([disabled="true"]):active {
+	/* pass */
+}
+
+[ostype="WINNT"] .browser-view-navigation-button > image {
 	/* pass */
 }
 
