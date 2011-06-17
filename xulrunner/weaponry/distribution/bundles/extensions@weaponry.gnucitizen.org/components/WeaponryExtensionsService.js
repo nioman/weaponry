@@ -50,11 +50,7 @@ WeaponryExtensionsService.prototype = {
 
 /* ------------------------------------------------------------------------ */
 
-if (XPCOMUtils.generateNSGetFactory) {
-	var NSGetFactory = XPCOMUtils.generateNSGetFactory([WeaponryExtensionsService]);
-} else {
-	var NSGetModule = XPCOMUtils.generateNSGetModule([WeaponryExtensionsService]);
-}
+var NSGetFactory = XPCOMUtils.generateNSGetFactory([WeaponryExtensionsService]);
 
 /*  GNUCITIZEN (Information Security Think Tank)
  **********************************************/
