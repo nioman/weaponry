@@ -80,11 +80,7 @@ WeaponryTerminalLauncher.prototype = {
 
 /* ------------------------------------------------------------------------ */
 
-if (XPCOMUtils.generateNSGetFactory) {
-	var NSGetFactory = XPCOMUtils.generateNSGetFactory([WeaponryTerminalLauncher]);
-} else {
-	var NSGetModule = XPCOMUtils.generateNSGetModule([WeaponryTerminalLauncher]);
-}
+var NSGetFactory = XPCOMUtils.generateNSGetFactory([WeaponryTerminalLauncher]);
 
 /*  GNUCITIZEN (Information Security Think Tank)
  **********************************************/

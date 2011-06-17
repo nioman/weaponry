@@ -139,11 +139,7 @@ WeaponryPushbackInputStream.prototype = {
 
 /* ------------------------------------------------------------------------ */
 
-if (XPCOMUtils.generateNSGetFactory) {
-	var NSGetFactory = XPCOMUtils.generateNSGetFactory([WeaponryPushbackInputStream]);
-} else {
-	var NSGetModule = XPCOMUtils.generateNSGetModule([WeaponryPushbackInputStream]);
-}
+var NSGetFactory = XPCOMUtils.generateNSGetFactory([WeaponryPushbackInputStream]);
 
 /*  GNUCITIZEN (Information Security Think Tank)
  **********************************************/

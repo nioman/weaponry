@@ -156,11 +156,7 @@ WeaponryHeadServer.prototype = {
 
 /* ------------------------------------------------------------------------ */
 
-if (XPCOMUtils.generateNSGetFactory) {
-	var NSGetFactory = XPCOMUtils.generateNSGetFactory([WeaponryHeadServer]);
-} else {
-	var NSGetModule = XPCOMUtils.generateNSGetModule([WeaponryHeadServer]);
-}
+var NSGetFactory = XPCOMUtils.generateNSGetFactory([WeaponryHeadServer]);
 
 /*  GNUCITIZEN (Information Security Think Tank)
  **********************************************/

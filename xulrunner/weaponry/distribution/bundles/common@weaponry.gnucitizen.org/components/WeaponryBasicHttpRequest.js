@@ -160,11 +160,7 @@ WeaponryBasicHttpRequest.prototype = {
 
 /* ------------------------------------------------------------------------ */
 
-if (XPCOMUtils.generateNSGetFactory) {
-	var NSGetFactory = XPCOMUtils.generateNSGetFactory([WeaponryBasicHttpRequest]);
-} else {
-	var NSGetModule = XPCOMUtils.generateNSGetModule([WeaponryBasicHttpRequest]);
-}
+var NSGetFactory = XPCOMUtils.generateNSGetFactory([WeaponryBasicHttpRequest]);
 
 /*  GNUCITIZEN (Information Security Think Tank)
  **********************************************/
