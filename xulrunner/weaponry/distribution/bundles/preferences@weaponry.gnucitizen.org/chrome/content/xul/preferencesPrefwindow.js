@@ -33,17 +33,5 @@ function handleOpenRegistryWindowCommandEvent(event) {
 	window.openDialog('chrome://' + CHROMEBASE + '/content/xul/registryDialog.xul', null, 'chrome,modal,centerscreen');
 }
 
-/* ------------------------------------------------------------------------ */
-
-function handleLoadEvent(event) {
-	if (event.target != document) {
-		return;
-	}
-	
-	window.sizeToContent();
-}
-
-window.addEventListener('load', handleLoadEvent, false);
-
 /*  GNUCITIZEN (Information Security Think Tank)
  **********************************************/

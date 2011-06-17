@@ -28,11 +28,12 @@ const CHROMEBASE = 'preferences.weaponry.gnucitizen.org';
 /* ------------------------------------------------------------------------ */
 
 Components.utils.import('resource://gre/modules/XPCOMUtils.jsm');
+Components.utils.import('resource://common.weaponry.gnucitizen.org/content/mod/weaponryCommon.jsm');
 
 /* ------------------------------------------------------------------------ */
 
 function WeaponryPreferencesService() {
-	Components.utils.import('resource://common.weaponry.gnucitizen.org/content/mod/weaponryCommon.jsm');
+	// pass
 }
 
 WeaponryPreferencesService.prototype = {
@@ -43,12 +44,6 @@ WeaponryPreferencesService.prototype = {
 	
 	/* -------------------------------------------------------------------- */
 	
-	_xpcom_categories: [
-		{service:true, entry:'WeaponryPreferencesService', category:'app-startup'}
-	],
-	
-	/* -------------------------------------------------------------------- */
-	
 	get wrappedJSObject () {
 		return this;
 	},
@@ -56,10 +51,6 @@ WeaponryPreferencesService.prototype = {
 	/* -------------------------------------------------------------------- */
 	
 	observe: function (subject, topic, data) {
-		if (topic == 'app-startup') {
-			weaponryCommon.observerService.addObserver(this, 'profile-after-change', false);
-			weaponryCommon.observerService.addObserver(this, 'profile-before-change', false);
-		} else
 		if (topic == 'profile-after-change') {
 			this.initializeComponent(subject, topic, data);
 		} else
@@ -113,19 +104,13 @@ WeaponryPreferencesService.prototype = {
 	/* -------------------------------------------------------------------- */
 	
 	openPreferencesWindow: function () {
-		// TODO: ensure that all similar components have the same window flags when opening dialogs
-		return weaponryCommon.openWindowOnce(null, CHROMEBASE + ':preferences-prefwindow', 'chrome://' + CHROMEBASE + '/content/xul/preferencesPrefwindow.xul', null, 'all,chrome,centerscreen,dialog=yes');
-		//
+		return weaponryCommon.openWindowOnce(null, CHROMEBASE + ':preferences-prefwindow', 'chrome://' + CHROMEBASE + '/content/xul/preferencesPrefwindow.xul', null, 'all,chrome,centerscreen,dialog=yes,toolbar=yes');
 	}
 };
 
 /* ------------------------------------------------------------------------ */
 
-if (XPCOMUtils.generateNSGetFactory) {
-	var NSGetFactory = XPCOMUtils.generateNSGetFactory([WeaponryPreferencesService]);
-} else {
-	var NSGetModule = XPCOMUtils.generateNSGetModule([WeaponryPreferencesService]);
-}
+var NSGetFactory = XPCOMUtils.generateNSGetFactory([WeaponryPreferencesService]);
 
 /*  GNUCITIZEN (Information Security Think Tank)
  **********************************************/

@@ -16,7 +16,7 @@ overlay      chrome://preferences.weaponry.gnucitizen.org/content/xul/preference
 # chrome suggestions
 #
 
-#overlay     chrome://common.weaponry.gnucitizen.org/content/ovl/toolsMenu.xul     chrome://preferences.weaponry.gnucitizen.org/content/ovl/toolsMenu.xul
+# overlay     chrome://common.weaponry.gnucitizen.org/content/ovl/toolsMenu.xul     chrome://preferences.weaponry.gnucitizen.org/content/ovl/toolsMenu.xul
 
 #
 # xpcom registration
@@ -24,7 +24,8 @@ overlay      chrome://preferences.weaponry.gnucitizen.org/content/xul/preference
 
 interfaces     components/IWeaponryPreferencesService.xpt
 
-component      {2711ef90-08f9-11df-8a39-0800200c9a66}              components/WeaponryPreferencesServices.js
-contract       @preferences.weaponry.gnucitizen.org/service;1      {2711ef90-08f9-11df-8a39-0800200c9a66}
+component      {2711ef90-08f9-11df-8a39-0800200c9a66}               components/WeaponryPreferencesServices.js
+contract       @preferences.weaponry.gnucitizen.org/service;1       {2711ef90-08f9-11df-8a39-0800200c9a66}
 
-category       profile-after-change WeaponryPreferencesService     @preferences.weaponry.gnucitizen.org/service;1
+category       profile-after-change WeaponryPreferencesService      @preferences.weaponry.gnucitizen.org/service;1
+category       profile-before-change WeaponryPreferencesService     @preferences.weaponry.gnucitizen.org/service;1
