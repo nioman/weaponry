@@ -17,9 +17,14 @@ overlay      chrome://browser.weaponry.gnucitizen.org/content/xul/browserView.xu
 # xpcom registration
 #
 
+interfaces     components/IWeaponryBrowserContentDispatcher.xpt
 interfaces     components/IWeaponryBrowserService.xpt
 
-component      {5200cde0-040b-11df-8a39-0800200c9a66}          components/WeaponryBrowserService.js
-contract       @browser.weaponry.gnucitizen.org/service;1      {5200cde0-040b-11df-8a39-0800200c9a66}
+component      {1ff99808-2fd4-4253-8511-e3cf03cd1477}                    components/WeaponryBrowserContentDispatcher.js
+contract       @browser.weaponry.gnucitizen.org/content-dispatcher;1     {1ff99808-2fd4-4253-8511-e3cf03cd1477}
 
-category       profile-after-change WeaponryBrowserService     @browser.weaponry.gnucitizen.org/service;1
+component      {5200cde0-040b-11df-8a39-0800200c9a66}                    components/WeaponryBrowserService.js
+contract       @browser.weaponry.gnucitizen.org/service;1                {5200cde0-040b-11df-8a39-0800200c9a66}
+
+category       profile-after-change WeaponryBrowserService               @browser.weaponry.gnucitizen.org/service;1
+category       profile-before-change WeaponryBrowserService              @browser.weaponry.gnucitizen.org/service;1

@@ -28,11 +28,12 @@ const CHROMEBASE = 'browser.weaponry.gnucitizen.org';
 /* ------------------------------------------------------------------------ */
 
 Components.utils.import('resource://gre/modules/XPCOMUtils.jsm');
+Components.utils.import('resource://common.weaponry.gnucitizen.org/content/mod/weaponryCommon.jsm');
 
 /* ------------------------------------------------------------------------ */
 
 function WeaponryBrowserContentDispatcher() {
-	Components.utils.import('resource://common.weaponry.gnucitizen.org/content/mod/weaponryCommon.jsm');
+	// pass
 }
 
 WeaponryBrowserContentDispatcher.prototype = {
@@ -57,6 +58,8 @@ WeaponryBrowserContentDispatcher.prototype = {
 	
 	realLoadCookie: null,
     realParentContentListener: null,
+	
+	/* -------------------------------------------------------------------- */
 	
 	get loadCookie (value) {
 		return this.realLoadCookie;
@@ -109,11 +112,7 @@ WeaponryBrowserContentDispatcher.prototype = {
 
 /* ------------------------------------------------------------------------ */
 
-if (XPCOMUtils.generateNSGetFactory) {
-	var NSGetFactory = XPCOMUtils.generateNSGetFactory([WeaponryBrowserContentDispatcher]);
-} else {
-	var NSGetModule = XPCOMUtils.generateNSGetModule([WeaponryBrowserContentDispatcher]);
-}
+var NSGetFactory = XPCOMUtils.generateNSGetFactory([WeaponryBrowserContentDispatcher]);
 
 /*  GNUCITIZEN (Information Security Think Tank)
  **********************************************/

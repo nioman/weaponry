@@ -28,12 +28,11 @@ const CHROMEBASE = 'browser.weaponry.gnucitizen.org';
 /* ------------------------------------------------------------------------ */
 
 Components.utils.import('resource://gre/modules/XPCOMUtils.jsm');
+Components.utils.import('resource://common.weaponry.gnucitizen.org/content/mod/weaponryCommon.jsm');
 
 /* ------------------------------------------------------------------------ */
 
 function WeaponryBrowserService() {
-	Components.utils.import('resource://common.weaponry.gnucitizen.org/content/mod/weaponryCommon.jsm');
-	
 	this.defaultContentListener = null;
 }
 
@@ -45,12 +44,6 @@ WeaponryBrowserService.prototype = {
 	
 	/* -------------------------------------------------------------------- */
 	
-	_xpcom_categories: [
-		{service:true, entry:'WeaponryBrowserService', category:'app-startup'}
-	],
-	
-	/* -------------------------------------------------------------------- */
-	
 	get wrappedJSObject () {
 		return this;
 	},
@@ -58,10 +51,6 @@ WeaponryBrowserService.prototype = {
 	/* -------------------------------------------------------------------- */
 	
 	observe: function (subject, topic, data) {
-		if (topic == 'app-startup') {
-			weaponryCommon.observerService.addObserver(this, 'profile-after-change', false);
-			weaponryCommon.observerService.addObserver(this, 'profile-before-change', false);
-		} else
 		if (topic == 'profile-after-change') {
 			this.initializeComponent(subject, topic, data);
 		} else
@@ -110,7 +99,7 @@ WeaponryBrowserService.prototype = {
 	},
 	
 	unregisterDefaultURIContentListener: function () {
-		// NOTE: not implemented
+		// TODO: add code here
 	},
 	
 	/* -------------------------------------------------------------------- */
@@ -138,7 +127,7 @@ WeaponryBrowserService.prototype = {
 	},
 	
 	unregisterDefaultContentHandlers: function () {
-		// NOTE: not implemented
+		// TODO: add code here
 	},
 	
 	/* -------------------------------------------------------------------- */
@@ -154,11 +143,7 @@ WeaponryBrowserService.prototype = {
 
 /* ------------------------------------------------------------------------ */
 
-if (XPCOMUtils.generateNSGetFactory) {
-	var NSGetFactory = XPCOMUtils.generateNSGetFactory([WeaponryBrowserService]);
-} else {
-	var NSGetModule = XPCOMUtils.generateNSGetModule([WeaponryBrowserService]);
-}
+var NSGetFactory = XPCOMUtils.generateNSGetFactory([WeaponryBrowserService]);
 
 /*  GNUCITIZEN (Information Security Think Tank)
  **********************************************/
