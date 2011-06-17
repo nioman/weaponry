@@ -28,24 +28,19 @@ const CHROMEBASE = 'development.weaponry.gnucitizen.org';
 /* ------------------------------------------------------------------------ */
 
 Components.utils.import('resource://gre/modules/XPCOMUtils.jsm');
+Components.utils.import('resource://common.weaponry.gnucitizen.org/content/mod/weaponryCommon.jsm');
 
 /* ------------------------------------------------------------------------ */
 
 function WeaponryDevelopmentService() {
-	Components.utils.import('resource://common.weaponry.gnucitizen.org/content/mod/weaponryCommon.jsm');
+	// pass
 }
 
 WeaponryDevelopmentService.prototype = {
 	classDescription: 'Weaponry Development Service',
-	classID: Components.ID('{20d3e960-3277-11df-9aae-0800200c9a66}'),
+	classID: Components.ID('{3ce142e4-ddbc-49d3-a262-a855bf2da226}'),
 	contractID: '@development.weaponry.gnucitizen.org/service;1',
 	QueryInterface: XPCOMUtils.generateQI([CI.IWeaponryDevelopmentService, CI.nsIObserver]),
-	
-	/* -------------------------------------------------------------------- */
-	
-	_xpcom_categories: [
-		{service:true, entry:'WeaponryPreferencesService', category:'app-startup'}
-	],
 	
 	/* -------------------------------------------------------------------- */
 	
@@ -56,10 +51,6 @@ WeaponryDevelopmentService.prototype = {
 	/* -------------------------------------------------------------------- */
 	
 	observe: function (subject, topic, data) {
-		if (topic == 'app-startup') {
-			weaponryCommon.observerService.addObserver(this, 'profile-after-change', false);
-			weaponryCommon.observerService.addObserver(this, 'profile-before-change', false);
-		} else
 		if (topic == 'profile-after-change') {
 			this.initializeComponent(subject, topic, data);
 		} else
@@ -93,11 +84,7 @@ WeaponryDevelopmentService.prototype = {
 
 /* ------------------------------------------------------------------------ */
 
-if (XPCOMUtils.generateNSGetFactory) {
-	var NSGetFactory = XPCOMUtils.generateNSGetFactory([WeaponryDevelopmentService]);
-} else {
-	var NSGetModule = XPCOMUtils.generateNSGetModule([WeaponryDevelopmentService]);
-}
+var NSGetFactory = XPCOMUtils.generateNSGetFactory([WeaponryDevelopmentService]);
 
 /*  GNUCITIZEN (Information Security Think Tank)
  **********************************************/

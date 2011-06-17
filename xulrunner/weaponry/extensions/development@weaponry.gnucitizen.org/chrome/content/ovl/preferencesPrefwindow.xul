@@ -24,7 +24,7 @@
 	<script type="application/x-javascript" src="chrome://development.weaponry.gnucitizen.org/content/ovl/preferencesPrefwindow.js"/>
 	
 	<stringbundleset id="preferences-prefwindow-stringbundleset">
-		<stringbundle id="weaponry-development-preferences-prefwindow-properties-stringbundle" src="chrome://development.weaponry.gnucitizen.org/locale/ovl/preferencesPrefwindow.properties"/>
+		<stringbundle id="weaponry-development-preferences-prefwindow-stringbundle" src="chrome://development.weaponry.gnucitizen.org/locale/ovl/preferencesPrefwindow.properties"/>
 	</stringbundleset>
 	
 	<preferences id="preferences-prefwindow-advanced-preferences">

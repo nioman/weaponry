@@ -20,10 +20,11 @@ overlay      chrome://preferences.weaponry.gnucitizen.org/content/xul/preference
 
 interfaces     components/IWeaponryDevelopmentService.xpt
 
-component      {20d3e960-3277-11df-9aae-0800200c9a66}              components/WeaponryDevelopmentService.js
-contract       @development.weaponry.gnucitizen.org/service;1      {20d3e960-3277-11df-9aae-0800200c9a66}
+component      {3ce142e4-ddbc-49d3-a262-a855bf2da226}               components/WeaponryDevelopmentService.js
+contract       @development.weaponry.gnucitizen.org/service;1       {3ce142e4-ddbc-49d3-a262-a855bf2da226}
 
-category       profile-after-change WeaponryDevelopmentService     @development.weaponry.gnucitizen.org/service;1
+category       profile-after-change WeaponryDevelopmentService      @development.weaponry.gnucitizen.org/service;1
+category       profile-before-change WeaponryDevelopmentService     @development.weaponry.gnucitizen.org/service;1
 
 #
 # inspector manifest
