@@ -18,6 +18,7 @@
  */
 
 // optional weaponry common preferences
+// org.gnucitizen.weaponry.common.defaultUitype
 // org.gnucitizen.weaponry.common.defaultLookandfeel
 
 // weaponry common xbl preferences

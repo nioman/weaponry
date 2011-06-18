@@ -71,7 +71,8 @@ function cleanupCommonUi() {
 	let $nodes = document.querySelectorAll('menu > menupopup:empty');
 	let nodesLength = $nodes.length;
 	
-	let i, $node;
+	let i;
+	let $node;
 	
 	for (i = 0; i < nodesLength; i += 1) {
 		$node = $nodes[i];
@@ -126,6 +127,12 @@ function handleCommonDOMContentLoadedEvent(event) {
 			break;
 		default:
 			documentElement.setAttribute('uiflavour', 'other');
+	}
+	
+	let defaultUitype = weaponryCommon.getPref('org.gnucitizen.weaponry.common.defaultUitype');
+	
+	if (defaultUitype) {
+		documentElement.setAttribute('uitype', defaultUitype);
 	}
 	
 	if (window.parent != window) {
