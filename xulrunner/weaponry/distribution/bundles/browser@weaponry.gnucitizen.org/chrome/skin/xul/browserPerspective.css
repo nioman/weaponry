@@ -63,67 +63,67 @@
 
 /* ------------------------------------------------------------------------ */
 
-[ostype="Darwin"] #browser-perspective-open-tab-toolbarbutton {
+[lookandfeel="Darwin"] #browser-perspective-open-tab-toolbarbutton {
 	list-style-image: url("images/open.mac.still.png");
 }
 
-[ostype="Darwin"] #browser-perspective-open-tab-toolbarbutton:not([disabled="true"]):hover {
+[lookandfeel="Darwin"] #browser-perspective-open-tab-toolbarbutton:not([disabled="true"]):hover {
 	list-style-image: url("images/open.mac.hovered.png");
 }
 
-[ostype="Darwin"] #browser-perspective-open-tab-toolbarbutton[disabled="true"] {
+[lookandfeel="Darwin"] #browser-perspective-open-tab-toolbarbutton[disabled="true"] {
 	list-style-image: url("images/open.mac.disabled.png");
 }
 
-[ostype="Darwin"] #browser-perspective-open-tab-toolbarbutton:not([disabled="true"]):hover:active {
+[lookandfeel="Darwin"] #browser-perspective-open-tab-toolbarbutton:not([disabled="true"]):hover:active {
 	list-style-image: url("images/open.mac.pressed.png");
 }
 
-[ostype="Darwin"] #browser-perspective-open-tab-toolbarbutton > image {
+[lookandfeel="Darwin"] #browser-perspective-open-tab-toolbarbutton > image {
 	/* pass */
 }
 
 /* ------------------------------------------------------------------------ */
 
-[ostype="Linux"] #browser-perspective-open-tab-toolbarbutton {
+[lookandfeel="Linux"] #browser-perspective-open-tab-toolbarbutton {
 	list-style-image: url("moz-icon://stock/gtk-add?size=16");
 }
 
-[ostype="Linux"] #browser-perspective-open-tab-toolbarbutton:not([disabled="true"]):hover {
+[lookandfeel="Linux"] #browser-perspective-open-tab-toolbarbutton:not([disabled="true"]):hover {
 	/* pass */
 }
 
-[ostype="Linux"] #browser-perspective-open-tab-toolbarbutton[disabled="true"] {
+[lookandfeel="Linux"] #browser-perspective-open-tab-toolbarbutton[disabled="true"] {
 	list-style-image: url("moz-icon://stock/gtk-add?size=16&state=disabled");
 }
 
-[ostype="Linux"] #browser-perspective-open-tab-toolbarbutton:not([disabled="true"]):hover:active {
+[lookandfeel="Linux"] #browser-perspective-open-tab-toolbarbutton:not([disabled="true"]):hover:active {
 	/* pass */
 }
 
-[ostype="Linux"] #browser-perspective-open-tab-toolbarbutton > image {
+[lookandfeel="Linux"] #browser-perspective-open-tab-toolbarbutton > image {
 	/* pass */
 }
 
 /* ------------------------------------------------------------------------ */
 
-[ostype="WINNT"] #browser-perspective-open-tab-toolbarbutton {
+[lookandfeel="WINNT"] #browser-perspective-open-tab-toolbarbutton {
 	list-style-image: url("images/open.win.still.png");
 }
 
-[ostype="WINNT"] #browser-perspective-open-tab-toolbarbutton:not([disabled="true"]):hover {
+[lookandfeel="WINNT"] #browser-perspective-open-tab-toolbarbutton:not([disabled="true"]):hover {
 	list-style-image: url("images/open.win.hovered.png");
 }
 
-[ostype="WINNT"] #browser-perspective-open-tab-toolbarbutton[disabled="true"] {
+[lookandfeel="WINNT"] #browser-perspective-open-tab-toolbarbutton[disabled="true"] {
 	list-style-image: url("images/open.win.disabled.png");
 }
 
-[ostype="WINNT"] #browser-perspective-open-tab-toolbarbutton:not([disabled="true"]):hover:active {
+[lookandfeel="WINNT"] #browser-perspective-open-tab-toolbarbutton:not([disabled="true"]):hover:active {
 	list-style-image: url("images/open.win.pressed.png");
 }
 
-[ostype="WINNT"] #browser-perspective-open-tab-toolbarbutton > image {
+[lookandfeel="WINNT"] #browser-perspective-open-tab-toolbarbutton > image {
 	/* pass */
 }
 

@@ -30,7 +30,7 @@ statusbox > .statusbox-container .statusbox-panel {
 
 /* ------------------------------------------------------------------------ */
 
-[ostype="Darwin"] statusbox > .statusbox-container .statusbox-panel {
+[lookandfeel="Darwin"] statusbox > .statusbox-container .statusbox-panel {
 	color: ButtonText;
 	background: ButtonFace;
 	border: 1px solid ButtonShadow;
@@ -38,13 +38,13 @@ statusbox > .statusbox-container .statusbox-panel {
 
 /* ------------------------------------------------------------------------ */
 
-[ostype="Linux"] statusbox > .statusbox-container .statusbox-panel {
+[lookandfeel="Linux"] statusbox > .statusbox-container .statusbox-panel {
 	/* pass */
 }
 
 /* ------------------------------------------------------------------------ */
 
-[ostype="WINNT"] statusbox > .statusbox-container .statusbox-panel {
+[lookandfeel="WINNT"] statusbox > .statusbox-container .statusbox-panel {
 	/* pass */
 }
 
