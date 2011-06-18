@@ -99,17 +99,23 @@ function handleCommonDOMContentLoadedEvent(event) {
 	}
 	
 	let documentElement = document.documentElement;
-	let osType = weaponryCommon.xulRuntime.OS;
+	let defaultLookAndFeel = weaponryCommon.getPref('org.gnucitizen.weaponry.common.defaultLookandfeel');
 	
-	switch (osType) {
-		case 'Darwin':
-		case 'Linux':
-		case 'WINNT':
-			documentElement.setAttribute('ostype', osType);
-			
-			break;
-		default:
-			documentElement.setAttribute('ostype', 'other');
+	if (defaultLookAndFeel) {
+		documentElement.setAttribute('lookandfeel', defaultLookAndFeel);
+	} else {
+		let osType = weaponryCommon.xulRuntime.OS;
+		
+		switch (osType) {
+			case 'Darwin':
+			case 'Linux':
+			case 'WINNT':
+				documentElement.setAttribute('lookandfeel', osType);
+				
+				break;
+			default:
+				documentElement.setAttribute('lookandfeel', 'other');
+		}
 	}
 	
 	if (window.parent != window) {
