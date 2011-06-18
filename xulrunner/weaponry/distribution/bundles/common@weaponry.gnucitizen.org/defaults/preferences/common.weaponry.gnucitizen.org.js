@@ -17,6 +17,9 @@
  *  Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
  */
 
+// optional weaponry common preferences
+// org.gnucitizen.weaponry.common.defaultLookandfeel
+
 // weaponry common xbl preferences
 pref('org.gnucitizen.weaponry.common.xbl.dbtable.tablesNum', 5);
 pref('org.gnucitizen.weaponry.common.xbl.dbtable.tableSize', 500);
