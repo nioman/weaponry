@@ -120,7 +120,7 @@
 }
 
 [lookandfeel="Darwin"] .browser-view-navigation-button > image {
-	margin-top: 1px;
+	/* pass */
 }
 
 [lookandfeel="Darwin"] #browser-view-back-toolbarbutton {
