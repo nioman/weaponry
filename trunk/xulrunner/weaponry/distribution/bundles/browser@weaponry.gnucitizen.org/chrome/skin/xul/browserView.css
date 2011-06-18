@@ -83,20 +83,20 @@
 
 /* ------------------------------------------------------------------------ */
 
-[ostype="Darwin"] #browser-view-navigation-toolbox {
+[lookandfeel="Darwin"] #browser-view-navigation-toolbox {
 	/* pass */
 }
 
-[ostype="Darwin"] #browser-view-navigation-toolbox > toolbar {
+[lookandfeel="Darwin"] #browser-view-navigation-toolbox > toolbar {
 	/* pass */
 }
 
-[ostype="Darwin"] #browser-view-navigation-toolbar {
+[lookandfeel="Darwin"] #browser-view-navigation-toolbar {
 	padding: 4px 2px 4px 0px;
 	-moz-appearance: -moz-mac-unified-toolbar;
 }
 
-[ostype="Darwin"] .browser-view-navigation-button {
+[lookandfeel="Darwin"] .browser-view-navigation-button {
 	height: 22px;
 	min-width: 22px;
 	-moz-border-radius: 3px;
@@ -105,225 +105,225 @@
 	background: -moz-linear-gradient(top, #ffffff, #cccccc);
 }
 
-[ostype="Darwin"] .browser-view-navigation-button[disabled="true"] {
+[lookandfeel="Darwin"] .browser-view-navigation-button[disabled="true"] {
 	/* pass */
 }
 
-[ostype="Darwin"] .browser-view-navigation-button[disabled="true"] > image {
+[lookandfeel="Darwin"] .browser-view-navigation-button[disabled="true"] > image {
 	opacity: 0.4;
 }
 
-[ostype="Darwin"] .browser-view-navigation-button:not([disabled="true"]):active {
+[lookandfeel="Darwin"] .browser-view-navigation-button:not([disabled="true"]):active {
 	background: #b5b5b5;
 	text-shadow: 0px 1px rgba(255, 255, 255, .4);
 	-moz-box-shadow: inset rgba(0, 0, 0, 0.3) 0px -6px 10px, inset #000 0px 1px 3px, inset rgba(0, 0, 0, 0.2) 0px 1px 3px, 0px 1px rgba(255, 255, 255, .4);
 }
 
-[ostype="Darwin"] .browser-view-navigation-button > image {
+[lookandfeel="Darwin"] .browser-view-navigation-button > image {
 	margin-top: 1px;
 }
 
-[ostype="Darwin"] #browser-view-back-toolbarbutton {
+[lookandfeel="Darwin"] #browser-view-back-toolbarbutton {
 	width: 28px;
 	border-right: 0px;
 	-moz-border-radius: 3px 0px 0px 3px;
 	list-style-image: url("images/back.mac.png");
 }
 
-[ostype="Darwin"] #browser-view-forward-toolbarbutton {
+[lookandfeel="Darwin"] #browser-view-forward-toolbarbutton {
 	width: 28px;
 	margin-left: -2px;
 	-moz-border-radius: 0px 3px 3px 0px;
 	list-style-image: url("images/forward.mac.png");
 }
 
-[ostype="Darwin"] #browser-view-reload-toolbarbutton {
+[lookandfeel="Darwin"] #browser-view-reload-toolbarbutton {
 	width: 26px;
 	list-style-image: url("images/reload.mac.png");
 }
 
-[ostype="Darwin"] #browser-view-stop-toolbarbutton  {
+[lookandfeel="Darwin"] #browser-view-stop-toolbarbutton  {
 	width: 26px;
 	list-style-image: url("images/stop.mac.png");
 }
 
-[ostype="Darwin"] #browser-view-content-locationbox {
+[lookandfeel="Darwin"] #browser-view-content-locationbox {
 	height: 22px;
 }
 
-[ostype="Darwin"] #browser-view-statusbar {
+[lookandfeel="Darwin"] #browser-view-statusbar {
 	/* pass */
 }
 
-[ostype="Darwin"][parentwindowtype="browser.weaponry.gnucitizen.org:browser-perspective"] #browser-view-navigation-toolbar {
+[lookandfeel="Darwin"][parentwindowtype="browser.weaponry.gnucitizen.org:browser-perspective"] #browser-view-navigation-toolbar {
 	-moz-appearance: none;
 	background: -moz-mac-chrome-inactive;
 }
 
 /* ------------------------------------------------------------------------ */
 
-[ostype="Linux"] #browser-view-navigation-toolbox {
+[lookandfeel="Linux"] #browser-view-navigation-toolbox {
 	min-height: 34px;
 	-moz-appearance: none;
 	background: -moz-ButtonHoverFace;
 	border-bottom: 1px solid ButtonFace;
 }
 
-[ostype="Linux"] #browser-view-navigation-toolbox > toolbar {
+[lookandfeel="Linux"] #browser-view-navigation-toolbox > toolbar {
 	min-height: 34px;
 	-moz-appearance: none;
 	background: transparent;
 }
 
-[ostype="Linux"] #browser-view-navigation-toolbar {
+[lookandfeel="Linux"] #browser-view-navigation-toolbar {
 	padding: 2px 2px 2px 0px;
 }
 
-[ostype="Linux"] .browser-view-navigation-button {
+[lookandfeel="Linux"] .browser-view-navigation-button {
 	width: auto;
 	height: auto;
 	-moz-appearance: toolbarbutton;
 }
 
-[ostype="Linux"] .browser-view-navigation-button[disabled="true"] {
+[lookandfeel="Linux"] .browser-view-navigation-button[disabled="true"] {
 	/* pass */
 }
 
-[ostype="Linux"] .browser-view-navigation-button[disabled="true"] > image {
+[lookandfeel="Linux"] .browser-view-navigation-button[disabled="true"] > image {
 	/* pass */
 }
 
-[ostype="Linux"] .browser-view-navigation-button:not([disabled="true"]):active {
+[lookandfeel="Linux"] .browser-view-navigation-button:not([disabled="true"]):active {
 	/* pass */
 }
 
-[ostype="Linux"] .browser-view-navigation-button > image {
+[lookandfeel="Linux"] .browser-view-navigation-button > image {
 	/* pass */
 }
 
-[ostype="Linux"] #browser-view-back-toolbarbutton {
+[lookandfeel="Linux"] #browser-view-back-toolbarbutton {
 	list-style-image: url("moz-icon://stock/gtk-go-back?size=toolbar");
 }
 
-[ostype="Linux"] #browser-view-back-toolbarbutton[disabled="true"] {
+[lookandfeel="Linux"] #browser-view-back-toolbarbutton[disabled="true"] {
 	list-style-image: url("moz-icon://stock/gtk-go-back?size=toolbar&state=disabled");
 }
 
-[ostype="Linux"] #browser-view-forward-toolbarbutton {
+[lookandfeel="Linux"] #browser-view-forward-toolbarbutton {
 	list-style-image: url("moz-icon://stock/gtk-go-forward?size=toolbar");
 }
 
-[ostype="Linux"] #browser-view-forward-toolbarbutton[disabled="true"] {
+[lookandfeel="Linux"] #browser-view-forward-toolbarbutton[disabled="true"] {
 	list-style-image: url("moz-icon://stock/gtk-go-forward?size=toolbar&state=disabled");
 }
 
-[ostype="Linux"] #browser-view-reload-toolbarbutton {
+[lookandfeel="Linux"] #browser-view-reload-toolbarbutton {
 	list-style-image: url("moz-icon://stock/gtk-refresh?size=toolbar");
 }
 
-[ostype="Linux"] #browser-view-reload-toolbarbutton[disabled="true"] {
+[lookandfeel="Linux"] #browser-view-reload-toolbarbutton[disabled="true"] {
 	list-style-image: url("moz-icon://stock/gtk-refresh?size=toolbar&state=disabled");
 }
 
-[ostype="Linux"] #browser-view-stop-toolbarbutton  {
+[lookandfeel="Linux"] #browser-view-stop-toolbarbutton  {
 	list-style-image: url("moz-icon://stock/gtk-stop?size=toolbar");
 }
 
-[ostype="Linux"] #browser-view-stop-toolbarbutton[disabled="true"]  {
+[lookandfeel="Linux"] #browser-view-stop-toolbarbutton[disabled="true"]  {
 	list-style-image: url("moz-icon://stock/gtk-stop?size=toolbar&state=disabled");
 }
 
-[ostype="Linux"] #browser-view-content-locationbox {
+[lookandfeel="Linux"] #browser-view-content-locationbox {
 	min-height: 34px;
 	height: -moz-calc(100%);
 }
 
-[ostype="Linux"] #browser-view-statusbar {
+[lookandfeel="Linux"] #browser-view-statusbar {
 	padding: 2px;
 }
 
-[ostype="Linux"][parentwindowtype="browser.weaponry.gnucitizen.org:browser-perspective"] #browser-view-navigation-toolbar {
+[lookandfeel="Linux"][parentwindowtype="browser.weaponry.gnucitizen.org:browser-perspective"] #browser-view-navigation-toolbar {
 	/* pass */
 }
 
 /* ------------------------------------------------------------------------ */
 
-[ostype="WINNT"] #browser-view-navigation-toolbox {
+[lookandfeel="WINNT"] #browser-view-navigation-toolbox {
 	border: 0px;
 	-moz-appearance: none;
 	background: transparent;
 	border-bottom: 1px solid ThreeDHighlight;
 }
 
-[ostype="WINNT"] #browser-view-navigation-toolbox > toolbar {
+[lookandfeel="WINNT"] #browser-view-navigation-toolbox > toolbar {
 	/* pass */
 }
 
-[ostype="WINNT"] #browser-view-navigation-toolbar {
+[lookandfeel="WINNT"] #browser-view-navigation-toolbar {
 	border: 0px;
 	padding: 2px;
 	-moz-appearance: none;
 	background: transparent;
 }
 
-[ostype="WINNT"] .browser-view-navigation-button {
+[lookandfeel="WINNT"] .browser-view-navigation-button {
 	width: auto;
 	height: auto;
 	-moz-appearance: toolbarbutton;
 }
 
-[ostype="WINNT"] .browser-view-navigation-button[disabled="true"] {
+[lookandfeel="WINNT"] .browser-view-navigation-button[disabled="true"] {
 	opacity: 0.2;
 }
 
-[ostype="WINNT"] .browser-view-navigation-button[disabled="true"] > image {
+[lookandfeel="WINNT"] .browser-view-navigation-button[disabled="true"] > image {
 	/* pass */
 }
 
-[ostype="WINNT"] .browser-view-navigation-button:not([disabled="true"]):active {
+[lookandfeel="WINNT"] .browser-view-navigation-button:not([disabled="true"]):active {
 	/* pass */
 }
 
-[ostype="WINNT"] .browser-view-navigation-button > image {
+[lookandfeel="WINNT"] .browser-view-navigation-button > image {
 	/* pass */
 }
 
-[ostype="WINNT"] #browser-view-back-toolbarbutton {
+[lookandfeel="WINNT"] #browser-view-back-toolbarbutton {
 	/* pass */
 }
 
-[ostype="WINNT"] #browser-view-forward-toolbarbutton {
+[lookandfeel="WINNT"] #browser-view-forward-toolbarbutton {
 	/* pass */
 }
 
-[ostype="WINNT"] #browser-view-reload-toolbarbutton {
+[lookandfeel="WINNT"] #browser-view-reload-toolbarbutton {
 	/* pass */
 }
 
-[ostype="WINNT"] #browser-view-stop-toolbarbutton  {
+[lookandfeel="WINNT"] #browser-view-stop-toolbarbutton  {
 	/* pass */
 }
 
-[ostype="WINNT"] #browser-view-content-locationbox {
+[lookandfeel="WINNT"] #browser-view-content-locationbox {
 	height: 23px;
 	margin-left: 2px;
 }
 
-[ostype="WINNT"] #browser-view-statusbar {
+[lookandfeel="WINNT"] #browser-view-statusbar {
 	padding: 2px;
 }
 
-[ostype="WINNT"][parentwindowtype="browser.weaponry.gnucitizen.org:browser-perspective"] #browser-view-navigation-toolbar {
+[lookandfeel="WINNT"][parentwindowtype="browser.weaponry.gnucitizen.org:browser-perspective"] #browser-view-navigation-toolbar {
 	/* pass */
 }
 
 /* ------------------------------------------------------------------------ */
 
-[ostype="WINNT"]:-moz-system-metric(windows-default-theme) #browser-view-navigation-toolbox {
+[lookandfeel="WINNT"]:-moz-system-metric(windows-default-theme) #browser-view-navigation-toolbox {
 	border-bottom: 1px solid ThreeDShadow;
 }
 
-[ostype="WINNT"][parentwindowtype="browser.weaponry.gnucitizen.org:browser-perspective"]:-moz-system-metric(windows-default-theme) #browser-view-navigation-toolbox {
+[lookandfeel="WINNT"][parentwindowtype="browser.weaponry.gnucitizen.org:browser-perspective"]:-moz-system-metric(windows-default-theme) #browser-view-navigation-toolbox {
 	background: ButtonHighlight;
 }
 

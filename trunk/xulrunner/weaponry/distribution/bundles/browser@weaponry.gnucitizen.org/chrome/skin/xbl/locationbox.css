@@ -31,19 +31,19 @@ locationbox > .locationbox-container .locationbox-textbox {
 
 /* ------------------------------------------------------------------------ */
 
-[ostype="Darwin"] locationbox > .locationbox-container {
+[lookandfeel="Darwin"] locationbox > .locationbox-container {
 	-moz-border-radius: 3px;
 }
 
 /* ------------------------------------------------------------------------ */
 
-[ostype="Linux"] locationbox > .locationbox-container {
+[lookandfeel="Linux"] locationbox > .locationbox-container {
 	-moz-border-radius: 4px;
 }
 
 /* ------------------------------------------------------------------------ */
 
-[ostype="WINNT"] locationbox > .locationbox-container {
+[lookandfeel="WINNT"] locationbox > .locationbox-container {
 	-moz-border-radius: 2px;
 }
 
