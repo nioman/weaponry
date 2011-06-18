@@ -99,13 +99,12 @@ function handleCommonDOMContentLoadedEvent(event) {
 	}
 	
 	let documentElement = document.documentElement;
+	let osType = weaponryCommon.xulRuntime.OS;
 	let defaultLookAndFeel = weaponryCommon.getPref('org.gnucitizen.weaponry.common.defaultLookandfeel');
 	
 	if (defaultLookAndFeel) {
 		documentElement.setAttribute('lookandfeel', defaultLookAndFeel);
 	} else {
-		let osType = weaponryCommon.xulRuntime.OS;
-		
 		switch (osType) {
 			case 'Darwin':
 			case 'Linux':
@@ -116,6 +115,17 @@ function handleCommonDOMContentLoadedEvent(event) {
 			default:
 				documentElement.setAttribute('lookandfeel', 'other');
 		}
+	}
+	
+	switch (osType) {
+		case 'Darwin':
+		case 'Linux':
+		case 'WINNT':
+			documentElement.setAttribute('uiflavour', osType);
+			
+			break;
+		default:
+			documentElement.setAttribute('uiflavour', 'other');
 	}
 	
 	if (window.parent != window) {
