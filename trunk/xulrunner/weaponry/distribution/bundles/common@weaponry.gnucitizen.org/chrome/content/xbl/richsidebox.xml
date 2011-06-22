@@ -138,7 +138,7 @@
 					<xul:hbox class="richsidebox-content" flex="1">
 						<xul:richlistbox class="richsidebox-richlistbox" flex="1" xbl:inherits="width=richlistboxwidth"/>
 						
-						<xul:splitter class="richsidebox-splitter" resize="after" collapse="before" xbl:inherits="state=splitterstate">
+						<xul:splitter class="richsidebox-splitter" resizeafter="closest" collapse="before" xbl:inherits="state=splitterstate">
 							<xul:grippy class="richsidebox-grippy"/>
 						</xul:splitter>
 						
