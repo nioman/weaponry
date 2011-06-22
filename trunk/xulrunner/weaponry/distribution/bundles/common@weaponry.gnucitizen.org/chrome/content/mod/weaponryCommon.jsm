@@ -502,6 +502,12 @@ let weaponryCommon = new function () {
 	
 	/* -------------------------------------------------------------------- */
 	
+	this.openAboutBrandWindow = function () {
+		return this.openWindowOnce(null, 'branding:about', 'chrome://branding/content/about.xul', null, 'all,chrome,resizable,centerscreen');
+	};
+	
+	/* -------------------------------------------------------------------- */
+	
 	this.getWindowDocumentCoreURI = function (window) {
 		let webNavigation = window.QueryInterface(CI.nsIInterfaceRequestor).getInterface(CI.nsIWebNavigation);
 		let docShell = webNavigation.QueryInterface(CI.nsIDocShell);
