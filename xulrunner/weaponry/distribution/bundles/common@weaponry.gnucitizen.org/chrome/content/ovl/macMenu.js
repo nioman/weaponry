@@ -1,5 +1,5 @@
 /**
- *  helpMenu.js
+ *  macMenu.js
  *  Copyright (C) 2007-2011  GNUCITIZEN
  *  
  *  This program is free software; you can redistribute it and/or modify
@@ -17,28 +17,24 @@
  *  Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
  */
 
-function handleHelpMenuAboutCommandEvent(event) {
-	weaponryCommon.openAboutBrandWindow();
-}
-
-function handleHelpMenuCheckForUpdatesCommandEvent(event) {
-	weaponryCommon.checkForUpdates();
-}
-
-/* ------------------------------------------------------------------------ */
-
-function handleHelpMenuDOMContentLoadedEvent(event) {
+function handleMacMenuDOMContentLoadedEvent(event) {
 	if (event.target != document) {
 		return;
 	}
 	
-	let $stringbundle = document.getElementById('help-menu-properties-stringbundle');
+	let $aboutMenuitem = document.getElementById('help-menupopup-about-menuitem');
 	let $aboutCommand = document.getElementById('help-menu-about-command');
 	
-	$aboutCommand.setAttribute('label', $stringbundle.getFormattedString('about-command-label', [weaponryCommon.brandFullName]));
+	try {
+		$aboutMenuitem.id = 'aboutName';
+		
+		$aboutMenuitem.setAttribute('label', $aboutCommand.getAttribute('label'));
+	} catch (e) {
+		// pass
+	}
 }
 
-window.addEventListener('DOMContentLoaded', handleHelpMenuDOMContentLoadedEvent, false);
+window.addEventListener('DOMContentLoaded', handleMacMenuDOMContentLoadedEvent, false);
 
 /*  GNUCITIZEN (Information Security Think Tank)
  **********************************************/
