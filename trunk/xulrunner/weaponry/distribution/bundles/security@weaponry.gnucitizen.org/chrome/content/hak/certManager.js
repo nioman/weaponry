@@ -28,7 +28,7 @@ window.LoadCerts = function () {
 	try {
 		isEnabled = preferencesService.getBoolPref('org.gnucitizen.weaponry.security.CertOverrideService.enabled');
 	} catch (e) {
-		isEnabled = false;
+		// pass
 	}
 	
 	if (isEnabled) {
