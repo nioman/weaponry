@@ -30,6 +30,10 @@ pref('browser.jsannoyances.disabled', true);
 // dom preferences
 pref('dom.event.contextmenu.enabled', false);
 
+// network preferences
+// network.http.connect.timeout
+// network.http.request.timeout
+
 // browser download preferences
 pref('browser.download.folderList', 0);
 pref('browser.download.useDownloadDir', true);
