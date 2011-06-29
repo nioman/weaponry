@@ -25,7 +25,7 @@
 <!DOCTYPE window SYSTEM "chrome://browser.weaponry.gnucitizen.org/locale/xul/browserWindow.dtd">
 <window xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
 	id="browser-window" title="&browser-window-title;" windowtype="browser.weaponry.gnucitizen.org:browser-window"
-	width="800" height="640" screenX="100" screenY="100" persist="width height screenX screenY sizemode">
+	width="800" height="500" screenX="100" screenY="100" persist="width height screenX screenY sizemode">
 	
 	<script type="application/x-javascript" src="chrome://browser.weaponry.gnucitizen.org/content/inc/common.js"/>
 	<script type="application/x-javascript" src="chrome://browser.weaponry.gnucitizen.org/content/xul/browserWindow.js"/>
