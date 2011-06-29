@@ -22,7 +22,7 @@
 <!DOCTYPE prefwindow SYSTEM "chrome://preferences.weaponry.gnucitizen.org/locale/xul/proxyPrefwindow.dtd">
 <prefwindow xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
 	id="proxy-prefwindow" title="&proxy-prefwindow-title;" windowtype="preferences.weaponry.gnucitizen.org:proxy-prefwindow"
-	width="500" height="600" screenX="100" screenY="100" persist="width height screenX screenY sizemode">
+	width="500" height="550" screenX="100" screenY="100" persist="width height screenX screenY sizemode">
 	
 	<prefpane id="proxy-prefwindow-prefpane" flex="1">
 		<preferences id="proxy-prefwindow-preferences">
