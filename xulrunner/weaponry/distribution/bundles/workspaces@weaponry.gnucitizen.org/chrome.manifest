@@ -17,7 +17,7 @@ overlay      chrome://workspaces.weaponry.gnucitizen.org/content/xul/workspaceVi
 # chrome suggestions
 #
 
-#overlay     chrome://common.weaponry.gnucitizen.org/content/ovl/toolsMenu.xul     chrome://workspaces.weaponry.gnucitizen.org/content/ovl/toolsMenu.xul
+# overlay     chrome://common.weaponry.gnucitizen.org/content/ovl/toolsMenu.xul     chrome://workspaces.weaponry.gnucitizen.org/content/ovl/toolsMenu.xul
 
 #
 # xpcom registration
@@ -44,3 +44,4 @@ component      {ff50cfc0-045d-11df-8a39-0800200c9a66}                          c
 contract       @workspaces.weaponry.gnucitizen.org/service;1                   {ff50cfc0-045d-11df-8a39-0800200c9a66}
 
 category       profile-after-change WeaponryWorkspacesManager                  @workspaces.weaponry.gnucitizen.org/manager;1
+category       profile-before-change WeaponryWorkspacesManager                 @workspaces.weaponry.gnucitizen.org/manager;1
