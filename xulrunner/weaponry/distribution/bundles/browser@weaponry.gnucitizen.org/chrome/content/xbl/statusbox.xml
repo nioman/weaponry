@@ -31,7 +31,7 @@
 		<content>
 			<xul:vbox class="statusbox-container" flex="1">
 				<xul:panel class="statusbox-panel" noautohide="true" noautofocus="true" flex="1">
-					<xul:label class="statusbox-label" crop="end" flex="1"/>
+					<xul:label class="statusbox-label" crop="right" flex="1"/>
 				</xul:panel>
 			</xul:vbox>
 		</content>
