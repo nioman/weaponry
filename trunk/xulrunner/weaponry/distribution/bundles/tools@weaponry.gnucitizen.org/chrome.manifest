@@ -14,5 +14,5 @@ resource     sites.tools.weaponry.gnucitizen.org           file:sites/
 # xpcom registration
 #
 
-component     {fc412b80-e027-11df-85ca-0800200c9a66}       components/WeaponryToolsService.js
-contract      @tools.weaponry.gnucitizen.org/service;1     {fc412b80-e027-11df-85ca-0800200c9a66}
+component     {c2621b40-e027-11df-85ca-0800200c9a66}       components/WeaponryToolsService.js
+contract      @tools.weaponry.gnucitizen.org/service;1     {c2621b40-e027-11df-85ca-0800200c9a66}
