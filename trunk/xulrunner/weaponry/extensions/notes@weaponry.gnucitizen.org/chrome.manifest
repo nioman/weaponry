@@ -19,7 +19,8 @@ overlay      chrome://workspaces.weaponry.gnucitizen.org/content/xul/workspaceVi
 
 interfaces     components/IWeaponryNotesService.xpt
 
-component      {70f516b0-9c19-11df-981c-0800200c9a66}       components/WeaponryNotesService.js
-contract       @notes.weaponry.gnucitizen.org/service;1     {70f516b0-9c19-11df-981c-0800200c9a66}
+component      {70f516b0-9c19-11df-981c-0800200c9a66}        components/WeaponryNotesService.js
+contract       @notes.weaponry.gnucitizen.org/service;1      {70f516b0-9c19-11df-981c-0800200c9a66}
 
-category       profile-after-change WeaponryNotesService    @notes.weaponry.gnucitizen.org/service;1
+category       profile-after-change WeaponryNotesService     @notes.weaponry.gnucitizen.org/service;1
+category       profile-before-change WeaponryNotesService    @notes.weaponry.gnucitizen.org/service;1
