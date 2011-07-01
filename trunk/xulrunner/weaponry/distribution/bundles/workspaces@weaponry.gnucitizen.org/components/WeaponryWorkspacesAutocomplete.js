@@ -99,11 +99,7 @@ WeaponryWorkspacesAutocomplete.prototype = {
 
 /* ------------------------------------------------------------------------ */
 
-if (XPCOMUtils.generateNSGetFactory) {
-	var NSGetFactory = XPCOMUtils.generateNSGetFactory([WeaponryWorkspacesAutocomplete]);
-} else {
-	var NSGetModule = XPCOMUtils.generateNSGetModule([WeaponryWorkspacesAutocomplete]);
-}
+var NSGetFactory = XPCOMUtils.generateNSGetFactory([WeaponryWorkspacesAutocomplete]);
 
 /*  GNUCITIZEN (Information Security Think Tank)
  **********************************************/

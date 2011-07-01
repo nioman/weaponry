@@ -14,7 +14,15 @@
 		
 		<em:targetApplication>
 			<Description>
-				<em:id>websecurify@gnucitizen.org</em:id>
+				<em:id>application@basic.websecurify@gnucitizen.org</em:id>
+				<em:minVersion>0.8</em:minVersion>
+				<em:maxVersion>0.8</em:maxVersion>
+			</Description>
+		</em:targetApplication>
+		
+		<em:targetApplication>
+			<Description>
+				<em:id>application@professional.websecurify.gnucitizen.org</em:id>
 				<em:minVersion>0.8</em:minVersion>
 				<em:maxVersion>0.8</em:maxVersion>
 			</Description>

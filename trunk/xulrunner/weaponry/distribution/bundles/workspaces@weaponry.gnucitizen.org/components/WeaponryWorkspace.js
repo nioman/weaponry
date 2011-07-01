@@ -1170,11 +1170,7 @@ WeaponryWorkspace.prototype = {
 
 /* ------------------------------------------------------------------------ */
 
-if (XPCOMUtils.generateNSGetFactory) {
-	var NSGetFactory = XPCOMUtils.generateNSGetFactory([WeaponryWorkspace]);
-} else {
-	var NSGetModule = XPCOMUtils.generateNSGetModule([WeaponryWorkspace]);
-}
+var NSGetFactory = XPCOMUtils.generateNSGetFactory([WeaponryWorkspace]);
 
 /*  GNUCITIZEN (Information Security Think Tank)
  **********************************************/
