@@ -66,7 +66,7 @@
 				</datalist>
 				
 				<toolbar id="tasks-page-action-toolbar">
-					<toolbarbutton id="tasks-page-clear-toolbarbutton" label="Clear" oncommand="return handleClearTasksCommandEvent(event);"/>
+					<toolbarbutton id="tasks-page-clear-toolbarbutton" label="&tasks-page-clear-toolbarbutton-label;" oncommand="return handleClearTasksCommandEvent(event);"/>
 				</toolbar>
 			</vbox>
 		</deck>
