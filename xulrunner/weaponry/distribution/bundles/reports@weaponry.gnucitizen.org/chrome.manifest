@@ -42,3 +42,4 @@ component      {ce303510-083c-11df-8a39-0800200c9a66}                           
 contract       @reports.weaponry.gnucitizen.org/service;1                          {ce303510-083c-11df-8a39-0800200c9a66}
 
 category       profile-after-change WeaponryReportsService                         @reports.weaponry.gnucitizen.org/service;1
+category       profile-before-change WeaponryReportsService                        @reports.weaponry.gnucitizen.org/service;1
