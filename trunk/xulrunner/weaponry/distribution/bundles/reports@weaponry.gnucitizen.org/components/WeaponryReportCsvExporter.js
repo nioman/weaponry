@@ -43,12 +43,6 @@ WeaponryReportCsvExporter.prototype = {
 	
 	/* -------------------------------------------------------------------- */
 	
-	_xpcom_categories: [
-		{service:false, entry:'WeaponryReportCsvExporter', category:'weaponry-report-exporters'}
-	],
-	
-	/* -------------------------------------------------------------------- */
-	
 	get wrappedJSObject () {
 		return this;
 	},
@@ -121,11 +115,7 @@ WeaponryReportCsvExporter.prototype = {
 
 /* ------------------------------------------------------------------------ */
 
-if (XPCOMUtils.generateNSGetFactory) {
-	var NSGetFactory = XPCOMUtils.generateNSGetFactory([WeaponryReportCsvExporter]);
-} else {
-	var NSGetModule = XPCOMUtils.generateNSGetModule([WeaponryReportCsvExporter]);
-}
+var NSGetFactory = XPCOMUtils.generateNSGetFactory([WeaponryReportCsvExporter]);
 
 /*  GNUCITIZEN (Information Security Think Tank)
  **********************************************/

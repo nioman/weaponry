@@ -51,12 +51,6 @@ WeaponryReportsService.prototype = {
 	
 	/* -------------------------------------------------------------------- */
 	
-	_xpcom_categories: [
-		{service:true, entry:'WeaponryReportsService', category:'app-startup'}
-	],
-	
-	/* -------------------------------------------------------------------- */
-	
 	get wrappedJSObject () {
 		return this;
 	},
@@ -64,10 +58,6 @@ WeaponryReportsService.prototype = {
 	/* -------------------------------------------------------------------- */
 	
 	observe: function(subject, topic, data) {
-		if (topic == 'app-startup') {
-			this.observerService.addObserver(this, 'profile-after-change', false);
-			this.observerService.addObserver(this, 'profile-before-change', false);
-		} else
 		if (topic == 'profile-after-change') {
 			this.initializeComponent(subject, topic, data);
 		} else
@@ -213,11 +203,7 @@ WeaponryReportsService.prototype = {
 
 /* ------------------------------------------------------------------------ */
 
-if (XPCOMUtils.generateNSGetFactory) {
-	var NSGetFactory = XPCOMUtils.generateNSGetFactory([WeaponryReportsService]);
-} else {
-	var NSGetModule = XPCOMUtils.generateNSGetModule([WeaponryReportsService]);
-}
+var NSGetFactory = XPCOMUtils.generateNSGetFactory([WeaponryReportsService]);
 
 /*  GNUCITIZEN (Information Security Think Tank)
  **********************************************/
