@@ -49,12 +49,6 @@ WeaponryZarvoxService.prototype = {
 	
 	/* -------------------------------------------------------------------- */
 	
-	_xpcom_categories: [
-		{service:true, entry:'WeaponryZarvoxService', category:'app-startup'}
-	],
-	
-	/* -------------------------------------------------------------------- */
-	
 	get wrappedJSObject () {
 		return this;
 	},
@@ -62,10 +56,6 @@ WeaponryZarvoxService.prototype = {
 	/* -------------------------------------------------------------------- */
 	
 	observe: function(subject, topic, data) {
-		if (topic == 'app-startup') {
-			weaponryCommon.observerService.addObserver(this, 'profile-after-change', false);
-			weaponryCommon.observerService.addObserver(this, 'profile-before-change', false);
-		} else
 		if (topic == 'profile-after-change') {
 			this.initializeComponent(subject, topic, data);
 		} else
@@ -111,11 +101,7 @@ WeaponryZarvoxService.prototype = {
 
 /* ------------------------------------------------------------------------ */
 
-if (XPCOMUtils.generateNSGetFactory) {
-	var NSGetFactory = XPCOMUtils.generateNSGetFactory([WeaponryZarvoxService]);
-} else {
-	var NSGetModule = XPCOMUtils.generateNSGetModule([WeaponryZarvoxService]);
-}
+var NSGetFactory = XPCOMUtils.generateNSGetFactory([WeaponryZarvoxService]);
 
 /*  GNUCITIZEN (Information Security Think Tank)
  **********************************************/
