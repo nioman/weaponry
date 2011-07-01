@@ -136,11 +136,7 @@ WeaponryTasksService.prototype = {
 
 /* ------------------------------------------------------------------------ */
 
-if (XPCOMUtils.generateNSGetFactory) {
-	var NSGetFactory = XPCOMUtils.generateNSGetFactory([WeaponryTasksService]);
-} else {
-	var NSGetModule = XPCOMUtils.generateNSGetModule([WeaponryTasksService]);
-}
+var NSGetFactory = XPCOMUtils.generateNSGetFactory([WeaponryTasksService]);
 
 /*  GNUCITIZEN (Information Security Think Tank)
  **********************************************/

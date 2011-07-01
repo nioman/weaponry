@@ -45,12 +45,6 @@ WeaponryTasksManager.prototype = {
 	
 	/* -------------------------------------------------------------------- */
 	
-	_xpcom_categories: [
-		{service:true, entry:'WeaponryTasksManager', category:'app-startup'}
-	],
-	
-	/* -------------------------------------------------------------------- */
-	
 	get wrappedJSObject () {
 		return this;
 	},
@@ -58,10 +52,6 @@ WeaponryTasksManager.prototype = {
 	/* -------------------------------------------------------------------- */
 	
 	observe: function (subject, topic, data) {
-		if (topic == 'app-startup') {
-			this.observerService.addObserver(this, 'profile-after-change', false);
-			this.observerService.addObserver(this, 'profile-before-change', false);
-		} else
 		if (topic == 'profile-after-change') {
 			this.initializeComponent(subject, topic, data);
 		} else
@@ -157,11 +147,7 @@ WeaponryTasksManager.prototype = {
 
 /* ------------------------------------------------------------------------ */
 
-if (XPCOMUtils.generateNSGetFactory) {
-	var NSGetFactory = XPCOMUtils.generateNSGetFactory([WeaponryTasksManager]);
-} else {
-	var NSGetModule = XPCOMUtils.generateNSGetModule([WeaponryTasksManager]);
-}
+var NSGetFactory = XPCOMUtils.generateNSGetFactory([WeaponryTasksManager]);
 
 /*  GNUCITIZEN (Information Security Think Tank)
  **********************************************/

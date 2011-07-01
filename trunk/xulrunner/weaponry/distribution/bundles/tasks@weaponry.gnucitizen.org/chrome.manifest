@@ -27,13 +27,14 @@ interfaces     components/IWeaponryTask.xpt
 interfaces     components/IWeaponryTasksManager.xpt
 interfaces     components/IWeaponryTasksService.xpt
 
-component      {62707dc0-0531-11df-8a39-0800200c9a66}        components/WeaponryTask.js
-contract       @tasks.weaponry.gnucitizen.org/task;1         {62707dc0-0531-11df-8a39-0800200c9a66}
+component      {62707dc0-0531-11df-8a39-0800200c9a66}         components/WeaponryTask.js
+contract       @tasks.weaponry.gnucitizen.org/task;1          {62707dc0-0531-11df-8a39-0800200c9a66}
 
-component      {6e2acf80-0531-11df-8a39-0800200c9a66}        components/WeaponryTasksManager.js
-contract       @tasks.weaponry.gnucitizen.org/manager;1      {6e2acf80-0531-11df-8a39-0800200c9a66}
+component      {6e2acf80-0531-11df-8a39-0800200c9a66}         components/WeaponryTasksManager.js
+contract       @tasks.weaponry.gnucitizen.org/manager;1       {6e2acf80-0531-11df-8a39-0800200c9a66}
 
-component      {7341e940-0531-11df-8a39-0800200c9a66}        components/WeaponryTasksService.js
-contract       @tasks.weaponry.gnucitizen.org/service;1      {7341e940-0531-11df-8a39-0800200c9a66}
+component      {7341e940-0531-11df-8a39-0800200c9a66}         components/WeaponryTasksService.js
+contract       @tasks.weaponry.gnucitizen.org/service;1       {7341e940-0531-11df-8a39-0800200c9a66}
 
-category       profile-after-change WeaponryTasksManager     @tasks.weaponry.gnucitizen.org/manager;1
+category       profile-after-change WeaponryTasksManager      @tasks.weaponry.gnucitizen.org/manager;1
+category       profile-before-change WeaponryTasksManager     @tasks.weaponry.gnucitizen.org/manager;1
