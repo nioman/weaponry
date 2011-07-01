@@ -73,6 +73,8 @@
 						let $label = document.createElement('label');
 						
 						$label.setAttribute('class', 'richsidepanel-label');
+						$label.setAttribute('crop', 'right');
+						$label.setAttribute('flex', '1');
 						
 						this._bindAttributes(this, $label, ['value=label']);
 						
