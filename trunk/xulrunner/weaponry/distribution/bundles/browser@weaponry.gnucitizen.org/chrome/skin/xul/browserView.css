@@ -119,6 +119,12 @@
 	-moz-box-shadow: inset rgba(0, 0, 0, 0.3) 0px -6px 10px, inset #000 0px 1px 3px, inset rgba(0, 0, 0, 0.2) 0px 1px 3px, 0px 1px rgba(255, 255, 255, .4);
 }
 
+[lookandfeel="Darwin"] .browser-view-navigation-button:not([disabled="true"])[checked="true"] {
+	background: #b5b5b5;
+	text-shadow: 0px 1px rgba(255, 255, 255, .4);
+	-moz-box-shadow: inset rgba(0, 0, 0, 0.3) 0px -6px 10px, inset #000 0px 1px 3px, inset rgba(0, 0, 0, 0.2) 0px 1px 3px, 0px 1px rgba(255, 255, 255, .4);
+}
+
 [lookandfeel="Darwin"] .browser-view-navigation-button > image {
 	/* pass */
 }
@@ -194,6 +200,10 @@
 }
 
 [lookandfeel="Linux"] .browser-view-navigation-button:not([disabled="true"]):active {
+	/* pass */
+}
+
+[lookandfeel="Linux"] .browser-view-navigation-button:not([disabled="true"])[checked="true"] {
 	/* pass */
 }
 
@@ -281,6 +291,10 @@
 }
 
 [lookandfeel="WINNT"] .browser-view-navigation-button:not([disabled="true"]):active {
+	/* pass */
+}
+
+[lookandfeel="WINNT"] .browser-view-navigation-button:not([disabled="true"])[checked="true"] {
 	/* pass */
 }
 
