@@ -47,19 +47,19 @@
 
 /* ------------------------------------------------------------------------ */
 
-[ostype="Darwin"] #launch-dialog-workspace-textbox {
+[lookandfeel="Darwin"] #launch-dialog-workspace-textbox {
 	/* pass */
 }
 
 /* ------------------------------------------------------------------------ */
 
-[ostype="Linux"] #launch-dialog-workspace-textbox {
+[lookandfeel="Linux"] #launch-dialog-workspace-textbox {
 	padding: 0.2em;
 }
 
 /* ------------------------------------------------------------------------ */
 
-[ostype="WINNT"] #launch-dialog-workspace-textbox {
+[lookandfeel="WINNT"] #launch-dialog-workspace-textbox {
 	padding: 0.2em;
 }
 
