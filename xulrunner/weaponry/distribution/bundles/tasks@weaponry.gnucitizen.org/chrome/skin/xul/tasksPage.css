@@ -111,6 +111,14 @@
 	list-style-image: url("images/buttons.png");
 }
 
+.tasks-page-item-start-button  .button-icon ,
+.tasks-page-item-stop-button   .button-icon ,
+.tasks-page-item-pause-button  .button-icon ,
+.tasks-page-item-resume-button .button-icon ,
+.tasks-page-item-act-button    .button-icon {
+	display: -moz-box;
+}
+
 .tasks-page-item-start-button  hbox ,
 .tasks-page-item-stop-button   hbox ,
 .tasks-page-item-pause-button  hbox ,
