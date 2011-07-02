@@ -99,20 +99,20 @@
 
 /* ------------------------------------------------------------------------ */
 
-[ostype="Darwin"] #weaponry-reports-issues-workspace-view-issues-workspacetree {
+[lookandfeel="Darwin"] #weaponry-reports-issues-workspace-view-issues-workspacetree {
 	/* pass */
 }
 
 /* ------------------------------------------------------------------------ */
 
-[ostype="Linux"] #weaponry-reports-issues-workspace-view-issues-workspacetree {
+[lookandfeel="Linux"] #weaponry-reports-issues-workspace-view-issues-workspacetree {
 	/* pass */
 }
 
 /* ------------------------------------------------------------------------ */
 
 /* TODO: ensure that all similar styling situations have the same semantics */
-[ostype="WINNT"] #weaponry-reports-issues-workspace-view-issues-workspacetree {
+[lookandfeel="WINNT"] #weaponry-reports-issues-workspace-view-issues-workspacetree {
 	margin-bottom: 5px;
 }
 /* */
