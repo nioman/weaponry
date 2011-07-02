@@ -73,6 +73,12 @@
 	list-style-image: url("images/buttons.png");
 }
 
+.workspaces-page-item-rename-button .button-icon ,
+.workspaces-page-item-delete-button .button-icon ,
+.workspaces-page-item-open-button   .button-icon {
+	display: -moz-box;
+}
+
 .workspaces-page-item-rename-button hbox ,
 .workspaces-page-item-delete-button hbox ,
 .workspaces-page-item-open-button   hbox {
