@@ -62,13 +62,18 @@
 						
 						this._bindAttributes(this, this.$realRichlistitem, ['richtabpanelid=id']);
 						
+						let $hbox = document.createElement('hbox');
+						
+						$hbox.setAttribute('class', 'richsidepanel-hbox');
+						$hbox.setAttribute('flex', '1');
+						
 						let $image = document.createElement('image');
 						
 						$image.setAttribute('class', 'richsidepanel-image');
 						
 						this._bindAttributes(this, $image, ['src=icon']);
 						
-						this.$realRichlistitem.appendChild($image);
+						$hbox.appendChild($image);
 						
 						let $label = document.createElement('label');
 						
@@ -78,7 +83,9 @@
 						
 						this._bindAttributes(this, $label, ['value=label']);
 						
-						this.$realRichlistitem.appendChild($label);
+						$hbox.appendChild($label);
+						
+						this.$realRichlistitem.appendChild($hbox);
 					}
 					
 					return this.$realRichlistitem;
