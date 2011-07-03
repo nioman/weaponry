@@ -13,7 +13,6 @@ resource     sites.reports.weaponry.gnucitizen.org                              
 overlay      chrome://workspaces.weaponry.gnucitizen.org/content/xul/workspaceWindow.xul                                               chrome://reports.weaponry.gnucitizen.org/content/ovl/workspaceWindow.xul
 overlay      chrome://workspaces.weaponry.gnucitizen.org/content/xul/workspacePerspective.xul                                          chrome://reports.weaponry.gnucitizen.org/content/ovl/workspacePerspective.xul
 overlay      chrome://workspaces.weaponry.gnucitizen.org/content/xul/workspaceView.xul?view=issues.reports.weaponry.gnucitizen.org     chrome://reports.weaponry.gnucitizen.org/content/ovl/issuesWorkspaceView.xul
-overlay      chrome://workspaces.weaponry.gnucitizen.org/content/xul/workspaceView.xul?view=report.reports.weaponry.gnucitizen.org     chrome://reports.weaponry.gnucitizen.org/content/ovl/reportWorkspaceView.xul
 
 #
 # xpcom registration

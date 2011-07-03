@@ -28,7 +28,6 @@
 	</stringbundleset>
 	
 	<richtabpanels id="workspace-perspective-tabs-richtabpanels">
-		<richtabpanel id="weaponry-reports-workspace-perspective-report-richtabpanel" label="&weaponry-reports-workspace-perspective-report-richtabpanel-label;" src="chrome://workspaces.weaponry.gnucitizen.org/content/xul/workspaceView.xul?view=report.reports.weaponry.gnucitizen.org"/>
 		<richtabpanel id="weaponry-reports-workspace-perspective-issues-richtabpanel" label="&weaponry-reports-workspace-perspective-issues-richtabpanel-label;" src="chrome://workspaces.weaponry.gnucitizen.org/content/xul/workspaceView.xul?view=issues.reports.weaponry.gnucitizen.org"/>
 	</richtabpanels>
 	

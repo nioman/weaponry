@@ -23,34 +23,6 @@ function handleWeaponryReportsIssuesWorkspacetreeSelectEvent(event) {
 	let dataRow = $workspacetree.selectedDataRow;
 	
 	$templatebox.update(dataRow);
-	
-	let $exploitMenupopup = document.getElementById('weaponry-reports-issues-workspace-view-exploit-menupopup');
-	
-	if (dataRow.itemType != 'description') {
-		$exploitMenupopup.parentNode.setAttribute('disabled', true);
-		
-		return;
-	}
-	
-	let isExploitMenupopupDisabled = true;
-	let $nodes = document.getElementById('weaponry-reports-issues-workspace-view-exploit-menupopup').childNodes;
-	let nodesLength = $nodes.length;
-	
-	let i, $node;
-	
-	for (i = 0; i < nodesLength; i += 1) {
-		$node = $nodes[i];
-		
-		if ($node.getAttribute('reportExploitType') == dataRow.issue) {
-			$node.setAttribute('hidden', false);
-			
-			isExploitMenupopupDisabled = false;
-		} else {
-			$node.setAttribute('hidden', true);
-		}
-	}
-	
-	$exploitMenupopup.parentNode.setAttribute('disabled', isExploitMenupopupDisabled);
 }
 
 /* ------------------------------------------------------------------------ */
@@ -76,8 +48,8 @@ function computateWeaponryReportsIssueFields(fields) {
 	
 	fields['_metaCellProperties__metaPath'] = fields.levelName + '-issue';
 	
-	if (fields.description) {
-		fields.itemType = 'description';
+	if (fields.explanation) {
+		fields.itemType = 'explanation';
 	} else {
 		fields.description = fields.explanation;
 		fields.itemType = 'explanation';
@@ -94,41 +66,6 @@ function handleWeaponryReportsLoadEvent(event) {
 	let $workspacetree = document.getElementById('weaponry-reports-issues-workspace-view-issues-workspacetree');
 	
 	$workspacetree.registerFieldsComputer(computateWeaponryReportsIssueFields);
-	
-	let $exploitMenupopup = document.getElementById('weaponry-reports-issues-workspace-view-exploit-menupopup');
-	let components = weaponryCommon.enumerateComponents('weaponry-report-exploit-launchers');
-	let componentsLength = components.length;
-	
-	let i, component, launcher, $menuitem;
-	
-	for (i = 0; i < componentsLength; i += 1) {
-		component = components[i];
-		launcher = null;
-		
-		if (component.type == 'service') {
-			launcher = weaponryCommon.getService(component.contractID, 'IWeaponryReportExploitLauncher');
-		} else {
-			launcher = weaponryCommon.createInstance(component.contractID, 'IWeaponryReportExploitLauncher');
-		}
-		
-		$menuitem = document.createElement('menuitem');
-		
-		$menuitem.setAttribute('class', 'weaponry-reports-issues-workspace-view-exploit-menupopup-menuitem');
-		$menuitem.setAttribute('label', launcher.reportExploitName);
-		$menuitem.setAttribute('reportExploitType', launcher.reportExploitType);
-		$menuitem.setAttribute('reportExploitComponentType', component.type);
-		$menuitem.setAttribute('reportExploitComponentContractID', component.contractID);
-		$menuitem.setAttribute('hidden', true);
-		
-		$menuitem.addEventListener('click', function (event) {
-			let $workspacetree = document.getElementById('weaponry-reports-issues-workspace-view-issues-workspacetree');
-			let dataRow = $workspacetree.selectedDataRow;
-			
-			launcher.launchReportExploit(window.workspace, JSON.stringify(dataRow));
-		}, false);
-		
-		$exploitMenupopup.appendChild($menuitem);
-	}
 }
 
 window.addEventListener('load', handleWeaponryReportsLoadEvent, false);

@@ -50,9 +50,8 @@
 
 /* ------------------------------------------------------------------------ */
 
-#weaponry-reports-issues-workspace-view-details-richtabpanel .richtabpanel-content {
+#weaponry-reports-issues-workspace-view-details-vbox {
 	padding: 20px;
-	overflow: auto;
 }
 
 /* ------------------------------------------------------------------------ */
@@ -111,11 +110,9 @@
 
 /* ------------------------------------------------------------------------ */
 
-/* TODO: ensure that all similar styling situations have the same semantics */
 [lookandfeel="WINNT"] #weaponry-reports-issues-workspace-view-issues-workspacetree {
 	margin-bottom: 5px;
 }
-/* */
 
 /*  GNUCITIZEN (Information Security Think Tank)
  **********************************************/

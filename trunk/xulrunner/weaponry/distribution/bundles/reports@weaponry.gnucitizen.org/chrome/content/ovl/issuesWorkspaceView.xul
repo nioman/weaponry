@@ -34,34 +34,24 @@
 	</popupset>
 	
 	<vbox id="workspace-view-content-vbox">
-		<vbox id="weaponry-reports-issues-workspace-view-content-vbox" flex="1">
-			<workspacetree id="weaponry-reports-issues-workspace-view-issues-workspacetree" table="weaponryReportIssuesExtendedView" observabletable="weaponryReportIssues" groupby="title !summary" groupinclude="levelName level explanation" flex="1" persist="height" onselect="return handleWeaponryReportsIssuesWorkspacetreeSelectEvent(event);">
+		<hbox id="weaponry-reports-issues-workspace-view-content-hbox" flex="1">
+			<workspacetree id="weaponry-reports-issues-workspace-view-issues-workspacetree" table="weaponryReportIssuesExtendedView" observabletable="weaponryReportIssues" groupby="title !exact" groupinclude="levelName level description" flex="1" persist="width" onselect="return handleWeaponryReportsIssuesWorkspacetreeSelectEvent(event);">
 				<workspacetreecol id="weaponry-reports-issues-workspace-view-issues-name-workspacetreecol" label="&weaponry-reports-issues-workspace-view-issues-name-workspacetreecol-label;" primary="true" field="_metaPath"/>
 			</workspacetree>
 			
-			<splitter id="weaponry-reports-issues-workspace-view-middle-splitter" resize="before" collapse="after" state="open" persist="state">
+			<splitter id="weaponry-reports-issues-workspace-view-middle-splitter" resizeafter="closest" collapse="after" state="open" persist="state">
 				<grippy id="weaponry-reports-issues-workspace-view-middle-grippy"/>
 			</splitter>
 			
-			<richtabbox id="weaponry-reports-issues-workspace-view-details-richtabbox" flex="1" persist="height">
-				<toolbar id="weaponry-reports-issues-workspace-view-details-toolbar">
-					<toolbarbutton id="weaponry-reports-issues-workspace-view-exploit-toolbarbutton" label="&weaponry-reports-issues-workspace-view-exploit-toolbarbutton-label;" type="menu" disabled="true">
-						<menupopup id="weaponry-reports-issues-workspace-view-exploit-menupopup"/>
-					</toolbarbutton>
-				</toolbar>
-				
-				<richtabpanels id="weaponry-reports-issues-workspace-view-details-richtabpanels">
-					<richtabpanel id="weaponry-reports-issues-workspace-view-details-richtabpanel" label="&weaponry-reports-issues-workspace-view-details-richtabpanel-label;">
-						<templatebox id="weaponry-reports-issues-workspace-view-details-templatebox">
-							<vbox id="weaponry-reports-issues-workspace-view-details-item" class="weaponry-reports-issues-workspace-view-details-item" context="weaponry-reports-issues-workspace-view-details-item-menupopup">
-								<htmlbox id="weaponry-reports-issues-workspace-view-details-title-htmlbox" value="&lt;h3&gt;?title&lt;/h3&gt;"/>
-								<htmlbox id="weaponry-reports-issues-workspace-view-details-description-htmlbox" value="?description"/>
-							</vbox>
-						</templatebox>
-					</richtabpanel>
-				</richtabpanels>
-			</richtabbox>
-		</vbox>
+			<vbox id="weaponry-reports-issues-workspace-view-details-vbox" flex="4" persist="width">
+				<templatebox id="weaponry-reports-issues-workspace-view-details-templatebox" flex="1">
+					<vbox id="weaponry-reports-issues-workspace-view-details-item" class="weaponry-reports-issues-workspace-view-details-item" context="weaponry-reports-issues-workspace-view-details-item-menupopup">
+						<htmlbox id="weaponry-reports-issues-workspace-view-details-title-htmlbox" value="&lt;h3&gt;?title&lt;/h3&gt;"/>
+						<htmlbox id="weaponry-reports-issues-workspace-view-details-description-htmlbox" value="?description"/>
+					</vbox>
+				</templatebox>
+			</vbox>
+		</hbox>
 	</vbox>
 	
 </overlay>
