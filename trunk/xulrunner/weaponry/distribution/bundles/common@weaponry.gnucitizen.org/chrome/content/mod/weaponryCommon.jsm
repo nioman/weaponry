@@ -1304,6 +1304,10 @@ let weaponryCommon = new function () {
 	
 	/* -------------------------------------------------------------------- */
 	
+	this.closeHttpChannel = function (httpChannel) {
+		httpChannel.cancel(CR.NS_OK);
+	};
+	
 	this.abortHttpChannel = function (httpChannel) {
 		httpChannel.cancel(CR.NS_BINDING_ABORTED);
 	};
