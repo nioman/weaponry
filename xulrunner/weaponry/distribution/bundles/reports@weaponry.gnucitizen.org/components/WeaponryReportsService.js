@@ -93,9 +93,9 @@ WeaponryReportsService.prototype = {
 	prepareWorkspaceConnection: function (subject, topic, data) {
 		let workspace = subject.QueryInterface(CI.IWeaponryWorkspace);
 		
-		workspace.executeStatement('CREATE TABLE IF NOT EXISTS weaponryReportIssues (timestamp DATE DEFAULT CURRENT_TIMESTAMP, issue TEXT, signature TEXT, level INTEGER, title TEXT, summary TEXT, explanation TEXT, description TEXT, metaData TEXT DEFAULT "{}" NOT NULL)', null);
-		workspace.executeStatement('CREATE TEMP VIEW weaponryReportIssuesExtendedView AS SELECT (substr("00" || level, -2, 2) || "-" || issue || "-" || title || "-" || timestamp) AS _sorter, _ROWID_ as _ROWID_, * FROM weaponryReportIssues ORDER BY _sorter DESC', null);
-		workspace.executeStatement('CREATE TEMP TRIGGER weaponryReportIssuesUniqueTrigger BEFORE INSERT ON weaponryReportIssues FOR EACH ROW BEGIN DELETE FROM weaponryReportIssues WHERE signature = NEW.signature OR (issue = NEW.issue AND level = NEW.level AND title = NEW.title AND summary = NEW.summary AND explanation = NEW.explanation AND description = NEW.description); END', null);
+		workspace.executeStatement('CREATE TABLE IF NOT EXISTS weaponryReportIssues (timestamp DATE DEFAULT CURRENT_TIMESTAMP, type TEXT, signature TEXT, level INTEGER, title TEXT, summary TEXT, exact TEXT, description TEXT, explanation TEXT, metaData TEXT DEFAULT "{}" NOT NULL)', null);
+		workspace.executeStatement('CREATE TEMP VIEW weaponryReportIssuesExtendedView AS SELECT (substr("00" || level, -2, 2) || "-" || type || "-" || title || "-" || timestamp) AS _sorter, _ROWID_ as _ROWID_, * FROM weaponryReportIssues ORDER BY _sorter DESC', null);
+		workspace.executeStatement('CREATE TEMP TRIGGER weaponryReportIssuesUniqueTrigger BEFORE INSERT ON weaponryReportIssues FOR EACH ROW BEGIN DELETE FROM weaponryReportIssues WHERE signature = NEW.signature OR (type = NEW.type AND level = NEW.level AND title = NEW.title AND summary = NEW.summary AND exact = NEW.exact AND description = NEW.description AND explanation = NEW.explanation); END', null);
 	},
 	
 	/* -------------------------------------------------------------------- */
@@ -153,25 +153,26 @@ WeaponryReportsService.prototype = {
 	/* -------------------------------------------------------------------- */
 	
 	generateIssueRecordFast: function (item) {
-		let issue = item.issue;
+		let type = item.type;
 		let signature = item.signature;
 		let level = 0;
 		
 		try {
-			level = parseInt(this.generateIssueString(issue + '-level'), 10);
+			level = parseInt(this.generateIssueString(type + '-level'), 10);
 		} catch (e) {
 			throw new Error('cannot find issue: ' + issue);
 		}
 		
-		let title = this.pupulateTemplate(this.generateIssueString(issue + '-title'), item);
-		let summary = this.pupulateTemplate(this.generateIssueString(issue + '-summary'), item);
+		let title = this.pupulateTemplate(this.generateIssueString(type + '-title'), item);
+		let summary = this.pupulateTemplate(this.generateIssueString(type + '-summary'), item);
+		let exact = this.pupulateTemplate(this.generateIssueString(type + '-exact'), item);
 		let safeItem = this.populateSafeFields(item);
-		let explanation = this.pupulateTemplate(this.generateIssueString(issue + '-explanation'), safeItem);
-		let description = this.pupulateTemplate(this.generateIssueString(issue + '-description'), safeItem);
+		let description = this.pupulateTemplate(this.generateIssueString(type + '-description'), safeItem);
+		let explanation = this.pupulateTemplate(this.generateIssueString(type + '-explanation'), safeItem);
 		
 		summary = summary.trim().replace(/\n+|\r+/g, ' ');
 		
-		return {issue:issue, signature:signature, level:level, title:title, summary:summary, explanation:explanation, description:description, metaData:JSON.stringify(item)};
+		return {type:type, signature:signature, level:level, title:title, summary:summary, exact:exact, explanation:explanation, description:description, metaData:JSON.stringify(item)};
 	},
 	
 	generateIssueRecord: function (item) {
@@ -194,7 +195,7 @@ WeaponryReportsService.prototype = {
 	
 	pupulateTemplate: function (template, fields) {
 		for (let field in fields) {
-			template = template.replace(new RegExp('\\{' + field.replace(new RegExp('[.*+?|()\\[\\]{}\\\\]', 'g'), '\\$&') + '\\}', 'g'), fields[field] ? fields[field] : '');
+			template = template.replace(new RegExp('#' + field.replace(new RegExp('[.*+?|()\\[\\]{}\\\\]', 'g'), '\\$&') + '#', 'g'), fields[field] ? fields[field] : '');
 		}
 		
 		return template;

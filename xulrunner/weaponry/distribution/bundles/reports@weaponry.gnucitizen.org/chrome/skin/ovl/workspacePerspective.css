@@ -17,25 +17,6 @@
  *  Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
  */
 
-toolbarbutton.richtabpanel-toolbarbutton[richtabpanelid="weaponry-reports-workspace-perspective-report-richtabpanel"] {
-	min-width: 32px;
-	max-width: 32px;
-	list-style-image: url("images/report.png");
-}
-
-/* TODO: ensure that all richtabpanel tabs have the same semantics added */
-.richtabpanel-toolbarbutton[richtabpanelid="weaponry-reports-workspace-perspective-report-richtabpanel"] > image {
-	margin: 0px;
-	padding: 0px;
-}
-/* */
-
-.richtabpanel-toolbarbutton[richtabpanelid="weaponry-reports-workspace-perspective-report-richtabpanel"] > label {
-	display: none;
-}
-
-/* ------------------------------------------------------------------------ */
-
 toolbarbutton.richtabpanel-toolbarbutton[richtabpanelid="weaponry-reports-workspace-perspective-issues-richtabpanel"] {
 	min-width: 32px;
 	max-width: 32px;
