@@ -110,7 +110,18 @@
 	list-style-image: url("images/buttons.png");
 }
 
-.weaponry-notes-workspace-view-open-button label  ,
+.weaponry-notes-workspace-view-open-button  .button-icon ,
+.weaponry-notes-workspace-view-close-button .button-icon {
+	display: -moz-box;
+}
+
+.weaponry-notes-workspace-view-open-button  hbox ,
+.weaponry-notes-workspace-view-close-button hbox {
+	margin: 0px;
+	padding: 0px;
+}
+
+.weaponry-notes-workspace-view-open-button  label ,
 .weaponry-notes-workspace-view-close-button label {
 	margin: 0px;
 	padding: 0px;
