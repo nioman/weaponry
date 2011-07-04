@@ -49,10 +49,7 @@ function computateWeaponryReportsIssueFields(fields) {
 	fields['_metaCellProperties__metaPath'] = fields.levelName + '-issue';
 	
 	if (fields.explanation) {
-		fields.itemType = 'explanation';
-	} else {
 		fields.description = fields.explanation;
-		fields.itemType = 'explanation';
 	}
 }
 

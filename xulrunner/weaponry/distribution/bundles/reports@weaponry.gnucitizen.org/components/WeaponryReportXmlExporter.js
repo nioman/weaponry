@@ -90,15 +90,18 @@ WeaponryReportXmlExporter.prototype = {
 		reportsService.issuesTable.wrappedJSObject.enumerateTableItemsAsynchronouslyFast(workspace, null,
 			function (result) {
 				let item = '\t<item level="' + result.level + '" title="' + result.title + '">\n';
-				let fields = ['issue', 'level', 'title', 'summary', 'explanation', 'description'];
+				let fields = ['type', 'level', 'title', 'summary', 'description', 'explanation'];
 				let fieldsLength = fields.length;
 				
-				let i, field;
+				let i;
+				let field;
 				
 				for (i = 0; i < fieldsLength; i += 1) {
 					field = fields[i];
 					
-					item += '\t\t<' + field + '>' + self.escapeString(result[field].toString()) + '</' + field + '>\n';
+					if (field) {
+						item += '\t\t<' + field + '>' + self.escapeString(result[field].toString()) + '</' + field + '>\n';
+					}
 				}
 				
 				let recurseExportObject = function (object, level) {
