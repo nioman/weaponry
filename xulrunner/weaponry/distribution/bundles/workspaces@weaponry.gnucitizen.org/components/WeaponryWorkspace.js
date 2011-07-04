@@ -89,6 +89,7 @@ WeaponryWorkspace.prototype = {
 		this.utilityStatement = this.connection.createStatement('SELECT 1');
 		
 		this.observerService.notifyObservers(this, 'weaponry-workspace-connection-prepared', null);
+		this.observerService.notifyObservers(this, 'weaponry-workspace-connection-preparation-completed', null);
 	},
 	
 	/* -------------------------------------------------------------------- */
@@ -665,7 +666,7 @@ WeaponryWorkspace.prototype = {
 		return {
 			rowId: parameters[whereStatement.rowIdName],
 			query: query,
-			parameters: isFast ? parameters : JSON.stringify(parameters),
+			parameters: isFast ? parameters : JSON.stringify(parameters)
 		};
 	},
 	
@@ -735,7 +736,7 @@ WeaponryWorkspace.prototype = {
 		
 		return {
 			query: query,
-			parameters: isFast ? parameters : JSON.stringify(parameters),
+			parameters: isFast ? parameters : JSON.stringify(parameters)
 		}
 	},
 	
@@ -817,7 +818,7 @@ WeaponryWorkspace.prototype = {
 		return {
 			rowId: parameters[whereStatement.rowIdName],
 			query: query,
-			parameters: isFast ? parameters : JSON.stringify(parameters),
+			parameters: isFast ? parameters : JSON.stringify(parameters)
 		};
 	},
 	
@@ -881,7 +882,7 @@ WeaponryWorkspace.prototype = {
 		return {
 			rowId: parameters[whereStatement.rowIdName],
 			query: query,
-			parameters: isFast ? parameters : JSON.stringify(parameters),
+			parameters: isFast ? parameters : JSON.stringify(parameters)
 		};
 	},
 	
@@ -943,7 +944,7 @@ WeaponryWorkspace.prototype = {
 		
 		return {
 			query: query,
-			parameters: isFast ? parameters : JSON.stringify(parameters),
+			parameters: isFast ? parameters : JSON.stringify(parameters)
 		};
 	},
 	
@@ -977,6 +978,73 @@ WeaponryWorkspace.prototype = {
 				completionHandler.handle(-1, workspace);
 			}
 		});
+	},
+	
+	/* -------------------------------------------------------------------- */
+	
+	prepareEnsureTableColumnStatement: function (table, parameters, isFast) {
+		let parameters = this.prepareTableParameters(parameters, isFast);
+		let query = 'ALTER TABLE \'' + table.replace(/'/g, '\\\'') + '\' ADD COLUMN ';
+		let newParameters = [];
+		
+		let key;
+		
+		for (key in parameters) {
+			newParameters.push(key + ' ' + parameters[key]);
+		}
+		
+		return {
+			query: query,
+			parameters: newParameters
+		};
+	},
+	
+	ensureTableColumnsFast: function (table, parameters) {
+		let statement = this.prepareEnsureTableColumnStatement(table, parameters, true);
+		let parameters = statement.parameters;
+		let parametersLength = parameters.length;
+		
+		let i;
+		
+		for (i = 0; i < parametersLength; i += 1) {
+			this.executeStatementFast(statement.query + parameters[i], null);
+		}
+	},
+	
+	ensureTableColumns: function (table, parameters) {
+		let statement = this.prepareEnsureTableColumnStatement(table, parameters, false);
+		let parameters = statement.parameters;
+		let parametersLength = parameters.length;
+		
+		let i;
+		
+		for (i = 0; i < parametersLength; i += 1) {
+			this.executeStatement(statement.query + parameters[i], null);
+		}
+	},
+	
+	ensureTableColumnsAsynchronouslyFast: function (table, parameters, completionHandler) {
+		let statement = this.prepareEnsureTableColumnStatement(table, parameters, true);
+		let parameters = statement.parameters;
+		let parametersLength = parameters.length;
+		
+		let i;
+		
+		for (i = 0; i < parametersLength; i += 1) {
+			this.executeStatementAsynchronouslyFast(statement.query + parameters[i], null, null, completionHandler);
+		}
+	},
+	
+	ensureTableColumnsAsynchronously: function (table, parameters, completionHandler) {
+		let statement = this.prepareEnsureTableColumnStatement(table, parameters, false);
+		let parameters = statement.parameters;
+		let parametersLength = parameters.length;
+		
+		let i;
+		
+		for (i = 0; i < parametersLength; i += 1) {
+			this.executeStatementAsynchronously(statement.query + parameters[i], null, null, completionHandler);
+		}
 	},
 	
 	/* -------------------------------------------------------------------- */
@@ -1159,6 +1227,22 @@ WeaponryWorkspace.prototype = {
 			
 			enumerateTableItemsAsynchronously: function (table, parameters, resultHandler, completionHandler) {
 				return this.workspace.enumerateTableItemsAsynchronously(table, parameters, resultHandler, completionHandler);
+			},
+			
+			ensureTableColumnsFast: function (table, parameters) {
+				return this.workspace.wrappedJSObject.ensureTableColumnsFast(table, parameters);
+			},
+			
+			ensureTableColumns: function (table, parameters) {
+				return this.workspace.ensureTableColumnsFast(table, parameters);
+			},
+			
+			ensureTableColumnsAsynchronouslyFast: function (table, parameters, completionHandler) {
+				return this.workspace.wrappedJSObject.ensureTableColumnsAsynchronouslyFast(table, parameters, completionHandler);
+			},
+			
+			ensureTableColumnsAsynchronously: function (table, parameters, completionHandler) {
+				return this.workspace.ensureTableColumnsAsynchronouslyFast(table, parameters, completionHandler);
 			}
 		};
 		
