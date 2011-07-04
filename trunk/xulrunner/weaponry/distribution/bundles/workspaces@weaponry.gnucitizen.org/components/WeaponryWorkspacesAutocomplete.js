@@ -72,6 +72,10 @@ WeaponryWorkspacesAutocomplete.prototype = {
 				return matches[index];
 			},
 			
+			getLabelAt: function (index) {
+				return matches[index];
+			},
+			
 			getStyleAt: function(index) {
 				return 'default-match';
 			},
