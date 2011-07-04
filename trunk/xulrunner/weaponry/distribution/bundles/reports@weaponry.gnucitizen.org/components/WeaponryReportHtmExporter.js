@@ -86,8 +86,8 @@ WeaponryReportHtmExporter.prototype = {
 				let item = '\t<div class="issue">\n';
 				
 				item += '<h3>' + result.title + '</h3>\n';
-				item += '\t\t<div class="explanation">' + result.explanation + '</div>\n';
 				item += '\t\t<div class="description">' + result.description + '</div>\n';
+				item += '\t\t<div class="explanation">' + result.explanation + '</div>\n';
 				
 				item += '\t</div>\n'
 				

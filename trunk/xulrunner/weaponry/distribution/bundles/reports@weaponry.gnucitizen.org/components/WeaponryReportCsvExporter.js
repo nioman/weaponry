@@ -76,14 +76,14 @@ WeaponryReportCsvExporter.prototype = {
 		let converterOutputStream = CC['@mozilla.org/intl/converter-output-stream;1'].createInstance(CI.nsIConverterOutputStream);
 		
 		converterOutputStream.init(outputStream, 'UTF-8', 0, 0);
-		converterOutputStream.writeString('level,title,summary\n');
+		converterOutputStream.writeString('level,title,summary,exact\n');
 		
 		let self = this;
 		let reportsService = CC['@reports.weaponry.gnucitizen.org/service;1'].getService(CI.IWeaponryReportsService);
 		
 		reportsService.issuesTable.wrappedJSObject.enumerateTableItemsAsynchronouslyFast(workspace, null,
 			function (result) {
-				converterOutputStream.writeString([result.level, result.title, result.summary].join(',') + '\n');
+				converterOutputStream.writeString([result.level, result.title, result.summary, result.exact.replace(/\r/g, '\\r').replace('\n', '\\n')].join(',') + '\n');
 			},
 			
 			function () {

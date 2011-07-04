@@ -172,7 +172,7 @@ WeaponryReportsService.prototype = {
 		
 		summary = summary.trim().replace(/\n+|\r+/g, ' ');
 		
-		return {type:type, signature:signature, level:level, title:title, summary:summary, exact:exact, explanation:explanation, description:description, metaData:JSON.stringify(item)};
+		return {type:type, signature:signature, level:level, title:title, summary:summary, exact:exact, description:description, explanation:explanation, metaData:JSON.stringify(item)};
 	},
 	
 	generateIssueRecord: function (item) {

@@ -40,5 +40,9 @@ contract       @reports.weaponry.gnucitizen.org/weaponry-report-xml-expoter;1   
 component      {ce303510-083c-11df-8a39-0800200c9a66}                              components/WeaponryReportsService.js
 contract       @reports.weaponry.gnucitizen.org/service;1                          {ce303510-083c-11df-8a39-0800200c9a66}
 
+category       weaponry-report-exporters WeaponryReportCsvExporter                 @reports.weaponry.gnucitizen.org/weaponry-report-csv-expoter;1
+category       weaponry-report-exporters WeaponryReportHtmExporter                 @reports.weaponry.gnucitizen.org/weaponry-report-htm-expoter;1
+category       weaponry-report-exporters WeaponryReportJsonExporter                @reports.weaponry.gnucitizen.org/weaponry-report-json-expoter;1
+category       weaponry-report-exporters WeaponryReportXmlExporter                 @reports.weaponry.gnucitizen.org/weaponry-report-xml-expoter;1
 category       profile-after-change WeaponryReportsService                         @reports.weaponry.gnucitizen.org/service;1
 category       profile-before-change WeaponryReportsService                        @reports.weaponry.gnucitizen.org/service;1
