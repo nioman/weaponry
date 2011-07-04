@@ -22,39 +22,39 @@ Components.utils.import('resource://gre/modules/XPCOMUtils.jsm');
 /* ------------------------------------------------------------------------ */
 
 function doInit(options) {
-	// pass
+	throw new Error('not implemented');
 }
 
 /* ------------------------------------------------------------------------ */
 
 function doSetup(options) {
-	// pass
+	throw new Error('not implemented');
 }
 
 /* ------------------------------------------------------------------------ */
 
 function doAct() {
-	// pass
+	throw new Error('not implemented');
 }
 
 /* ------------------------------------------------------------------------ */
 
 function doStart() {
-	// pass
+	throw new Error('not implemented');
 }
 
 function doStop() {
-	// pass
+	throw new Error('not implemented');
 }
 
 /* ------------------------------------------------------------------------ */
 
 function doPause() {
-	// pass
+	throw new Error('not implemented');
 }
 
 function doResume() {
-	// pass
+	throw new Error('not implemented');
 }
 
 /* ------------------------------------------------------------------------ */
