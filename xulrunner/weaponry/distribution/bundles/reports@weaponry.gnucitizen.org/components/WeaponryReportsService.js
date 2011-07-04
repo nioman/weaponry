@@ -93,7 +93,7 @@ WeaponryReportsService.prototype = {
 	prepareWorkspaceConnection: function (subject, topic, data) {
 		let workspace = subject.QueryInterface(CI.IWeaponryWorkspace);
 		
-		workspace.executeStatement('CREATE TABLE IF NOT EXISTS weaponryReportIssues (timestamp DATE DEFAULT CURRENT_TIMESTAMP, type TEXT, signature TEXT, level INTEGER, title TEXT, summary TEXT, exact TEXT, description TEXT, explanation TEXT, metaData TEXT DEFAULT "{}" NOT NULL)', null);
+		workspace.createTable('weaponryReportIssues', JSON.stringify({timestamp:'DATE DEFAULT CURRENT_TIMESTAMP', type:'TEXT', signature:'TEXT', level:'INTEGER', title:'TEXT', summary:'TEXT', exact:'TEXT', description:'TEXT', explanation:'TEXT', metaData:'TEXT DEFAULT "{}" NOT NULL'}), null);
 		workspace.executeStatement('CREATE TEMP VIEW weaponryReportIssuesExtendedView AS SELECT (substr("00" || level, -2, 2) || "-" || type || "-" || title || "-" || timestamp) AS _sorter, _ROWID_ as _ROWID_, * FROM weaponryReportIssues ORDER BY _sorter DESC', null);
 		workspace.executeStatement('CREATE TEMP TRIGGER weaponryReportIssuesUniqueTrigger BEFORE INSERT ON weaponryReportIssues FOR EACH ROW BEGIN DELETE FROM weaponryReportIssues WHERE signature = NEW.signature OR (type = NEW.type AND level = NEW.level AND title = NEW.title AND summary = NEW.summary AND exact = NEW.exact AND description = NEW.description AND explanation = NEW.explanation); END', null);
 	},

@@ -18,7 +18,6 @@ overlay      chrome://workspaces.weaponry.gnucitizen.org/content/xul/workspaceVi
 # xpcom registration
 #
 
-interfaces     components/IWeaponryReportExploitLauncher.xpt
 interfaces     components/IWeaponryReportFileExporter.xpt
 interfaces     components/IWeaponryReportFileImporter.xpt
 interfaces     components/IWeaponryReportStreamExporter.xpt
