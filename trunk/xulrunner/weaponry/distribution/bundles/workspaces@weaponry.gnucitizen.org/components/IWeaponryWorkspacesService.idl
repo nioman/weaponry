@@ -88,6 +88,18 @@ interface IWeaponryWorkspacesTableAPI : nsISupports {
 	nsISimpleEnumerator enumerateTableItems(in IWeaponryWorkspace workspace, in AString parameters);
 	
 	void enumerateTableItemsAsynchronously(in IWeaponryWorkspace workspace, in AString parameters, in IWeaponryWorkspaceTableItemResultCallbackHandler resultHandler, in IWeaponryWorkspaceTableItemCompletionCallbackHandler completionHandler);
+	
+	/* -------------------------------------------------------------------- */
+	
+	void ensureTableColumns(in IWeaponryWorkspace workspace, in AString parameters);
+	
+	void ensureTableColumnsAsynchronously(in IWeaponryWorkspace workspace, in AString parameters, [optional] in IWeaponryWorkspaceTableItemCompletionCallbackHandler completionHandler);
+	
+	/* -------------------------------------------------------------------- */
+	
+	void createTable(in IWeaponryWorkspace workspace, in AString parameters);
+	
+	void createTableAsynchronously(in IWeaponryWorkspace workspace, in AString parameters, [optional] in IWeaponryWorkspaceTableItemCompletionCallbackHandler completionHandler);
 };
 
 /* ------------------------------------------------------------------------ */

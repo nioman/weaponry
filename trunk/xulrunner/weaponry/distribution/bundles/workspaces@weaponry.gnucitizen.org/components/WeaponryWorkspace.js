@@ -1049,6 +1049,49 @@ WeaponryWorkspace.prototype = {
 	
 	/* -------------------------------------------------------------------- */
 	
+	prepareCreateTableStatement: function (table, parameters, isFast) {
+		let parameters = this.prepareTableParameters(parameters, isFast);
+		let query = 'CREATE TABLE IF NOT EXISTS \'' + table.replace(/'/g, '\\\'') + '\' ';
+		let newParameters = [];
+		
+		let key;
+		
+		for (key in parameters) {
+			newParameters.push(key + ' ' + parameters[key]);
+		}
+		
+		return {
+			query: query,
+			parameters: newParameters
+		};
+	},
+	
+	createTableFast: function (table, parameters) {
+		let statement = this.prepareCreateTableStatement(table, parameters, true);
+		
+		this.executeStatementFast(statement.query + '(' + statement.parameters.join(',') + ')', null);
+	},
+	
+	createTable: function (table, parameters) {
+		let statement = this.prepareCreateTableStatement(table, parameters, false);
+		
+		this.executeStatement(statement.query + '(' + statement.parameters.join(',') + ')', null);
+	},
+	
+	createTableAsynchronouslyFast: function (table, parameters, completionHandler) {
+		let statement = this.prepareCreateTableStatement(table, parameters, true);
+		
+		this.executeStatementAsynchronouslyFast(statement.query + '(' + statement.parameters.join(',') + ')', null, null, completionHandler);
+	},
+	
+	createTableAsynchronously: function (table, parameters, completionHandler) {
+		let statement = this.prepareCreateTableStatement(table, parameters, false);
+		
+		this.executeStatementAsynchronously(statement.query + '(' + statement.parameters.join(',') + ')', null, null, completionHandler);
+	},
+	
+	/* -------------------------------------------------------------------- */
+	
 	getTableAPI: function (notificationPrefix) {
 		let tableAPI = {
 			QueryInterface: XPCOMUtils.generateQI([CI.IWeaponryWorkspaceTableAPI]),
@@ -1243,6 +1286,22 @@ WeaponryWorkspace.prototype = {
 			
 			ensureTableColumnsAsynchronously: function (table, parameters, completionHandler) {
 				return this.workspace.ensureTableColumnsAsynchronouslyFast(table, parameters, completionHandler);
+			},
+			
+			createTableFast: function (table, parameters) {
+				return this.workspace.wrappedJSObject.createTableFast(table, parameters);
+			},
+			
+			createTable: function (table, parameters) {
+				return this.workspace.createTable(table, parameters);
+			},
+			
+			createTableAsynchronouslyFast: function (table, parameters, completionHandler) {
+				return this.workspace.wrappedJSObject.createTableAsynchronouslyFast(table, parameters, completionHandler);
+			},
+			
+			createTableAsynchronously: function (table, parameters, completionHandler) {
+				return this.workspace.createTableAsynchronously(table, parameters, completionHandler);
 			}
 		};
 		
