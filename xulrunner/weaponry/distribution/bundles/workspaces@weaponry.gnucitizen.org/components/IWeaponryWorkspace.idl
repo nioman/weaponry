@@ -168,6 +168,12 @@ interface IWeaponryWorkspaceTableAPI : nsISupports {
 	void ensureTableColumns(in AString table, in AString parameters);
 	
 	void ensureTableColumnsAsynchronously(in AString table, in AString parameters, [optional] in IWeaponryWorkspaceTableItemCompletionCallbackHandler completionHandler);
+	
+	/* -------------------------------------------------------------------- */
+	
+	void createTable(in AString table, in AString parameters);
+	
+	void createTableAsynchronously(in AString table, in AString parameters, [optional] in IWeaponryWorkspaceTableItemCompletionCallbackHandler completionHandler);
 };
 
 /* ------------------------------------------------------------------------ */
@@ -273,6 +279,12 @@ interface IWeaponryWorkspacePrototype : nsISupports {
 	void ensureTableColumns(in AString table, in AString parameters);
 	
 	void ensureTableColumnsAsynchronously(in AString table, in AString parameters, [optional] in IWeaponryWorkspaceTableItemCompletionCallbackHandler completionHandler);
+	
+	/* -------------------------------------------------------------------- */
+	
+	void createTable(in AString table, in AString parameters);
+	
+	void createTableAsynchronously(in AString table, in AString parameters, [optional] in IWeaponryWorkspaceTableItemCompletionCallbackHandler completionHandler);
 };
 
 /* ------------------------------------------------------------------------ */
