@@ -17,7 +17,7 @@ overlay      chrome://tasks.weaponry.gnucitizen.org/content/xul/tasksPage.xul?vi
 # chrome suggestions
 #
 
-#overlay     chrome://common.weaponry.gnucitizen.org/content/ovl/toolsMenu.xul     chrome://tasks.weaponry.gnucitizen.org/content/ovl/toolsMenu.xul
+# overlay     chrome://common.weaponry.gnucitizen.org/content/ovl/toolsMenu.xul     chrome://tasks.weaponry.gnucitizen.org/content/ovl/toolsMenu.xul
 
 #
 # xpcom registration
