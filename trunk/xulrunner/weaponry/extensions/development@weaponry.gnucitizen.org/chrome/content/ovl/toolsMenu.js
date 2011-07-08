@@ -17,6 +17,10 @@
  *  Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
  */
 
+function handleMemoryCommandEvent(event) {
+	weaponryCommon.openWindow(null, 'about:memory?verbose', '', 'all,chrome,resizable,centerscreen,width=800,height=600');
+}
+
 function handleColorsCommandEvent(event) {
 	weaponryCommon.openWindow(null, 'chrome://development.weaponry.gnucitizen.org/content/htm/colors.htm', '', 'all,chrome,resizable,centerscreen,width=400,height=600');
 }
