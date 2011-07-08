@@ -292,7 +292,7 @@
 						},
 						
 						isEditable: function (row, column) {
-							// pass
+							return false;
 						},
 						
 						isSelectable: function (row, column) {
@@ -304,11 +304,11 @@
 						},
 						
 						isContainerOpen: function (row) {
-							// pass
+							return false;
 						},
 						
 						isContainerEmpty: function (row) {
-							// pass
+							return true;
 						},
 						
 						isSeparator: function (row) {
@@ -322,15 +322,15 @@
 						},
 						
 						hasNextSibling: function (row, after) {
-							// pass
+							return row < this.getDataLen();
 						},
 						
 						getParentIndex: function (row) {
-							// pass
+							return -1;
 						},
 						
 						canDrop: function (row, orientation, transfer) {
-							// pass
+							return false;
 						},
 						
 						drop: function (row, orientation, transfer) {
