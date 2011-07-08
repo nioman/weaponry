@@ -87,7 +87,13 @@
 					let $nodes = $content.getElementsByAttribute('remember', '*');
 					let nodesLength = $nodes.length;
 					
-					let i, $node, value, attributes, attributesLength, j, attribute;
+					let i;
+					let $node;
+					let value;
+					let attributes;
+					let attributesLength;
+					let j;
+					let attribute;
 					
 					for (i = 0; i < nodesLength; i += 1) {
 						$node = $nodes[i];
@@ -110,7 +116,8 @@
 					$nodes = this.getElementsByTagName('*');
 					nodesLength = $nodes.length;
 					
-					let $workNodes, $workNode;
+					let $workNodes;
+					let $workNode;
 					
 					for (i = 0; i < nodesLength; i += 1) {
 						$node = $nodes[i];
@@ -183,7 +190,8 @@
 					let $nodes = this.childNodes;
 					let length = $nodes.length;
 					
-					let i, $node;
+					let i;
+					let $node;
 					
 					for (i = 0; i < length; i += 1) {
 						$node = $nodes[i];

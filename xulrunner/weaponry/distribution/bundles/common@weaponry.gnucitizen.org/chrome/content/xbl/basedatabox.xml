@@ -43,7 +43,10 @@
 						obtainDataPos: function (data) {
 							let dataLength = this.obtainDataLen();
 							
-							let i, element, wasSuccessful, field;
+							let i;
+							let element;
+							let wasSuccessful;
+							let field;
 							
 							for (i = 0; i < dataLength; i += 1) {
 								element = this.obtainDataRow(i);

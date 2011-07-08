@@ -35,11 +35,13 @@
 			
 			<constructor>
 				<action><![CDATA[
+					let self = this;
+					
 					this.dataView.datatreeOldInsertDataRow = this.dataView.insertDataRow;
 					this.dataView.datatreeOldAppendDataRow = this.dataView.appendDataRow;
 					
 					this.dataView.generateMetaID = function () {
-						return 'id-' + (new Date()).getTime() + Math.random().toString().substring(2);
+						return self._generateId();
 					};
 					
 					this.dataView.prepareDataRow = function (data) {
@@ -64,8 +66,6 @@
 						return this.datatreeOldAppendDataRow.apply(this, arguments);
 					};
 					
-					let self = this;
-					
 					this.dataTreeView.displayData = {};
 					this.dataTreeView.visibleDataRows = [];
 					this.dataTreeView.visibleDataPosMap = {};
@@ -87,7 +87,8 @@
 						let dataLen = self.dataView.obtainDataLen();
 						let dataPossitions = {};
 						
-						let i, dataRow;
+						let i;
+						let dataRow;
 						
 						for (i = 0; i < dataLen; i += 1) {
 							dataRow = self.dataView.obtainDataRow(i);
@@ -114,7 +115,7 @@
 						let dataTreeView = this;
 						let orderedDataIDs = [];
 						
-						let orderDataIDs = function (_metaID) {
+						(function (_metaID) {
 							if (dataTreeView.childDataMap[_metaID]) {
 								let _metaIDs = dataTreeView.childDataMap[_metaID];
 								let _metaIDsLength = _metaIDs.length;
@@ -126,12 +127,10 @@
 									
 									orderedDataIDs.push(_metaID);
 									
-									orderDataIDs(_metaID);
+									arguments.callee(_metaID);
 								}
 							}
-						};
-						
-						orderDataIDs('_metaRoot');
+						})('_metaRoot');
 						
 						let orderedDataIDsLength = orderedDataIDs.length;
 						
