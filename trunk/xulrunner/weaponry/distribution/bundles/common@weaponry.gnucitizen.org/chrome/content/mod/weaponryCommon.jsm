@@ -179,7 +179,8 @@ let weaponryCommon = new function () {
 	this.mozstorageService = this.getService('@mozilla.org/storage/service;1', 'mozIStorageService');
 	this.atomService = this.getService('@mozilla.org/atom-service;1', 'nsIAtomService');
 	this.cookieService = this.getService('@mozilla.org/cookieService;1', 'nsICookieService');
-	//this.faviconService = this.getService('@mozilla.org/browser/favicon-service;1', 'nsIFaviconService'); // TODO: uncomment this
+	this.navHistoryService = this.getService('@mozilla.org/browser/nav-history-service;1', 'nsINavHistoryService');
+	this.faviconService = this.getService('@mozilla.org/browser/favicon-service;1', 'nsIFaviconService');
 	
 	/* -------------------------------------------------------------------- */
 	
@@ -1764,9 +1765,23 @@ let weaponryCommon = new function () {
 	
 	/* -------------------------------------------------------------------- */
 	
+	this.recordHistroyForUrl = function (url) {
+		if (!(url instanceof CI.nsIURI)) {
+			url = this.ioService.newURI(url, null, null);
+		}
+		
+		this.navHistoryService.addURI(url, false, true, null);
+	};
+	
+	/* -------------------------------------------------------------------- */
+	
 	this.recordFaviconForUrl = function (url) {
 		if (!this.faviconService) {
 			this.faviconService = this.getService('@mozilla.org/browser/favicon-service;1', 'nsIFaviconService');
+		}
+		
+		if (!(url instanceof CI.nsIURI)) {
+			url = this.ioService.newURI(url, null, null);
 		}
 		
 		this.faviconService.setAndLoadFaviconForPage(url, this.ioService.newURI(url.prePath + '/favicon.ico', null, null), false);
