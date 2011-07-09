@@ -62,7 +62,7 @@
 						this.$realToolbarbutton.setAttribute('type', 'radio');
 						this.$realToolbarbutton.setAttribute('group', 'tabs');
 						
-						this._bindAttributes(this, this.$realToolbarbutton, ['label', 'closable', 'richtabpanelid=id']);
+						this._bindAttributes(this, this.$realToolbarbutton, ['label', 'closable', 'richtabpanelid=id', 'richtabpanelclass=class']);
 						
 						let self = this;
 						
@@ -151,7 +151,7 @@
 						this.$realMenuitem.setAttribute('type', 'checkbox');
 						this.$realMenuitem.setAttribute('autocheck', 'false')
 						
-						this._bindAttributes(this, this.$realMenuitem, ['label', 'richtabpanelid=id']);
+						this._bindAttributes(this, this.$realMenuitem, ['label', 'richtabpanelid=id', 'richtabpanelclass=class']);
 						
 						let self = this;
 						

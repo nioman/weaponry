@@ -60,7 +60,7 @@
 						
 						this.$realRichlistitem.setAttribute('class', 'richsidepanel-richlistitem');
 						
-						this._bindAttributes(this, this.$realRichlistitem, ['richtabpanelid=id']);
+						this._bindAttributes(this, this.$realRichlistitem, ['richsidepanelid=id', 'richsidepanelclass=class']);
 						
 						let $hbox = document.createElement('hbox');
 						
