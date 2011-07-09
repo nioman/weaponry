@@ -27,6 +27,10 @@
 
 /* ------------------------------------------------------------------------ */
 
+.browser-view-navigation-button {
+	margin: 0px 2px 0px 0px;
+}
+
 .browser-view-navigation-button > * {
 	border: 0px;
 	margin: 0px;
@@ -92,7 +96,7 @@
 }
 
 [lookandfeel="Darwin"] #browser-view-navigation-toolbar {
-	padding: 4px 2px 4px 0px;
+	padding: 4px 2px 4px 2px;
 	-moz-appearance: -moz-mac-unified-toolbar;
 }
 
@@ -164,6 +168,10 @@
 [lookandfeel="Darwin"][parentwindowtype="browser.weaponry.gnucitizen.org:browser-perspective"] #browser-view-navigation-toolbar {
 	-moz-appearance: none;
 	background: -moz-mac-chrome-inactive;
+}
+
+[lookandfeel="Darwin"]:not([parentwindowtype="browser.weaponry.gnucitizen.org:browser-perspective"]) .browser-view-navigation-button {
+	opacity: 0.8;
 }
 
 /* ------------------------------------------------------------------------ */
