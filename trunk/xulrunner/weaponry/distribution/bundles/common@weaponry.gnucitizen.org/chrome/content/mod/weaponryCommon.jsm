@@ -1269,6 +1269,7 @@ let weaponryCommon = new function () {
 			message: httpChannel.responseStatusText,
 			headers: headers,
 			headersBlock: headersBlock,
+			contentType: httpChannel.contentType,
 		};
 	};
 	
