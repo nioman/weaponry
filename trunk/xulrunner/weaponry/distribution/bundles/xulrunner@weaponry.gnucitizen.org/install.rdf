@@ -5,7 +5,7 @@
 	
 	<Description about="urn:mozilla:install-manifest">
 		<em:id>xulrunner@weaponry.gnucitizen.org</em:id>
-		<em:version>0.8</em:version>
+		<em:version>0.9Alpha1</em:version>
 		<em:type>2</em:type>
 		<em:creator>GNUCITIZEN</em:creator>
 		
@@ -15,40 +15,56 @@
 		<em:targetApplication>
 			<Description>
 				<em:id>websecurify@gnucitizen.org</em:id>
-				<em:minVersion>0.8</em:minVersion>
-				<em:maxVersion>0.8</em:maxVersion>
+				<em:minVersion>0.9Alpha1</em:minVersion>
+				<em:maxVersion>0.9Alpha1</em:maxVersion>
+			</Description>
+		</em:targetApplication>
+		
+		<em:targetApplication>
+			<Description>
+				<em:id>scanner@websecurify.gnucitizen.org</em:id>
+				<em:minVersion>0.9Alpha1</em:minVersion>
+				<em:maxVersion>0.9Alpha1</em:maxVersion>
+			</Description>
+		</em:targetApplication>
+		
+		<em:targetApplication>
+			<Description>
+				<em:id>acidplatform@gnucitizen.org</em:id>
+				<em:minVersion>0.9Alpha1</em:minVersion>
+				<em:maxVersion>0.9Alpha1</em:maxVersion>
 			</Description>
 		</em:targetApplication>
 		
 		<em:targetApplication>
 			<Description>
 				<em:id>acidproxy@gnucitizen.org</em:id>
-				<em:minVersion>0.8</em:minVersion>
-				<em:maxVersion>0.8</em:maxVersion>
+				<em:minVersion>0.9Alpha1</em:minVersion>
+				<em:maxVersion>0.9Alpha1</em:maxVersion>
 			</Description>
 		</em:targetApplication>
 		
 		<em:targetApplication>
 			<Description>
 				<em:id>acidbrowser@gnucitizen.org</em:id>
-				<em:minVersion>0.8</em:minVersion>
-				<em:maxVersion>0.8</em:maxVersion>
+				<em:minVersion>0.9Alpha1</em:minVersion>
+				<em:maxVersion>0.9Alpha1</em:maxVersion>
 			</Description>
 		</em:targetApplication>
 		
 		<em:targetApplication>
 			<Description>
 				<em:id>acidscanner@gnucitizen.org</em:id>
-				<em:minVersion>0.8</em:minVersion>
-				<em:maxVersion>0.8</em:maxVersion>
+				<em:minVersion>0.9Alpha1</em:minVersion>
+				<em:maxVersion>0.9Alpha1</em:maxVersion>
 			</Description>
 		</em:targetApplication>
 		
 		<em:targetApplication>
 			<Description>
-				<em:id>webapps@gnucitizen.org</em:id>
-				<em:minVersion>0.8</em:minVersion>
-				<em:maxVersion>0.8</em:maxVersion>
+				<em:id>webapps@websecurify.gnucitizen.org</em:id>
+				<em:minVersion>0.9Alpha1</em:minVersion>
+				<em:maxVersion>0.9Alpha1</em:maxVersion>
 			</Description>
 		</em:targetApplication>
 	</Description>
