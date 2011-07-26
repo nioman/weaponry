@@ -1,6 +1,6 @@
 /**
- *  application.js
- *  Copyright (C) 2010  GNUCITIZEN
+ *  common.js
+ *  Copyright (C) 2007-2011  GNUCITIZEN
  *  
  *  This program is free software; you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
@@ -17,9 +17,7 @@
  *  Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
  */
 
-// toolkit preferences
-pref('toolkit.defaultChromeURI', 'chrome://basic.acidplatform.gnucitizen.org/content/xul/mainWindow.xul');
-pref('toolkit.singletonWindowType', 'basic.acidplatform.gnucitizen.org:main-window');
+const CHROMEBASE = 'basic.acidplatform.gnucitizen.org';
 
 /*  GNUCITIZEN (Information Security Think Tank)
  **********************************************/
