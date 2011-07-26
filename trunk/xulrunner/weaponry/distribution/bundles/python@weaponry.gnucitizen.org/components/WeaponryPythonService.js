@@ -28,12 +28,11 @@ const CHROMEBASE = 'python.weaponry.gnucitizen.org';
 /* ------------------------------------------------------------------------ */
 
 Components.utils.import('resource://gre/modules/XPCOMUtils.jsm');
+Components.utils.import('resource://common.weaponry.gnucitizen.org/content/mod/weaponryCommon.jsm');
 
 /* ------------------------------------------------------------------------ */
 
 function WeaponryPythonService() {
-	Components.utils.import('resource://common.weaponry.gnucitizen.org/content/mod/weaponryCommon.jsm');
-	
 	this.pythonInterpreter = null;
 }
 
@@ -118,16 +117,11 @@ WeaponryPythonService.prototype = {
 	launchPythonScript: function (script, parameters) {
 		throw new Error('not implemented'); // TODO: add code here
 	}
-	
 };
 
 /* ------------------------------------------------------------------------ */
 
-if (XPCOMUtils.generateNSGetFactory) {
-	var NSGetFactory = XPCOMUtils.generateNSGetFactory([WeaponryPythonService]);
-} else {
-	var NSGetModule = XPCOMUtils.generateNSGetModule([WeaponryPythonService]);
-}
+var NSGetFactory = XPCOMUtils.generateNSGetFactory([WeaponryPythonService]);
 
 /*  GNUCITIZEN (Information Security Think Tank)
  **********************************************/
