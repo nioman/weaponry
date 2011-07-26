@@ -18,19 +18,19 @@
  */
 
 function handleWeaponrySupportHelpMenuOpenHelpWindowCommandEvent(event) {
-	window.open('http://code.google.com/p/weaponry/w/list');
+	weaponryCommon.openUriExternally('http://code.google.com/p/weaponry/w/list');
 }
 
 function handleWeaponrySupportHelpMenuReportBugsCommandEvent(event) {
-	window.open('http://code.google.com/p/weaponry/issues/list');
+	weaponryCommon.openUriExternally('http://code.google.com/p/weaponry/issues/list');
 }
 
 function handleWeaponrySupportHelpMenuGotoWeaponryCommandEvent(event) {
-	window.open('http://weaponry.gnucitizen.org');
+	weaponryCommon.openUriExternally('http://weaponry.gnucitizen.org');
 }
 
 function handleWeaponrySupportHelpMenuGotoGNUCITIZENCommandEvent(event) {
-	window.open('http://www.gnucitizen.com');
+	weaponryCommon.openUriExternally('http://www.gnucitizen.com');
 }
 
 /*  GNUCITIZEN (Information Security Think Tank)
