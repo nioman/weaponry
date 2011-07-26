@@ -28,12 +28,11 @@ const CHROMEBASE = 'common.weaponry.gnucitizen.org';
 /* ------------------------------------------------------------------------ */
 
 Components.utils.import('resource://gre/modules/XPCOMUtils.jsm');
+Components.utils.import('resource://common.weaponry.gnucitizen.org/content/mod/weaponryCommon.jsm');
 
 /* ------------------------------------------------------------------------ */
 
 function WeaponrySchemeViewer() {
-	Components.utils.import('resource://common.weaponry.gnucitizen.org/content/mod/weaponryCommon.jsm');
-	
 	this.scheme = null;
 	this.uri = null;
 	this.wrap = null;
