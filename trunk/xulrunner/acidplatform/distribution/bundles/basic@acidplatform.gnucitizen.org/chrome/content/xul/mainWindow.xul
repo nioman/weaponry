@@ -41,6 +41,20 @@
 	</menubar>
 	
 	<vbox id="main-window-content-vbox" flex="1">
+		<datalist id="main-window-applications-datalist" flex="1">
+			<hbox id="main-window-application-entry-hbox" uri="?uri" ondblclick="return handleEntryDblclickEvent(event);">
+				<image id="main-window-application-entry-image" class="main-window-application-entry-image" src="?icon"/>
+				<label id="main-window-application-entry-label" class="main-window-application-entry-label" value="?label"/>
+			</hbox>
+		</datalist>
+		
+		<statusbar id="main-window-statusbar">
+			<statusbarpanel id="main-window-active-statusbarpanel">
+				<toolbarbutton id="main-window-add-project-toolbarbutton" label="&main-window-add-project-toolbarbutton-label;" oncommand="return handleAddProjectCommandEvent();"/>
+			</statusbarpanel>
+			
+			<statusbarpanel id="main-window-state-statusbarpanel" flex="1"/>
+		</statusbar>
 	</vbox>
 	
 	<box id="common-box"/>
