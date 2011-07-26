@@ -30,6 +30,14 @@
 		
 		<em:targetApplication>
 			<Description>
+				<em:id>acidplatform@gnucitizen.org</em:id>
+				<em:minVersion>0.9Alpha1</em:minVersion>
+				<em:maxVersion>0.9Alpha1</em:maxVersion>
+			</Description>
+		</em:targetApplication>
+		
+		<em:targetApplication>
+			<Description>
 				<em:id>acidproxy@gnucitizen.org</em:id>
 				<em:minVersion>0.9Alpha1</em:minVersion>
 				<em:maxVersion>0.9Alpha1</em:maxVersion>
@@ -47,6 +55,14 @@
 		<em:targetApplication>
 			<Description>
 				<em:id>acidscanner@gnucitizen.org</em:id>
+				<em:minVersion>0.9Alpha1</em:minVersion>
+				<em:maxVersion>0.9Alpha1</em:maxVersion>
+			</Description>
+		</em:targetApplication>
+		
+		<em:targetApplication>
+			<Description>
+				<em:id>webapps@websecurify.gnucitizen.org</em:id>
 				<em:minVersion>0.9Alpha1</em:minVersion>
 				<em:maxVersion>0.9Alpha1</em:maxVersion>
 			</Description>
