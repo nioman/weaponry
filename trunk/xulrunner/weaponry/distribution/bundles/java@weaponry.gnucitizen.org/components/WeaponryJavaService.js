@@ -28,12 +28,11 @@ const CHROMEBASE = 'java.weaponry.gnucitizen.org';
 /* ------------------------------------------------------------------------ */
 
 Components.utils.import('resource://gre/modules/XPCOMUtils.jsm');
+Components.utils.import('resource://common.weaponry.gnucitizen.org/content/mod/weaponryCommon.jsm');
 
 /* ------------------------------------------------------------------------ */
 
 function WeaponryJavaService() {
-	Components.utils.import('resource://common.weaponry.gnucitizen.org/content/mod/weaponryCommon.jsm');
-	
 	this.javaInterpreter = null;
 	this.classPaths = [];
 }
@@ -156,11 +155,7 @@ WeaponryJavaService.prototype = {
 
 /* ------------------------------------------------------------------------ */
 
-if (XPCOMUtils.generateNSGetFactory) {
-	var NSGetFactory = XPCOMUtils.generateNSGetFactory([WeaponryJavaService]);
-} else {
-	var NSGetModule = XPCOMUtils.generateNSGetModule([WeaponryJavaService]);
-}
+var NSGetFactory = XPCOMUtils.generateNSGetFactory([WeaponryJavaService]);
 
 /*  GNUCITIZEN (Information Security Think Tank)
  **********************************************/
