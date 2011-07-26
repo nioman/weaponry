@@ -19,5 +19,53 @@
 
 @import url("chrome://global/skin/");
 
+/* ------------------------------------------------------------------------ */
+
+#main-window-applications-datalist richlistbox {
+	margin: 0px;
+	padding: 0px;
+	-moz-appearance: none;
+}
+
+#main-window-applications-datalist richlistbox richlistitem {
+	padding: 5px;
+}
+
+/* ------------------------------------------------------------------------ */
+
+#main-window-add-project-toolbarbutton {
+	list-style-image: url("images/new.png");
+}
+
+#main-window-add-project-toolbarbutton[disabled="true"] {
+	list-style-image: url("images/new.disabled.png");
+}
+
+#main-window-add-project-toolbarbutton > image {
+	margin: 0px;
+}
+
+#main-window-add-project-toolbarbutton > label {
+	display: none;
+}
+
+/* ------------------------------------------------------------------------ */
+
+[lookandfeel="Darwin"] #main-window-statusbar {
+	padding: 5px 0px 5px 0px;
+}
+
+/* ------------------------------------------------------------------------ */
+
+[lookandfeel="Linux"] #main-window-statusbar {
+	padding: 2px;
+}
+
+/* ------------------------------------------------------------------------ */
+
+[lookandfeel="WINNT"] #main-window-statusbar {
+	padding: 2px;
+}
+
 /*  GNUCITIZEN (Information Security Think Tank)
  **********************************************/
