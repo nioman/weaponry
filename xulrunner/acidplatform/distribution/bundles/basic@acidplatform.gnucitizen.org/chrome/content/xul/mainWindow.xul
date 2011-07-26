@@ -31,6 +31,15 @@
 		<stringbundle id="main-window-properties-stringbundle" src="chrome://basic.acidplatform.gnucitizen.org/locale/xul/mainWindow.properties"/>
 	</stringbundleset>
 	
+	<menubar id="browser-window-menubar">
+		<menu id="file-menu"/>
+		<menu id="edit-menu"/>
+		<menu id="view-menu"/>
+		<menu id="tools-menu"/>
+		<menu id="window-menu"/>
+		<menu id="help-menu"/>
+	</menubar>
+	
 	<vbox id="main-window-content-vbox" flex="1">
 	</vbox>
 	
