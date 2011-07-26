@@ -28,11 +28,12 @@ const CHROMEBASE = 'common.weaponry.gnucitizen.org';
 /* ------------------------------------------------------------------------ */
 
 Components.utils.import('resource://gre/modules/XPCOMUtils.jsm');
+Components.utils.import('resource://common.weaponry.gnucitizen.org/content/mod/weaponryCommon.jsm');
 
 /* ------------------------------------------------------------------------ */
 
 function WeaponryTerminalLauncher() {
-	Components.utils.import('resource://common.weaponry.gnucitizen.org/content/mod/weaponryCommon.jsm');
+	// pass
 }
 
 WeaponryTerminalLauncher.prototype = {
