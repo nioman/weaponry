@@ -1,0 +1,11 @@
+#
+# chrome registration
+#
+
+content      basic.acidplatform.gnucitizen.org                 file:chrome/content/
+resource     basic.acidplatform.gnucitizen.org                 file:chrome/
+locale       basic.acidplatform.gnucitizen.org en-US           file:chrome/locale/en-US/
+skin         basic.acidplatform.gnucitizen.org classic/1.0     file:chrome/skin/
+
+content      sites.basic.acidplatform.gnucitizen.org           file:sites/
+resource     sites.basic.acidplatform.gnucitizen.org           file:sites/
