@@ -26,6 +26,19 @@ pref('app.update.url', 'https://weaponryupdates.appspot.com/update/app.xml?produ
 pref('app.update.url.manual', 'http://weaponry.gnucitizen.com');
 pref('app.update.url.details', 'http://weaponry.gnucitizen.com');
 
+// extensions get addons preferences
+pref('extensions.getAddons.cache.enabled', true);
+pref('extensions.getAddons.maxResults', 15);
+pref('extensions.getAddons.get.url', 'https://weaponryupdates.appspot.com/extensions/get'); // TODO: add parameters
+pref('extensions.getAddons.search.url', 'https://weaponryupdates.appspot.com/extensions/search'); // TODO: add parameters
+pref('extensions.getAddons.search.browseURL', 'https://weaponryupdates.appspot.com/extensions/search?term=%TERMS%'); // TODO: add parameters
+
+// extensions blacklist preferences
+pref('extensions.blocklist.url', 'https://weaponryupdates.appspot.com/extensions/blacklist'); // TODO: add parameters
+
+// extensions discover preferences
+pref('extensions.webservice.discoverURL', 'https://weaponryupdates.appspot.com/extensions/discover'); // TODO: add parameters
+
 // extensions update preferences
 pref('extensions.update.url', 'https://weaponryupdates.appspot.com/update/ext.xml?req_version=%REQ_VERSION%&item_id=%ITEM_ID%&item_version=%ITEM_VERSION%&item_maxappversion=%ITEM_MAXAPPVERSION%&item_status=%ITEM_STATUS%&app_id=%APP_ID%&app_version=%APP_VERSION%&app_os=%APP_OS%&app_abi=%APP_ABI%&app_locale=%APP_LOCALE%&current_app_version=%CURRENT_APP_VERSION%&update_type=%UPDATE_TYPE%');
 pref('extensions.update.url.manual', 'http://weaponry.gnucitizen.org');
