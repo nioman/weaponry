@@ -30,7 +30,7 @@ function handleInspectorCommandEvent(event) {
 }
 
 function handleJsshellCommandEvent(event) {
-	weaponryCommon.openWindow(null, 'chrome://jsshell/content/jsshell.xul', '', 'all,chrome,resizable,centerscreen,width=500,height=400,scrollbars=yes,resizable=yes');
+	weaponryCommon.openWindow(null, 'chrome://jsshell/content/jsshell.xul', '', 'all,chrome,resizable,centerscreen,width=500,height=400,scrollbars=yes');
 }
 
 /*  GNUCITIZEN (Information Security Think Tank)
