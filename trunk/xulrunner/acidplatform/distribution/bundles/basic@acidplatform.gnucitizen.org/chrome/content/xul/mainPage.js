@@ -17,6 +17,10 @@
  *  Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
  */
 
+Components.utils.import('resource://preferences.weaponry.gnucitizen.org/content/mod/weaponryPreferences.jsm');
+
+/* ------------------------------------------------------------------------ */
+
 function handleTestItemDblclickEvent(event) {
 	let uri = event.currentTarget.getAttribute('uri');
 	
@@ -25,6 +29,18 @@ function handleTestItemDblclickEvent(event) {
 	} else {
 		eval(event.currentTarget.getAttribute('dblclick'));
 	}
+}
+
+function handleOpenConsoleCommandEvent(event) {
+	weaponryCommon.openErrorConsoleWindow();
+}
+
+function handleOpenAddonsCommandEvent(event) {
+	weaponryCommon.openAddOnsWindow();
+}
+
+function handleOpenPreferencesCommandEvent(event) {
+	weaponryPreferences.openPreferencesWindow();
 }
 
 /*  GNUCITIZEN (Information Security Think Tank)

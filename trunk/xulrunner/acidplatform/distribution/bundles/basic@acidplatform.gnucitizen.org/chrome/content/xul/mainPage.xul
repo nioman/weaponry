@@ -44,7 +44,12 @@
 		</richsidebox>
 		
 		<statusbar id="main-page-statusbar">
-			<statusbarpanel id="main-page-active-statusbarpanel"/>
+			<statusbarpanel id="main-page-active-statusbarpanel">
+				<toolbarbutton id="main-page-open-console-toolbarbutton" label="&main-page-open-console-toolbarbutton-label;" oncommand="return handleOpenConsoleCommandEvent(event);"/>
+				<toolbarbutton id="main-page-open-addons-toolbarbutton" label="&main-page-open-addons-toolbarbutton-label;" oncommand="return handleOpenAddonsCommandEvent(event);"/>
+				<toolbarbutton id="main-page-open-preferences-toolbarbutton" label="&main-page-open-preferences-toolbarbutton-label;" oncommand="return handleOpenPreferencesCommandEvent(event);"/>
+			</statusbarpanel>
+			
 			<statusbarpanel id="main-page-state-statusbarpanel" flex="1"/>
 		</statusbar>
 	</vbox>
