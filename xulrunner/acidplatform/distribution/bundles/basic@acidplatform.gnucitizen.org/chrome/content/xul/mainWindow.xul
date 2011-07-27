@@ -22,7 +22,7 @@
 <!DOCTYPE window SYSTEM "chrome://basic.acidplatform.gnucitizen.org/locale/xul/mainWindow.dtd">
 <window xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
 	id="main-window" title="&main-window-title;" windowtype="basic.acidplatform.gnucitizen.org:main-window"
-	width="800" height="500" screenX="100" screenY="100" persist="width height screenX screenY sizemode">
+	width="750" height="450" screenX="100" screenY="100" persist="width height screenX screenY sizemode">
 	
 	<script type="application/x-javascript" src="chrome://basic.acidplatform.gnucitizen.org/content/inc/common.js"/>
 	<script type="application/x-javascript" src="chrome://basic.acidplatform.gnucitizen.org/content/xul/mainWindow.js"/>
@@ -31,9 +31,8 @@
 		<stringbundle id="main-window-properties-stringbundle" src="chrome://basic.acidplatform.gnucitizen.org/locale/xul/mainWindow.properties"/>
 	</stringbundleset>
 	
-	<menubar id="browser-window-menubar">
+	<menubar id="main-window-menubar">
 		<menu id="file-menu"/>
-		<menu id="edit-menu"/>
 		<menu id="view-menu"/>
 		<menu id="tools-menu"/>
 		<menu id="window-menu"/>
@@ -41,20 +40,7 @@
 	</menubar>
 	
 	<vbox id="main-window-content-vbox" flex="1">
-		<datalist id="main-window-applications-datalist" flex="1">
-			<hbox id="main-window-application-entry-hbox" uri="?uri" ondblclick="return handleEntryDblclickEvent(event);">
-				<image id="main-window-application-entry-image" class="main-window-application-entry-image" src="?icon"/>
-				<label id="main-window-application-entry-label" class="main-window-application-entry-label" value="?label"/>
-			</hbox>
-		</datalist>
-		
-		<statusbar id="main-window-statusbar">
-			<statusbarpanel id="main-window-active-statusbarpanel">
-				<toolbarbutton id="main-window-add-project-toolbarbutton" label="&main-window-add-project-toolbarbutton-label;" oncommand="return handleAddProjectCommandEvent();"/>
-			</statusbarpanel>
-			
-			<statusbarpanel id="main-window-state-statusbarpanel" flex="1"/>
-		</statusbar>
+		<iframe id="main-window-content-iframe" src="chrome://basic.acidplatform.gnucitizen.org/content/xul/mainPage.xul" flex="1"/>
 	</vbox>
 	
 	<box id="common-box"/>
