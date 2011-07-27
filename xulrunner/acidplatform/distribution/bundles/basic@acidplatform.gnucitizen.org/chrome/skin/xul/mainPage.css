@@ -85,6 +85,44 @@
 
 /* ------------------------------------------------------------------------ */
 
+#main-page-open-console-toolbarbutton {
+	list-style-image: url("images/console.png");
+}
+
+#main-page-open-console-toolbarbutton > image {
+	margin: 0px;
+}
+
+#main-page-open-console-toolbarbutton > label {
+	display: none;
+}
+
+#main-page-open-addons-toolbarbutton {
+	list-style-image: url("images/addons.png");
+}
+
+#main-page-open-addons-toolbarbutton > image {
+	margin: 0px;
+}
+
+#main-page-open-addons-toolbarbutton > label {
+	display: none;
+}
+
+#main-page-open-preferences-toolbarbutton {
+	list-style-image: url("images/preferences.png");
+}
+
+#main-page-open-preferences-toolbarbutton > image {
+	margin: 0px;
+}
+
+#main-page-open-preferences-toolbarbutton > label {
+	display: none;
+}
+
+/* ------------------------------------------------------------------------ */
+
 [lookandfeel="Darwin"] #main-page-statusbar {
 	padding: 5px 0px 5px 0px;
 }
