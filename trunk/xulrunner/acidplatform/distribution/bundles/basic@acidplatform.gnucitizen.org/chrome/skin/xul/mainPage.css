@@ -1,0 +1,105 @@
+/**
+ *  mainPage.css
+ *  Copyright (C) 2007-2011  GNUCITIZEN
+ *  
+ *  This program is free software; you can redistribute it and/or modify
+ *  it under the terms of the GNU General Public License as published by
+ *  the Free Software Foundation; either version 2 of the License, or
+ *  (at your option) any later version.
+ *  
+ *  This program is distributed in the hope that it will be useful,
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *  GNU General Public License for more details.
+ *  
+ *  You should have received a copy of the GNU General Public License
+ *  along with this program; if not, write to the Free Software
+ *  Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+ */
+
+@import url("chrome://global/skin/");
+
+/* ------------------------------------------------------------------------ */
+
+#main-page-content-navigation-richsidebox > .richsidebox-container richlistbox {
+	margin: 0px;
+	padding: 0px;
+	background: #eeeeee;
+	-moz-appearance: none;
+}
+
+#main-page-content-navigation-richsidebox > .richsidebox-container richlistitem {
+	padding: 10px;
+	padding-left: 20px;
+}
+
+#main-page-content-navigation-richsidebox > .richsidebox-container richlistitem label {
+	font-size: 13px;
+	margin-left: 10px;
+}
+
+#main-page-content-navigation-richsidebox > .richsidebox-container richlistitem[selected="true"] label {
+	text-shadow: black 0px 1px;
+}
+
+#main-page-content-navigation-richsidebox > .richsidebox-container richlistbox > richlistitem[selected="true"]       ,
+#main-page-content-navigation-richsidebox > .richsidebox-container richlistbox:focus > richlistitem[selected="true"] {
+	color: #ffffff;
+	background-image: none;
+	background-color: #222222;
+}
+
+#main-page-content-navigation-richsidebox > .richsidebox-container richlistbox > richlistitem:not([selected="true"])                 ,
+#main-page-content-navigation-richsidebox > .richsidebox-container richlistbox > richlistitem:nth-child(2n+1):not([selected="true"]) {
+	background-image: none;
+	background-color: transparent;
+}
+
+/* ------------------------------------------------------------------------ */
+
+#main-page-applications-dataroll > .dataroll-container .dataroll-content {
+	display: block;
+	overflow: auto;
+	-moz-box-orient: horizontal;
+	background: #222222 url("images/highlight.png") 50% 0px no-repeat;
+}
+
+/* ------------------------------------------------------------------------ */
+
+.main-page-application-item-vbox {
+	width: 140px;
+	padding-top: 10px;
+	-moz-box-align: center;
+	margin: 10px 0px 0px 10px;
+}
+
+.main-page-application-item-vbox:hover {
+	-moz-border-radius: 5px;
+	-moz-box-shadow: inset 0px 0px 1px 1px #444444;
+}
+
+.main-page-application-item-label {
+	color: #ffffff;
+	margin-bottom: 10px;
+}
+
+/* ------------------------------------------------------------------------ */
+
+[lookandfeel="Darwin"] #main-page-statusbar {
+	padding: 5px 0px 5px 0px;
+}
+
+/* ------------------------------------------------------------------------ */
+
+[lookandfeel="Linux"] #main-page-statusbar {
+	padding: 2px;
+}
+
+/* ------------------------------------------------------------------------ */
+
+[lookandfeel="WINNT"] #main-page-statusbar {
+	padding: 2px;
+}
+
+/*  GNUCITIZEN (Information Security Think Tank)
+ **********************************************/

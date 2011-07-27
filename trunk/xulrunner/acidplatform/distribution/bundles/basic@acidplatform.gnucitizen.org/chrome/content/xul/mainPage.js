@@ -1,5 +1,5 @@
 /**
- *  mainWindow.css
+ *  mainPage.js
  *  Copyright (C) 2007-2011  GNUCITIZEN
  *  
  *  This program is free software; you can redistribute it and/or modify
@@ -17,7 +17,15 @@
  *  Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
  */
 
-@import url("chrome://global/skin/");
+function handleTestItemDblclickEvent(event) {
+	let uri = event.currentTarget.getAttribute('uri');
+	
+	if (uri) {
+		window.open(uri,  null, 'all,chrome,resizable');
+	} else {
+		eval(event.currentTarget.getAttribute('dblclick'));
+	}
+}
 
 /*  GNUCITIZEN (Information Security Think Tank)
  **********************************************/
