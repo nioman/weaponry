@@ -145,13 +145,13 @@
 			<xul:vbox class="richsidebox-container" flex="1">
 				<xul:notificationbox class="richsidebox-notificationbox" flex="1">
 					<xul:hbox class="richsidebox-content" flex="1">
-						<xul:richlistbox class="richsidebox-richlistbox" flex="1" xbl:inherits="width=richlistboxwidth"/>
+						<xul:richlistbox class="richsidebox-richlistbox" flex="1" width="200" xbl:inherits="flex=richlistboxflex,width=richlistboxwidth"/>
 						
 						<xul:splitter class="richsidebox-splitter" resizeafter="closest" collapse="before" xbl:inherits="state=splitterstate">
 							<xul:grippy class="richsidebox-grippy"/>
 						</xul:splitter>
 						
-						<xul:deck class="richsidebox-deck" flex="5" xbl:inherits="width=deckwidth">
+						<xul:deck class="richsidebox-deck" flex="5" width="100" xbl:inherits="flex=deckflex,width=deckwidth">
 							<children includes="richsidepanel"/>
 						</xul:deck>
 					</xul:hbox>
