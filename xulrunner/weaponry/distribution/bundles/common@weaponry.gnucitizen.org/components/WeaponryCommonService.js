@@ -156,10 +156,7 @@ WeaponryCommonService.prototype = {
 					value = contentConvertersItems.getCharPref(item);
 					
 					break;
-				case 'wrap':
-					value = contentConvertersItems.getBoolPref(item);
 					
-					break;
 				default:
 					Components.utils.reportError('unrecognized content converter entry name ' + item);
 					
@@ -179,7 +176,7 @@ WeaponryCommonService.prototype = {
 		for (id in contentConverters) {
 			contentConverter = contentConverters[id];
 			
-			this.registerContentConverter(contentConverter.mimeType, contentConverter.uri, contentConverter.wrap);
+			this.registerContentConverter(contentConverter.mimeType, contentConverter.uri);
 		}
 	},
 	
@@ -191,6 +188,8 @@ WeaponryCommonService.prototype = {
 		let classID = Components.ID(schemeViewer.number);
 		
 		let factory = {
+			QueryInterface: XPCOMUtils.generateQI([CI.nsIFactory]),
+			
 			createInstance: function (outer, iid) {
 				let instance = componentManager.createInstanceByContractID('@common.weaponry.gnucitizen.org/scheme-viewer;1', outer, iid);
 				
@@ -198,10 +197,16 @@ WeaponryCommonService.prototype = {
 				instance.init(scheme, uri, wrap);
 				
 				return instance;
+			},
+			
+			lockFactory: function (lock) {
+				throw new Error('not implemented'); // TODO: implement it
 			}
 		};
 		
-		componentManager.registerFactory(classID, 'Weaponry Scheme Viewer for ' + scheme, '@mozilla.org/network/protocol;1?name=' + scheme, factory, false);
+		// TODO: classID needs to be unique in order for this to work in xulrunner 2.0
+		componentManager.registerFactory(classID, 'Weaponry Scheme Viewer for ' + scheme, '@mozilla.org/network/protocol;1?name=' + scheme, factory);
+		//
 	},
 	
 	unregisterSchemeViewer: function (scheme, uri) {
@@ -216,6 +221,8 @@ WeaponryCommonService.prototype = {
 		let classID = Components.ID(contentConverter.number);
 		
 		let factory = {
+			QueryInterface: XPCOMUtils.generateQI([CI.nsIFactory]),
+			
 			createInstance: function (outer, iid) {
 				let instance = componentManager.createInstanceByContractID('@common.weaponry.gnucitizen.org/content-converter;1', outer, iid);
 				
@@ -223,10 +230,16 @@ WeaponryCommonService.prototype = {
 				instance.initWithUri(uri);
 				
 				return instance;
+			},
+			
+			lockFactory: function (lock) {
+				throw new Error('not implemented'); // TODO: implement it
 			}
 		};
 		
-		componentManager.registerFactory(classID, 'Weaponry Content Converter for ' + mimeType, '@mozilla.org/streamconv;1?from=' + mimeType + '&to=*/*', factory, false);
+		// TODO: classID needs to be unique in order for this to work in xulrunner 2.0
+		componentManager.registerFactory(classID, 'Weaponry Content Converter for ' + mimeType, '@mozilla.org/streamconv;1?from=' + mimeType + '&to=*/*', factory);
+		//
 	},
 	
 	unregisterContentViewer: function (mimeType, uri) {
