@@ -47,6 +47,14 @@ let weaponryBrowser = new function () {
 	this.openBrowserWindow = function () {
 		return this.browserService.openBrowserWindow();
 	};
+	
+	/* -------------------------------------------------------------------- */
+	
+	this.openUri = function (uri) {
+		// TODO: detect if it is a browser and open it in a new tab, otherwise open externally
+		weaponryCommon.openUriExternally(uri);
+		//
+	};
 };
 
 /*  GNUCITIZEN (Information Security Think Tank)
