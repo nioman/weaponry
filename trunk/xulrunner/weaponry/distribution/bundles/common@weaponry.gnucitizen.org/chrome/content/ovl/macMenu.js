@@ -28,7 +28,22 @@ function handleMacMenuDOMContentLoadedEvent(event) {
 	try {
 		$aboutMenuitem.id = 'aboutName';
 		
+		$aboutMenuitem.setAttribute('command', '');
 		$aboutMenuitem.setAttribute('label', $aboutCommand.getAttribute('label'));
+		$aboutMenuitem.setAttribute('oncommand', $aboutCommand.getAttribute('oncommand'));
+	} catch (e) {
+		// pass
+	}
+	
+	let $quitMenuitem = document.getElementById('file-menupopup-quit-menuitem');
+	let $quitCommand = document.getElementById('file-menu-quit-command');
+	
+	try {
+		$quitMenuitem.id = 'menu_FileQuitItem';
+		
+		$quitMenuitem.setAttribute('command', '');
+		$quitMenuitem.setAttribute('label', $quitCommand.getAttribute('label'));
+		$quitMenuitem.setAttribute('oncommand', $quitCommand.getAttribute('oncommand'));
 	} catch (e) {
 		// pass
 	}
