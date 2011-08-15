@@ -90,6 +90,17 @@ function cleanupCommonUi() {
 			$node.firstChild.hidden = true;
 		}
 	}
+	
+	let specialMenuItems = ['aboutName', 'menu_FileQuitItem', 'menu_preferences'];
+	let specialMenuItemsLength = specialMenuItems.length;
+	
+	for (i = 0; i < specialMenuItemsLength; i += 1) {
+		$node = document.getElementById(specialMenuItems[i]);
+		
+		if ($node && $node.parentNode.childNodes.length == 1) {
+			$node.parentNode.parentNode.hidden = true;
+		}
+	}
 }
 
 /* ------------------------------------------------------------------------ */
