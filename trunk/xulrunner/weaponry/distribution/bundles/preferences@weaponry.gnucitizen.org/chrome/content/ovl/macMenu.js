@@ -22,8 +22,10 @@ function handleWebsecurifyPreferencesMacMenuDOMContentLoadedEvent(event) {
 		return;
 	}
 	
+	let $openPreferencesMenuitem = document.getElementById('weaponry-preferences-tools-menu-open-preferences-menuitem');
+	
 	try {
-		document.getElementById('weaponry-preferences-tools-menu-open-preferences-menuitem').id = 'menu_preferences';
+		$openPreferencesMenuitem.id = 'menu_preferences';
 	} catch (e) {
 		// pass
 	}
