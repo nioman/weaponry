@@ -27,10 +27,18 @@
 		<stringbundle id="file-menu-properties-stringbundle" src="chrome://common.weaponry.gnucitizen.org/locale/ovl/fileMenu.properties"/>
 	</stringbundleset>
 	
-	<commandset id="common-commandset"/>
+	<commandset id="common-commandset">
+		<command id="file-menu-quit-command" label="&file-menu-quit-command-label;" oncommand="return handleFileMenuQuitCommandEvent(event);"/>
+	</commandset>
+	
+	<keyset id="common-keyset">
+		<key id="file-menu-quit-key" key="Q" modifiers="accel" command="file-menu-quit-command"/>
+	</keyset>
 	
 	<menu id="file-menu" label="&file-menu-label;">
-		<menupopup id="file-menupopup"/>
+		<menupopup id="file-menupopup">
+			<menuitem id="file-menupopup-quit-menuitem" command="file-menu-quit-command" key="file-menu-quit-key" position="1000"/>
+		</menupopup>
 	</menu>
 	
 	<box id="common-box">
