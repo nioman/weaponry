@@ -127,8 +127,11 @@ function handleBrowserStopCommandEvent(event) {
 
 function handleBrowserGoCommandEvent(event) {
 	let $contentLocationbox = document.getElementById('browser-view-content-locationbox');
+	var location = $contentLocationbox.value;
 	
-	loadBrowserUrl($contentLocationbox.value);
+	weaponryCommon.recordFaviconForUrl(location);
+	
+	loadBrowserUrl(location);
 }
 
 function handleLocationChangeEvent(event) {
@@ -329,10 +332,6 @@ function handleDOMContentLoadedEvent(event) {
 			
 			$backCommand.setAttribute('disabled', !$contentBrowser.canGoBack);
 			$forwardCommand.setAttribute('disabled', !$contentBrowser.canGoForward);
-			
-			if (location.schemeIs('http') || location.schemeIs('https')) {
-				weaponryCommon.recordFaviconForUrl(location);
-			}
 		}
 	});
 	
