@@ -57,18 +57,8 @@
 				<parameter name="$sourceNode"/>
 				
 				<body><![CDATA[
-					while (this.hasChildNodes()) {
-					    this.removeChild(this.lastChild);
-					}
-					
-					let $nodes = $sourceNode.childNodes;
-					let nodesLength = $nodes.length;
-					
-					let i;
-					
-					for (i = 0; i < nodesLength; i += 1) {
-						this.appendChild($nodes[i].cloneNode(true));
-					}
+					this._removeChildren(this);
+					this._copyChildren($sourceNode, this);
 				]]></body>
 			</method>
 			
@@ -80,27 +70,24 @@
 					
 					let fields = this.lastUpdateFields;
 					let rememberedAttributes = {};
-					
-					this.$content.hidden = false;
-					
 					let $content = this.$content;
-					let $nodes = $content.getElementsByAttribute('remember', '*');
-					let nodesLength = $nodes.length;
+					let nodes = $content.getElementsByAttribute('remember', '*');
+					let nodesLength = nodes.length;
 					
 					let i;
 					let $node;
-					let value;
+					let values;
 					let attributes;
 					let attributesLength;
 					let j;
 					let attribute;
 					
 					for (i = 0; i < nodesLength; i += 1) {
-						$node = $nodes[i];
+						$node = nodes[i];
 						
 						if ($node.id) {
 							values = {};
-							attributes = $node.getAttribute('remember').split(',');
+							attributes = $node.getAttribute('remember').split(' ');
 							attributesLength = attributes.length;
 							
 							for (j = 0; j < attributesLength; j += 1) {
@@ -113,28 +100,60 @@
 						}
 					}
 					
-					$nodes = this.getElementsByTagName('*');
-					nodesLength = $nodes.length;
+					nodes = this.getElementsByTagName('*');
+					nodesLength = nodes.length;
 					
-					let $workNodes;
+					let self = this;
+					
+					let attributeName;
+					let workNodes;
 					let $workNode;
 					
 					for (i = 0; i < nodesLength; i += 1) {
-						$node = $nodes[i];
+						$node = nodes[i];
 						attributes = $node.attributes;
 						attributesLength = attributes.length;
 						
 						for (j = 0; j < attributesLength; j += 1) {
 							attribute = attributes[j];
 							
-							if ((/\?\w+\^?/).test(attribute.value)) {
-								$workNodes = $content.getElementsByAttribute('id', $node.id);
+							if (attribute.name == 'field') {
+								switch($node.tagName) {
+									case 'checkbox':
+										attributeName = 'checked';
+										
+										break;
+									case 'label':
+										attributeName = 'value';
+										eventName = 'change';
+										
+										break;
+									case 'textbox':
+										attributeName = 'value';
+										
+										break;
+									default:
+										continue;
+								}
 								
-								if ($workNodes.length == 0) {
+								workNodes = $content.getElementsByAttribute('id', $node.id);
+								
+								if (workNodes.length == 0) {
 									continue;
 								}
 								
-								$workNode = $workNodes[0];
+								$workNode = workNodes[0];
+								
+								$workNode.setAttribute(attributeName, fields[attribute.value]);
+							} else
+							if ((/\?\w+\^?/).test(attribute.value)) {
+								workNodes = $content.getElementsByAttribute('id', $node.id);
+								
+								if (workNodes.length == 0) {
+									continue;
+								}
+								
+								$workNode = workNodes[0];
 								
 								$workNode.setAttribute(attribute.name, attribute.value.replace(/\?\w+\^?/g, function (field) {
 									let fieldName = field.substring(1).replace('^', '');
@@ -146,7 +165,7 @@
 									}
 								}));
 								
-								if (attribute.name == 'textContent') {
+								if (attribute.name == 'textcontent') {
 									$workNode.textContent = attribute.value.replace(/\?\w+\^?/g, function (field) {
 										let fieldName = field.substring(1).replace('^', '');
 										
@@ -164,11 +183,11 @@
 					let id;
 					
 					for (id in rememberedAttributes) {
-						$nodes = $content.getElementsByAttribute('id', id);
-						nodesLength = $nodes.length;
+						nodes = $content.getElementsByAttribute('id', id);
+						nodesLength = nodes.length;
 						
 						for (i = 0; i < nodesLength; i += 1) {
-							$node = $nodes[i];
+							$node = nodes[i];
 							attributes = rememberedAttributes[id];
 							
 							for (attribute in attributes) {
@@ -176,6 +195,10 @@
 							}
 						}
 					}
+					
+					// NOTE: this was on the top but could break something somewhere
+					$content.hidden = false;
+					//
 				]]></body>
 			</method>
 			
@@ -183,18 +206,16 @@
 				<body><![CDATA[
 					let $content = this.$content;
 					
-					while ($content.hasChildNodes()) {
-					    $content.removeChild($content.lastChild);
-					}
+					this._removeChildren($content);
 					
-					let $nodes = this.childNodes;
-					let length = $nodes.length;
+					let nodes = this.childNodes;
+					let length = nodes.length;
 					
 					let i;
 					let $node;
 					
 					for (i = 0; i < length; i += 1) {
-						$node = $nodes[i];
+						$node = nodes[i];
 						
                         $content.appendChild($node.cloneNode(true));
 					}

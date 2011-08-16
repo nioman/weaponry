@@ -29,6 +29,32 @@
 		</resources>
 		
 		<implementation>
+			<method name="_removeChildren">
+				<parameter name="$element"/>
+				
+				<body><![CDATA[
+					while ($element.hasChildNodes()) {
+					    $element.removeChild($element.lastChild);
+					}
+				]]></body>
+			</method>
+			
+			<method name="_copyChildren">
+				<parameter name="$sourceElement"/>
+				<parameter name="$destinationElement"/>
+				
+				<body><![CDATA[
+					let nodes = $sourceElement.childNodes;
+					let nodesLength = nodes.length;
+					
+					let i;
+					
+					for (i = 0; i < nodesLength; i += 1) {
+						$destinationElement.appendChild(nodes[i].cloneNode(true));
+					}
+				]]></body>
+			</method>
+			
 			<method name="_fireEvent">
 				<parameter name="eventName"/>
 				<parameter name="data"/>
