@@ -45,22 +45,22 @@
 							
 							let i;
 							let element;
-							let wasSuccessful;
+							let successful;
 							let field;
 							
 							for (i = 0; i < dataLength; i += 1) {
 								element = this.obtainDataRow(i);
-								wasSuccessful = true;
+								successful = true;
 								
 								for (field in data) {
 									if (element[field] != data[field]) {
-										wasSuccessful = false;
+										successful = false;
 										
 										break;
 									}
 								}
 								
-								if (wasSuccessful) {
+								if (successful) {
 									return i;
 								}
 							}

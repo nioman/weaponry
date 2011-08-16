@@ -554,9 +554,9 @@ let weaponryCommon = new function () {
 		if (arguments.length == 3) {
 			return this.brandedAlertCheck(window, title, message) // where title is actually message and message is checkMessage
 		} else {
-			let result = {value:false, wasSuccessful:false};
+			let result = {value:false, successful:false};
 			
-			result.wasSuccessful = this.promptService.alertCheck(window, title, message, checkMessage, result);
+			result.successful = this.promptService.alertCheck(window, title, message, checkMessage, result);
 			
 			return result;
 		}
@@ -584,9 +584,9 @@ let weaponryCommon = new function () {
 		if (arguments.length == 3) {
 			return this.brandedConfirmCheck(window, title, message);  // where title is actually message and message is checkMessage
 		} else {
-			let result = {value:false, wasSuccessful:false};
+			let result = {value:false, successful:false};
 			
-			result.wasSuccessful = this.promptService.confirmCheck(window, title, message, checkMessage, result);
+			result.successful = this.promptService.confirmCheck(window, title, message, checkMessage, result);
 			
 			return result;
 		}
@@ -602,9 +602,9 @@ let weaponryCommon = new function () {
 		if (arguments.length == 3) {
 			return this.brandedPrompt(window, title, message); // where title is acutally message and message is acutally value
 		} else {
-			let result = {value:value, wasSuccessful:false};
+			let result = {value:value, successful:false};
 			
-			result.wasSuccessful = this.promptService.prompt(window, title, message, result, null, {});
+			result.successful = this.promptService.prompt(window, title, message, result, null, {});
 			
 			return result;
 		}
@@ -1254,7 +1254,7 @@ let weaponryCommon = new function () {
 	
 	this.getHttpChannelResponseParts = function (channel) {
 		let httpChannel = channel.QueryInterface(CI.nsIHttpChannel);
-		let headers = [];
+		let headers = {};
 		let headersBlock = '';
 		
 		httpChannel.visitResponseHeaders({visitHeader: function (name, value) {
@@ -1306,12 +1306,69 @@ let weaponryCommon = new function () {
 	
 	/* -------------------------------------------------------------------- */
 	
+	this.consolidateHttpParts = function (requestParts, responseParts, requestData, responseData) {
+		var replacer = function ($0) {
+			return $0.toUpperCase();
+		};
+		
+		var parts = {requestData: requestData, responseData: responseData};
+		
+		for (let fieldName in requestParts) {
+			parts['request' + fieldName.replace(/^\w/, replacer)] = requestParts[fieldName];
+		}
+		
+		for (let fieldName in responseParts) {
+			parts['response' + fieldName.replace(/^\w/, replacer)] = responseParts[fieldName];
+		}
+		
+		return parts;
+	};
+	
+	/* -------------------------------------------------------------------- */
+	
 	this.closeHttpChannel = function (httpChannel) {
 		httpChannel.cancel(CR.NS_OK);
 	};
 	
 	this.abortHttpChannel = function (httpChannel) {
 		httpChannel.cancel(CR.NS_BINDING_ABORTED);
+	};
+	
+	/* -------------------------------------------------------------------- */
+	
+	this.createHttpObserver = function (observeRequests, observerResponses, handler) {
+		var topics = [];
+		
+		if (observeRequests) {
+			topics.push('http-on-modify-request');
+		}
+		
+		if (observerResponses) {
+			topics.push('http-on-examine-response');
+			topics.push('http-on-examine-cached-response');
+		}
+		
+		return this.createObserver(topics, function (subject, topic, data) {
+			let httpChannel;
+			
+			try {
+				httpChannel = subject.QueryInterface(CI.nsIHttpChannel);
+			} catch (e) {
+				return;
+			}
+			
+			let channelWindow = weaponryCommon.getChannelWindow(httpChannel);
+			
+			if (!channelWindow) {
+				return;
+			}
+			
+			if (channelWindow.location.protocol in {'http:':1, 'https:':1} || channelWindow.location == 'about:blank') {
+				handler(httpChannel, channelWindow, weaponryCommon.getParentChromeWindow(channelWindow.top));
+			} else {
+				handler(httpChannel, channelWindow, channelWindow);
+			}
+		});
 	};
 	
 	/* -------------------------------------------------------------------- */

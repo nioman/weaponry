@@ -27,7 +27,7 @@
 		<implementation>
 			<property name="$content">
 				<getter><![CDATA[
-					throw new Error('not implemented: $content');
+					throw new Error('not implemented');
 				]]></getter>
 			</property>
 			
@@ -35,13 +35,13 @@
 				<body><![CDATA[
 					if (this._fireEvent('refresh')) {
 						let $content = this.$content;
-						let $nodes = $content.childNodes;
-						let length = $nodes.length;
+						let nodes = $content.childNodes;
+						let length = nodes.length;
 						
 						let i;
 						
 						for (i = 0; i < length; i += 1) {
-							$nodes[i].firstChild.refresh();
+							nodes[i].firstChild.refresh();
 						}
 					}
 				]]></body>
@@ -51,13 +51,13 @@
 				<body><![CDATA[
 					if (this._fireEvent('rebuild')) {
 						let $content = this.$content;
-						let $nodes = $content.childNodes;
-						let length = $nodes.length;
+						let nodes = $content.childNodes;
+						let length = nodes.length;
 						
 						let i;
 						
 						for (i = 0; i < length; i += 1) {
-							$nodes[i].firstChild.rebuild();
+							nodes[i].firstChild.rebuild();
 						}
 					}
 				]]></body>
@@ -68,7 +68,7 @@
 					let self = this;
 					
 					this.dataView.buildItem = function (data, refresh) {
-						throw new Error('not implemented: dataView.buildItem');
+						throw new Error('not implemented');
 					};
 					
 					this.dataView.basedatarollOldInsertDataRow = this.dataView.insertDataRow;
