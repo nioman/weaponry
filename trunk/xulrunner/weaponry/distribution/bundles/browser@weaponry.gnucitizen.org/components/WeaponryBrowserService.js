@@ -116,11 +116,8 @@ WeaponryBrowserService.prototype = {
 			}
 		};
 		
-		let i;
-		let type;
-		
-		for (i = 0; i < typesLength; i += 1) {
-			type = types[i];
+		for (let i = 0; i < typesLength; i += 1) {
+			let type = types[i];
 			
 			weaponryCommon.componentManager.registerFactory(classID, 'Weaponry Browser Content Dispatcher for ' + type, '@mozilla.org/uriloader/content-handler;1?type=' + type, factory, false);
 		}
