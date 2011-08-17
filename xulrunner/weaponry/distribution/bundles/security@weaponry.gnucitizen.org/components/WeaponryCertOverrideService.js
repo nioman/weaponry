@@ -123,9 +123,7 @@ WeaponryCertOverrideService.prototype = {
 				let exceptions = this.preferencesService.getChildList('org.gnucitizen.weaponry.security.CertOverrideService.exceptions.add.', {});
 				let exceptionsLength = exceptions.length;
 				
-				let i;
-				
-				for (i = 0; i < exceptionsLength; i += 1) {
+				for (let i = 0; i < exceptionsLength; i += 1) {
 					try {
 						if (this.preferencesService.getCharPref(exceptions[i]).toLowerCase() == address) {
 							return this.originalListener.hasMatchingOverride(host, port, cert, overrideBits, isTemporary);
