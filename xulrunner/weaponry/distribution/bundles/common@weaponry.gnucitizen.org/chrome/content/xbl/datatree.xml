@@ -87,11 +87,8 @@
 						let dataLen = self.dataView.obtainDataLen();
 						let dataPossitions = {};
 						
-						let i;
-						let dataRow;
-						
-						for (i = 0; i < dataLen; i += 1) {
-							dataRow = self.dataView.obtainDataRow(i);
+						for (let i = 0; i < dataLen; i += 1) {
+							let dataRow = self.dataView.obtainDataRow(i);
 							
 							dataPossitions[dataRow['_metaID']] = i;
 							
@@ -120,9 +117,7 @@
 								let _metaIDs = dataTreeView.childDataMap[_metaID];
 								let _metaIDsLength = _metaIDs.length;
 								
-								let i;
-								
-								for (i = 0; i < _metaIDsLength; i += 1) {
+								for (let i = 0; i < _metaIDsLength; i += 1) {
 									let _metaID = _metaIDs[i];
 									
 									orderedDataIDs.push(_metaID);
@@ -134,7 +129,7 @@
 						
 						let orderedDataIDsLength = orderedDataIDs.length;
 						
-						for (i = 0; i < orderedDataIDsLength; i += 1) {
+						for (let i = 0; i < orderedDataIDsLength; i += 1) {
 							let _metaID = orderedDataIDs[i];
 							let dataRow = self.dataView.obtainDataRow(dataPossitions[_metaID]);
 							let displayData = dataTreeView.displayData[dataRow['_metaID']];

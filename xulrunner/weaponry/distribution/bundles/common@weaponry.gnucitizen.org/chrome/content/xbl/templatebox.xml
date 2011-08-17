@@ -53,6 +53,38 @@
 				]]></getter>
 			</property>
 			
+			<method name="_getWorkNode">
+				<parameter name="id"/>
+				
+				<body><![CDATA[
+					let workNodes = this.$content.getElementsByAttribute('id', id);
+					
+					if (workNodes.length == 0) {
+						return null;
+					}
+					
+					return workNodes[0];
+				]]></body>
+			</method>
+			
+			<method name="_handleFieldValueChange">
+				<parameter name="$workNode"/>
+				<parameter name="event"/>
+				<parameter name="parameter"/>
+				
+				<body><![CDATA[
+					let self = this;
+					
+					this._lockEvent($workNode, event, function (event) {
+						let data = {};
+						
+						data[this.getAttribute('field')] = this[parameter];
+						
+						self._fireEvent('fieldValueChange', data);
+					});
+				]]></body>
+			</method>
+			
 			<method name="retemplate">
 				<parameter name="$sourceNode"/>
 				
@@ -74,24 +106,16 @@
 					let nodes = $content.getElementsByAttribute('remember', '*');
 					let nodesLength = nodes.length;
 					
-					let i;
-					let $node;
-					let values;
-					let attributes;
-					let attributesLength;
-					let j;
-					let attribute;
-					
-					for (i = 0; i < nodesLength; i += 1) {
-						$node = nodes[i];
+					for (let i = 0; i < nodesLength; i += 1) {
+						let $node = nodes[i];
 						
 						if ($node.id) {
-							values = {};
-							attributes = $node.getAttribute('remember').split(' ');
-							attributesLength = attributes.length;
+							let values = {};
+							let attributes = $node.getAttribute('remember').split(' ');
+							let attributesLength = attributes.length;
 							
-							for (j = 0; j < attributesLength; j += 1) {
-								attribute = attributes[j].trim();
+							for (let j = 0; j < attributesLength; j += 1) {
+								let attribute = attributes[j].trim();
 								
 								values[attribute] = $node.getAttribute(attribute);
 							}
@@ -103,57 +127,56 @@
 					nodes = this.getElementsByTagName('*');
 					nodesLength = nodes.length;
 					
-					let self = this;
-					
-					let attributeName;
-					let workNodes;
 					let $workNode;
 					
-					for (i = 0; i < nodesLength; i += 1) {
-						$node = nodes[i];
-						attributes = $node.attributes;
-						attributesLength = attributes.length;
+					for (let i = 0; i < nodesLength; i += 1) {
+						let $node = nodes[i];
+						let attributes = $node.attributes;
+						let attributesLength = attributes.length;
 						
-						for (j = 0; j < attributesLength; j += 1) {
-							attribute = attributes[j];
+						for (let j = 0; j < attributesLength; j += 1) {
+							let attribute = attributes[j];
 							
 							if (attribute.name == 'field') {
 								switch($node.tagName) {
 									case 'checkbox':
-										attributeName = 'checked';
+										$workNode = this._getWorkNode($node.id);
 										
-										break;
-									case 'label':
-										attributeName = 'value';
-										eventName = 'change';
+										if ($workNode) {
+											$workNode.setAttribute('checked', fields[attribute.value]);
+										}
+										
+										this._handleFieldValueChange($workNode, 'click', 'checked');
 										
 										break;
 									case 'textbox':
-										attributeName = 'value';
+										$workNode = this._getWorkNode($node.id);
+										
+										if ($workNode) {
+											$workNode.setAttribute('value', fields[attribute.value]);
+										}
+										
+										this._handleFieldValueChange($workNode, 'change', 'value');
+										
+										break;
+									case 'label':
+										$workNode = this._getWorkNode($node.id);
+										
+										if ($workNode) {
+											$workNode.setAttribute('value', fields[attribute.value]);
+										}
 										
 										break;
 									default:
 										continue;
 								}
-								
-								workNodes = $content.getElementsByAttribute('id', $node.id);
-								
-								if (workNodes.length == 0) {
-									continue;
-								}
-								
-								$workNode = workNodes[0];
-								
-								$workNode.setAttribute(attributeName, fields[attribute.value]);
 							} else
 							if ((/\?\w+\^?/).test(attribute.value)) {
-								workNodes = $content.getElementsByAttribute('id', $node.id);
+								$workNode = this._getWorkNode($node.id);
 								
-								if (workNodes.length == 0) {
+								if (!$workNode) {
 									continue;
 								}
-								
-								$workNode = workNodes[0];
 								
 								$workNode.setAttribute(attribute.name, attribute.value.replace(/\?\w+\^?/g, function (field) {
 									let fieldName = field.substring(1).replace('^', '');
@@ -180,15 +203,13 @@
 						}
 					}
 					
-					let id;
-					
-					for (id in rememberedAttributes) {
+					for (let id in rememberedAttributes) {
 						nodes = $content.getElementsByAttribute('id', id);
 						nodesLength = nodes.length;
 						
-						for (i = 0; i < nodesLength; i += 1) {
-							$node = nodes[i];
-							attributes = rememberedAttributes[id];
+						for (let i = 0; i < nodesLength; i += 1) {
+							let $node = nodes[i];
+							let attributes = rememberedAttributes[id];
 							
 							for (attribute in attributes) {
 								$node.setAttribute(attribute, attributes[attribute]);
@@ -209,13 +230,10 @@
 					this._removeChildren($content);
 					
 					let nodes = this.childNodes;
-					let length = nodes.length;
+					let nodesLength = nodes.length;
 					
-					let i;
-					let $node;
-					
-					for (i = 0; i < length; i += 1) {
-						$node = nodes[i];
+					for (let i = 0; i < nodesLength; i += 1) {
+						let $node = nodes[i];
 						
                         $content.appendChild($node.cloneNode(true));
 					}
@@ -245,10 +263,10 @@
 			
 			<constructor>
 				<action><![CDATA[
-					this._bindEvent(this, 'DOMSubtreeModified', function (event) {
-						if (event.originalTarget == this) {
-							this.rebuild();
-						}
+					let self = this;
+					
+					this._lockEvent(this, 'DOMSubtreeModified', function (event) {
+						self.rebuild();
 					});
 					
 					this.rebuild();

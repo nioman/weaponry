@@ -132,7 +132,7 @@ WeaponryBasicHttpRequest.prototype = {
 		
 		this.xmlHttpRequest.open(this.requestMethod, this.requestUrl, false);
 		
-		for (var headerName in this.requestHeaders) {
+		for (let headerName in this.requestHeaders) {
 			this.xmlHttpRequest.setRequestHeader(headerName, this.requestHeaders[headerName]);
 		}
 		
@@ -144,7 +144,7 @@ WeaponryBasicHttpRequest.prototype = {
 		
 		this.xmlHttpRequest.open(this.requestMethod, this.requestUrl, true);
 		
-		for (var headerName in this.requestHeaders) {
+		for (let headerName in this.requestHeaders) {
 			this.xmlHttpRequest.setRequestHeader(headerName, this.requestHeaders[headerName]);
 		}
 		

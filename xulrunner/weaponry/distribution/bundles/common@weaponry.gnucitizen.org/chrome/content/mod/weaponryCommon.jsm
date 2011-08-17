@@ -1307,11 +1307,11 @@ let weaponryCommon = new function () {
 	/* -------------------------------------------------------------------- */
 	
 	this.consolidateHttpParts = function (requestParts, responseParts, requestData, responseData) {
-		var replacer = function ($0) {
+		let replacer = function ($0) {
 			return $0.toUpperCase();
 		};
 		
-		var parts = {requestData: requestData, responseData: responseData};
+		let parts = {requestData: requestData, responseData: responseData};
 		
 		for (let fieldName in requestParts) {
 			parts['request' + fieldName.replace(/^\w/, replacer)] = requestParts[fieldName];
@@ -1337,7 +1337,7 @@ let weaponryCommon = new function () {
 	/* -------------------------------------------------------------------- */
 	
 	this.createHttpObserver = function (observeRequests, observerResponses, handler) {
-		var topics = [];
+		let topics = [];
 		
 		if (observeRequests) {
 			topics.push('http-on-modify-request');

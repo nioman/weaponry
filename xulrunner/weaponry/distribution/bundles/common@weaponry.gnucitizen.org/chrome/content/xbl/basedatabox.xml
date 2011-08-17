@@ -25,6 +25,72 @@
 	
 	<binding id="basedatabox" extends="chrome://common.weaponry.gnucitizen.org/content/xbl/basecomputebox.xml#basecomputebox">
 		<implementation>
+			<method name="obtainDataLen">
+				<body><![CDATA[
+					return this.dataView.obtainDataLen.apply(this.dataView, arguments);
+				]]></body>
+			</method>
+			
+			<method name="obtainDataPos">
+				<body><![CDATA[
+					return this.dataView.obtainDataPos.apply(this.dataView, arguments);
+				]]></body>
+			</method>
+			
+			<method name="obtainDataRows">
+				<body><![CDATA[
+					return this.dataView.obtainDataRows.apply(this.dataView, arguments);
+				]]></body>
+			</method>
+			
+			<method name="obtainDataRow">
+				<body><![CDATA[
+					return this.dataView.obtainDataRow.apply(this.dataView, arguments);
+				]]></body>
+			</method>
+			
+			<method name="createDataRow">
+				<body><![CDATA[
+					return this.dataView.createDataRow.apply(this.dataView, arguments);
+				]]></body>
+			</method>
+			
+			<method name="insertDataRow">
+				<body><![CDATA[
+					return this.dataView.insertDataRow.apply(this.dataView, arguments);
+				]]></body>
+			</method>
+			
+			<method name="appendDataRow">
+				<body><![CDATA[
+					return this.dataView.appendDataRow.apply(this.dataView, arguments);
+				]]></body>
+			</method>
+			
+			<method name="updateDataRow">
+				<body><![CDATA[
+					return this.dataView.updateDataRow.apply(this.dataView, arguments);
+				]]></body>
+			</method>
+			
+			<method name="removeDataRow">
+				<body><![CDATA[
+					return this.dataView.removeDataRow.apply(this.dataView, arguments);
+				]]></body>
+			</method>
+			
+			<method name="rinseDataRows">
+				<body><![CDATA[
+					return this.dataView.rinseDataRows.apply(this.dataView, arguments);
+				]]></body>
+			</method>
+			
+			<method name="rinseDataRows">
+				<body><![CDATA[
+					return this.dataView.clearDataRows.apply(this.dataView, arguments);
+				]]></body>
+			</method>
+			
 			<constructor>
 				<action><![CDATA[
 					let self = this;
@@ -36,23 +102,14 @@
 							return this.data.length;
 						},
 						
-						obtainDataRow: function (row) {
-							return this.data[row];
-						},
-						
 						obtainDataPos: function (data) {
 							let dataLength = this.obtainDataLen();
 							
-							let i;
-							let element;
-							let successful;
-							let field;
-							
-							for (i = 0; i < dataLength; i += 1) {
-								element = this.obtainDataRow(i);
-								successful = true;
+							for (let i = 0; i < dataLength; i += 1) {
+								let element = this.obtainDataRow(i);
+								let successful = true;
 								
-								for (field in data) {
+								for (let field in data) {
 									if (element[field] != data[field]) {
 										successful = false;
 										
@@ -66,6 +123,18 @@
 							}
 							
 							return null;
+						},
+						
+						obtainDataRows: function () {
+							// TODO: ensure that this method is correctly supported by all other types of components
+							// TODO: we should return a copy of this
+							return this.data;
+							//
+							//
+						},
+						
+						obtainDataRow: function (row) {
+							return this.data[row];
 						},
 						
 						createDataRow: function (data) {
@@ -90,9 +159,7 @@
 							let newData = this.data[row];
 							let dataRow = this.createDataRow(data);
 							
-							let property;
-							
-							for (property in dataRow) {
+							for (let property in dataRow) {
 								newData[property] = dataRow[property];
 							}
 							
@@ -112,46 +179,6 @@
 						clearDataRows: function () {
 							this.data = [];
 						}
-					};
-					
-					this.obtainDataLen = function () {
-						return this.dataView.obtainDataLen.apply(this.dataView, arguments);
-					};
-					
-					this.obtainDataRow = function () {
-						return this.dataView.obtainDataRow.apply(this.dataView, arguments);
-					};
-					
-					this.obtainDataPos = function () {
-						return this.dataView.obtainDataPos.apply(this.dataView, arguments);
-					};
-					
-					this.createDataRow = function () {
-						return this.dataView.createDataRow.apply(this.dataView, arguments);
-					};
-					
-					this.insertDataRow = function () {
-						return this.dataView.insertDataRow.apply(this.dataView, arguments);
-					};
-					
-					this.appendDataRow = function () {
-						return this.dataView.appendDataRow.apply(this.dataView, arguments);
-					};
-					
-					this.updateDataRow = function () {
-						return this.dataView.updateDataRow.apply(this.dataView, arguments);
-					};
-					
-					this.removeDataRow = function () {
-						return this.dataView.removeDataRow.apply(this.dataView, arguments);
-					};
-					
-					this.rinseDataRows = function () {
-						return this.dataView.rinseDataRows.apply(this.dataView, arguments);
-					};
-					
-					this.clearDataRows = function () {
-						return this.dataView.clearDataRows.apply(this.dataView, arguments);
 					};
 				]]></action>
 			</constructor>

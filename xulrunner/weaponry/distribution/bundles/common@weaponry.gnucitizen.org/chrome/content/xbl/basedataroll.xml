@@ -36,11 +36,9 @@
 					if (this._fireEvent('refresh')) {
 						let $content = this.$content;
 						let nodes = $content.childNodes;
-						let length = nodes.length;
+						let nodesLength = nodes.length;
 						
-						let i;
-						
-						for (i = 0; i < length; i += 1) {
+						for (let i = 0; i < nodesLength; i += 1) {
 							nodes[i].firstChild.refresh();
 						}
 					}
@@ -52,11 +50,9 @@
 					if (this._fireEvent('rebuild')) {
 						let $content = this.$content;
 						let nodes = $content.childNodes;
-						let length = nodes.length;
+						let nodesLength = nodes.length;
 						
-						let i;
-						
-						for (i = 0; i < length; i += 1) {
+						for (let i = 0; i < nodesLength; i += 1) {
 							nodes[i].firstChild.rebuild();
 						}
 					}
@@ -120,9 +116,7 @@
 						let result = this.basedatarollOldRinseDataRows.apply(this, arguments);
 						let $content = self.$content;
 						
-						let i;
-						
-						for (i = 0; i < count; i += 1) {
+						for (let i = 0; i < count; i += 1) {
 							$content.removeChild($content.childNodes[row + i]);
 						}
 						
