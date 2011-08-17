@@ -70,9 +70,18 @@
 						
 						$templatebox.setAttribute('class', 'dataroll-templatebox');
 						$templatebox.setAttribute('flex', '1');
-						
 						$templatebox.retemplate(self);
 						$templatebox.update(data, refresh);
+						
+						self._lockEvent($templatebox, 'fieldValueChange', function (event) {
+							let $item = event.originalTarget.parentNode;
+							let $itemParent = $item.parentNode;
+							let index = self._getChildIndex($itemParent, $item);
+							
+							if (index >= 0) {
+								self.updateDataRow(event.data, index, false);
+							}
+						});
 						
 						let $item = document.createElement('vbox');
 						

@@ -47,11 +47,29 @@
 					let nodes = $sourceElement.childNodes;
 					let nodesLength = nodes.length;
 					
-					let i;
-					
-					for (i = 0; i < nodesLength; i += 1) {
+					for (let i = 0; i < nodesLength; i += 1) {
 						$destinationElement.appendChild(nodes[i].cloneNode(true));
 					}
+				]]></body>
+			</method>
+			
+			<method name="_getChildIndex">
+				<parameter name="$parent"/>
+				<parameter name="$child"/>
+				
+				<body><![CDATA[
+					let childNodes = $parent.childNodes;
+					let childNodesLength = childNodes.length;
+					
+					for (let i = 0; i < childNodesLength; i += 1) {
+						let $node = childNodes[i];
+						
+						if ($node == $child) {
+							return i;
+						}
+					}
+					
+					return -1;
 				]]></body>
 			</method>
 			
@@ -68,11 +86,9 @@
 						event.data = data;
 					}
 					
-					let result;
-					
 					if (this.hasAttribute('on' + eventName.toLowerCase())) {
-						with({event:event}) {
-							result = eval('(function (event) {' + this.getAttribute('on' + eventName.toLowerCase()) + '})(event)');
+						with({event: event}) {
+							let result = eval('(function (event) {' + this.getAttribute('on' + eventName.toLowerCase()) + '})(event)');
 							
 							if (result == false) {
 								event.preventDefault();
@@ -81,7 +97,7 @@
 					}
 					
 					if (this['on' + eventName.toLowerCase()]) {
-						result = this['on' + eventName.toLowerCase()](event);
+						let result = this['on' + eventName.toLowerCase()](event);
 						
 						if (result == false) {
 							event.preventDefault();
@@ -115,8 +131,8 @@
 				
 				<body><![CDATA[
 					this._bindEvent($element, event, function (event) {
-						if (event.target == $element) {
-							handler(event);
+						if (event.originalTarget == this) {
+							handler.apply(this, arguments);
 						}
 					});
 				]]></body>
@@ -138,15 +154,10 @@
 					let attributeLookupTable = {};
 					let attributesLength = attributes.length;
 					
-					let i;
-					let attribute;
-					let attributeName;
-					let attributeLookup;
-					
-					for (i = 0; i < attributesLength; i += 1) {
-						attribute = attributes[i];
-						attributeName = attribute;
-						attributeLookup = attribute;
+					for (let i = 0; i < attributesLength; i += 1) {
+						let attribute = attributes[i];
+						let attributeName = attribute;
+						let attributeLookup = attribute;
 						
 						if (attribute.indexOf('=') >= 0) {
 							attributeName = attribute.split(/\s*=/g)[0];
@@ -219,11 +230,8 @@
 					if ('_boundEvents' in this && this._boundEvents) {
 						let boundEventsLength = this._boundEvents.length;
 						
-						let i;
-						let event;
-						
-						for (i = 0; i < boundEventsLength; i += 1) {
-							event = this._boundEvents[i];
+						for (let i = 0; i < boundEventsLength; i += 1) {
+							let event = this._boundEvents[i];
 							
 							event[0].removeEventListener(event[1], event[2], false);
 						}

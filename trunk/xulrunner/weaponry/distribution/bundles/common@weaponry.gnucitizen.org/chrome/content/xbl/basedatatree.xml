@@ -218,9 +218,7 @@
 								let _properties = dataRow['_metaRowProperties'].split(/\s+/g);
 								let _propertiesLength = _properties.length;
 								
-								let i;
-								
-								for (i = 0; i < _propertiesLength; i += 1) {
+								for (let i = 0; i < _propertiesLength; i += 1) {
 									properties.AppendElement(weaponryCommon.atomService.getAtom(_properties[i]));
 								}
 							}
@@ -231,9 +229,7 @@
 								let _properties = column.element.getAttribute('properties').split(/\s*,\s*/g);
 								let _propertiesLength = _properties.length;
 								
-								let i;
-								
-								for (i = 0; i < _propertiesLength; i += 1) {
+								for (let i = 0; i < _propertiesLength; i += 1) {
 									properties.AppendElement(weaponryCommon.atomService.getAtom(_properties[i]));
 								}
 							}
@@ -247,9 +243,7 @@
 								let _properties = dataRow['_metaCellProperties_' + field].split(/\s+/g);
 								let _propertiesLength = _properties.length;
 								
-								let i;
-								
-								for (i = 0; i < _propertiesLength; i += 1) {
+								for (let i = 0; i < _propertiesLength; i += 1) {
 									properties.AppendElement(weaponryCommon.atomService.getAtom(_properties[i]));
 								}
 							}
