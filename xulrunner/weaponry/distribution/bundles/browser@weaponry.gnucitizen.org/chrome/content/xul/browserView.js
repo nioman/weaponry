@@ -127,7 +127,7 @@ function handleBrowserStopCommandEvent(event) {
 
 function handleBrowserGoCommandEvent(event) {
 	let $contentLocationbox = document.getElementById('browser-view-content-locationbox');
-	var location = $contentLocationbox.value;
+	let location = $contentLocationbox.value;
 	
 	weaponryCommon.recordFaviconForUrl(location);
 	
@@ -149,7 +149,7 @@ function buildNeterrorUri(type, target, url, description) {
 /* ------------------------------------------------------------------------ */
 
 function buildAbsoluteUrl(base, url) {
-	var baseURI = weaponryCommon.ioService.newURI(base, null, null);
+	let baseURI = weaponryCommon.ioService.newURI(base, null, null);
 	
 	return weaponryCommon.ioService.newURI(baseURI.resolve(url), null, null).spec;
 }
