@@ -25,6 +25,10 @@ function handleColorsCommandEvent(event) {
 	weaponryCommon.openWindow(null, 'chrome://development.weaponry.gnucitizen.org/content/htm/colors.htm', '', 'all,chrome,resizable,centerscreen,width=400,height=600');
 }
 
+function handleRequestsCommandEvent(event) {
+	weaponryCommon.openWindow(null, 'chrome://development.weaponry.gnucitizen.org/content/htm/requests.htm', '', 'all,chrome,resizable,centerscreen,width=600,height=400');
+}
+
 function handleInspectorCommandEvent(event) {
 	weaponryCommon.openWindow(null, 'chrome://inspector/content/inspector.xul', '', 'all,chrome,resizable,centerscreen');
 }

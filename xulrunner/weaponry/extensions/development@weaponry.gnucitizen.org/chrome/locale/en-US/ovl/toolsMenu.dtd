@@ -1,5 +1,6 @@
 <!ENTITY weaponry-development-tools-menu-development-menu-label "Development">
 <!ENTITY weaponry-development-tools-menu-memory-menuitem-label "Memory">
 <!ENTITY weaponry-development-tools-menu-colors-menuitem-label "Colors">
+<!ENTITY weaponry-development-tools-menu-requests-menuitem-label "Requests">
 <!ENTITY weaponry-development-tools-menu-inspector-menuitem-label "Inspector">
 <!ENTITY weaponry-development-tools-menu-jsshell-menuitem-label "Jsshell">
