@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <!--
- *  dataroll.xml
+ *  functionalbox.xml
  *  Copyright (C) 2007-2011  GNUCITIZEN
  *  
  *  This program is free software; you can redistribute it and/or modify
@@ -17,22 +17,18 @@
  *  along with this program; if not, write to the Free Software
  *  Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 -->
-<!DOCTYPE bindings SYSTEM "chrome://common.weaponry.gnucitizen.org/locale/xbl/dataroll.dtd">
+<!DOCTYPE bindings SYSTEM "chrome://common.weaponry.gnucitizen.org/locale/xbl/functionalbox.dtd">
 <bindings
 	xmlns="http://www.mozilla.org/xbl"
 	xmlns:xbl="http://www.mozilla.org/xbl"
 	xmlns:xul="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
 	
-	<binding id="dataroll" extends="chrome://common.weaponry.gnucitizen.org/content/xbl/basedataflow.xml#basedataflow">
+	<binding id="functionalbox" extends="chrome://common.weaponry.gnucitizen.org/content/xbl/basecomputebox.xml#basecomputebox">
 		<content>
-			<xul:vbox class="dataroll-container" flex="1">
-				<xul:vbox class="dataroll-content" flex="1"/>
-				
-				<xul:box class="dataroll-template" hidden="true">
+			<xul:vbox class="functionalbox-container" collapsed="true" flex="1">
+				<xul:vbox class="functionalbox-content" flex="1">
 					<children/>
-				</xul:box>
-				
-				<xul:templatebox class="dataroll-templatebox"/>
+				</xul:vbox>
 			</xul:vbox>
 		</content>
 		
@@ -49,47 +45,9 @@
 				]]></getter>
 			</property>
 			
-			<property name="$template">
-				<getter><![CDATA[
-					return this.$container.childNodes[1];
-				]]></getter>
-			</property>
-			
-			<property name="$templatebox">
-				<getter><![CDATA[
-					return this.$container.childNodes[2];
-				]]></getter>
-			</property>
-			
 			<constructor>
 				<action><![CDATA[
-					let self = this;
-					
-					this.dataView.buildItem = function (data, refresh) {
-						let $templatebox = self.$templatebox.cloneNode(true);
-						
-						$templatebox.setAttribute('class', 'dataroll-templatebox');
-						$templatebox.setAttribute('flex', '1');
-						$templatebox.retemplate(self);
-						$templatebox.update(data, refresh);
-						
-						self._lockEvent($templatebox, 'fieldValueChange', function (event) {
-							let $item = event.originalTarget.parentNode;
-							let $itemParent = $item.parentNode;
-							let index = self._getChildIndex($itemParent, $item);
-							
-							if (index >= 0) {
-								self.updateDataRow(event.data, index, false);
-							}
-						});
-						
-						let $item = document.createElement('vbox');
-						
-						$item.setAttribute('class', 'dataroll-item');
-						$item.appendChild($templatebox);
-						
-						return $item;
-					};
+					// pass
 				]]></action>
 			</constructor>
 			
