@@ -23,7 +23,7 @@
 	xmlns:xbl="http://www.mozilla.org/xbl"
 	xmlns:xul="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
 	
-	<binding id="datalist" extends="chrome://common.weaponry.gnucitizen.org/content/xbl/basedataroll.xml#basedataroll">
+	<binding id="datalist" extends="chrome://common.weaponry.gnucitizen.org/content/xbl/basedataflow.xml#basedataflow">
 		<content>
 			<xul:vbox class="datalist-container" flex="1">
 				<xul:richlistbox class="datalist-content" seltype="single" flex="1"/>

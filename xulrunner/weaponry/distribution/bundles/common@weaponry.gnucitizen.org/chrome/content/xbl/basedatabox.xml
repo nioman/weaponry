@@ -43,9 +43,21 @@
 				]]></body>
 			</method>
 			
+			<method name="enlistDataRows">
+				<body><![CDATA[
+					return this.dataView.enlistDataRows.apply(this.dataView, arguments);
+				]]></body>
+			</method>
+			
 			<method name="obtainDataRow">
 				<body><![CDATA[
 					return this.dataView.obtainDataRow.apply(this.dataView, arguments);
+				]]></body>
+			</method>
+			
+			<method name="searchDataRow">
+				<body><![CDATA[
+					return this.dataView.searchDataRow.apply(this.dataView, arguments);
 				]]></body>
 			</method>
 			
@@ -67,6 +79,12 @@
 				]]></body>
 			</method>
 			
+			<method name="coupleDataRow">
+				<body><![CDATA[
+					return this.dataView.coupleDataRow.apply(this.dataView, arguments);
+				]]></body>
+			</method>
+			
 			<method name="updateDataRow">
 				<body><![CDATA[
 					return this.dataView.updateDataRow.apply(this.dataView, arguments);
@@ -85,7 +103,7 @@
 				]]></body>
 			</method>
 			
-			<method name="rinseDataRows">
+			<method name="clearDataRows">
 				<body><![CDATA[
 					return this.dataView.clearDataRows.apply(this.dataView, arguments);
 				]]></body>
@@ -133,8 +151,28 @@
 							//
 						},
 						
+						enlistDataRows: function (handler) {
+							// TODO: ensure that this method is correctly supported by all other types of components
+							let dataLength = this.obtainDataLen();
+							
+							for (let i = 0; i < dataLength; i += 1) {
+								let result = handler(i, this.obtainDataRow(i));
+								
+								if (result === true) {
+									break;
+								}
+							}
+							//
+						},
+						
 						obtainDataRow: function (row) {
 							return this.data[row];
+						},
+						
+						searchDataRow: function (data) {
+							// TODO: ensure that this method is correctly supported by all other types of components
+							return this.obtainDataRow(this.obtainDataPos(data));
+							//
 						},
 						
 						createDataRow: function (data) {
@@ -153,6 +191,12 @@
 							this.data.push(this.createDataRow(data));
 							
 							return this.data.length - 1;
+						},
+						
+						coupleDataRow: function (data) {
+							// TODO: ensure that this method is correctly supported by all other types of components
+							this.appendDataRow(data);
+							//
 						},
 						
 						updateDataRow: function (data, row) {

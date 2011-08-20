@@ -85,6 +85,22 @@
 				]]></body>
 			</method>
 			
+			<method name="cloneContent">
+				<body><![CDATA[
+					return this.$content.cloneNode(true);
+				]]></body>
+			</method>
+			
+			<method name="generateContent">
+				<parameter name="fields"/>
+				
+				<body><![CDATA[
+					this.update(fields);
+					
+					return this.cloneContent();
+				]]></body>
+			</method>
+			
 			<method name="retemplate">
 				<parameter name="$sourceNode"/>
 				
