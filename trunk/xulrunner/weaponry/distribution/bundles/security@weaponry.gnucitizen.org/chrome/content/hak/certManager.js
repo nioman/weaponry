@@ -17,32 +17,32 @@
  *  Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
  */
 
-window.weaponrySecurityLoadCertsFunctionSource = LoadCerts.toString();
-
-/* ------------------------------------------------------------------------ */
-
-window.LoadCerts = function () {
-	let preferencesService = Components.classes['@mozilla.org/preferences-service;1'].getService(Components.interfaces.nsIPrefBranch);
-	let isEnabled = false;
+(function () {
+	window.weaponrySecurityLoadCertsFunctionSource = LoadCerts.toString();
 	
-	try {
-		isEnabled = preferencesService.getBoolPref('org.gnucitizen.weaponry.security.CertOverrideService.enabled');
-	} catch (e) {
-		// pass
-	}
-	
-	if (isEnabled) {
-		let patchedSource = window.weaponrySecurityLoadCertsFunctionSource.replace(/^function LoadCerts\(\) \{|\}$/g, '')
-		                                                                  .replace('serverTreeView = Components.classes[nsCertTree].createInstance(nsICertTree);', '')
-		                                                                  .replace('serverTreeView.loadCertsFromCache(certcache, nsIX509Cert.SERVER_CERT);', '');
+	window.LoadCerts = function () {
+		let preferencesService = Components.classes['@mozilla.org/preferences-service;1'].getService(Components.interfaces.nsIPrefBranch);
+		let isEnabled = false;
 		
-		eval(patchedSource);
-	} else {
-		let originalSource = window.weaponrySecurityLoadCertsFunctionSource;
+		try {
+			isEnabled = preferencesService.getBoolPref('org.gnucitizen.weaponry.security.CertOverrideService.enabled');
+		} catch (e) {
+			// pass
+		}
 		
-		eval(originalSource);
-	}
-};
+		if (isEnabled) {
+			let patchedSource = window.weaponrySecurityLoadCertsFunctionSource.replace(/^function LoadCerts\(\) \{|\}$/g, '')
+			                                                                  .replace('serverTreeView = Components.classes[nsCertTree].createInstance(nsICertTree);', '')
+			                                                                  .replace('serverTreeView.loadCertsFromCache(certcache, nsIX509Cert.SERVER_CERT);', '');
+			
+			eval(patchedSource);
+		} else {
+			let originalSource = window.weaponrySecurityLoadCertsFunctionSource;
+			
+			eval(originalSource);
+		}
+	};
+})();
 
 /*  GNUCITIZEN (Information Security Think Tank)
  **********************************************/
