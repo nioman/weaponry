@@ -76,19 +76,24 @@
 					let self = this;
 					
 					this.dataView._sortAscHelper = function (a, b) {
-						return a <= b;
+						return a < b;
 					};
 					
 					this.dataView._sortDscHelper = function (a, b) {
-						return a >= b;
+						return a > b;
 					};
 					
 					this.dataView.insertDataRow = function (data, row, refresh) {
 						let pos = this.basedataflowOldInsertDataRow.apply(this, arguments);
 						let dataRow = this.obtainDataRow(pos);
 						let $content = self.$content;
+						let $node = null;
 						
-						$content.insertBefore(this.buildItem(dataRow, refresh), $content.childNodes[row]);
+						if (row >= 0 && row < $content.childNodes.length) {
+							$node = $content.childNodes[row];
+						}
+						
+						$content.insertBefore(this.buildItem(dataRow, refresh), $node);
 						
 						return pos;
 					};
@@ -106,7 +111,11 @@
 					this.dataView.coupleDataRow = function (data, refresh) {
 						if (self.hasAttribute('orderby')) {
 							let orderby = self.getAttribute('orderby');
-							let orderbydirection = self.hasAttribute('orderbydirection') ? self.getAttribute('orderbydirection').toLowerCase() : 'asc';
+							let orderbydirection = 'asc';
+							
+							if (self.hasAttribute('orderbydirection')) {
+								orderbydirection = self.getAttribute('orderbydirection').toLowerCase();
+							}
 							
 							let sorter;
 							
@@ -176,9 +185,7 @@
 						let result = this.basedataflowOldClearDataRows.apply(this, arguments);
 						let $content = self.$content;
 						
-						while ($content.hasChildNodes()) {
-						    $content.removeChild($content.lastChild);
-						}
+						self._removeChildren($content);
 						
 						return result;
 					};
