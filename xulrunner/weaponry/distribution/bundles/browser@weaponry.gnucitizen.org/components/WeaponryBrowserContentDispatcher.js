@@ -61,7 +61,7 @@ WeaponryBrowserContentDispatcher.prototype = {
 	
 	/* -------------------------------------------------------------------- */
 	
-	get loadCookie (value) {
+	get loadCookie () {
 		return this.realLoadCookie;
 	},
 	
