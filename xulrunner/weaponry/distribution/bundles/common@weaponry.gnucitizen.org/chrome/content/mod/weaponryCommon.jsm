@@ -1411,11 +1411,11 @@ let weaponryCommon = new function () {
 	
 	/* -------------------------------------------------------------------- */
 	
-	this.convertStringCharset = function (string, toCharset, toCharset) {
+	this.convertStringCharset = function (string, fromCharset, toCharset) {
 		let stringOutputStream = this.createStringOutputStream();
 		let converterOutputStream = this.createInstance('@mozilla.org/intl/converter-output-stream;1', 'nsIConverterOutputStream');
 		
-		converterOutputStream.init(stringOutputStream, toCharset, 1024, CI.nsIConverterInputStream.DEFAULT_REPLACEMENT_CHARACTER);
+		converterOutputStream.init(stringOutputStream, fromCharset, 1024, CI.nsIConverterInputStream.DEFAULT_REPLACEMENT_CHARACTER);
 		converterOutputStream.writeString(string);
 		
 		let stringInputStream = this.createStringInputStream(stringOutputStream.data);
