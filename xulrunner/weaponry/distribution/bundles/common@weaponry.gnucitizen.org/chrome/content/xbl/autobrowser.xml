@@ -55,18 +55,21 @@
 				]]></getter>
 			</property>
 			
-			<method name="navigate">
+			<method name="navigateTo">
 				<parameter name="url"/>
 				<parameter name="data"/>
 				<parameter name="headers"/>
+				<parameter name="onload"/>
 				
 				<body><![CDATA[
+					this.onetimeOnloadHandler = onload;
+					
 					let postInputStream = null;
 					
 					if (data) {
 						let dataInputStream = Components.classes['@mozilla.org/io/string-input-stream;1'].createInstance(Components.interfaces.nsIStringInputStream);
 						
-						headersInputStream.setData(data.headers, data.headers.length);
+						dataInputStream.setData(data, data.length);
 						
 						postInputStream = Components.classes['@mozilla.org/network/mime-input-stream;1'].createInstance(Components.interfaces.nsIMIMEInputStream);
 						
@@ -86,6 +89,16 @@
 					//
 					
 					this.$browser.webNavigation.loadURI(url, this.$browser.webNavigation.LOAD_FLAGS_NONE, null, postInputStream, headersInputStream);
+				]]></body>
+			</method>
+			
+			<method name="loadData">
+				<parameter name="data"/>
+				<parameter name="contentType"/>
+				<parameter name="onload"/>
+				
+				<body><![CDATA[
+					this.navigateTo('data:' + contentType + ';base64,' + btoa(data), null, null, onload);
 				]]></body>
 			</method>
 			
@@ -202,12 +215,10 @@
 					let features = ['Auth', 'Images', 'Plugins', 'Subframes', 'Javascript', 'MetaRedirects'];
 					let featuresLength = features.length;
 					
-					let i, feature, featureName, attributeName;
-					
-					for (i = 0; i < featuresLength; i += 1) {
-						feature = features[i];
-						featureName = 'allow' + feature;
-						attributeName = featureName.toLowerCase();
+					for (let i = 0; i < featuresLength; i += 1) {
+						let feature = features[i];
+						let featureName = 'allow' + feature;
+						let attributeName = featureName.toLowerCase();
 						
 						if (this.hasAttribute(attributeName) && this.getAttribute(attributeName).toLowerCase() == 'true') {
 							$browser.docShell[featureName] = true;
@@ -241,7 +252,13 @@
 						
 						event.target.defaultView.addEventListener('load', function (event) {
 							if (event.target == self.$browser.contentDocument) {
-								self._fireEvent('frameloaded', {window:self.contentWindow, document:self.contentDocument});
+								if (self._fireEvent('frameloaded', {window:self.contentWindow, document:self.contentDocument})) {
+									let onetimeOnloadHandler = self.onetimeOnloadHandler;
+									
+									self.onetimeOnloadHandler = null;
+									
+									onetimeOnloadHandler.call(self, event);
+								}
 							} else {
 								self._fireEvent('subframeloaded', {window:event.target.defaultView, document:event.target});
 							}
