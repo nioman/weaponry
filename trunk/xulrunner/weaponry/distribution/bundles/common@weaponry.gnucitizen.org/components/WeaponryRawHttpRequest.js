@@ -330,8 +330,10 @@ WeaponryRawHttpRequest.prototype = {
 				if (this.inputStream.available()) {
 					this.onDataAvailable(null, null, this.inputStream, 0, this.inputStream.available());
 				}
-			} catch (e if e.result == CR.NS_BASE_STREAM_CLOSED || e.result == CR.NS_ERROR_NET_TIMEOUT) {
-				break;
+			} catch (e) {
+				if (e.result == CR.NS_BASE_STREAM_CLOSED || e.result == CR.NS_ERROR_NET_TIMEOUT) {
+					break;
+				}
 			}
 		}
 		

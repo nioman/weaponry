@@ -37,7 +37,7 @@
 	
 	<menu id="file-menu" label="&file-menu-label;">
 		<menupopup id="file-menupopup">
-			<menuitem id="file-menupopup-quit-menuitem" command="file-menu-quit-command" key="file-menu-quit-key" position="1000"/>
+			<menuitem id="file-menupopup-quit-menuitem" command="file-menu-quit-command" key="file-menu-quit-key"/>
 		</menupopup>
 	</menu>
 	
