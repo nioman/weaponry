@@ -98,7 +98,13 @@
 				<parameter name="onload"/>
 				
 				<body><![CDATA[
-					this.navigateTo('data:' + contentType + ';base64,' + btoa(data), null, null, onload);
+					if (contentType) {
+						contentType = contentType + ';base64';
+					} else {
+						contentType = 'base64';
+					}
+					
+					this.navigateTo('data:' + contentType + ',' + btoa(data), null, null, onload);
 				]]></body>
 			</method>
 			
@@ -212,7 +218,7 @@
 			<constructor>
 				<action><![CDATA[
 					let $browser = this.$browser;
-					let features = ['Auth', 'Images', 'Plugins', 'Subframes', 'Javascript', 'MetaRedirects'];
+					let features = ['Auth', 'DNSPrefetch', 'WindowControl', 'Images', 'Plugins', 'Subframes', 'Javascript', 'MetaRedirects'];
 					let featuresLength = features.length;
 					
 					for (let i = 0; i < featuresLength; i += 1) {
@@ -221,9 +227,17 @@
 						let attributeName = featureName.toLowerCase();
 						
 						if (this.hasAttribute(attributeName) && this.getAttribute(attributeName).toLowerCase() == 'true') {
-							$browser.docShell[featureName] = true;
+							try {
+								$browser.docShell[featureName] = true;
+							} catch (e) {
+								// pass
+							} 
 						} else {
-							$browser.docShell[featureName] = false;
+							try {
+								$browser.docShell[featureName] = false;
+							} catch (e) {
+								// pass
+							}
 						}
 						
 						this.addEventListener('DOMAttrModified', function (event) {
