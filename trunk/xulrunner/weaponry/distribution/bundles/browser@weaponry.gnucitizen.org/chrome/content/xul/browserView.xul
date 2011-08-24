@@ -66,7 +66,7 @@
 	
 	<vbox id="browser-view-content-vbox" flex="1">
 		<toolbox id="browser-view-navigation-toolbox">
-			<toolbar id="browser-view-navigation-toolbar" class="small" flex="1">
+			<toolbar id="browser-view-navigation-toolbar" class="chromeclass-toolbar" flex="1">
 				<toolbarbutton id="browser-view-back-toolbarbutton" class="browser-view-navigation-button" command="browser-view-back-command"/>
 				<toolbarbutton id="browser-view-forward-toolbarbutton" class="browser-view-navigation-button" command="browser-view-forward-command"/>
 				<toolbarbutton id="browser-view-reload-toolbarbutton" class="browser-view-navigation-button" command="browser-view-reload-command"/>
