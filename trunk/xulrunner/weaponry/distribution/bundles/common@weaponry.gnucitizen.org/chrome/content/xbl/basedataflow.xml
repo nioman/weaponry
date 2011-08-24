@@ -95,13 +95,14 @@
 						let pos = this.basedataflowOldInsertDataRow.apply(this, arguments);
 						let dataRow = this.obtainDataRow(pos);
 						let $content = self.$content;
-						let $node = null;
 						
 						if (row >= 0 && row < $content.childNodes.length) {
-							$node = $content.childNodes[row];
+							let $node = $content.childNodes[pos];
+							
+							$content.insertBefore(this.buildItem(dataRow, refresh), $node);
+						} else {
+							$content.appendChild(this.buildItem(dataRow, refresh));
 						}
-						
-						$content.insertBefore(this.buildItem(dataRow, refresh), $node);
 						
 						return pos;
 					};
