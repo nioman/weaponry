@@ -147,40 +147,49 @@ let weaponryCommon = new function () {
 	
 	/* -------------------------------------------------------------------- */
 	
+	this.createServiceGetter = function (name, className, iface) {
+		XPCOMUtils.defineLazyServiceGetter(this, name, className, iface);
+	};
+	
+	/* -------------------------------------------------------------------- */
+	
 	this.componentManager = Components.manager.QueryInterface(CI.nsIComponentRegistrar);
-	this.weaponryCommonService = this.getService('@common.weaponry.gnucitizen.org/service;1', 'IWeaponryCommonService');
-	this.categoryManager = this.getService('@mozilla.org/categorymanager;1', 'nsICategoryManager');
-	this.appStartup = this.getService('@mozilla.org/toolkit/app-startup;1', 'nsIAppStartup');
-	this.xulRuntime = this.getService('@mozilla.org/xre/app-info;1', 'nsIXULRuntime');
-	this.xulAppInfo = this.getService('@mozilla.org/xre/app-info;1', 'nsIXULAppInfo');
-	this.appShellService = this.getService('@mozilla.org/appshell/appShellService;1', 'nsIAppShellService');
-	this.systemInfo = this.getService('@mozilla.org/system-info;1', 'nsIPropertyBag2');
-	this.ioService = this.getService('@mozilla.org/network/io-service;1', 'nsIIOService');
-	this.protocolProxyService = this.getService('@mozilla.org/network/protocol-proxy-service;1', 'nsIProtocolProxyService');
-	this.socketTransportService = this.getService('@mozilla.org/network/socket-transport-service;1', 'nsISocketTransportService');
-	this.windowWatcher = this.getService('@mozilla.org/embedcomp/window-watcher;1', 'nsIWindowWatcher');
-	this.windowMediator = this.getService('@mozilla.org/appshell/window-mediator;1', 'nsIWindowMediator');
-	this.stringBundleService = this.getService('@mozilla.org/intl/stringbundle;1', 'nsIStringBundleService');
-	this.promptService = this.getService('@mozilla.org/embedcomp/prompt-service;1', 'nsIPromptService');
-	this.consoleService = this.getService('@mozilla.org/consoleservice;1', 'nsIConsoleService');
-	this.preferencesService = this.getService('@mozilla.org/preferences-service;1', 'nsIPrefBranch');
-	this.updateManager = this.getService('@mozilla.org/updates/update-manager;1', 'nsIUpdateManager');
-	this.updatePrompt = this.getService('@mozilla.org/updates/update-prompt;1', 'nsIUpdatePrompt');
-	this.certOverrideService = this.getService('@mozilla.org/security/certoverride;1', 'nsICertOverrideService');
-	this.observerService = this.getService('@mozilla.org/observer-service;1', 'nsIObserverService');
-	this.threadManager = this.getService('@mozilla.org/thread-manager;1', 'nsIThreadManager');
-	this.clipboardHelper = this.getService('@mozilla.org/widget/clipboardhelper;1', 'nsIClipboardHelper');
-	this.subscriptLoader = this.getService('@mozilla.org/moz/jssubscript-loader;1', 'mozIJSSubScriptLoader');
-	this.chromeRegistry = this.getService('@mozilla.org/chrome/chrome-registry;1', 'nsIChromeRegistry');
-	this.uriLoader = this.getService('@mozilla.org/uriloader;1', 'nsIURILoader');
-	this.externalProtocolService = this.getService('@mozilla.org/uriloader/external-protocol-service;1', 'nsIExternalProtocolService');
-	this.proxyManager = this.getService('@mozilla.org/xpcomproxy;1', 'nsIProxyObjectManager');
-	this.directoryService = this.getService('@mozilla.org/file/directory_service;1', 'nsIDirectoryService');
-	this.mozstorageService = this.getService('@mozilla.org/storage/service;1', 'mozIStorageService');
-	this.atomService = this.getService('@mozilla.org/atom-service;1', 'nsIAtomService');
-	this.cookieService = this.getService('@mozilla.org/cookieService;1', 'nsICookieService');
-	this.navHistoryService = this.getService('@mozilla.org/browser/nav-history-service;1', 'nsINavHistoryService');
-	this.faviconService = this.getService('@mozilla.org/browser/favicon-service;1', 'nsIFaviconService');
+	
+	/* -------------------------------------------------------------------- */
+	
+	this.createServiceGetter('weaponryCommonService', '@common.weaponry.gnucitizen.org/service;1', 'IWeaponryCommonService');
+	this.createServiceGetter('categoryManager', '@mozilla.org/categorymanager;1', 'nsICategoryManager');
+	this.createServiceGetter('appStartup', '@mozilla.org/toolkit/app-startup;1', 'nsIAppStartup');
+	this.createServiceGetter('xulRuntime', '@mozilla.org/xre/app-info;1', 'nsIXULRuntime');
+	this.createServiceGetter('xulAppInfo', '@mozilla.org/xre/app-info;1', 'nsIXULAppInfo');
+	this.createServiceGetter('appShellService', '@mozilla.org/appshell/appShellService;1', 'nsIAppShellService');
+	this.createServiceGetter('systemInfo', '@mozilla.org/system-info;1', 'nsIPropertyBag2');
+	this.createServiceGetter('ioService', '@mozilla.org/network/io-service;1', 'nsIIOService');
+	this.createServiceGetter('protocolProxyService', '@mozilla.org/network/protocol-proxy-service;1', 'nsIProtocolProxyService');
+	this.createServiceGetter('socketTransportService', '@mozilla.org/network/socket-transport-service;1', 'nsISocketTransportService');
+	this.createServiceGetter('windowWatcher', '@mozilla.org/embedcomp/window-watcher;1', 'nsIWindowWatcher');
+	this.createServiceGetter('windowMediator', '@mozilla.org/appshell/window-mediator;1', 'nsIWindowMediator');
+	this.createServiceGetter('stringBundleService', '@mozilla.org/intl/stringbundle;1', 'nsIStringBundleService');
+	this.createServiceGetter('promptService', '@mozilla.org/embedcomp/prompt-service;1', 'nsIPromptService');
+	this.createServiceGetter('consoleService', '@mozilla.org/consoleservice;1', 'nsIConsoleService');
+	this.createServiceGetter('preferencesService', '@mozilla.org/preferences-service;1', 'nsIPrefBranch');
+	this.createServiceGetter('updateManager', '@mozilla.org/updates/update-manager;1', 'nsIUpdateManager');
+	this.createServiceGetter('updatePrompt', '@mozilla.org/updates/update-prompt;1', 'nsIUpdatePrompt');
+	this.createServiceGetter('certOverrideService', '@mozilla.org/security/certoverride;1', 'nsICertOverrideService');
+	this.createServiceGetter('observerService', '@mozilla.org/observer-service;1', 'nsIObserverService');
+	this.createServiceGetter('threadManager', '@mozilla.org/thread-manager;1', 'nsIThreadManager');
+	this.createServiceGetter('clipboardHelper', '@mozilla.org/widget/clipboardhelper;1', 'nsIClipboardHelper');
+	this.createServiceGetter('subscriptLoader', '@mozilla.org/moz/jssubscript-loader;1', 'mozIJSSubScriptLoader');
+	this.createServiceGetter('chromeRegistry', '@mozilla.org/chrome/chrome-registry;1', 'nsIChromeRegistry');
+	this.createServiceGetter('uriLoader', '@mozilla.org/uriloader;1', 'nsIURILoader');
+	this.createServiceGetter('externalProtocolService', '@mozilla.org/uriloader/external-protocol-service;1', 'nsIExternalProtocolService');
+	this.createServiceGetter('proxyManager', '@mozilla.org/xpcomproxy;1', 'nsIProxyObjectManager');
+	this.createServiceGetter('directoryService', '@mozilla.org/file/directory_service;1', 'nsIDirectoryService');
+	this.createServiceGetter('mozstorageService', '@mozilla.org/storage/service;1', 'mozIStorageService');
+	this.createServiceGetter('atomService', '@mozilla.org/atom-service;1', 'nsIAtomService');
+	this.createServiceGetter('cookieService', '@mozilla.org/cookieService;1', 'nsICookieService');
+	this.createServiceGetter('navHistoryService', '@mozilla.org/browser/nav-history-service;1', 'nsINavHistoryService');
+	this.createServiceGetter('faviconService', '@mozilla.org/browser/favicon-service;1', 'nsIFaviconService');
 	
 	/* -------------------------------------------------------------------- */
 	
