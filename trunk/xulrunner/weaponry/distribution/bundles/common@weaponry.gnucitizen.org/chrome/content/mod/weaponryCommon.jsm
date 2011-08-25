@@ -563,7 +563,7 @@ let weaponryCommon = new function () {
 		if (arguments.length == 3) {
 			return this.brandedAlertCheck(window, title, message) // where title is actually message and message is checkMessage
 		} else {
-			let result = {value:false, successful:false};
+			let result = {value: false, successful: false};
 			
 			result.successful = this.promptService.alertCheck(window, title, message, checkMessage, result);
 			
@@ -593,7 +593,7 @@ let weaponryCommon = new function () {
 		if (arguments.length == 3) {
 			return this.brandedConfirmCheck(window, title, message);  // where title is actually message and message is checkMessage
 		} else {
-			let result = {value:false, successful:false};
+			let result = {value: false, successful: false};
 			
 			result.successful = this.promptService.confirmCheck(window, title, message, checkMessage, result);
 			
@@ -611,7 +611,7 @@ let weaponryCommon = new function () {
 		if (arguments.length == 3) {
 			return this.brandedPrompt(window, title, message); // where title is acutally message and message is acutally value
 		} else {
-			let result = {value:value, successful:false};
+			let result = {value: value, successful: false};
 			
 			result.successful = this.promptService.prompt(window, title, message, result, null, {});
 			
