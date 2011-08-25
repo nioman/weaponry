@@ -30,6 +30,14 @@
 		
 		<em:targetApplication>
 			<Description>
+				<em:id>browser@websecurify.gnucitizen.org</em:id>
+				<em:minVersion>0.9Alpha2</em:minVersion>
+				<em:maxVersion>0.9Alpha2</em:maxVersion>
+			</Description>
+		</em:targetApplication>
+		
+		<em:targetApplication>
+			<Description>
 				<em:id>acidplatform@gnucitizen.org</em:id>
 				<em:minVersion>0.9Alpha2</em:minVersion>
 				<em:maxVersion>0.9Alpha2</em:maxVersion>
