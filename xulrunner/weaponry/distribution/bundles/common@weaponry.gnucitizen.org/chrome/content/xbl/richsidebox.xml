@@ -141,7 +141,7 @@
 							return this.$notificationbox.PRIORITY_INFO_LOW;
 						case 'medium':
 							return this.$notificationbox.PRIORITY_WARNING_LOW;
-						case 'height':
+						case 'high':
 							return this.$notificationbox.PRIORITY_CRITICAL_LOW;
 						case 'info':
 							return this.$notificationbox.PRIORITY_INFO_LOW;
@@ -328,7 +328,7 @@
 							return this.$notificationbox.PRIORITY_INFO_LOW;
 						case 'medium':
 							return this.$notificationbox.PRIORITY_WARNING_LOW;
-						case 'height':
+						case 'high':
 							return this.$notificationbox.PRIORITY_CRITICAL_LOW;
 						case 'info':
 							return this.$notificationbox.PRIORITY_INFO_LOW;

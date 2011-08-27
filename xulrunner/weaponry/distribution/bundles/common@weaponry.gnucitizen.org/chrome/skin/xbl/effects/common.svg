@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<filter id="f1">
+		<feGaussianBlur stdDeviation="1"/>
+	</filter>
+	
+	<filter id="f2">
+		<feFlood flood-color="#ffffff" flood-opacity="0.8" result="tint"/>
+		<feComposite in="tint" in2="SourceGraphic" operator="in"/>
+	</filter>
+	
+	<filter id="f3">
+		<feImage xlink:href="cloth.png" width="47" height="30" result="cloth"/>
+		<feComposite in="cloth" in2="SourceGraphic" operator="in"/>
+	</filter>
+	
+	<filter id="f4">
+		<feGaussianBlur in="SourceAlpha" result="blur-out" stdDeviation="4"/>
+		<feOffset in="blur-out" result="the-shadow" dx="0" dy="0"/> 
+		<feBlend in="SourceGraphic" in2="the-shadow" mode="normal"/>
+    </filter>
+	
+	<filter id="f5">
+		<feFlood flood-color="#ffffff" flood-opacity="0.8" result="tint"/>
+		<feComposite in="tint" in2="SourceGraphic" operator="in"/>
+    </filter>
+</svg>

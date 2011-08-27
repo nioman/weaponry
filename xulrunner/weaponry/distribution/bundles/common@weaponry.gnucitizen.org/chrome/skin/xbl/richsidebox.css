@@ -25,5 +25,46 @@ richsidebox > .richsidebox-container .richsidepanel-hbox {
 	-moz-box-align: center;
 }
 
+/* ------------------------------------------------------------------------ */
+
+richsidebox.darkish > .richsidebox-container .richsidebox-richlistbox {
+	margin: 0px;
+	padding: 0px;
+	max-width: 60px;
+	background: #222222;
+	-moz-appearance: none;
+}
+
+richsidebox.darkish > .richsidebox-container .richsidepanel-richlistitem {
+	color: #ffffff;
+	background: transparent;
+	filter: url("effects/common.svg#f4");
+}
+
+richsidebox.darkish > .richsidebox-container .richsidepanel-richlistitem[selected="true"] {
+	filter: url("effects/common.svg#f5");
+}
+
+richsidebox.darkish > .richsidebox-container .richsidepanel-hbox {
+	-moz-box-pack: center;
+	-moz-box-align: center;
+}
+
+richsidebox.darkish > .richsidebox-container .richsidepanel-hbox image {
+	margin: 10px 0px 10px 0px;
+}
+
+richsidebox.darkish > .richsidebox-container .richsidepanel-hbox label {
+	display: none;
+}
+
+richsidebox.darkish > .richsidebox-container .richsidebox-splitter {
+	display: none;
+}
+
+richsidebox.darkish > richsidepanel {
+	background: #f5f5f5;
+}
+
 /*  GNUCITIZEN (Information Security Think Tank)
  **********************************************/
