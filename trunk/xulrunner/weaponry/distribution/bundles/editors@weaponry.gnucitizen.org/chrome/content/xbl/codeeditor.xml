@@ -77,17 +77,41 @@
 				]]></setter>
 			</property>
 			
+			<property name="gutter">
+				<getter><![CDATA[
+					return this.$iframe.contentWindow.getShowGutter();
+				]]></getter>
+				
+				<setter><![CDATA[
+					return this.$iframe.contentWindow.setShowGutter(val);
+				]]></setter>
+			</property>
+			
+			<property name="margin">
+				<getter><![CDATA[
+					return this.$iframe.contentWindow.getShowPrintMargin();
+				]]></getter>
+				
+				<setter><![CDATA[
+					return this.$iframe.contentWindow.setShowPrintMargin(val);
+				]]></setter>
+			</property>
+			
 			<constructor>
 				<action><![CDATA[
 					let theme = this.hasAttribute('theme') ? this.getAttribute('theme') : 'twilight';
 					let mode = this.hasAttribute('mode') ? this.getAttribute('mode') : 'javascript';
 					let source = this.hasAttribute('source') ? this.getAttribute('source') : '';
+					let gutter = this.hasAttribute('gutter') ? (this.getAttribute('gutter') == 'true' ? true : false) : true;
+					let margin = this.hasAttribute('margin') ? (this.getAttribute('margin') == 'true' ? true: false) : true;
 					let self = this;
 					
 					this._bindEvent(this.$iframe, 'DOMContentLoaded', function (event) {
 						self.theme = theme;
 						self.mode = mode;
 						self.source = source;
+						self.gutter = gutter;
+						self.margin = margin;
 					});
 				]]></action>
 			</constructor>
