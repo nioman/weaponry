@@ -43,5 +43,25 @@ function handleOpenPreferencesCommandEvent(event) {
 	weaponryPreferences.openPreferencesWindow();
 }
 
+/* ------------------------------------------------------------------------ */
+
+function computeApplicationFields(fields) {
+	if (!('image' in fields)) {
+		fields.image = 'chrome://' + CHROMEBASE + '/skin/xul/images/robot.png';
+	}
+}
+
+function handleDOMContentLoadedEvent(event) {
+	if (event.target != document) {
+		return;
+	}
+	
+	let $applicationsDataroll = document.getElementById('main-page-applications-dataroll');
+	
+	$applicationsDataroll.registerFieldsComputer(computeApplicationFields);
+}
+
+window.addEventListener('DOMContentLoaded', handleDOMContentLoadedEvent, false);
+
 /*  GNUCITIZEN (Information Security Think Tank)
  **********************************************/
