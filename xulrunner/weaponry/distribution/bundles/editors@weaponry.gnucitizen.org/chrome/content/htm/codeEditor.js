@@ -57,12 +57,32 @@ function setMode(mode) {
 
 /* ------------------------------------------------------------------------ */
 
+function getSource() {
+	return editor.getSession().getValue();
+}
+
 function setSource(source) {
 	editor.getSession().setValue(source);
 }
 
-function getSource() {
-	return editor.getSession().getValue();
+/* ------------------------------------------------------------------------ */
+
+function getShowGutter() {
+	return editor.renderer.getShowGutter();
+}
+
+function setShowGutter(checked) {
+	editor.renderer.setShowGutter(checked);
+}
+
+/* ------------------------------------------------------------------------ */
+
+function getShowPrintMargin() {
+	return editor.getShowPrintMargin();
+}
+
+function setShowPrintMargin(checked) {
+	editor.setShowPrintMargin(checked);
 }
 
 /* ------------------------------------------------------------------------ */
