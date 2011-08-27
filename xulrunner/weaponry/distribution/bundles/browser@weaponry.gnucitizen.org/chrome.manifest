@@ -10,6 +10,7 @@ skin         browser.weaponry.gnucitizen.org classic/1.0                        
 content      sites.browser.weaponry.gnucitizen.org                                                                                      file:sites/
 resource     sites.browser.weaponry.gnucitizen.org                                                                                      file:sites/
 
+overlay      chrome://basic.acidplatform.gnucitizen.org/content/xul/mainPage.xul                                                        chrome://browser.weaponry.gnucitizen.org/content/ovl/acidplatformMainPage.xul
 overlay      chrome://workspaces.weaponry.gnucitizen.org/content/xul/workspaceView.xul?view=browser.weaponry.gnucitizen.org             chrome://browser.weaponry.gnucitizen.org/content/ovl/browserWorkspaceView.xul
 overlay      chrome://browser.weaponry.gnucitizen.org/content/xul/browserView.xul?view=workspace.workspaces.weaponry.gnucitizen.org     chrome://browser.weaponry.gnucitizen.org/content/ovl/workspaceBrowserView.xul
 
