@@ -513,7 +513,13 @@ let weaponryCommon = new function () {
 	/* -------------------------------------------------------------------- */
 	
 	this.openAboutBrandWindow = function () {
-		return this.openWindowOnce(null, 'branding:about', 'chrome://branding/content/about.xul', null, 'all,chrome,resizable,centerscreen');
+		let brandingAboutURI = this.getPref('org.gnucitizen.weaponry.common.brandingAboutURI');
+		
+		if (brandingAboutURI) {
+			return this.openWindowOnce(null, 'branding:about', brandingAboutURI, null, 'all,chrome,resizable,centerscreen');
+		} else {
+			// TODO: show default about
+		}
 	};
 	
 	/* -------------------------------------------------------------------- */

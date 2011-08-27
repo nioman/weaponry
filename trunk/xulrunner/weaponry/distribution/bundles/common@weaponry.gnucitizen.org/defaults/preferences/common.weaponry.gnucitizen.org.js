@@ -21,6 +21,9 @@
 // org.gnucitizen.weaponry.common.defaultUitype
 // org.gnucitizen.weaponry.common.defaultLookandfeel
 
+// optional weaponry common about preferences
+// org.gnucitizen.weaponry.common.brandingAboutURI
+
 // weaponry common xbl preferences
 pref('org.gnucitizen.weaponry.common.xbl.dbtable.tablesNum', 5);
 pref('org.gnucitizen.weaponry.common.xbl.dbtable.tableSize', 500);
