@@ -640,6 +640,10 @@ let weaponryCommon = new function () {
 		return this.consoleService.logStringMessage(result);
 	};
 	
+	this.logException = function (error) {
+		this.logMessage(error.toString());
+	};
+	
 	/* -------------------------------------------------------------------- */
 	
 	this.logString = function (string) {

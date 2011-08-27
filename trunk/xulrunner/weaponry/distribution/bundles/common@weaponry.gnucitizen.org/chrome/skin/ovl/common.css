@@ -135,5 +135,30 @@
 	-moz-image-region: rect(80px, 48px, 96px, 32px);
 }
 
+/* ------------------------------------------------------------------------ */
+
+[lookandfeel="Darwin"] toolbar.unified {
+	-moz-appearance: -moz-mac-unified-toolbar;
+}
+
+[lookandfeel="WINNT"] toolbar.unified {
+	/* pass */
+}
+
+[lookandfeel="Linux"] toolbar.unified {
+	/* pass */
+}
+
+/* ------------------------------------------------------------------------ */
+
+toolbar.rightylicious {
+	-moz-box-pack: end;
+	-moz-appearance: none;
+}
+
+toolbar.rightylicious > toolbarbutton > label {
+	display: none;
+}
+
 /*  GNUCITIZEN (Information Security Think Tank)
  **********************************************/
