@@ -33,8 +33,15 @@
 	<box id="common-box">
 		<stringbundleset id="common-stringbundleset"/>
 		<broadcasterset id="common-broadcasterset"/>
-		<commandset id="common-commandset"/>
-		<keyset id="common-keyset"/>
+		
+		<commandset id="common-commandset">
+			<command id="common-close-window-command" oncommand="return handleWindowCloseCommandEvent(event);"/>
+		</commandset>
+		
+		<keyset id="common-keyset">
+			<key id="common-close-window-key" modifiers="accel" key="w" command="common-close-window-command"/>
+		</keyset>
+		
 		<popupset id="common-popupset"/>
 	</box>
 	
