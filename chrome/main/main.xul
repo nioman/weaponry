@@ -4,10 +4,14 @@
 	id="main" title="Main" windowtype="main:main"
 	width="600" height="600" screenX="100" screenY="100" persist="screenX screenY width height sizemode">
 	
-	<script type="application/x-javascript" src="chrome://main/content/xul/main.js"/>
+	<script type="application/x-javascript" src="chrome://main/content/main.js"/>
 	
 	<vbox id="main-content-vbox" flex="1">
-		<!-- TODO: add code here -->
+		<menubar>
+			<menu label="Test">
+				<menuitem id="aboutName" label="Test" oncommand="return doit(event);"/>
+			</menu>
+		</menubar>
 	</vbox>
 	
 </window>
