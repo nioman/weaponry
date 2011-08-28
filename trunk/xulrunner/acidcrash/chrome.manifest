@@ -4,10 +4,3 @@
 
 manifest     chrome/main.manifest
 manifest     chrome/branding.manifest
-
-#
-# chrome registration
-#
-
-content      sites     file:sites/
-resource     sites     file:sites/

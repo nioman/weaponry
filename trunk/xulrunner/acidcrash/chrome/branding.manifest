@@ -1,8 +1,1 @@
-#
-# chrome registration
-#
-
-content      branding                 file:branding/content/
-resource     branding                 file:branding/
-locale       branding en-US           file:branding/locale/en-US/
-skin         branding classic/1.0     file:branding/skin/
+locale     branding en-US     file:branding/
