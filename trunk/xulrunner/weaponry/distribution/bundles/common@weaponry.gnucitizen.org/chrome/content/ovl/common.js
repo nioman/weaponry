@@ -27,6 +27,12 @@ Components.utils.import('resource://common.weaponry.gnucitizen.org/content/mod/w
 
 /* ------------------------------------------------------------------------ */
 
+function handleWindowCloseCommandEvent(event) {
+	close();
+}
+
+/* ------------------------------------------------------------------------ */
+
 function alert(message) {
 	return weaponryCommon.alert(window, message);
 }
