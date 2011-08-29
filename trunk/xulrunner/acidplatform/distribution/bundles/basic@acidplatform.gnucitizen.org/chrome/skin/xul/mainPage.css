@@ -21,42 +21,6 @@
 
 /* ------------------------------------------------------------------------ */
 
-#main-page-content-navigation-richsidebox > .richsidebox-container richlistbox {
-	margin: 0px;
-	padding: 0px;
-	background: #eeeeee;
-	-moz-appearance: none;
-}
-
-#main-page-content-navigation-richsidebox > .richsidebox-container richlistitem {
-	padding: 10px;
-	padding-left: 20px;
-}
-
-#main-page-content-navigation-richsidebox > .richsidebox-container richlistitem label {
-	font-size: 13px;
-	margin-left: 10px;
-}
-
-#main-page-content-navigation-richsidebox > .richsidebox-container richlistitem[selected="true"] label {
-	text-shadow: black 0px 1px;
-}
-
-#main-page-content-navigation-richsidebox > .richsidebox-container richlistbox > richlistitem[selected="true"]       ,
-#main-page-content-navigation-richsidebox > .richsidebox-container richlistbox:focus > richlistitem[selected="true"] {
-	color: #ffffff;
-	background-image: none;
-	background-color: #222222;
-}
-
-#main-page-content-navigation-richsidebox > .richsidebox-container richlistbox > richlistitem:not([selected="true"])                 ,
-#main-page-content-navigation-richsidebox > .richsidebox-container richlistbox > richlistitem:nth-child(2n+1):not([selected="true"]) {
-	background-image: none;
-	background-color: transparent;
-}
-
-/* ------------------------------------------------------------------------ */
-
 #main-page-applications-dataroll > .dataroll-container .dataroll-content {
 	display: block;
 	overflow: auto;
