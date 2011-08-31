@@ -27,6 +27,14 @@
 		<stringbundle id="weaponry-development-tools-menu-properties-stringbundle" src="chrome://development.weaponry.gnucitizen.org/locale/ovl/toolsMenu.properties"/>
 	</stringbundleset>
 	
+	<commandset id="common-commandset">
+		<command id="weaponry-development-tools-menu-reload-ui-command" label="&weaponry-development-tools-menu-reload-ui-command-label;" oncommand="return handleReloadUICommandEvent(event);"/>
+	</commandset>
+	
+	<keyset id="common-keyset">
+		<key id="weaponry-development-tools-menu-reload-ui-key" modifiers="shift accel" key="r" command="weaponry-development-tools-menu-reload-ui-command"/>
+	</keyset>		
+	
 	<menupopup id="tools-menupopup">
 		<menuseparator id="weaponry-development-tools-menu-development-section-menuseparator"/>
 		
@@ -37,6 +45,8 @@
 				<menuitem id="weaponry-development-tools-menu-requests-menuitem" label="&weaponry-development-tools-menu-requests-menuitem-label;" oncommand="return handleRequestsCommandEvent(event);"/>
 				<menuitem id="weaponry-development-tools-menu-inspector-menuitem" label="&weaponry-development-tools-menu-inspector-menuitem-label;" oncommand="return handleInspectorCommandEvent(event);"/>
 				<menuitem id="weaponry-development-tools-menu-jsshell-menuitem" label="&weaponry-development-tools-menu-jsshell-menuitem-label;" oncommand="return handleJsshellCommandEvent(event);"/>
+				<menuseparator id="weaponry-development-tools-menu-actions-menuseparator"/>
+				<menuitem id="weaponry-development-tools-menu-reload-ui-menuitem" key="weaponry-development-tools-menu-reload-ui-key" command="weaponry-development-tools-menu-reload-ui-command"/>
 			</menupopup>
 		</menu>
 	</menupopup>

@@ -17,6 +17,10 @@
  *  Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
  */
 
+function handleReloadUICommandEvent(event) {
+	weaponryCommon.reloadAllWindows();
+}
+
 function handleMemoryCommandEvent(event) {
 	weaponryCommon.openWindow(null, 'about:memory?verbose', '', 'all,chrome,resizable,centerscreen,width=800,height=600');
 }
