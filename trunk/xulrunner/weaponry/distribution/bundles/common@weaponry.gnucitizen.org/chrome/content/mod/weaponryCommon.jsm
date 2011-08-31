@@ -369,6 +369,17 @@ let weaponryCommon = new function () {
 	
 	/* -------------------------------------------------------------------- */
 	
+	this.reloadAllWindows = function () {
+		let windows = this.getAllWindows();
+		let windowsLength = windows.length;
+		
+		for (let i = 0; i < windowsLength; i += 1) {
+			windows[i].location.reload(true);
+		}
+	};
+	
+	/* -------------------------------------------------------------------- */
+	
 	this.getHiddenChromeWindow = function () {
 		return this.appShellService.hiddenDOMWindow;
 	};
