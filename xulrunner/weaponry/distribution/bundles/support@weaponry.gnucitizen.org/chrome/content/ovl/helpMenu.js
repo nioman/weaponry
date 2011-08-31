@@ -25,6 +25,10 @@ function handleWeaponrySupportHelpMenuReportBugsCommandEvent(event) {
 	weaponryCommon.openUriExternally('http://code.google.com/p/weaponry/issues/list');
 }
 
+function handleWeaponrySupportHelpMenuRequestFeaturesCommandEvent(event) {
+	weaponryCommon.openUriExternally('http://code.google.com/p/weaponry/issues/detail?id=2');
+}
+
 function handleWeaponrySupportHelpMenuGotoWeaponryCommandEvent(event) {
 	weaponryCommon.openUriExternally('http://weaponry.gnucitizen.org');
 }
