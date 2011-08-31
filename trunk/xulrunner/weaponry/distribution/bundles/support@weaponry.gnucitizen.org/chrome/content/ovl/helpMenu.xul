@@ -30,8 +30,9 @@
 	<menupopup id="help-menupopup">
 		<menuseparator id="weaponry-support-help-menu-help-section-menuseparator"/>
 		<menuitem id="weaponry-support-help-menu-help-menuitem" label="&weaponry-support-help-menu-help-menuitem-label;" oncommand="return handleWeaponrySupportHelpMenuOpenHelpWindowCommandEvent(event);"/>
-		<menuseparator id="weaponry-support-help-menu-feedback-section-menuseparator"/>
+		<menuseparator id="weaponry-support-help-menu-bugs-section-menuseparator"/>
 		<menuitem id="weaponry-support-help-menu-report-bugs-menuitem" label="&weaponry-support-help-menu-report-bugs-menuitem-label;" oncommand="return handleWeaponrySupportHelpMenuReportBugsCommandEvent(event);"/>
+		<menuitem id="weaponry-support-help-menu-request-features-menuitem" label="&weaponry-support-help-menu-request-features-menuitem-label;" oncommand="return handleWeaponrySupportHelpMenuRequestFeaturesCommandEvent(event);"/>
 		<menuseparator id="weaponry-support-help-menu-custom-section-menuseparator"/>
 		<menuitem id="weaponry-support-help-menu-go-to-weaponry-menuitem" label="&weaponry-support-help-menu-go-to-weaponry-menuitem-label;" oncommand="return handleWeaponrySupportHelpMenuGotoWeaponryCommandEvent(event);"/>
 		<menuitem id="weaponry-support-help-menu-go-to-gnucitizen-menuitem" label="&weaponry-support-help-menu-go-to-gnucitizen-menuitem-label;" oncommand="return handleWeaponrySupportHelpMenuGotoGNUCITIZENCommandEvent(event);"/>
