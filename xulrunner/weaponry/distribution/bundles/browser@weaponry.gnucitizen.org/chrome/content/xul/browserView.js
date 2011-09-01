@@ -127,9 +127,7 @@ function handleBrowserStopCommandEvent(event) {
 
 function handleBrowserGoCommandEvent(event) {
 	let $contentLocationbox = document.getElementById('browser-view-content-locationbox');
-	let location = $contentLocationbox.value;
-	
-	weaponryCommon.recordFaviconForUrl(location);
+	let location = $contentLocationbox.value.trim();
 	
 	loadBrowserUrl(location);
 }
@@ -191,7 +189,7 @@ function hideContentMenupopupEditGroup() {
 /* ------------------------------------------------------------------------ */
 
 function handleContentMenupopupPopupshowingEvent(event) {
-	if (document.popupNode.tagName in {'INPUT':1, 'TEXTAREA':1}) {
+	if (document.popupNode.tagName in {'INPUT': 1, 'TEXTAREA': 1}) {
 		showContentMenupopupEditGroup();
 	} else {
 		hideContentMenupopupEditGroup();
@@ -332,6 +330,10 @@ function handleDOMContentLoadedEvent(event) {
 			
 			$backCommand.setAttribute('disabled', !$contentBrowser.canGoBack);
 			$forwardCommand.setAttribute('disabled', !$contentBrowser.canGoForward);
+			
+			if (location.schemeIs('http') || location.schemeIs('https')) {
+				weaponryCommon.recordFaviconForUrl(location);
+			}
 		}
 	});
 	
@@ -365,6 +367,17 @@ function handleUnloadEvent(event) {
 }
 
 window.addEventListener('unload', handleUnloadEvent, false);
+
+function handleMozSwipeGestureEvent(event) {
+	if (event.direction == SimpleGestureEvent.DIRECTION_LEFT) {
+		handleBrowserBackCommandEvent(event);
+	} else
+	if (event.direction == SimpleGestureEvent.DIRECTION_RIGHT) {
+		handleBrowserForwardCommandEvent(event);
+	}
+}
+
+window.addEventListener('MozSwipeGesture', handleMozSwipeGestureEvent, false);
 
 /*  GNUCITIZEN (Information Security Think Tank)
  **********************************************/
