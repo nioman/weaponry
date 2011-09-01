@@ -17,28 +17,9 @@
  *  Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
  */
 
-function handleHelpMenuAboutCommandEvent(event) {
-	weaponryCommon.openAboutBrandWindow();
-}
-
 function handleHelpMenuCheckForUpdatesCommandEvent(event) {
 	weaponryCommon.checkForUpdates();
 }
-
-/* ------------------------------------------------------------------------ */
-
-function handleHelpMenuDOMContentLoadedEvent(event) {
-	if (event.target != document) {
-		return;
-	}
-	
-	let $stringbundle = document.getElementById('help-menu-properties-stringbundle');
-	let $aboutCommand = document.getElementById('help-menu-about-command');
-	
-	$aboutCommand.setAttribute('label', $stringbundle.getFormattedString('about-command-label', [weaponryCommon.brandFullName]));
-}
-
-window.addEventListener('DOMContentLoaded', handleHelpMenuDOMContentLoadedEvent, false);
 
 /*  GNUCITIZEN (Information Security Think Tank)
  **********************************************/

@@ -68,7 +68,7 @@
 		</menupopup>
 	</menu>
 	
-	<box id="common-box">
+	<popupset id="common-popupset">
 		<menupopup id="edit-context-menupopup" onpopupshowing="return handleEditContextMenupopupshowingEvent(event);">
 			<menuitem id="edit-context-menupopup-undo-menuitem" command="edit-menu-undo-command"/>
 			<menuitem id="edit-context-menupopup-redo-menuitem" command="edit-menu-redo-command"/>
@@ -80,7 +80,7 @@
 			<menuseparator id="edit-context-menupopup-select-section-menuseparator"/>
 			<menuitem id="edit-context-menupopup-select-all-menuitem" command="edit-menu-select-all-command"/>
 		</menupopup>
-	</box>
+	</popupset>
 	
 </overlay>
 <!--

@@ -33,9 +33,9 @@
 		<menupopup id="window-menupopup"/>
 	</menu>
 	
-	<box id="common-box">
+	<popupset id="common-popupset">
 		<menupopup id="window-context-menupopup"/>
-	</box>
+	</popupset>
 	
 </overlay>
 <!--

@@ -44,12 +44,9 @@
 		</menupopup>
 	</menu>
 	
-	<box id="common-box">
-		<menupopup id="tools-context-menupopup">
-			<menuitem id="tools-context-menupopup-open-add-ons-menuitem" key="tools-menu-open-add-ons-key" command="tools-menu-open-add-ons-command"/>
-			<menuitem id="tools-context-menupopup-open-error-console-menuitem" key="tools-menu-open-error-console-key" command="tools-menu-open-error-console-command"/>
-		</menupopup>
-	</box>
+	<popupset id="common-popupset">
+		<menupopup id="tools-context-menupopup"/>
+	</popupset>
 	
 </overlay>
 <!--

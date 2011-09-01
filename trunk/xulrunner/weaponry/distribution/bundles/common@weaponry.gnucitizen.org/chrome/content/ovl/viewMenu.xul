@@ -33,9 +33,9 @@
 		<menupopup id="view-menupopup"/>
 	</menu>
 	
-	<box id="common-box">
+	<popupset id="common-popupset">
 		<menupopup id="view-context-menupopup"/>
-	</box>
+	</popupset>
 	
 </overlay>
 <!--
