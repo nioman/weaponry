@@ -53,11 +53,13 @@ pref('alerts.slideIncrement', 1);
 pref('alerts.slideIncrementTime', 10);
 
 // xpinstall dialog preferences
+// NOTE: might be redundent in xulrunner 2.0
 pref('xpinstall.dialog.confirm', 'chrome://mozapps/content/xpinstall/xpinstallConfirm.xul');
 pref('xpinstall.dialog.progress.type.skin', 'Extension:Manager-themes');
 pref('xpinstall.dialog.progress.type.chrome', 'Extension:Manager-extensions');
 pref('xpinstall.dialog.progress.skin', 'chrome://mozapps/content/extensions/extensions.xul?type=themes');
 pref('xpinstall.dialog.progress.chrome', 'chrome://mozapps/content/extensions/extensions.xul?type=extensions');
+//
 
 // extensions preferences
 pref('extensions.ignoreMTimeChanges', false);

@@ -10,14 +10,9 @@ skin         preferences.weaponry.gnucitizen.org classic/1.0                    
 content      sites.preferences.weaponry.gnucitizen.org                                              file:sites/
 resource     sites.preferences.weaponry.gnucitizen.org                                              file:sites/
 
-overlay      chrome://preferences.weaponry.gnucitizen.org/content/ovl/toolsMenu.xul                 chrome://preferences.weaponry.gnucitizen.org/content/ovl/macMenu.xul os=Darwin
+overlay      chrome://common.weaponry.gnucitizen.org/content/ovl/macMenu.xul                        chrome://preferences.weaponry.gnucitizen.org/content/ovl/macMenu.xul
+overlay      chrome://common.weaponry.gnucitizen.org/content/ovl/commonMenu.xul                     chrome://preferences.weaponry.gnucitizen.org/content/ovl/commonMenu.xul
 overlay      chrome://preferences.weaponry.gnucitizen.org/content/xul/preferencesPrefwindow.xul     chrome://preferences.weaponry.gnucitizen.org/content/hak/preferencesPrefwindow.xul
-
-#
-# chrome suggestions
-#
-
-# overlay     chrome://common.weaponry.gnucitizen.org/content/ovl/toolsMenu.xul     chrome://preferences.weaponry.gnucitizen.org/content/ovl/toolsMenu.xul
 
 #
 # xpcom registration

@@ -17,21 +17,13 @@
  *  Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
  */
 
-function handleWebsecurifyPreferencesMacMenuDOMContentLoadedEvent(event) {
-	if (event.target != document) {
-		return;
-	}
-	
-	let $openPreferencesMenuitem = document.getElementById('weaponry-preferences-tools-menu-open-preferences-menuitem');
-	
-	try {
-		$openPreferencesMenuitem.id = 'menu_preferences';
-	} catch (e) {
-		// pass
-	}
-}
+Components.utils.import('resource://preferences.weaponry.gnucitizen.org/content/mod/weaponryPreferences.jsm');
 
-window.addEventListener('DOMContentLoaded', handleWebsecurifyPreferencesMacMenuDOMContentLoadedEvent, false);
+/* ------------------------------------------------------------------------ */
+
+function handleWeaponryPreferncesToolsMenuOpenPreferencesWindowCommandEvent(event) {
+	weaponryPreferences.openPreferencesWindow();
+}
 
 /*  GNUCITIZEN (Information Security Think Tank)
  **********************************************/
