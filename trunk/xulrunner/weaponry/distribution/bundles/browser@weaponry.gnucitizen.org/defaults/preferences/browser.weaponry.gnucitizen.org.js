@@ -23,7 +23,6 @@
 
 // optional browser preferences
 // browser.chromeURL
-// browser.hiddenWindowChromeURL
 
 // default weaponry browser preferences
 pref('org.gnucitizen.weaponry.browser.statusbox.timeout', 3000);
