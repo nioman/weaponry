@@ -17,7 +17,14 @@
  *  Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
  */
 
+// TODO: after we pass version 8 ensure that this entire hack is removed
 (function () {
+	Components.utils.import('resource://common.weaponry.gnucitizen.org/content/mod/weaponryCommon.jsm');
+	
+	if (weaponryCommon.xulAppInfo.platformVersion >= '8') {
+		return;
+	}
+	
 	window.weaponrySecurityLoadCertsFunctionSource = LoadCerts.toString();
 	
 	window.LoadCerts = function () {
@@ -43,6 +50,7 @@
 		}
 	};
 })();
+//
 
 /*  GNUCITIZEN (Information Security Think Tank)
  **********************************************/

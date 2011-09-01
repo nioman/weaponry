@@ -146,8 +146,6 @@ WeaponryCertOverrideService.prototype = {
 			} else {
 				overrideBits.value = this.getOverrideBits(cert, host);
 				isTemporary.value = true;
-				
-				this.rememberValidityOverride(host, port, cert, overrideBits.value, true);
 			}
 			
 			return true;
