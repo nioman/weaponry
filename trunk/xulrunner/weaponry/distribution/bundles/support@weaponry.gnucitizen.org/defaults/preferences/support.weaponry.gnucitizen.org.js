@@ -19,7 +19,6 @@
 
 // browser preferences
 pref('browser.chromeURL', 'chrome://browser.weaponry.gnucitizen.org/content/xul/browserView.xul');
-pref('browser.hiddenWindowChromeURL', 'chrome://browser.weaponry.gnucitizen.org/content/xul/hiddenWindow.xul');
 
 // app update preferences
 pref('app.update.url', 'https://weaponryupdates.appspot.com/update/app.xml?product=%PRODUCT%&version=%VERSION%&build_id=%BUILD_ID%&build_target=%BUILD_TARGET%&locale=%LOCALE%&channel=%CHANNEL%&os_version=%OS_VERSION%&distribution=%DISTRIBUTION%&distribution_version=%DISTRIBUTION_VERSION%');
