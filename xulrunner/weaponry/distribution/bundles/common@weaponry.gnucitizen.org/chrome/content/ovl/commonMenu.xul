@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <!--
- *  macMenu.xml
+ *  commonMenu.xml
  *  Copyright (C) 2007-2011  GNUCITIZEN
  *  
  *  This program is free software; you can redistribute it and/or modify
@@ -17,31 +17,31 @@
  *  along with this program; if not, write to the Free Software
  *  Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 -->
-<?xml-stylesheet href="chrome://common.weaponry.gnucitizen.org/skin/ovl/macMenu.css" type="text/css"?>
-<!DOCTYPE overlay SYSTEM "chrome://common.weaponry.gnucitizen.org/locale/ovl/macMenu.dtd">
+<?xml-stylesheet href="chrome://common.weaponry.gnucitizen.org/skin/ovl/commonMenu.css" type="text/css"?>
+<!DOCTYPE overlay SYSTEM "chrome://common.weaponry.gnucitizen.org/locale/ovl/commonMenu.dtd">
 <overlay xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
 	
-	<script type="application/x-javascript" src="chrome://common.weaponry.gnucitizen.org/content/ovl/macMenu.js"/>
+	<script type="application/x-javascript" src="chrome://common.weaponry.gnucitizen.org/content/ovl/commonMenu.js"/>
 	
 	<stringbundleset id="common-stringbundleset">
-		<stringbundle id="mac-menu-properties-stringbundle" src="chrome://common.weaponry.gnucitizen.org/locale/ovl/macMenu.properties"/>
+		<stringbundle id="mac-menu-properties-stringbundle" src="chrome://common.weaponry.gnucitizen.org/locale/ovl/commonMenu.properties"/>
 	</stringbundleset>
 	
 	<commandset id="common-commandset">
-		<command id="menu_FileQuitItem-command" label="&menu_FileQuitItem-command-label;" oncommand="return handleWeaponryCommonQuitCommandEvent(event);"/>
-		<command id="aboutName-command" label="&aboutName-command-label;" oncommand="return handleWeaponryCommonAboutCommandEvent(event);"/>
+		<command id="file-menu-quit-command" label="&file-menu-quit-command-label;" oncommand="return handleWeaponryCommonQuitCommandEvent(event);"/>
+		<command id="help-menu-about-command" label="&help-menu-about-command-label;" oncommand="return handleWeaponryCommonAboutCommandEvent(event);"/>
 	</commandset>
 	
 	<keyset id="common-keyset">
-		<key id="menu_FileQuitItem-key" modifiers="accel" key="q" command="menu_FileQuitItem-command"/>
+		<key id="file-menu-quit-key" modifiers="accel" key="q" command="file-menu-quit-command"/>
 	</keyset>
 	
 	<menupopup id="file-menupopup">
-		<menuitem id="menu_FileQuitItem" key="menu_FileQuitItem-key" command="menu_FileQuitItem-command"/>
+		<menuitem id="file-menu-quit-menuitem" key="file-menu-quit-key" command="file-menu-quit-command"/>
 	</menupopup>
 	
 	<menupopup id="help-menupopup">
-		<menuitem id="aboutName" command="aboutName-command"/>
+		<menuitem id="help-menu-about-menuitem" command="help-menu-about-command"/>
 	</menupopup>
 	
 </overlay>

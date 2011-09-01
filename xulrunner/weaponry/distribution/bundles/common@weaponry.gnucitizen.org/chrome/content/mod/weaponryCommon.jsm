@@ -16,7 +16,7 @@
  *  along with this program; if not, write to the Free Software
  *  Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
  */
-// TODO: major cleanup required here
+
 let EXPORTED_SYMBOLS = ['weaponryCommon'];
 
 /* ------------------------------------------------------------------------ */
@@ -1864,15 +1864,19 @@ let weaponryCommon = new function () {
 	/* -------------------------------------------------------------------- */
 	
 	this.recordFaviconForUrl = function (url) {
-		if (!this.faviconService) {
-			this.faviconService = this.getService('@mozilla.org/browser/favicon-service;1', 'nsIFaviconService');
-		}
-		
 		if (!(url instanceof CI.nsIURI)) {
 			url = this.ioService.newURI(url, null, null);
 		}
 		
 		this.faviconService.setAndLoadFaviconForPage(url, this.ioService.newURI(url.prePath + '/favicon.ico', null, null), false);
+	};
+	
+	this.obtainFaviconForUrl = function (url) {
+		if (!(url instanceof CI.nsIURI)) {
+			url = this.ioService.newURI(url, null, null);
+		}
+		
+		// TODO: add code here
 	};
 };
 

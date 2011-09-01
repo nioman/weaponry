@@ -28,5 +28,8 @@
 pref('org.gnucitizen.weaponry.common.xbl.dbtable.tablesNum', 5);
 pref('org.gnucitizen.weaponry.common.xbl.dbtable.tableSize', 500);
 
+// browser preferences
+pref('browser.hiddenWindowChromeURL', 'chrome://common.weaponry.gnucitizen.org/content/xul/hiddenWindow.xul');
+
 /*  GNUCITIZEN (Information Security Think Tank)
  **********************************************/

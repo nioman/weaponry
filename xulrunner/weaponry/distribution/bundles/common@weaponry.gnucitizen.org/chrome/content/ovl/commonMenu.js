@@ -1,5 +1,5 @@
 /**
- *  macMenu.js
+ *  commonMenu.js
  *  Copyright (C) 2007-2011  GNUCITIZEN
  *  
  *  This program is free software; you can redistribute it and/or modify
@@ -17,16 +17,6 @@
  *  Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
  */
 
-function handleWeaponryCommonQuitCommandEvent(event) {
-	weaponryCommon.quitForcefully();
-}
-
-function handleWeaponryCommonAboutCommandEvent(event) {
-	weaponryCommon.openAboutBrandWindow();
-}
-
-/* ------------------------------------------------------------------------ */
-
 function handleWeaponryCommonDOMContentLoaded(event) {
 	if (event.target != document) {
 		return;
@@ -35,8 +25,7 @@ function handleWeaponryCommonDOMContentLoaded(event) {
 	let $stringbundle = document.getElementById('mac-menu-properties-stringbundle');
 	let name = weaponryCommon.xulAppInfo.name;
 	
-	document.getElementById('menu_FileQuitItem').setAttribute('label', $stringbundle.getFormattedString('quit-label', [name]));
-	document.getElementById('aboutName').setAttribute('label', $stringbundle.getFormattedString('about-label', [name]));
+	document.getElementById('help-menu-about-menuitem').setAttribute('label', $stringbundle.getFormattedString('about-label', [name]));
 }
 
 window.addEventListener('DOMContentLoaded', handleWeaponryCommonDOMContentLoaded, false);

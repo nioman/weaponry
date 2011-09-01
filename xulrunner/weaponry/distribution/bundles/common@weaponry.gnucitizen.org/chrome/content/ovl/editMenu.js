@@ -186,10 +186,8 @@ function handleEditMenuUnloadEvent(event) {
 	let $nodes = document.querySelectorAll(selector);
 	let nodesLength = $nodes.length;
 	
-	let i, $node;
-	
-	for (i = 0; i < nodesLength; i += 1) {
-		$node = $nodes[i];
+	for (let i = 0; i < nodesLength; i += 1) {
+		let $node = $nodes[i];
 		
 		if ($node.parentNode != $lastParent && !($node.parentNode.id in {'edit-menupopup':1, 'edit-context-menupopup':1})) {
 			$node.parentNode.removeEventListener('popupshowing', handleGenericEditMenupopupshowingEvent, false);

@@ -28,23 +28,20 @@
 	</stringbundleset>
 	
 	<commandset id="common-commandset">
-		<command id="help-menu-about-command" label="&help-menu-about-command-label;" oncommand="return handleHelpMenuAboutCommandEvent(event);"/>
 		<command id="help-menu-check-for-updates-command" label="&help-menu-check-for-updates-command-label;" oncommand="return handleHelpMenuCheckForUpdatesCommandEvent(event);"/>
 	</commandset>
 	
 	<menu id="help-menu" label="&help-menu-label;">
 		<menupopup id="help-menupopup">
-			<menuitem id="help-menupopup-about-menuitem" command="help-menu-about-command"/>
 			<menuseparator id="help-menupopup-updates-section-menuseparator"/>
 			<menuitem id="help-menupopup-check-for-updates-menuitem" command="help-menu-check-for-updates-command"/>
 		</menupopup>
 	</menu>
 	
-	<box id="common-box">
-		<menupopup id="help-context-menupopup">
-			<menuitem id="help-context-menupopup-check-for-updates-menuitem" command="help-menu-check-for-updates-command"/>
-		</menupopup>
-	</box>
+	<popupset id="common-popupset">
+		<menupopup id="help-context-menupopup"/>
+	</popupset>
+	
 </overlay>
 <!--
  *  GNUCITIZEN (Information Security Think Tank)
