@@ -28,7 +28,6 @@ function updateReloadButtonUi() {
 	let proxyTypeCur = document.getElementById('network.proxy.type').value;
 	let pacUrl = weaponryCommon.getPref('network.proxy.autoconfig_url');
 	let proxyType = weaponryCommon.getPref('network.proxy.type');
-	
 	let $prefAdvancedProxiesDisableButtonReload = document.getElementById('pref.advanced.proxies.disable_button.reload');
 	
 	$prefAdvancedProxiesDisableButtonReload.disabled = (proxyTypeCur != 2 || proxyType != 2 || typedUrl != pacUrl);
@@ -40,16 +39,12 @@ function readHttpProxyServer() {
 	if (window.$networkProxyShareProxySettings.value) {
 		updateProtocolUi();
 	}
-	
-	return undefined;
 }
 
 function readHttpProxyPort() {
 	if (window.$networkProxyShareProxySettings.value) {
 		updateProtocolUi();
 	}
-	
-	return undefined;
 }
 
 function readProxyProtocol(protocol, isPort) {
@@ -70,21 +65,14 @@ function updateProtocolUi() {
 	let types = ['ssl', 'ftp', 'socks', 'gopher'];
 	let typesLength = types.length;
 	
-	let i;
-	let type;
-	let $proxyServerPref;
-	let $proxyPortPref;
-	let $backupServerPref;
-	let $backupPortPref;
-	
-	for (i = 0; i < typesLength; i += 1) {
-		type = types[i];
-		$proxyServerPref = document.getElementById('network.proxy.' + type);
-		$proxyPortPref = document.getElementById('network.proxy.' + type + '_port');
+	for (let i = 0; i < typesLength; i += 1) {
+		let type = types[i];
+		let $proxyServerPref = document.getElementById('network.proxy.' + type);
+		let $proxyPortPref = document.getElementById('network.proxy.' + type + '_port');
 		
 		if (!window.$networkProxyShareProxySettings.value) {
-			$backupServerPref = document.getElementById('network.proxy.backup.' + type);
-			$backupPortPref = document.getElementById('network.proxy.backup.' + type + '_port');
+			let $backupServerPref = document.getElementById('network.proxy.backup.' + type);
+			let $backupPortPref = document.getElementById('network.proxy.backup.' + type + '_port');
 			
 			if ($backupServerPref.hasUserValue) {
 				$proxyServerPref.value = $backupServerPref.value;
@@ -129,19 +117,12 @@ function handleBeforeacceptEvent(event) {
 		let types = ['ssl', 'ftp', 'socks', 'gopher'];
 		let typesLength = types.length;
 		
-		let i;
-		let type;
-		let $proxyServerPref;
-		let $proxyPortPref;
-		let $proxyBackupServerPref;
-		let $proxyBackupPortPref;
-		
-		for (i = 0; i < typesLength; i += 1) {
-			type = types[i];
-			$proxyServerPref = document.getElementById('network.proxy.' + type);
-			$proxyPortPref = document.getElementById('network.proxy.' + type + '_port');
-			$proxyBackupServerPref = document.getElementById('network.proxy.backup.' + type);
-			$proxyBackupPortPref = document.getElementById('network.proxy.backup.' + type + '_port');
+		for (let i = 0; i < typesLength; i += 1) {
+			let type = types[i];
+			let $proxyServerPref = document.getElementById('network.proxy.' + type);
+			let $proxyPortPref = document.getElementById('network.proxy.' + type + '_port');
+			let $proxyBackupServerPref = document.getElementById('network.proxy.backup.' + type);
+			let $proxyBackupPortPref = document.getElementById('network.proxy.backup.' + type + '_port');
 			
 			$proxyBackupServerPref.value = $proxyServerPref.value;
 			$proxyBackupPortPref.value = $proxyPortPref.value;
@@ -175,10 +156,7 @@ function handleLoadEvent(event) {
 	let types = ['ssl', 'ftp', 'socks', 'gopher'];
 	let typesLength = types.length;
 	
-	let i;
-	let type;
-	
-	for (i = 0; i < typesLength; i += 1) {
+	for (let i = 0; i < typesLength; i += 1) {
 		let type = types[i];
 		
 		document.getElementById('network-proxy-' + type).setAttribute('onsyncfrompreference', 'return readProxyProtocol("' + type + '", false);');

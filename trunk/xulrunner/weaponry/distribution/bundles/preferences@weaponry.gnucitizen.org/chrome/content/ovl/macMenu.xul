@@ -27,8 +27,9 @@
 		<stringbundle id="weaponry-preferences-mac-menu-properties-stringbundle" src="chrome://preferences.weaponry.gnucitizen.org/locale/ovl/macMenu.properties"/>
 	</stringbundleset>
 	
-	<menuseparator id="weaponry-preferences-tools-menu-preferences-section-menuseparator" hidden="true"/>
-	<menuitem id="weaponry-preferences-tools-menu-open-preferences-menuitem" label="&menu_preferences-label;"/>
+	<menupopup id="tools-menupopup">
+		<menuitem id="menu_preferences" label="&menu_preferences-label;" oncommand="return handleWeaponryPreferncesToolsMenuOpenPreferencesWindowCommandEvent(event);"/>
+	</menupopup>
 	
 </overlay>
 <!--

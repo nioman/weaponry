@@ -173,14 +173,14 @@
 		</groupbox>
 	</prefpane>
 	
+	<box id="common-box"/>
+	
 	<script type="application/x-javascript" src="chrome://preferences.weaponry.gnucitizen.org/content/inc/common.js"/>
 	<script type="application/x-javascript" src="chrome://preferences.weaponry.gnucitizen.org/content/xul/proxyPrefwindow.js"/>
 	
 	<stringbundleset id="proxy-prefwindow-stringbundleset">
 		<stringbundle id="proxy-prefwindow-properties-stringbundle" src="chrome://preferences.weaponry.gnucitizen.org/locale/xul/proxyPrefwindow.properties"/>
 	</stringbundleset>
-	
-	<box id="common-box"/>
 	
 </prefwindow>
 <!--
