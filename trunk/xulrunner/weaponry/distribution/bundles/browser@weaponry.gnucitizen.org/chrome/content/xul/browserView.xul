@@ -30,7 +30,7 @@
 	<script type="application/x-javascript" src="chrome://browser.weaponry.gnucitizen.org/content/xul/browserView.js"/>
 	
 	<stringbundleset id="browser-view-stringbundleset">
-		<stringbundle id="browser-view-properties-stringbundle" src="chrome://browser.weaponry.gnucitizen.org/locale/xul/browserView.properties"/>
+		<stringbundle id="browser-view-stringbundle" src="chrome://browser.weaponry.gnucitizen.org/locale/xul/browserView.properties"/>
 	</stringbundleset>
 	
 	<commandset id="browser-view-commandset">
@@ -50,19 +50,21 @@
 		<key id="browser-view-open-findbar-key" modifiers="accel" key="f" command="browser-view-open-findbar-command"/>
 	</keyset>
 	
-	<menupopup id="browser-view-content-menupopup">
-		<menuitem id="browser-view-content-undo-menuitem" command="edit-menu-undo-command"/>
-		<menuitem id="browser-view-content-redo-menuitem" command="edit-menu-redo-command"/>
-		<menuseparator id="browser-view-content-edit-section-menuseparator"/>
-		<menuitem id="browser-view-content-cut-menuitem" command="edit-menu-cut-command"/>
-		<menuitem id="browser-view-content-copy-menuitem" command="edit-menu-copy-command"/>
-		<menuitem id="browser-view-content-paste-menuitem" command="edit-menu-paste-command"/>
-		<menuitem id="browser-view-content-delete-menuitem" command="edit-menu-delete-command"/>
-		<menuseparator id="browser-view-content-select-section-menuseparator"/>
-		<menuitem id="browser-view-content-select-all-menuitem" command="edit-menu-select-all-command"/>
-		<menuseparator id="browser-view-content-page-section-menuseparator"/>
-		<menuitem id="browser-view-content-view-source-menuitem" command="browser-view-view-source-command"/>
-	</menupopup>
+	<popupset id="browser-view-popupset">
+		<menupopup id="browser-view-content-menupopup">
+			<menuitem id="browser-view-content-undo-menuitem" command="edit-menu-undo-command"/>
+			<menuitem id="browser-view-content-redo-menuitem" command="edit-menu-redo-command"/>
+			<menuseparator id="browser-view-content-edit-section-menuseparator"/>
+			<menuitem id="browser-view-content-cut-menuitem" command="edit-menu-cut-command"/>
+			<menuitem id="browser-view-content-copy-menuitem" command="edit-menu-copy-command"/>
+			<menuitem id="browser-view-content-paste-menuitem" command="edit-menu-paste-command"/>
+			<menuitem id="browser-view-content-delete-menuitem" command="edit-menu-delete-command"/>
+			<menuseparator id="browser-view-content-select-section-menuseparator"/>
+			<menuitem id="browser-view-content-select-all-menuitem" command="edit-menu-select-all-command"/>
+			<menuseparator id="browser-view-content-page-section-menuseparator"/>
+			<menuitem id="browser-view-content-view-source-menuitem" command="browser-view-view-source-command"/>
+		</menupopup>
+	</popupset>
 	
 	<vbox id="browser-view-content-vbox" flex="1">
 		<toolbox id="browser-view-navigation-toolbox">

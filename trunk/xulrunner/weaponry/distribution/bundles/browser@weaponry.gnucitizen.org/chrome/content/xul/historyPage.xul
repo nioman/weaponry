@@ -29,7 +29,7 @@
 	<script type="application/x-javascript" src="chrome://browser.weaponry.gnucitizen.org/content/xul/historyPage.js"/>
 	
 	<stringbundleset id="history-page-stringbundleset">
-		<stringbundle id="history-page-properties-stringbundle" src="chrome://browser.weaponry.gnucitizen.org/locale/xul/historyPage.properties"/>
+		<stringbundle id="history-page-stringbundle" src="chrome://browser.weaponry.gnucitizen.org/locale/xul/historyPage.properties"/>
 	</stringbundleset>
 	
 	<vbox id="history-page-content-vbox" flex="1">

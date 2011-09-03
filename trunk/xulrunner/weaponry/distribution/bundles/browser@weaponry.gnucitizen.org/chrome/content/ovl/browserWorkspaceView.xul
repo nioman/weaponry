@@ -24,7 +24,7 @@
 	<script type="application/x-javascript" src="chrome://browser.weaponry.gnucitizen.org/content/ovl/browserWorkspaceView.js"/>
 	
 	<stringbundleset id="workspace-view-stringbundleset">
-		<stringbundle id="weaponry-browser-workspace-view-properties-stringbundle" src="chrome://browser.weaponry.gnucitizen.org/locale/ovl/browserWorkspaceView.properties"/>
+		<stringbundle id="weaponry-browser-workspace-view-stringbundle" src="chrome://browser.weaponry.gnucitizen.org/locale/ovl/browserWorkspaceView.properties"/>
 	</stringbundleset>
 	
 	<vbox id="workspace-view-content-vbox">

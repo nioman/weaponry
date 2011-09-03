@@ -17,8 +17,6 @@
  *  Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
  */
 
-// TODO: common accel+w bindings interfere with perspective accel+w bindings for tabs
-
 function switchBrowserView(view) {
 	let browserViewUri = '';
 	
@@ -66,7 +64,9 @@ function handleViewSourceCommandEvent(event) {
 	let $contentBrowser = document.getElementById('browser-view-content-browser');
 	let selection = $contentBrowser.contentWindow.getSelection();
 	
-	let range, contents, source;
+	let range;
+	let contents;
+	let source;
 	
 	try {
 		range = selection.getRangeAt(0);
@@ -141,9 +141,9 @@ function handleLocationChangeEvent(event) {
 /* ------------------------------------------------------------------------ */
 
 function buildNeterrorUri(type, target, url, description) {
-	let $properties = document.getElementById('browser-view-properties-stringbundle');
+	let $stringbundle = document.getElementById('browser-view-stringbundle');
 	
-	return 'about:neterror?e=' + encodeURIComponent(type) + '&u=' + encodeURIComponent(url) + '&d=' + encodeURIComponent($properties.getFormattedString(description, [target]));
+	return 'about:neterror?e=' + encodeURIComponent(type) + '&u=' + encodeURIComponent(url) + '&d=' + encodeURIComponent($stringbundle.getFormattedString(description, [target]));
 }
 
 /* ------------------------------------------------------------------------ */
@@ -241,8 +241,6 @@ function handleContentBrowserCertProblemEvent(event) {
 		
 		window.openDialog('chrome://pippki/content/exceptionDialog.xul', '', 'chrome,modal,centerscreen', params);
 		
-		let $contentBrowser = document.getElementById('browser-view-content-browser');
-		
 		if (params.exceptionAdded) {
 			reloadBrowserUrl();
 		} else {
@@ -263,6 +261,10 @@ function handleDOMContentLoadedEvent(event) {
 	if (event.target != document) {
 		return;
 	}
+	
+	let $closeWindowKey = document.getElementById('common-close-window-key');
+	
+	$closeWindowKey.parentNode.removeChild($closeWindowKey);
 	
 	let $contentMenupopup = document.getElementById('browser-view-content-menupopup');
 	let $backCommand = document.getElementById('browser-view-back-command');
@@ -298,12 +300,14 @@ function handleDOMContentLoadedEvent(event) {
 			if (stateFlags & CI.nsIWebProgressListener.STATE_IS_NETWORK && stateFlags & CI.nsIWebProgressListener.STATE_START) {
 				$reloadCommand.setAttribute('disabled', true);
 				$stopCommand.setAttribute('disabled', false);
+				
 				$reloadButton.hidden = true;
 				$stopButton.hidden = false;
 			} else
 			if (stateFlags & CI.nsIWebProgressListener.STATE_STOP) {
 				$reloadCommand.setAttribute('disabled', false);
 				$stopCommand.setAttribute('disabled', true);
+				
 				$reloadButton.hidden = false;
 				$stopButton.hidden = true;
 			}

@@ -50,11 +50,9 @@ BrowserDOMWindow.prototype = {
 		let handlers = this.handlers;
 		let handlersLength = handlers.length;
 		
-		let i, windowOpener;
-		
-		for (i = 0; i < handlersLength; i += 1) {
+		for (let i = 0; i < handlersLength; i += 1) {
 			try {
-				windowOpener = handlers[i](uri, opener, where, context);
+				let windowOpener = handlers[i](uri, opener, where, context);
 				
 				if (windowOpener) {
 					return windowOpener;
@@ -113,12 +111,12 @@ function getTab() {
 }
 
 function makeTab() {
-	let $properties = document.getElementById('browser-perspective-properties-stringbundle');
+	let $stringbundle = document.getElementById('browser-perspective-stringbundle');
 	let $richtabpanel = document.createElement('richtabpanel');
 	
 	$richtabpanel.setAttribute('src', getBrowserViewUrl());
 	$richtabpanel.setAttribute('class', 'browser-perspective-tabs-richtabpanels-richtabpanel');
-	$richtabpanel.setAttribute('label', $properties.getString('browser-tab-label'));
+	$richtabpanel.setAttribute('label', $stringbundle.getString('browser-tab-label'));
 	$richtabpanel.setAttribute('closable', 'true');
 	
 	let $richtabpanels = document.getElementById('browser-perspective-tabs-richtabpanels');
@@ -136,7 +134,7 @@ function makeTab() {
 		if (event.target.title) {
 			$richtabpanel.setAttribute('label', event.target.title);
 		} else {
-			$richtabpanel.setAttribute('label', $properties.getString('browser-tab-label'));
+			$richtabpanel.setAttribute('label', $stringbundle.getString('browser-tab-label'));
 		}
 	}, false);
 	
@@ -198,8 +196,6 @@ function handleOpenTabCommandEvent(event) {
 
 function handleCloseTabCommandEvent(event) {
 	closeTab();
-	
-	// TODO: close the window if there are no more tabs
 }
 
 /* ------------------------------------------------------------------------ */
@@ -281,6 +277,10 @@ function handleLoadEvent(event) {
 	if (defaultBrowserURI) {
 		loadBrowserUrl(defaultBrowserURI);
 	}
+	
+	// NOTE: browser scrollbar bug
+	window.$lastTab.$iframe.contentWindow.location.reload();
+	//
 }
 
 window.addEventListener('load', handleLoadEvent, false);

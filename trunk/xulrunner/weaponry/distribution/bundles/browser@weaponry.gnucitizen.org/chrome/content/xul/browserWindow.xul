@@ -31,7 +31,7 @@
 	<script type="application/x-javascript" src="chrome://browser.weaponry.gnucitizen.org/content/xul/browserWindow.js"/>
 	
 	<stringbundleset id="browser-window-stringbundleset">
-		<stringbundle id="browser-window-properties-stringbundle" src="chrome://browser.weaponry.gnucitizen.org/locale/xul/browserWindow.properties"/>
+		<stringbundle id="browser-window-stringbundle" src="chrome://browser.weaponry.gnucitizen.org/locale/xul/browserWindow.properties"/>
 	</stringbundleset>
 	
 	<menubar id="browser-window-menubar">
