@@ -28,7 +28,7 @@
 	<script type="application/x-javascript" src="chrome://common.weaponry.gnucitizen.org/content/xul/schemeView.js"/>
 	
 	<stringbundleset id="scheme-view-stringbundleset">
-		<stringbundle id="scheme-view-properties-stringbundle" src="chrome://common.weaponry.gnucitizen.org/locale/xul/schemeView.properties"/>
+		<stringbundle id="scheme-view-stringbundle" src="chrome://common.weaponry.gnucitizen.org/locale/xul/schemeView.properties"/>
 	</stringbundleset>
 	
 	<vbox id="scheme-view-content-vbox" flex="1">

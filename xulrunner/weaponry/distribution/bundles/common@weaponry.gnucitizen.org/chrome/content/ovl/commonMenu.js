@@ -22,7 +22,7 @@ function handleWeaponryCommonDOMContentLoaded(event) {
 		return;
 	}
 	
-	let $stringbundle = document.getElementById('mac-menu-properties-stringbundle');
+	let $stringbundle = document.getElementById('mac-menu-stringbundle');
 	let name = weaponryCommon.xulAppInfo.name;
 	
 	document.getElementById('help-menu-about-menuitem').setAttribute('label', $stringbundle.getFormattedString('about-label', [name]));

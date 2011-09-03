@@ -24,7 +24,7 @@
 	<script type="application/x-javascript" src="chrome://common.weaponry.gnucitizen.org/content/ovl/helpMenu.js"/>
 	
 	<stringbundleset id="common-stringbundleset">
-		<stringbundle id="help-menu-properties-stringbundle" src="chrome://common.weaponry.gnucitizen.org/locale/ovl/helpMenu.properties"/>
+		<stringbundle id="help-menu-stringbundle" src="chrome://common.weaponry.gnucitizen.org/locale/ovl/helpMenu.properties"/>
 	</stringbundleset>
 	
 	<commandset id="common-commandset">
