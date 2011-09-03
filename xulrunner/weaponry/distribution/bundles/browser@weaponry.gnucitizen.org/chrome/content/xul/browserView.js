@@ -17,6 +17,8 @@
  *  Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
  */
 
+// TODO: common accel+w bindings interfere with perspective accel+w bindings for tabs
+
 function switchBrowserView(view) {
 	let browserViewUri = '';
 	
