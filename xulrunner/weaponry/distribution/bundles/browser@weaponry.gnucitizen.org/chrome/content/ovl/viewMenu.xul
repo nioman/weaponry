@@ -24,7 +24,7 @@
 	<script type="application/x-javascript" src="chrome://browser.weaponry.gnucitizen.org/content/ovl/viewMenu.js"/>
 	
 	<stringbundleset id="common-stringbundleset">
-		<stringbundle id="weaponry-browser-view-menupopup-properties-stringbundle" src="chrome://browser.weaponry.gnucitizen.org/locale/ovl/viewMenu.properties"/>
+		<stringbundle id="weaponry-browser-view-menupopup-stringbundle" src="chrome://browser.weaponry.gnucitizen.org/locale/ovl/viewMenu.properties"/>
 	</stringbundleset>
 	
 	<menupopup id="view-menupopup"/>

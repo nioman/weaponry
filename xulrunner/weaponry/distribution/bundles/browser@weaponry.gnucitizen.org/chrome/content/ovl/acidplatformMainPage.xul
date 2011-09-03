@@ -24,7 +24,7 @@
 	<script type="application/x-javascript" src="chrome://browser.weaponry.gnucitizen.org/content/ovl/acidplatformMainPage.js"/>
 	
 	<stringbundleset id="main-page-stringbundleset">
-		<stringbundle id="weaponry-browser-main-page-properties-stringbundle" src="chrome://browser.weaponry.gnucitizen.org/locale/ovl/acidplatformMainPage.properties"/>
+		<stringbundle id="weaponry-browser-main-page-stringbundle" src="chrome://browser.weaponry.gnucitizen.org/locale/ovl/acidplatformMainPage.properties"/>
 	</stringbundleset>
 	
 </overlay>
