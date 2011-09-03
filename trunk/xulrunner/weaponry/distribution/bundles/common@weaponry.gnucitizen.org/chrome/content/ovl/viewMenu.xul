@@ -24,7 +24,7 @@
 	<script type="application/x-javascript" src="chrome://common.weaponry.gnucitizen.org/content/ovl/viewMenu.js"/>
 	
 	<stringbundleset id="common-stringbundleset">
-		<stringbundle id="view-menu-properties-stringbundle" src="chrome://common.weaponry.gnucitizen.org/locale/ovl/viewMenu.properties"/>
+		<stringbundle id="view-menu-stringbundle" src="chrome://common.weaponry.gnucitizen.org/locale/ovl/viewMenu.properties"/>
 	</stringbundleset>
 	
 	<commandset id="common-commandset"/>

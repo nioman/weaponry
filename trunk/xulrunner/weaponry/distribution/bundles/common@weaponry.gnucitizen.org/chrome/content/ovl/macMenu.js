@@ -32,7 +32,7 @@ function handleWeaponryCommonDOMContentLoaded(event) {
 		return;
 	}
 	
-	let $stringbundle = document.getElementById('mac-menu-properties-stringbundle');
+	let $stringbundle = document.getElementById('mac-menu-stringbundle');
 	let name = weaponryCommon.brandShortName;
 	
 	document.getElementById('menu_FileQuitItem').setAttribute('label', $stringbundle.getFormattedString('quit-label', [name]));
