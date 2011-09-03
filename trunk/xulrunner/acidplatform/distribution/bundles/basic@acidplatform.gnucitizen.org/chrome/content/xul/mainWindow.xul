@@ -28,7 +28,7 @@
 	<script type="application/x-javascript" src="chrome://basic.acidplatform.gnucitizen.org/content/xul/mainWindow.js"/>
 	
 	<stringbundleset id="main-window-stringbundleset">
-		<stringbundle id="main-window-properties-stringbundle" src="chrome://basic.acidplatform.gnucitizen.org/locale/xul/mainWindow.properties"/>
+		<stringbundle id="main-window-stringbundle" src="chrome://basic.acidplatform.gnucitizen.org/locale/xul/mainWindow.properties"/>
 	</stringbundleset>
 	
 	<menubar id="main-window-menubar">
