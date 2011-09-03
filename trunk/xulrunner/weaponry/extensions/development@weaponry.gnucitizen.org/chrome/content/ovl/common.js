@@ -40,10 +40,10 @@ function handleWeaponryDevelopmentLoadEvent(event) {
 	}
 	
 	if (weaponryCommon.getPref('toolkit.defaultChromeURI') == document.location && weaponryCommon.getPref('org.gnucitizen.weaponry.development.warn') == true) {
-		let $properties = document.getElementById('weaponry-development-common-properties-stringbundle');
+		let $stringbundle = document.getElementById('weaponry-development-common-stringbundle');
 		
 		setTimeout(function () {
-			let result = alertCheck($properties.getString('development-extension-enabled-notification-message'), $properties.getString('development-extension-enabled-do-not-warn-message'));
+			let result = alertCheck($stringbundle.getString('development-extension-enabled-notification-message'), $stringbundle.getString('development-extension-enabled-do-not-warn-message'));
 			
 			if (result.value == true) {
 				weaponryCommon.setPref('org.gnucitizen.weaponry.development.warn', false);

@@ -24,7 +24,7 @@
 	<script type="application/x-javascript" src="chrome://development.weaponry.gnucitizen.org/content/ovl/common.js"/>
 	
 	<stringbundleset id="common-stringbundleset">
-		<stringbundle id="weaponry-development-common-properties-stringbundle" src="chrome://development.weaponry.gnucitizen.org/locale/ovl/common.properties"/>
+		<stringbundle id="weaponry-development-common-stringbundle" src="chrome://development.weaponry.gnucitizen.org/locale/ovl/common.properties"/>
 	</stringbundleset>
 	
 </overlay>
