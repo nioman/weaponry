@@ -29,7 +29,7 @@
 	<script type="application/x-javascript" src="chrome://preferences.weaponry.gnucitizen.org/content/xul/registryDialog.js"/>
 	
 	<stringbundleset id="registry-dialog-stringbundleset">
-		<stringbundle id="registry-dialog-properties-stringbundle" src="chrome://preferences.weaponry.gnucitizen.org/locale/xul/registryDialog.properties"/>
+		<stringbundle id="registry-dialog-stringbundle" src="chrome://preferences.weaponry.gnucitizen.org/locale/xul/registryDialog.properties"/>
 	</stringbundleset>
 	
 	<vbox id="registry-dialog-content-vbox" flex="1">

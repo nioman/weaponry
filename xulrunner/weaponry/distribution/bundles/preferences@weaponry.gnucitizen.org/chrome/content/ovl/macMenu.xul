@@ -24,7 +24,7 @@
 	<script type="application/x-javascript" src="chrome://preferences.weaponry.gnucitizen.org/content/ovl/macMenu.js"/>
 	
 	<stringbundleset id="common-stringbundleset">
-		<stringbundle id="weaponry-preferences-mac-menu-properties-stringbundle" src="chrome://preferences.weaponry.gnucitizen.org/locale/ovl/macMenu.properties"/>
+		<stringbundle id="weaponry-preferences-mac-menu-stringbundle" src="chrome://preferences.weaponry.gnucitizen.org/locale/ovl/macMenu.properties"/>
 	</stringbundleset>
 	
 	<menupopup id="tools-menupopup">
