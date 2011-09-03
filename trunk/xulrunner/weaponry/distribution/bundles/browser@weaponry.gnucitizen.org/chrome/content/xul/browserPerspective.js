@@ -198,6 +198,8 @@ function handleOpenTabCommandEvent(event) {
 
 function handleCloseTabCommandEvent(event) {
 	closeTab();
+	
+	// TODO: close the window if there are no more tabs
 }
 
 /* ------------------------------------------------------------------------ */
