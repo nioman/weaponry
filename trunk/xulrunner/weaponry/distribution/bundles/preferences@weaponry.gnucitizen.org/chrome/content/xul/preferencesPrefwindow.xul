@@ -81,7 +81,7 @@
 	<box id="common-box"/>
 	
 	<stringbundleset id="preferences-prefwindow-stringbundleset">
-		<stringbundle id="preferences-prefwindow-properties-stringbundle" src="chrome://preferences.weaponry.gnucitizen.org/locale/xul/preferencesPrefwindow.properties"/>
+		<stringbundle id="preferences-prefwindow-stringbundle" src="chrome://preferences.weaponry.gnucitizen.org/locale/xul/preferencesPrefwindow.properties"/>
 	</stringbundleset>
 	
 	<script type="application/x-javascript" src="chrome://preferences.weaponry.gnucitizen.org/content/inc/common.js"/>
