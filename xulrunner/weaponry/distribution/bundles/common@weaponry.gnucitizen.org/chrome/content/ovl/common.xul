@@ -28,6 +28,7 @@
 <!DOCTYPE overlay SYSTEM "chrome://common.weaponry.gnucitizen.org/locale/ovl/common.dtd">
 <overlay xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
 	
+	<script type="application/x-javascript" src="chrome://common.weaponry.gnucitizen.org/content/inc/express.js"/>
 	<script type="application/x-javascript" src="chrome://common.weaponry.gnucitizen.org/content/ovl/common.js"/>
 	
 	<box id="common-box">
