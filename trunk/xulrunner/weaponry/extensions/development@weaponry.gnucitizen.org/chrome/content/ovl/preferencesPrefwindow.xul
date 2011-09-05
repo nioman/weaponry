@@ -17,14 +17,14 @@
  *  along with this program; if not, write to the Free Software
  *  Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 -->
-<?xml-stylesheet href="chrome://development.weaponry.gnucitizen.org/skin/ovl/preferencesPrefwindow.css" type="text/css"?>
-<!DOCTYPE overlay SYSTEM "chrome://development.weaponry.gnucitizen.org/locale/ovl/preferencesPrefwindow.dtd">
+<?xml-stylesheet href="chrome://org.gnucitizen.weaponry.development/skin/ovl/preferencesPrefwindow.css" type="text/css"?>
+<!DOCTYPE overlay SYSTEM "chrome://org.gnucitizen.weaponry.development/locale/ovl/preferencesPrefwindow.dtd">
 <overlay xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
 	
-	<script type="application/x-javascript" src="chrome://development.weaponry.gnucitizen.org/content/ovl/preferencesPrefwindow.js"/>
+	<script type="application/x-javascript" src="chrome://org.gnucitizen.weaponry.development/content/ovl/preferencesPrefwindow.js"/>
 	
 	<stringbundleset id="preferences-prefwindow-stringbundleset">
-		<stringbundle id="weaponry-development-preferences-prefwindow-stringbundle" src="chrome://development.weaponry.gnucitizen.org/locale/ovl/preferencesPrefwindow.properties"/>
+		<stringbundle id="weaponry-development-preferences-prefwindow-stringbundle" src="chrome://org.gnucitizen.weaponry.development/locale/ovl/preferencesPrefwindow.properties"/>
 	</stringbundleset>
 	
 	<preferences id="preferences-prefwindow-advanced-preferences">

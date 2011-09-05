@@ -1,5 +1,5 @@
 /**
- *  development.weaponry.gnucitizen.org.js
+ *  org.gnucitizen.weaponry.development.js
  *  Copyright (C) 2007-2011  GNUCITIZEN
  *  
  *  This program is free software; you can redistribute it and/or modify
