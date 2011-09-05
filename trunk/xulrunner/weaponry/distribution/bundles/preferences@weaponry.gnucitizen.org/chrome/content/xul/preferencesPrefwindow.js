@@ -17,21 +17,36 @@
  *  Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
  */
 
-function handleOpenProxyWindowCommandEvent(event) {
-	window.openDialog('chrome://' + CHROMEBASE + '/content/xul/proxyPrefwindow.xul', null, 'chrome,modal,centerscreen');
-}
-
-function handleOpenSecurityCertificatesWindowCommandEvent(event) {
-	window.openDialog('chrome://pippki/content/certManager.xul', null, 'chrome,modal,centerscreen');
-}
-
-function handleOpenSecurityDevicesWindowCommandEvent(event) {
-	window.openDialog('chrome://pippki/content/device_manager.xul', null, 'chrome,modal,centerscreen');
-}
-
-function handleOpenRegistryWindowCommandEvent(event) {
-	window.openDialog('chrome://' + CHROMEBASE + '/content/xul/registryDialog.xul', null, 'chrome,modal,centerscreen');
-}
+installHandler('org.gnucitizen.weaponry.preferences.preferencesPrefwindow', {
+	openProxyDialog: function () {
+		openDialog('chrome://' + CHROMEBASE + '/content/xul/proxyPrefwindow.xul', null, 'chrome,modal,centerscreen');
+	},
+	
+	openSecurityCertificatesDialog: function () {
+		openDialog('chrome://pippki/content/certManager.xul', null, 'chrome,modal,centerscreen');
+	},
+	
+	openSecurityDevicesDialog: function () {
+		openDialog('chrome://pippki/content/device_manager.xul', null, 'chrome,modal,centerscreen');
+	},
+	
+	openRegistryDialog: function () {
+		openDialog('chrome://' + CHROMEBASE + '/content/xul/registryDialog.xul', null, 'chrome,modal,centerscreen');
+	},
+	
+	onDOMContentLoaded: function (event) {
+		if (event.target != document) {
+			return;
+		}
+		
+		let self = org.gnucitizen.weaponry.preferences.preferencesPrefwindow;
+		
+		bindHandler('preferences-prefwindow-open-proxy-dialog-button', 'command', self.openProxyDialog);
+		bindHandler('preferences-prefwindow-open-security-certificates-dialog-button', 'command', self.openSecurityCertificatesDialog);
+		bindHandler('preferences-prefwindow-open-security-devices-dialog-button', 'command', self.openSecurityDevicesDialog);
+		bindHandler('preferences-prefwindow-open-registry-dialog-button', 'command', self.openRegistryDialog);
+	}
+});
 
 /*  GNUCITIZEN (Information Security Think Tank)
  **********************************************/
