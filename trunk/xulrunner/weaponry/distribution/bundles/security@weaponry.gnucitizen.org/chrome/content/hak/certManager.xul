@@ -17,11 +17,11 @@
  *  along with this program; if not, write to the Free Software
  *  Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 -->
-<?xml-stylesheet href="chrome://security.weaponry.gnucitizen.org/skin/hak/certManager.css" type="text/css"?>
-<!DOCTYPE overlay SYSTEM "chrome://security.weaponry.gnucitizen.org/locale/hak/certManager.dtd">
+<?xml-stylesheet href="chrome://org.gnucitizen.weaponry.security/skin/hak/certManager.css" type="text/css"?>
+<!DOCTYPE overlay SYSTEM "chrome://org.gnucitizen.weaponry.security/locale/hak/certManager.dtd">
 <overlay xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
 	
-	<script type="application/x-javascript" src="chrome://security.weaponry.gnucitizen.org/content/hak/certManager.js"/>
+	<script type="application/x-javascript" src="chrome://org.gnucitizen.weaponry.security/content/hak/certManager.js"/>
 	
 </overlay>
 <!--

@@ -19,7 +19,7 @@
 
 // TODO: after we pass version 8 ensure that this entire hack is removed
 (function () {
-	Components.utils.import('resource://common.weaponry.gnucitizen.org/content/mod/weaponryCommon.jsm');
+	Components.utils.import('resource://org.gnucitizen.weaponry.common/content/mod/weaponryCommon.jsm');
 	
 	if (weaponryCommon.xulAppInfo.platformVersion >= '8') {
 		return;
