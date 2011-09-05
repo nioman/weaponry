@@ -17,13 +17,13 @@
  *  along with this program; if not, write to the Free Software
  *  Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 -->
-<!DOCTYPE bindings SYSTEM "chrome://common.weaponry.gnucitizen.org/locale/xbl/templatebox.dtd">
+<!DOCTYPE bindings SYSTEM "chrome://org.gnucitizen.weaponry.common/locale/xbl/templatebox.dtd">
 <bindings
 	xmlns="http://www.mozilla.org/xbl"
 	xmlns:xbl="http://www.mozilla.org/xbl"
 	xmlns:xul="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
 	
-	<binding id="templatebox" extends="chrome://common.weaponry.gnucitizen.org/content/xbl/basecomputebox.xml#basecomputebox">
+	<binding id="templatebox" extends="chrome://org.gnucitizen.weaponry.common/content/xbl/basecomputebox.xml#basecomputebox">
 		<content>
 			<xul:vbox class="templatebox-container" flex="1">
 				<xul:vbox class="templatebox-content" hidden="true" flex="1"/>

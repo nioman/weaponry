@@ -17,12 +17,12 @@
  *  Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
  */
 
-@import url("chrome://common.weaponry.gnucitizen.org/skin/xbl/recordroll.css");
+@import url("chrome://org.gnucitizen.weaponry.common/skin/xbl/recordroll.css");
 
 /* ------------------------------------------------------------------------ */
 
 recordroll {
-	-moz-binding: url("chrome://common.weaponry.gnucitizen.org/content/xbl/recordroll.xml#recordroll");
+	-moz-binding: url("chrome://org.gnucitizen.weaponry.common/content/xbl/recordroll.xml#recordroll");
 }
 
 /*  GNUCITIZEN (Information Security Think Tank)

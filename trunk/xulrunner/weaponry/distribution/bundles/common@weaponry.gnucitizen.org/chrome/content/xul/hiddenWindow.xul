@@ -17,18 +17,18 @@
  *  along with this program; if not, write to the Free Software
  *  Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 -->
-<?xul-overlay href="chrome://common.weaponry.gnucitizen.org/content/ovl/common.xul"?>
-<?xml-stylesheet href="chrome://common.weaponry.gnucitizen.org/skin/xul/hiddenWindow.css" type="text/css"?>
-<!DOCTYPE window SYSTEM "chrome://common.weaponry.gnucitizen.org/locale/xul/hiddenWindow.dtd">
+<?xul-overlay href="chrome://org.gnucitizen.weaponry.common/content/ovl/common.xul"?>
+<?xml-stylesheet href="chrome://org.gnucitizen.weaponry.common/skin/xul/hiddenWindow.css" type="text/css"?>
+<!DOCTYPE window SYSTEM "chrome://org.gnucitizen.weaponry.common/locale/xul/hiddenWindow.dtd">
 <window xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
-	id="hidden-window" title="&hidden-window-title;" windowtype="common.weaponry.gnucitizen.org:hidden-window"
+	id="hidden-window" title="&hidden-window-title;" windowtype="org.gnucitizen.weaponry.common:hidden-window"
 	width="800" height="640" screenX="100" screenY="100" persist="width height screenX screenY sizemode">
 	
-	<script type="application/x-javascript" src="chrome://common.weaponry.gnucitizen.org/content/inc/common.js"/>
-	<script type="application/x-javascript" src="chrome://common.weaponry.gnucitizen.org/content/xul/hiddenWindow.js"/>
+	<script type="application/x-javascript" src="chrome://org.gnucitizen.weaponry.common/content/inc/common.js"/>
+	<script type="application/x-javascript" src="chrome://org.gnucitizen.weaponry.common/content/xul/hiddenWindow.js"/>
 	
 	<stringbundleset id="hidden-window-stringbundleset">
-		<stringbundle id="hidden-window-stringbundle" src="chrome://common.weaponry.gnucitizen.org/locale/xul/hiddenWindow.properties"/>
+		<stringbundle id="hidden-window-stringbundle" src="chrome://org.gnucitizen.weaponry.common/locale/xul/hiddenWindow.properties"/>
 	</stringbundleset>
 	
 	<menubar id="hidden-window-menubar">

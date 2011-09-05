@@ -17,15 +17,15 @@
  *  along with this program; if not, write to the Free Software
  *  Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 -->
-<!DOCTYPE bindings SYSTEM "chrome://common.weaponry.gnucitizen.org/locale/xbl/recordtable.dtd">
+<!DOCTYPE bindings SYSTEM "chrome://org.gnucitizen.weaponry.common/locale/xbl/recordtable.dtd">
 <bindings
 	xmlns="http://www.mozilla.org/xbl"
 	xmlns:xbl="http://www.mozilla.org/xbl"
 	xmlns:xul="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
 	
-	<binding id="recordtablecol" extends="chrome://common.weaponry.gnucitizen.org/content/xbl/datatable.xml#datatablecol"/>
+	<binding id="recordtablecol" extends="chrome://org.gnucitizen.weaponry.common/content/xbl/datatable.xml#datatablecol"/>
 	
-	<binding id="recordtable" extends="chrome://common.weaponry.gnucitizen.org/content/xbl/datatable.xml#datatable">
+	<binding id="recordtable" extends="chrome://org.gnucitizen.weaponry.common/content/xbl/datatable.xml#datatable">
 		<implementation>
 			<constructor>
 				<action><![CDATA[

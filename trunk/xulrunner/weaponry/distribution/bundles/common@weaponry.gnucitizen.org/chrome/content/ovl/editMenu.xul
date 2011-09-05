@@ -17,18 +17,18 @@
  *  along with this program; if not, write to the Free Software
  *  Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 -->
-<?xml-stylesheet href="chrome://common.weaponry.gnucitizen.org/skin/ovl/editMenu.css" type="text/css"?>
+<?xml-stylesheet href="chrome://org.gnucitizen.weaponry.common/skin/ovl/editMenu.css" type="text/css"?>
 <!DOCTYPE overlay [
 	<!ENTITY % editMenuOverlayDTD-3704939759336412 SYSTEM "chrome://global/locale/editMenuOverlay.dtd">%editMenuOverlayDTD-3704939759336412;
-	<!ENTITY % editMenuKeysDTD-515261500608176 SYSTEM "chrome://common.weaponry.gnucitizen.org/content/dtd/editMenuKeys.dtd">%editMenuKeysDTD-515261500608176;
-	<!ENTITY % editMenuDTD-8111629618797451 SYSTEM "chrome://common.weaponry.gnucitizen.org/locale/ovl/editMenu.dtd">%editMenuDTD-8111629618797451;
+	<!ENTITY % editMenuKeysDTD-515261500608176 SYSTEM "chrome://org.gnucitizen.weaponry.common/content/dtd/editMenuKeys.dtd">%editMenuKeysDTD-515261500608176;
+	<!ENTITY % editMenuDTD-8111629618797451 SYSTEM "chrome://org.gnucitizen.weaponry.common/locale/ovl/editMenu.dtd">%editMenuDTD-8111629618797451;
 ]>
 <overlay xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
 	
-	<script type="application/x-javascript" src="chrome://common.weaponry.gnucitizen.org/content/ovl/editMenu.js"/>
+	<script type="application/x-javascript" src="chrome://org.gnucitizen.weaponry.common/content/ovl/editMenu.js"/>
 	
 	<stringbundleset id="common-stringbundleset">
-		<stringbundle id="edit-menu-stringbundle" src="chrome://common.weaponry.gnucitizen.org/locale/ovl/editMenu.properties"/>
+		<stringbundle id="edit-menu-stringbundle" src="chrome://org.gnucitizen.weaponry.common/locale/ovl/editMenu.properties"/>
 	</stringbundleset>
 	
 	<commandset id="common-commandset">

@@ -17,13 +17,13 @@
  *  along with this program; if not, write to the Free Software
  *  Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 -->
-<!DOCTYPE bindings SYSTEM "chrome://common.weaponry.gnucitizen.org/locale/xbl/dblist.dtd">
+<!DOCTYPE bindings SYSTEM "chrome://org.gnucitizen.weaponry.common/locale/xbl/dblist.dtd">
 <bindings
 	xmlns="http://www.mozilla.org/xbl"
 	xmlns:xbl="http://www.mozilla.org/xbl"
 	xmlns:xul="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
 	
-	<binding id="dblist" extends="chrome://common.weaponry.gnucitizen.org/content/xbl/datalist.xml#datalist">
+	<binding id="dblist" extends="chrome://org.gnucitizen.weaponry.common/content/xbl/datalist.xml#datalist">
 		<implementation>
 			<property name="table">
 				<getter><![CDATA[

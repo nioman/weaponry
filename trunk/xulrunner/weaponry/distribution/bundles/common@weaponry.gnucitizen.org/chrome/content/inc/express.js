@@ -17,26 +17,15 @@
  *  Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
  */
 
-(function (window) {
-	let events = ['command', 'click'];
-	let eventsLength = events.length;
+function bindHandler(id, event, handler) {
+	let $element = document.getElementById(id);
 	
-	for (let i = 0; i < eventsLength; i += 1) {
-		let event = events[i];
-		
-		window['bind' + (event.charAt(0).toUpperCase() + event.slice(1)) + 'Event'] = (function (event) {
-			return function (id, handler) {
-				let $element = document.getElementById(id);
-				
-				if (!$element) {
-					throw new Error('cannot find element with id ' + id);
-				}
-				
-				$element.addEventListener(event, handler, false);
-			};
-		})(event);
+	if (!$element) {
+		throw new Error('cannot find element with id ' + id);
 	}
-})(window);
+	
+	$element.addEventListener(event, handler, false);
+}
 
 /* ------------------------------------------------------------------------ */
 
@@ -47,19 +36,26 @@ function createNamespace(namespace, gadget, bindEvents) {
 	
 	for (let i = 0; i < spacesLength; i += 1) {
 		let space = spaces[i];
+		let collides = true;
 		
-		if (!Object.hasOwnProperty(subject, space)) {
+		if (!(space in subject)) {
 			subject[space] = {};
+			
+			collides = false;
 		}
 		
 		if (i == spacesLength - 1 && gadget != undefined) {
+			if (collides) {
+				throw new Error('collision for namespace ' + namespace);
+			}
+			
 			subject[space] = gadget;
 		}
 		
 		subject = subject[space];
 	}
 	
-	if (gadget != undefined) {
+	if (spacesLength > 0 && gadget != undefined) {
 		if (bindEvents != undefined && bindEvents) {
 			let events = {
 				'onDOMContentLoaded': 'DOMContentLoaded',
@@ -77,6 +73,12 @@ function createNamespace(namespace, gadget, bindEvents) {
 	}
 	
 	return subject;
+}
+
+/* ------------------------------------------------------------------------ */
+
+function installHandler(namespace, handler) {
+	return createNamespace(namespace, handler, true);
 }
 
 /*  GNUCITIZEN (Information Security Think Tank)

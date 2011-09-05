@@ -23,7 +23,7 @@ const CI = Components.interfaces;
 
 /* ------------------------------------------------------------------------ */
 
-const CHROMEBASE = 'common.weaponry.gnucitizen.org';
+const CHROMEBASE = 'org.gnucitizen.weaponry.common';
 
 /* ------------------------------------------------------------------------ */
 

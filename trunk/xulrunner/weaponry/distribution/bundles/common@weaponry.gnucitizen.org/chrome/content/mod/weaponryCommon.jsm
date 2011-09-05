@@ -27,7 +27,7 @@ const CI = Components.interfaces;
 
 /* ------------------------------------------------------------------------ */
 
-const CHROMEBASE = 'common.weaponry.gnucitizen.org';
+const CHROMEBASE = 'org.gnucitizen.weaponry.common';
 
 /* ------------------------------------------------------------------------ */
 
@@ -657,8 +657,12 @@ let weaponryCommon = new function () {
 		return this.consoleService.logStringMessage(result);
 	};
 	
-	this.logException = function (error) {
+	this.logError = function (error) {
 		this.logMessage(error.toString());
+	}
+	
+	this.logException = function (exception) {
+		this.logMessage(exception.toString());
 	};
 	
 	/* -------------------------------------------------------------------- */
