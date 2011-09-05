@@ -17,13 +17,13 @@
  *  Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
  */
 
-Components.utils.import('resource://common.weaponry.gnucitizen.org/content/mod/weaponryCommon.jsm');
-Components.utils.import('resource://development.weaponry.gnucitizen.org/content/mod/weaponryDevelopment.jsm');
+Components.utils.import('resource://org.gnucitizen.weaponry.common/content/mod/weaponryCommon.jsm');
+Components.utils.import('resource://org.gnucitizen.weaponry.development/content/mod/weaponryDevelopment.jsm');
 
 /* ------------------------------------------------------------------------ */
 
 $(document).ready(function () {
-	let bundle = weaponryCommon.getBundle('chrome://development.weaponry.gnucitizen.org/locale/htm/requests.properties');
+	let bundle = weaponryCommon.getBundle('chrome://org.gnucitizen.weaponry.development/locale/htm/requests.properties');
 	
 	document.title = bundle.formatStringFromName('page-title', [weaponryCommon.xulAppInfo.name], 1);
 	

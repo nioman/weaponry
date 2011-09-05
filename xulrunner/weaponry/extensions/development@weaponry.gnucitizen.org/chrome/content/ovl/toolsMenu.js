@@ -26,11 +26,11 @@ function handleMemoryCommandEvent(event) {
 }
 
 function handleColorsCommandEvent(event) {
-	weaponryCommon.openWindow(null, 'chrome://development.weaponry.gnucitizen.org/content/htm/colors.htm', '', 'all,chrome,resizable,centerscreen,width=400,height=600');
+	weaponryCommon.openWindow(null, 'chrome://org.gnucitizen.weaponry.development/content/htm/colors.htm', '', 'all,chrome,resizable,centerscreen,width=400,height=600');
 }
 
 function handleRequestsCommandEvent(event) {
-	weaponryCommon.openWindow(null, 'chrome://development.weaponry.gnucitizen.org/content/htm/requests.htm', '', 'all,chrome,resizable,centerscreen,width=600,height=400');
+	weaponryCommon.openWindow(null, 'chrome://org.gnucitizen.weaponry.development/content/htm/requests.htm', '', 'all,chrome,resizable,centerscreen,width=600,height=400');
 }
 
 function handleInspectorCommandEvent(event) {
