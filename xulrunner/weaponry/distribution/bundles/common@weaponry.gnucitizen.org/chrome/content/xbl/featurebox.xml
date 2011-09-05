@@ -17,18 +17,18 @@
  *  along with this program; if not, write to the Free Software
  *  Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 -->
-<!DOCTYPE bindings SYSTEM "chrome://common.weaponry.gnucitizen.org/locale/xbl/featurebox.dtd">
+<!DOCTYPE bindings SYSTEM "chrome://org.gnucitizen.weaponry.common/locale/xbl/featurebox.dtd">
 <bindings
 	xmlns="http://www.mozilla.org/xbl"
 	xmlns:xbl="http://www.mozilla.org/xbl"
 	xmlns:xul="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
 	
-	<binding id="featurebox" extends="chrome://common.weaponry.gnucitizen.org/content/xbl/basebox.xml#basebox">
+	<binding id="featurebox" extends="chrome://org.gnucitizen.weaponry.common/content/xbl/basebox.xml#basebox">
 		<content>
 			<xul:vbox class="featurebox-container" flex="1">
 				<xul:deck class="featurebox-deck" flex="1">
 					<xul:vbox class="featurebox-enable-vbox" flex="1">
-						<xul:image class="featurebox-enable-image" src="chrome://common.weaponry.gnucitizen.org/skin/xbl/images/feature.png"/>
+						<xul:image class="featurebox-enable-image" src="chrome://org.gnucitizen.weaponry.common/skin/xbl/images/feature.png"/>
 						<xul:label class="featurebox-enable-label" xbl:inherits="value=description"/>
 						<xul:button class="featurebox-enable-button" xbl:inherits="label"/>
 					</xul:vbox>

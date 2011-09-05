@@ -1,5 +1,5 @@
 /**
- *  common.weaponry.gnucitizen.org.js
+ *  org.gnucitizen.weaponry.common.js
  *  Copyright (C) 2007-2011  GNUCITIZEN
  *  
  *  This program is free software; you can redistribute it and/or modify
@@ -29,7 +29,7 @@ pref('org.gnucitizen.weaponry.common.xbl.dbtable.tablesNum', 5);
 pref('org.gnucitizen.weaponry.common.xbl.dbtable.tableSize', 500);
 
 // browser preferences
-pref('browser.hiddenWindowChromeURL', 'chrome://common.weaponry.gnucitizen.org/content/xul/hiddenWindow.xul');
+pref('browser.hiddenWindowChromeURL', 'chrome://org.gnucitizen.weaponry.common/content/xul/hiddenWindow.xul');
 
 /*  GNUCITIZEN (Information Security Think Tank)
  **********************************************/

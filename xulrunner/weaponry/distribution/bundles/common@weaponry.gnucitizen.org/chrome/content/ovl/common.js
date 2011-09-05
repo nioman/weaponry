@@ -23,7 +23,19 @@ const CI = Components.interfaces;
 
 /* ------------------------------------------------------------------------ */
 
-Components.utils.import('resource://common.weaponry.gnucitizen.org/content/mod/weaponryCommon.jsm');
+function ensureModule(uri, name) {
+	if (!(name in window)) {
+		let scope = {};
+		
+		Components.utils.import(uri, scope);
+		
+		window[name] = scope[name];
+	}
+}
+
+/* ------------------------------------------------------------------------ */
+
+Components.utils.import('resource://org.gnucitizen.weaponry.common/content/mod/weaponryCommon.jsm');
 
 /* ------------------------------------------------------------------------ */
 

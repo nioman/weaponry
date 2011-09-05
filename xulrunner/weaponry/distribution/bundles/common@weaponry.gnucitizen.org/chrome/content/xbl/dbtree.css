@@ -17,16 +17,16 @@
  *  Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
  */
 
-@import url("chrome://common.weaponry.gnucitizen.org/skin/xbl/dbtree.css");
+@import url("chrome://org.gnucitizen.weaponry.common/skin/xbl/dbtree.css");
 
 /* ------------------------------------------------------------------------ */
 
 dbtreecol {
-	-moz-binding: url("chrome://common.weaponry.gnucitizen.org/content/xbl/dbtree.xml#dbtreecol");
+	-moz-binding: url("chrome://org.gnucitizen.weaponry.common/content/xbl/dbtree.xml#dbtreecol");
 }
 
 dbtree {
-	-moz-binding: url("chrome://common.weaponry.gnucitizen.org/content/xbl/dbtree.xml#dbtree");
+	-moz-binding: url("chrome://org.gnucitizen.weaponry.common/content/xbl/dbtree.xml#dbtree");
 }
 
 /*  GNUCITIZEN (Information Security Think Tank)

@@ -17,13 +17,13 @@
  *  along with this program; if not, write to the Free Software
  *  Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 -->
-<!DOCTYPE bindings SYSTEM "chrome://common.weaponry.gnucitizen.org/locale/xbl/expandabletextbox.dtd">
+<!DOCTYPE bindings SYSTEM "chrome://org.gnucitizen.weaponry.common/locale/xbl/expandabletextbox.dtd">
 <bindings
 	xmlns="http://www.mozilla.org/xbl"
 	xmlns:xbl="http://www.mozilla.org/xbl"
 	xmlns:xul="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
 	
-	<binding id="expandabletextbox" extends="chrome://common.weaponry.gnucitizen.org/content/xbl/basebox.xml#basebox">
+	<binding id="expandabletextbox" extends="chrome://org.gnucitizen.weaponry.common/content/xbl/basebox.xml#basebox">
 		<content>
 			<xul:hbox class="expandabletextbox-container" flex="1">
 				<xul:textbox class="expandabletextbox-textbox" flex="1" xbl:inherits="cols,disabled,emptytext,newlines,onchange,oninput,placeholder,preference,readonly,rows,searchbutton,size,spellcheck,type,value,wrap"/>

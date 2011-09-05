@@ -17,14 +17,14 @@
  *  along with this program; if not, write to the Free Software
  *  Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 -->
-<?xml-stylesheet href="chrome://common.weaponry.gnucitizen.org/skin/ovl/macMenu.css" type="text/css"?>
-<!DOCTYPE overlay SYSTEM "chrome://common.weaponry.gnucitizen.org/locale/ovl/macMenu.dtd">
+<?xml-stylesheet href="chrome://org.gnucitizen.weaponry.common/skin/ovl/macMenu.css" type="text/css"?>
+<!DOCTYPE overlay SYSTEM "chrome://org.gnucitizen.weaponry.common/locale/ovl/macMenu.dtd">
 <overlay xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
 	
-	<script type="application/x-javascript" src="chrome://common.weaponry.gnucitizen.org/content/ovl/macMenu.js"/>
+	<script type="application/x-javascript" src="chrome://org.gnucitizen.weaponry.common/content/ovl/macMenu.js"/>
 	
 	<stringbundleset id="common-stringbundleset">
-		<stringbundle id="mac-menu-stringbundle" src="chrome://common.weaponry.gnucitizen.org/locale/ovl/macMenu.properties"/>
+		<stringbundle id="mac-menu-stringbundle" src="chrome://org.gnucitizen.weaponry.common/locale/ovl/macMenu.properties"/>
 	</stringbundleset>
 	
 	<commandset id="common-commandset">
