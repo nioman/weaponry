@@ -17,20 +17,20 @@
  *  along with this program; if not, write to the Free Software
  *  Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 -->
-<!DOCTYPE bindings SYSTEM "chrome://common.weaponry.gnucitizen.org/locale/xbl/codeeditor.dtd">
+<!DOCTYPE bindings SYSTEM "chrome://org.gnucitizen.weaponry.common/locale/xbl/codeeditor.dtd">
 <bindings
 	xmlns="http://www.mozilla.org/xbl"
 	xmlns:xbl="http://www.mozilla.org/xbl"
 	xmlns:xul="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
 	
-	<binding id="codeeditor" extends="chrome://common.weaponry.gnucitizen.org/content/xbl/basebox.xml#basebox">
+	<binding id="codeeditor" extends="chrome://org.gnucitizen.weaponry.common/content/xbl/basebox.xml#basebox">
 		<resources>
-			<stylesheet src="chrome://editors.weaponry.gnucitizen.org/content/css/bindings.css"/>
+			<stylesheet src="chrome://org.gnucitizen.weaponry.editors/content/css/bindings.css"/>
 		</resources>
 		
 		<content>
 			<xul:vbox class="codeeditor-container" flex="1">
-				<xul:iframe class="codeeditor-iframe" src="chrome://editors.weaponry.gnucitizen.org/content/htm/codeEditor.htm" flex="1"/>
+				<xul:iframe class="codeeditor-iframe" src="chrome://org.gnucitizen.weaponry.editors/content/htm/codeEditor.htm" flex="1"/>
 			</xul:vbox>
 		</content>
 		

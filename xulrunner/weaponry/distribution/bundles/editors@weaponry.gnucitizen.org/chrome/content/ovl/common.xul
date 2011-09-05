@@ -17,15 +17,15 @@
  *  along with this program; if not, write to the Free Software
  *  Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 -->
-<?xml-stylesheet href="chrome://editors.weaponry.gnucitizen.org/content/css/bindings.css" type="text/css"?>
-<?xml-stylesheet href="chrome://editors.weaponry.gnucitizen.org/skin/ovl/common.css" type="text/css"?>
-<!DOCTYPE overlay SYSTEM "chrome://editors.weaponry.gnucitizen.org/locale/ovl/common.dtd">
+<?xml-stylesheet href="chrome://org.gnucitizen.weaponry.editors/content/css/bindings.css" type="text/css"?>
+<?xml-stylesheet href="chrome://org.gnucitizen.weaponry.editors/skin/ovl/common.css" type="text/css"?>
+<!DOCTYPE overlay SYSTEM "chrome://org.gnucitizen.weaponry.editors/locale/ovl/common.dtd">
 <overlay xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
 	
-	<script type="application/x-javascript" src="chrome://editors.weaponry.gnucitizen.org/content/ovl/common.js"/>
+	<script type="application/x-javascript" src="chrome://org.gnucitizen.weaponry.editors/content/ovl/common.js"/>
 	
 	<stringbundleset id="common-stringbundleset">
-		<stringbundle id="weaponry-editors-common-stringbundle" src="chrome://editors.weaponry.gnucitizen.org/locale/ovl/common.properties"/>
+		<stringbundle id="weaponry-editors-common-stringbundle" src="chrome://org.gnucitizen.weaponry.editors/locale/ovl/common.properties"/>
 	</stringbundleset>
 	
 </overlay>
