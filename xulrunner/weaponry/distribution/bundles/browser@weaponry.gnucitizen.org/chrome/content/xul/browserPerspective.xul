@@ -17,19 +17,19 @@
  *  along with this program; if not, write to the Free Software
  *  Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 -->
-<?xul-overlay href="chrome://common.weaponry.gnucitizen.org/content/ovl/common.xul"?>
-<?xml-stylesheet href="chrome://browser.weaponry.gnucitizen.org/content/css/bindings.css" type="text/css"?>
-<?xml-stylesheet href="chrome://browser.weaponry.gnucitizen.org/skin/xul/browserPerspective.css" type="text/css"?>
-<!DOCTYPE page SYSTEM "chrome://browser.weaponry.gnucitizen.org/locale/xul/browserPerspective.dtd">
+<?xul-overlay href="chrome://org.gnucitizen.weaponry.common/content/ovl/common.xul"?>
+<?xml-stylesheet href="chrome://org.gnucitizen.weaponry.browser/content/css/bindings.css" type="text/css"?>
+<?xml-stylesheet href="chrome://org.gnucitizen.weaponry.browser/skin/xul/browserPerspective.css" type="text/css"?>
+<!DOCTYPE page SYSTEM "chrome://org.gnucitizen.weaponry.browser/locale/xul/browserPerspective.dtd">
 <page xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
-	id="browser-perspective" title="&browser-perspective-title;" windowtype="browser.weaponry.gnucitizen.org:browser-perspective"
+	id="browser-perspective" title="&browser-perspective-title;" windowtype="org.gnucitizen.weaponry.browser:browser-perspective"
 	width="800" height="640" screenX="100" screenY="100" persist="width height screenX screenY sizemode">
 	
-	<script type="application/x-javascript" src="chrome://browser.weaponry.gnucitizen.org/content/inc/common.js"/>
-	<script type="application/x-javascript" src="chrome://browser.weaponry.gnucitizen.org/content/xul/browserPerspective.js"/>
+	<script type="application/x-javascript" src="chrome://org.gnucitizen.weaponry.browser/content/inc/common.js"/>
+	<script type="application/x-javascript" src="chrome://org.gnucitizen.weaponry.browser/content/xul/browserPerspective.js"/>
 	
 	<stringbundleset id="browser-perspective-stringbundleset">
-		<stringbundle id="browser-perspective-stringbundle" src="chrome://browser.weaponry.gnucitizen.org/locale/xul/browserPerspective.properties"/>
+		<stringbundle id="browser-perspective-stringbundle" src="chrome://org.gnucitizen.weaponry.browser/locale/xul/browserPerspective.properties"/>
 	</stringbundleset>
 	
 	<commandset id="browser-perspective-commandset">

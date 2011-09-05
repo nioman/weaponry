@@ -17,20 +17,20 @@
  *  along with this program; if not, write to the Free Software
  *  Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 -->
-<?xul-overlay href="chrome://common.weaponry.gnucitizen.org/content/ovl/common.xul"?>
-<?xml-stylesheet href="chrome://browser.weaponry.gnucitizen.org/content/css/bindings.css" type="text/css"?>
-<?xml-stylesheet href="chrome://browser.weaponry.gnucitizen.org/skin/xul/browserView.css" type="text/css"?>
-<!DOCTYPE page SYSTEM "chrome://browser.weaponry.gnucitizen.org/locale/xul/browserView.dtd">
+<?xul-overlay href="chrome://org.gnucitizen.weaponry.common/content/ovl/common.xul"?>
+<?xml-stylesheet href="chrome://org.gnucitizen.weaponry.browser/content/css/bindings.css" type="text/css"?>
+<?xml-stylesheet href="chrome://org.gnucitizen.weaponry.browser/skin/xul/browserView.css" type="text/css"?>
+<!DOCTYPE page SYSTEM "chrome://org.gnucitizen.weaponry.browser/locale/xul/browserView.dtd">
 <page xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
-	id="browser-view" title="&browser-view-title;" windowtype="browser.weaponry.gnucitizen.org:browser-view"
+	id="browser-view" title="&browser-view-title;" windowtype="org.gnucitizen.weaponry.browser:browser-view"
 	width="800" height="640" screenX="100" screenY="100" persist="width height screenX screenY sizemode">
 	
 	<script type="application/x-javascript" src="chrome://global/content/printUtils.js"/>
-	<script type="application/x-javascript" src="chrome://browser.weaponry.gnucitizen.org/content/inc/common.js"/>
-	<script type="application/x-javascript" src="chrome://browser.weaponry.gnucitizen.org/content/xul/browserView.js"/>
+	<script type="application/x-javascript" src="chrome://org.gnucitizen.weaponry.browser/content/inc/common.js"/>
+	<script type="application/x-javascript" src="chrome://org.gnucitizen.weaponry.browser/content/xul/browserView.js"/>
 	
 	<stringbundleset id="browser-view-stringbundleset">
-		<stringbundle id="browser-view-stringbundle" src="chrome://browser.weaponry.gnucitizen.org/locale/xul/browserView.properties"/>
+		<stringbundle id="browser-view-stringbundle" src="chrome://org.gnucitizen.weaponry.browser/locale/xul/browserView.properties"/>
 	</stringbundleset>
 	
 	<commandset id="browser-view-commandset">

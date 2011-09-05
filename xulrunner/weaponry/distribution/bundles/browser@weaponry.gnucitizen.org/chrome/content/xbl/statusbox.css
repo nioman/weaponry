@@ -17,12 +17,12 @@
  *  Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
  */
 
-@import url("chrome://browser.weaponry.gnucitizen.org/skin/xbl/statusbox.css");
+@import url("chrome://org.gnucitizen.weaponry.browser/skin/xbl/statusbox.css");
 
 /* ------------------------------------------------------------------------ */
 
 statusbox {
-	-moz-binding: url("chrome://browser.weaponry.gnucitizen.org/content/xbl/statusbox.xml#statusbox");
+	-moz-binding: url("chrome://org.gnucitizen.weaponry.browser/content/xbl/statusbox.xml#statusbox");
 }
 
 /*  GNUCITIZEN (Information Security Think Tank)
