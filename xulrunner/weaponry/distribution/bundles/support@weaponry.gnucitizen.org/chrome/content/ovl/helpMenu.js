@@ -17,25 +17,43 @@
  *  Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
  */
 
-function handleWeaponrySupportHelpMenuOpenHelpWindowCommandEvent(event) {
-	weaponryCommon.openUriExternally('http://code.google.com/p/weaponry/w/list');
-}
-
-function handleWeaponrySupportHelpMenuReportBugsCommandEvent(event) {
-	weaponryCommon.openUriExternally('http://code.google.com/p/weaponry/issues/list');
-}
-
-function handleWeaponrySupportHelpMenuRequestFeaturesCommandEvent(event) {
-	weaponryCommon.openUriExternally('http://code.google.com/p/weaponry/issues/detail?id=2');
-}
-
-function handleWeaponrySupportHelpMenuGotoWeaponryCommandEvent(event) {
-	weaponryCommon.openUriExternally('http://weaponry.gnucitizen.org');
-}
-
-function handleWeaponrySupportHelpMenuGotoGNUCITIZENCommandEvent(event) {
-	weaponryCommon.openUriExternally('http://www.gnucitizen.com');
-}
+installHandler('org.gnucitizen.weaponry.support.helpMenu', {
+	openHelp: function () {
+		weaponryCommon.openUriExternally('http://code.google.com/p/weaponry/w/list');
+	},
+	
+	openReportBugs: function () {
+		weaponryCommon.openUriExternally('http://code.google.com/p/weaponry/issues/list');
+	},
+	
+	openRequestFeatures: function () {
+		weaponryCommon.openUriExternally('http://code.google.com/p/weaponry/issues/detail?id=2');
+	},
+	
+	gotoWeaponry: function () {
+		weaponryCommon.openUriExternally('http://weaponry.gnucitizen.org');
+	},
+	
+	gotoGnucitizen: function () {
+		weaponryCommon.openUriExternally('http://www.gnucitizen.com');
+	},
+	
+	onDOMContentLoaded: function (event) {
+		if (event.target != document) {
+			return;
+		}
+		
+		if (document.getElementById('help-menupopup')) {
+			let self = org.gnucitizen.weaponry.support.helpMenu;
+			
+			bindHandler('weaponry-support-help-menu-help-menuitem', 'command', self.openHelp);
+			bindHandler('weaponry-support-help-menu-report-bugs-menuitem', 'command', self.openReportBugs);
+			bindHandler('weaponry-support-help-menu-request-features-menuitem', 'command', self.openRequestFeatures);
+			bindHandler('weaponry-support-help-menu-go-to-weaponry-menuitem', 'command', self.gotoWeaponry);
+			bindHandler('weaponry-support-help-menu-go-to-gnucitizen-menuitem', 'command', self.gotoGnucitizen);
+		}
+	}
+});
 
 /*  GNUCITIZEN (Information Security Think Tank)
  **********************************************/

@@ -1,5 +1,5 @@
 /**
- *  support.weaponry.gnucitizen.org.js
+ *  org.gnucitizen.weaponry.support.js
  *  Copyright (C) 2007-2011  GNUCITIZEN
  *  
  *  This program is free software; you can redistribute it and/or modify
@@ -18,7 +18,7 @@
  */
 
 // browser preferences
-pref('browser.chromeURL', 'chrome://browser.weaponry.gnucitizen.org/content/xul/browserView.xul');
+pref('browser.chromeURL', 'chrome://org.gnucitizen.weaponry.browser/content/xul/browserView.xul');
 
 // app update preferences
 pref('app.update.url', 'https://weaponryupdates.appspot.com/update/app.xml?product=%PRODUCT%&version=%VERSION%&build_id=%BUILD_ID%&build_target=%BUILD_TARGET%&locale=%LOCALE%&channel=%CHANNEL%&os_version=%OS_VERSION%&distribution=%DISTRIBUTION%&distribution_version=%DISTRIBUTION_VERSION%');
