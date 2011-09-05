@@ -17,19 +17,19 @@
  *  along with this program; if not, write to the Free Software
  *  Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 -->
-<?xul-overlay href="chrome://common.weaponry.gnucitizen.org/content/ovl/common.xul"?>
-<?xml-stylesheet href="chrome://preferences.weaponry.gnucitizen.org/skin/xul/registryDialog.css" type="text/css"?>
-<!DOCTYPE dialog SYSTEM "chrome://preferences.weaponry.gnucitizen.org/locale/xul/registryDialog.dtd">
+<?xul-overlay href="chrome://org.gnucitizen.weaponry.common/content/ovl/common.xul"?>
+<?xml-stylesheet href="chrome://org.gnucitizen.weaponry.preferences/skin/xul/registryDialog.css" type="text/css"?>
+<!DOCTYPE dialog SYSTEM "chrome://org.gnucitizen.weaponry.preferences/locale/xul/registryDialog.dtd">
 <dialog xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
-	id="registry-dialog" title="&registry-dialog-title;" dialogtype="preferences.weaponry.gnucitizen.org:registry-dialog"
+	id="registry-dialog" title="&registry-dialog-title;" dialogtype="org.gnucitizen.weaponry.preferences:registry-dialog"
 	width="700" height="500" screenX="100" screenY="100" persist="width height screenX screenY sizemode"
 	buttons="accept">
 	
-	<script type="application/x-javascript" src="chrome://preferences.weaponry.gnucitizen.org/content/inc/common.js"/>
-	<script type="application/x-javascript" src="chrome://preferences.weaponry.gnucitizen.org/content/xul/registryDialog.js"/>
+	<script type="application/x-javascript" src="chrome://org.gnucitizen.weaponry.preferences/content/inc/common.js"/>
+	<script type="application/x-javascript" src="chrome://org.gnucitizen.weaponry.preferences/content/xul/registryDialog.js"/>
 	
 	<stringbundleset id="registry-dialog-stringbundleset">
-		<stringbundle id="registry-dialog-stringbundle" src="chrome://preferences.weaponry.gnucitizen.org/locale/xul/registryDialog.properties"/>
+		<stringbundle id="registry-dialog-stringbundle" src="chrome://org.gnucitizen.weaponry.preferences/locale/xul/registryDialog.properties"/>
 	</stringbundleset>
 	
 	<vbox id="registry-dialog-content-vbox" flex="1">

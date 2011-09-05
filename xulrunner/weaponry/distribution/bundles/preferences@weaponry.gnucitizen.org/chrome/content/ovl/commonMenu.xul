@@ -17,19 +17,27 @@
  *  along with this program; if not, write to the Free Software
  *  Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 -->
-<?xml-stylesheet href="chrome://preferences.weaponry.gnucitizen.org/skin/ovl/commonMenu.css" type="text/css"?>
-<!DOCTYPE overlay SYSTEM "chrome://preferences.weaponry.gnucitizen.org/locale/ovl/commonMenu.dtd">
+<?xml-stylesheet href="chrome://org.gnucitizen.weaponry.preferences/skin/ovl/commonMenu.css" type="text/css"?>
+<!DOCTYPE overlay SYSTEM "chrome://org.gnucitizen.weaponry.preferences/locale/ovl/commonMenu.dtd">
 <overlay xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
 	
-	<script type="application/x-javascript" src="chrome://preferences.weaponry.gnucitizen.org/content/ovl/commonMenu.js"/>
+	<script type="application/x-javascript" src="chrome://org.gnucitizen.weaponry.preferences/content/ovl/commonMenu.js"/>
 	
 	<stringbundleset id="common-stringbundleset">
-		<stringbundle id="weaponry-preferences-tools-menu-stringbundle" src="chrome://preferences.weaponry.gnucitizen.org/locale/ovl/commonMenu.properties"/>
+		<stringbundle id="weaponry-preferences-tools-menu-stringbundle" src="chrome://org.gnucitizen.weaponry.preferences/locale/ovl/commonMenu.properties"/>
 	</stringbundleset>
+	
+	<commandset id="common-commandset">
+		<command id="weaponry-preferences-tools-menu-open-preferences-command" label="&weaponry-preferences-tools-menu-open-preferences-command-label;"/>
+	</commandset>
+	
+	<keyset id="common-keyset">
+		<key id="weaponry-preferences-tools-menu-open-preferences-key" modifiers="accel" key="," command="weaponry-preferences-tools-menu-open-preferences-command"/>
+	</keyset>
 	
 	<menupopup id="tools-menupopup">
 		<menuseparator id="weaponry-preferences-tools-menu-preferences-section-menuseparator"/>
-		<menuitem id="weaponry-preferences-tools-menu-open-preferences-menuitem" label="&weaponry-preferences-tools-menu-open-preferences-menuitem-label;" oncommand="return handleWeaponryPreferncesToolsMenuOpenPreferencesWindowCommandEvent(event);"/>
+		<menuitem id="weaponry-preferences-tools-menu-open-preferences-menuitem" label="&weaponry-preferences-tools-menu-open-preferences-menuitem-label;" key="weaponry-preferences-tools-menu-open-preferences-key" command="weaponry-preferences-tools-menu-open-preferences-command"/>
 	</menupopup>
 	
 </overlay>

@@ -27,11 +27,11 @@ const CI = Components.interfaces;
 
 /* ------------------------------------------------------------------------ */
 
-const CHROMEBASE = 'preferences.weaponry.gnucitizen.org';
+const CHROMEBASE = 'org.gnucitizen.weaponry.preferences';
 
 /* ------------------------------------------------------------------------ */
 
-Components.utils.import('resource://common.weaponry.gnucitizen.org/content/mod/weaponryCommon.jsm');
+Components.utils.import('resource://org.gnucitizen.weaponry.common/content/mod/weaponryCommon.jsm');
 
 /* ------------------------------------------------------------------------ */
 

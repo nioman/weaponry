@@ -17,10 +17,10 @@
  *  along with this program; if not, write to the Free Software
  *  Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 -->
-<?xml-stylesheet href="chrome://preferences.weaponry.gnucitizen.org/skin/hak/preferencesPrefwindow.css" type="text/css"?>
+<?xml-stylesheet href="chrome://org.gnucitizen.weaponry.preferences/skin/hak/preferencesPrefwindow.css" type="text/css"?>
 <overlay xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
 	
-	<script type="application/x-javascript" src="chrome://preferences.weaponry.gnucitizen.org/content/hak/preferencesPrefwindow.js"/>
+	<script type="application/x-javascript" src="chrome://org.gnucitizen.weaponry.preferences/content/hak/preferencesPrefwindow.js"/>
 	
 	<prefwindow id="preferences-prefwindow" persist=""/>	
 	

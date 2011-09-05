@@ -17,11 +17,11 @@
  *  along with this program; if not, write to the Free Software
  *  Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 -->
-<?xul-overlay href="chrome://common.weaponry.gnucitizen.org/content/ovl/common.xul"?>
-<?xml-stylesheet href="chrome://preferences.weaponry.gnucitizen.org/skin/xul/proxyPrefwindow.css" type="text/css"?>
-<!DOCTYPE prefwindow SYSTEM "chrome://preferences.weaponry.gnucitizen.org/locale/xul/proxyPrefwindow.dtd">
+<?xul-overlay href="chrome://org.gnucitizen.weaponry.common/content/ovl/common.xul"?>
+<?xml-stylesheet href="chrome://org.gnucitizen.weaponry.preferences/skin/xul/proxyPrefwindow.css" type="text/css"?>
+<!DOCTYPE prefwindow SYSTEM "chrome://org.gnucitizen.weaponry.preferences/locale/xul/proxyPrefwindow.dtd">
 <prefwindow xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
-	id="proxy-prefwindow" title="&proxy-prefwindow-title;" windowtype="preferences.weaponry.gnucitizen.org:proxy-prefwindow"
+	id="proxy-prefwindow" title="&proxy-prefwindow-title;" windowtype="org.gnucitizen.weaponry.preferences:proxy-prefwindow"
 	width="500" height="550" screenX="100" screenY="100" persist="width height screenX screenY sizemode">
 	
 	<prefpane id="proxy-prefwindow-prefpane" flex="1">
@@ -175,11 +175,11 @@
 	
 	<box id="common-box"/>
 	
-	<script type="application/x-javascript" src="chrome://preferences.weaponry.gnucitizen.org/content/inc/common.js"/>
-	<script type="application/x-javascript" src="chrome://preferences.weaponry.gnucitizen.org/content/xul/proxyPrefwindow.js"/>
+	<script type="application/x-javascript" src="chrome://org.gnucitizen.weaponry.preferences/content/inc/common.js"/>
+	<script type="application/x-javascript" src="chrome://org.gnucitizen.weaponry.preferences/content/xul/proxyPrefwindow.js"/>
 	
 	<stringbundleset id="proxy-prefwindow-stringbundleset">
-		<stringbundle id="proxy-prefwindow-stringbundle" src="chrome://preferences.weaponry.gnucitizen.org/locale/xul/proxyPrefwindow.properties"/>
+		<stringbundle id="proxy-prefwindow-stringbundle" src="chrome://org.gnucitizen.weaponry.preferences/locale/xul/proxyPrefwindow.properties"/>
 	</stringbundleset>
 	
 </prefwindow>
