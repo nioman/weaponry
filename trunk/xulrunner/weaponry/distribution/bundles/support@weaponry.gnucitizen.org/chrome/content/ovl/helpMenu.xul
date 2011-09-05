@@ -17,25 +17,25 @@
  *  along with this program; if not, write to the Free Software
  *  Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 -->
-<?xml-stylesheet href="chrome://support.weaponry.gnucitizen.org/skin/ovl/helpMenu.css" type="text/css"?>
-<!DOCTYPE overlay SYSTEM "chrome://support.weaponry.gnucitizen.org/locale/ovl/helpMenu.dtd">
+<?xml-stylesheet href="chrome://org.gnucitizen.weaponry.support/skin/ovl/helpMenu.css" type="text/css"?>
+<!DOCTYPE overlay SYSTEM "chrome://org.gnucitizen.weaponry.support/locale/ovl/helpMenu.dtd">
 <overlay xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
 	
-	<script type="application/x-javascript" src="chrome://support.weaponry.gnucitizen.org/content/ovl/helpMenu.js"/>
+	<script type="application/x-javascript" src="chrome://org.gnucitizen.weaponry.support/content/ovl/helpMenu.js"/>
 	
 	<stringbundleset id="common-stringbundleset">
-		<stringbundle id="weaponry-support-help-menu-stringbundle" src="chrome://support.weaponry.gnucitizen.org/locale/ovl/helpMenu.properties"/>
+		<stringbundle id="weaponry-support-help-menu-stringbundle" src="chrome://org.gnucitizen.weaponry.support/locale/ovl/helpMenu.properties"/>
 	</stringbundleset>
 	
 	<menupopup id="help-menupopup">
 		<menuseparator id="weaponry-support-help-menu-help-section-menuseparator"/>
-		<menuitem id="weaponry-support-help-menu-help-menuitem" label="&weaponry-support-help-menu-help-menuitem-label;" oncommand="return handleWeaponrySupportHelpMenuOpenHelpWindowCommandEvent(event);"/>
+		<menuitem id="weaponry-support-help-menu-help-menuitem" label="&weaponry-support-help-menu-help-menuitem-label;"/>
 		<menuseparator id="weaponry-support-help-menu-bugs-section-menuseparator"/>
-		<menuitem id="weaponry-support-help-menu-report-bugs-menuitem" label="&weaponry-support-help-menu-report-bugs-menuitem-label;" oncommand="return handleWeaponrySupportHelpMenuReportBugsCommandEvent(event);"/>
-		<menuitem id="weaponry-support-help-menu-request-features-menuitem" label="&weaponry-support-help-menu-request-features-menuitem-label;" oncommand="return handleWeaponrySupportHelpMenuRequestFeaturesCommandEvent(event);"/>
+		<menuitem id="weaponry-support-help-menu-report-bugs-menuitem" label="&weaponry-support-help-menu-report-bugs-menuitem-label;"/>
+		<menuitem id="weaponry-support-help-menu-request-features-menuitem" label="&weaponry-support-help-menu-request-features-menuitem-label;"/>
 		<menuseparator id="weaponry-support-help-menu-custom-section-menuseparator"/>
-		<menuitem id="weaponry-support-help-menu-go-to-weaponry-menuitem" label="&weaponry-support-help-menu-go-to-weaponry-menuitem-label;" oncommand="return handleWeaponrySupportHelpMenuGotoWeaponryCommandEvent(event);"/>
-		<menuitem id="weaponry-support-help-menu-go-to-gnucitizen-menuitem" label="&weaponry-support-help-menu-go-to-gnucitizen-menuitem-label;" oncommand="return handleWeaponrySupportHelpMenuGotoGNUCITIZENCommandEvent(event);"/>
+		<menuitem id="weaponry-support-help-menu-go-to-weaponry-menuitem" label="&weaponry-support-help-menu-go-to-weaponry-menuitem-label;"/>
+		<menuitem id="weaponry-support-help-menu-go-to-gnucitizen-menuitem" label="&weaponry-support-help-menu-go-to-gnucitizen-menuitem-label;"/>
 	</menupopup>
 	
 </overlay>
