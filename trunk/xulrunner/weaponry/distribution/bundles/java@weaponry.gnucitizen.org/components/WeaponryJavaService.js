@@ -23,12 +23,12 @@ const CI = Components.interfaces;
 
 /* ------------------------------------------------------------------------ */
 
-const CHROMEBASE = 'java.weaponry.gnucitizen.org';
+const CHROMEBASE = 'org.gnucitizen.weaponry.java';
 
 /* ------------------------------------------------------------------------ */
 
 Components.utils.import('resource://gre/modules/XPCOMUtils.jsm');
-Components.utils.import('resource://common.weaponry.gnucitizen.org/content/mod/weaponryCommon.jsm');
+Components.utils.import('resource://org.gnucitizen.weaponry.common/content/mod/weaponryCommon.jsm');
 
 /* ------------------------------------------------------------------------ */
 
