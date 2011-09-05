@@ -23,7 +23,7 @@ const CI = Components.interfaces;
 
 /* ------------------------------------------------------------------------ */
 
-const CHROMEBASE = 'security.weaponry.gnucitizen.org';
+const CHROMEBASE = 'org.gnucitizen.weaponry.security';
 
 /* ------------------------------------------------------------------------ */
 
@@ -60,7 +60,7 @@ CerterrorAboutModule.prototype = {
 		channel.originalURI = uri;
 		
 		return channel;
-	},
+	}
 }
 
 /* ------------------------------------------------------------------------ */

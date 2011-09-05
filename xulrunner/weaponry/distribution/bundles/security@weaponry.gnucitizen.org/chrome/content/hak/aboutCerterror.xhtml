@@ -24,7 +24,7 @@
 	%netErrorDTD;
 	<!ENTITY % globalDTD SYSTEM "chrome://global/locale/global.dtd">
 	%globalDTD;
-	<!ENTITY % aboutCertErrorDTD SYSTEM "chrome://security.weaponry.gnucitizen.org/locale/hak/aboutCerterror.dtd">
+	<!ENTITY % aboutCertErrorDTD SYSTEM "chrome://org.gnucitizen.weaponry.security/locale/hak/aboutCerterror.dtd">
 	%aboutCertErrorDTD;
 ]>
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -32,7 +32,7 @@
 		<title>&loadError.label;</title>
 		<link rel="stylesheet" href="chrome://global/skin/netError.css" type="text/css" media="all"/>
 		<link rel="icon" href="chrome://global/skin/icons/warning-16.png" type="image/png" id="favicon"/>
-		<script src="chrome://security.weaponry.gnucitizen.org/content/hak/aboutCerterror.js" type="text/javascript;version=1.8"/>
+		<script src="chrome://org.gnucitizen.weaponry.security/content/hak/aboutCerterror.js" type="text/javascript;version=1.8"/>
 		
     <script type="application/x-javascript"><![CDATA[
       // Error url MUST be formatted like this:
@@ -326,7 +326,7 @@
 				
 				<div id="securityOverrideDiv">
 					<a id="securityOverrideLink" href="javascript:showSecuritySection();">&securityOverride.linkText;</a>
-					<div id="securityOverrideContent" style="display: none;">&securityOverride.warningContent;<a href="javascript:addWeaponrySecurityCertificateException();">&weaponry-security-add-certificate-exception-text;</a></div>
+					<div id="securityOverrideContent" style="display: none;">&securityOverride.warningContent;<a href="javascript:addSecurityCertificateException();">&add-certificate-exception-text;</a></div>
 				</div>
 			</div>
 			

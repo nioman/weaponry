@@ -23,7 +23,7 @@ const CI = Components.interfaces;
 
 /* ------------------------------------------------------------------------ */
 
-const CHROMEBASE = 'security.weaponry.gnucitizen.org';
+const CHROMEBASE = 'org.gnucitizen.weaponry.security';
 
 /* ------------------------------------------------------------------------ */
 
@@ -33,7 +33,7 @@ Components.utils.import('resource://gre/modules/XPCOMUtils.jsm');
 
 function WeaponryCertOverrideService() {
 	this.originalListener = Components.classesByID['{67ba681d-5485-4fff-952c-2ee337ffdcd6}'].getService(CI.nsICertOverrideService);
-	this.preferencesService = Components.classes['@mozilla.org/preferences-service;1'].getService(CI.nsIPrefBranch);
+	this.preferencesService = CC['@mozilla.org/preferences-service;1'].getService(CI.nsIPrefBranch);
 }
 
 WeaponryCertOverrideService.prototype = {
