@@ -17,7 +17,7 @@
  *  Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
  */
 
-const CHROMEBASE = 'basic.acidplatform.gnucitizen.org';
+const CHROMEBASE = 'org.gnucitizen.acidplatform.basic';
 
 /*  GNUCITIZEN (Information Security Think Tank)
  **********************************************/
