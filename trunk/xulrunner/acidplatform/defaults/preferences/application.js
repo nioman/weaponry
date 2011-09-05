@@ -18,8 +18,8 @@
  */
 
 // toolkit preferences
-pref('toolkit.defaultChromeURI', 'chrome://basic.acidplatform.gnucitizen.org/content/xul/mainWindow.xul');
-pref('toolkit.singletonWindowType', 'basic.acidplatform.gnucitizen.org:main-window');
+pref('toolkit.defaultChromeURI', 'chrome://org.gnucitizen.acidplatform.basic/content/xul/mainWindow.xul');
+pref('toolkit.singletonWindowType', 'org.gnucitizen.acidplatform.basic:main-window');
 
 /*  GNUCITIZEN (Information Security Think Tank)
  **********************************************/
