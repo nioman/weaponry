@@ -165,12 +165,12 @@
 	/* pass */
 }
 
-[lookandfeel="Darwin"][parentwindowtype="browser.weaponry.gnucitizen.org:browser-perspective"] #browser-view-navigation-toolbar {
+[lookandfeel="Darwin"][parentwindowtype="org.gnucitizen.weaponry.browser:browser-perspective"] #browser-view-navigation-toolbar {
 	-moz-appearance: none;
 	background: -moz-mac-chrome-inactive;
 }
 
-[lookandfeel="Darwin"]:not([parentwindowtype="browser.weaponry.gnucitizen.org:browser-perspective"]) .browser-view-navigation-button {
+[lookandfeel="Darwin"]:not([parentwindowtype="org.gnucitizen.weaponry.browser:browser-perspective"]) .browser-view-navigation-button {
 	opacity: 0.8;
 }
 
@@ -260,7 +260,7 @@
 	padding: 2px;
 }
 
-[lookandfeel="Linux"][parentwindowtype="browser.weaponry.gnucitizen.org:browser-perspective"] #browser-view-navigation-toolbar {
+[lookandfeel="Linux"][parentwindowtype="org.gnucitizen.weaponry.browser:browser-perspective"] #browser-view-navigation-toolbar {
 	/* pass */
 }
 
@@ -335,7 +335,7 @@
 	padding: 2px;
 }
 
-[lookandfeel="WINNT"][parentwindowtype="browser.weaponry.gnucitizen.org:browser-perspective"] #browser-view-navigation-toolbar {
+[lookandfeel="WINNT"][parentwindowtype="org.gnucitizen.weaponry.browser:browser-perspective"] #browser-view-navigation-toolbar {
 	/* pass */
 }
 
@@ -345,7 +345,7 @@
 	border-bottom: 1px solid ThreeDShadow;
 }
 
-[lookandfeel="WINNT"][parentwindowtype="browser.weaponry.gnucitizen.org:browser-perspective"]:-moz-system-metric(windows-default-theme) #browser-view-navigation-toolbox {
+[lookandfeel="WINNT"][parentwindowtype="org.gnucitizen.weaponry.browser:browser-perspective"]:-moz-system-metric(windows-default-theme) #browser-view-navigation-toolbox {
 	background: ButtonHighlight;
 }
 

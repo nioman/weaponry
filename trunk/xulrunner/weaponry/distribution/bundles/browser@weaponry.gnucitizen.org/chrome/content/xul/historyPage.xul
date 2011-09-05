@@ -17,19 +17,19 @@
  *  along with this program; if not, write to the Free Software
  *  Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 -->
-<?xul-overlay href="chrome://common.weaponry.gnucitizen.org/content/ovl/common.xul"?>
-<?xml-stylesheet href="chrome://browser.weaponry.gnucitizen.org/content/css/bindings.css" type="text/css"?>
-<?xml-stylesheet href="chrome://browser.weaponry.gnucitizen.org/skin/xul/historyPage.css" type="text/css"?>
-<!DOCTYPE page SYSTEM "chrome://browser.weaponry.gnucitizen.org/locale/xul/historyPage.dtd">
+<?xul-overlay href="chrome://org.gnucitizen.weaponry.common/content/ovl/common.xul"?>
+<?xml-stylesheet href="chrome://org.gnucitizen.weaponry.browser/content/css/bindings.css" type="text/css"?>
+<?xml-stylesheet href="chrome://org.gnucitizen.weaponry.browser/skin/xul/historyPage.css" type="text/css"?>
+<!DOCTYPE page SYSTEM "chrome://org.gnucitizen.weaponry.browser/locale/xul/historyPage.dtd">
 <page xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
-	id="history-page" title="&history-page-title;" windowtype="browser.weaponry.gnucitizen.org:history-page"
+	id="history-page" title="&history-page-title;" windowtype="org.gnucitizen.weaponry.browser:history-page"
 	width="800" height="640" screenX="100" screenY="100" persist="width height screenX screenY sizemode">
 	
-	<script type="application/x-javascript" src="chrome://browser.weaponry.gnucitizen.org/content/inc/common.js"/>
-	<script type="application/x-javascript" src="chrome://browser.weaponry.gnucitizen.org/content/xul/historyPage.js"/>
+	<script type="application/x-javascript" src="chrome://org.gnucitizen.weaponry.browser/content/inc/common.js"/>
+	<script type="application/x-javascript" src="chrome://org.gnucitizen.weaponry.browser/content/xul/historyPage.js"/>
 	
 	<stringbundleset id="history-page-stringbundleset">
-		<stringbundle id="history-page-stringbundle" src="chrome://browser.weaponry.gnucitizen.org/locale/xul/historyPage.properties"/>
+		<stringbundle id="history-page-stringbundle" src="chrome://org.gnucitizen.weaponry.browser/locale/xul/historyPage.properties"/>
 	</stringbundleset>
 	
 	<vbox id="history-page-content-vbox" flex="1">

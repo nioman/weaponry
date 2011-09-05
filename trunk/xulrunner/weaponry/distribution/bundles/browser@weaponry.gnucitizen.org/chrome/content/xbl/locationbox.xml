@@ -17,15 +17,15 @@
  *  along with this program; if not, write to the Free Software
  *  Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 -->
-<!DOCTYPE bindings SYSTEM "chrome://browser.weaponry.gnucitizen.org/locale/xbl/locationbox.dtd">
+<!DOCTYPE bindings SYSTEM "chrome://org.gnucitizen.weaponry.browser/locale/xbl/locationbox.dtd">
 <bindings
 	xmlns="http://www.mozilla.org/xbl"
 	xmlns:xbl="http://www.mozilla.org/xbl"
 	xmlns:xul="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
 	
-	<binding id="locationbox" extends="chrome://common.weaponry.gnucitizen.org/content/xbl/basebox.xml#basebox">
+	<binding id="locationbox" extends="chrome://org.gnucitizen.weaponry.common/content/xbl/basebox.xml#basebox">
 		<resources>
-			<stylesheet src="chrome://browser.weaponry.gnucitizen.org/content/css/bindings.css"/>
+			<stylesheet src="chrome://org.gnucitizen.weaponry.browser/content/css/bindings.css"/>
 		</resources>
 		
 		<content>

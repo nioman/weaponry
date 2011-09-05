@@ -17,19 +17,19 @@
  *  along with this program; if not, write to the Free Software
  *  Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 -->
-<?xml-stylesheet href="chrome://browser.weaponry.gnucitizen.org/skin/ovl/browserWorkspaceView.css" type="text/css"?>
-<!DOCTYPE overlay SYSTEM "chrome://browser.weaponry.gnucitizen.org/locale/ovl/browserWorkspaceView.dtd">
+<?xml-stylesheet href="chrome://org.gnucitizen.weaponry.browser/skin/ovl/browserWorkspaceView.css" type="text/css"?>
+<!DOCTYPE overlay SYSTEM "chrome://org.gnucitizen.weaponry.browser/locale/ovl/browserWorkspaceView.dtd">
 <overlay xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
 	
-	<script type="application/x-javascript" src="chrome://browser.weaponry.gnucitizen.org/content/ovl/browserWorkspaceView.js"/>
+	<script type="application/x-javascript" src="chrome://org.gnucitizen.weaponry.browser/content/ovl/browserWorkspaceView.js"/>
 	
 	<stringbundleset id="workspace-view-stringbundleset">
-		<stringbundle id="weaponry-browser-workspace-view-stringbundle" src="chrome://browser.weaponry.gnucitizen.org/locale/ovl/browserWorkspaceView.properties"/>
+		<stringbundle id="weaponry-browser-workspace-view-stringbundle" src="chrome://org.gnucitizen.weaponry.browser/locale/ovl/browserWorkspaceView.properties"/>
 	</stringbundleset>
 	
 	<vbox id="workspace-view-content-vbox">
 		<vbox id="weaponry-browser-workspace-view-content-vbox" flex="1">
-			<iframe id="weaponry-browser-workspace-view-browser-iframe" src="chrome://browser.weaponry.gnucitizen.org/content/xul/browserPerspective.xul?perspective=workspace.workspaces.weaponry.gnucitizen.org" flex="1"/>
+			<iframe id="weaponry-browser-workspace-view-browser-iframe" src="chrome://org.gnucitizen.weaponry.browser/content/xul/browserPerspective.xul?perspective=workspace.workspaces.weaponry.gnucitizen.org" flex="1"/>
 		</vbox>
 	</vbox>
 	
