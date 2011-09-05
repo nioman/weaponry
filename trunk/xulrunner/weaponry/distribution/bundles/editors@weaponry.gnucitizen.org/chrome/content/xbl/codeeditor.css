@@ -17,12 +17,12 @@
  *  Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
  */
 
-@import url("chrome://editors.weaponry.gnucitizen.org/skin/xbl/codeeditor.css");
+@import url("chrome://org.gnucitizen.weaponry.editors/skin/xbl/codeeditor.css");
 
 /* ------------------------------------------------------------------------ */
 
 codeeditor {
-	-moz-binding: url("chrome://editors.weaponry.gnucitizen.org/content/xbl/codeeditor.xml#codeeditor");
+	-moz-binding: url("chrome://org.gnucitizen.weaponry.editors/content/xbl/codeeditor.xml#codeeditor");
 }
 
 /*  GNUCITIZEN (Information Security Think Tank)

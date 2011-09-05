@@ -17,7 +17,7 @@
  *  Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
  */
 
-const CHROMEBASE = 'editors.weaponry.gnucitizen.org';
+const CHROMEBASE = 'org.gnucitizen.weaponry.editors';
 
 /*  GNUCITIZEN (Information Security Think Tank)
  **********************************************/
