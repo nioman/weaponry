@@ -36,19 +36,25 @@ function updateReloadButtonUi() {
 /* ------------------------------------------------------------------------ */
 
 function readHttpProxyServer() {
-	if (window.$networkProxyShareProxySettings.value) {
+	let $networkProxyShareProxySettings = document.getElementById('network.proxy.share_proxy_settings');
+	
+	if ($networkProxyShareProxySettings.value) {
 		updateProtocolUi();
 	}
 }
 
 function readHttpProxyPort() {
-	if (window.$networkProxyShareProxySettings.value) {
+	let $networkProxyShareProxySettings = document.getElementById('network.proxy.share_proxy_settings');
+	
+	if ($networkProxyShareProxySettings.value) {
 		updateProtocolUi();
 	}
 }
 
 function readProxyProtocol(protocol, isPort) {
-	if (window.$networkProxyShareProxySettings.value) {
+	let $networkProxyShareProxySettings = document.getElementById('network.proxy.share_proxy_settings');
+	
+	if ($networkProxyShareProxySettings.value) {
 		let $pref = document.getElementById('network.proxy.http' + (isPort ? '_port' : ''));  
 		
 		return $pref.value;
@@ -62,6 +68,8 @@ function readProxyProtocol(protocol, isPort) {
 /* ------------------------------------------------------------------------ */
 
 function updateProtocolUi() {
+	let $networkProxyShareProxySettings = document.getElementById('network.proxy.share_proxy_settings');
+	let $networkProxyType = document.getElementById('network.proxy.type');
 	let types = ['ssl', 'ftp', 'socks', 'gopher'];
 	let typesLength = types.length;
 	
@@ -70,7 +78,7 @@ function updateProtocolUi() {
 		let $proxyServerPref = document.getElementById('network.proxy.' + type);
 		let $proxyPortPref = document.getElementById('network.proxy.' + type + '_port');
 		
-		if (!window.$networkProxyShareProxySettings.value) {
+		if (!$networkProxyShareProxySettings.value) {
 			let $backupServerPref = document.getElementById('network.proxy.backup.' + type);
 			let $backupPortPref = document.getElementById('network.proxy.backup.' + type + '_port');
 			
@@ -90,22 +98,28 @@ function updateProtocolUi() {
 		$proxyServerPref.updateElements();
 		$proxyPortPref.updateElements();
 		
-		$proxyServerPref.disabled = window.$networkProxyType.value != 1 || window.$networkProxyShareProxySettings.value;
+		$proxyServerPref.disabled = $networkProxyType.value != 1 || $networkProxyShareProxySettings.value;
 		$proxyPortPref.disabled = $proxyServerPref.disabled;
 	}
 	
-	window.$networkProxySocksVersion.disabled = window.$networkProxyType.value != 1 || window.$networkProxyShareProxySettings.value;
+	let $networkProxySocksVersion = document.getElementById('network.proxy.socks_version');
+	
+	$networkProxySocksVersion.disabled = $networkProxyType.value != 1 || $networkProxyShareProxySettings.value;
 }
 
 function updateUI() {
-	window.$networkProxyHttp.disabled = window.$networkProxyType.value != 1;
-	window.$networkProxyHttpPort.disabled = window.$networkProxyType.value != 1;
+	let $networkProxyType = document.getElementById('network.proxy.type');
+	let $networkProxyHttp = document.getElementById('network.proxy.http');
+	let $networkProxyHttpPort = document.getElementById('network.proxy.http_port');
+	
+	$networkProxyHttp.disabled = $networkProxyType.value != 1;
+	$networkProxyHttpPort.disabled = $networkProxyType.value != 1;
 	
 	updateProtocolUi();
 	
-	window.$networkProxyShareProxySettings.disabled = window.$networkProxyType.value != 1;
-	window.$networkProxyNoProxiesOn.disabled = window.$networkProxyType.value != 1;
-	window.$networkProxyAutoconfigUrl.disabled = window.$networkProxyType.value != 2;
+	document.getElementById('network.proxy.share_proxy_settings').disabled = $networkProxyType.value != 1;
+	document.getElementById('network.proxy.no_proxies_on').disabled = $networkProxyType.value != 1;
+	document.getElementById('network.proxy.autoconfig_url').disabled = $networkProxyType.value != 2;
 	
 	updateReloadButtonUi();
 }
@@ -113,7 +127,11 @@ function updateUI() {
 /* ------------------------------------------------------------------------ */
 
 function handleBeforeacceptEvent(event) {
-	if (window.$networkProxyShareProxySettings.value) {
+	let $networkProxyShareProxySettings = document.getElementById('network.proxy.share_proxy_settings');
+	let $networkProxyHttp = document.getElementById('network.proxy.http');
+	let $networkProxyHttpPort = document.getElementById('network.proxy.http_port');
+	
+	if ($networkProxyShareProxySettings.value) {
 		let types = ['ssl', 'ftp', 'socks', 'gopher'];
 		let typesLength = types.length;
 		
@@ -126,29 +144,20 @@ function handleBeforeacceptEvent(event) {
 			
 			$proxyBackupServerPref.value = $proxyServerPref.value;
 			$proxyBackupPortPref.value = $proxyPortPref.value;
-			$proxyServerPref.value = window.$networkProxyHttp.value;
-			$proxyPortPref.value = window.$networkProxyHttpPort.value;
+			$proxyServerPref.value = $networkProxyHttp.value;
+			$proxyPortPref.value = $networkProxyHttpPort.value;
 		}
 	}
 }
 
-window.addEventListener('beforeaccept', handleBeforeacceptEvent, false);
+addEventListener('beforeaccept', handleBeforeacceptEvent, false);
 
 function handleLoadEvent(event) {
 	if (event.target != document) {
 		return;
 	}
 	
-	window.$networkProxyType = document.getElementById('network.proxy.type');
-	window.$networkProxyHttp = document.getElementById('network.proxy.http');
-	window.$networkProxyHttpPort = document.getElementById('network.proxy.http_port');
-	window.$networkProxyShareProxySettings = document.getElementById('network.proxy.share_proxy_settings');
-	window.$networkProxyNoProxiesOn = document.getElementById('network.proxy.no_proxies_on');
-	window.$networkProxyAutoconfigUrl = document.getElementById('network.proxy.autoconfig_url');
-	window.$networkProxySocksVersion = document.getElementById('network.proxy.socks_version');
-	
-	window.$networkProxyType.setAttribute('onchange', 'return updateUI();');
-	
+	document.getElementById('network.proxy.type').setAttribute('onchange', 'return updateUI();');
 	document.getElementById('network-proxy-http').setAttribute('onsyncfrompreference', 'return readHttpProxyServer();');
 	document.getElementById('network-proxy-http-port').setAttribute('onsyncfrompreference', 'return readHttpProxyPort();');
 	document.getElementById('network-proxy-share-proxy-settings').setAttribute('onsyncfrompreference', 'return updateProtocolUi();');
@@ -169,7 +178,7 @@ function handleLoadEvent(event) {
 	updateUI();
 }
 
-window.addEventListener('load', handleLoadEvent, false);
+addEventListener('load', handleLoadEvent, false);
 
 /*  GNUCITIZEN (Information Security Think Tank)
  **********************************************/
