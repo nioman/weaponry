@@ -31,15 +31,17 @@ function handleTestItemDblclickEvent(event) {
 	}
 }
 
-function handleOpenConsoleCommandEvent(event) {
+/* ------------------------------------------------------------------------ */
+
+function openConsoleWindow(event) {
 	weaponryCommon.openErrorConsoleWindow();
 }
 
-function handleOpenAddonsCommandEvent(event) {
+function openAddonsWindow(event) {
 	weaponryCommon.openAddOnsWindow();
 }
 
-function handleOpenPreferencesCommandEvent(event) {
+function openPreferencesWindow(event) {
 	weaponryPreferences.openPreferencesWindow();
 }
 
@@ -51,17 +53,22 @@ function computeApplicationFields(fields) {
 	}
 }
 
+/* ------------------------------------------------------------------------ */
+
 function handleDOMContentLoadedEvent(event) {
 	if (event.target != document) {
 		return;
 	}
 	
-	let $applicationsDataroll = document.getElementById('main-page-applications-dataroll');
+	document.getElementById('main-page-applications-dataroll').registerFieldsComputer(computeApplicationFields);
+	document.getElementById('main-page-application-item-vbox').setAttribute('ondblclick', 'return handleTestItemDblclickEvent(event);');
 	
-	$applicationsDataroll.registerFieldsComputer(computeApplicationFields);
+	bindHandler('main-page-open-console-toolbarbutton', 'command', openConsoleWindow);
+	bindHandler('main-page-open-addons-toolbarbutton', 'command', openAddonsWindow);
+	bindHandler('main-page-open-preferences-toolbarbutton', 'command', openPreferencesWindow);
 }
 
-window.addEventListener('DOMContentLoaded', handleDOMContentLoadedEvent, false);
+addEventListener('DOMContentLoaded', handleDOMContentLoadedEvent, false);
 
 /*  GNUCITIZEN (Information Security Think Tank)
  **********************************************/
