@@ -97,7 +97,7 @@ function handleViewSourceCommandEvent(event) {
 	characterSet = 'UTF-8';
 	//
 	
-	window.open('view-source:data:' + contentType + ';charset=' + characterSet + ',' + encodeURIComponent(source));
+	open('view-source:data:' + contentType + ';charset=' + characterSet + ',' + encodeURIComponent(source));
 }
 
 function handleBrowserBackCommandEvent(event) {
@@ -239,7 +239,7 @@ function handleContentBrowserCertProblemEvent(event) {
 			location: event.data.location,
 		};
 		
-		window.openDialog('chrome://pippki/content/exceptionDialog.xul', '', 'chrome,modal,centerscreen', params);
+		openDialog('chrome://pippki/content/exceptionDialog.xul', '', 'chrome,modal,centerscreen', params);
 		
 		if (params.exceptionAdded) {
 			reloadBrowserUrl();
@@ -346,7 +346,7 @@ function handleDOMContentLoadedEvent(event) {
 	window.webProgressListener.install(window);
 }
 
-window.addEventListener('DOMContentLoaded', handleDOMContentLoadedEvent, false);
+addEventListener('DOMContentLoaded', handleDOMContentLoadedEvent, false);
 
 function handleLoadEvent(event) {
 	if (event.target != document) {
@@ -358,21 +358,7 @@ function handleLoadEvent(event) {
 	}
 }
 
-window.addEventListener('load', handleLoadEvent, false);
-
-function handleUnloadEvent(event) {
-	if (event.target != document) {
-		return;
-	}
-	
-	let $contentBrowser = document.getElementById('browser-view-content-browser');
-	
-	$contentBrowser.removeEventListener('DOMTitleChanged', handleContentBrowserDOMTitleChangedEvent, false);
-	$contentBrowser.removeEventListener('certProblem', handleContentBrowserCertProblemEvent, false);
-	$contentBrowser.removeEventListener('sslError', handleContentBrowserSslErrorEvent, false);
-}
-
-window.addEventListener('unload', handleUnloadEvent, false);
+addEventListener('load', handleLoadEvent, false);
 
 function handleMozSwipeGestureEvent(event) {
 	if (event.direction == SimpleGestureEvent.DIRECTION_LEFT) {
@@ -383,7 +369,7 @@ function handleMozSwipeGestureEvent(event) {
 	}
 }
 
-window.addEventListener('MozSwipeGesture', handleMozSwipeGestureEvent, false);
+addEventListener('MozSwipeGesture', handleMozSwipeGestureEvent, false);
 
 /*  GNUCITIZEN (Information Security Think Tank)
  **********************************************/

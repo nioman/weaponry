@@ -17,25 +17,42 @@
  *  Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
  */
 
-function handleWeaponryBrowserNewWindowCommandEvent(event) {
-	weaponryBrowser.openBrowserWindow();
-}
-
-function handleWeaponryBrowserNewTabCommandEvent(event) {
-	document.getElementById('browser-window-content-iframe').contentDocument.getElementById('browser-perspective-open-tab-command').doCommand();
-}
-
-function handleWeaponryBrowserPrintSetupCommandEvent(event) {
-	let $command = document.getElementById('browser-window-content-iframe').contentDocument.getElementById('browser-perspective-tabs-richtabpanels').selectedPanel.$iframe.contentDocument.getElementById('browser-view-print-setup-command');
+installHandler('org.gnucitizen.weaponry.browser.fileMenu', {
+	openNewWindow: function () {
+		weaponryBrowser.openBrowserWindow();
+	},
 	
-	$command.doCommand();
-}
-
-function handleWeaponryBrowserPrintCommandEvent(event) {
-	let $command = document.getElementById('browser-window-content-iframe').contentDocument.getElementById('browser-perspective-tabs-richtabpanels').selectedPanel.$iframe.contentDocument.getElementById('browser-view-print-command');
+	openNewTab: function () {
+		document.getElementById('browser-window-content-iframe').contentDocument.getElementById('browser-perspective-open-tab-command').doCommand();
+	},
 	
-	$command.doCommand();
-}
+	printSetup: function () {
+		let $command = document.getElementById('browser-window-content-iframe').contentDocument.getElementById('browser-perspective-tabs-richtabpanels').selectedPanel.$iframe.contentDocument.getElementById('browser-view-print-setup-command');
+		
+		$command.doCommand();
+	},
+	
+	print: function () {
+		let $command = document.getElementById('browser-window-content-iframe').contentDocument.getElementById('browser-perspective-tabs-richtabpanels').selectedPanel.$iframe.contentDocument.getElementById('browser-view-print-command');
+		
+		$command.doCommand();
+	},
+	
+	onDOMContentLoaded: function (event) {
+		if (event.target != document) {
+			return;
+		}
+		
+		if (document.getElementById('common-commandset')) {
+			let self = org.gnucitizen.weaponry.browser.fileMenu;
+			
+			bindHandler('weaponry-browser-file-menupopup-new-window-command', 'command', self.openNewWindow);
+			bindHandler('weaponry-browser-file-menupopup-new-tab-command', 'command', self.openNewTab);
+			bindHandler('weaponry-browser-file-menupopup-print-setup-command', 'command', self.printSetup);
+			bindHandler('weaponry-browser-file-menupopup-print-command', 'command', self.print);
+		}
+	}
+});
 
 /*  GNUCITIZEN (Information Security Think Tank)
  **********************************************/

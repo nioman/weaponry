@@ -265,7 +265,7 @@ function handleDOMContentLoadedEvent(event) {
 	$tabsRichtabbox.addEventListener('richtabpanelClose', handleTabsRichtabboxRichtabpanelCloseEvent, false);
 }
 
-window.addEventListener('DOMContentLoaded', handleDOMContentLoadedEvent, false);
+addEventListener('DOMContentLoaded', handleDOMContentLoadedEvent, false);
 
 function handleLoadEvent(event) {
 	if (event.target != document) {
@@ -283,7 +283,7 @@ function handleLoadEvent(event) {
 	//
 }
 
-window.addEventListener('load', handleLoadEvent, false);
+addEventListener('load', handleLoadEvent, false);
 
 function handleUnloadEvent(event) {
 	if (event.target != document) {
@@ -297,7 +297,7 @@ function handleUnloadEvent(event) {
 	}
 }
 
-window.addEventListener('unload', handleUnloadEvent, false);
+addEventListener('unload', handleUnloadEvent, false);
 
 /*  GNUCITIZEN (Information Security Think Tank)
  **********************************************/
