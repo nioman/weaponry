@@ -53,19 +53,7 @@ function handleDOMContentLoadedEvent(event) {
 	$contentIframe.addEventListener('DOMTitleChanged', handleContentIframeDOMTitleChangedEvent, false);
 }
 
-window.addEventListener('DOMContentLoaded', handleDOMContentLoadedEvent, false);
-
-function handleUnloadEvent(event) {
-	if (event.target != document) {
-		return;
-	}
-	
-	let $contentIframe = document.getElementById('browser-window-content-iframe');
-	
-	$contentIframe.removeEventListener('DOMTitleChanged', handleContentIframeDOMTitleChangedEvent, false);
-}
-
-window.addEventListener('unload', handleUnloadEvent, false);
+addEventListener('DOMContentLoaded', handleDOMContentLoadedEvent, false);
 
 /*  GNUCITIZEN (Information Security Think Tank)
  **********************************************/

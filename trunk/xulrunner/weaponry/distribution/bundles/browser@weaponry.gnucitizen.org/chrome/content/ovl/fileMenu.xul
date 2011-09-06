@@ -28,10 +28,10 @@
 	</stringbundleset>
 	
 	<commandset id="common-commandset">
-		<command id="weaponry-browser-file-menupopup-new-window-command" oncommand="return handleWeaponryBrowserNewWindowCommandEvent(event);"/>
-		<command id="weaponry-browser-file-menupopup-new-tab-command" oncommand="return handleWeaponryBrowserNewTabCommandEvent(event);"/>
-		<command id="weaponry-browser-file-menupopup-print-setup-command" oncommand="return handleWeaponryBrowserPrintSetupCommandEvent(event);"/>
-		<command id="weaponry-browser-file-menupopup-print-command" oncommand="return handleWeaponryBrowserPrintCommandEvent(event);"/>
+		<command id="weaponry-browser-file-menupopup-new-window-command" label="&weaponry-browser-file-menupopup-new-window-command-label;"/>
+		<command id="weaponry-browser-file-menupopup-new-tab-command" label="&weaponry-browser-file-menupopup-new-tab-command-label;"/>
+		<command id="weaponry-browser-file-menupopup-print-setup-command" label="&weaponry-browser-file-menupopup-print-setup-command-label;"/>
+		<command id="weaponry-browser-file-menupopup-print-command" label="&weaponry-browser-file-menupopup-print-command-label;"/>
 	</commandset>
 	
 	<keyset id="common-keyset">
@@ -41,11 +41,11 @@
 	</keyset>
 	
 	<menupopup id="file-menupopup">
-		<menuitem id="weaponry-browser-file-menupopup-new-window-menuitem" label="&weaponry-browser-file-menupopup-new-window-menuitem-label;" key="weaponry-browser-file-menupopup-new-window-key" command="weaponry-browser-file-menupopup-new-window-command"/>
-		<menuitem id="weaponry-browser-file-menupopup-new-tab-menuitem" label="&weaponry-browser-file-menupopup-new-tab-menuitem-label;" key="weaponry-browser-file-menupopup-new-tab-key" command="weaponry-browser-file-menupopup-new-tab-command"/>
+		<menuitem id="weaponry-browser-file-menupopup-new-window-menuitem" key="weaponry-browser-file-menupopup-new-window-key" command="weaponry-browser-file-menupopup-new-window-command"/>
+		<menuitem id="weaponry-browser-file-menupopup-new-tab-menuitem" key="weaponry-browser-file-menupopup-new-tab-key" command="weaponry-browser-file-menupopup-new-tab-command"/>
 		<menuseparator id="weaponry-browser-file-menupopup-print-section-menuseparator"/>
-		<menuitem id="weaponry-browser-file-menupopup-print-setup-menuitem" label="&weaponry-browser-file-menupopup-print-setup-menuitem-label;" key="" command="weaponry-browser-file-menupopup-print-setup-command"/>
-		<menuitem id="weaponry-browser-file-menupopup-print-menuitem" label="&weaponry-browser-file-menupopup-print-menuitem-label;" key="weaponry-browser-file-menupopup-print-key" command="weaponry-browser-file-menupopup-print-command"/>
+		<menuitem id="weaponry-browser-file-menupopup-print-setup-menuitem" key="" command="weaponry-browser-file-menupopup-print-setup-command"/>
+		<menuitem id="weaponry-browser-file-menupopup-print-menuitem" key="weaponry-browser-file-menupopup-print-key" command="weaponry-browser-file-menupopup-print-command"/>
 	</menupopup>
 	
 </overlay>
