@@ -5,7 +5,7 @@
 content      org.gnucitizen.weaponry.browser                                                                                            file:chrome/content/
 resource     org.gnucitizen.weaponry.browser                                                                                            file:chrome/
 locale       org.gnucitizen.weaponry.browser en-US                                                                                      file:chrome/locale/en-US/
-skin         org.gnucitizen.weaponry.browser classic/1.0                                                                                file:chrome/skin/
+skin         org.gnucitizen.weaponry.browser classic/1.0                                                                                file:chrome/skin/classic/
 
 content      org.gnucitizen.weaponry.browser.sites                                                                                      file:sites/
 resource     org.gnucitizen.weaponry.browser.sites                                                                                      file:sites/
