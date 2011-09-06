@@ -23,6 +23,10 @@ const CI = Components.interfaces;
 
 /* ------------------------------------------------------------------------ */
 
+Components.utils.import('resource://org.gnucitizen.weaponry.common/content/mod/weaponryCommon.jsm');
+
+/* ------------------------------------------------------------------------ */
+
 function ensureModule(uri, name) {
 	if (!(name in window)) {
 		let scope = {};
@@ -31,16 +35,6 @@ function ensureModule(uri, name) {
 		
 		window[name] = scope[name];
 	}
-}
-
-/* ------------------------------------------------------------------------ */
-
-Components.utils.import('resource://org.gnucitizen.weaponry.common/content/mod/weaponryCommon.jsm');
-
-/* ------------------------------------------------------------------------ */
-
-function handleWindowCloseCommandEvent(event) {
-	close();
 }
 
 /* ------------------------------------------------------------------------ */
@@ -71,121 +65,125 @@ function prompt(message, value) {
 
 /* ------------------------------------------------------------------------ */
 
-function inheritCommonArguments() {
-	if ('arguments' in window) {
-		return;
-	}
+installHandler('org.gnucitizen.weaponry.common', {
+	closeWindow: function () {
+		close();
+	},
 	
-	if (window.parent == window) {
-		return;
-	}
-	
-	window.arguments = window.parent.arguments;
-}
-
-/* ------------------------------------------------------------------------ */
-
-function cleanupCommonUi() {
-	let $nodes = document.querySelectorAll('menu > menupopup:empty');
-	let nodesLength = $nodes.length;
-	
-	let i;
-	let $node;
-	
-	for (i = 0; i < nodesLength; i += 1) {
-		$node = $nodes[i];
-		
-		$node.parentNode.hidden = true;
-	}
-	
-	$nodes = document.querySelectorAll('menu > menupopup:not(:empty)');
-	nodesLength = $nodes.length;
-	
-	for (i = 0; i < nodesLength; i += 1) {
-		$node = $nodes[i];
-		
-		if ((/^(\w+:)?menuseparator$/).test($node.firstChild.tagName)) {
-			$node.firstChild.hidden = true;
+	inheritCommonArguments: function () {
+		if ('arguments' in window) {
+			return;
 		}
-	}
-	
-	let specialMenuItems = ['aboutName', 'menu_FileQuitItem', 'menu_preferences'];
-	let specialMenuItemsLength = specialMenuItems.length;
-	
-	for (i = 0; i < specialMenuItemsLength; i += 1) {
-		$node = document.getElementById(specialMenuItems[i]);
 		
-		if ($node && $node.parentNode.childNodes.length == 1) {
-			$node.parentNode.parentNode.hidden = true;
+		if (window.parent == window) {
+			return;
 		}
-	}
-}
-
-/* ------------------------------------------------------------------------ */
-
-function handleCommonDOMContentLoadedEvent(event) {
-	if (event.target != document) {
-		return;
-	}
+		
+		window.arguments = window.parent.arguments;
+	},
 	
-	let documentElement = document.documentElement;
-	let osType = weaponryCommon.xulRuntime.OS;
-	let defaultLookAndFeel = weaponryCommon.getPref('org.gnucitizen.weaponry.common.defaultLookandfeel');
+	cleanupCommonUi: function () {
+		let $nodes = document.querySelectorAll('menu > menupopup:empty');
+		let nodesLength = $nodes.length;
+		
+		let i;
+		let $node;
+		
+		for (i = 0; i < nodesLength; i += 1) {
+			$node = $nodes[i];
+			
+			$node.parentNode.hidden = true;
+		}
+		
+		$nodes = document.querySelectorAll('menu > menupopup:not(:empty)');
+		nodesLength = $nodes.length;
+		
+		for (i = 0; i < nodesLength; i += 1) {
+			$node = $nodes[i];
+			
+			if ((/^(\w+:)?menuseparator$/).test($node.firstChild.tagName)) {
+				$node.firstChild.hidden = true;
+			}
+		}
+		
+		let specialMenuItems = ['aboutName', 'menu_FileQuitItem', 'menu_preferences'];
+		let specialMenuItemsLength = specialMenuItems.length;
+		
+		for (i = 0; i < specialMenuItemsLength; i += 1) {
+			$node = document.getElementById(specialMenuItems[i]);
+			
+			if ($node && $node.parentNode.childNodes.length == 1) {
+				$node.parentNode.parentNode.hidden = true;
+			}
+		}
+	},
 	
-	if (defaultLookAndFeel) {
-		documentElement.setAttribute('lookandfeel', defaultLookAndFeel);
-	} else {
+	onDOMContentLoaded: function (event) {
+		if (event.target != document) {
+			return;
+		}
+		
+		let documentElement = document.documentElement;
+		let osType = weaponryCommon.xulRuntime.OS;
+		let defaultLookAndFeel = weaponryCommon.getPref('org.gnucitizen.weaponry.common.defaultLookandfeel');
+		
+		if (defaultLookAndFeel) {
+			documentElement.setAttribute('lookandfeel', defaultLookAndFeel);
+		} else {
+			switch (osType) {
+				case 'Darwin':
+				case 'Linux':
+				case 'WINNT':
+					documentElement.setAttribute('lookandfeel', osType);
+					
+					break;
+				default:
+					documentElement.setAttribute('lookandfeel', 'other');
+			}
+		}
+		
 		switch (osType) {
 			case 'Darwin':
 			case 'Linux':
 			case 'WINNT':
-				documentElement.setAttribute('lookandfeel', osType);
+				documentElement.setAttribute('uiflavour', osType);
 				
 				break;
 			default:
-				documentElement.setAttribute('lookandfeel', 'other');
+				documentElement.setAttribute('uiflavour', 'other');
 		}
-	}
-	
-	switch (osType) {
-		case 'Darwin':
-		case 'Linux':
-		case 'WINNT':
-			documentElement.setAttribute('uiflavour', osType);
-			
-			break;
-		default:
-			documentElement.setAttribute('uiflavour', 'other');
-	}
-	
-	let defaultUitype = weaponryCommon.getPref('org.gnucitizen.weaponry.common.defaultUitype');
-	
-	if (defaultUitype) {
-		documentElement.setAttribute('uitype', defaultUitype);
-	}
-	
-	if (window.parent != window) {
-		let parentDocumentElement = window.parent.document.documentElement;
 		
-		if (parentDocumentElement.hasAttribute('windowtype')) {
-			documentElement.setAttribute('parentwindowtype', parentDocumentElement.getAttribute('windowtype'));
+		let defaultUitype = weaponryCommon.getPref('org.gnucitizen.weaponry.common.defaultUitype');
+		
+		if (defaultUitype) {
+			documentElement.setAttribute('uitype', defaultUitype);
 		}
-	}
+		
+		if (window.parent != window) {
+			let parentDocumentElement = window.parent.document.documentElement;
+			
+			if (parentDocumentElement.hasAttribute('windowtype')) {
+				documentElement.setAttribute('parentwindowtype', parentDocumentElement.getAttribute('windowtype'));
+			}
+		}
+		
+		let self = org.gnucitizen.weaponry.common;
+		
+		self.cleanupCommonUi();
+		
+		bindHandler('common-close-window-command', 'command', self.closeWindow);
+	},
 	
-	cleanupCommonUi();
-}
-
-window.addEventListener('DOMContentLoaded', handleCommonDOMContentLoadedEvent, false);
-
-function handleCommonLoadEvent(event) {
-	if (event.target != document) {
-		return;
+	onLoad: function (event) {
+		if (event.target != document) {
+			return;
+		}
+		
+		let self = org.gnucitizen.weaponry.common;
+		
+		self.cleanupCommonUi();
 	}
-	
-	cleanupCommonUi();
-}
-
-window.addEventListener('load', handleCommonLoadEvent, false);
+});
 
 /*  GNUCITIZEN (Information Security Think Tank)
  **********************************************/

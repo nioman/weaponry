@@ -36,7 +36,7 @@
 		<broadcasterset id="common-broadcasterset"/>
 		
 		<commandset id="common-commandset">
-			<command id="common-close-window-command" oncommand="return handleWindowCloseCommandEvent(event);"/>
+			<command id="common-close-window-command"/>
 		</commandset>
 		
 		<keyset id="common-keyset">

@@ -171,33 +171,7 @@ function handleEditMenuDOMContentLoadedEvent(event) {
 	}
 }
 
-window.addEventListener('DOMContentLoaded', handleEditMenuDOMContentLoadedEvent, false);
-
-function handleEditMenuUnloadEvent(event) {
-	if (event.target != document) {
-		return;
-	}
-	
-	let selector = ['undo', 'redo', 'cut', 'copy', 'paste', 'delete', 'select-all'].map(function (operation) {
-		return '[command="edit-menu-' + operation + '-command"]';
-	}).join(',');
-	
-	let $lastParent = null;
-	let $nodes = document.querySelectorAll(selector);
-	let nodesLength = $nodes.length;
-	
-	for (let i = 0; i < nodesLength; i += 1) {
-		let $node = $nodes[i];
-		
-		if ($node.parentNode != $lastParent && !($node.parentNode.id in {'edit-menupopup':1, 'edit-context-menupopup':1})) {
-			$node.parentNode.removeEventListener('popupshowing', handleGenericEditMenupopupshowingEvent, false);
-			
-			$lastParent = $node.parentNode;
-		}
-	}
-}
-
-window.addEventListener('unload', handleEditMenuUnloadEvent, false);
+addEventListener('DOMContentLoaded', handleEditMenuDOMContentLoadedEvent, false);
 
 /*  GNUCITIZEN (Information Security Think Tank)
  **********************************************/

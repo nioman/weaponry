@@ -17,13 +17,28 @@
  *  Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
  */
 
-function handleToolsMenuOpenAddOnsCommandEvent(event) {
-	weaponryCommon.openAddOnsWindow();
-}
-
-function handleToolsMenuOpenErrorConsoleCommandEvent(event) {
-	weaponryCommon.openErrorConsoleWindow();
-}
+installHandler('org.gnucitizen.weaponry.common.toolsMenu', {
+	openAddOns: function () {
+		weaponryCommon.openAddOnsWindow();
+	},
+	
+	openErrorConsole: function () {
+		weaponryCommon.openErrorConsoleWindow();
+	},
+	
+	onDOMContentLoaded: function (event) {
+		if (event.target != document) {
+			return;
+		}
+		
+		if (document.getElementById('tools-menupopup')) {
+			let self = org.gnucitizen.weaponry.common.toolsMenu;
+			
+			bindHandler('tools-menu-open-add-ons-command', 'command', self.openAddOns);
+			bindHandler('tools-menu-open-error-console-command', 'command', self.openErrorConsole);
+		}
+	}
+});
 
 /*  GNUCITIZEN (Information Security Think Tank)
  **********************************************/

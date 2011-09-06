@@ -28,8 +28,8 @@
 	</stringbundleset>
 	
 	<commandset id="common-commandset">
-		<command id="menu_FileQuitItem-command" label="&menu_FileQuitItem-command-label;" oncommand="return handleWeaponryCommonQuitCommandEvent(event);"/>
-		<command id="aboutName-command" label="&aboutName-command-label;" oncommand="return handleWeaponryCommonAboutCommandEvent(event);"/>
+		<command id="menu_FileQuitItem-command" label="&menu_FileQuitItem-command-label;"/>
+		<command id="aboutName-command" label="&aboutName-command-label;"/>
 	</commandset>
 	
 	<keyset id="common-keyset">

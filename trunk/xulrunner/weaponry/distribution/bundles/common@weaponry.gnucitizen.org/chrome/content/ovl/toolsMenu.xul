@@ -28,8 +28,8 @@
 	</stringbundleset>
 	
 	<commandset id="common-commandset">
-		<command id="tools-menu-open-add-ons-command" label="&tools-menu-open-add-ons-command-label;" oncommand="return handleToolsMenuOpenAddOnsCommandEvent(event);"/>
-		<command id="tools-menu-open-error-console-command" label="&tools-menu-open-error-console-command-label;" oncommand="return handleToolsMenuOpenErrorConsoleCommandEvent(event);"/>
+		<command id="tools-menu-open-add-ons-command" label="&tools-menu-open-add-ons-command-label;"/>
+		<command id="tools-menu-open-error-console-command" label="&tools-menu-open-error-console-command-label;"/>
 	</commandset>
 	
 	<commandset id="common-keyset">
