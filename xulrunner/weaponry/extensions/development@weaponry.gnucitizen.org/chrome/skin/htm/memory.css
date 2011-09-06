@@ -1,5 +1,5 @@
 /**
- *  requests.css
+ *  memory.css
  *  Copyright (C) 2007-2011  GNUCITIZEN
  *  
  *  This program is free software; you can redistribute it and/or modify
@@ -23,20 +23,20 @@ html {
 
 /* ------------------------------------------------------------------------ */
 
-.code {
-	font-size: 10px;
-	font-weight: bolder;
-	font-family: monospace;
+html   ,
+body   {
+	border: 0px;
+	margin: 0px;
+	width: 100%;
+	padding: 0px;
+	height: 100%;
+	overflow: hidden;
 }
 
-.method {
-	font-size: 10px;
-	font-family: monospace;
-}
-
-.url {
-	font-size: 10px;
-	font-family: monospace;
+iframe {
+	border: 0px;
+	width: 100%;
+	height: 100%;
 }
 
 /*  GNUCITIZEN (Information Security Think Tank)
