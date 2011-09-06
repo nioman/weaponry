@@ -37,7 +37,7 @@ function addSecurityCertificateException() {
 		location: hostport,
 	};
 	
-	window.openDialog('chrome://pippki/content/exceptionDialog.xul', '', 'chrome,modal, centerscreen', params);
+	openDialog('chrome://pippki/content/exceptionDialog.xul', '', 'chrome,modal, centerscreen', params);
 	
 	if (params.exceptionAdded) {
 		document.location.reload();

@@ -17,14 +17,14 @@
  *  Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
  */
 
-function addWeaponrySecurityCertificateException() {
+function addSecurityCertificateException() {
 	let params = {
 		exceptionAdded: false,
 		prefetchCert: true,
 		location: hostport,
 	};
 	
-	window.openDialog('chrome://pippki/content/exceptionDialog.xul', '', 'chrome,modal, centerscreen', params);
+	openDialog('chrome://pippki/content/exceptionDialog.xul', '', 'chrome,modal, centerscreen', params);
 	
 	if (params.exceptionAdded) {
 		window.close();
