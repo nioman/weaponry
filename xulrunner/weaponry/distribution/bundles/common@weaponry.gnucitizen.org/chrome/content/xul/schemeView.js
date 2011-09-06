@@ -57,7 +57,7 @@ function handleDOMContentLoadedEvent(event) {
 	}
 }
 
-window.addEventListener('DOMContentLoaded', handleDOMContentLoadedEvent, false);
+addEventListener('DOMContentLoaded', handleDOMContentLoadedEvent, false);
 
 /*  GNUCITIZEN (Information Security Think Tank)
  **********************************************/

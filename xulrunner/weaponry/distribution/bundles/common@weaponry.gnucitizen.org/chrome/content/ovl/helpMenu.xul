@@ -28,7 +28,7 @@
 	</stringbundleset>
 	
 	<commandset id="common-commandset">
-		<command id="help-menu-check-for-updates-command" label="&help-menu-check-for-updates-command-label;" oncommand="return handleHelpMenuCheckForUpdatesCommandEvent(event);"/>
+		<command id="help-menu-check-for-updates-command" label="&help-menu-check-for-updates-command-label;"/>
 	</commandset>
 	
 	<menu id="help-menu" label="&help-menu-label;">

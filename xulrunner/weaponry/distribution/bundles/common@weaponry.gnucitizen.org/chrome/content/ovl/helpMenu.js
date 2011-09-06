@@ -17,9 +17,23 @@
  *  Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
  */
 
-function handleHelpMenuCheckForUpdatesCommandEvent(event) {
-	weaponryCommon.checkForUpdates();
-}
+installHandler('org.gnucitizen.weaponry.common.helpMenu', {
+	checkForUpdates: function () {
+		weaponryCommon.checkForUpdates();
+	},
+	
+	onDOMContentLoaded: function (event) {
+		if (event.target != document) {
+			return;
+		}
+		
+		if (document.getElementById('common-commandset')) {
+			let self = org.gnucitizen.weaponry.common.helpMenu;
+			
+			bindHandler('help-menu-check-for-updates-command', 'command', self.checkForUpdates);
+		}
+	}
+});
 
 /*  GNUCITIZEN (Information Security Think Tank)
  **********************************************/

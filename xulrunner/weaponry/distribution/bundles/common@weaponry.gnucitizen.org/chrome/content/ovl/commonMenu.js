@@ -17,18 +17,34 @@
  *  Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
  */
 
-function handleWeaponryCommonDOMContentLoaded(event) {
-	if (event.target != document) {
-		return;
+installHandler('org.gnucitizen.weaponry.common.commonMenu', {
+	quit: function () {
+		weaponryCommon.quitForcefully();
+	},
+	
+	about: function () {
+		weaponryCommon.openAboutBrandWindow();
+	},
+	
+	onDOMContentLoaded: function (event) {
+		if (event.target != document) {
+			return;
+		}
+		
+		if (document.getElementById('common-commandset')) {
+			let self = org.gnucitizen.weaponry.common.commonMenu;
+			
+			bindHandler('file-menu-quit-command', 'command', self.quit);
+			bindHandler('help-menu-about-command', 'command', self.about);
+			
+			let $stringbundle = document.getElementById('mac-menu-stringbundle');
+			let name = weaponryCommon.xulAppInfo.name;
+			
+			document.getElementById('help-menu-quit-menuitem').setAttribute('label', $stringbundle.getFormattedString('quit-label', [name]));
+			document.getElementById('help-menu-about-menuitem').setAttribute('label', $stringbundle.getFormattedString('about-label', [name]));
+		}
 	}
-	
-	let $stringbundle = document.getElementById('mac-menu-stringbundle');
-	let name = weaponryCommon.xulAppInfo.name;
-	
-	document.getElementById('help-menu-about-menuitem').setAttribute('label', $stringbundle.getFormattedString('about-label', [name]));
-}
-
-window.addEventListener('DOMContentLoaded', handleWeaponryCommonDOMContentLoaded, false);
+});
 
 /*  GNUCITIZEN (Information Security Think Tank)
  **********************************************/
