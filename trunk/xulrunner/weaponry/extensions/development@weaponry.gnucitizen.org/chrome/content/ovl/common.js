@@ -34,25 +34,25 @@ function log() {
 
 /* ------------------------------------------------------------------------ */
 
-function handleWeaponryDevelopmentLoadEvent(event) {
-	if (event.target != document) {
-		return;
-	}
-	
-	if (weaponryCommon.getPref('toolkit.defaultChromeURI') == document.location && weaponryCommon.getPref('org.gnucitizen.weaponry.development.warn') == true) {
-		let $stringbundle = document.getElementById('weaponry-development-common-stringbundle');
+installHandler('org.gnucitizen.weaponry.development.common', {
+	onLoad: function (event) {
+		if (event.target != document) {
+			return;
+		}
 		
-		setTimeout(function () {
-			let result = alertCheck($stringbundle.getString('development-extension-enabled-notification-message'), $stringbundle.getString('development-extension-enabled-do-not-warn-message'));
+		if (weaponryCommon.getPref('toolkit.defaultChromeURI') == document.location && weaponryCommon.getPref('org.gnucitizen.weaponry.development.warn') == true) {
+			let $stringbundle = document.getElementById('weaponry-development-common-stringbundle');
 			
-			if (result.value == true) {
-				weaponryCommon.setPref('org.gnucitizen.weaponry.development.warn', false);
-			}
-		}, 1000);
+			setTimeout(function () {
+				let result = alertCheck($stringbundle.getString('development-extension-enabled-notification-message'), $stringbundle.getString('development-extension-enabled-do-not-warn-message'));
+				
+				if (result.value == true) {
+					weaponryCommon.setPref('org.gnucitizen.weaponry.development.warn', false);
+				}
+			}, 1000);
+		}
 	}
-}
-
-window.addEventListener('load', handleWeaponryDevelopmentLoadEvent, false);
+});
 
 /*  GNUCITIZEN (Information Security Think Tank)
  **********************************************/

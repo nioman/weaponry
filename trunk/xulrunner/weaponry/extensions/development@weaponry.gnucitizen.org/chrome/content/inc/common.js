@@ -1,5 +1,5 @@
 /**
- *  requests.css
+ *  common.js
  *  Copyright (C) 2007-2011  GNUCITIZEN
  *  
  *  This program is free software; you can redistribute it and/or modify
@@ -17,27 +17,11 @@
  *  Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
  */
 
-html {
-	background: #ffffff;
-}
+const CHROMEBASE = 'org.gnucitizen.weaponry.development';
 
 /* ------------------------------------------------------------------------ */
 
-.code {
-	font-size: 10px;
-	font-weight: bolder;
-	font-family: monospace;
-}
-
-.method {
-	font-size: 10px;
-	font-family: monospace;
-}
-
-.url {
-	font-size: 10px;
-	font-family: monospace;
-}
+Components.utils.import('resource://org.gnucitizen.weaponry.development/content/mod/weaponryDevelopment.jsm');
 
 /*  GNUCITIZEN (Information Security Think Tank)
  **********************************************/

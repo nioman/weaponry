@@ -18,7 +18,6 @@
  */
 
 Components.utils.import('resource://org.gnucitizen.weaponry.common/content/mod/weaponryCommon.jsm');
-Components.utils.import('resource://org.gnucitizen.weaponry.development/content/mod/weaponryDevelopment.jsm');
 
 /* ------------------------------------------------------------------------ */
 
