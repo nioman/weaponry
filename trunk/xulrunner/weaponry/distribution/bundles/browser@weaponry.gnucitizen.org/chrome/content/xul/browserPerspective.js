@@ -95,7 +95,7 @@ function loadBrowserUrl(url) {
 /* ------------------------------------------------------------------------ */
 
 function getBrowserViewUrl() {
-	return 'chrome://' + CHROMEBASE + '/content/xul/browserView.xul' + (window.location.search ? window.location.search.replace('perspective=', 'view=') : '');
+	return 'chrome://' + CHROMEBASE + '/content/xul/browserView.xul' + (location.search ? location.search.replace('perspective=', 'view=') : '');
 }
 
 /* ------------------------------------------------------------------------ */

@@ -44,8 +44,8 @@ function handleDOMContentLoadedEvent(event) {
 	
 	let $contentIframe = document.getElementById('browser-window-content-iframe');
 	
-	if (window.location.search) {
-		$contentIframe.setAttribute('src', $contentIframe.getAttribute('src') + (window.location.search ? window.location.search.replace('window=', 'perspective=') : ''));
+	if (location.search) {
+		$contentIframe.setAttribute('src', $contentIframe.getAttribute('src') + (location.search ? location.search.replace('window=', 'perspective=') : ''));
 	}
 	
 	document.originalTitle = document.title;
