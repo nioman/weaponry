@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+<page xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+	id="test" title="Test" windowtype="main:test"
+	width="600" height="600" screenX="100" screenY="100" persist="screenX screenY width height sizemode">
+	
+	<script type="application/x-javascript" src="chrome://main/content/test.js"/>
+	
+	<vbox id="test-content-vbox" flex="1">
+		<toolbox id="test-toolbox">
+			<toolbar id="test-toolbar" class="chromeclass-toolbar" style="-moz-box-align:center;padding:4px 2px 4px 2px;-moz-appearance:-moz-mac-unified-toolbar;">
+				<toolbarbutton label="sample toolbarbutton"/>
+			</toolbar>
+		</toolbox>
+		<browser id="test-browser" src="about:blank" type="content-primary" flex="1"/>
+	</vbox>
+	
+</page>
