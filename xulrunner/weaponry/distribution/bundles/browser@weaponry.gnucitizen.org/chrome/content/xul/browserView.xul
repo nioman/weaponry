@@ -21,7 +21,8 @@
 <?xml-stylesheet href="chrome://org.gnucitizen.weaponry.browser/content/css/bindings.css" type="text/css"?>
 <?xml-stylesheet href="chrome://org.gnucitizen.weaponry.browser/skin/xul/browserView.css" type="text/css"?>
 <!DOCTYPE page SYSTEM "chrome://org.gnucitizen.weaponry.browser/locale/xul/browserView.dtd">
-<page xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+<!-- TODO: change window to page once bug #681764 is resolved -->
+<window xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
 	id="browser-view" title="&browser-view-title;" windowtype="org.gnucitizen.weaponry.browser:browser-view"
 	width="800" height="640" screenX="100" screenY="100" persist="width height screenX screenY sizemode">
 	
@@ -68,7 +69,7 @@
 	
 	<vbox id="browser-view-content-vbox" flex="1">
 		<toolbox id="browser-view-navigation-toolbox">
-			<toolbar id="browser-view-navigation-toolbar" class="chromeclass-toolbar" flex="1">
+			<toolbar id="browser-view-navigation-toolbar" class="chromeclass-toolbar">
 				<toolbarbutton id="browser-view-back-toolbarbutton" class="browser-view-navigation-button" command="browser-view-back-command"/>
 				<toolbarbutton id="browser-view-forward-toolbarbutton" class="browser-view-navigation-button" command="browser-view-forward-command"/>
 				<toolbarbutton id="browser-view-reload-toolbarbutton" class="browser-view-navigation-button" command="browser-view-reload-command"/>
@@ -91,7 +92,8 @@
 	
 	<box id="common-box"/>
 	
-</page>
+</window>
+<!-- -->
 <!--
  *  GNUCITIZEN (Information Security Think Tank)
  ***********************************************
