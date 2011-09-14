@@ -33,13 +33,12 @@
 	</commandset>
 	
 	<commandset id="common-keyset">
-		<key id="tools-menu-open-add-ons-key" modifiers="accel" key="a" command="tools-menu-open-add-ons-command"/>
 		<key id="tools-menu-open-error-console-key" modifiers="accel" key="e" command="tools-menu-open-error-console-command"/>
 	</commandset>
 	
 	<menu id="tools-menu" label="&tools-menu-label;">
 		<menupopup id="tools-menupopup">
-			<menuitem id="tools-menupopup-open-add-ons-menuitem" key="tools-menu-open-add-ons-key" command="tools-menu-open-add-ons-command"/>
+			<menuitem id="tools-menupopup-open-add-ons-menuitem" command="tools-menu-open-add-ons-command"/>
 			<menuitem id="tools-menupopup-open-error-console-menuitem" key="tools-menu-open-error-console-key" command="tools-menu-open-error-console-command"/>
 		</menupopup>
 	</menu>
