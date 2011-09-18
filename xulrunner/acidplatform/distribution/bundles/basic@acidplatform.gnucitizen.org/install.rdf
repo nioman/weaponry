@@ -5,7 +5,7 @@
 	
 	<Description about="urn:mozilla:install-manifest">
 		<em:id>basic@acidplatform.gnucitizen.org</em:id>
-		<em:version>0.9Alpha2</em:version>
+		<em:version>0.9Beta1</em:version>
 		<em:type>2</em:type>
 		<em:creator>GNUCITIZEN</em:creator>
 		
@@ -15,8 +15,8 @@
 		<em:targetApplication>
 			<Description>
 				<em:id>acidplatform@gnucitizen.org</em:id>
-				<em:minVersion>0.9Alpha2</em:minVersion>
-				<em:maxVersion>0.9Alpha2</em:maxVersion>
+				<em:minVersion>0.9Beta1</em:minVersion>
+				<em:maxVersion>0.9Beta1</em:maxVersion>
 			</Description>
 		</em:targetApplication>
 	</Description>
