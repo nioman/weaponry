@@ -24,7 +24,33 @@ function bindHandler(id, event, handler) {
 		throw new Error('cannot find element with id ' + id);
 	}
 	
-	$element.addEventListener(event, handler, false);
+	if (typeof(handler) == 'string' || handler instanceof String) {
+		let eventAttribute = 'on' + event.toLowerCase();
+		
+		$element.setAttribute(eventAttribute, handler);
+	} else {
+		$element.addEventListener(event, handler, false);
+	}
+}
+
+function unbindHandler(id, event, handler) {
+	let $element = document.getElementById(id);
+	
+	if (!$element) {
+		throw new Error('cannot find element with id ' + id);
+	}
+	
+	if (typeof(handler) == 'string' || handler instanceof String) {
+		let eventAttribute = 'on' + event.toLowerCase();
+		
+		if ($element.hasAttribute(eventAttribute) && $element.getAttribute(eventAttribute) == handler) {
+			$element.removeAttribute(eventAttribute);
+		} else {
+			throw new Error('cannot remove event ' + event);
+		}
+	} else {
+		$element.removeEventListener(event, handler, false);
+	}
 }
 
 /* ------------------------------------------------------------------------ */
