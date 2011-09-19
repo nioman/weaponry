@@ -17,7 +17,7 @@
  *  Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
  */
 
-Components.utils.import('resource://workspaces.weaponry.gnucitizen.org/content/mod/weaponryWorkspaces.jsm');
+ensureModule('resource://workspaces.weaponry.gnucitizen.org/content/mod/weaponryWorkspaces.jsm', 'weaponryWorkspaces');
 
 /* ------------------------------------------------------------------------ */
 
