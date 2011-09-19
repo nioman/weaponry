@@ -35,7 +35,7 @@ function openRegistryDialog() {
 
 /* ------------------------------------------------------------------------ */
 
-function handleDOMContentLoaded(event) {
+function handleDOMContentLoadedEvent(event) {
 	if (event.target != document) {
 		return;
 	}
@@ -46,7 +46,7 @@ function handleDOMContentLoaded(event) {
 	bindHandler('preferences-prefwindow-open-registry-dialog-button', 'command', openRegistryDialog);
 }
 
-addEventListener('DOMContentLoaded', handleDOMContentLoaded, false);
+addEventListener('DOMContentLoaded', handleDOMContentLoadedEvent, false);
 
 /*  GNUCITIZEN (Information Security Think Tank)
  **********************************************/
