@@ -47,6 +47,9 @@
 				<menuitem id="weaponry-development-tools-menu-inspector-menuitem" label="&weaponry-development-tools-menu-inspector-menuitem-label;"/>
 				<menuitem id="weaponry-development-tools-menu-jsshell-menuitem" label="&weaponry-development-tools-menu-jsshell-menuitem-label;"/>
 				<menuseparator id="weaponry-development-tools-menu-actions-menuseparator"/>
+				<menuitem id="weaponry-development-tools-menu-dump-heap-menuitem" label="&weaponry-development-tools-menu-dump-heap-menuitem-label;"/>
+				<menuitem id="weaponry-development-tools-menu-exit-normally-menuitem" label="&weaponry-development-tools-menu-exit-normally-menuitem-label;"/>
+				<menuitem id="weaponry-development-tools-menu-exit-forcefully-menuitem" label="&weaponry-development-tools-menu-exit-forcefully-menuitem-label;"/>
 				<menuitem id="weaponry-development-tools-menu-reload-ui-menuitem" key="weaponry-development-tools-menu-reload-ui-key" command="weaponry-development-tools-menu-reload-ui-command"/>
 			</menupopup>
 		</menu>
