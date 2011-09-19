@@ -89,12 +89,10 @@ WeaponryJavaService.prototype = {
 			args.push('-cp');
 			
 			let classPaths = this.classPaths;
-			let length = classPaths.length;
+			let classPathsLength = classPaths.length;
 			let paths = [];
 			
-			let i;
-			
-			for (i = 0; i < length; i += 1) {
+			for (let i = 0; i < classPathsLength; i += 1) {
 				paths.push(classPaths[i].path);
 			}
 			
@@ -138,12 +136,10 @@ WeaponryJavaService.prototype = {
 	removeClassPath: function (classPath) {
 		let path = classPath.path;
 		let classPaths = this.classPaths;
-		let length = classPaths.length;
+		let classPathsLength = classPaths.length;
 		let newClassPaths = [];
 		
-		let i;
-		
-		for (i = 0; i < length; i += 1) {
+		for (let i = 0; i < classPathsLength; i += 1) {
 			if (classPaths[i].path != path) {
 				newClassPaths.push(classPaths);
 			}
