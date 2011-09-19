@@ -22,8 +22,20 @@ installHandler('org.gnucitizen.weaponry.development.toolsMenu', {
 		weaponryCommon.reloadAllWindows();
 	},
 	
+	dumpHeap: function () {
+		QueryInterface(CI.nsIInterfaceRequestor).getInterface(CI.nsIDOMWindowUtils).garbageCollect(CC['@mozilla.org/cycle-collector-logger;1'].createInstance(CI.nsICycleCollectorListener));
+	},
+	
+	exitNormally: function () {
+		weaponryCommon.quitNormally();
+	},
+	
+	exitForcefully: function () {
+		weaponryCommon.quitForcefully();
+	},
+	
 	openMemoryWindow: function () {
-		weaponryCommon.openWindow(null, 'chrome://org.gnucitizen.weaponry.development/content/htm/memory.htm', '', 'all,chrome,resizable,centerscreen,width=400,height=600');
+		weaponryCommon.openWindow(null, 'chrome://org.gnucitizen.weaponry.development/content/htm/memory.htm', '', 'all,chrome,resizable,centerscreen,width=600,height=400');
 	},
 	
 	openColorsWindow: function () {
@@ -56,6 +68,9 @@ installHandler('org.gnucitizen.weaponry.development.toolsMenu', {
 			bindHandler('weaponry-development-tools-menu-requests-menuitem', 'command', self.openRequestsWindow);
 			bindHandler('weaponry-development-tools-menu-inspector-menuitem', 'command', self.openInspectorWindow);
 			bindHandler('weaponry-development-tools-menu-jsshell-menuitem', 'command', self.openJsshellWindow);
+			bindHandler('weaponry-development-tools-menu-dump-heap-menuitem', 'command', self.dumpHeap);
+			bindHandler('weaponry-development-tools-menu-exit-normally-menuitem', 'command', self.exitNormally);
+			bindHandler('weaponry-development-tools-menu-exit-forcefully-menuitem', 'command', self.exitForcefully);
 		}
 	}
 });
