@@ -22,6 +22,10 @@ installHandler('org.gnucitizen.weaponry.development.toolsMenu', {
 		weaponryCommon.reloadAllWindows();
 	},
 	
+	clearCookies: function () {
+		weaponryCommon.clearCookies();
+	},
+	
 	dumpHeap: function () {
 		QueryInterface(CI.nsIInterfaceRequestor).getInterface(CI.nsIDOMWindowUtils).garbageCollect(CC['@mozilla.org/cycle-collector-logger;1'].createInstance(CI.nsICycleCollectorListener));
 	},
@@ -68,6 +72,7 @@ installHandler('org.gnucitizen.weaponry.development.toolsMenu', {
 			bindHandler('weaponry-development-tools-menu-requests-menuitem', 'command', self.openRequestsWindow);
 			bindHandler('weaponry-development-tools-menu-inspector-menuitem', 'command', self.openInspectorWindow);
 			bindHandler('weaponry-development-tools-menu-jsshell-menuitem', 'command', self.openJsshellWindow);
+			bindHandler('weaponry-development-tools-menu-clear-cookies-menuitem', 'command', self.clearCookies);
 			bindHandler('weaponry-development-tools-menu-dump-heap-menuitem', 'command', self.dumpHeap);
 			bindHandler('weaponry-development-tools-menu-exit-normally-menuitem', 'command', self.exitNormally);
 			bindHandler('weaponry-development-tools-menu-exit-forcefully-menuitem', 'command', self.exitForcefully);
