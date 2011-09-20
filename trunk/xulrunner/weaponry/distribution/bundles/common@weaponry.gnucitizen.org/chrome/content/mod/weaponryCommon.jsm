@@ -190,6 +190,7 @@ let weaponryCommon = new function () {
 	this.createServiceGetter('cookieService', '@mozilla.org/cookieService;1', 'nsICookieService');
 	this.createServiceGetter('navHistoryService', '@mozilla.org/browser/nav-history-service;1', 'nsINavHistoryService');
 	this.createServiceGetter('faviconService', '@mozilla.org/browser/favicon-service;1', 'nsIFaviconService');
+	this.createServiceGetter('cookieManager', '@mozilla.org/cookiemanager;1', 'nsICookieManager');
 	
 	/* -------------------------------------------------------------------- */
 	
@@ -1882,6 +1883,12 @@ let weaponryCommon = new function () {
 		
 		// TODO: add code here
 	};
+	
+	/* -------------------------------------------------------------------- */
+	
+	this.clearCookies = function () {
+		this.cookieManager.removeAll();
+	}
 };
 
 /*  GNUCITIZEN (Information Security Think Tank)
