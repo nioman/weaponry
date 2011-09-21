@@ -39,5 +39,8 @@ pref('browser.xul.error_pages.expert_bad_cert', true);
 // browser formfill preferences
 pref('browser.formfill.enable', true);
 
+// general useragent preferences
+pref('general.useragent.compatMode.firefox', true);
+
 /*  GNUCITIZEN (Information Security Think Tank)
  **********************************************/
