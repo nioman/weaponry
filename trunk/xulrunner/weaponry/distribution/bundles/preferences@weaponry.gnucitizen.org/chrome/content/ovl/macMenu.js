@@ -22,7 +22,7 @@ ensureModule('resource://org.gnucitizen.weaponry.preferences/content/mod/weaponr
 /* ------------------------------------------------------------------------ */
 
 installHandler('org.gnucitizen.weaponry.preferences.macMenu', {
-	openPreferences: function () {
+	openPreferencesWindow: function () {
 		weaponryPreferences.openPreferencesWindow();
 	},
 	
@@ -34,7 +34,7 @@ installHandler('org.gnucitizen.weaponry.preferences.macMenu', {
 		if (document.getElementById('menu_preferences-command')) {
 			let self = org.gnucitizen.weaponry.preferences.macMenu;
 			
-			bindHandler('menu_preferences-command', 'command', self.openPreferences);
+			bindHandler('menu_preferences-command', 'command', self.openPreferencesWindow);
 		}
 	}
 });
