@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+<window xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+	id="main" title="Main" windowtype="main:main"
+	width="600" height="600" screenX="100" screenY="100" persist="screenX screenY width height sizemode">
+	
+	<script type="application/x-javascript" src="chrome://main/content/main.js"/>
+	
+	<commandset>
+		<command id="test-commandA" label="test-commandA"/>
+		<command id="test-commandB" label="test-commandB"/>
+	</commandset>
+	
+	<keyset>
+		<key id="test-keyA" modifiers="accel" key="a" command="test-commandA"/>
+		<key id="test-keyB" modifiers="accel" key="b" command="test-commandB"/>
+	</keyset>
+	
+	<menubar>
+		<menu label="Test">
+			<menupopup>
+				<menuitem key="test-keyA" command="test-commandA"/>
+				<menuitem key="test-keyB" command="test-commandB"/>
+			</menupopup>
+		</menu>
+	</menubar>
+	
+</window>
