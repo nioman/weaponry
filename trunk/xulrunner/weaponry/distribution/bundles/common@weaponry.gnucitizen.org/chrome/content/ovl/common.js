@@ -70,19 +70,61 @@ installHandler('org.gnucitizen.weaponry.common', {
 		close();
 	},
 	
-	inheritCommonArguments: function () {
+	setupVisualProperties: function () {
+		let defaultLookAndFeel = weaponryCommon.getPref('org.gnucitizen.weaponry.common.defaultLookandfeel');
+		let osType = weaponryCommon.xulRuntime.OS;
+		let documentElement = document.documentElement;
+		
+		if (defaultLookAndFeel) {
+			documentElement.setAttribute('lookandfeel', defaultLookAndFeel);
+		} else {
+			switch (osType) {
+				case 'Darwin':
+				case 'Linux':
+				case 'WINNT':
+					documentElement.setAttribute('lookandfeel', osType);
+					
+					break;
+				default:
+					documentElement.setAttribute('lookandfeel', 'other');
+			}
+		}
+		
+		switch (osType) {
+			case 'Darwin':
+			case 'Linux':
+			case 'WINNT':
+				documentElement.setAttribute('uiflavour', osType);
+				
+				break;
+			default:
+				documentElement.setAttribute('uiflavour', 'other');
+		}
+		
+		let defaultUitype = weaponryCommon.getPref('org.gnucitizen.weaponry.common.defaultUitype');
+		
+		if (defaultUitype) {
+			documentElement.setAttribute('uitype', defaultUitype);
+		}
+	},
+	
+	setupWindowArguments: function () {
 		if ('arguments' in window) {
 			return;
 		}
 		
-		if (window.parent == window) {
+		if (parent == window) {
 			return;
 		}
 		
-		window.arguments = window.parent.arguments;
+		if ('arguments' in parent) {
+			// TODO: perhaps the parent.arguments should be installed on a different var or this code completely removed
+			window.arguments = parent.arguments;
+			//
+		}
 	},
 	
-	cleanupCommonUi: function () {
+	cleanupDocumentElements: function () {
 		let $nodes = document.querySelectorAll('menu > menupopup:empty');
 		let nodesLength = $nodes.length;
 		
@@ -118,60 +160,38 @@ installHandler('org.gnucitizen.weaponry.common', {
 		}
 	},
 	
-	onDOMContentLoaded: function (event) {
-		if (event.target != document) {
-			return;
-		}
-		
-		let documentElement = document.documentElement;
-		let osType = weaponryCommon.xulRuntime.OS;
-		let defaultLookAndFeel = weaponryCommon.getPref('org.gnucitizen.weaponry.common.defaultLookandfeel');
-		
-		if (defaultLookAndFeel) {
-			documentElement.setAttribute('lookandfeel', defaultLookAndFeel);
-		} else {
-			switch (osType) {
-				case 'Darwin':
-				case 'Linux':
-				case 'WINNT':
-					documentElement.setAttribute('lookandfeel', osType);
-					
-					break;
-				default:
-					documentElement.setAttribute('lookandfeel', 'other');
-			}
-		}
-		
-		switch (osType) {
-			case 'Darwin':
-			case 'Linux':
-			case 'WINNT':
-				documentElement.setAttribute('uiflavour', osType);
-				
-				break;
-			default:
-				documentElement.setAttribute('uiflavour', 'other');
-		}
-		
-		let defaultUitype = weaponryCommon.getPref('org.gnucitizen.weaponry.common.defaultUitype');
-		
-		if (defaultUitype) {
-			documentElement.setAttribute('uitype', defaultUitype);
-		}
-		
-		if (window.parent != window) {
-			let parentDocumentElement = window.parent.document.documentElement;
+	setupParentInterlink: function () {
+		if (parent != window) {
+			let parentDocumentElement = parent.document.documentElement;
+			let documentElement = document.documentElement;
 			
 			if (parentDocumentElement.hasAttribute('windowtype')) {
 				documentElement.setAttribute('parentwindowtype', parentDocumentElement.getAttribute('windowtype'));
 			}
 		}
+	},
+	
+	setupBindings: function () {
+		if (parent == window) {
+			bindHandler('common-close-window-command', 'command', 'return org.gnucitizen.weaponry.common.closeWindow(event);');
+		} else {
+			let $closeWindowKey = document.getElementById('common-close-window-key');
+			
+			$closeWindowKey.parentNode.removeChild($closeWindowKey);
+		}
+	},
+	
+	onDOMContentLoaded: function (event) {
+		if (event.target != document) {
+			return;
+		}
 		
 		let self = org.gnucitizen.weaponry.common;
 		
-		self.cleanupCommonUi();
-		
-		bindHandler('common-close-window-command', 'command', self.closeWindow);
+		self.setupVisualProperties();
+		self.setupWindowArguments();
+		self.cleanupDocumentElements();
+		self.setupParentInterlink();
 	},
 	
 	onLoad: function (event) {
@@ -181,7 +201,8 @@ installHandler('org.gnucitizen.weaponry.common', {
 		
 		let self = org.gnucitizen.weaponry.common;
 		
-		self.cleanupCommonUi();
+		self.cleanupDocumentElements();
+		self.setupBindings();
 	}
 });
 

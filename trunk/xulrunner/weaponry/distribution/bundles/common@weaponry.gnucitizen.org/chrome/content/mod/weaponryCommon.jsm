@@ -1282,6 +1282,7 @@ let weaponryCommon = new function () {
 			port: port,
 			path: channel.URI.path.split('?')[0],
 			query: channel.URI.path.split('?').slice(1).join('?'),
+			version: 'HTTP/1.1',
 			headers: headers,
 			headersBlock: headersBlock,
 		};
@@ -1302,6 +1303,7 @@ let weaponryCommon = new function () {
 		return {
 			code: httpChannel.responseStatus,
 			message: httpChannel.responseStatusText,
+			version: 'HTTP/1.1',
 			headers: headers,
 			headersBlock: headersBlock,
 			contentType: httpChannel.contentType,
