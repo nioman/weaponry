@@ -145,9 +145,7 @@
 						
 						obtainDataRows: function () {
 							// TODO: ensure that this method is correctly supported by all other types of components
-							// TODO: we should return a copy of this
 							return this.data;
-							//
 							//
 						},
 						

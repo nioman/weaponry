@@ -399,9 +399,17 @@
 			
 			<destructor>
 				<action><![CDATA[
-					this.setAttribute('richlistboxwidth', 'width' in this.$richlistbox ? this.$richlistbox.width : '200');
-					this.setAttribute('splitterstate', 'state' in this.$splitter ? this.$splitter.state : 'open');
-					this.setAttribute('deckwidth', 'width' in this.$deck ? this.$deck.width : '200');
+					if ('width' in this.$richlistbox) {
+						this.setAttribute('richlistboxwidth', this.$richlistbox.width);
+					}
+					
+					if ('state' in this.$splitter) {
+						this.setAttribute('splitterstate', this.$splitter.state);
+					}
+					
+					if ('width' in this.$deck) {
+						this.setAttribute('deckwidth', this.$deck.width);
+					}
 				]]></action>
 			</destructor>
 		</implementation>

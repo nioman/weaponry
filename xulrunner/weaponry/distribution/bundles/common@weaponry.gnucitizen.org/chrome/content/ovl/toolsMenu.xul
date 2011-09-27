@@ -33,7 +33,7 @@
 	</commandset>
 	
 	<commandset id="common-keyset">
-		<key id="tools-menu-open-error-console-key" modifiers="accel" key="e" command="tools-menu-open-error-console-command"/>
+		<key id="tools-menu-open-error-console-key" modifiers="shift accel" key="e" command="tools-menu-open-error-console-command"/>
 	</commandset>
 	
 	<menu id="tools-menu" label="&tools-menu-label;">

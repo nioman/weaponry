@@ -1,5 +1,5 @@
 /**
- *  org.gnucitizen.weaponry.common.js
+ *  popupdeck.css
  *  Copyright (C) 2007-2011  GNUCITIZEN
  *  
  *  This program is free software; you can redistribute it and/or modify
@@ -17,20 +17,27 @@
  *  Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
  */
 
-// optional weaponry common preferences
-// org.gnucitizen.weaponry.common.defaultUitype
-// org.gnucitizen.weaponry.common.defaultLookandfeel
+popupdeck.lite > popupdeckpanel > .popupdeckpanel-container .popupdeckpanel-dim ,
+popupdeck > popupdeckpanel.lite > .popupdeckpanel-container .popupdeckpanel-dim {
+	opacity: 0.8;
+	cursor: pointer;
+	background: #eeeeee;
+}
 
-// optional weaponry common about preferences
-// org.gnucitizen.weaponry.common.brandingAboutURI
+popupdeck.lite > popupdeckpanel:not(:first-child) > .popupdeckpanel-container .popupdeckpanel-content ,
+popupdeck > popupdeckpanel.lite:not(:first-child) > .popupdeckpanel-container .popupdeckpanel-content {
+	margin: 30px;
+	padding: 5px;
+	background: #ffffff;
+	border: 1px solid #cccccc;
+}
 
-// weaponry common xbl preferences
-pref('org.gnucitizen.weaponry.common.xbl.dbtable.tablesNum', 5);
-pref('org.gnucitizen.weaponry.common.xbl.dbtable.tableSize', 500);
-pref('org.gnucitizen.weaponry.common.xbl.statusbox.timeout', 3000);
+/* ------------------------------------------------------------------------ */
 
-// browser preferences
-pref('browser.hiddenWindowChromeURL', 'chrome://org.gnucitizen.weaponry.common/content/xul/hiddenWindow.xul');
+popupdeck.fullscreen > popupdeckpanel:not(:first-child) > .popupdeckpanel-container .popupdeckpanel-content ,
+popupdeck > popupdeckpanel.fullscreen:not(:first-child) > .popupdeckpanel-container .popupdeckpanel-content {
+	/* pass */
+}
 
 /*  GNUCITIZEN (Information Security Think Tank)
  **********************************************/

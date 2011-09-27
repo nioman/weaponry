@@ -53,6 +53,20 @@
 				]]></body>
 			</method>
 			
+			<method name="_moveChildren">
+				<parameter name="$sourceElement"/>
+				<parameter name="$destinationElement"/>
+				
+				<body><![CDATA[
+					let nodes = $sourceElement.childNodes;
+					let nodesLength = nodes.length;
+					
+					for (let i = 0; i < nodesLength; i += 1) {
+						$destinationElement.appendChild(nodes[i]);
+					}
+				]]></body>
+			</method>
+			
 			<method name="_getChildIndex">
 				<parameter name="$parent"/>
 				<parameter name="$child"/>
@@ -87,12 +101,10 @@
 					}
 					
 					if (this.hasAttribute('on' + eventName.toLowerCase())) {
-						with({event: event}) {
-							let result = eval('(function (event) {' + this.getAttribute('on' + eventName.toLowerCase()) + '})(event)');
-							
-							if (result == false) {
-								event.preventDefault();
-							}
+						let result = eval('(function (event) {' + this.getAttribute('on' + eventName.toLowerCase()) + '})(event)');
+						
+						if (result == false) {
+							event.preventDefault();
 						}
 					}
 					
@@ -108,19 +120,57 @@
 				]]></body>
 			</method>
 			
+			<method name="_ensureProperty">
+				<parameter name="target"/>
+				<parameter name="property"/>
+				<parameter name="value"/>
+				
+				<body><![CDATA[
+					if (!(property in target)) {
+						target[property] = value;
+					}
+					
+					return target[property];
+				]]></body>
+			</method>
+			
+			<method name="_bindWatch">
+				<parameter name="target"/>
+				<parameter name="property"/>
+				<parameter name="handler"/>
+				
+				<body><![CDATA[
+					this._ensureProperty(this, '_boundWatches', []);
+					
+					this._boundWatches.push([target, property, handler]);
+					
+					target.watch(property, handler);
+				]]></body>
+			</method>
+			
 			<method name="_bindEvent">
 				<parameter name="$element"/>
 				<parameter name="event"/>
 				<parameter name="handler"/>
 				
 				<body><![CDATA[
-					if (!('_boundEvents' in this) || !this._boundEvents) {
-						this._boundEvents = [];
-					}
+					this._ensureProperty(this, '_boundEvents', []);
 					
 					this._boundEvents.push([$element, event, handler]);
 					
 					$element.addEventListener(event, handler, false);
+				]]></body>
+			</method>
+			
+			<method name="_lockWatch">
+				<parameter name="target"/>
+				<parameter name="property"/>
+				<parameter name="handler"/>
+				
+				<body><![CDATA[
+					return this._bindWatch(target, property, function (property, oldValue, newValue) {
+						return handler.apply(this, arguments);
+					});
 				]]></body>
 			</method>
 			
@@ -130,11 +180,48 @@
 				<parameter name="handler"/>
 				
 				<body><![CDATA[
-					this._bindEvent($element, event, function (event) {
+					return this._bindEvent($element, event, function (event) {
 						if (event.originalTarget == this) {
 							handler.apply(this, arguments);
 						}
 					});
+				]]></body>
+			</method>
+			
+			<method name="_linkAttributeProperty">
+				<parameter name="$sourceElement"/>
+				<parameter name="attribute"/>
+				<parameter name="property"/>
+				
+				<body><![CDATA[
+					this._lockEvent($sourceElement, 'DOMAttrModified', function (event) {
+						if (event.attrName == attribute && (!('_assignPropertyAction' in this) || !this._assignPropertyAction)) {
+							this._assignPropertyAction = true;
+							this[property] = event.newValue;
+							this._assignPropertyAction = undefined;
+						}
+					});
+					
+					this._lockWatch($sourceElement, property, function (property, oldValue, newValue) {
+						if ((!('_assignPropertyAction' in this) || !this._assignPropertyAction)) {
+							this._assignPropertyAction = true;
+							this.setAttribute('attribute', newValue);
+							this._assignPropertyAction = undefined;
+						}
+						
+						return newValue;
+					});
+				]]></body>
+			</method>
+			
+			<method name="_defaultBindAttributesAssigner">
+				<parameter name="$from"/>
+				<parameter name="fromValue"/>
+				<parameter name="$to"/>
+				<parameter name="toValue"/>
+				
+				<body><![CDATA[
+					$to.setAttribute(toValue, $from.getAttribute(fromValue));
 				]]></body>
 			</method>
 			
@@ -146,9 +233,7 @@
 				
 				<body><![CDATA[
 					if (!assigner) {
-						assigner = function ($from, fromValue, $to, toValue) {
-							$to.setAttribute(toValue, $from.getAttribute(fromValue));
-						};
+						assigner = this._defaultBindAttributesAssigner;
 					}
 					
 					let attributeLookupTable = {};
@@ -171,17 +256,21 @@
 						}
 					}
 					
-					this._lockEvent($sourceElement, 'DOMAttrModified', function (event) {
-						if (event.attrName in attributeLookupTable) {
-							assigner(event.target, event.attrName, $destinationElement, attributeLookupTable[event.attrName]);
-						}
-					});
+					this._lockEvent($sourceElement, 'DOMAttrModified', (function (attributeLookupTable, $destinationElement, assigner) {
+						return function (event) {
+							if (event.attrName in attributeLookupTable) {
+								assigner(event.target, event.attrName, $destinationElement, attributeLookupTable[event.attrName]);
+							}
+						};
+					})(attributeLookupTable, $destinationElement, assigner));
 					
-					this._bindEvent($destinationElement, 'DOMAttrModified', function (event) {
-						if (event.attrName in attributeLookupTable) {
-							assigner(event.target, event.attrName, $sourceElement, attributeLookupTable[event.attrName]);
-						}
-					});
+					this._lockEvent($destinationElement, 'DOMAttrModified', (function (attributeLookupTable, $sourceElement, assigner) {
+						return function (event) {
+							if (event.attrName in attributeLookupTable) {
+								assigner(event.target, event.attrName, $sourceElement, attributeLookupTable[event.attrName]);
+							}
+						};
+					})(attributeLookupTable, $sourceElement, assigner));
 				]]></body>
 			</method>
 			
@@ -209,12 +298,25 @@
 			
 			<constructor>
 				<action><![CDATA[
+					this._ensureProperty(this, '_boundWatches', []);
+					this._ensureProperty(this, '_boundEvents', []);
+					
 					if (!this.id) {
 						this.id = this._generateId();
 					}
 					
-					this._bindEvent(this, 'DOMNodeRemoved', function (event) {
-						if (event.originalTarget == this && this.parentNode && '_unwireNode' in this.parentNode && this.parentNode._unwireNode) {
+					if (this.hasAttribute('sourceelementid')) {
+						let $element = document.getElementById(this.getAttribute('sourceelementid'));
+						
+						if ($element) {
+							this.appendChild($element);
+						}
+						
+						this.removeAttribute('sourceelementid');
+					}
+					
+					this._lockEvent(this, 'DOMNodeRemoved', function (event) {
+						if (this.parentNode && '_unwireNode' in this.parentNode && this.parentNode._unwireNode) {
 							this.parentNode._unwireNode(this);
 						}
 					});
@@ -227,17 +329,25 @@
 			
 			<destructor>
 				<action><![CDATA[
-					if ('_boundEvents' in this && this._boundEvents) {
-						let boundEventsLength = this._boundEvents.length;
+					let boundWatchesLength = this._boundWatches.length;
+					
+					for (let i = 0; i < boundWatchesLength; i += 1) {
+						let watch = this._boundWatches[i];
 						
-						for (let i = 0; i < boundEventsLength; i += 1) {
-							let event = this._boundEvents[i];
-							
-							event[0].removeEventListener(event[1], event[2], false);
-						}
-						
-						this._boundEvents = [];
+						watch[0].unwatch(watch[1], watch[2]);
 					}
+					
+					this._boundWatches = null;
+					
+					let boundEventsLength = this._boundEvents.length;
+					
+					for (let i = 0; i < boundEventsLength; i += 1) {
+						let event = this._boundEvents[i];
+						
+						event[0].removeEventListener(event[1], event[2], false);
+					}
+					
+					this._boundEvents = null;
 				]]></action>
 			</destructor>
 		</implementation>

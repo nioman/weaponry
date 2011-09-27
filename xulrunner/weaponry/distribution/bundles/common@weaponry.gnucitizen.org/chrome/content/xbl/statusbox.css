@@ -1,5 +1,5 @@
 /**
- *  org.gnucitizen.weaponry.common.js
+ *  statusbox.css
  *  Copyright (C) 2007-2011  GNUCITIZEN
  *  
  *  This program is free software; you can redistribute it and/or modify
@@ -17,20 +17,13 @@
  *  Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
  */
 
-// optional weaponry common preferences
-// org.gnucitizen.weaponry.common.defaultUitype
-// org.gnucitizen.weaponry.common.defaultLookandfeel
+@import url("chrome://org.gnucitizen.weaponry.common/skin/xbl/statusbox.css");
 
-// optional weaponry common about preferences
-// org.gnucitizen.weaponry.common.brandingAboutURI
+/* ------------------------------------------------------------------------ */
 
-// weaponry common xbl preferences
-pref('org.gnucitizen.weaponry.common.xbl.dbtable.tablesNum', 5);
-pref('org.gnucitizen.weaponry.common.xbl.dbtable.tableSize', 500);
-pref('org.gnucitizen.weaponry.common.xbl.statusbox.timeout', 3000);
-
-// browser preferences
-pref('browser.hiddenWindowChromeURL', 'chrome://org.gnucitizen.weaponry.common/content/xul/hiddenWindow.xul');
+statusbox {
+	-moz-binding: url("chrome://org.gnucitizen.weaponry.common/content/xbl/statusbox.xml#statusbox");
+}
 
 /*  GNUCITIZEN (Information Security Think Tank)
  **********************************************/
