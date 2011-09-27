@@ -63,6 +63,7 @@
 
 #browser-view-content-locationbox {
 	min-height: 14px;
+	margin: 0px 2px 0px 0px;
 }
 
 /* ------------------------------------------------------------------------ */
@@ -96,8 +97,16 @@
 }
 
 [lookandfeel="Darwin"] #browser-view-navigation-toolbar {
-	padding: 4px 2px 4px 2px;
+	padding: 4px 0px 4px 0px;
 	-moz-appearance: -moz-mac-unified-toolbar;
+}
+
+[lookandfeel="Darwin"] #browser-view-navigation-toolbar > *:first-child {
+	margin-left: 2px;
+}
+
+[lookandfeel="Darwin"] #browser-view-navigation-toolbar > *:last-child {
+	margin-right: 2px;
 }
 
 [lookandfeel="Darwin"] .browser-view-navigation-button {
@@ -193,6 +202,14 @@
 	padding: 2px 2px 2px 0px;
 }
 
+[lookandfeel="Linux"] #browser-view-navigation-toolbar > *:first-child {
+	/* pass */
+}
+
+[lookandfeel="Linux"] #browser-view-navigation-toolbar > *:last-child {
+	/* pass */
+}
+
 [lookandfeel="Linux"] .browser-view-navigation-button {
 	width: auto;
 	height: auto;
@@ -282,6 +299,14 @@
 	padding: 2px;
 	-moz-appearance: none;
 	background: transparent;
+}
+
+[lookandfeel="WINNT"] #browser-view-navigation-toolbar > *:first-child {
+	/* pass */
+}
+
+[lookandfeel="WINNT"] #browser-view-navigation-toolbar > *:last-child {
+	/* pass */
 }
 
 [lookandfeel="WINNT"] .browser-view-navigation-button {

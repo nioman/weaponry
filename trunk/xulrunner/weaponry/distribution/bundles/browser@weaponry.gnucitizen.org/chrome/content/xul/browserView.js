@@ -97,7 +97,7 @@ function handleViewSourceCommandEvent(event) {
 	characterSet = 'UTF-8';
 	//
 	
-	open('view-source:data:' + contentType + ';charset=' + characterSet + ',' + encodeURIComponent(source));
+	open('view-source:data:' + contentType + ';charset=' + characterSet + ',' + encodeURIComponent(source), '', 'all,resizable,centerscreen,toolbar=no,scrollbars=yes');
 }
 
 function handleBrowserBackCommandEvent(event) {
@@ -261,10 +261,6 @@ function handleDOMContentLoadedEvent(event) {
 	if (event.target != document) {
 		return;
 	}
-	
-	let $closeWindowKey = document.getElementById('common-close-window-key');
-	
-	$closeWindowKey.parentNode.removeChild($closeWindowKey);
 	
 	let $contentMenupopup = document.getElementById('browser-view-content-menupopup');
 	let $backCommand = document.getElementById('browser-view-back-command');

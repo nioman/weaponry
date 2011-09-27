@@ -86,10 +86,9 @@ BrowserDOMWindow.prototype = {
 /* ------------------------------------------------------------------------ */
 
 function loadBrowserUrl(url) {
-	let $tab = getTab();
-	let $browser = $tab.$iframe.contentDocument.getElementById('browser-view-content-browser');
+	let $browserTab = ensureBrowserTab();
 	
-	$browser.loadURI(url, null, null);
+	$browserTab.$iframe.contentWindow.loadBrowserUrl(url);
 }
 
 /* ------------------------------------------------------------------------ */
@@ -100,17 +99,38 @@ function getBrowserViewUrl() {
 
 /* ------------------------------------------------------------------------ */
 
-function getTab() {
+function getBrowserTab() {
 	let $richtabpanels = document.getElementById('browser-perspective-tabs-richtabpanels');
+	let $selectedPanel = $richtabpanels.selectedPanel;
 	
-	if ($richtabpanels.selectedPanel) {
-		return $richtabpanels.selectedPanel;
+	if ($selectedPanel && $selectedPanel.hasAttribute('browser') && $selectedPanel.getAttribute('browser') == 'true') {
+		return $selectedPanel;
+	} else {
+		let foundNodes = [];
+		let $nodes = $richtabpanels.childNodes;
+		let nodesLength = $nodes.length;
+		
+		for (let i = 0; i < nodesLength; i += 1) {
+			let $node = $nodes[i];
+			
+			if ($node.hasAttribute('browser') && $node.getAttribute('browser') == 'true') {
+				foundNodes.push($node);
+			}
+		}
+		
+		if (foundNodes.length == 1) {
+			return null;
+		} else {
+			// TODO: might want to check which element is the hidden browser tab and ignore it
+			return foundNodes[0];
+			//
+		}
 	}
 	
 	return null;
 }
 
-function makeTab() {
+function makeBrowserTab() {
 	let $stringbundle = document.getElementById('browser-perspective-stringbundle');
 	let $richtabpanel = document.createElement('richtabpanel');
 	
@@ -118,6 +138,7 @@ function makeTab() {
 	$richtabpanel.setAttribute('class', 'browser-perspective-tabs-richtabpanels-richtabpanel');
 	$richtabpanel.setAttribute('label', $stringbundle.getString('browser-tab-label'));
 	$richtabpanel.setAttribute('closable', 'true');
+	$richtabpanel.setAttribute('browser', 'true');
 	
 	let $richtabpanels = document.getElementById('browser-perspective-tabs-richtabpanels');
 	
@@ -151,12 +172,12 @@ function makeTab() {
 	return $richtabpanel;
 }
 
-function openTab() {
-	if (!('$lastTab' in window) || !window.$lastTab) {
-		window.$lastTab = makeTab();
+function openBrowserTab() {
+	if (!('$lastBrowserTab' in window) || !window.$lastBrowserTab) {
+		window.$lastBrowserTab = makeBrowserTab();
 	}
 	
-	let $richtabpanel = window.$lastTab;
+	let $richtabpanel = window.$lastBrowserTab;
 	
 	$richtabpanel.$toolbarbutton.hidden = false;
 	$richtabpanel.$menuitem.hidden = false;
@@ -171,31 +192,41 @@ function openTab() {
 		$contentLocationbox.focus();
 	}
 	
-	window.$lastTab = makeTab();
+	window.$lastBrowserTab = makeBrowserTab();
 	
 	return $richtabpanel;
 }
 
-function closeTab() {
-	let $richtabpanel = getTab();
+function closeBrowserTab() {
+	let $browserTab = getBrowserTab();
 	
-	if (!$richtabpanel) {
+	if (!$browserTab) {
 		return null;
 	}
 	
-	$richtabpanel.close();
+	$browserTab.close();
 	
-	return $richtabpanel;
+	return $browserTab;
+}
+
+function ensureBrowserTab() {
+	let $browserTab = getBrowserTab();
+	
+	if ($browserTab) {
+		return $browserTab;
+	} else {
+		return openBrowserTab();
+	}
 }
 
 /* ------------------------------------------------------------------------ */
 
 function handleOpenTabCommandEvent(event) {
-	openTab();
+	openBrowserTab();
 }
 
 function handleCloseTabCommandEvent(event) {
-	closeTab();
+	closeBrowserTab();
 }
 
 /* ------------------------------------------------------------------------ */
@@ -211,7 +242,7 @@ function handleOpenURI(uri, opener, where, context) {
 	
 	let uri = uri ? uri.spec : 'about:blank';
 	let referrer = opener ? opener.QueryInterface(CI.nsIInterfaceRequestor).getInterface(CI.nsIWebNavigation).currentURI : null;
-	let $richtabpanel = openTab();
+	let $richtabpanel = openBrowserTab();
 	let $browser = $richtabpanel.$iframe.contentDocument.getElementById('browser-view-content-browser');
 	
 	$browser.loadURI(uri, referrer, null);
@@ -248,7 +279,7 @@ function handleDOMContentLoadedEvent(event) {
 		return;
 	}
 	
-	openTab();
+	openBrowserTab();
 	
 	let rootWindow = weaponryCommon.getRootChromeWindow(window);
 	
@@ -279,7 +310,7 @@ function handleLoadEvent(event) {
 	}
 	
 	// NOTE: browser scrollbar bug
-	window.$lastTab.$iframe.contentWindow.location.reload();
+	window.$lastBrowserTab.$iframe.contentWindow.location.reload();
 	//
 }
 
