@@ -24,9 +24,6 @@
 // optional browser preferences
 // browser.chromeURL
 
-// default weaponry browser preferences
-pref('org.gnucitizen.weaponry.browser.statusbox.timeout', 3000);
-
 // browser link preferences
 pref('browser.link.open_external', 1);
 pref('browser.link.open_newwindow', 1);
