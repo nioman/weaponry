@@ -82,6 +82,7 @@ WeaponryPreferencesService.prototype = {
 	/* -------------------------------------------------------------------- */
 	
 	updateProxySettings: function (enable, host, port, types) {
+		// TODO: this may need to go into weaponryCommon
 		if (enable) {
 			weaponryCommon.setPref('network.proxy.type', 1);
 		} else {
@@ -99,6 +100,7 @@ WeaponryPreferencesService.prototype = {
 		if (port) {
 			weaponryCommon.setPref('network.proxy.http_port', port);
 		}
+		//
 	},
 	
 	/* -------------------------------------------------------------------- */
