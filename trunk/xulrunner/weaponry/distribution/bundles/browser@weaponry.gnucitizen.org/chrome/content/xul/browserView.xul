@@ -27,7 +27,7 @@
 	width="800" height="640" screenX="100" screenY="100" persist="width height screenX screenY sizemode">
 	
 	<script type="application/x-javascript" src="chrome://global/content/printUtils.js"/>
-	<script type="application/x-javascript" src="chrome://org.gnucitizen.weaponry.browser/content/inc/common.js"/>
+	<script type="application/x-javascript" src="chrome://org.gnucitizen.weaponry.browser/content/inc/general.js"/>
 	<script type="application/x-javascript" src="chrome://org.gnucitizen.weaponry.browser/content/xul/browserView.js"/>
 	
 	<stringbundleset id="browser-view-stringbundleset">
