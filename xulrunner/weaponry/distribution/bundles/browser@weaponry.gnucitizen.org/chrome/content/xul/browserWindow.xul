@@ -27,7 +27,7 @@
 	id="browser-window" title="&browser-window-title;" windowtype="org.gnucitizen.weaponry.browser:browser-window"
 	width="800" height="500" screenX="100" screenY="100" persist="width height screenX screenY sizemode">
 	
-	<script type="application/x-javascript" src="chrome://org.gnucitizen.weaponry.browser/content/inc/common.js"/>
+	<script type="application/x-javascript" src="chrome://org.gnucitizen.weaponry.browser/content/inc/general.js"/>
 	<script type="application/x-javascript" src="chrome://org.gnucitizen.weaponry.browser/content/xul/browserWindow.js"/>
 	
 	<stringbundleset id="browser-window-stringbundleset">

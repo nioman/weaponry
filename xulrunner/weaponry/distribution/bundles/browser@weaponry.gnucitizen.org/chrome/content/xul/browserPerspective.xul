@@ -25,7 +25,7 @@
 	id="browser-perspective" title="&browser-perspective-title;" windowtype="org.gnucitizen.weaponry.browser:browser-perspective"
 	width="800" height="640" screenX="100" screenY="100" persist="width height screenX screenY sizemode">
 	
-	<script type="application/x-javascript" src="chrome://org.gnucitizen.weaponry.browser/content/inc/common.js"/>
+	<script type="application/x-javascript" src="chrome://org.gnucitizen.weaponry.browser/content/inc/general.js"/>
 	<script type="application/x-javascript" src="chrome://org.gnucitizen.weaponry.browser/content/xul/browserPerspective.js"/>
 	
 	<stringbundleset id="browser-perspective-stringbundleset">
