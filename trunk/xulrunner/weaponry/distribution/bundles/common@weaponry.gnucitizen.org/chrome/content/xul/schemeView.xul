@@ -24,7 +24,7 @@
 	id="scheme-view" title="&scheme-view-title;" windowtype="org.gnucitizen.weaponry.common:scheme-view"
 	width="800" height="640" screenX="100" screenY="100" persist="width height screenX screenY sizemode">
 	
-	<script type="application/x-javascript" src="chrome://org.gnucitizen.weaponry.common/content/inc/common.js"/>
+	<script type="application/x-javascript" src="chrome://org.gnucitizen.weaponry.common/content/inc/general.js"/>
 	<script type="application/x-javascript" src="chrome://org.gnucitizen.weaponry.common/content/xul/schemeView.js"/>
 	
 	<stringbundleset id="scheme-view-stringbundleset">
