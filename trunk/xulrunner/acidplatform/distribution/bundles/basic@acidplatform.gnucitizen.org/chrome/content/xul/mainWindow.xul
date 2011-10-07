@@ -24,7 +24,7 @@
 	id="main-window" title="&main-window-title;" windowtype="org.gnucitizen.acidplatform.basic:main-window"
 	width="750" height="450" screenX="100" screenY="100" persist="width height screenX screenY sizemode">
 	
-	<script type="application/x-javascript" src="chrome://org.gnucitizen.acidplatform.basic/content/inc/common.js"/>
+	<script type="application/x-javascript" src="chrome://org.gnucitizen.acidplatform.basic/content/inc/general.js"/>
 	<script type="application/x-javascript" src="chrome://org.gnucitizen.acidplatform.basic/content/xul/mainWindow.js"/>
 	
 	<stringbundleset id="main-window-stringbundleset">
