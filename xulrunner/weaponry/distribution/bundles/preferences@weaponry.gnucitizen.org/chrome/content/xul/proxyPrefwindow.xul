@@ -175,7 +175,7 @@
 	
 	<box id="common-box"/>
 	
-	<script type="application/x-javascript" src="chrome://org.gnucitizen.weaponry.preferences/content/inc/common.js"/>
+	<script type="application/x-javascript" src="chrome://org.gnucitizen.weaponry.preferences/content/inc/general.js"/>
 	<script type="application/x-javascript" src="chrome://org.gnucitizen.weaponry.preferences/content/xul/proxyPrefwindow.js"/>
 	
 	<stringbundleset id="proxy-prefwindow-stringbundleset">

@@ -25,7 +25,7 @@
 	width="700" height="500" screenX="100" screenY="100" persist="width height screenX screenY sizemode"
 	buttons="accept">
 	
-	<script type="application/x-javascript" src="chrome://org.gnucitizen.weaponry.preferences/content/inc/common.js"/>
+	<script type="application/x-javascript" src="chrome://org.gnucitizen.weaponry.preferences/content/inc/general.js"/>
 	<script type="application/x-javascript" src="chrome://org.gnucitizen.weaponry.preferences/content/xul/registryDialog.js"/>
 	
 	<stringbundleset id="registry-dialog-stringbundleset">
