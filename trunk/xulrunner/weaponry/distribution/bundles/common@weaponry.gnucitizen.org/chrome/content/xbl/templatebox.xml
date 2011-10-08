@@ -233,9 +233,7 @@
 						}
 					}
 					
-					// NOTE: this was on the top but could break something somewhere
 					$content.hidden = false;
-					//
 				]]></body>
 			</method>
 			
@@ -269,7 +267,7 @@
 					
 					this.computeFields(fields);
 					
-					this.lastUpdateFields = fields;
+					this.lastUpdateFields = Object.create(fields);
 					
 					if (refresh != false) {
 						this.refresh();
