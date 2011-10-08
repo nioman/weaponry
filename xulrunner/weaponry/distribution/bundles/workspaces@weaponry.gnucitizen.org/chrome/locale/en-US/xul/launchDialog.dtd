@@ -1,4 +1,0 @@
-<!ENTITY launch-dialog-title "Launch">
-<!ENTITY launch-dialog-directions-description-text "If you do not wish to specify a workspace name, the wizard will automatically generate one. You can also choose an existing workspace in which case all new results will be merged with any previous results.">
-<!ENTITY launch-dialog-workspace-label-value "Workspace">
-<!ENTITY launch-dialog-customize-workspace-name-checkbox "customize workspace name">
