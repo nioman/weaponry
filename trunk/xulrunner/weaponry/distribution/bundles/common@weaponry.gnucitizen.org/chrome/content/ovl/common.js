@@ -125,11 +125,24 @@ installHandler('org.gnucitizen.weaponry.common', {
 	},
 	
 	cleanupDocumentElements: function () {
-		let $nodes = document.querySelectorAll('menu > menupopup:empty');
-		let nodesLength = $nodes.length;
-		
+		let $nodes;
+		let nodesLength;
 		let i;
 		let $node;
+		
+		if (parent != window) {
+			$nodes = document.querySelectorAll('menubar');
+			nodesLength = $nodes.length;
+			
+			for (i = 0; i < nodesLength; i += 1) {
+				$node = $nodes[i];
+				
+				$node.hidden = true;
+			}
+		}
+		
+		$nodes = document.querySelectorAll('menu > menupopup:empty');
+		nodesLength = $nodes.length;
 		
 		for (i = 0; i < nodesLength; i += 1) {
 			$node = $nodes[i];
@@ -145,17 +158,6 @@ installHandler('org.gnucitizen.weaponry.common', {
 			
 			if ((/^(\w+:)?menuseparator$/).test($node.firstChild.tagName)) {
 				$node.firstChild.hidden = true;
-			}
-		}
-		
-		let specialMenuItems = ['aboutName', 'menu_FileQuitItem', 'menu_preferences'];
-		let specialMenuItemsLength = specialMenuItems.length;
-		
-		for (i = 0; i < specialMenuItemsLength; i += 1) {
-			$node = document.getElementById(specialMenuItems[i]);
-			
-			if ($node && $node.parentNode.childNodes.length == 1) {
-				$node.parentNode.parentNode.hidden = true;
 			}
 		}
 	},

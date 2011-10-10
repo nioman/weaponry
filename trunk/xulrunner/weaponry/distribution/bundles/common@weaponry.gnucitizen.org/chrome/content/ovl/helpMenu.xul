@@ -33,7 +33,6 @@
 	
 	<menu id="help-menu" label="&help-menu-label;">
 		<menupopup id="help-menupopup">
-			<menuseparator id="help-menupopup-updates-section-menuseparator"/>
 			<menuitem id="help-menupopup-check-for-updates-menuitem" command="help-menu-check-for-updates-command"/>
 		</menupopup>
 	</menu>
