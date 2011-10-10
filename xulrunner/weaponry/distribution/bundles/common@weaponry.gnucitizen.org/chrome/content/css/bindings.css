@@ -31,11 +31,13 @@
 @import url("chrome://org.gnucitizen.weaponry.common/content/xbl/dbroll.css");
 @import url("chrome://org.gnucitizen.weaponry.common/content/xbl/dbtable.css");
 @import url("chrome://org.gnucitizen.weaponry.common/content/xbl/dbtree.css");
+@import url("chrome://org.gnucitizen.weaponry.common/content/xbl/disclosuretriangle.css");
 @import url("chrome://org.gnucitizen.weaponry.common/content/xbl/expandablebox.css");
 @import url("chrome://org.gnucitizen.weaponry.common/content/xbl/expandabletextbox.css");
 @import url("chrome://org.gnucitizen.weaponry.common/content/xbl/featurebox.css");
 @import url("chrome://org.gnucitizen.weaponry.common/content/xbl/functionalbox.css");
 @import url("chrome://org.gnucitizen.weaponry.common/content/xbl/htmlbox.css");
+@import url("chrome://org.gnucitizen.weaponry.common/content/xbl/informationbox.css");
 @import url("chrome://org.gnucitizen.weaponry.common/content/xbl/popupdeck.css");
 @import url("chrome://org.gnucitizen.weaponry.common/content/xbl/recordlist.css");
 @import url("chrome://org.gnucitizen.weaponry.common/content/xbl/recordroll.css");
@@ -44,6 +46,7 @@
 @import url("chrome://org.gnucitizen.weaponry.common/content/xbl/richsidebox.css");
 @import url("chrome://org.gnucitizen.weaponry.common/content/xbl/richtabbox.css");
 @import url("chrome://org.gnucitizen.weaponry.common/content/xbl/statusbox.css");
+@import url("chrome://org.gnucitizen.weaponry.common/content/xbl/structuredsidebox.css");
 @import url("chrome://org.gnucitizen.weaponry.common/content/xbl/templatebox.css");
 
 /*  GNUCITIZEN (Information Security Think Tank)

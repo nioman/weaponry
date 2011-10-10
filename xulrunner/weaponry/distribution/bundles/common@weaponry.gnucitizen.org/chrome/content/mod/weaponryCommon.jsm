@@ -701,6 +701,7 @@ let weaponryCommon = new function () {
 	/* -------------------------------------------------------------------- */
 	
 	this.getPref = function (key, type) {
+		// TODO: needs refactoring, the code needs to check of the key exists before performing this check here
 		if (!type) {
 			switch (this.preferencesService.getPrefType(key)) {
 				case CI.nsIPrefBranch.PREF_STRING:
@@ -724,6 +725,7 @@ let weaponryCommon = new function () {
 					break;
 			}
 		}
+		//
 		
 		switch (type) {
 			case 'string':
