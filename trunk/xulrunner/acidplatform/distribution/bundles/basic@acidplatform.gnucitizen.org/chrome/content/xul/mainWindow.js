@@ -17,5 +17,58 @@
  *  Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
  */
 
+Components.utils.import('resource://org.gnucitizen.weaponry.preferences/content/mod/weaponryPreferences.jsm');
+
+/* ------------------------------------------------------------------------ */
+
+function handleTestItemDblclickEvent(event) {
+	let uri = event.currentTarget.getAttribute('uri');
+	
+	if (uri) {
+		open(uri,  null, 'all,chrome,resizable');
+	} else {
+		eval(event.currentTarget.getAttribute('dblclick'));
+	}
+}
+
+/* ------------------------------------------------------------------------ */
+
+function openConsoleWindow(event) {
+	weaponryCommon.openErrorConsoleWindow();
+}
+
+function openAddonsWindow(event) {
+	weaponryCommon.openAddOnsWindow();
+}
+
+function openPreferencesWindow(event) {
+	weaponryPreferences.openPreferencesWindow();
+}
+
+/* ------------------------------------------------------------------------ */
+
+function computeApplicationFields(fields) {
+	if (!('image' in fields)) {
+		fields.image = 'chrome://' + CHROMEBASE + '/skin/xul/images/robot.png';
+	}
+}
+
+/* ------------------------------------------------------------------------ */
+
+function handleDOMContentLoadedEvent(event) {
+	if (event.target != document) {
+		return;
+	}
+	
+	document.getElementById('main-window-applications-dataroll').registerFieldsComputer(computeApplicationFields);
+	document.getElementById('main-window-application-item-vbox').setAttribute('ondblclick', 'return handleTestItemDblclickEvent(event);');
+	
+	bindHandler('main-window-open-console-toolbarbutton', 'command', openConsoleWindow);
+	bindHandler('main-window-open-addons-toolbarbutton', 'command', openAddonsWindow);
+	bindHandler('main-window-open-preferences-toolbarbutton', 'command', openPreferencesWindow);
+}
+
+addEventListener('DOMContentLoaded', handleDOMContentLoadedEvent, false);
+
 /*  GNUCITIZEN (Information Security Think Tank)
  **********************************************/
