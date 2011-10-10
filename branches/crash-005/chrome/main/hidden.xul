@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<window xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+	id="hidden" title="Hidden" windowtype="main:hidden">
+	
+	<script type="application/x-javascript" src="chrome://main/content/hidden.js"/>
+	
+	<menubar>
+		<menu>
+			<menupopup id="menupopup"/>
+		</menu>
+	</menubar>
+	
+</window>

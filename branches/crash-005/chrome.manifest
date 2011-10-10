@@ -1,0 +1,6 @@
+#
+# manifest registration
+#
+
+manifest     chrome/main.manifest
+manifest     chrome/branding.manifest
