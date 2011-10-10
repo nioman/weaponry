@@ -14,57 +14,9 @@
 		
 		<em:targetApplication>
 			<Description>
-				<em:id>websecurify@gnucitizen.org</em:id>
-				<em:minVersion>1.0Alpha1</em:minVersion>
-				<em:maxVersion>1.0Alpha1</em:maxVersion>
-			</Description>
-		</em:targetApplication>
-		
-		<em:targetApplication>
-			<Description>
-				<em:id>scanner@websecurify.gnucitizen.org</em:id>
-				<em:minVersion>1.0Alpha1</em:minVersion>
-				<em:maxVersion>1.0Alpha1</em:maxVersion>
-			</Description>
-		</em:targetApplication>
-		
-		<em:targetApplication>
-			<Description>
-				<em:id>acidplatform@gnucitizen.org</em:id>
-				<em:minVersion>1.0Alpha1</em:minVersion>
-				<em:maxVersion>1.0Alpha1</em:maxVersion>
-			</Description>
-		</em:targetApplication>
-		
-		<em:targetApplication>
-			<Description>
-				<em:id>acidproxy@gnucitizen.org</em:id>
-				<em:minVersion>1.0Alpha1</em:minVersion>
-				<em:maxVersion>1.0Alpha1</em:maxVersion>
-			</Description>
-		</em:targetApplication>
-		
-		<em:targetApplication>
-			<Description>
-				<em:id>acidbrowser@gnucitizen.org</em:id>
-				<em:minVersion>1.0Alpha1</em:minVersion>
-				<em:maxVersion>1.0Alpha1</em:maxVersion>
-			</Description>
-		</em:targetApplication>
-		
-		<em:targetApplication>
-			<Description>
-				<em:id>acidscanner@gnucitizen.org</em:id>
-				<em:minVersion>1.0Alpha1</em:minVersion>
-				<em:maxVersion>1.0Alpha1</em:maxVersion>
-			</Description>
-		</em:targetApplication>
-		
-		<em:targetApplication>
-			<Description>
-				<em:id>webapps@websecurify.gnucitizen.org</em:id>
-				<em:minVersion>1.0Alpha1</em:minVersion>
-				<em:maxVersion>1.0Alpha1</em:maxVersion>
+				<em:id>toolkit@mozilla.org</em:id>
+				<em:minVersion>2.0</em:minVersion>
+				<em:maxVersion>9.*</em:maxVersion>
 			</Description>
 		</em:targetApplication>
 	</Description>
