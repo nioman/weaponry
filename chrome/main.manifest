@@ -1,1 +1,2 @@
 content     main     file:main/
+overlay     chrome://main/content/hidden.xul     chrome://main/content/overlay01.xul

@@ -6,9 +6,7 @@
 	
 	<menubar>
 		<menu>
-			<menupopup>
-				<menuitem id=""/>
-			</menupopup>
+			<menupopup id="menupopup"/>
 		</menu>
 	</menubar>
 	

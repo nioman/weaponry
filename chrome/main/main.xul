@@ -6,6 +6,12 @@
 	
 	<script type="application/x-javascript" src="chrome://main/content/main.js"/>
 	
-	<label value="doesn't draw in titlebar"/>
+	<!-- if you remove this block, the menu item will appear -->
+	<menubar>
+		<menu>
+			<menupopup id="menupopup"/>
+		</menu>
+	</menubar>
+	<!-- fin -->
 	
 </window>
