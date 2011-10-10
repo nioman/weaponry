@@ -19,5 +19,89 @@
 
 @import url("chrome://global/skin/");
 
+/* ------------------------------------------------------------------------ */
+
+#main-window-applications-dataroll > .dataroll-container .dataroll-content {
+	display: block;
+	overflow: auto;
+	-moz-box-orient: horizontal;
+	background: #222222 url("images/highlight.png") 50% 0px no-repeat;
+}
+
+/* ------------------------------------------------------------------------ */
+
+.main-window-application-item-vbox {
+	width: 140px;
+	padding-top: 10px;
+	-moz-box-align: center;
+	margin: 10px 0px 0px 10px;
+}
+
+.main-window-application-item-vbox:hover {
+	-moz-border-radius: 5px;
+	-moz-box-shadow: inset 0px 0px 1px 1px #444444;
+}
+
+.main-window-application-item-label {
+	color: #ffffff;
+	margin-bottom: 10px;
+}
+
+/* ------------------------------------------------------------------------ */
+
+#main-window-open-console-toolbarbutton {
+	list-style-image: url("images/console.png");
+}
+
+#main-window-open-console-toolbarbutton > image {
+	margin: 0px;
+}
+
+#main-window-open-console-toolbarbutton > label {
+	display: none;
+}
+
+#main-window-open-addons-toolbarbutton {
+	list-style-image: url("images/addons.png");
+}
+
+#main-window-open-addons-toolbarbutton > image {
+	margin: 0px;
+}
+
+#main-window-open-addons-toolbarbutton > label {
+	display: none;
+}
+
+#main-window-open-preferences-toolbarbutton {
+	list-style-image: url("images/preferences.png");
+}
+
+#main-window-open-preferences-toolbarbutton > image {
+	margin: 0px;
+}
+
+#main-window-open-preferences-toolbarbutton > label {
+	display: none;
+}
+
+/* ------------------------------------------------------------------------ */
+
+[lookandfeel="Darwin"] #main-window-statusbar {
+	padding: 5px 0px 5px 0px;
+}
+
+/* ------------------------------------------------------------------------ */
+
+[lookandfeel="Linux"] #main-window-statusbar {
+	padding: 2px;
+}
+
+/* ------------------------------------------------------------------------ */
+
+[lookandfeel="WINNT"] #main-window-statusbar {
+	padding: 2px;
+}
+
 /*  GNUCITIZEN (Information Security Think Tank)
  **********************************************/
