@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<overlay xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+	
+	<script type="application/x-javascript" src="chrome://main/content/overlay02.js"/>
+	
+	<!-- without a secondary overlay, the quit menu item will never appear -->
+	<menupopup id="menupopup">
+		<menuitem label="test"/>
+	</menupopup>
+	<!-- fin -->
+	
+</overlay>
