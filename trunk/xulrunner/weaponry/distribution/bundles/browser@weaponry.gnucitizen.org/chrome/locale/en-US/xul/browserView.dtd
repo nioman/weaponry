@@ -1,4 +1,5 @@
 <!ENTITY browser-view-title "Browser">
+<!ENTITY browser-view-new-window-command-label "New Window">
 <!ENTITY browser-view-print-setup-command-label "Print Setup">
 <!ENTITY browser-view-print-command-label "Print">
 <!ENTITY browser-view-open-findbar-command-label "Open Findbar">

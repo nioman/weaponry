@@ -45,6 +45,12 @@ function loadBrowserUrl(url) {
 
 /* ------------------------------------------------------------------------ */
 
+function handleNewWindowCommandEvent(event) {
+	// TODO: open by using the currently loaded chrome url
+	weaponryBrowser.openBrowserView();
+	//
+}
+
 function handlePrintSetupCommandEvent(event) {
 	PrintUtils.showPageSetup();
 }

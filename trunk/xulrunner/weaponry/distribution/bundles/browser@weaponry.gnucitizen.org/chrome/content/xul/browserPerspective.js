@@ -221,12 +221,42 @@ function ensureBrowserTab() {
 
 /* ------------------------------------------------------------------------ */
 
+function handleNewWindowCommandEvent(event) {
+	// TODO: open by using the currently loaded chrome url
+	weaponryBrowser.openBrowserPerspective();
+	//
+}
+
 function handleOpenTabCommandEvent(event) {
 	openBrowserTab();
 }
 
 function handleCloseTabCommandEvent(event) {
 	closeBrowserTab();
+}
+
+function handlePrintSetupCommandEvent(event) {
+	let $browserTab = getBrowserTab();
+	
+	if ($browserTab) {
+		let $command = $browserTab.$iframe.contentDocument.getElementById('browser-view-print-setup-command');
+		
+		$command.doCommand();
+	} else {
+		// TODO: report message back to user
+	}
+}
+
+function handlePrintCommandEvent(event) {
+	let $browserTab = getBrowserTab();
+	
+	if ($browserTab) {
+		let $command = $browserTab.$iframe.contentDocument.getElementById('browser-view-print-command');
+		
+		$command.doCommand();
+	} else {
+		// TODO: report message back to user
+	}
 }
 
 /* ------------------------------------------------------------------------ */

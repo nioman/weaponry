@@ -44,8 +44,12 @@ let weaponryBrowser = new function () {
 	
 	/* -------------------------------------------------------------------- */
 	
-	this.openBrowserWindow = function () {
-		return this.browserService.openBrowserWindow();
+	this.openBrowserView = function () {
+		return this.browserService.openBrowserView();
+	};
+	
+	this.openBrowserPerspective = function () {
+		return this.browserService.openBrowserPerspective();
 	};
 	
 	/* -------------------------------------------------------------------- */

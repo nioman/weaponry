@@ -18,6 +18,7 @@
  *  Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 -->
 <?xul-overlay href="chrome://org.gnucitizen.weaponry.common/content/ovl/common.xul"?>
+<?xul-overlay href="chrome://org.gnucitizen.weaponry.browser/content/ovl/perspectiveFileMenu.xul"?>
 <?xml-stylesheet href="chrome://org.gnucitizen.weaponry.browser/content/css/bindings.css" type="text/css"?>
 <?xml-stylesheet href="chrome://org.gnucitizen.weaponry.browser/skin/xul/browserPerspective.css" type="text/css"?>
 <!DOCTYPE page SYSTEM "chrome://org.gnucitizen.weaponry.browser/locale/xul/browserPerspective.dtd">
@@ -33,19 +34,33 @@
 	</stringbundleset>
 	
 	<commandset id="browser-perspective-commandset">
-		<command id="browser-perspective-open-tab-command" oncommand="return handleOpenTabCommandEvent(event);"/>
-		<command id="browser-perspective-close-tab-command" oncommand="return handleCloseTabCommandEvent(event);"/>
+		<command id="browser-perspective-new-window-command" label="&browser-perspective-new-window-command-label;" oncommand="return handleNewWindowCommandEvent(event);"/>
+		<command id="browser-perspective-open-tab-command" label="&browser-perspective-open-tab-command-label;" oncommand="return handleOpenTabCommandEvent(event);"/>
+		<command id="browser-perspective-close-tab-command" label="&browser-perspective-close-tab-command-label;" oncommand="return handleCloseTabCommandEvent(event);"/>
+		<command id="browser-perspective-print-setup-command" label="&browser-perspective-print-setup-command-label;" oncommand="return handlePrintSetupCommandEvent(event);"/>
+		<command id="browser-perspective-print-command" label="&browser-perspective-print-command-label;" oncommand="return handlePrintCommandEvent(event);"/>
 	</commandset>
 	
 	<keyset id="browser-perspective-keyset">
+		<key id="browser-perspective-new-window-key" modifiers="accel" key="n" command="browser-perspective-new-window-command"/>
 		<key id="browser-perspective-open-tab-key" modifiers="accel" key="t" command="browser-perspective-open-tab-command"/>
 		<key id="browser-perspective-close-tab-key" modifiers="accel" key="w" command="browser-perspective-close-tab-command"/>
+		<key id="browser-perspective-print-key" modifiers="accel" key="p" command="browser-perspective-print-command"/>
 	</keyset>
+	
+	<menubar id="browser-perspective-menubar">
+		<menu id="file-menu"/>
+		<menu id="edit-menu"/>
+		<menu id="view-menu"/>
+		<menu id="tools-menu"/>
+		<menu id="window-menu"/>
+		<menu id="help-menu"/>
+	</menubar>
 	
 	<vbox id="browser-perspective-content-vbox" flex="1">
 		<richtabbox id="browser-perspective-tabs-richtabbox" class="native" flex="1">
 			<toolbar id="browser-perspective-tabs-toolbar">
-				<toolbarbutton id="browser-perspective-open-tab-toolbarbutton" label="&browser-perspective-open-tab-toolbarbutton-label;" command="browser-perspective-open-tab-command"/>
+				<toolbarbutton id="browser-perspective-open-tab-toolbarbutton" command="browser-perspective-open-tab-command"/>
 			</toolbar>
 			
 			<richtabpanels id="browser-perspective-tabs-richtabpanels"/>
