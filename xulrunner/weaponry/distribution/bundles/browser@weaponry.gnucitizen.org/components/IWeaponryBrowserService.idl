@@ -43,7 +43,7 @@ interface IWeaponryBrowserService : nsISupports {
 	
 	nsIDOMWindow openBrowserView([optional] in AString url);
 	
-	nsIDOMWindow openBrowserWindow([optional] in AString url);
+	nsIDOMWindow openBrowserPerspective([optional] in AString url);
 };
 
 /*  GNUCITIZEN (Information Security Think Tank)

@@ -18,10 +18,10 @@
  *  Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 -->
 <?xul-overlay href="chrome://org.gnucitizen.weaponry.common/content/ovl/common.xul"?>
+<?xul-overlay href="chrome://org.gnucitizen.weaponry.browser/content/ovl/viewFileMenu.xul"?>
 <?xml-stylesheet href="chrome://org.gnucitizen.weaponry.browser/content/css/bindings.css" type="text/css"?>
 <?xml-stylesheet href="chrome://org.gnucitizen.weaponry.browser/skin/xul/browserView.css" type="text/css"?>
 <!DOCTYPE page SYSTEM "chrome://org.gnucitizen.weaponry.browser/locale/xul/browserView.dtd">
-<!-- TODO: change window to page once bug #681764 is resolved -->
 <window xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
 	id="browser-view" title="&browser-view-title;" windowtype="org.gnucitizen.weaponry.browser:browser-view"
 	width="800" height="640" screenX="100" screenY="100" persist="width height screenX screenY sizemode">
@@ -35,6 +35,7 @@
 	</stringbundleset>
 	
 	<commandset id="browser-view-commandset">
+		<command id="browser-view-new-window-command" label="&browser-view-new-window-command-label;" oncommand="return handleNewWindowCommandEvent(event);"/>
 		<command id="browser-view-print-setup-command" label="&browser-view-print-setup-command-label;" oncommand="return handlePrintSetupCommandEvent(event);"/>
 		<command id="browser-view-print-command" label="&browser-view-print-command-label;" oncommand="return handlePrintCommandEvent(event);"/>
 		<command id="browser-view-open-findbar-command" label="&browser-view-open-findbar-command-label;" oncommand="return handleOpenFindbarCommandEvent(event);"/>
@@ -47,9 +48,19 @@
 	</commandset>
 	
 	<keyset id="browser-view-keyset">
+		<key id="browser-view-new-window-key" modifiers="accel" key="n" command="browser-view-new-window-command"/>
 		<key id="browser-view-print-key" modifiers="accel" key="p" command="browser-view-print-command"/>
 		<key id="browser-view-open-findbar-key" modifiers="accel" key="f" command="browser-view-open-findbar-command"/>
 	</keyset>
+	
+	<menubar id="browser-view-menubar">
+		<menu id="file-menu"/>
+		<menu id="edit-menu"/>
+		<menu id="view-menu"/>
+		<menu id="tools-menu"/>
+		<menu id="window-menu"/>
+		<menu id="help-menu"/>
+	</menubar>
 	
 	<popupset id="browser-view-popupset">
 		<menupopup id="browser-view-content-menupopup">
@@ -93,7 +104,6 @@
 	<box id="common-box"/>
 	
 </window>
-<!-- -->
 <!--
  *  GNUCITIZEN (Information Security Think Tank)
  ***********************************************

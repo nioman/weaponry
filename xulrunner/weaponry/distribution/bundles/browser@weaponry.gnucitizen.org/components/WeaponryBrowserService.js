@@ -133,8 +133,8 @@ WeaponryBrowserService.prototype = {
 		return weaponryCommon.openWindow(null, 'chrome://' + CHROMEBASE + '/content/xul/browserView.xul', null, 'all,chrome,resizable', url);
 	},
 	
-	openBrowserWindow: function (url) {
-		return weaponryCommon.openWindow(null, 'chrome://' + CHROMEBASE + '/content/xul/browserWindow.xul', null, 'all,chrome,resizable', url);
+	openBrowserPerspective: function (url) {
+		return weaponryCommon.openWindow(null, 'chrome://' + CHROMEBASE + '/content/xul/browserPerspective.xul', null, 'all,chrome,resizable', url);
 	}
 };
 
