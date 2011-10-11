@@ -25,7 +25,7 @@ pref('org.gnucitizen.weaponry.security.CertOverrideService.exceptions.add.1', 'w
 pref('org.gnucitizen.weaponry.security.CertOverrideService.exceptions.add.2', 'mozilla.org:443');
 
 // security preferences
-pref('security.alternate_certificate_error_page', 'certerror');
+pref('security.alternate_certificate_error_page', 'neterror');
 
 /*  GNUCITIZEN (Information Security Think Tank)
  **********************************************/
