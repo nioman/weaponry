@@ -30,7 +30,7 @@
 	</stringbundleset>
 	
 	<vbox id="main-content-vbox" flex="1">
-		<iframe id="main-content-iframe" src="chrome://mozapps/content/extensions/extensions.xul?type=extensions" flex="1"/>
+		<iframe id="main-content-iframe" src="chrome://mozapps/content/extensions/extensions.xul" flex="1"/>
 	</vbox>
 	
 </window>
