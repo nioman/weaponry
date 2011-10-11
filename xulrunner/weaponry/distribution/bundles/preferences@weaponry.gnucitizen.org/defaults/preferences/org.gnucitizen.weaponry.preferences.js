@@ -52,20 +52,15 @@ pref('alerts.totalOpenTime', 4000);
 pref('alerts.slideIncrement', 1);
 pref('alerts.slideIncrementTime', 10);
 
-// xpinstall dialog preferences
-// NOTE: might be redundent in xulrunner 2.0
-pref('xpinstall.dialog.confirm', 'chrome://mozapps/content/xpinstall/xpinstallConfirm.xul');
-pref('xpinstall.dialog.progress.type.skin', 'Extension:Manager-themes');
-pref('xpinstall.dialog.progress.type.chrome', 'Extension:Manager-extensions');
-pref('xpinstall.dialog.progress.skin', 'chrome://mozapps/content/extensions/extensions.xul?type=themes');
-pref('xpinstall.dialog.progress.chrome', 'chrome://mozapps/content/extensions/extensions.xul?type=extensions');
-//
-
-// extensions preferences
+// extensions misc preferences
 pref('extensions.ignoreMTimeChanges', false);
 pref('extensions.logging.enabled', false);
+
+// extensions update preferences
 pref('extensions.update.enabled', true);
 pref('extensions.update.interval', 86400);
+
+// extensions dss preferences
 pref('extensions.dss.enabled', false);
 pref('extensions.dss.switchPending', false);
 
@@ -79,11 +74,13 @@ pref('accessibility.typeaheadfind.flashBar', 1);
 pref('accessibility.typeaheadfind.linksonly', false);
 pref('accessibility.typeaheadfind.casesensitive', 0);
 
-// signon preferences
+// signon misc preferences
 pref('signon.debug', false);
 pref('signon.autofillForms', true);
 pref('signon.rememberSignons', true);
 pref('signon.expireMasterPassword', false);
+
+// signon file preferences
 pref('signon.SignonFileName', 'signons.txt');
 pref('signon.SignonFileName2', 'signons2.txt');
 pref('signon.SignonFileName3', 'signons3.txt');
