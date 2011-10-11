@@ -31,7 +31,7 @@ pref('browser.link.open_newwindow.restriction', 0);
 
 // browser xul error preferences
 pref('browser.xul.error_pages.enabled', true);
-pref('browser.xul.error_pages.expert_bad_cert', true);
+pref('browser.xul.error_pages.expert_bad_cert', false);
 
 // browser formfill preferences
 pref('browser.formfill.enable', true);
