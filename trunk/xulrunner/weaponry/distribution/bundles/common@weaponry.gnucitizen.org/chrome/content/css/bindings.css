@@ -23,6 +23,8 @@
 @import url("chrome://org.gnucitizen.weaponry.common/content/xbl/basedatabox.css");
 @import url("chrome://org.gnucitizen.weaponry.common/content/xbl/basedataflow.css");
 @import url("chrome://org.gnucitizen.weaponry.common/content/xbl/basedatatree.css");
+@import url("chrome://org.gnucitizen.weaponry.common/content/xbl/collectionbox.css");
+@import url("chrome://org.gnucitizen.weaponry.common/content/xbl/contentbox.css");
 @import url("chrome://org.gnucitizen.weaponry.common/content/xbl/datalist.css");
 @import url("chrome://org.gnucitizen.weaponry.common/content/xbl/dataroll.css");
 @import url("chrome://org.gnucitizen.weaponry.common/content/xbl/datatable.css");
@@ -37,12 +39,14 @@
 @import url("chrome://org.gnucitizen.weaponry.common/content/xbl/featurebox.css");
 @import url("chrome://org.gnucitizen.weaponry.common/content/xbl/functionalbox.css");
 @import url("chrome://org.gnucitizen.weaponry.common/content/xbl/htmlbox.css");
+@import url("chrome://org.gnucitizen.weaponry.common/content/xbl/iconbox.css");
 @import url("chrome://org.gnucitizen.weaponry.common/content/xbl/informationbox.css");
 @import url("chrome://org.gnucitizen.weaponry.common/content/xbl/popupdeck.css");
 @import url("chrome://org.gnucitizen.weaponry.common/content/xbl/recordlist.css");
 @import url("chrome://org.gnucitizen.weaponry.common/content/xbl/recordroll.css");
 @import url("chrome://org.gnucitizen.weaponry.common/content/xbl/recordtable.css");
 @import url("chrome://org.gnucitizen.weaponry.common/content/xbl/recordtree.css");
+@import url("chrome://org.gnucitizen.weaponry.common/content/xbl/richcollectionbox.css");
 @import url("chrome://org.gnucitizen.weaponry.common/content/xbl/richsidebox.css");
 @import url("chrome://org.gnucitizen.weaponry.common/content/xbl/richtabbox.css");
 @import url("chrome://org.gnucitizen.weaponry.common/content/xbl/statusbox.css");
