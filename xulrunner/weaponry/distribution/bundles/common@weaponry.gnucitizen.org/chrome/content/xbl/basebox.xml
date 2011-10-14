@@ -87,6 +87,16 @@
 				]]></body>
 			</method>
 			
+			<method name="_verifyElementAttribute">
+				<parameter name="$element"/>
+				<parameter name="attribute"/>
+				<parameter name="value"/>
+				
+				<body><![CDATA[
+					return $element.hasAttribute(attribute) && $element.getAttribute(attribute) == value;
+				]]></body>
+			</method>
+			
 			<method name="_fireEvent">
 				<parameter name="eventName"/>
 				<parameter name="data"/>
@@ -289,6 +299,14 @@
 			</method>
 			
 			<method name="_unwireNode">
+				<parameter name="$node"/>
+				
+				<body><![CDATA[
+					// pass
+				]]></body>
+			</method>
+			
+			<method name="_updateNode">
 				<parameter name="$node"/>
 				
 				<body><![CDATA[
