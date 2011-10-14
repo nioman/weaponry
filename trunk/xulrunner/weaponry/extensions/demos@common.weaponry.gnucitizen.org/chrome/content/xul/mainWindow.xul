@@ -41,6 +41,61 @@
 	
 	<vbox id="main-window-content-vbox" flex="1">
 		<richsidebox id="main-window-demos-richsidebox" flex="1">
+			<richsidepanel label="Icon 01">
+				<icon class="modern" label="Sample Icon" src="chrome://org.gnucitizen.acidplatform.basic/skin/xul/images/home.png"/>
+			</richsidepanel>
+			
+			<richsidepanel label="Icon 02">
+				<icon class="modern" label="Sample Icon 01" src="chrome://org.gnucitizen.acidplatform.basic/skin/xul/images/home.png"/>
+				<icon class="modern" label="Sample Icon 02" src="chrome://org.gnucitizen.acidplatform.basic/skin/xul/images/home.png"/>
+				<icon class="modern" label="Sample Icon 03" src="chrome://org.gnucitizen.acidplatform.basic/skin/xul/images/home.png"/>
+				<icon class="modern" label="Sample Icon 04" src="chrome://org.gnucitizen.acidplatform.basic/skin/xul/images/home.png"/>
+				<icon class="modern" label="Sample Icon 05" src="chrome://org.gnucitizen.acidplatform.basic/skin/xul/images/home.png"/>
+			</richsidepanel>
+			
+			<richsidepanel label="Icon 03">
+				<icon class="modern" label="Sample Icon 01" src="chrome://org.gnucitizen.acidplatform.basic/skin/xul/images/home.png"/>
+				<icon class="modern" label="Sample Icon 02" src="chrome://org.gnucitizen.acidplatform.basic/skin/xul/images/home.png"/>
+				<icon class="modern" label="Sample Icon 03" selected="true" src="chrome://org.gnucitizen.acidplatform.basic/skin/xul/images/home.png"/>
+				<icon class="modern" label="Sample Icon 04" src="chrome://org.gnucitizen.acidplatform.basic/skin/xul/images/home.png"/>
+				<icon class="modern" label="Sample Icon 05" src="chrome://org.gnucitizen.acidplatform.basic/skin/xul/images/home.png"/>
+			</richsidepanel>
+			
+			<richsidepanel label="Icon 04">
+				<icon class="modern" label="Sample Icon 01" autoselect="true" src="chrome://org.gnucitizen.acidplatform.basic/skin/xul/images/home.png"/>
+				<icon class="modern" label="Sample Icon 02" autoselect="true" src="chrome://org.gnucitizen.acidplatform.basic/skin/xul/images/home.png"/>
+				<icon class="modern" label="Sample Icon 03" autoselect="true" src="chrome://org.gnucitizen.acidplatform.basic/skin/xul/images/home.png"/>
+				<icon class="modern" label="Sample Icon 04" autoselect="true" src="chrome://org.gnucitizen.acidplatform.basic/skin/xul/images/home.png"/>
+				<icon class="modern" label="Sample Icon 05" autoselect="true" src="chrome://org.gnucitizen.acidplatform.basic/skin/xul/images/home.png"/>
+			</richsidepanel>
+			
+			<richsidepanel label="Icon 05">
+				<icon class="modern" label="Sample Icon 01" autoselect="true" autodeselect="true" src="chrome://org.gnucitizen.acidplatform.basic/skin/xul/images/home.png"/>
+				<icon class="modern" label="Sample Icon 02" autoselect="true" autodeselect="true" src="chrome://org.gnucitizen.acidplatform.basic/skin/xul/images/home.png"/>
+				<icon class="modern" label="Sample Icon 03" autoselect="true" autodeselect="true" src="chrome://org.gnucitizen.acidplatform.basic/skin/xul/images/home.png"/>
+				<icon class="modern" label="Sample Icon 04" autoselect="true" autodeselect="true" src="chrome://org.gnucitizen.acidplatform.basic/skin/xul/images/home.png"/>
+				<icon class="modern" label="Sample Icon 05" autoselect="true" autodeselect="true" src="chrome://org.gnucitizen.acidplatform.basic/skin/xul/images/home.png"/>
+			</richsidepanel>
+			
+			<richsidepanel label="Icon 06">
+				<iconbox flex="1">
+					<icon label="Sample Icon 01" src="chrome://org.gnucitizen.acidplatform.basic/skin/xul/images/home.png"/>
+					<icon label="Sample Icon 02" src="chrome://org.gnucitizen.acidplatform.basic/skin/xul/images/home.png"/>
+					<icon label="Sample Icon 03" src="chrome://org.gnucitizen.acidplatform.basic/skin/xul/images/home.png"/>
+					<icon label="Sample Icon 04" src="chrome://org.gnucitizen.acidplatform.basic/skin/xul/images/home.png"/>
+					<icon label="Sample Icon 05" src="chrome://org.gnucitizen.acidplatform.basic/skin/xul/images/home.png"/>
+				</iconbox>
+			</richsidepanel>
+			
+			<richsidepanel label="Icon 07">
+				<iconbox class="modern" autogroup="true" flex="1">
+					<icon label="Sample Icon 01" src="chrome://org.gnucitizen.acidplatform.basic/skin/xul/images/home.png"/>
+					<icon label="Sample Icon 02" src="chrome://org.gnucitizen.acidplatform.basic/skin/xul/images/home.png"/>
+					<icon label="Sample Icon 03" src="chrome://org.gnucitizen.acidplatform.basic/skin/xul/images/home.png"/>
+					<icon label="Sample Icon 04" src="chrome://org.gnucitizen.acidplatform.basic/skin/xul/images/home.png"/>
+					<icon label="Sample Icon 05" src="chrome://org.gnucitizen.acidplatform.basic/skin/xul/images/home.png"/>
+				</iconbox>
+			</richsidepanel>
 		</richsidebox>
 	</vbox>
 	
