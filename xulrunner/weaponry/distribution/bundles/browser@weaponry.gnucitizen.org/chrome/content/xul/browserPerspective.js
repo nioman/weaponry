@@ -107,11 +107,11 @@ function getBrowserTab() {
 		return $selectedPanel;
 	} else {
 		let foundNodes = [];
-		let $nodes = $richtabpanels.childNodes;
-		let nodesLength = $nodes.length;
+		let nodes = $richtabpanels.childNodes;
+		let nodesLength = nodes.length;
 		
 		for (let i = 0; i < nodesLength; i += 1) {
-			let $node = $nodes[i];
+			let $node = nodes[i];
 			
 			if ($node.hasAttribute('browser') && $node.getAttribute('browser') == 'true') {
 				foundNodes.push($node);
