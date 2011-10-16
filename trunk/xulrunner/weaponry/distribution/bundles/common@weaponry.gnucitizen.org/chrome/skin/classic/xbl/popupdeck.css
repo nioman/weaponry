@@ -34,6 +34,23 @@ popupdeck > popupdeckpanel.lite:not(:first-child) > .popupdeckpanel-container .p
 
 /* ------------------------------------------------------------------------ */
 
+popupdeck.dark > popupdeckpanel > .popupdeckpanel-container .popupdeckpanel-dim ,
+popupdeck > popupdeckpanel.dark > .popupdeckpanel-container .popupdeckpanel-dim {
+	opacity: 0.9;
+	cursor: pointer;
+	background: #222222;
+}
+
+popupdeck.dark > popupdeckpanel:not(:first-child) > .popupdeckpanel-container .popupdeckpanel-content ,
+popupdeck > popupdeckpanel.dark:not(:first-child) > .popupdeckpanel-container .popupdeckpanel-content {
+	margin: 30px;
+	padding: 5px;
+	background: -moz-Dialog;
+	border: 1px solid #000000;
+}
+
+/* ------------------------------------------------------------------------ */
+
 popupdeck.fullscreen > popupdeckpanel:not(:first-child) > .popupdeckpanel-container .popupdeckpanel-content ,
 popupdeck > popupdeckpanel.fullscreen:not(:first-child) > .popupdeckpanel-container .popupdeckpanel-content {
 	/* pass */
