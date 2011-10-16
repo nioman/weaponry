@@ -340,7 +340,7 @@ function handleLoadEvent(event) {
 	}
 	
 	// NOTE: browser scrollbar bug
-	window.$lastBrowserTab.$iframe.contentWindow.location.reload();
+	//window.$lastBrowserTab.$iframe.contentWindow.location.reload();
 	//
 }
 
