@@ -23,10 +23,12 @@ installHandler('org.gnucitizen.weaponry.common.demos.acidplatformMainWindow', {
 			return;
 		}
 		
+		// TODO: needs better way of adding these into acidplatform
 		let $stringbundle = document.getElementById('weaponry-common-demos-main-window-stringbundle');
 		let $applicationsDataroll = document.getElementById('main-window-applications-dataroll');
 		
 		$applicationsDataroll.appendDataRow({label: $stringbundle.getString('common-demos-label'), uri: 'chrome://org.gnucitizen.weaponry.common.demos/content/xul/mainWindow.xul'});
+		//
 	}
 });
 
