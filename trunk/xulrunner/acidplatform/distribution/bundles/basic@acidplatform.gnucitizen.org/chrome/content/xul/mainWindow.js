@@ -25,7 +25,7 @@ function handleTestItemDblclickEvent(event) {
 	let uri = event.currentTarget.getAttribute('uri');
 	
 	if (uri) {
-		open(uri,  null, 'all,chrome,resizable');
+		open(uri,  null, 'all,chrome,resizable,toolbar');
 	} else {
 		eval(event.currentTarget.getAttribute('dblclick'));
 	}
