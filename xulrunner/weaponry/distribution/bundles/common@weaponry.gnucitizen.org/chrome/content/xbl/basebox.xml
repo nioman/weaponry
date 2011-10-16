@@ -97,6 +97,15 @@
 				]]></body>
 			</method>
 			
+			<method name="_expandElementClasses">
+				<parameter name="$element"/>
+				<parameter name="clazz"/>
+				
+				<body><![CDATA[
+					$element.setAttribute('class', $element.getAttribute('class') + ' ' + clazz);
+				]]></body>
+			</method>
+			
 			<method name="_fireEvent">
 				<parameter name="eventName"/>
 				<parameter name="data"/>

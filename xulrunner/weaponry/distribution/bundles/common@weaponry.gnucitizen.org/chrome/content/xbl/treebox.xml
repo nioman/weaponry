@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <!--
- *  popupdeck.xml
+ *  treebox.xml
  *  Copyright (C) 2007-2011  GNUCITIZEN
  *  
  *  This program is free software; you can redistribute it and/or modify
@@ -17,21 +17,27 @@
  *  along with this program; if not, write to the Free Software
  *  Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 -->
-<!DOCTYPE bindings SYSTEM "chrome://org.gnucitizen.weaponry.common/locale/xbl/popupdeck.dtd">
+<!DOCTYPE bindings SYSTEM "chrome://org.gnucitizen.weaponry.common/locale/xbl/treebox.dtd">
 <bindings
 	xmlns="http://www.mozilla.org/xbl"
 	xmlns:xbl="http://www.mozilla.org/xbl"
 	xmlns:xul="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
 	
-	<binding id="popupdeckpanel" extends="chrome://org.gnucitizen.weaponry.common/content/xbl/basebox.xml#basebox">
+	<binding id="treeboxitem" extends="chrome://org.gnucitizen.weaponry.common/content/xbl/basebox.xml#basebox">
 		<content>
-			<xul:stack class="popupdeckpanel-container" flex="1">
-				<xul:box class="popupdeckpanel-dim" flex="1"/>
+			<xul:vbox class="treeboxitem-container" flex="1">
+				<xul:hbox class="treeboxitem-template" flex="1">
+					<xul:disclosuretriangle class="treeboxitem-disclosuretriangle"/>
+					
+					<xul:hbox class="treeboxitem-content" flex="1">
+						<children/>
+					</xul:hbox>
+				</xul:hbox>
 				
-				<xul:vbox class="popupdeckpanel-content" flex="1">
-					<children/>
+				<xul:vbox class="treeboxitem-children">
+					<children includes="treeboxitem"/>
 				</xul:vbox>
-			</xul:stack>
+			</xul:vbox>
 		</content>
 		
 		<implementation>
@@ -41,23 +47,53 @@
 				]]></getter>
 			</property>
 			
-			<property name="$dim">
+			<property name="$template">
 				<getter><![CDATA[
 					return this.$container.childNodes[0];
 				]]></getter>
 			</property>
 			
-			<property name="$content">
+			<property name="$children">
 				<getter><![CDATA[
 					return this.$container.childNodes[1];
 				]]></getter>
 			</property>
 			
+			<property name="$disclosuretriangle">
+				<getter><![CDATA[
+					return this.$template.childNodes[0];
+				]]></getter>
+			</property>
+			
+			<property name="$content">
+				<getter><![CDATA[
+					return this.$template.childNodes[1];
+				]]></getter>
+			</property>
+			
 			<constructor>
 				<action><![CDATA[
-					this._lockEvent(this.$dim, 'click', function (event) {
-						this.parentNode.parentNode.parentNode.selectedIndex = 0;
-					});
+					let nodes = this.childNodes;
+					let nodesLength = nodes.length;
+					let c = 0;
+					
+					for (let i = 0; i < nodesLength && c == 0; i += 1) {
+						let $node = nodes[i];
+						
+						if ($node.tagName != 'treeboxitem') {
+							c += 1;
+						}
+					}
+					
+					if (c == 0) {
+						let $label = document.createElement('label');
+						
+						$label.setAttribute('class', 'treeboxitem-label');
+						
+						this._bindAttributes(this, $label, ['value=label']);
+						
+						this.$content.appendChild($label);
+					}
 				]]></action>
 			</constructor>
 			
@@ -69,12 +105,12 @@
 		</implementation>
 	</binding>
 	
-	<binding id="popupdeck" extends="chrome://org.gnucitizen.weaponry.common/content/xbl/basebox.xml#basebox">
+	<binding id="treebox" extends="chrome://org.gnucitizen.weaponry.common/content/xbl/basebox.xml#basebox">
 		<content>
-			<xul:vbox class="popupdeck-container" flex="1">
-				<xul:stack class="popupdeck-content" flex="1">
-					<children/>
-				</xul:stack>
+			<xul:vbox class="treebox-container" flex="1">
+				<xul:vbox class="treebox-content" flex="1">
+					<children includes="treeboxitem"/>
+				</xul:vbox>
 			</xul:vbox>
 		</content>
 		
@@ -91,50 +127,9 @@
 				]]></getter>
 			</property>
 			
-			<property name="selectedIndex">
-				<getter><![CDATA[
-					return this._getChildIndex(this, this.selectedPanel);
-				]]></getter>
-				
-				<setter><![CDATA[
-					this.selectedPanel = this.childNodes[val];
-				]]></setter>
-			</property>
-			
-			<property name="selectedPanel">
-				<getter><![CDATA[
-					return this.$realSelectedPanel;
-				]]></getter>
-				
-				<setter><![CDATA[
-					this.$realSelectedPanel = val;
-					
-					let nodes = this.childNodes;
-					let nodesLength = nodes.length;
-					
-					for (let i = 0; i < nodesLength; i += 1) {
-						if (i != 0) {
-							let $node = nodes[i];
-							
-							if ($node == this.$realSelectedPanel) {
-								$node.collapsed = false;
-							} else {
-								$node.collapsed = true;
-							}
-						}
-					}
-				]]></setter>
-			</property>
-			
 			<constructor>
 				<action><![CDATA[
-					this._linkAttributeProperty(this, 'selectedindex', 'selectedIndex');
-					
-					if (this.hasAttribute('selectedindex')) {
-						this.selectedIndex = parseInt(this.getAttribute('selectedindex'), 10);
-					} else {
-						this.selectedIndex = 0;
-					}
+					// pass
 				]]></action>
 			</constructor>
 			

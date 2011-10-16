@@ -137,6 +137,59 @@
 
 /* ------------------------------------------------------------------------ */
 
+tree.sourcetree {
+	border: 0px;
+	margin: 0px;
+	padding: 0px;
+	-moz-appearance: none;
+}
+
+tree.sourcetree treechildren::-moz-tree-row {
+	background: transparent;
+}
+
+tree.sourcetree treechildren::-moz-tree-row(header) {
+	-moz-user-focus: ignore;
+}
+
+[lookandfeel="Darwin"] tree.sourcetree {
+	background-color: #d2d8e2;
+}
+
+[lookandfeel="Darwin"] tree.sourcetree:-moz-window-inactive {
+	background-color: #e8e8e8;
+}
+
+[lookandfeel="Darwin"] tree.sourcetree treechildren::-moz-tree-row {
+	height: 20px;
+}
+
+[lookandfeel="Darwin"] tree.sourcetree treechildren::-moz-tree-row(selected) {
+	background: url("images/sourcetree.selected.active.png") repeat-x;
+}
+
+[lookandfeel="Darwin"] tree.sourcetree:-moz-window-inactive treechildren::-moz-tree-row(selected) {
+	background: url("images/sourcetree.selected.inactive.png") repeat-x;
+}
+
+[lookandfeel="Darwin"] tree.sourcetree treechildren::-moz-tree-row(header, selected) {
+	background: none;
+}
+
+[lookandfeel="Darwin"] tree.sourcetree:-moz-window-inactive treechildren::-moz-tree-row(header, selected) {
+	background: none;
+}
+
+[lookandfeel="Darwin"] tree.sourcetree treechildren::-moz-tree-cell-text(header) {
+	color: #607081;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+/* TODO: add the rest of the native styles */
+
+/* ------------------------------------------------------------------------ */
+
 [lookandfeel="Darwin"] toolbar.unified {
 	-moz-appearance: -moz-mac-unified-toolbar;
 }
@@ -146,6 +199,20 @@
 }
 
 [lookandfeel="Linux"] toolbar.unified {
+	/* pass */
+}
+
+/* ------------------------------------------------------------------------ */
+
+[lookandfeel="Darwin"] toolbarbutton.native {
+	-moz-box-orient: vertical;
+}
+
+[lookandfeel="WINNT"] toolbarbutton.native {
+	/* pass */
+}
+
+[lookandfeel="Linux"] toolbarbutton.native {
 	/* pass */
 }
 

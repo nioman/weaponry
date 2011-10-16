@@ -57,11 +57,11 @@
 					this._bindEvent(this, 'click', function (event) {
 						if (self.parentNode && self.parentNode.tagName == 'iconbox') {
 							if (self._verifyElementAttribute(self.parentNode, 'autogroup', 'true')) {
-								let $nodes = self.parentNode.childNodes;
-								let nodesLength = $nodes.length;
+								let nodes = self.parentNode.childNodes;
+								let nodesLength = nodes.length;
 								
 								for (let i = 0; i < nodesLength; i += 1) {
-									let $node = $nodes[i];
+									let $node = nodes[i];
 									
 									if (self._verifyElementAttribute($node, 'selected', 'true')) {
 										$node.setAttribute('selected', false);

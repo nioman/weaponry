@@ -1555,6 +1555,10 @@ let weaponryCommon = new function () {
 		this.externalProtocolService.loadURI(newUri, null);
 	};
 	
+	this.openUri = function (uri) {
+		this.openUriExternally(uri); // TODO: find the best way to open the uri, externally or via the built-in browser
+	};
+	
 	/* -------------------------------------------------------------------- */
 	
 	this.getProxyOnUiThread = function (object, iface, type) {

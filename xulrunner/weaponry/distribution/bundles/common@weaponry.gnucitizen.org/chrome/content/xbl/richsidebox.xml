@@ -26,11 +26,13 @@
 	<binding id="richsidepanel" extends="chrome://org.gnucitizen.weaponry.common/content/xbl/basebox.xml#basebox">
 		<content>
 			<xul:vbox class="richsidepanel-container" flex="1">
-				<xul:notificationbox class="richsidepanel-notificationbox" flex="1">
-					<xul:vbox class="richsidepanel-content" flex="1">
-						<children/>
-					</xul:vbox>
-				</xul:notificationbox>
+				<xul:contentbox class="richsidepanel-contentbox" xbl:inherits="src" flex="1">
+					<children/>
+				</xul:contentbox>
+				
+				<xul:functionalbox class="richsidepanel-functionalbox">
+					<children includes="richlistitem"/>
+				</xul:functionalbox>
 			</xul:vbox>
 		</content>
 		
@@ -41,154 +43,94 @@
 				]]></getter>
 			</property>
 			
-			<property name="$notificationbox">
+			<property name="$contentbox">
 				<getter><![CDATA[
 					return this.$container.childNodes[0];
 				]]></getter>
 			</property>
 			
-			<property name="$content">
+			<property name="$functionalbox">
 				<getter><![CDATA[
-					return this.$notificationbox.childNodes[0];
+					return this.$container.childNodes[1];
 				]]></getter>
 			</property>
 			
 			<property name="$richlistitem">
 				<getter><![CDATA[
-					if (!this.$realRichlistitem) {
-						this.$realRichlistitem = document.createElement('richlistitem');
+					if ('$realRichlistitem' in this) {
+						return this.$realRichlistitem;
+					} else {
+						let $realRichlistitem;
 						
-						this.$realRichlistitem.setAttribute('class', 'richsidepanel-richlistitem');
+						let nodes = this.childNodes;
+						let nodesLength = nodes.length;
 						
-						this._bindAttributes(this, this.$realRichlistitem, ['richsidepanelid=id', 'richsidepanelclass=class']);
+						for (let i = 0; i < nodesLength; i += 1) {
+							let $node = nodes[i];
+							
+							if ($node.tagName == 'richlistitem') {
+								$realRichlistitem = $node;
+								
+								break;
+							}
+						}
 						
-						let $hbox = document.createElement('hbox');
+						if (!$realRichlistitem) {
+							$realRichlistitem = document.createElement('richlistitem');
+							
+							let $hbox = document.createElement('hbox');
+							
+							$hbox.setAttribute('class', 'richsidepanel-hbox');
+							$hbox.setAttribute('flex', '1');
+							
+							let $image = document.createElement('image');
+							
+							$image.setAttribute('class', 'richsidepanel-image');
+							
+							this._bindAttributes(this, $image, ['src=icon']);
+							
+							$hbox.appendChild($image);
+							
+							let $label = document.createElement('label');
+							
+							$label.setAttribute('class', 'richsidepanel-label');
+							$label.setAttribute('crop', 'right');
+							$label.setAttribute('flex', '1');
+							
+							this._bindAttributes(this, $label, ['value=label']);
+							
+							$hbox.appendChild($label);
+							
+							$realRichlistitem.appendChild($hbox);
+						}
 						
-						$hbox.setAttribute('class', 'richsidepanel-hbox');
-						$hbox.setAttribute('flex', '1');
+						this._expandElementClasses($realRichlistitem, 'richsidepanel-richlistitem');
+						this._bindAttributes(this, $realRichlistitem, ['richsidepanelid=id', 'richsidepanelclass=class']);
 						
-						let $image = document.createElement('image');
+						this.$realRichlistitem = $realRichlistitem;
 						
-						$image.setAttribute('class', 'richsidepanel-image');
-						
-						this._bindAttributes(this, $image, ['src=icon']);
-						
-						$hbox.appendChild($image);
-						
-						let $label = document.createElement('label');
-						
-						$label.setAttribute('class', 'richsidepanel-label');
-						$label.setAttribute('crop', 'right');
-						$label.setAttribute('flex', '1');
-						
-						this._bindAttributes(this, $label, ['value=label']);
-						
-						$hbox.appendChild($label);
-						
-						this.$realRichlistitem.appendChild($hbox);
+						return this.$realRichlistitem;
 					}
-					
-					return this.$realRichlistitem;
 				]]></getter>
 			</property>
 			
-			<constructor>
-				<action><![CDATA[
-					let self = this;
-					
-					let processSrcAttribute = function () {
-						if (self.hasAttribute('src') && self.childNodes.length == 0) {
-							self.$iframe = document.createElement('iframe');
-							
-							self.$iframe.setAttribute('src', self.getAttribute('src'));
-							self.$iframe.setAttribute('flex', '1');
-							
-							self.$iframe.iWasHere = true;
-							
-							self.appendChild(self.$iframe);
-							
-							self.$iframe.addEventListener('DOMTitleChanged', function (event) {
-								if (event.target != self.$iframe.contentDocument) {
-									return;
-								}
-								
-								if (!self.hasAttribute('label')) {
-									self.setAttribute('label', event.target.title);
-								}
-							}, false);
-						} else
-						if (self.firstChild && 'iWasHere' in self.firstChild && self.firstChild.iWasHere == true) {
-							self.$iframe.setAttribute('src', self.getAttribute('src'));
-						}
-					};
-					
-					processSrcAttribute();
-					
-					this.addEventListener('DOMAttrModified', function (event) {
-						if (event.target == this && event.attrName == 'url') {
-							processSrcAttribute();
-						}
-					}, false);
-				]]></action>
-			</constructor>
-			
-			<method name="_getPriority">
-				<parameter name="priority"/>
-				
-				<body><![CDATA[
-					switch (priority.toLowerCase()) {
-						case 'low':
-							return this.$notificationbox.PRIORITY_INFO_LOW;
-						case 'medium':
-							return this.$notificationbox.PRIORITY_WARNING_LOW;
-						case 'high':
-							return this.$notificationbox.PRIORITY_CRITICAL_LOW;
-						case 'info':
-							return this.$notificationbox.PRIORITY_INFO_LOW;
-						case 'warning':
-							return this.$notificationbox.PRIORITY_WARNING_LOW;
-						case 'critical':
-							return this.$notificationbox.PRIORITY_CRITICAL_LOW;
-						case 'info_low':
-							return this.$notificationbox.PRIORITY_INFO_LOW;
-						case 'info_medium':
-							return this.$notificationbox.PRIORITY_INFO_MEDIUM;
-						case 'info_heigh':
-							return this.$notificationbox.PRIORITY_INFO_HIGH;
-						case 'warning_low':
-							return this.$notificationbox.PRIORITY_WARNING_LOW;
-						case 'warning_medium':
-							return this.$notificationbox.PRIORITY_WARNING_MEDIUM;
-						case 'warning_heigh':
-							return this.$notificationbox.PRIORITY_WARNING_HIGH;
-						case 'critical_low':
-							return this.$notificationbox.PRIORITY_CRITICAL_LOW;
-						case 'critical_medium':
-							return this.$notificationbox.PRIORITY_CRITICAL_MEDIUM;
-						case 'critical_heigh':
-							return this.$notificationbox.PRIORITY_CRITICAL_HIGH;
-						case 'critical_block':
-							return this.$notificationbox.PRIORITY_CRITICAL_BLOCK;
-						default:
-							return null;
-					}
-				]]></body>
-			</method>
-			
 			<method name="displayNotification">
-				<parameter name="label"/>
-				<parameter name="priority"/>
-				
 				<body><![CDATA[
-					this.$notificationbox.appendNotification(label, null, null, this._getPriority(priority));
+					return this.$contentbox.displayNotification.apply(this.$contentbox, arguments);
 				]]></body>
 			</method>
 			
 			<method name="removeAllNotifications">
 				<body><![CDATA[
-					this.$notificationbox.removeAllNotifications.apply(this.$notificationbox, arguments);
+					return this.$contentbox.removeAllNotifications.apply(this.$contentbox, arguments);
 				]]></body>
 			</method>
+			
+			<constructor>
+				<action><![CDATA[
+					// pass
+				]]></action>
+			</constructor>
 			
 			<destructor>
 				<action><![CDATA[
@@ -201,19 +143,17 @@
 	<binding id="richsidebox" extends="chrome://org.gnucitizen.weaponry.common/content/xbl/basebox.xml#basebox">
 		<content>
 			<xul:vbox class="richsidebox-container" flex="1">
-				<xul:notificationbox class="richsidebox-notificationbox" flex="1">
-					<xul:hbox class="richsidebox-content" flex="1">
-						<xul:richlistbox class="richsidebox-richlistbox" flex="1" width="200" xbl:inherits="flex=richlistboxflex,width=richlistboxwidth"/>
-						
-						<xul:splitter class="richsidebox-splitter" resizeafter="closest" collapse="before" xbl:inherits="state=splitterstate">
-							<xul:grippy class="richsidebox-grippy"/>
-						</xul:splitter>
-						
-						<xul:deck class="richsidebox-deck" flex="5" width="100" xbl:inherits="flex=deckflex,width=deckwidth">
-							<children includes="richsidepanel"/>
-						</xul:deck>
-					</xul:hbox>
-				</xul:notificationbox>
+				<xul:contentbox class="richsidebox-contentbox" flex="1">
+					<xul:richlistbox class="richsidebox-richlistbox" flex="1" width="200" xbl:inherits="flex=richlistboxflex,width=richlistboxwidth"/>
+					
+					<xul:splitter class="richsidebox-splitter" resizeafter="closest" collapse="before" xbl:inherits="state=splitterstate">
+						<xul:grippy class="richsidebox-grippy"/>
+					</xul:splitter>
+					
+					<xul:deck class="richsidebox-deck" flex="5" width="100" xbl:inherits="flex=deckflex,width=deckwidth">
+						<children includes="richsidepanel"/>
+					</xul:deck>
+				</xul:contentbox>
 			</xul:vbox>
 		</content>
 		
@@ -224,33 +164,27 @@
 				]]></getter>
 			</property>
 			
-			<property name="$notificationbox">
+			<property name="$contentbox">
 				<getter><![CDATA[
 					return this.$container.childNodes[0];
 				]]></getter>
 			</property>
 			
-			<property name="$content">
-				<getter><![CDATA[
-					return this.$notificationbox.childNodes[0];
-				]]></getter>
-			</property>
-			
 			<property name="$richlistbox">
 				<getter><![CDATA[
-					return this.$content.childNodes[0];
+					return this.$contentbox.childNodes[0];
 				]]></getter>
 			</property>
 			
 			<property name="$splitter">
 				<getter><![CDATA[
-					return this.$content.childNodes[1];
+					return this.$contentbox.childNodes[1];
 				]]></getter>
 			</property>
 			
 			<property name="$deck">
 				<getter><![CDATA[
-					return this.$content.childNodes[2];
+					return this.$contentbox.childNodes[2];
 				]]></getter>
 			</property>
 			
@@ -268,14 +202,12 @@
 					
 					this.$deck.selectedPanel = val;
 					
-					// NOTE: no focus
-					/*
-					if (val.firstChild) {
-						val.firstChild.focus();
-					} else {
-						val.focus();
-					}
-					*/
+					// NOTE: autofocusing on the first element is disabled for now
+					// if (val.firstChild) {
+					// 	val.firstChild.focus();
+					// } else {
+					// 	val.focus();
+					// }
 					//
 				]]></setter>
 			</property>
@@ -290,11 +222,7 @@
 						this.$richlistbox.insertBefore($element.$richlistitem, null);
 					}
 					
-					let event = document.createEvent('Event');
-					
-					event.initEvent('richsidepanelCreated', true, false);
-					
-					this.parentNode.dispatchEvent(event);
+					// TODO: fire richsidepanelCreated event
 				]]></body>
 			</method>
 			
@@ -311,69 +239,19 @@
 					
 					this.$richlistbox.removeChild($element.$richlistitem);
 					
-					let event = document.createEvent('Event');
-					
-					event.initEvent('richsidepanelDestroyed', true, false);
-					
-					this.parentNode.dispatchEvent(event);
-				]]></body>
-			</method>
-			
-			<method name="_getPriority">
-				<parameter name="priority"/>
-				
-				<body><![CDATA[
-					switch (priority.toLowerCase()) {
-						case 'low':
-							return this.$notificationbox.PRIORITY_INFO_LOW;
-						case 'medium':
-							return this.$notificationbox.PRIORITY_WARNING_LOW;
-						case 'high':
-							return this.$notificationbox.PRIORITY_CRITICAL_LOW;
-						case 'info':
-							return this.$notificationbox.PRIORITY_INFO_LOW;
-						case 'warning':
-							return this.$notificationbox.PRIORITY_WARNING_LOW;
-						case 'critical':
-							return this.$notificationbox.PRIORITY_CRITICAL_LOW;
-						case 'info_low':
-							return this.$notificationbox.PRIORITY_INFO_LOW;
-						case 'info_medium':
-							return this.$notificationbox.PRIORITY_INFO_MEDIUM;
-						case 'info_heigh':
-							return this.$notificationbox.PRIORITY_INFO_HIGH;
-						case 'warning_low':
-							return this.$notificationbox.PRIORITY_WARNING_LOW;
-						case 'warning_medium':
-							return this.$notificationbox.PRIORITY_WARNING_MEDIUM;
-						case 'warning_heigh':
-							return this.$notificationbox.PRIORITY_WARNING_HIGH;
-						case 'critical_low':
-							return this.$notificationbox.PRIORITY_CRITICAL_LOW;
-						case 'critical_medium':
-							return this.$notificationbox.PRIORITY_CRITICAL_MEDIUM;
-						case 'critical_heigh':
-							return this.$notificationbox.PRIORITY_CRITICAL_HIGH;
-						case 'critical_block':
-							return this.$notificationbox.PRIORITY_CRITICAL_BLOCK;
-						default:
-							return null;
-					}
+					// TODO: fire richsidepanelDestroyed event
 				]]></body>
 			</method>
 			
 			<method name="displayNotification">
-				<parameter name="label"/>
-				<parameter name="priority"/>
-				
 				<body><![CDATA[
-					this.$notificationbox.appendNotification(label, null, null, this._getPriority(priority));
+					return this.$contentbox.displayNotification(this.$contentbox, arguments);
 				]]></body>
 			</method>
 			
 			<method name="removeAllNotifications">
 				<body><![CDATA[
-					this.$notificationbox.removeAllNotifications.apply(this.$notificationbox, arguments);
+					return this.$contentbox.removeAllNotifications.apply(this.$contentbox, arguments);
 				]]></body>
 			</method>
 			
