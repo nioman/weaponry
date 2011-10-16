@@ -35,8 +35,6 @@
 			<preference id="network.proxy.ssl_port" name="network.proxy.ssl_port" type="int"/>
 			<preference id="network.proxy.socks" name="network.proxy.socks" type="string"/>
 			<preference id="network.proxy.socks_port" name="network.proxy.socks_port" type="int"/>
-			<preference id="network.proxy.gopher" name="network.proxy.gopher" type="string"/>
-			<preference id="network.proxy.gopher_port" name="network.proxy.gopher_port" type="int"/>
 			<preference id="network.proxy.socks_version" name="network.proxy.socks_version" type="int"/>
 			<preference id="network.proxy.no_proxies_on" name="network.proxy.no_proxies_on" type="string"/>
 			<preference id="network.proxy.autoconfig_url" name="network.proxy.autoconfig_url" type="string"/>
@@ -47,8 +45,6 @@
 			<preference id="network.proxy.backup.ssl_port" name="network.proxy.backup.ssl_port" type="int"/>
 			<preference id="network.proxy.backup.socks" name="network.proxy.backup.socks" type="string"/>
 			<preference id="network.proxy.backup.socks_port" name="network.proxy.backup.socks_port" type="int"/>
-			<preference id="network.proxy.backup.gopher" name="network.proxy.backup.gopher" type="string"/>
-			<preference id="network.proxy.backup.gopher_port" name="network.proxy.backup.gopher_port" type="int"/>
 			<preference id="pref.advanced.proxies.disable_button.reload" name="pref.advanced.proxies.disable_button.reload" type="bool"/>
 		</preferences>
 		
@@ -112,18 +108,6 @@
 								<textbox id="network-proxy-ftp" preference="network.proxy.ftp" flex="1"/>
 								<label id="network-proxy-ftp-port-label" value="&network-proxy-ftp-port-label-value;"/>
 								<textbox id="network-proxy-ftp-port" type="number" max="65535" size="5" preference="network.proxy.ftp_port"/>
-							</hbox>
-						</row>
-						
-						<row id="proxy-prefwindow-manual-gopher-row" align="center">
-							<hbox pack="end">
-								<label id="network-proxy-gopher-label" value="&network-proxy-gopher-label-value;"/>
-							</hbox>
-							
-							<hbox align="center">
-								<textbox id="network-proxy-gopher" preference="network.proxy.gopher" flex="1"/>
-								<label id="network-proxy-gopher-port-label" value="&network-proxy-gopher-port-label-value;"/>
-								<textbox id="network-proxy-gopher-port" type="number" max="65535" size="5" preference="network.proxy.gopher_port"/>
 							</hbox>
 						</row>
 						
