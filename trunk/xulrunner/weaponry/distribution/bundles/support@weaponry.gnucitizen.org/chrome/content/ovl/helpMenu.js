@@ -19,23 +19,23 @@
 
 installHandler('org.gnucitizen.weaponry.support.helpMenu', {
 	openHelp: function () {
-		weaponryCommon.openUriExternally('http://code.google.com/p/weaponry/w/list');
+		weaponryCommon.openUri('http://code.google.com/p/weaponry/w/list');
 	},
 	
 	openReportBugs: function () {
-		weaponryCommon.openUriExternally('http://code.google.com/p/weaponry/issues/list');
+		weaponryCommon.openUri('http://code.google.com/p/weaponry/issues/list');
 	},
 	
 	openRequestFeatures: function () {
-		weaponryCommon.openUriExternally('http://code.google.com/p/weaponry/issues/detail?id=2');
+		weaponryCommon.openUri('http://code.google.com/p/weaponry/issues/detail?id=2');
 	},
 	
 	gotoWeaponry: function () {
-		weaponryCommon.openUriExternally('http://weaponry.gnucitizen.org');
+		weaponryCommon.openUri('http://weaponry.gnucitizen.org');
 	},
 	
 	gotoGnucitizen: function () {
-		weaponryCommon.openUriExternally('http://www.gnucitizen.com');
+		weaponryCommon.openUri('http://www.gnucitizen.com');
 	},
 	
 	onDOMContentLoaded: function (event) {
