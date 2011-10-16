@@ -23,10 +23,12 @@ installHandler('org.gnucitizen.weaponry.browser.acidplatformMainWindow', {
 			return;
 		}
 		
+		// TODO: needs better way of adding these into acidplatform
 		let $stringbundle = document.getElementById('weaponry-browser-main-window-stringbundle');
 		let $applicationsDataroll = document.getElementById('main-window-applications-dataroll');
 		
 		$applicationsDataroll.appendDataRow({label: $stringbundle.getString('browser-label'), uri: 'chrome://org.gnucitizen.weaponry.browser/content/xul/browserPerspective.xul'});
+		//
 	}
 });
 
