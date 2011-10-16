@@ -70,7 +70,7 @@ function readProxyProtocol(protocol, isPort) {
 function updateProtocolUi() {
 	let $networkProxyShareProxySettings = document.getElementById('network.proxy.share_proxy_settings');
 	let $networkProxyType = document.getElementById('network.proxy.type');
-	let types = ['ssl', 'ftp', 'socks', 'gopher'];
+	let types = ['ssl', 'ftp', 'socks'];
 	let typesLength = types.length;
 	
 	for (let i = 0; i < typesLength; i += 1) {
@@ -132,7 +132,7 @@ function handleBeforeacceptEvent(event) {
 	let $networkProxyHttpPort = document.getElementById('network.proxy.http_port');
 	
 	if ($networkProxyShareProxySettings.value) {
-		let types = ['ssl', 'ftp', 'socks', 'gopher'];
+		let types = ['ssl', 'ftp', 'socks'];
 		let typesLength = types.length;
 		
 		for (let i = 0; i < typesLength; i += 1) {
@@ -162,7 +162,7 @@ function handleLoadEvent(event) {
 	document.getElementById('network-proxy-http-port').setAttribute('onsyncfrompreference', 'return readHttpProxyPort();');
 	document.getElementById('network-proxy-share-proxy-settings').setAttribute('onsyncfrompreference', 'return updateProtocolUi();');
 	
-	let types = ['ssl', 'ftp', 'socks', 'gopher'];
+	let types = ['ssl', 'ftp', 'socks'];
 	let typesLength = types.length;
 	
 	for (let i = 0; i < typesLength; i += 1) {
