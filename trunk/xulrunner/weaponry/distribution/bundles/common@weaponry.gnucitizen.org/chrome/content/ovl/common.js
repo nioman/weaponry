@@ -125,36 +125,36 @@ installHandler('org.gnucitizen.weaponry.common', {
 	},
 	
 	cleanupDocumentElements: function () {
-		let $nodes;
+		let nodes;
 		let nodesLength;
 		let i;
 		let $node;
 		
 		if (parent != window) {
-			$nodes = document.querySelectorAll('menubar');
-			nodesLength = $nodes.length;
+			nodes = document.querySelectorAll('menubar');
+			nodesLength = nodes.length;
 			
 			for (i = 0; i < nodesLength; i += 1) {
-				$node = $nodes[i];
+				$node = nodes[i];
 				
 				$node.hidden = true;
 			}
 		}
 		
-		$nodes = document.querySelectorAll('menu > menupopup:empty');
-		nodesLength = $nodes.length;
+		nodes = document.querySelectorAll('menu > menupopup:empty');
+		nodesLength = nodes.length;
 		
 		for (i = 0; i < nodesLength; i += 1) {
-			$node = $nodes[i];
+			$node = nodes[i];
 			
 			$node.parentNode.hidden = true;
 		}
 		
-		$nodes = document.querySelectorAll('menu > menupopup:not(:empty)');
-		nodesLength = $nodes.length;
+		nodes = document.querySelectorAll('menu > menupopup:not(:empty)');
+		nodesLength = nodes.length;
 		
 		for (i = 0; i < nodesLength; i += 1) {
-			$node = $nodes[i];
+			$node = nodes[i];
 			
 			if ((/^(\w+:)?menuseparator$/).test($node.firstChild.tagName)) {
 				$node.firstChild.hidden = true;

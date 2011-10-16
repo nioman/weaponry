@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <!--
- *  functionalbox.xml
+ *  sourcetree.xml
  *  Copyright (C) 2007-2011  GNUCITIZEN
  *  
  *  This program is free software; you can redistribute it and/or modify
@@ -17,46 +17,38 @@
  *  along with this program; if not, write to the Free Software
  *  Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 -->
-<!DOCTYPE bindings SYSTEM "chrome://org.gnucitizen.weaponry.common/locale/xbl/functionalbox.dtd">
+<!DOCTYPE bindings SYSTEM "chrome://org.gnucitizen.weaponry.common/locale/xbl/sourcetree.dtd">
 <bindings
 	xmlns="http://www.mozilla.org/xbl"
 	xmlns:xbl="http://www.mozilla.org/xbl"
 	xmlns:xul="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
 	
-	<binding id="functionalbox" extends="chrome://org.gnucitizen.weaponry.common/content/xbl/basebox.xml#basebox">
+	<binding id="sourceitem">
 		<content>
-			<xul:vbox class="functionalbox-container" collapsed="true" flex="1">
-				<xul:vbox class="functionalbox-content" flex="1">
+			<xul:treeitem>
+				<xul:treerow>
+					<xul:treecell xbl:inherits="label"/>
+				</xul:treerow>
+				
+				<xul:treechildren>
 					<children/>
-				</xul:vbox>
-			</xul:vbox>
+				</xul:treechildren>
+			</xul:treeitem>
 		</content>
-		
-		<implementation>
-			<property name="$container">
-				<getter><![CDATA[
-					return document.getAnonymousNodes(this)[0];
-				]]></getter>
-			</property>
-			
-			<property name="$content">
-				<getter><![CDATA[
-					return this.$container.childNodes[0];
-				]]></getter>
-			</property>
-			
-			<constructor>
-				<action><![CDATA[
-					// pass
-				]]></action>
-			</constructor>
-			
-			<destructor>
-				<action><![CDATA[
-					// pass
-				]]></action>
-			</destructor>
-		</implementation>
+	</binding>
+	
+	<binding id="sourcetree">
+		<content>
+			<xul:tree seltype="single" flex="1">
+				<xul:treecols>
+					<xul:treecol hideheader="true" flex="1"/>
+				</xul:treecols>
+				
+				<xul:treechildren>
+					<children/>
+				</xul:treechildren>
+			</xul:tree>
+		</content>
 	</binding>
 	
 </bindings>

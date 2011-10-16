@@ -133,20 +133,20 @@ function handleEditMenuDOMContentLoadedEvent(event) {
 		return;
 	}
 	
-	let $nodes = document.querySelectorAll('textbox:not([context])');
-	let nodesLength = $nodes.length;
+	let nodes = document.querySelectorAll('textbox:not([context])');
+	let nodesLength = nodes.length;
 	
 	let i;
 	
 	for (i = 0; i < nodesLength; i += 1) {
-		$nodes[i].setAttribute('context', 'edit-context-menupopup');
+		nodes[i].setAttribute('context', 'edit-context-menupopup');
 	}
 	
-	$nodes = document.querySelectorAll('textbox:not([contextmenu])');
-	nodesLength = $nodes.length;
+	nodes = document.querySelectorAll('textbox:not([contextmenu])');
+	nodesLength = nodes.length;
 	
 	for (i = 0; i < nodesLength; i += 1) {
-		$nodes[i].setAttribute('contextmenu', 'edit-context-menupopup');
+		nodes[i].setAttribute('contextmenu', 'edit-context-menupopup');
 	}
 	
 	let selector = ['undo', 'redo', 'cut', 'copy', 'paste', 'delete', 'select-all'].map(function (operation) {
@@ -155,13 +155,13 @@ function handleEditMenuDOMContentLoadedEvent(event) {
 	
 	let $lastParent = null;
 	
-	$nodes = document.querySelectorAll(selector);
-	nodesLength = $nodes.length;
+	nodes = document.querySelectorAll(selector);
+	nodesLength = nodes.length;
 	
 	let $node;
 	
 	for (i = 0; i < nodesLength; i += 1) {
-		$node = $nodes[i];
+		$node = nodes[i];
 		
 		if ($node.parentNode != $lastParent && !($node.parentNode.id in {'edit-menupopup':1, 'edit-context-menupopup':1})) {
 			$node.parentNode.addEventListener('popupshowing', handleGenericEditMenupopupshowingEvent, false);

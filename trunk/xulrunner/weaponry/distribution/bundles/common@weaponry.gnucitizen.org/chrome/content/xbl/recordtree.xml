@@ -98,14 +98,14 @@
 						
 						self.dataView.clearDataRows();
 						
-						let $nodes = $records.childNodes;
-						let nodesLength = $nodes.length;
+						let nodes = $records.childNodes;
+						let nodesLength = nodes.length;
 						
 						let i, data, attributes, attributesLength, j, attribute;
 						
 						for (i = 0; i < nodesLength; i += 1) {
 							data = {};
-							attributes = $nodes[i].attributes;
+							attributes = nodes[i].attributes;
 							attributesLength = attributes.length;
 							
 							for (j = 0; j < attributesLength; j += 1) {
