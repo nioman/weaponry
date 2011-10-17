@@ -275,7 +275,13 @@ function handleOpenURI(uri, opener, where, context) {
 	let $richtabpanel = openBrowserTab();
 	let $browser = $richtabpanel.$iframe.contentDocument.getElementById('browser-view-content-browser');
 	
-	$browser.loadURI(uri, referrer, null);
+	try {
+		$browser.loadURI(uri, referrer, null);
+	} catch (e) {
+		Components.utils.reportError('cannot load uri ' + uri);
+		
+		throw e;
+	}
 	
 	return $browser.contentWindow;
 }

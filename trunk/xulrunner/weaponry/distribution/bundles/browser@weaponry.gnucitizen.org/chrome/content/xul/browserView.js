@@ -40,7 +40,13 @@ function reloadBrowserUrl() {
 function loadBrowserUrl(url) {
 	let $contentBrowser = document.getElementById('browser-view-content-browser');
 	
-	$contentBrowser.loadURI(url);
+	try {
+		$contentBrowser.loadURI(url);
+	} catch (e) {
+		Components.utils.reportError('cannot load url ' + url);
+		
+		throw e;
+	}
 }
 
 /* ------------------------------------------------------------------------ */
