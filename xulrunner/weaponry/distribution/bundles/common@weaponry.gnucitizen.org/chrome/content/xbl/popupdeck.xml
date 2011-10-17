@@ -26,12 +26,16 @@
 	<binding id="popupdeckpanel" extends="chrome://org.gnucitizen.weaponry.common/content/xbl/basebox.xml#basebox">
 		<content>
 			<xul:stack class="popupdeckpanel-container" flex="1">
-				<xul:box class="popupdeckpanel-dim" flex="1"/>
+				<xul:box class="popupdeckpanel-dim" flex="1" tooltip="popupdeckpanel-tooltip"/>
 				
 				<xul:vbox class="popupdeckpanel-content" flex="1">
 					<children/>
 				</xul:vbox>
 			</xul:stack>
+			
+			<xul:tooltip id="popupdeckpanel-tooltip" class="popupdeckpanel-tooltip">
+				<xul:label class="popupdeckpanel-tooltip-label" value="&popupdeckpanel-tooltip-label;"/>
+			</xul:tooltip>
 		</content>
 		
 		<implementation>
