@@ -109,19 +109,19 @@ installHandler('org.gnucitizen.weaponry.common', {
 	},
 	
 	setupWindowArguments: function () {
-		if ('arguments' in window) {
-			return;
-		}
-		
+		/* NOTE: it is probably not a good idea to copy parent arguments
 		if (parent == window) {
 			return;
 		}
 		
-		if ('arguments' in parent) {
-			// TODO: perhaps the parent.arguments should be installed on a different var or this code completely removed
-			window.arguments = parent.arguments;
-			//
+		if ('arguments' in window && window.arguments) {
+			return;
 		}
+		
+		if ('arguments' in parent) {
+			window.arguments = parent.arguments;
+		}
+		*/
 	},
 	
 	cleanupDocumentElements: function () {
