@@ -34,7 +34,7 @@
 			</xul:stack>
 			
 			<xul:tooltip id="popupdeckpanel-tooltip" class="popupdeckpanel-tooltip">
-				<xul:label class="popupdeckpanel-tooltip-label" value="&popupdeckpanel-tooltip-label;"/>
+				<xul:label class="popupdeckpanel-tooltip-label" value="&popupdeckpanel-tooltip-label;" xbl:inherits="value=tooltipvalue"/>
 			</xul:tooltip>
 		</content>
 		
