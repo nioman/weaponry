@@ -27,7 +27,7 @@
 		<content>
 			<xul:vbox class="treeboxitem-container" flex="1">
 				<xul:hbox class="treeboxitem-template" flex="1">
-					<xul:disclosuretriangle class="treeboxitem-disclosuretriangle"/>
+					<xul:disclosuretriangle class="treeboxitem-disclosuretriangle" open="false"/>
 					
 					<xul:hbox class="treeboxitem-content" flex="1">
 						<children/>
@@ -73,6 +73,20 @@
 			
 			<constructor>
 				<action><![CDATA[
+					let self = this;
+					
+					this._bindEvent(this.$disclosuretriangle, 'click', function (event) {
+						if (self.getAttribute('open') == 'true') {
+							self.setAttribute('open', 'false');
+						} else {
+							self.setAttribute('open', 'true');
+						}
+					});
+					
+					this._bindAttributes(this, this.$disclosuretriangle, ['open']);
+					this._bindAttributes(this, this.$children, ['open=collapsed']);
+					this._linkAttributeProperty(this, 'selectable', 'selectable');
+					
 					let nodes = this.childNodes;
 					let nodesLength = nodes.length;
 					let c = 0;
@@ -111,6 +125,8 @@
 				<xul:vbox class="treebox-content" flex="1">
 					<children includes="treeboxitem"/>
 				</xul:vbox>
+				
+				<children/>
 			</xul:vbox>
 		</content>
 		
@@ -129,7 +145,25 @@
 			
 			<constructor>
 				<action><![CDATA[
-					// pass
+					let self = this;
+					
+					this._bindEvent(this, 'click', function (event) {
+						// TODO: use _walkDownUntil method instead
+						let $node = self.querySelector('treeboxitem[selected="true"]');
+						//
+						
+						if ($node) {
+							$node.removeAttribute('selected');
+						}
+						
+						$node = self._walkUpUntil(event.target, 'treeboxitem');
+						
+						if ($node) {
+							if ($node.selectable) {
+								$node.selected = true;
+							}
+						}
+					});
 				]]></action>
 			</constructor>
 			

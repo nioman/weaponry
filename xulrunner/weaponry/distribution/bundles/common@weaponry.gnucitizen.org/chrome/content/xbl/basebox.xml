@@ -87,6 +87,58 @@
 				]]></body>
 			</method>
 			
+			<method name="_walkUpUntil">
+				<parameter name="$source"/>
+				<parameter name="destination"/>
+				<parameter name="inclusive"/>
+				
+				<body><![CDATA[
+					let $parentNode;
+					
+					if (inclusive) {
+						$parentNode = source;
+					} else {
+						$parentNode = $source.parentNode;
+					}
+					
+					if (typeof(destination) == 'string') {
+						// TODO: check if there is = and use attribute selector instead
+						function compare($node) {
+							return $node.tagName = destination;
+						}
+						//
+					} else {
+						function compare($node) {
+							return $node == destination.tagName;
+						}
+					}
+					
+					while (true) {
+						if (!$parentNode) {
+							return null;
+						} else
+						if (compare($parentNode)) {
+							return $parentNode;
+						} else
+						if ($parentNode == document.documentElement) {
+							return null;
+						} else {
+							$parentNode = $parentNode.parentNode; 
+						}
+					}
+				]]></body>
+			</method>
+			
+			<method name="_walkDownUntil">
+				<parameter name="$source"/>
+				<parameter name="destination"/>
+				<parameter name="inclusive"/>
+				
+				<body><![CDATA[
+					// TODO: add code here
+				]]></body>
+			</method>
+			
 			<method name="_verifyElementAttribute">
 				<parameter name="$element"/>
 				<parameter name="attribute"/>

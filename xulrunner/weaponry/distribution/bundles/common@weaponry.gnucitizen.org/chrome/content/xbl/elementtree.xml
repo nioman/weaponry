@@ -26,7 +26,7 @@
 	<binding id="elementtree" extends="chrome://org.gnucitizen.weaponry.common/content/xbl/basebox.xml#basebox">
 		<content>
 			<xul:vbox class="elementtree-container" flex="1">
-				<xul:tree class="elementtree-tree" datasources="rdf:null" querytype="xml" ref="*" flags="dont-build-content" hidecolumnpicker="true" flex="1">
+				<xul:tree class="elementtree-tree" datasources="rdf:null" querytype="xml" ref="*" flags="dont-build-content" seltype="single" hidecolumnpicker="true" flex="1">
 					<xul:treecols>
 						<xul:treecol primary="true" flex="1" xbl:inherits="label=columnlabel,hideheader"/>
 					</xul:treecols>

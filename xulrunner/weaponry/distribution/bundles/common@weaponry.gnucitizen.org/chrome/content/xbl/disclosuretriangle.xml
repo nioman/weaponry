@@ -28,9 +28,9 @@
 			<xul:vbox class="disclosuretriangle-container" flex="1">
 				<xul:image class="disclosuretriangle-image"/>
 				
-				<xul:notificationbox class="disclosuretriangle-content" hidden="true" flex="1">
+				<xul:vbox class="disclosuretriangle-content" hidden="true">
 					<children/>
-				</xul:notificationbox>
+				</xul:vbox>
 			</xul:vbox>
 		</content>
 		
@@ -41,15 +41,21 @@
 				]]></getter>
 			</property>
 			
-			<property name="$content">
+			<property name="$image">
 				<getter><![CDATA[
 					return this.$container.childNodes[0];
 				]]></getter>
 			</property>
 			
+			<property name="$content">
+				<getter><![CDATA[
+					return this.$container.childNodes[1];
+				]]></getter>
+			</property>
+			
 			<constructor>
 				<action><![CDATA[
-					this._linkAttributeProperty(this, 'state', 'state');
+					this._linkAttributeProperty(this, 'open', 'open');
 				]]></action>
 			</constructor>
 			
