@@ -41,6 +41,25 @@
 	
 	<vbox id="main-window-content-vbox" flex="1">
 		<richsidebox id="main-window-demos-richsidebox" flex="1">
+			<richsidepanel label="elementtree 01">
+				<elementtree class="source" flex="1">
+					<e id="e0">
+						<e id="e1" label="test 01" properties="header">
+							<e id="e2" label="test 02"/>
+						</e>
+					</e>
+				</elementtree>
+			</richsidepanel>
+			
+			<richsidepanel label="treebox 01">
+				<treebox flex="1">
+					<treeboxitem label="item01"/>
+					<treeboxitem label="item02">
+						<treeboxitem label="item03"/>
+					</treeboxitem>
+				</treebox>
+			</richsidepanel>
+			
 			<richsidepanel label="Icon 01">
 				<icon class="modern" label="Sample Icon" src="chrome://org.gnucitizen.acidplatform.basic/skin/xul/images/home.png"/>
 			</richsidepanel>
