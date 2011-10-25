@@ -58,6 +58,7 @@ elementtree.source > .elementtree-container .elementtree-tree treechildren::-moz
 
 [lookandfeel="Darwin"] elementtree.source > .elementtree-container .elementtree-tree:-moz-window-inactive treechildren::-moz-tree-row(header, selected) {
 	background: none;
+	-moz-user-focus: ignore;
 }
 
 [lookandfeel="Darwin"] elementtree.source > .elementtree-container .elementtree-tree treechildren::-moz-tree-cell-text(header) {
