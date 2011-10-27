@@ -245,7 +245,7 @@
 			
 			<method name="displayNotification">
 				<body><![CDATA[
-					return this.$contentbox.displayNotification(this.$contentbox, arguments);
+					return this.$contentbox.displayNotification.apply(this.$contentbox, arguments);
 				]]></body>
 			</method>
 			
