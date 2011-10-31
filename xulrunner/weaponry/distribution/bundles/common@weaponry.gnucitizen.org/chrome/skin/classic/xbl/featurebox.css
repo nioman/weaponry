@@ -17,9 +17,19 @@
  *  Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
  */
 
-featurebox > .featurebox-container .featurebox-enable-vbox {
+featurebox > .featurebox-container .featurebox-vbox {
 	-moz-box-pack: center;
 	-moz-box-align: center;
+}
+
+featurebox > .featurebox-container .featurebox-image {
+	list-style-image: url("images/feature.png");
+}
+
+/* ------------------------------------------------------------------------ */
+
+featurebox.application > .featurebox-container .featurebox-image {
+	list-style-image: url("images/application.png");
 }
 
 /*  GNUCITIZEN (Information Security Think Tank)

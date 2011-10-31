@@ -27,10 +27,10 @@
 		<content>
 			<xul:vbox class="featurebox-container" flex="1">
 				<xul:deck class="featurebox-deck" flex="1">
-					<xul:vbox class="featurebox-enable-vbox" flex="1">
-						<xul:image class="featurebox-enable-image" src="chrome://org.gnucitizen.weaponry.common/skin/xbl/images/feature.png"/>
-						<xul:label class="featurebox-enable-label" xbl:inherits="value=description"/>
-						<xul:button class="featurebox-enable-button" xbl:inherits="label"/>
+					<xul:vbox class="featurebox-vbox" flex="1">
+						<xul:image class="featurebox-image" xbl:inherits="src=image,hidden=hideimage"/>
+						<xul:label class="featurebox-label" xbl:inherits="value=description,hidden=hidelabel"/>
+						<xul:button class="featurebox-button" xbl:inherits="label,hidden=hidebutton"/>
 					</xul:vbox>
 					
 					<xul:vbox class="featurebox-content" flex="1">
@@ -53,27 +53,27 @@
 				]]></getter>	
 			</property>
 			
-			<property name="$enableVbox">
+			<property name="$vbox">
 				<getter><![CDATA[
 					return this.$deck.childNodes[0];
 				]]></getter>	
 			</property>
 			
-			<property name="$enableImage">
+			<property name="$image">
 				<getter><![CDATA[
-					return this.$enableVbox.childNodes[0];
+					return this.$vbox.childNodes[0];
 				]]></getter>	
 			</property>
 			
-			<property name="$enableLabel">
+			<property name="$label">
 				<getter><![CDATA[
-					return this.$enableVbox.childNodes[1];
+					return this.$vbox.childNodes[1];
 				]]></getter>	
 			</property>
 			
-			<property name="$enableButton">
+			<property name="$button">
 				<getter><![CDATA[
-					return this.$enableVbox.childNodes[2];
+					return this.$vbox.childNodes[2];
 				]]></getter>	
 			</property>
 			
@@ -83,15 +83,31 @@
 				]]></getter>	
 			</property>
 			
+			<property name="enabled">
+				<getter><![CDATA[
+					return this.$deck.selectedIndex == 1;
+				]]></getter>
+				
+				<setter><![CDATA[
+					if (val) {
+						this.$deck.selectedIndex = 1;
+					} else {
+						this.$deck.selectedIndex = 0;
+					} 
+				]]></setter>
+			</property>
+			
 			<constructor>
 				<action><![CDATA[
 					let self = this;
 					
-					this.$enableButton.addEventListener('click', function (event) {
+					this._lockEvent(this.$button, 'command', function (event) {
 						if (self._fireEvent('enable')) {
-							self.$deck.selectedIndex = 1;
+							self.enabled = true;
 						}
-					}, false);
+					});
+					
+					this._linkAttributeProperty(this, 'enabled', 'enabled');
 				]]></action>
 			</constructor>
 			
