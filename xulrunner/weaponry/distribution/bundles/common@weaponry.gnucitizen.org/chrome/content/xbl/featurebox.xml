@@ -29,7 +29,7 @@
 				<xul:deck class="featurebox-deck" flex="1">
 					<xul:vbox class="featurebox-vbox" flex="1">
 						<xul:image class="featurebox-image" xbl:inherits="src=image,hidden=hideimage"/>
-						<xul:label class="featurebox-label" xbl:inherits="value=description,hidden=hidelabel"/>
+						<xul:label class="featurebox-label" xbl:inherits="value=label,hidden=hidelabel"/>
 						<xul:button class="featurebox-button" xbl:inherits="label,hidden=hidebutton"/>
 					</xul:vbox>
 					

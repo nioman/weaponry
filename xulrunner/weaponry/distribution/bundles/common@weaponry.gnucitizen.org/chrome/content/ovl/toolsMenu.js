@@ -32,10 +32,8 @@ installHandler('org.gnucitizen.weaponry.common.toolsMenu', {
 		}
 		
 		if (document.getElementById('tools-menupopup')) {
-			let self = org.gnucitizen.weaponry.common.toolsMenu;
-			
-			bindHandler('tools-menu-open-add-ons-command', 'command', self.openAddOns);
-			bindHandler('tools-menu-open-error-console-command', 'command', self.openErrorConsole);
+			bindHandler('tools-menu-open-add-ons-command', 'command', 'return org.gnucitizen.weaponry.common.toolsMenu.openAddOns(event);');
+			bindHandler('tools-menu-open-error-console-command', 'command', 'return org.gnucitizen.weaponry.common.toolsMenu.openErrorConsole(event);');
 		}
 	}
 });
