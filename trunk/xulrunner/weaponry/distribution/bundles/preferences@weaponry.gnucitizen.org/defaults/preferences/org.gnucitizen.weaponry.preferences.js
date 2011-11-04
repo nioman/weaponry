@@ -87,7 +87,7 @@ pref('signon.SignonFileName3', 'signons3.txt');
 
 // app update preferences
 pref('app.update.mode', 1);
-pref('app.update.auto', true);
+pref('app.update.auto', false);
 pref('app.update.timer', 600000);
 pref('app.update.silent', false);
 pref('app.update.enabled', true);
