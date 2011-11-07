@@ -7,11 +7,68 @@
 	<script type="application/x-javascript" src="chrome://main/content/main.js"/>
 	
 	<vbox id="main-content-vbox" flex="1">
-		<toolbar>
-			<toolbarbutton label="test"/>
-		</toolbar>
+		<tree datasources="main.rdf" ref="http://www.some-fictitious-zoo.com/all-animals" flex="1">
+			<treecols>
+				<treecol id="name" label="Name" primary="true" flex="1"/>
+				<treecol id="species" label="Species" flex="1"/>
+			</treecols>
+			
+			<template> 
+				<rule>
+					<treechildren>
+						<treeitem uri="rdf:*">
+							<treerow>
+								<treecell label="rdf:http://www.some-fictitious-zoo.com/rdf#name"/> 
+								<treecell label="rdf:http://www.some-fictitious-zoo.com/rdf#species"/>
+							</treerow>
+						</treeitem>
+					</treechildren> 
+				</rule> 
+			</template>
+		</tree>
 		
-		<vbox flex="1" style="background:gray;-moz-box-shadow: 1px 1px 10px 0px #000000;"/>
+		<items id="testme">
+			<item id="sssss" name="koko"/>
+			<item id="nono" name="dodo">
+				<item name="lala"/>
+			</item>
+			<item name="koko"/>
+			<item name="koko"/>
+			<item name="koko"/>
+			<item name="koko"/>
+			<item name="koko"/>
+			<item name="koko"/>
+			<item id="nono" name="dodo">
+				<item name="lala">
+					<item name="dfdsfsddfsd"/>
+				</item>
+			</item>
+		</items>
+		
+		<elementree>
+			<item>
+				<item label="" properties=""/>
+			</item>
+		</elementtree>
+		
+		<tree id="d" datasources="#testme" ref="*" querytype="xml"
+		      flags="dont-build-content" flex="1">
+		  <treecols>
+		    <treecol id="name" primary="true" label="Name" flex="1"/>
+		  </treecols>
+		  <template>
+		    <query expr="*"/>
+		    <action>
+		      <treechildren>
+		        <treeitem uri="?">
+		          <treerow>
+		            <treecell label="?name"/>
+		          </treerow>
+		        </treeitem>
+		      </treechildren>
+		    </action>
+		  </template>
+		</tree>
 	</vbox>
 	
 </window>
