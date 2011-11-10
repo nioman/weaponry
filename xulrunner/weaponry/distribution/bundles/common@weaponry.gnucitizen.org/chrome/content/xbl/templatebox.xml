@@ -81,6 +81,10 @@
 						data[this.getAttribute('field')] = this[parameter];
 						
 						self._fireEvent('fieldValueChange', data);
+						
+						// TODO: the exact mechanics of how this should be achieved needs to be revised
+						self.rebuild();
+						//
 					});
 				]]></body>
 			</method>
@@ -279,9 +283,11 @@
 				<action><![CDATA[
 					let self = this;
 					
+					// TODO: add flag to test if auto-rebuilding needs to be used
 					this._lockEvent(this, 'DOMSubtreeModified', function (event) {
 						self.rebuild();
 					});
+					//
 					
 					this.rebuild();
 				]]></action>
