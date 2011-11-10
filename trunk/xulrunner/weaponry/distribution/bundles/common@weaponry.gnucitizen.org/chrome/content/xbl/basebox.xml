@@ -29,6 +29,12 @@
 		</resources>
 		
 		<implementation>
+			<property name="$firstAnonymousNode">
+				<getter><![CDATA[
+					return document.getAnonymousNodes(this)[0];
+				]]></getter>
+			</property>
+			
 			<method name="_removeChildren">
 				<parameter name="$element"/>
 				
@@ -375,8 +381,59 @@
 				]]></body>
 			</method>
 			
+			<method name="_processCommonAttributes">
+				<parameter name="$node"/>
+				
+				<body><![CDATA[
+					let exposed = $node.getAttributeNS('http://www.gnucitizen.org/cmn', 'exposed');
+					
+					if (exposed) {
+						Object.defineProperty(this, exposed, {
+							get: function () {
+								return $node;
+							}
+						});
+					}
+					
+					let properties = $node.getAttributeNS('http://www.gnucitizen.org/cmn', 'properties');
+					
+					if (properties) {
+						let tokens = properties.split(',');
+						let tokensLength = tokens.length;
+						
+						for (let i = 0; i < tokensLength; i += 1) {
+							let token = tokens[i];
+							let subtokens = token.split('=');
+							let property = subtokens[0];
+							let source = subtokens[1];
+							
+							Object.defineProperty(this, property, {
+								get: function () {
+									return $node[source];
+								},
+								
+								set: function (value) {
+									$node[source] = value;
+								}
+							});
+						}
+					}
+					
+					let childNodes = $node.childNodes;
+					let childNodesLength = childNodes.length;
+					
+					for (let i = 0; i < childNodesLength; i += 1) {
+						this._processCommonAttributes(childNodes[i]);
+					}
+				]]></body>
+			</method>
+			
 			<constructor>
 				<action><![CDATA[
+					// NOTE: new improved code
+					this._processCommonAttributes(this.$firstAnonymousNode);
+					//
+					
 					this._ensureProperty(this, '_boundWatches', []);
 					this._ensureProperty(this, '_boundEvents', []);
 					

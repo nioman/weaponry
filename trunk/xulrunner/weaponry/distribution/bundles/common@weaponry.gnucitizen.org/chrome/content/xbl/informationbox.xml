@@ -20,68 +20,57 @@
 <!DOCTYPE bindings SYSTEM "chrome://org.gnucitizen.weaponry.common/locale/xbl/informationbox.dtd">
 <bindings
 	xmlns="http://www.mozilla.org/xbl"
+	xmlns:cmn="http://www.gnucitizen.org/cmn"
 	xmlns:xbl="http://www.mozilla.org/xbl"
 	xmlns:xul="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
 	
 	<binding id="informationbox" extends="chrome://org.gnucitizen.weaponry.common/content/xbl/basebox.xml#basebox">
 		<content>
-			<xul:vbox class="informationbox-container" flex="1">
-				<xul:notificationbox class="informationbox-content" flex="1">
+			<xul:vbox class="informationbox-container" flex="1" cmn:exposed="$container">
+				<xul:notificationbox class="informationbox-notificationbox" flex="1" cmn:exposed="$notificationbox">
 					<children/>
 				</xul:notificationbox>
 			</xul:vbox>
 		</content>
 		
 		<implementation>
-			<property name="$container">
-				<getter><![CDATA[
-					return document.getAnonymousNodes(this)[0];
-				]]></getter>
-			</property>
-			
-			<property name="$content">
-				<getter><![CDATA[
-					return this.$container.childNodes[0];
-				]]></getter>
-			</property>
-			
 			<method name="_getPriority">
 				<parameter name="priority"/>
 				
 				<body><![CDATA[
 					switch (priority.toLowerCase()) {
 						case 'low':
-							return this.$content.PRIORITY_INFO_LOW;
+							return this.$notificationbox.PRIORITY_INFO_LOW;
 						case 'medium':
-							return this.$content.PRIORITY_WARNING_LOW;
+							return this.$notificationbox.PRIORITY_WARNING_LOW;
 						case 'high':
-							return this.$content.PRIORITY_CRITICAL_LOW;
+							return this.$notificationbox.PRIORITY_CRITICAL_LOW;
 						case 'info':
-							return this.$content.PRIORITY_INFO_LOW;
+							return this.$notificationbox.PRIORITY_INFO_LOW;
 						case 'warning':
-							return this.$content.PRIORITY_WARNING_LOW;
+							return this.$notificationbox.PRIORITY_WARNING_LOW;
 						case 'critical':
-							return this.$content.PRIORITY_CRITICAL_LOW;
+							return this.$notificationbox.PRIORITY_CRITICAL_LOW;
 						case 'info_low':
-							return this.$content.PRIORITY_INFO_LOW;
+							return this.$notificationbox.PRIORITY_INFO_LOW;
 						case 'info_medium':
-							return this.$content.PRIORITY_INFO_MEDIUM;
+							return this.$notificationbox.PRIORITY_INFO_MEDIUM;
 						case 'info_heigh':
-							return this.$content.PRIORITY_INFO_HIGH;
+							return this.$notificationbox.PRIORITY_INFO_HIGH;
 						case 'warning_low':
-							return this.$content.PRIORITY_WARNING_LOW;
+							return this.$notificationbox.PRIORITY_WARNING_LOW;
 						case 'warning_medium':
-							return this.$content.PRIORITY_WARNING_MEDIUM;
+							return this.$notificationbox.PRIORITY_WARNING_MEDIUM;
 						case 'warning_heigh':
-							return this.$content.PRIORITY_WARNING_HIGH;
+							return this.$notificationbox.PRIORITY_WARNING_HIGH;
 						case 'critical_low':
-							return this.$content.PRIORITY_CRITICAL_LOW;
+							return this.$notificationbox.PRIORITY_CRITICAL_LOW;
 						case 'critical_medium':
-							return this.$content.PRIORITY_CRITICAL_MEDIUM;
+							return this.$notificationbox.PRIORITY_CRITICAL_MEDIUM;
 						case 'critical_heigh':
-							return this.$content.PRIORITY_CRITICAL_HIGH;
+							return this.$notificationbox.PRIORITY_CRITICAL_HIGH;
 						case 'critical_block':
-							return this.$content.PRIORITY_CRITICAL_BLOCK;
+							return this.$notificationbox.PRIORITY_CRITICAL_BLOCK;
 						default:
 							return null;
 					}
@@ -93,27 +82,15 @@
 				<parameter name="priority"/>
 				
 				<body><![CDATA[
-					this.$content.appendNotification(label, null, null, this._getPriority(priority));
+					this.$notificationbox.appendNotification(label, null, null, this._getPriority(priority));
 				]]></body>
 			</method>
 			
 			<method name="removeAllNotifications">
 				<body><![CDATA[
-					this.$content.removeAllNotifications.apply(this.$content, arguments);
+					this.$notificationbox.removeAllNotifications.apply(this.$notificationbox, arguments);
 				]]></body>
 			</method>
-			
-			<constructor>
-				<action><![CDATA[
-					// pass
-				]]></action>
-			</constructor>
-			
-			<destructor>
-				<action><![CDATA[
-					// pass
-				]]></action>
-			</destructor>
 		</implementation>
 	</binding>
 	
