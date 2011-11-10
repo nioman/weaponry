@@ -388,10 +388,8 @@
 					let exposed = $node.getAttributeNS('http://www.gnucitizen.org/cmn', 'exposed');
 					
 					if (exposed) {
-						Object.defineProperty(this, exposed, {
-							get: function () {
-								return $node;
-							}
+						this.__defineGetter__(exposed, function () {
+							return $node;
 						});
 					}
 					
@@ -407,14 +405,12 @@
 							let property = subtokens[0];
 							let source = subtokens[1];
 							
-							Object.defineProperty(this, property, {
-								get: function () {
-									return $node[source];
-								},
-								
-								set: function (value) {
-									$node[source] = value;
-								}
+							this.__defineGetter__(property, function () {
+								return $node[source];
+							});
+							
+							this.__defineSetter__(property, function (value) {
+								$node[source] = value;
 							});
 						}
 					}
