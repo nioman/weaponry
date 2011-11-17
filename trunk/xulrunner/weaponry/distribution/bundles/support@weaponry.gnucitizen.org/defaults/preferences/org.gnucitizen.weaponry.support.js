@@ -26,8 +26,8 @@ pref('app.update.url.manual', 'http://weaponry.gnucitizen.com');
 pref('app.update.url.details', 'http://weaponry.gnucitizen.com');
 
 // extensions get addons preferences
-pref('extensions.getAddons.cache.enabled', true);
 pref('extensions.getAddons.maxResults', 15);
+pref('extensions.getAddons.cache.enabled', true);
 pref('extensions.getAddons.get.url', 'https://weaponryupdates.appspot.com/extensions/get'); // TODO: add parameters
 pref('extensions.getAddons.search.url', 'https://weaponryupdates.appspot.com/extensions/search'); // TODO: add parameters
 pref('extensions.getAddons.search.browseURL', 'https://weaponryupdates.appspot.com/extensions/search?term=%TERMS%'); // TODO: add parameters
