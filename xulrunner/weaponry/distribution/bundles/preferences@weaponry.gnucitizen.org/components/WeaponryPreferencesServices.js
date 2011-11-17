@@ -81,30 +81,6 @@ WeaponryPreferencesService.prototype = {
 	
 	/* -------------------------------------------------------------------- */
 	
-	updateProxySettings: function (enable, host, port, types) {
-		// TODO: this may need to go into weaponryCommon
-		if (enable) {
-			weaponryCommon.setPref('network.proxy.type', 1);
-		} else {
-			weaponryCommon.setPref('network.proxy.type', 0);
-		}
-		
-		// TODO: take into consideration "types" variable
-		weaponryCommon.setPref('network.proxy.share_proxy_settings', true);
-		//
-		
-		if (host) {
-			weaponryCommon.setPref('network.proxy.http', host);
-		}
-		
-		if (port) {
-			weaponryCommon.setPref('network.proxy.http_port', port);
-		}
-		//
-	},
-	
-	/* -------------------------------------------------------------------- */
-	
 	openPreferencesWindow: function () {
 		return weaponryCommon.openWindowOnce(null, CHROMEBASE + ':preferences-prefwindow', 'chrome://' + CHROMEBASE + '/content/xul/preferencesPrefwindow.xul', null, 'all,chrome,centerscreen,dialog=yes,toolbar=yes');
 	}

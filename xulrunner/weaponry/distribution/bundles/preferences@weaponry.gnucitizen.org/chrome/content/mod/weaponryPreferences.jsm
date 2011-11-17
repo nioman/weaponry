@@ -44,12 +44,6 @@ let weaponryPreferences = new function () {
 	
 	/* -------------------------------------------------------------------- */
 	
-	this.updateProxySettings = function (enable, host, port, types) {
-		return this.preferencesService.updateProxySettings(enable, host, port, types);
-	};
-	
-	/* -------------------------------------------------------------------- */
-	
 	this.openPreferencesWindow = function () {
 		return this.preferencesService.openPreferencesWindow();
 	};
