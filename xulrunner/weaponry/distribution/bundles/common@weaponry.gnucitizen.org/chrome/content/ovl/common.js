@@ -67,7 +67,15 @@ function prompt(message, value) {
 
 installHandler('org.gnucitizen.weaponry.common', {
 	closeWindow: function () {
-		close();
+		// TODO: this is a hack in order to fire the close event
+		let event = document.createEvent('Event');
+		
+		event.initEvent('close', true, true);
+		
+		if (dispatchEvent(event) == true) {
+			close();
+		}
+		//
 	},
 	
 	setupVisualProperties: function () {
