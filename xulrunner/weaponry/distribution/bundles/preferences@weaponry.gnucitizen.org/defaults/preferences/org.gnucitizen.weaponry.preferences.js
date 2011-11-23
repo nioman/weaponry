@@ -130,6 +130,9 @@ pref('app.update.channel', 'release');
 // app.update.url.manual
 // app.update.url.details
 
+// optional plugins update preferences
+// plugins.update.url
+
 // optional extensions preferences
 // extensions.getAddons.maxResults
 // extensions.getAddons.cache.enabled
