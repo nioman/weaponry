@@ -17,6 +17,10 @@
  *  Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
  */
 
+// optional toolkit preferences
+// toolkit.defaultChromeURI
+// toolkit.singletonWindowType
+
 // browser preferences
 pref('browser.preferences.animateFadeIn', false);
 pref('browser.preferences.instantApply', false);
@@ -30,9 +34,13 @@ pref('browser.jsannoyances.disabled', true);
 // dom preferences
 pref('dom.event.contextmenu.enabled', false);
 
-// network preferences
+// optional network preferences
 // network.http.connect.timeout
 // network.http.request.timeout
+
+// optional network protocol handler preferences
+// network.protocol-handler.warn-external.http
+// network.protocol-handler.warn-external.https
 
 // browser download preferences
 pref('browser.download.folderList', 0);
@@ -46,6 +54,25 @@ pref('browser.download.manager.closeWhenDone', false);
 pref('browser.download.manager.openDelay', 0);
 pref('browser.download.manager.focusWhenStarting', false);
 pref('browser.download.manager.flashCount', 2);
+
+// optional browser preferences
+// browser.chromeURL
+// browser.hiddenWindowChromeURL
+
+// optional browser link preferences
+// browser.link.open_external
+// browser.link.open_newwindow
+// browser.link.open_newwindow.restriction
+
+// optional browser xull error preferences
+// browser.xul.error_pages.enabled
+// browser.xul.error_pages.expert_bad_cert
+
+// optional browser formfill preferences
+// browser.formfill.enable
+
+// optional general useragent preferences
+// general.useragent.compatMode.firefox
 
 // alerts preferences
 pref('alerts.totalOpenTime', 4000);
@@ -90,13 +117,33 @@ pref('app.update.mode', 1);
 pref('app.update.auto', false);
 pref('app.update.timer', 600000);
 pref('app.update.silent', false);
-pref('app.update.enabled', true);
 pref('app.update.interval', 86400);
 pref('app.update.showInstalledUI', false);
 pref('app.update.incompatible.mode', 0);
 pref('app.update.nagTimer.restart', 1800);
 pref('app.update.nagTimer.download', 86400);
 pref('app.update.channel', 'release');
+
+// optional app update preferences
+// app.update.enabled
+// app.update.url
+// app.update.url.manual
+// app.update.url.details
+
+// optional extensions preferences
+// extensions.getAddons.maxResults
+// extensions.getAddons.cache.enabled
+// extensions.getAddons.get.url
+// extensions.getAddons.search.url
+// extensions.getAddons.search.browseURL
+// extensions.blocklist.url
+// extensions.webservice.discoverURL
+// extensions.update.url
+// extensions.update.url.manual
+// extensions.update.url.details
+
+// optional security preferences
+// security.alternate_certificate_error_page
 
 /*  GNUCITIZEN (Information Security Think Tank)
  **********************************************/
