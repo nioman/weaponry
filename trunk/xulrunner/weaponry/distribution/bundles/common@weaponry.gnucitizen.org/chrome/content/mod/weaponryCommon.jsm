@@ -515,7 +515,7 @@ let weaponryCommon = new function () {
 	/* -------------------------------------------------------------------- */
 	
 	this.openAddOnsWindow = function () {
-		return this.openWindowOnce(null, 'Extension:Manager', 'chrome://mozapps/content/extensions/extensions.xul', null, 'all,chrome,resizable,centerscreen,toolbar=yes');
+		return this.openWindowOnce(null, 'Addons:Manager', 'chrome://mozapps/content/extensions/extensions.xul', null, 'all,chrome,resizable,centerscreen,toolbar=yes');
 	};
 	
 	this.openErrorConsoleWindow = function () {
