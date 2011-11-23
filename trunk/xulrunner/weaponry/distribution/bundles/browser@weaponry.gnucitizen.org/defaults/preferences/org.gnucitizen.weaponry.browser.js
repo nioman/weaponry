@@ -21,9 +21,6 @@
 // org.gnucitizen.weaponry.browser.defaultBrowserURI
 // org.gnucitizen.weaponry.browser.defaultTabURI
 
-// optional browser preferences
-// browser.chromeURL
-
 // browser link preferences
 pref('browser.link.open_external', 1);
 pref('browser.link.open_newwindow', 1);
