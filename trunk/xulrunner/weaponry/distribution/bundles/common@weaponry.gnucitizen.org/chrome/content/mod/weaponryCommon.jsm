@@ -770,6 +770,10 @@ let weaponryCommon = new function () {
 		}
 	};
 	
+	this.lockPref = function (key) {
+		this.preferencesService.lockPref(key);
+	};
+	
 	/* -------------------------------------------------------------------- */
 	
 	this.allowCertificate = function (host, port, certificate, status, isTemporary) {
