@@ -17,23 +17,22 @@
  *  Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
  */
 
-// optional weaponry browser preferences
-// org.gnucitizen.weaponry.browser.defaultBrowserURI
-// org.gnucitizen.weaponry.browser.defaultTabURI
-
-// browser link preferences
 pref('browser.link.open_external', 1);
 pref('browser.link.open_newwindow', 1);
 pref('browser.link.open_newwindow.restriction', 0);
 
-// browser xul error preferences
+/* ------------------------------------------------------------------------ */
+
+// org.gnucitizen.weaponry.browser.defaultBrowserURI
+// org.gnucitizen.weaponry.browser.defaultTabURI
+
+/* ------------------------------------------------------------------------ */
+
 pref('browser.xul.error_pages.enabled', true);
 pref('browser.xul.error_pages.expert_bad_cert', false);
 
-// browser formfill preferences
-pref('browser.formfill.enable', true);
+/* ------------------------------------------------------------------------ */
 
-// general useragent preferences
 pref('general.useragent.compatMode.firefox', true);
 
 /*  GNUCITIZEN (Information Security Think Tank)
