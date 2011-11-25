@@ -10,6 +10,8 @@ skin         org.gnucitizen.weaponry.extensions classic/1.0     file:chrome/skin
 content      org.gnucitizen.weaponry.extensions.sites           file:sites/
 resource     org.gnucitizen.weaponry.extensions.sites           file:sites/
 
+overlay      chrome://org.gnucitizen.weaponry.common/content/ovl/toolsMenu.xul     chrome://org.gnucitizen.weaponry.extensions/content/ovl/toolsMenu.xul
+
 #
 # xpcom registration
 #

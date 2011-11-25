@@ -1,5 +1,5 @@
 /**
- *  org.gnucitizen.weaponry.extensions.js
+ *  toolsMenu.js
  *  Copyright (C) 2007-2011  GNUCITIZEN
  *  
  *  This program is free software; you can redistribute it and/or modify
@@ -17,12 +17,23 @@
  *  Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
  */
 
-pref('xpinstall.whitelist.add.1', 'addons.mozilla.org');
-pref('xpinstall.whitelist.add.2', 'addons.weaponry.gnucitizen.org');
-
-/* ------------------------------------------------------------------------ */
-
-// org.gnucitizen.weaponry.extensions.eanbled
+// TODO: open and check addons window specific to the current configuration, i.e org.gnucitizen.weaponry.extensions.eanbled
+installHandler('org.gnucitizen.weaponry.extensions.toolsMenu', {
+	openAddOns: function () {
+		weaponryCommon.openAddOnsWindow();
+	},
+	
+	onDOMContentLoaded: function (event) {
+		if (event.target != document) {
+			return;
+		}
+		
+		if (document.getElementById('tools-menupopup')) {
+			bindHandler('weaponry-extensions-tools-menu-open-add-ons-command', 'command', 'return org.gnucitizen.weaponry.extensions.toolsMenu.openAddOns(event);');
+		}
+	}
+});
+//
 
 /*  GNUCITIZEN (Information Security Think Tank)
  **********************************************/
