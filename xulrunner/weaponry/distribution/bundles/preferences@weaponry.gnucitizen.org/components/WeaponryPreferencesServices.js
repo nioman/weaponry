@@ -76,7 +76,7 @@ WeaponryPreferencesService.prototype = {
 	/* -------------------------------------------------------------------- */
 	
 	updatePreferences: function () {
-		weaponryCommon.setPref('browser.preferences.animateFadeIn', weaponryCommon.xulAppInfo.OS == 'Darwin');
+		// pass
 	},
 	
 	/* -------------------------------------------------------------------- */

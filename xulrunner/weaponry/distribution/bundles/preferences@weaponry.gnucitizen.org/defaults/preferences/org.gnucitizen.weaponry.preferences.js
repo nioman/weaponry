@@ -17,136 +17,140 @@
  *  Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
  */
 
-// optional toolkit preferences
 // toolkit.defaultChromeURI
 // toolkit.singletonWindowType
 
-// browser preferences
-pref('browser.preferences.animateFadeIn', false);
-pref('browser.preferences.instantApply', false);
+/* ------------------------------------------------------------------------ */
 
-// general preferences
-pref('general.warnOnAboutConfig', false);
-
-// browser jsannoyances preferences
-pref('browser.jsannoyances.disabled', true);
-
-// dom preferences
-pref('dom.event.contextmenu.enabled', false);
-
-// optional network preferences
-// network.http.connect.timeout
-// network.http.request.timeout
-
-// optional network protocol handler preferences
-// network.protocol-handler.warn-external.http
-// network.protocol-handler.warn-external.https
-
-// browser download preferences
-pref('browser.download.folderList', 0);
-pref('browser.download.useDownloadDir', true);
-pref('browser.download.manager.showAlertOnComplete', true);
-pref('browser.download.manager.showAlertInterval', 2000);
-pref('browser.download.manager.retention', 2);
-pref('browser.download.manager.showWhenStarting', true);
-pref('browser.download.manager.useWindow', true);
-pref('browser.download.manager.closeWhenDone', false);
-pref('browser.download.manager.openDelay', 0);
-pref('browser.download.manager.focusWhenStarting', false);
-pref('browser.download.manager.flashCount', 2);
-
-// optional browser preferences
 // browser.chromeURL
 // browser.hiddenWindowChromeURL
 
-// optional browser link preferences
+/* ------------------------------------------------------------------------ */
+
+// app.update.altwindowtype
+pref('app.update.auto', false);
+pref('app.update.backgroundMaxErrors', 10);
+// app.update.cert.checkAttributes
+// app.update.cert.maxErrors
+// app.update.cert.requireBuiltIn
+// app.update.certs.1.commonName
+// app.update.certs.1.issuerName
+// app.update.certs.2.commonName
+// app.update.certs.2.issuerName
+pref('app.update.channel', 'release');
+// app.update.enabled
+pref('app.update.idletime', 60);
+pref('app.update.incompatible.mode', 0);
+pref('app.update.interval', 86400);
+// app.update.log
+pref('app.update.mode', 1);
+pref('app.update.promptWaitTime', 86400);
+pref('app.update.showInstalledUI', false);
+pref('app.update.silent', false);
+pref('app.update.timerMinimumDelay', 120);
+// app.update.url
+// app.update.url.details
+// app.update.url.manual
+
+/* ------------------------------------------------------------------------ */
+
+pref('extensions.autoDisableScopes', 15);
+// extensions.blocklist.detailsURL
+// extensions.blocklist.enabled
+// extensions.blocklist.interval
+// extensions.blocklist.itemURL
+// extensions.blocklist.level
+// extensions.blocklist.url
+pref('extensions.dss.enabled', false);
+pref('extensions.dss.switchPending', false);
+// extensions.getAddons.cache.enabled
+// extensions.getAddons.get.url
+// extensions.getAddons.maxResults
+// extensions.getAddons.search.browseURL
+// extensions.getAddons.search.url
+pref('extensions.ignoreMTimeChanges', false);
+// extensions.logging.enabled
+pref('extensions.update.autoUpdateDefault', true);
+pref('extensions.update.enabled', true);
+pref('extensions.update.interval', 86400);
+// extensions.update.url
+// extensions.webservice.discoverURL
+// extensions.{GUID}.update.enabled
+// extensions.{GUID}.update.url
+
+/* ------------------------------------------------------------------------ */
+
+// plugins.update.url
+pref('plugins.update.notifyUser', false);
+
+/* ------------------------------------------------------------------------ */
+
+// browser.dictionaries.download.url
+
+/* ------------------------------------------------------------------------ */
+
+// keyword.enabled
+// keyword.URL
+
+/* ------------------------------------------------------------------------ */
+
+pref('general.warnOnAboutConfig', false);
+
+/* ------------------------------------------------------------------------ */
+
+pref('browser.jsannoyances.disabled', true);
+pref('dom.event.contextmenu.enabled', false);
+
+/* ------------------------------------------------------------------------ */
+
+// network.http.connect.timeout
+// network.http.request.timeout
+// network.protocol-handler.warn-external.http
+// network.protocol-handler.warn-external.https
+
+/* ------------------------------------------------------------------------ */
+
+pref('browser.download.folderList', 0);
+pref('browser.download.useDownloadDir', true);
+pref('browser.download.manager.closeWhenDone', false);
+pref('browser.download.manager.flashCount', 2);
+pref('browser.download.manager.focusWhenStarting', false);
+pref('browser.download.manager.openDelay', 0);
+pref('browser.download.manager.retention', 2);
+pref('browser.download.manager.showAlertOnComplete', true);
+pref('browser.download.manager.showAlertInterval', 2000);
+pref('browser.download.manager.showWhenStarting', true);
+pref('browser.download.manager.useWindow', true);
+
+/* ------------------------------------------------------------------------ */
+
 // browser.link.open_external
 // browser.link.open_newwindow
 // browser.link.open_newwindow.restriction
 
-// optional browser xull error preferences
+/* ------------------------------------------------------------------------ */
+
 // browser.xul.error_pages.enabled
 // browser.xul.error_pages.expert_bad_cert
 
-// optional browser formfill preferences
-// browser.formfill.enable
+/* ------------------------------------------------------------------------ */
 
-// optional general useragent preferences
 // general.useragent.compatMode.firefox
 
-// alerts preferences
+/* ------------------------------------------------------------------------ */
+
 pref('alerts.totalOpenTime', 4000);
 pref('alerts.slideIncrement', 1);
 pref('alerts.slideIncrementTime', 10);
 
-// extensions misc preferences
-pref('extensions.ignoreMTimeChanges', false);
-pref('extensions.logging.enabled', false);
+/* ------------------------------------------------------------------------ */
 
-// extensions update preferences
-pref('extensions.update.enabled', true);
-pref('extensions.update.interval', 86400);
-
-// extensions dss preferences
-pref('extensions.dss.enabled', false);
-pref('extensions.dss.switchPending', false);
-
-// skin preferences
-pref('general.skins.selectedSkin', 'classic/1.0');
-
-// accessibility typeaheadfind preferences
-pref('accessibility.typeaheadfind', true);
-pref('accessibility.typeaheadfind.timeout', 5000);
-pref('accessibility.typeaheadfind.flashBar', 1);
-pref('accessibility.typeaheadfind.linksonly', false);
-pref('accessibility.typeaheadfind.casesensitive', 0);
-
-// signon misc preferences
-pref('signon.debug', false);
-pref('signon.autofillForms', true);
-pref('signon.rememberSignons', true);
-pref('signon.expireMasterPassword', false);
-
-// signon file preferences
-pref('signon.SignonFileName', 'signons.txt');
-pref('signon.SignonFileName2', 'signons2.txt');
-pref('signon.SignonFileName3', 'signons3.txt');
-
-// app update preferences
-pref('app.update.mode', 1);
-pref('app.update.auto', false);
-pref('app.update.timer', 600000);
-pref('app.update.silent', false);
-pref('app.update.interval', 86400);
-pref('app.update.showInstalledUI', false);
-pref('app.update.incompatible.mode', 0);
-pref('app.update.nagTimer.restart', 1800);
-pref('app.update.nagTimer.download', 86400);
-pref('app.update.channel', 'release');
-
-// optional app update preferences
-// app.update.enabled
-// app.update.url
-// app.update.url.manual
-// app.update.url.details
-
-// optional plugins update preferences
-// plugins.update.url
-
-// optional extensions preferences
-// extensions.getAddons.maxResults
-// extensions.getAddons.cache.enabled
-// extensions.getAddons.get.url
-// extensions.getAddons.search.url
-// extensions.getAddons.search.browseURL
-// extensions.blocklist.url
-// extensions.webservice.discoverURL
-// extensions.update.url
-// extensions.update.url.manual
-// extensions.update.url.details
-
-// optional security preferences
 // security.alternate_certificate_error_page
+
+/* ------------------------------------------------------------------------ */
+
+// xpinstall.whitelist.add.1
+// xpinstall.whitelist.add.2
 
 /*  GNUCITIZEN (Information Security Think Tank)
  **********************************************/
