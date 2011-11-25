@@ -17,20 +17,22 @@
  *  Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
  */
 
-// optional weaponry common preferences
+pref('browser.hiddenWindowChromeURL', 'chrome://org.gnucitizen.weaponry.common/content/xul/hiddenWindow.xul');
+
+/* ------------------------------------------------------------------------ */
+
 // org.gnucitizen.weaponry.common.defaultUitype
 // org.gnucitizen.weaponry.common.defaultLookandfeel
 
-// optional weaponry common about preferences
+/* ------------------------------------------------------------------------ */
+
 // org.gnucitizen.weaponry.common.brandingAboutURI
 
-// weaponry common xbl preferences
+/* ------------------------------------------------------------------------ */
+
 pref('org.gnucitizen.weaponry.common.xbl.dbtable.tablesNum', 5);
 pref('org.gnucitizen.weaponry.common.xbl.dbtable.tableSize', 500);
 pref('org.gnucitizen.weaponry.common.xbl.statusbox.timeout', 3000);
-
-// browser preferences
-pref('browser.hiddenWindowChromeURL', 'chrome://org.gnucitizen.weaponry.common/content/xul/hiddenWindow.xul');
 
 /*  GNUCITIZEN (Information Security Think Tank)
  **********************************************/

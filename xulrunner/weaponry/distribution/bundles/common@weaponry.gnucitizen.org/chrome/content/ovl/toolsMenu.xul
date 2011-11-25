@@ -28,7 +28,6 @@
 	</stringbundleset>
 	
 	<commandset id="common-commandset">
-		<command id="tools-menu-open-add-ons-command" label="&tools-menu-open-add-ons-command-label;"/>
 		<command id="tools-menu-open-error-console-command" label="&tools-menu-open-error-console-command-label;"/>
 	</commandset>
 	
@@ -38,7 +37,6 @@
 	
 	<menu id="tools-menu" label="&tools-menu-label;">
 		<menupopup id="tools-menupopup">
-			<menuitem id="tools-menupopup-open-add-ons-menuitem" command="tools-menu-open-add-ons-command"/>
 			<menuitem id="tools-menupopup-open-error-console-menuitem" key="tools-menu-open-error-console-key" command="tools-menu-open-error-console-command"/>
 		</menupopup>
 	</menu>
