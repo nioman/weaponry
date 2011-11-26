@@ -17,7 +17,6 @@
  *  Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
  */
 
-// toolkit preferences
 pref('toolkit.defaultChromeURI', 'chrome://org.gnucitizen.acidplatform.basic/content/xul/mainWindow.xul');
 pref('toolkit.singletonWindowType', 'org.gnucitizen.acidplatform.basic:main-window');
 
