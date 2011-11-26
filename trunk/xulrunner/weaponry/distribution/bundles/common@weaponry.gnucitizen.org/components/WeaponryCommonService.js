@@ -204,7 +204,7 @@ WeaponryCommonService.prototype = {
 			}
 		};
 		
-		// TODO: classID needs to be unique in order for this to work in xulrunner 2.0
+		// TODO: classID needs to be unique in order for this to work in xulrunner 2.0 >
 		componentManager.registerFactory(classID, 'Weaponry Scheme Viewer for ' + scheme, '@mozilla.org/network/protocol;1?name=' + scheme, factory);
 		//
 	},
@@ -237,7 +237,7 @@ WeaponryCommonService.prototype = {
 			}
 		};
 		
-		// TODO: classID needs to be unique in order for this to work in xulrunner 2.0
+		// TODO: classID needs to be unique in order for this to work in xulrunner 2.0 >
 		componentManager.registerFactory(classID, 'Weaponry Content Converter for ' + mimeType, '@mozilla.org/streamconv;1?from=' + mimeType + '&to=*/*', factory);
 		//
 	},
