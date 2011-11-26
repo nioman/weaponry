@@ -17,25 +17,30 @@
  *  Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
  */
 
-// weaponry development preferences
 pref('org.gnucitizen.weaponry.development.warn', true);
 pref('org.gnucitizen.weaponry.development.openErrorConsoleOnStartup', false);
 
-// app update preferences
-pref("app.update.log", true);
+/* ------------------------------------------------------------------------ */
 
-// browser dom preferences
+pref('app.update.log', true);
+pref('extensions.logging.enabled', true);
+
+/* ------------------------------------------------------------------------ */
+
 pref('browser.dom.window.dump.enabled', true);
 
-// javascript options preferences
+/* ------------------------------------------------------------------------ */
+
 pref('javascript.options.showInConsole', true);
 pref('javascript.options.strict', true);
 
-// nglayout debug preferences
+/* ------------------------------------------------------------------------ */
+
 pref('nglayout.debug.disable_xul_cache', true);
 pref('nglayout.debug.disable_xul_fastload', true);
 
-// inspector preferences
+/* ------------------------------------------------------------------------ */
+
 pref('inspector.blink.border-color', '#CC0000');
 pref('inspector.blink.border-width', 2);
 pref('inspector.blink.duration', 1200);
