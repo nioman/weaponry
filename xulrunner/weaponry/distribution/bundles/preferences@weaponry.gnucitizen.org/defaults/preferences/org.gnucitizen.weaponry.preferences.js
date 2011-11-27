@@ -89,6 +89,10 @@ pref('plugins.update.notifyUser', false);
 
 /* ------------------------------------------------------------------------ */
 
+pref('browser.preferences.instantApply', false);
+
+/* ------------------------------------------------------------------------ */
+
 // keyword.enabled
 // keyword.URL
 
