@@ -32,7 +32,7 @@
 	</commandset>
 	
 	<menupopup id="tools-menupopup">
-		<menuitem id="tools-menupopup-open-add-ons-menuitem" command="weaponry-extensions-tools-menu-open-add-ons-command"/>
+		<menuitem id="weaponry-extensions-tools-menupopup-open-add-ons-menuitem" command="weaponry-extensions-tools-menu-open-add-ons-command"/>
 	</menupopup>
 	
 </overlay>
