@@ -128,17 +128,13 @@
 							
 							let sorter;
 							
-							switch (orderbydirection) {
-								case 'asc':
-									sorter = this._sortAscHelper;
-									
-									break;
-								case 'dsc':
-									sorter = this._sortDscHelper;
-									
-									break;
-								default:
-									throw new Error('unrecognized value for orderbydirection attribute');
+							if (orderbydirection == 'asc') {
+								sorter = this._sortAscHelper;
+							} else
+							if (orderbydirection == 'dsc') {
+								sorter = this._sortDscHelper;
+							} else {
+								throw new Error('unrecognized value for orderbydirection attribute');
 							}
 							
 							let position = 0;

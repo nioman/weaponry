@@ -86,27 +86,17 @@ installHandler('org.gnucitizen.weaponry.common', {
 		if (defaultLookAndFeel) {
 			documentElement.setAttribute('lookandfeel', defaultLookAndFeel);
 		} else {
-			switch (osType) {
-				case 'Darwin':
-				case 'Linux':
-				case 'WINNT':
-					documentElement.setAttribute('lookandfeel', osType);
-					
-					break;
-				default:
-					documentElement.setAttribute('lookandfeel', 'other');
+			if (osType == 'Darwin' || osType == 'Lunux' || osType == 'WINNT') {
+				documentElement.setAttribute('lookandfeel', osType);
+			} else {
+				documentElement.setAttribute('lookandfeel', 'other');
 			}
 		}
 		
-		switch (osType) {
-			case 'Darwin':
-			case 'Linux':
-			case 'WINNT':
-				documentElement.setAttribute('uiflavour', osType);
-				
-				break;
-			default:
-				documentElement.setAttribute('uiflavour', 'other');
+		if (osType == 'Darwin' || osType == 'Lunux' || osType == 'WINNT') {
+			documentElement.setAttribute('uiflavour', osType);
+		} else {
+			documentElement.setAttribute('uiflavour', 'other');
 		}
 		
 		let defaultUitype = weaponryCommon.getPref('org.gnucitizen.weaponry.common.defaultUitype');

@@ -90,23 +90,18 @@ WeaponryCommonService.prototype = {
 			
 			let value;
 			
-			switch (name) {
-				case 'scheme':
-					value = schemeViewersItems.getCharPref(item);
-					
-					break;
-				case 'uri':
-					value = schemeViewersItems.getCharPref(item);
-					
-					break;
-				case 'wrap':
-					value = schemeViewersItems.getBoolPref(item);
-					
-					break;
-				default:
-					Components.utils.reportError('unrecognized scheme viewer entry name ' + item);
-					
-					return;
+			if (name == 'scheme') {
+				value = schemeViewersItems.getCharPref(item);
+			} else
+			if (name == 'uri') {
+				value = schemeViewersItems.getCharPref(item);
+			} else
+			if (name == 'wrap') {
+				value = schemeViewersItems.getBoolPref(item);
+			} else {
+				Components.utils.reportError('unrecognized scheme viewer entry name ' + item);
+				
+				return;
 			}
 			
 			if (!schemeViewers[id]) {
@@ -147,20 +142,15 @@ WeaponryCommonService.prototype = {
 			
 			let value;
 			
-			switch (name) {
-				case 'mimeType':
-					value = contentConvertersItems.getCharPref(item);
-					
-					break;
-				case 'uri':
-					value = contentConvertersItems.getCharPref(item);
-					
-					break;
-					
-				default:
-					Components.utils.reportError('unrecognized content converter entry name ' + item);
-					
-					return;
+			if (name == 'mimeType') {
+				value = contentConvertersItems.getCharPref(item);
+			} else
+			if (name == 'uri') {
+				value = contentConvertersItems.getCharPref(item);
+			} else {
+				Components.utils.reportError('unrecognized content converter entry name ' + item);
+				
+				return;
 			}
 			
 			if (!contentConverters[id]) {

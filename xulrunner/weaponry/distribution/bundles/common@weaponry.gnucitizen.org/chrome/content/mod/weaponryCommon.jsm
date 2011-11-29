@@ -703,46 +703,24 @@ let weaponryCommon = new function () {
 	this.getPref = function (key, type) {
 		// TODO: needs refactoring, the code needs to check of the key exists before performing this check here
 		if (!type) {
-			switch (this.preferencesService.getPrefType(key)) {
-				case CI.nsIPrefBranch.PREF_STRING:
-					type = 'string';
-					
-					break;
-				case CI.nsIPrefBranch.PREF_INT:
-					type = 'number';
-					
-					break;
-				case CI.nsIPrefBranch.PREF_BOOL:
-					type = 'boolean';
-					
-					break;
-				case CI.nsIPrefBranch.PREF_INVALID:
-					
-					return null;
-				default:
-					type = 'string';
-					
-					break;
+			let prefType = this.preferencesService.getPrefType(key);
+			
+			if (prefType == CI.nsIPrefBranch.PREF_STRING) {
+				type = 'Char';
+			} else
+			if (prefType == CI.nsIPrefBranch.PREF_INT) {
+				type = 'Int';
+			} else
+			if (prefType == CI.nsIPrefBranch.PREF_BOOL) {
+				type = 'Bool';
+			} else
+			if (prefType == CI.nsIPrefBranch.PREF_INVALID) {
+				return null;
+			} else {
+				type = 'Char';
 			}
 		}
 		//
-		
-		switch (type) {
-			case 'string':
-				type = 'Char';
-				
-				break;
-			case 'number':
-				type = 'Int';
-				
-				break;
-			case 'boolean':
-				type = 'Bool';
-				
-				break;
-			default:
-				throw new Error('unknown type: ' + type) ;
-		}
 		
 		try {
 			return this.preferencesService['get' + type + 'Pref'](key);
@@ -758,16 +736,19 @@ let weaponryCommon = new function () {
 			type = typeof(value);
 		}
 		
-		switch (type) {
-			case 'string':
-				return this.preferencesService.setCharPref(key, value);
-			case 'number':
-				return this.preferencesService.setIntPref(key, value);
-			case 'boolean':
-				return this.preferencesService.setBoolPref(key, value);
-			default:
-				throw new Error('unknown type: ' + type);
+		// TODO: use the is functions (at the top) to detect the type properly
+		if (type == 'string') {
+			return this.preferencesService.setCharPref(key, value);
+		} else
+		if (type == 'number') {
+			return this.preferencesService.setIntPref(key, value);
+		} else
+		if (type == 'boolean') {
+			return this.preferencesService.setBoolPref(key, value);
+		} else {
+			throw new Error('unknown type: ' + type);
 		}
+		//
 	};
 	
 	this.lockPref = function (key) {
@@ -802,19 +783,14 @@ let weaponryCommon = new function () {
 		if (port == -1) {
 			let scheme = uri.scheme.toUpperCase();
 			
-			switch (scheme) {
-				case 'HTTP':
-					port = 80;
-					
-					break;
-				case 'HTTPS':
-					port = 443 ;
-					
-					break;
-				case 'FTP':
-					port = 21;
-					
-					break;
+			if (scheme == 'HTTP') {
+				port = 80;
+			} else
+			if (scheme == 'HTTPS') {
+				port = 443;
+			} else
+			if (scheme == 'FTP') {
+				port = 21;
 			}
 		}
 		
@@ -1261,19 +1237,16 @@ let weaponryCommon = new function () {
 		let port = channel.URI.port;
 		
 		if (channel.URI.port == -1) {
-			switch (channel.URI.scheme.toLowerCase()) {
-				case 'ftp':
-					port = 21;
-					
-					break;
-				case 'http':
-					port = 80;
-					
-					break;
-				case 'https':
-					port = 443;
-					
-					break;
+			let scheme = channel.URI.scheme.toLowerCase();
+			
+			if (scheme == 'ftp') {
+				port = 21;
+			} else
+			if (scheme == 'http') {
+				port = 80;
+			} else
+			if (scheme == 'https') {
+				port = 443;
 			}
 		}
 		
@@ -1856,15 +1829,18 @@ let weaponryCommon = new function () {
 	/* -------------------------------------------------------------------- */
 	
 	this.getPathSeparator = function () {
-		switch (this.xulAppInfo.OS) {
-			case 'Darwin':
-				return ':';
-			case 'Linux':
-				return ':';
-			case 'WINNT':
-				return ';';
-			default:
-				throw new Error('unsupported os');
+		let os = this.xulAppInfo.OS;
+		
+		if (os == 'Darwin') {
+			return ':';
+		} else
+		if (os == 'Linux') {
+			return ':';
+		} else
+		if (os == 'WINNT') {
+			return ';';
+		} else {
+			throw new Error('unsupported os');
 		}
 	};
 	
