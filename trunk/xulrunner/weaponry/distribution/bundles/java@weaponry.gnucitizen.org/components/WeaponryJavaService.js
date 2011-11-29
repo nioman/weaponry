@@ -52,21 +52,24 @@ WeaponryJavaService.prototype = {
 	/* -------------------------------------------------------------------- */
 	
 	findJavaInterpeter: function () {
-		switch (weaponryCommon.xulAppInfo.OS) {
-			case 'Darwin':
-				// TODO: take into consideration JAVAHOME and PATH environment variables
-				
-				let file = weaponryCommon.createInstance('@mozilla.org/file/local;1', 'nsILocalFile');
-				
-				file.initWithPath('/usr/bin/java');
-				
-				return file;
-			case 'Linux':
-				throw new Error('not implemented'); // TODO: add code here
-			case 'WINNT':
-				throw new Error('not implemented'); // TODO: add code here
-			default:
-				throw new Error('cannot find java interpreter');
+		let os = weaponryCommon.xulAppInfo.OS;
+		
+		if (os == 'Darwin') {
+			// TODO: take into consideration JAVAHOME and PATH environment variables
+			let file = weaponryCommon.createInstance('@mozilla.org/file/local;1', 'nsILocalFile');
+			
+			file.initWithPath('/usr/bin/java');
+			
+			return file;
+			//
+		} else
+		if (os == 'Linux') {
+			throw new Error('not implemented'); // TODO: add code here
+		} else
+		if (os == 'WINNT') {
+			throw new Error('not implemented'); // TODO: add code here
+		} else {
+			throw new Error('cannot find java interpreter');
 		}
 	},
 	
