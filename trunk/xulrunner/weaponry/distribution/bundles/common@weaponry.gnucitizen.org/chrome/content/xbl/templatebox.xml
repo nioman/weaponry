@@ -158,37 +158,34 @@
 							let attribute = attributes[j];
 							
 							if (attribute.name == 'field') {
-								switch($node.tagName) {
-									case 'checkbox':
-										$workNode = this._getWorkNode($node.id);
-										
-										if ($workNode) {
-											$workNode.setAttribute('checked', fields[attribute.value]);
-										}
-										
-										this._handleFieldValueChange($workNode, 'click', 'checked');
-										
-										break;
-									case 'textbox':
-										$workNode = this._getWorkNode($node.id);
-										
-										if ($workNode) {
-											$workNode.setAttribute('value', fields[attribute.value]);
-										}
-										
-										this._handleFieldValueChange($workNode, 'change', 'value');
-										
-										break;
-									case 'label':
-										$workNode = this._getWorkNode($node.id);
-										
-										if ($workNode) {
-											$workNode.setAttribute('value', fields[attribute.value]);
-										}
-										
-										break;
-									default:
-										continue;
+								let tagName = $node.tagName;
+								
+								if (tagName == 'checkbox') {
+									$workNode = this._getWorkNode($node.id);
+									
+									if ($workNode) {
+										$workNode.setAttribute('checked', fields[attribute.value]);
+									}
+									
+									this._handleFieldValueChange($workNode, 'click', 'checked');
+								} else
+								if (tagName == 'textbox') {
+									$workNode = this._getWorkNode($node.id);
+									
+									if ($workNode) {
+										$workNode.setAttribute('value', fields[attribute.value]);
+									}
+									
+									this._handleFieldValueChange($workNode, 'change', 'value');
+								} else
+								if (tagName == 'label') {
+									$workNode = this._getWorkNode($node.id);
+									
+									if ($workNode) {
+										$workNode.setAttribute('value', fields[attribute.value]);
+									}
+								} else {
+									continue;
 								}
 							} else
 							if ((/\?\w+\^?/).test(attribute.value)) {
