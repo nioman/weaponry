@@ -43,7 +43,7 @@ pref('plugins.update.url', 'https://weaponry.gnucitizen.org/plugins/update?local
 
 /* ------------------------------------------------------------------------ */
 
-pref('org.gnucitizen.weaponry.common.brandingAboutURI', 'chrome://org.gnucitizen.websecurify.support/content/xul/aboutWindow.xul');
+pref('org.gnucitizen.weaponry.common.brandingAboutURI', 'chrome://org.gnucitizen.weaponry.support/content/xul/aboutWindow.xul');
 
 /* ------------------------------------------------------------------------ */
 
