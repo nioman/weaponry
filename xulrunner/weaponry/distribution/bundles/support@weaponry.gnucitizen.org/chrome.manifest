@@ -11,3 +11,12 @@ content      org.gnucitizen.weaponry.support.sites                              
 resource     org.gnucitizen.weaponry.support.sites                                file:sites/
 
 overlay      chrome://org.gnucitizen.weaponry.common/content/ovl/helpMenu.xul     chrome://org.gnucitizen.weaponry.support/content/ovl/helpMenu.xul
+
+#
+# xpcom registration
+#
+
+interfaces     components/IWeaponryAboutModule.xpt
+
+component      {409929c0-aae1-434b-a843-fb8640f510fa}                  components/WeaponryAboutModule.js
+contract       @mozilla.org/network/protocol/about;1?what=weaponry     {409929c0-aae1-434b-a843-fb8640f510fa}
