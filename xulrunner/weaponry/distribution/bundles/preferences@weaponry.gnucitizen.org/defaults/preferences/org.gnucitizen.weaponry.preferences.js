@@ -63,6 +63,7 @@ pref('extensions.autoDisableScopes', 15);
 // extensions.blocklist.url
 pref('extensions.dss.enabled', false);
 pref('extensions.dss.switchPending', false);
+// extensions.enabledScopes
 // extensions.getAddons.cache.enabled
 // extensions.getAddons.get.url
 // extensions.getAddons.maxResults
