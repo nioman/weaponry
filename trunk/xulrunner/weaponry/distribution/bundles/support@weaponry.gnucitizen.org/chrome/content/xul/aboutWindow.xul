@@ -32,7 +32,7 @@
 	</stringbundleset>
 	
 	<vbox id="about-window-content-vbox" flex="1">
-		<!-- TODO: add code here -->
+		<label id="about-window-version-label" value="&about-window-version-label-value;"/>
 	</vbox>
 	
 	<box id="common-box"/>
