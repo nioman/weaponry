@@ -37,11 +37,13 @@
 	</keyset>
 	
 	<menupopup id="file-menupopup">
-		<menuitem id="file-menu-quit-menuitem" key="file-menu-quit-key" command="file-menu-quit-command"/>
+		<menuseparator id="help-menu-quit-menuseparator" position="1000"/>
+		<menuitem id="file-menu-quit-menuitem" key="file-menu-quit-key" command="file-menu-quit-command" position="1001"/>
 	</menupopup>
 	
 	<menupopup id="help-menupopup">
-		<menuitem id="help-menu-about-menuitem" command="help-menu-about-command"/>
+		<menuitem id="help-menu-about-menuitem" command="help-menu-about-command" position="1"/>
+		<menuseparator id="help-menu-about-menuseparator" position="2"/>
 	</menupopup>
 	
 </overlay>
