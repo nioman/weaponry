@@ -21,37 +21,12 @@
 
 /* ------------------------------------------------------------------------ */
 
-#browser-perspective-tabs-richtabbox > .richtabbox-container .richtabpanel-toolbarbutton[checked="true"] {
-}
-
-#browser-perspective-tabs-richtabbox > .richtabbox-container .richtabpanel-toolbarbutton:not([checked="true"]) {
-}
-
-/* ------------------------------------------------------------------------ */
-
 #browser-perspective-open-tab-toolbarbutton > image {
 	margin: 0px;
 }
 
 #browser-perspective-open-tab-toolbarbutton > label {
 	display: none;
-}
-
-/* ------------------------------------------------------------------------ */
-
-#browser-perspective-open-tab-toolbarbutton {
-}
-
-#browser-perspective-open-tab-toolbarbutton:not([disabled="true"]):hover {
-}
-
-#browser-perspective-open-tab-toolbarbutton[disabled="true"] {
-}
-
-#browser-perspective-open-tab-toolbarbutton:not([disabled="true"]):hover:active {
-}
-
-#browser-perspective-open-tab-toolbarbutton > image {
 }
 
 /* ------------------------------------------------------------------------ */
@@ -72,26 +47,14 @@
 	list-style-image: url("images/open.mac.pressed.png");
 }
 
-:root[lookandfeel="mac"] #browser-perspective-open-tab-toolbarbutton > image {
-}
-
 /* ------------------------------------------------------------------------ */
 
 :root[lookandfeel="lin"] #browser-perspective-open-tab-toolbarbutton {
 	list-style-image: url("moz-icon://stock/gtk-add?size=16");
 }
 
-:root[lookandfeel="lin"] #browser-perspective-open-tab-toolbarbutton:not([disabled="true"]):hover {
-}
-
 :root[lookandfeel="lin"] #browser-perspective-open-tab-toolbarbutton[disabled="true"] {
 	list-style-image: url("moz-icon://stock/gtk-add?size=16&state=disabled");
-}
-
-:root[lookandfeel="lin"] #browser-perspective-open-tab-toolbarbutton:not([disabled="true"]):hover:active {
-}
-
-:root[lookandfeel="lin"] #browser-perspective-open-tab-toolbarbutton > image {
 }
 
 /* ------------------------------------------------------------------------ */
@@ -110,9 +73,6 @@
 
 :root[lookandfeel="win"] #browser-perspective-open-tab-toolbarbutton:not([disabled="true"]):hover:active {
 	list-style-image: url("images/open.win.pressed.png");
-}
-
-:root[lookandfeel="win"] #browser-perspective-open-tab-toolbarbutton > image {
 }
 
 /*  GNUCITIZEN (Information Security Think Tank)

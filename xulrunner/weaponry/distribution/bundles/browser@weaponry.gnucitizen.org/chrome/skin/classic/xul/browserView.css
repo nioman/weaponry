@@ -88,12 +88,6 @@
 
 /* ------------------------------------------------------------------------ */
 
-:root[lookandfeel="mac"] #browser-view-navigation-toolbox {
-}
-
-:root[lookandfeel="mac"] #browser-view-navigation-toolbox > toolbar {
-}
-
 :root[lookandfeel="mac"] #browser-view-navigation-toolbar {
 	padding: 4px 0px 4px 0px;
 	-moz-appearance: -moz-mac-unified-toolbar;
@@ -116,9 +110,6 @@
 	background: -moz-linear-gradient(top, #ffffff, #cccccc);
 }
 
-:root[lookandfeel="mac"] .browser-view-navigation-button[disabled="true"] {
-}
-
 :root[lookandfeel="mac"] .browser-view-navigation-button[disabled="true"] > image {
 	opacity: 0.4;
 }
@@ -133,9 +124,6 @@
 	background: #b5b5b5;
 	text-shadow: 0px 1px rgba(255, 255, 255, .4);
 	box-shadow: inset rgba(0, 0, 0, 0.3) 0px -6px 10px, inset #000 0px 1px 3px, inset rgba(0, 0, 0, 0.2) 0px 1px 3px, 0px 1px rgba(255, 255, 255, .4);
-}
-
-:root[lookandfeel="mac"] .browser-view-navigation-button > image {
 }
 
 :root[lookandfeel="mac"] #browser-view-back-toolbarbutton {
@@ -166,9 +154,6 @@
 	height: 22px;
 }
 
-:root[lookandfeel="mac"] #browser-view-statusbar {
-}
-
 :root[lookandfeel="mac"][parentwindowtype="org.gnucitizen.weaponry.browser:browser-perspective"] #browser-view-navigation-toolbar {
 	-moz-appearance: none;
 	background: -moz-mac-chrome-inactive;
@@ -197,31 +182,10 @@
 	padding: 2px 2px 2px 0px;
 }
 
-:root[lookandfeel="lin"] #browser-view-navigation-toolbar > *:first-child {
-}
-
-:root[lookandfeel="lin"] #browser-view-navigation-toolbar > *:last-child {
-}
-
 :root[lookandfeel="lin"] .browser-view-navigation-button {
 	width: auto;
 	height: auto;
 	-moz-appearance: toolbarbutton;
-}
-
-:root[lookandfeel="lin"] .browser-view-navigation-button[disabled="true"] {
-}
-
-:root[lookandfeel="lin"] .browser-view-navigation-button[disabled="true"] > image {
-}
-
-:root[lookandfeel="lin"] .browser-view-navigation-button:not([disabled="true"]):active {
-}
-
-:root[lookandfeel="lin"] .browser-view-navigation-button:not([disabled="true"])[checked="true"] {
-}
-
-:root[lookandfeel="lin"] .browser-view-navigation-button > image {
 }
 
 :root[lookandfeel="lin"] #browser-view-back-toolbarbutton {
@@ -265,9 +229,6 @@
 	padding: 2px;
 }
 
-:root[lookandfeel="lin"][parentwindowtype="org.gnucitizen.weaponry.browser:browser-perspective"] #browser-view-navigation-toolbar {
-}
-
 /* ------------------------------------------------------------------------ */
 
 :root[lookandfeel="win"] #browser-view-navigation-toolbox {
@@ -277,20 +238,11 @@
 	border-bottom: 1px solid ThreeDHighlight;
 }
 
-:root[lookandfeel="win"] #browser-view-navigation-toolbox > toolbar {
-}
-
 :root[lookandfeel="win"] #browser-view-navigation-toolbar {
 	border: 0px;
 	padding: 2px;
 	-moz-appearance: none;
 	background: transparent;
-}
-
-:root[lookandfeel="win"] #browser-view-navigation-toolbar > *:first-child {
-}
-
-:root[lookandfeel="win"] #browser-view-navigation-toolbar > *:last-child {
 }
 
 :root[lookandfeel="win"] .browser-view-navigation-button {
@@ -303,30 +255,6 @@
 	opacity: 0.2;
 }
 
-:root[lookandfeel="win"] .browser-view-navigation-button[disabled="true"] > image {
-}
-
-:root[lookandfeel="win"] .browser-view-navigation-button:not([disabled="true"]):active {
-}
-
-:root[lookandfeel="win"] .browser-view-navigation-button:not([disabled="true"])[checked="true"] {
-}
-
-:root[lookandfeel="win"] .browser-view-navigation-button > image {
-}
-
-:root[lookandfeel="win"] #browser-view-back-toolbarbutton {
-}
-
-:root[lookandfeel="win"] #browser-view-forward-toolbarbutton {
-}
-
-:root[lookandfeel="win"] #browser-view-reload-toolbarbutton {
-}
-
-:root[lookandfeel="win"] #browser-view-stop-toolbarbutton  {
-}
-
 :root[lookandfeel="win"] #browser-view-content-locationbox {
 	height: 23px;
 	margin-left: 2px;
@@ -334,9 +262,6 @@
 
 :root[lookandfeel="win"] #browser-view-statusbar {
 	padding: 2px;
-}
-
-:root[lookandfeel="win"][parentwindowtype="org.gnucitizen.weaponry.browser:browser-perspective"] #browser-view-navigation-toolbar {
 }
 
 /* ------------------------------------------------------------------------ */
