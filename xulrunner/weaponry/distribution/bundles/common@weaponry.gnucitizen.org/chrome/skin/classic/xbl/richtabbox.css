@@ -136,7 +136,7 @@ richtabbox.native > .richtabbox-container .richtabpanels-selectbutton > label {
 [lookandfeel="Linux"] richtabbox.native > toolbar                                      ,
 [lookandfeel="Linux"] richtabbox.native > .richtabbox-container .richtabpanels-toolbar {
 	-moz-appearance: none;
-	-moz-box-shadow: inset 0px -1px 0px ButtonFace;
+	box-shadow: inset 0px -1px 0px ButtonFace;
 }
 
 [lookandfeel="Linux"] richtabbox.native > .richtabbox-container .richtabpanels-toolbar {
@@ -199,7 +199,7 @@ richtabbox.native > .richtabbox-container .richtabpanels-selectbutton > label {
 	border: 0px;
 	-moz-appearance: none;
 	background: transparent;
-	-moz-box-shadow: inset 0px -1px 0px ThreeDHighlight;
+	box-shadow: inset 0px -1px 0px ThreeDHighlight;
 }
 
 [lookandfeel="WINNT"] richtabbox.native > toolbar                                      ,
@@ -260,11 +260,11 @@ richtabbox.native > .richtabbox-container .richtabpanels-selectbutton > label {
 }
 
 [lookandfeel="WINNT"]:-moz-system-metric(windows-default-theme) richtabbox.native > .richtabbox-container .richtabbox-toolbox {
-	-moz-box-shadow: inset 0px -1px 0px ThreeDShadow;
+	box-shadow: inset 0px -1px 0px ThreeDShadow;
 }
 
 [lookandfeel="WINNT"]:-moz-system-metric(windows-default-theme) richtabbox.native > .richtabbox-container .richtabpanel-toolbarbutton:not([checked="true"]) {
-	-moz-box-shadow: inset 0px -1px 0px ThreeDShadow;
+	box-shadow: inset 0px -1px 0px ThreeDShadow;
 }
 
 [lookandfeel="WINNT"]:-moz-system-metric(windows-default-theme) richtabbox.native > .richtabbox-container .richtabpanel-toolbarbutton[closable="true"] > image {
