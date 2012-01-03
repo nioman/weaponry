@@ -23,10 +23,6 @@ const CI = Components.interfaces;
 
 /* ------------------------------------------------------------------------ */
 
-const CHROMEBASE = 'org.gnucitizen.weaponry.support';
-
-/* ------------------------------------------------------------------------ */
-
 Components.utils.import('resource://gre/modules/XPCOMUtils.jsm');
 
 /* ------------------------------------------------------------------------ */
@@ -55,7 +51,7 @@ WeaponryAboutModule.prototype = {
 	
 	newChannel: function(uri) {
 		let ioService = CC['@mozilla.org/network/io-service;1'].getService(CI.nsIIOService);
-		let channel = ioService.newChannel('chrome://' + CHROMEBASE + '/content/htm/about.htm', null, null);
+		let channel = ioService.newChannel('chrome://org.gnucitizen.weaponry.support/content/htm/about.htm', null, null);
 		
 		channel.originalURI = uri;
 		
