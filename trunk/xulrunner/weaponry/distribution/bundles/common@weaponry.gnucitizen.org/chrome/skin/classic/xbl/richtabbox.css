@@ -67,17 +67,11 @@ richtabbox.native > .richtabbox-container .richtabpanels-selectbutton > label {
 	display: none;
 }
 
-:root[lookandfeel="mac"] richtabbox.native > .richtabbox-container .richtabbox-toolbox {
-}
-
 :root[lookandfeel="mac"] richtabbox.native > toolbar                                      ,
 :root[lookandfeel="mac"] richtabbox.native > .richtabbox-container .richtabpanels-toolbar {
 	padding-top: 2px;
 	-moz-appearance: none;
 	background: -moz-linear-gradient(#797979, #8a8a8a);
-}
-
-:root[lookandfeel="mac"] richtabbox.native > .richtabbox-container .richtabpanels-toolbar {
 }
 
 :root[lookandfeel="mac"] richtabbox.native > .richtabbox-container .richtabpanel-toolbarbutton {
@@ -123,31 +117,16 @@ richtabbox.native > .richtabbox-container .richtabpanels-selectbutton > label {
 	list-style-image: url("images/close.mac.inactive.pressed.png");
 }
 
-:root[lookandfeel="mac"] richtabbox.native > .richtabbox-container .richtabpanels-selectbutton {
-}
-
-:root[lookandfeel="lin"] richtabbox.native > .richtabbox-container .richtabbox-toolbox {
-}
-
 :root[lookandfeel="lin"] richtabbox.native > toolbar                                      ,
 :root[lookandfeel="lin"] richtabbox.native > .richtabbox-container .richtabpanels-toolbar {
 	-moz-appearance: none;
 	box-shadow: inset 0px -1px 0px ButtonFace;
 }
 
-:root[lookandfeel="lin"] richtabbox.native > .richtabbox-container .richtabpanels-toolbar {
-}
-
 :root[lookandfeel="lin"] richtabbox.native > .richtabbox-container .richtabpanel-toolbarbutton {
 	margin-right: 1px;
 	-moz-appearance: tab;
 	-moz-box-direction: reverse;
-}
-
-:root[lookandfeel="lin"] richtabbox.native > .richtabbox-container .richtabpanel-toolbarbutton[checked="true"] {
-}
-
-:root[lookandfeel="lin"] richtabbox.native > .richtabbox-container .richtabpanel-toolbarbutton:not([checked="true"]) {
 }
 
 :root[lookandfeel="lin"] richtabbox.native > .richtabbox-container .richtabpanel-toolbarbutton[closable="true"] > image {
@@ -170,15 +149,6 @@ richtabbox.native > .richtabbox-container .richtabpanels-selectbutton > label {
 	border-color: ThreeDShadow;
 	background-color: ButtonShadow;
 	list-style-image: url("moz-icon://stock/gtk-close?size=menu");
-}
-
-:root[lookandfeel="lin"] richtabbox.native > .richtabbox-container .richtabpanel-toolbarbutton[closable="true"]:not([checked="true"]) > image {
-}
-
-:root[lookandfeel="lin"] richtabbox.native > .richtabbox-container .richtabpanel-toolbarbutton[closable="true"]:not([checked="true"]) > image[state="hovered"] {
-}
-
-:root[lookandfeel="lin"] richtabbox.native > .richtabbox-container .richtabpanel-toolbarbutton[closable="true"]:not([checked="true"]) > image[state="clicked"] {
 }
 
 :root[lookandfeel="lin"] richtabbox.native > .richtabbox-container .richtabpanels-selectbutton {
@@ -209,12 +179,6 @@ richtabbox.native > .richtabbox-container .richtabpanels-selectbutton > label {
 	-moz-box-direction: reverse;
 }
 
-:root[lookandfeel="win"] richtabbox.native > .richtabbox-container .richtabpanel-toolbarbutton[checked="true"] {
-}
-
-:root[lookandfeel="win"] richtabbox.native > .richtabbox-container .richtabpanel-toolbarbutton:not([checked="true"]) {
-}
-
 :root[lookandfeel="win"] richtabbox.native > .richtabbox-container .richtabpanel-toolbarbutton[closable="true"] > image {
 	margin-left: -14px;
 }
@@ -229,15 +193,6 @@ richtabbox.native > .richtabbox-container .richtabpanels-selectbutton > label {
 
 :root[lookandfeel="win"] richtabbox.native > .richtabbox-container .richtabpanel-toolbarbutton[closable="true"] > image[state="clicked"] {
 	list-style-image: url("images/close.clasic.pressed.png");
-}
-
-:root[lookandfeel="win"] richtabbox.native > .richtabbox-container .richtabpanel-toolbarbutton[closable="true"]:not([checked="true"]) > image {
-}
-
-:root[lookandfeel="win"] richtabbox.native > .richtabbox-container .richtabpanel-toolbarbutton[closable="true"]:not([checked="true"]) > image[state="hovered"] {
-}
-
-:root[lookandfeel="win"] richtabbox.native > .richtabbox-container .richtabpanel-toolbarbutton[closable="true"]:not([checked="true"]) > image[state="clicked"] {
 }
 
 :root[lookandfeel="win"] richtabbox.native > .richtabbox-container .richtabpanels-selectbutton {

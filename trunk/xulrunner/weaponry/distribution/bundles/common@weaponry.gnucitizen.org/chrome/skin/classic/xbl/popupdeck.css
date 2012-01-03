@@ -66,11 +66,5 @@ popupdeck > popupdeckpanel.native:not(:first-child) > .popupdeckpanel-container 
 	border: 1px solid WindowFrame;
 }
 
-/* ------------------------------------------------------------------------ */
-
-popupdeck.fullscreen > popupdeckpanel:not(:first-child) > .popupdeckpanel-container .popupdeckpanel-content ,
-popupdeck > popupdeckpanel.fullscreen:not(:first-child) > .popupdeckpanel-container .popupdeckpanel-content {
-}
-
 /*  GNUCITIZEN (Information Security Think Tank)
  **********************************************/

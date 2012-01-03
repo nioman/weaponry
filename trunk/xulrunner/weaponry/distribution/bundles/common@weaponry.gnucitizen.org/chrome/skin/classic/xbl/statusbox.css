@@ -36,15 +36,5 @@ statusbox > .statusbox-container .statusbox-panel {
 	border: 1px solid ButtonShadow;
 }
 
-/* ------------------------------------------------------------------------ */
-
-:root[lookandfeel="lin"] statusbox > .statusbox-container .statusbox-panel {
-}
-
-/* ------------------------------------------------------------------------ */
-
-:root[lookandfeel="win"] statusbox > .statusbox-container .statusbox-panel {
-}
-
 /*  GNUCITIZEN (Information Security Think Tank)
  **********************************************/
