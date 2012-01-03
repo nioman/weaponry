@@ -19,7 +19,7 @@
 
 statusbox > .statusbox-container .statusbox-panel {
 	color: InfoText;
-	-moz-box-shadow: none;
+	box-shadow: none;
 	-moz-appearance: none;
 	border-left-width: 0px;
 	-moz-window-shadow: none;

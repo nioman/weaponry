@@ -110,5 +110,93 @@ richsidebox.plain > .richsidebox-container richlistbox > richlistitem:nth-child(
 	background-color: transparent;
 }
 
+/* ------------------------------------------------------------------------ */
+
+richsidebox.cosmopolitan > .richsidebox-container .richsidepanel-richlistitem {
+	overflow: hidden;
+}
+
+richsidebox.cosmopolitan > .richsidebox-container .richsidepanel-hbox {
+	-moz-box-align: center;
+}
+
+richsidebox.cosmopolitan > .richsidebox-container .richsidebox-richlistbox {
+	margin: 0px;
+	padding: 0px;
+	max-width: 60px;
+	-moz-appearance: none;
+}
+
+[lookandfeel="WINNT"] richsidebox.cosmopolitan > .richsidebox-container .richsidebox-richlistbox {
+	background: #000000;
+}
+
+[lookandfeel="Darwin"] richsidebox.cosmopolitan > .richsidebox-container .richsidebox-richlistbox {
+	background: #212121;
+}
+
+[lookandfeel="Linux"] richsidebox.cosmopolitan > .richsidebox-container .richsidebox-richlistbox {
+	background: #212121;
+}
+
+[lookandfeel="WINNT"] richsidebox.cosmopolitan:-moz-window-inactive > .richsidebox-container .richsidebox-richlistbox {
+	background: #000000;
+}
+
+[lookandfeel="Darwin"] richsidebox.cosmopolitan:-moz-window-inactive > .richsidebox-container .richsidebox-richlistbox {
+	background: #252525;
+}
+
+[lookandfeel="Linux"] richsidebox.cosmopolitan:-moz-window-inactive > .richsidebox-container .richsidebox-richlistbox {
+	background: #252525;
+}
+
+[lookandfeel="WINNT"] richsidebox.cosmopolitan > .richsidebox-container .richsidepanel-richlistitem {
+	/* pass */
+}
+
+[lookandfeel="Darwin"] richsidebox.cosmopolitan > .richsidebox-container .richsidepanel-richlistitem {
+	color: #ffffff;
+	background: transparent;
+	filter: url("effects/common.svg#f4");
+}
+
+[lookandfeel="Linux"] richsidebox.cosmopolitan > .richsidebox-container .richsidepanel-richlistitem {
+	/* pass */
+}
+
+[lookandfeel="WINNT"] richsidebox.cosmopolitan > .richsidebox-container .richsidepanel-richlistitem[selected="true"] {
+	background: #eeeeee;
+}
+
+[lookandfeel="Darwin"] richsidebox.cosmopolitan > .richsidebox-container .richsidepanel-richlistitem[selected="true"] {
+	filter: url("effects/common.svg#f5");
+}
+
+[lookandfeel="Linux"] richsidebox.cosmopolitan > .richsidebox-container .richsidepanel-richlistitem[selected="true"] {
+	/* pass */
+}
+
+richsidebox.cosmopolitan > .richsidebox-container .richsidepanel-hbox {
+	-moz-box-pack: center;
+	-moz-box-align: center;
+}
+
+richsidebox.cosmopolitan > .richsidebox-container .richsidepanel-hbox image {
+	margin: 10px 0px 10px 0px;
+}
+
+richsidebox.cosmopolitan > .richsidebox-container .richsidepanel-hbox label {
+	display: none;
+}
+
+richsidebox.cosmopolitan > .richsidebox-container .richsidebox-splitter {
+	display: none;
+}
+
+richsidebox.cosmopolitan > richsidepanel {
+	background: #f5f5f5;
+}
+
 /*  GNUCITIZEN (Information Security Think Tank)
  **********************************************/

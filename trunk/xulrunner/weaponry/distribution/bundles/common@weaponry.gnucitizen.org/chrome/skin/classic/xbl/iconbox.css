@@ -24,12 +24,12 @@ icon.modern > .icon-container .icon-vbox {
 
 icon.modern > .icon-container .icon-vbox:hover {
 	-moz-border-radius: 5px;
-	-moz-box-shadow: inset 0px 0px 1px 1px #444444;
+	box-shadow: inset 0px 0px 1px 1px #444444;
 }
 
 icon.modern[selected="true"] > .icon-container .icon-vbox {
 	-moz-border-radius: 5px;
-	-moz-box-shadow: inset 0px 0px 1px 1px #444444;
+	box-shadow: inset 0px 0px 1px 1px #444444;
 }
 
 /* ------------------------------------------------------------------------ */
