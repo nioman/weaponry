@@ -63,67 +63,67 @@
 
 /* ------------------------------------------------------------------------ */
 
-[lookandfeel="mac"] #browser-perspective-open-tab-toolbarbutton {
+:root[lookandfeel="mac"] #browser-perspective-open-tab-toolbarbutton {
 	list-style-image: url("images/open.mac.still.png");
 }
 
-[lookandfeel="mac"] #browser-perspective-open-tab-toolbarbutton:not([disabled="true"]):hover {
+:root[lookandfeel="mac"] #browser-perspective-open-tab-toolbarbutton:not([disabled="true"]):hover {
 	list-style-image: url("images/open.mac.hovered.png");
 }
 
-[lookandfeel="mac"] #browser-perspective-open-tab-toolbarbutton[disabled="true"] {
+:root[lookandfeel="mac"] #browser-perspective-open-tab-toolbarbutton[disabled="true"] {
 	list-style-image: url("images/open.mac.disabled.png");
 }
 
-[lookandfeel="mac"] #browser-perspective-open-tab-toolbarbutton:not([disabled="true"]):hover:active {
+:root[lookandfeel="mac"] #browser-perspective-open-tab-toolbarbutton:not([disabled="true"]):hover:active {
 	list-style-image: url("images/open.mac.pressed.png");
 }
 
-[lookandfeel="mac"] #browser-perspective-open-tab-toolbarbutton > image {
+:root[lookandfeel="mac"] #browser-perspective-open-tab-toolbarbutton > image {
 	/* pass */
 }
 
 /* ------------------------------------------------------------------------ */
 
-[lookandfeel="lin"] #browser-perspective-open-tab-toolbarbutton {
+:root[lookandfeel="lin"] #browser-perspective-open-tab-toolbarbutton {
 	list-style-image: url("moz-icon://stock/gtk-add?size=16");
 }
 
-[lookandfeel="lin"] #browser-perspective-open-tab-toolbarbutton:not([disabled="true"]):hover {
+:root[lookandfeel="lin"] #browser-perspective-open-tab-toolbarbutton:not([disabled="true"]):hover {
 	/* pass */
 }
 
-[lookandfeel="lin"] #browser-perspective-open-tab-toolbarbutton[disabled="true"] {
+:root[lookandfeel="lin"] #browser-perspective-open-tab-toolbarbutton[disabled="true"] {
 	list-style-image: url("moz-icon://stock/gtk-add?size=16&state=disabled");
 }
 
-[lookandfeel="lin"] #browser-perspective-open-tab-toolbarbutton:not([disabled="true"]):hover:active {
+:root[lookandfeel="lin"] #browser-perspective-open-tab-toolbarbutton:not([disabled="true"]):hover:active {
 	/* pass */
 }
 
-[lookandfeel="lin"] #browser-perspective-open-tab-toolbarbutton > image {
+:root[lookandfeel="lin"] #browser-perspective-open-tab-toolbarbutton > image {
 	/* pass */
 }
 
 /* ------------------------------------------------------------------------ */
 
-[lookandfeel="win"] #browser-perspective-open-tab-toolbarbutton {
+:root[lookandfeel="win"] #browser-perspective-open-tab-toolbarbutton {
 	list-style-image: url("images/open.win.still.png");
 }
 
-[lookandfeel="win"] #browser-perspective-open-tab-toolbarbutton:not([disabled="true"]):hover {
+:root[lookandfeel="win"] #browser-perspective-open-tab-toolbarbutton:not([disabled="true"]):hover {
 	list-style-image: url("images/open.win.hovered.png");
 }
 
-[lookandfeel="win"] #browser-perspective-open-tab-toolbarbutton[disabled="true"] {
+:root[lookandfeel="win"] #browser-perspective-open-tab-toolbarbutton[disabled="true"] {
 	list-style-image: url("images/open.win.disabled.png");
 }
 
-[lookandfeel="win"] #browser-perspective-open-tab-toolbarbutton:not([disabled="true"]):hover:active {
+:root[lookandfeel="win"] #browser-perspective-open-tab-toolbarbutton:not([disabled="true"]):hover:active {
 	list-style-image: url("images/open.win.pressed.png");
 }
 
-[lookandfeel="win"] #browser-perspective-open-tab-toolbarbutton > image {
+:root[lookandfeel="win"] #browser-perspective-open-tab-toolbarbutton > image {
 	/* pass */
 }
 
