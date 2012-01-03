@@ -57,7 +57,6 @@ WeaponryDevelopmentService.prototype = {
 		if (topic == 'profile-before-change') {
 			this.deinitializeComponent(subject, topic, data);
 		} else
-		
 		if (topic == 'final-ui-startup') {
 			this.updateUI();
 		}
