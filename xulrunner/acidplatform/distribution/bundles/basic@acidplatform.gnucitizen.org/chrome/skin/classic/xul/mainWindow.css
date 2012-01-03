@@ -89,19 +89,19 @@
 
 /* ------------------------------------------------------------------------ */
 
-[lookandfeel="Darwin"] #main-window-statusbar {
+[lookandfeel="mac"] #main-window-statusbar {
 	padding: 5px 0px 5px 0px;
 }
 
 /* ------------------------------------------------------------------------ */
 
-[lookandfeel="Linux"] #main-window-statusbar {
+[lookandfeel="lin"] #main-window-statusbar {
 	padding: 2px;
 }
 
 /* ------------------------------------------------------------------------ */
 
-[lookandfeel="WINNT"] #main-window-statusbar {
+[lookandfeel="win"] #main-window-statusbar {
 	padding: 2px;
 }
 
