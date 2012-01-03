@@ -84,7 +84,6 @@
 		<stringbundle id="preferences-prefwindow-stringbundle" src="chrome://org.gnucitizen.weaponry.preferences/locale/xul/preferencesPrefwindow.properties"/>
 	</stringbundleset>
 	
-	<script type="application/x-javascript" src="chrome://org.gnucitizen.weaponry.preferences/content/inc/general.js"/>
 	<script type="application/x-javascript" src="chrome://org.gnucitizen.weaponry.preferences/content/xul/preferencesPrefwindow.js"/>
 	
 </prefwindow>
