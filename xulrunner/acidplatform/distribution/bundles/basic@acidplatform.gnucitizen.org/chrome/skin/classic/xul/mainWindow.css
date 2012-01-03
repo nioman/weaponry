@@ -39,8 +39,10 @@
 
 .main-window-application-item-vbox:hover {
 	-moz-border-radius: 5px;
-	-moz-box-shadow: inset 0px 0px 1px 1px #444444;
+	box-shadow: inset 0px 0px 1px 1px #444444;
 }
+
+/* ------------------------------------------------------------------------ */
 
 .main-window-application-item-label {
 	color: #ffffff;

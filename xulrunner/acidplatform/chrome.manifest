@@ -2,8 +2,8 @@
 # branding chrome registration
 #
 
-content      branding                 file:chrome/branding/content/
 resource     branding                 file:chrome/branding/
+content      branding                 file:chrome/branding/content/
 locale       branding en-US           file:chrome/branding/locale/en-US/
 skin         branding classic/1.0     file:chrome/branding/skin/classic/
 
@@ -11,8 +11,8 @@ skin         branding classic/1.0     file:chrome/branding/skin/classic/
 # main chrome registration
 #
 
-content      main                 file:chrome/main/content/
 resource     main                 file:chrome/main/
+content      main                 file:chrome/main/content/
 locale       main en-US           file:chrome/main/locale/en-US/
 skin         main classic/1.0     file:chrome/main/skin/classic/
 
@@ -20,5 +20,5 @@ skin         main classic/1.0     file:chrome/main/skin/classic/
 # chrome registration
 #
 
-content      sites     file:sites/
 resource     sites     file:sites/
+content      sites     file:sites/
