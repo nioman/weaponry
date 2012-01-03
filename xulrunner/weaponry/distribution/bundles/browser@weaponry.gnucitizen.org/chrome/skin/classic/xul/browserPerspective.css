@@ -22,11 +22,9 @@
 /* ------------------------------------------------------------------------ */
 
 #browser-perspective-tabs-richtabbox > .richtabbox-container .richtabpanel-toolbarbutton[checked="true"] {
-	/* pass */
 }
 
 #browser-perspective-tabs-richtabbox > .richtabbox-container .richtabpanel-toolbarbutton:not([checked="true"]) {
-	/* pass */
 }
 
 /* ------------------------------------------------------------------------ */
@@ -42,23 +40,18 @@
 /* ------------------------------------------------------------------------ */
 
 #browser-perspective-open-tab-toolbarbutton {
-	/* pass */
 }
 
 #browser-perspective-open-tab-toolbarbutton:not([disabled="true"]):hover {
-	/* pass */
 }
 
 #browser-perspective-open-tab-toolbarbutton[disabled="true"] {
-	/* pass */
 }
 
 #browser-perspective-open-tab-toolbarbutton:not([disabled="true"]):hover:active {
-	/* pass */
 }
 
 #browser-perspective-open-tab-toolbarbutton > image {
-	/* pass */
 }
 
 /* ------------------------------------------------------------------------ */
@@ -80,7 +73,6 @@
 }
 
 :root[lookandfeel="mac"] #browser-perspective-open-tab-toolbarbutton > image {
-	/* pass */
 }
 
 /* ------------------------------------------------------------------------ */
@@ -90,7 +82,6 @@
 }
 
 :root[lookandfeel="lin"] #browser-perspective-open-tab-toolbarbutton:not([disabled="true"]):hover {
-	/* pass */
 }
 
 :root[lookandfeel="lin"] #browser-perspective-open-tab-toolbarbutton[disabled="true"] {
@@ -98,11 +89,9 @@
 }
 
 :root[lookandfeel="lin"] #browser-perspective-open-tab-toolbarbutton:not([disabled="true"]):hover:active {
-	/* pass */
 }
 
 :root[lookandfeel="lin"] #browser-perspective-open-tab-toolbarbutton > image {
-	/* pass */
 }
 
 /* ------------------------------------------------------------------------ */
@@ -124,7 +113,6 @@
 }
 
 :root[lookandfeel="win"] #browser-perspective-open-tab-toolbarbutton > image {
-	/* pass */
 }
 
 /*  GNUCITIZEN (Information Security Think Tank)

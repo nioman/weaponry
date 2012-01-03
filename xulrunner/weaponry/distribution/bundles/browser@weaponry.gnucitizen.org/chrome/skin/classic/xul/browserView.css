@@ -89,11 +89,9 @@
 /* ------------------------------------------------------------------------ */
 
 :root[lookandfeel="mac"] #browser-view-navigation-toolbox {
-	/* pass */
 }
 
 :root[lookandfeel="mac"] #browser-view-navigation-toolbox > toolbar {
-	/* pass */
 }
 
 :root[lookandfeel="mac"] #browser-view-navigation-toolbar {
@@ -119,7 +117,6 @@
 }
 
 :root[lookandfeel="mac"] .browser-view-navigation-button[disabled="true"] {
-	/* pass */
 }
 
 :root[lookandfeel="mac"] .browser-view-navigation-button[disabled="true"] > image {
@@ -139,7 +136,6 @@
 }
 
 :root[lookandfeel="mac"] .browser-view-navigation-button > image {
-	/* pass */
 }
 
 :root[lookandfeel="mac"] #browser-view-back-toolbarbutton {
@@ -171,7 +167,6 @@
 }
 
 :root[lookandfeel="mac"] #browser-view-statusbar {
-	/* pass */
 }
 
 :root[lookandfeel="mac"][parentwindowtype="org.gnucitizen.weaponry.browser:browser-perspective"] #browser-view-navigation-toolbar {
@@ -203,11 +198,9 @@
 }
 
 :root[lookandfeel="lin"] #browser-view-navigation-toolbar > *:first-child {
-	/* pass */
 }
 
 :root[lookandfeel="lin"] #browser-view-navigation-toolbar > *:last-child {
-	/* pass */
 }
 
 :root[lookandfeel="lin"] .browser-view-navigation-button {
@@ -217,23 +210,18 @@
 }
 
 :root[lookandfeel="lin"] .browser-view-navigation-button[disabled="true"] {
-	/* pass */
 }
 
 :root[lookandfeel="lin"] .browser-view-navigation-button[disabled="true"] > image {
-	/* pass */
 }
 
 :root[lookandfeel="lin"] .browser-view-navigation-button:not([disabled="true"]):active {
-	/* pass */
 }
 
 :root[lookandfeel="lin"] .browser-view-navigation-button:not([disabled="true"])[checked="true"] {
-	/* pass */
 }
 
 :root[lookandfeel="lin"] .browser-view-navigation-button > image {
-	/* pass */
 }
 
 :root[lookandfeel="lin"] #browser-view-back-toolbarbutton {
@@ -278,7 +266,6 @@
 }
 
 :root[lookandfeel="lin"][parentwindowtype="org.gnucitizen.weaponry.browser:browser-perspective"] #browser-view-navigation-toolbar {
-	/* pass */
 }
 
 /* ------------------------------------------------------------------------ */
@@ -291,7 +278,6 @@
 }
 
 :root[lookandfeel="win"] #browser-view-navigation-toolbox > toolbar {
-	/* pass */
 }
 
 :root[lookandfeel="win"] #browser-view-navigation-toolbar {
@@ -302,11 +288,9 @@
 }
 
 :root[lookandfeel="win"] #browser-view-navigation-toolbar > *:first-child {
-	/* pass */
 }
 
 :root[lookandfeel="win"] #browser-view-navigation-toolbar > *:last-child {
-	/* pass */
 }
 
 :root[lookandfeel="win"] .browser-view-navigation-button {
@@ -320,35 +304,27 @@
 }
 
 :root[lookandfeel="win"] .browser-view-navigation-button[disabled="true"] > image {
-	/* pass */
 }
 
 :root[lookandfeel="win"] .browser-view-navigation-button:not([disabled="true"]):active {
-	/* pass */
 }
 
 :root[lookandfeel="win"] .browser-view-navigation-button:not([disabled="true"])[checked="true"] {
-	/* pass */
 }
 
 :root[lookandfeel="win"] .browser-view-navigation-button > image {
-	/* pass */
 }
 
 :root[lookandfeel="win"] #browser-view-back-toolbarbutton {
-	/* pass */
 }
 
 :root[lookandfeel="win"] #browser-view-forward-toolbarbutton {
-	/* pass */
 }
 
 :root[lookandfeel="win"] #browser-view-reload-toolbarbutton {
-	/* pass */
 }
 
 :root[lookandfeel="win"] #browser-view-stop-toolbarbutton  {
-	/* pass */
 }
 
 :root[lookandfeel="win"] #browser-view-content-locationbox {
@@ -361,7 +337,6 @@
 }
 
 :root[lookandfeel="win"][parentwindowtype="org.gnucitizen.weaponry.browser:browser-perspective"] #browser-view-navigation-toolbar {
-	/* pass */
 }
 
 /* ------------------------------------------------------------------------ */
