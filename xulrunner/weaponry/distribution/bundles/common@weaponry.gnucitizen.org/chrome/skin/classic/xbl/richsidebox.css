@@ -152,7 +152,6 @@ richsidebox.cosmopolitan > .richsidebox-container .richsidebox-richlistbox {
 }
 
 :root[lookandfeel="win"] richsidebox.cosmopolitan > .richsidebox-container .richsidepanel-richlistitem {
-	/* pass */
 }
 
 :root[lookandfeel="mac"] richsidebox.cosmopolitan > .richsidebox-container .richsidepanel-richlistitem {
@@ -162,7 +161,6 @@ richsidebox.cosmopolitan > .richsidebox-container .richsidebox-richlistbox {
 }
 
 :root[lookandfeel="lin"] richsidebox.cosmopolitan > .richsidebox-container .richsidepanel-richlistitem {
-	/* pass */
 }
 
 :root[lookandfeel="win"] richsidebox.cosmopolitan > .richsidebox-container .richsidepanel-richlistitem[selected="true"] {
@@ -174,7 +172,6 @@ richsidebox.cosmopolitan > .richsidebox-container .richsidebox-richlistbox {
 }
 
 :root[lookandfeel="lin"] richsidebox.cosmopolitan > .richsidebox-container .richsidepanel-richlistitem[selected="true"] {
-	/* pass */
 }
 
 richsidebox.cosmopolitan > .richsidebox-container .richsidepanel-hbox {

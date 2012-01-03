@@ -70,7 +70,6 @@ popupdeck > popupdeckpanel.native:not(:first-child) > .popupdeckpanel-container 
 
 popupdeck.fullscreen > popupdeckpanel:not(:first-child) > .popupdeckpanel-container .popupdeckpanel-content ,
 popupdeck > popupdeckpanel.fullscreen:not(:first-child) > .popupdeckpanel-container .popupdeckpanel-content {
-	/* pass */
 }
 
 /*  GNUCITIZEN (Information Security Think Tank)

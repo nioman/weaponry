@@ -68,7 +68,6 @@ richtabbox.native > .richtabbox-container .richtabpanels-selectbutton > label {
 }
 
 :root[lookandfeel="mac"] richtabbox.native > .richtabbox-container .richtabbox-toolbox {
-	/* pass */
 }
 
 :root[lookandfeel="mac"] richtabbox.native > toolbar                                      ,
@@ -79,7 +78,6 @@ richtabbox.native > .richtabbox-container .richtabpanels-selectbutton > label {
 }
 
 :root[lookandfeel="mac"] richtabbox.native > .richtabbox-container .richtabpanels-toolbar {
-	/* pass */
 }
 
 :root[lookandfeel="mac"] richtabbox.native > .richtabbox-container .richtabpanel-toolbarbutton {
@@ -126,11 +124,9 @@ richtabbox.native > .richtabbox-container .richtabpanels-selectbutton > label {
 }
 
 :root[lookandfeel="mac"] richtabbox.native > .richtabbox-container .richtabpanels-selectbutton {
-	/* pass */
 }
 
 :root[lookandfeel="lin"] richtabbox.native > .richtabbox-container .richtabbox-toolbox {
-	/* pass */
 }
 
 :root[lookandfeel="lin"] richtabbox.native > toolbar                                      ,
@@ -140,7 +136,6 @@ richtabbox.native > .richtabbox-container .richtabpanels-selectbutton > label {
 }
 
 :root[lookandfeel="lin"] richtabbox.native > .richtabbox-container .richtabpanels-toolbar {
-	/* pass */
 }
 
 :root[lookandfeel="lin"] richtabbox.native > .richtabbox-container .richtabpanel-toolbarbutton {
@@ -150,11 +145,9 @@ richtabbox.native > .richtabbox-container .richtabpanels-selectbutton > label {
 }
 
 :root[lookandfeel="lin"] richtabbox.native > .richtabbox-container .richtabpanel-toolbarbutton[checked="true"] {
-	/* pass */
 }
 
 :root[lookandfeel="lin"] richtabbox.native > .richtabbox-container .richtabpanel-toolbarbutton:not([checked="true"]) {
-	/* pass */
 }
 
 :root[lookandfeel="lin"] richtabbox.native > .richtabbox-container .richtabpanel-toolbarbutton[closable="true"] > image {
@@ -180,15 +173,12 @@ richtabbox.native > .richtabbox-container .richtabpanels-selectbutton > label {
 }
 
 :root[lookandfeel="lin"] richtabbox.native > .richtabbox-container .richtabpanel-toolbarbutton[closable="true"]:not([checked="true"]) > image {
-	/* pass */
 }
 
 :root[lookandfeel="lin"] richtabbox.native > .richtabbox-container .richtabpanel-toolbarbutton[closable="true"]:not([checked="true"]) > image[state="hovered"] {
-	/* pass */
 }
 
 :root[lookandfeel="lin"] richtabbox.native > .richtabbox-container .richtabpanel-toolbarbutton[closable="true"]:not([checked="true"]) > image[state="clicked"] {
-	/* pass */
 }
 
 :root[lookandfeel="lin"] richtabbox.native > .richtabbox-container .richtabpanels-selectbutton {
@@ -220,11 +210,9 @@ richtabbox.native > .richtabbox-container .richtabpanels-selectbutton > label {
 }
 
 :root[lookandfeel="win"] richtabbox.native > .richtabbox-container .richtabpanel-toolbarbutton[checked="true"] {
-	/* pass */
 }
 
 :root[lookandfeel="win"] richtabbox.native > .richtabbox-container .richtabpanel-toolbarbutton:not([checked="true"]) {
-	/* pass */
 }
 
 :root[lookandfeel="win"] richtabbox.native > .richtabbox-container .richtabpanel-toolbarbutton[closable="true"] > image {
@@ -244,15 +232,12 @@ richtabbox.native > .richtabbox-container .richtabpanels-selectbutton > label {
 }
 
 :root[lookandfeel="win"] richtabbox.native > .richtabbox-container .richtabpanel-toolbarbutton[closable="true"]:not([checked="true"]) > image {
-	/* pass */
 }
 
 :root[lookandfeel="win"] richtabbox.native > .richtabbox-container .richtabpanel-toolbarbutton[closable="true"]:not([checked="true"]) > image[state="hovered"] {
-	/* pass */
 }
 
 :root[lookandfeel="win"] richtabbox.native > .richtabbox-container .richtabpanel-toolbarbutton[closable="true"]:not([checked="true"]) > image[state="clicked"] {
-	/* pass */
 }
 
 :root[lookandfeel="win"] richtabbox.native > .richtabbox-container .richtabpanels-selectbutton {
