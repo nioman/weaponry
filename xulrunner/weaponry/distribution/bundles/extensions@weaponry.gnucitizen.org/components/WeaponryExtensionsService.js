@@ -23,10 +23,6 @@ const CI = Components.interfaces;
 
 /* ------------------------------------------------------------------------ */
 
-const CHROMEBASE = 'org.gnucitizen.weaponry.extensions';
-
-/* ------------------------------------------------------------------------ */
-
 Components.utils.import('resource://gre/modules/XPCOMUtils.jsm');
 
 /* ------------------------------------------------------------------------ */
