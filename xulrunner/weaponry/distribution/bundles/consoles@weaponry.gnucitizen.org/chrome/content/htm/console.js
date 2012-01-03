@@ -21,7 +21,7 @@ Components.utils.import('resource://org.gnucitizen.weaponry.common/content/mod/w
 
 /* ------------------------------------------------------------------------ */
 
-let stringBundle = weaponryCommon.getBundle('chrome://' + CHROMEBASE + '/locale/htm/console.properties');
+let stringBundle = weaponryCommon.getBundle('chrome://org.gnucitizen.weaponry.consoles/locale/htm/console.properties');
 
 /* ------------------------------------------------------------------------ */
 
