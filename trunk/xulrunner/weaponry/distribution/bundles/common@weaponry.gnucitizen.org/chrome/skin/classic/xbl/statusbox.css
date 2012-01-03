@@ -30,7 +30,7 @@ statusbox > .statusbox-container .statusbox-panel {
 
 /* ------------------------------------------------------------------------ */
 
-[lookandfeel="mac"] statusbox > .statusbox-container .statusbox-panel {
+:root[lookandfeel="mac"] statusbox > .statusbox-container .statusbox-panel {
 	color: ButtonText;
 	background: ButtonFace;
 	border: 1px solid ButtonShadow;
@@ -38,13 +38,13 @@ statusbox > .statusbox-container .statusbox-panel {
 
 /* ------------------------------------------------------------------------ */
 
-[lookandfeel="lin"] statusbox > .statusbox-container .statusbox-panel {
+:root[lookandfeel="lin"] statusbox > .statusbox-container .statusbox-panel {
 	/* pass */
 }
 
 /* ------------------------------------------------------------------------ */
 
-[lookandfeel="win"] statusbox > .statusbox-container .statusbox-panel {
+:root[lookandfeel="win"] statusbox > .statusbox-container .statusbox-panel {
 	/* pass */
 }
 

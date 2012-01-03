@@ -127,53 +127,53 @@ richsidebox.cosmopolitan > .richsidebox-container .richsidebox-richlistbox {
 	-moz-appearance: none;
 }
 
-[lookandfeel="win"] richsidebox.cosmopolitan > .richsidebox-container .richsidebox-richlistbox {
+:root[lookandfeel="win"] richsidebox.cosmopolitan > .richsidebox-container .richsidebox-richlistbox {
 	background: #000000;
 }
 
-[lookandfeel="mac"] richsidebox.cosmopolitan > .richsidebox-container .richsidebox-richlistbox {
+:root[lookandfeel="mac"] richsidebox.cosmopolitan > .richsidebox-container .richsidebox-richlistbox {
 	background: #212121;
 }
 
-[lookandfeel="lin"] richsidebox.cosmopolitan > .richsidebox-container .richsidebox-richlistbox {
+:root[lookandfeel="lin"] richsidebox.cosmopolitan > .richsidebox-container .richsidebox-richlistbox {
 	background: #212121;
 }
 
-[lookandfeel="win"] richsidebox.cosmopolitan:-moz-window-inactive > .richsidebox-container .richsidebox-richlistbox {
+:root[lookandfeel="win"] richsidebox.cosmopolitan:-moz-window-inactive > .richsidebox-container .richsidebox-richlistbox {
 	background: #000000;
 }
 
-[lookandfeel="mac"] richsidebox.cosmopolitan:-moz-window-inactive > .richsidebox-container .richsidebox-richlistbox {
+:root[lookandfeel="mac"] richsidebox.cosmopolitan:-moz-window-inactive > .richsidebox-container .richsidebox-richlistbox {
 	background: #252525;
 }
 
-[lookandfeel="lin"] richsidebox.cosmopolitan:-moz-window-inactive > .richsidebox-container .richsidebox-richlistbox {
+:root[lookandfeel="lin"] richsidebox.cosmopolitan:-moz-window-inactive > .richsidebox-container .richsidebox-richlistbox {
 	background: #252525;
 }
 
-[lookandfeel="win"] richsidebox.cosmopolitan > .richsidebox-container .richsidepanel-richlistitem {
+:root[lookandfeel="win"] richsidebox.cosmopolitan > .richsidebox-container .richsidepanel-richlistitem {
 	/* pass */
 }
 
-[lookandfeel="mac"] richsidebox.cosmopolitan > .richsidebox-container .richsidepanel-richlistitem {
+:root[lookandfeel="mac"] richsidebox.cosmopolitan > .richsidebox-container .richsidepanel-richlistitem {
 	color: #ffffff;
 	background: transparent;
 	filter: url("effects/common.svg#f4");
 }
 
-[lookandfeel="lin"] richsidebox.cosmopolitan > .richsidebox-container .richsidepanel-richlistitem {
+:root[lookandfeel="lin"] richsidebox.cosmopolitan > .richsidebox-container .richsidepanel-richlistitem {
 	/* pass */
 }
 
-[lookandfeel="win"] richsidebox.cosmopolitan > .richsidebox-container .richsidepanel-richlistitem[selected="true"] {
+:root[lookandfeel="win"] richsidebox.cosmopolitan > .richsidebox-container .richsidepanel-richlistitem[selected="true"] {
 	background: #eeeeee;
 }
 
-[lookandfeel="mac"] richsidebox.cosmopolitan > .richsidebox-container .richsidepanel-richlistitem[selected="true"] {
+:root[lookandfeel="mac"] richsidebox.cosmopolitan > .richsidebox-container .richsidepanel-richlistitem[selected="true"] {
 	filter: url("effects/common.svg#f5");
 }
 
-[lookandfeel="lin"] richsidebox.cosmopolitan > .richsidebox-container .richsidepanel-richlistitem[selected="true"] {
+:root[lookandfeel="lin"] richsidebox.cosmopolitan > .richsidebox-container .richsidepanel-richlistitem[selected="true"] {
 	/* pass */
 }
 
