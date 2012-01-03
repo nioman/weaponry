@@ -186,8 +186,6 @@ tree.sourcetree treechildren::-moz-tree-row(header) {
 	text-transform: uppercase;
 }
 
-/* TODO: add the rest of the native styles */
-
 /* ------------------------------------------------------------------------ */
 
 :root[lookandfeel="mac"] toolbar.unified {
@@ -195,11 +193,9 @@ tree.sourcetree treechildren::-moz-tree-row(header) {
 }
 
 :root[lookandfeel="win"] toolbar.unified {
-	/* pass */
 }
 
 :root[lookandfeel="lin"] toolbar.unified {
-	/* pass */
 }
 
 /* ------------------------------------------------------------------------ */
@@ -209,11 +205,9 @@ tree.sourcetree treechildren::-moz-tree-row(header) {
 }
 
 :root[lookandfeel="win"] toolbarbutton.native {
-	/* pass */
 }
 
 :root[lookandfeel="lin"] toolbarbutton.native {
-	/* pass */
 }
 
 /* ------------------------------------------------------------------------ */
