@@ -1,5 +1,5 @@
 /**
- *  org.gnucitizen.weaponry.preferences.hacks.js
+ *  hacks.js
  *  Copyright (C) 2007-2011  GNUCITIZEN
  *  
  *  This program is free software; you can redistribute it and/or modify
