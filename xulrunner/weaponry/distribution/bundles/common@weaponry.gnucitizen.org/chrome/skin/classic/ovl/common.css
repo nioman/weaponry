@@ -152,35 +152,35 @@ tree.sourcetree treechildren::-moz-tree-row(header) {
 	-moz-user-focus: ignore;
 }
 
-[lookandfeel="mac"] tree.sourcetree {
+:root[lookandfeel="mac"] tree.sourcetree {
 	background-color: #d2d8e2;
 }
 
-[lookandfeel="mac"] tree.sourcetree:-moz-window-inactive {
+:root[lookandfeel="mac"] tree.sourcetree:-moz-window-inactive {
 	background-color: #e8e8e8;
 }
 
-[lookandfeel="mac"] tree.sourcetree treechildren::-moz-tree-row {
+:root[lookandfeel="mac"] tree.sourcetree treechildren::-moz-tree-row {
 	height: 20px;
 }
 
-[lookandfeel="mac"] tree.sourcetree treechildren::-moz-tree-row(selected) {
+:root[lookandfeel="mac"] tree.sourcetree treechildren::-moz-tree-row(selected) {
 	background: url("images/sourcetree.selected.active.png") repeat-x;
 }
 
-[lookandfeel="mac"] tree.sourcetree:-moz-window-inactive treechildren::-moz-tree-row(selected) {
+:root[lookandfeel="mac"] tree.sourcetree:-moz-window-inactive treechildren::-moz-tree-row(selected) {
 	background: url("images/sourcetree.selected.inactive.png") repeat-x;
 }
 
-[lookandfeel="mac"] tree.sourcetree treechildren::-moz-tree-row(header, selected) {
+:root[lookandfeel="mac"] tree.sourcetree treechildren::-moz-tree-row(header, selected) {
 	background: none;
 }
 
-[lookandfeel="mac"] tree.sourcetree:-moz-window-inactive treechildren::-moz-tree-row(header, selected) {
+:root[lookandfeel="mac"] tree.sourcetree:-moz-window-inactive treechildren::-moz-tree-row(header, selected) {
 	background: none;
 }
 
-[lookandfeel="mac"] tree.sourcetree treechildren::-moz-tree-cell-text(header) {
+:root[lookandfeel="mac"] tree.sourcetree treechildren::-moz-tree-cell-text(header) {
 	color: #607081;
 	font-weight: bold;
 	text-transform: uppercase;
@@ -190,29 +190,29 @@ tree.sourcetree treechildren::-moz-tree-row(header) {
 
 /* ------------------------------------------------------------------------ */
 
-[lookandfeel="mac"] toolbar.unified {
+:root[lookandfeel="mac"] toolbar.unified {
 	-moz-appearance: -moz-mac-unified-toolbar;
 }
 
-[lookandfeel="win"] toolbar.unified {
+:root[lookandfeel="win"] toolbar.unified {
 	/* pass */
 }
 
-[lookandfeel="lin"] toolbar.unified {
+:root[lookandfeel="lin"] toolbar.unified {
 	/* pass */
 }
 
 /* ------------------------------------------------------------------------ */
 
-[lookandfeel="mac"] toolbarbutton.native {
+:root[lookandfeel="mac"] toolbarbutton.native {
 	-moz-box-orient: vertical;
 }
 
-[lookandfeel="win"] toolbarbutton.native {
+:root[lookandfeel="win"] toolbarbutton.native {
 	/* pass */
 }
 
-[lookandfeel="lin"] toolbarbutton.native {
+:root[lookandfeel="lin"] toolbarbutton.native {
 	/* pass */
 }
 
