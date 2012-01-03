@@ -32,36 +32,36 @@ elementtree.source > .elementtree-container .elementtree-tree treechildren::-moz
 	-moz-user-focus: ignore;
 }
 
-[lookandfeel="Darwin"] elementtree.source > .elementtree-container .elementtree-tree {
+[lookandfeel="mac"] elementtree.source > .elementtree-container .elementtree-tree {
 	background-color: #d2d8e2;
 }
 
-[lookandfeel="Darwin"] elementtree.source > .elementtree-container .elementtree-tree:-moz-window-inactive {
+[lookandfeel="mac"] elementtree.source > .elementtree-container .elementtree-tree:-moz-window-inactive {
 	background-color: #e8e8e8;
 }
 
-[lookandfeel="Darwin"] elementtree.source > .elementtree-container .elementtree-tree treechildren::-moz-tree-row {
+[lookandfeel="mac"] elementtree.source > .elementtree-container .elementtree-tree treechildren::-moz-tree-row {
 	height: 20px;
 }
 
-[lookandfeel="Darwin"] elementtree.source > .elementtree-container .elementtree-tree treechildren::-moz-tree-row(selected) {
+[lookandfeel="mac"] elementtree.source > .elementtree-container .elementtree-tree treechildren::-moz-tree-row(selected) {
 	background: url("images/source.selected.active.png") repeat-x;
 }
 
-[lookandfeel="Darwin"] elementtree.source > .elementtree-container .elementtree-tree:-moz-window-inactive treechildren::-moz-tree-row(selected) {
+[lookandfeel="mac"] elementtree.source > .elementtree-container .elementtree-tree:-moz-window-inactive treechildren::-moz-tree-row(selected) {
 	background: url("images/source.selected.inactive.png") repeat-x;
 }
 
-[lookandfeel="Darwin"] elementtree.source > .elementtree-container .elementtree-tree treechildren::-moz-tree-row(header, selected) {
+[lookandfeel="mac"] elementtree.source > .elementtree-container .elementtree-tree treechildren::-moz-tree-row(header, selected) {
 	background: none;
 }
 
-[lookandfeel="Darwin"] elementtree.source > .elementtree-container .elementtree-tree:-moz-window-inactive treechildren::-moz-tree-row(header, selected) {
+[lookandfeel="mac"] elementtree.source > .elementtree-container .elementtree-tree:-moz-window-inactive treechildren::-moz-tree-row(header, selected) {
 	background: none;
 	-moz-user-focus: ignore;
 }
 
-[lookandfeel="Darwin"] elementtree.source > .elementtree-container .elementtree-tree treechildren::-moz-tree-cell-text(header) {
+[lookandfeel="mac"] elementtree.source > .elementtree-container .elementtree-tree treechildren::-moz-tree-cell-text(header) {
 	color: #607081;
 	font-weight: bold;
 	text-transform: uppercase;
