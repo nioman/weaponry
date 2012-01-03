@@ -18,7 +18,7 @@
  */
 
 function openProxyDialog() {
-	openDialog('chrome://' + CHROMEBASE + '/content/xul/proxyPrefwindow.xul', null, 'chrome,modal,centerscreen');
+	openDialog('chrome://org.gnucitizen.weaponry.preferences/content/xul/proxyPrefwindow.xul', null, 'chrome,modal,centerscreen');
 }
 
 function openSecurityCertificatesDialog() {
@@ -30,7 +30,7 @@ function openSecurityDevicesDialog() {
 }
 
 function openRegistryDialog() {
-	openDialog('chrome://' + CHROMEBASE + '/content/xul/registryDialog.xul', null, 'chrome,modal,centerscreen');
+	openDialog('chrome://org.gnucitizen.weaponry.preferences/content/xul/registryDialog.xul', null, 'chrome,modal,centerscreen');
 }
 
 /* ------------------------------------------------------------------------ */

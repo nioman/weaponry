@@ -23,10 +23,6 @@ const CI = Components.interfaces;
 
 /* ------------------------------------------------------------------------ */
 
-const CHROMEBASE = 'org.gnucitizen.weaponry.preferences';
-
-/* ------------------------------------------------------------------------ */
-
 Components.utils.import('resource://gre/modules/XPCOMUtils.jsm');
 Components.utils.import('resource://org.gnucitizen.weaponry.common/content/mod/weaponryCommon.jsm');
 
@@ -82,7 +78,7 @@ WeaponryPreferencesService.prototype = {
 	/* -------------------------------------------------------------------- */
 	
 	openPreferencesWindow: function () {
-		return weaponryCommon.openWindowOnce(null, CHROMEBASE + ':preferences-prefwindow', 'chrome://' + CHROMEBASE + '/content/xul/preferencesPrefwindow.xul', null, 'all,chrome,centerscreen,dialog=yes,toolbar=yes');
+		return weaponryCommon.openWindowOnce(null, 'org.gnucitizen.weaponry.preferences:preferences-prefwindow', 'chrome://org.gnucitizen.weaponry.preferences/content/xul/preferencesPrefwindow.xul', null, 'all,chrome,centerscreen,dialog=yes,toolbar=yes');
 	}
 };
 
