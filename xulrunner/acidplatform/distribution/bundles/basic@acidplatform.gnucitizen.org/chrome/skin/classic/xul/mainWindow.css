@@ -89,19 +89,19 @@
 
 /* ------------------------------------------------------------------------ */
 
-[lookandfeel="mac"] #main-window-statusbar {
+:root[lookandfeel="mac"] #main-window-statusbar {
 	padding: 5px 0px 5px 0px;
 }
 
 /* ------------------------------------------------------------------------ */
 
-[lookandfeel="lin"] #main-window-statusbar {
+:root[lookandfeel="lin"] #main-window-statusbar {
 	padding: 2px;
 }
 
 /* ------------------------------------------------------------------------ */
 
-[lookandfeel="win"] #main-window-statusbar {
+:root[lookandfeel="win"] #main-window-statusbar {
 	padding: 2px;
 }
 
