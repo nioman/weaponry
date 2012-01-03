@@ -23,10 +23,6 @@ const CI = Components.interfaces;
 
 /* ------------------------------------------------------------------------ */
 
-const CHROMEBASE = 'org.gnucitizen.weaponry.common';
-
-/* ------------------------------------------------------------------------ */
-
 Components.utils.import('resource://gre/modules/XPCOMUtils.jsm');
 Components.utils.import('resource://org.gnucitizen.weaponry.common/content/mod/weaponryCommon.jsm');
 
@@ -55,23 +51,23 @@ WeaponryTerminalLauncher.prototype = {
 		
 		if (os == 'Darwin') {
 			if (command) {
-				weaponryCommon.executeFile('/usr/bin/osascript', weaponryCommon.getChromeUriFilePath('chrome://' + CHROMEBASE + '/content/bin/weaponryTerminalLauncher.scpt'), command);
+				weaponryCommon.executeFile('/usr/bin/osascript', weaponryCommon.getChromeUriFilePath('chrome://org.gnucitizen.weaponry.common/content/bin/weaponryTerminalLauncher.scpt'), command);
 			} else {
-				weaponryCommon.executeFile('/usr/bin/osascript', weaponryCommon.getChromeUriFilePath('chrome://' + CHROMEBASE + '/content/bin/weaponryTerminalLauncher.scpt'));
+				weaponryCommon.executeFile('/usr/bin/osascript', weaponryCommon.getChromeUriFilePath('chrome://org.gnucitizen.weaponry.common/content/bin/weaponryTerminalLauncher.scpt'));
 			}
 		} else
 		if (os == "Linux") {
 			if (command) {
-				weaponryCommon.executeFile('/bin/sh', weaponryCommon.getChromeUriFilePath('chrome://' + CHROMEBASE + '/content/bin/weaponryTerminalLauncher.sh'), command);
+				weaponryCommon.executeFile('/bin/sh', weaponryCommon.getChromeUriFilePath('chrome://org.gnucitizen.weaponry.common/content/bin/weaponryTerminalLauncher.sh'), command);
 			} else {
-				weaponryCommon.executeFile('/bin/sh', weaponryCommon.getChromeUriFilePath('chrome://' + CHROMEBASE + '/content/bin/weaponryTerminalLauncher.sh'));
+				weaponryCommon.executeFile('/bin/sh', weaponryCommon.getChromeUriFilePath('chrome://org.gnucitizen.weaponry.common/content/bin/weaponryTerminalLauncher.sh'));
 			}
 		} else
 		if (os == 'WINNT') {
 			if (command) {
-				weaponryCommon.executeFile('cmd.exe', '/C', weaponryCommon.getChromeUriFilePath('chrome://' + CHROMEBASE + '/content/bin/weaponryTerminalLauncher.cmd'), command);
+				weaponryCommon.executeFile('cmd.exe', '/C', weaponryCommon.getChromeUriFilePath('chrome://org.gnucitizen.weaponry.common/content/bin/weaponryTerminalLauncher.cmd'), command);
 			} else {
-				weaponryCommon.executeFile('cmd.exe', '/K', weaponryCommon.getChromeUriFilePath('chrome://' + CHROMEBASE + '/content/bin/weaponryTerminalLauncher.cmd'));
+				weaponryCommon.executeFile('cmd.exe', '/K', weaponryCommon.getChromeUriFilePath('chrome://org.gnucitizen.weaponry.common/content/bin/weaponryTerminalLauncher.cmd'));
 			}
 		} else {
 			throw new Error('unsupported os');

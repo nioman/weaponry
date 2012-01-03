@@ -23,10 +23,6 @@ const CI = Components.interfaces;
 
 /* ------------------------------------------------------------------------ */
 
-const CHROMEBASE = 'org.gnucitizen.weaponry.common';
-
-/* ------------------------------------------------------------------------ */
-
 Components.utils.import('resource://gre/modules/XPCOMUtils.jsm');
 Components.utils.import('resource://org.gnucitizen.weaponry.common/content/mod/weaponryCommon.jsm');
 
@@ -79,7 +75,7 @@ WeaponrySchemeViewer.prototype = {
 		let channelUri;
 		
 		if (this.wrap) {
-			channelUri = 'chrome://' + CHROMEBASE + '/content/xul/schemeView.xul?uri=' + this.uri;
+			channelUri = 'chrome://org.gnucitizen.weaponry.common/content/xul/schemeView.xul?uri=' + this.uri;
 		} else {
 			channelUri = this.uri.replace(/\{uri\}/g, this.uri);
 		}
