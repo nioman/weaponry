@@ -151,16 +151,10 @@ richsidebox.cosmopolitan > .richsidebox-container .richsidebox-richlistbox {
 	background: #252525;
 }
 
-:root[lookandfeel="win"] richsidebox.cosmopolitan > .richsidebox-container .richsidepanel-richlistitem {
-}
-
 :root[lookandfeel="mac"] richsidebox.cosmopolitan > .richsidebox-container .richsidepanel-richlistitem {
 	color: #ffffff;
 	background: transparent;
 	filter: url("effects/common.svg#f4");
-}
-
-:root[lookandfeel="lin"] richsidebox.cosmopolitan > .richsidebox-container .richsidepanel-richlistitem {
 }
 
 :root[lookandfeel="win"] richsidebox.cosmopolitan > .richsidebox-container .richsidepanel-richlistitem[selected="true"] {
@@ -169,9 +163,6 @@ richsidebox.cosmopolitan > .richsidebox-container .richsidebox-richlistbox {
 
 :root[lookandfeel="mac"] richsidebox.cosmopolitan > .richsidebox-container .richsidepanel-richlistitem[selected="true"] {
 	filter: url("effects/common.svg#f5");
-}
-
-:root[lookandfeel="lin"] richsidebox.cosmopolitan > .richsidebox-container .richsidepanel-richlistitem[selected="true"] {
 }
 
 richsidebox.cosmopolitan > .richsidebox-container .richsidepanel-hbox {

@@ -192,22 +192,10 @@ tree.sourcetree treechildren::-moz-tree-row(header) {
 	-moz-appearance: -moz-mac-unified-toolbar;
 }
 
-:root[lookandfeel="win"] toolbar.unified {
-}
-
-:root[lookandfeel="lin"] toolbar.unified {
-}
-
 /* ------------------------------------------------------------------------ */
 
 :root[lookandfeel="mac"] toolbarbutton.native {
 	-moz-box-orient: vertical;
-}
-
-:root[lookandfeel="win"] toolbarbutton.native {
-}
-
-:root[lookandfeel="lin"] toolbarbutton.native {
 }
 
 /* ------------------------------------------------------------------------ */
