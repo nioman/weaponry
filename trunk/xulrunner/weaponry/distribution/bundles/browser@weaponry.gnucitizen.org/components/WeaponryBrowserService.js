@@ -23,10 +23,6 @@ const CI = Components.interfaces;
 
 /* ------------------------------------------------------------------------ */
 
-const CHROMEBASE = 'org.gnucitizen.weaponry.browser';
-
-/* ------------------------------------------------------------------------ */
-
 Components.utils.import('resource://gre/modules/XPCOMUtils.jsm');
 Components.utils.import('resource://org.gnucitizen.weaponry.common/content/mod/weaponryCommon.jsm');
 
@@ -130,11 +126,11 @@ WeaponryBrowserService.prototype = {
 	/* -------------------------------------------------------------------- */
 	
 	openBrowserView: function (url) {
-		return weaponryCommon.openWindow(null, 'chrome://' + CHROMEBASE + '/content/xul/browserView.xul', null, 'all,chrome,resizable', url);
+		return weaponryCommon.openWindow(null, 'chrome://org.gnucitizen.weaponry.browser/content/xul/browserView.xul', null, 'all,chrome,resizable', url);
 	},
 	
 	openBrowserPerspective: function (url) {
-		return weaponryCommon.openWindow(null, 'chrome://' + CHROMEBASE + '/content/xul/browserPerspective.xul', null, 'all,chrome,resizable', url);
+		return weaponryCommon.openWindow(null, 'chrome://org.gnucitizen.weaponry.browser/content/xul/browserPerspective.xul', null, 'all,chrome,resizable', url);
 	}
 };
 
