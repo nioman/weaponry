@@ -27,10 +27,6 @@ const CI = Components.interfaces;
 
 /* ------------------------------------------------------------------------ */
 
-const CHROMEBASE = 'org.gnucitizen.weaponry.consoles';
-
-/* ------------------------------------------------------------------------ */
-
 Components.utils.import('resource://org.gnucitizen.weaponry.common/content/mod/weaponryCommon.jsm');
 
 /* ------------------------------------------------------------------------ */
