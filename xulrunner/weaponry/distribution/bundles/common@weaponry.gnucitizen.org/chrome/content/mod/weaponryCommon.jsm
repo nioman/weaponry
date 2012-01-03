@@ -27,10 +27,6 @@ const CI = Components.interfaces;
 
 /* ------------------------------------------------------------------------ */
 
-const CHROMEBASE = 'org.gnucitizen.weaponry.common';
-
-/* ------------------------------------------------------------------------ */
-
 Components.utils.import('resource://gre/modules/XPCOMUtils.jsm');
 
 /* ------------------------------------------------------------------------ */
@@ -194,7 +190,7 @@ let weaponryCommon = new function () {
 	
 	/* -------------------------------------------------------------------- */
 	
-	this.commonBundle = this.stringBundleService.createBundle('chrome://' + CHROMEBASE + '/locale/mod/weaponryCommon.properties');
+	this.commonBundle = this.stringBundleService.createBundle('chrome://org.gnucitizen.weaponry.common/locale/mod/weaponryCommon.properties');
 	this.brandBundle = this.stringBundleService.createBundle('chrome://branding/locale/brand.properties');
 	
 	/* -------------------------------------------------------------------- */
