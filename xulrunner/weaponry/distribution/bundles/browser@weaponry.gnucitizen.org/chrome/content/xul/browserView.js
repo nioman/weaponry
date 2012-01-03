@@ -21,9 +21,9 @@ function switchBrowserView(view) {
 	let browserViewUri = '';
 	
 	if (view == '_default') {
-		browserViewUri = 'chrome://' + CHROMEBASE + '/content/xul/browserView.xul';
+		browserViewUri = 'chrome://org.gnucitizen.weaponry.browser/content/xul/browserView.xul';
 	} else {
-		browserViewUri = 'chrome://' + CHROMEBASE + '/content/xul/browserView.xul?view=' + view;
+		browserViewUri = 'chrome://org.gnucitizen.weaponry.browser/content/xul/browserView.xul?view=' + view;
 	}
 	
 	document.location = browserViewUri;

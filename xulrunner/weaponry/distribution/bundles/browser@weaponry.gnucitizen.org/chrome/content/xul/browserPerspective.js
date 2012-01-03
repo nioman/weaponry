@@ -25,9 +25,9 @@ function switchBrowserPerspective(perspective) {
 	let browserPerspectiveUri = '';
 	
 	if (perspective == '_default') {
-		browserPerspectiveUri = 'chrome://' + CHROMEBASE + '/content/xul/browserPerspective.xul';
+		browserPerspectiveUri = 'chrome://org.gnucitizen.weaponry.browser/content/xul/browserPerspective.xul';
 	} else {
-		browserPerspectiveUri = 'chrome://' + CHROMEBASE + '/content/xul/browserPerspective.xul?perspective=' + perspective;
+		browserPerspectiveUri = 'chrome://org.gnucitizen.weaponry.browser/content/xul/browserPerspective.xul?perspective=' + perspective;
 	}
 	
 	document.location = browserPerspectiveUri;
@@ -94,7 +94,7 @@ function loadBrowserUrl(url) {
 /* ------------------------------------------------------------------------ */
 
 function getBrowserViewUrl() {
-	return 'chrome://' + CHROMEBASE + '/content/xul/browserView.xul' + (location.search ? location.search.replace('perspective=', 'view=') : '');
+	return 'chrome://org.gnucitizen.weaponry.browser/content/xul/browserView.xul' + (location.search ? location.search.replace('perspective=', 'view=') : '');
 }
 
 /* ------------------------------------------------------------------------ */
