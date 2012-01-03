@@ -127,53 +127,53 @@ richsidebox.cosmopolitan > .richsidebox-container .richsidebox-richlistbox {
 	-moz-appearance: none;
 }
 
-[lookandfeel="WINNT"] richsidebox.cosmopolitan > .richsidebox-container .richsidebox-richlistbox {
+[lookandfeel="win"] richsidebox.cosmopolitan > .richsidebox-container .richsidebox-richlistbox {
 	background: #000000;
 }
 
-[lookandfeel="Darwin"] richsidebox.cosmopolitan > .richsidebox-container .richsidebox-richlistbox {
+[lookandfeel="mac"] richsidebox.cosmopolitan > .richsidebox-container .richsidebox-richlistbox {
 	background: #212121;
 }
 
-[lookandfeel="Linux"] richsidebox.cosmopolitan > .richsidebox-container .richsidebox-richlistbox {
+[lookandfeel="lin"] richsidebox.cosmopolitan > .richsidebox-container .richsidebox-richlistbox {
 	background: #212121;
 }
 
-[lookandfeel="WINNT"] richsidebox.cosmopolitan:-moz-window-inactive > .richsidebox-container .richsidebox-richlistbox {
+[lookandfeel="win"] richsidebox.cosmopolitan:-moz-window-inactive > .richsidebox-container .richsidebox-richlistbox {
 	background: #000000;
 }
 
-[lookandfeel="Darwin"] richsidebox.cosmopolitan:-moz-window-inactive > .richsidebox-container .richsidebox-richlistbox {
+[lookandfeel="mac"] richsidebox.cosmopolitan:-moz-window-inactive > .richsidebox-container .richsidebox-richlistbox {
 	background: #252525;
 }
 
-[lookandfeel="Linux"] richsidebox.cosmopolitan:-moz-window-inactive > .richsidebox-container .richsidebox-richlistbox {
+[lookandfeel="lin"] richsidebox.cosmopolitan:-moz-window-inactive > .richsidebox-container .richsidebox-richlistbox {
 	background: #252525;
 }
 
-[lookandfeel="WINNT"] richsidebox.cosmopolitan > .richsidebox-container .richsidepanel-richlistitem {
+[lookandfeel="win"] richsidebox.cosmopolitan > .richsidebox-container .richsidepanel-richlistitem {
 	/* pass */
 }
 
-[lookandfeel="Darwin"] richsidebox.cosmopolitan > .richsidebox-container .richsidepanel-richlistitem {
+[lookandfeel="mac"] richsidebox.cosmopolitan > .richsidebox-container .richsidepanel-richlistitem {
 	color: #ffffff;
 	background: transparent;
 	filter: url("effects/common.svg#f4");
 }
 
-[lookandfeel="Linux"] richsidebox.cosmopolitan > .richsidebox-container .richsidepanel-richlistitem {
+[lookandfeel="lin"] richsidebox.cosmopolitan > .richsidebox-container .richsidepanel-richlistitem {
 	/* pass */
 }
 
-[lookandfeel="WINNT"] richsidebox.cosmopolitan > .richsidebox-container .richsidepanel-richlistitem[selected="true"] {
+[lookandfeel="win"] richsidebox.cosmopolitan > .richsidebox-container .richsidepanel-richlistitem[selected="true"] {
 	background: #eeeeee;
 }
 
-[lookandfeel="Darwin"] richsidebox.cosmopolitan > .richsidebox-container .richsidepanel-richlistitem[selected="true"] {
+[lookandfeel="mac"] richsidebox.cosmopolitan > .richsidebox-container .richsidepanel-richlistitem[selected="true"] {
 	filter: url("effects/common.svg#f5");
 }
 
-[lookandfeel="Linux"] richsidebox.cosmopolitan > .richsidebox-container .richsidepanel-richlistitem[selected="true"] {
+[lookandfeel="lin"] richsidebox.cosmopolitan > .richsidebox-container .richsidepanel-richlistitem[selected="true"] {
 	/* pass */
 }
 
