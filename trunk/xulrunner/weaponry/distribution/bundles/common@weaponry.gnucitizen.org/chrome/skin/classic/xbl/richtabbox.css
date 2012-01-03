@@ -77,7 +77,7 @@ richtabbox.native > .richtabbox-container .richtabpanels-selectbutton > label {
 :root[lookandfeel="mac"] richtabbox.native > .richtabbox-container .richtabpanel-toolbarbutton {
 	border: 0px;
 	-moz-appearance: none;
-	-moz-border-radius: 2px 2px 0px 0px;
+	border-radius: 2px 2px 0px 0px;
 }
 
 :root[lookandfeel="mac"] richtabbox.native > .richtabbox-container .richtabpanel-toolbarbutton[checked="true"] {
@@ -134,7 +134,7 @@ richtabbox.native > .richtabbox-container .richtabpanels-selectbutton > label {
 }
 
 :root[lookandfeel="lin"] richtabbox.native > .richtabbox-container .richtabpanel-toolbarbutton[closable="true"] > image {
-	-moz-border-radius: 4px;
+	border-radius: 4px;
 	border: 1px solid transparent;
 	list-style-image: url("moz-icon://stock/gtk-close?size=menu");
 }

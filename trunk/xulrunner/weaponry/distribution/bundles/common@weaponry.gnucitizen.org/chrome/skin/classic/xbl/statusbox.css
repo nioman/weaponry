@@ -25,7 +25,7 @@ statusbox > .statusbox-container .statusbox-panel {
 	-moz-window-shadow: none;
 	border-bottom-width: 0px;
 	background: InfoBackground;
-	-moz-border-radius-topright: 3px;
+	border-radius-topright: 3px;
 }
 
 /* ------------------------------------------------------------------------ */
