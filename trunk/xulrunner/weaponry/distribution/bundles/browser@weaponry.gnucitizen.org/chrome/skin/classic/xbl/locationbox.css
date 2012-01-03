@@ -32,19 +32,19 @@ locationbox > .locationbox-container .locationbox-textbox {
 /* ------------------------------------------------------------------------ */
 
 :root[lookandfeel="mac"] locationbox > .locationbox-container {
-	-moz-border-radius: 3px;
+	border-radius: 3px;
 }
 
 /* ------------------------------------------------------------------------ */
 
 :root[lookandfeel="lin"] locationbox > .locationbox-container {
-	-moz-border-radius: 4px;
+	border-radius: 4px;
 }
 
 /* ------------------------------------------------------------------------ */
 
 :root[lookandfeel="win"] locationbox > .locationbox-container {
-	-moz-border-radius: 2px;
+	border-radius: 2px;
 }
 
 /*  GNUCITIZEN (Information Security Think Tank)

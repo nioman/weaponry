@@ -104,7 +104,7 @@
 :root[lookandfeel="mac"] .browser-view-navigation-button {
 	height: 22px;
 	min-width: 22px;
-	-moz-border-radius: 3px;
+	border-radius: 3px;
 	border: 1px solid rgba(59, 59, 59, 0.5);
 	box-shadow: outset 0px 1px rgba(255, 255, 255, 0.2);
 	background: -moz-linear-gradient(top, #ffffff, #cccccc);
@@ -129,14 +129,14 @@
 :root[lookandfeel="mac"] #browser-view-back-toolbarbutton {
 	width: 28px;
 	border-right: 0px;
-	-moz-border-radius: 3px 0px 0px 3px;
+	border-radius: 3px 0px 0px 3px;
 	list-style-image: url("images/back.mac.png");
 }
 
 :root[lookandfeel="mac"] #browser-view-forward-toolbarbutton {
 	width: 28px;
 	margin-left: -2px;
-	-moz-border-radius: 0px 3px 3px 0px;
+	border-radius: 0px 3px 3px 0px;
 	list-style-image: url("images/forward.mac.png");
 }
 
