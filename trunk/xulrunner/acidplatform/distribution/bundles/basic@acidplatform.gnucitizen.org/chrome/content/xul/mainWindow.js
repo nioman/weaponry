@@ -49,7 +49,7 @@ function openPreferencesWindow(event) {
 
 function computeApplicationFields(fields) {
 	if (!('image' in fields)) {
-		fields.image = 'chrome://' + CHROMEBASE + '/skin/xul/images/robot.png';
+		fields.image = 'chrome://org.gnucitizen.acidplatform.basic/skin/xul/images/robot.png';
 	}
 }
 
