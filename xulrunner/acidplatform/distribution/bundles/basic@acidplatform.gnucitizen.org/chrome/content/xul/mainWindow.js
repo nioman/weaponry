@@ -60,9 +60,9 @@ function handleDOMContentLoadedEvent(event) {
 		return;
 	}
 	
-	document.getElementById('main-window-applications-dataroll').registerFieldsComputer(computeApplicationFields);
-	document.getElementById('main-window-application-item-vbox').setAttribute('ondblclick', 'return handleTestItemDblclickEvent(event);');
+	document.getElementById('main-window-applications-recordroll').registerFieldsComputer(computeApplicationFields);
 	
+	bindHandler('main-window-application-item-vbox', 'dblclick', 'return handleTestItemDblclickEvent(event);');
 	bindHandler('main-window-open-console-toolbarbutton', 'command', openConsoleWindow);
 	bindHandler('main-window-open-addons-toolbarbutton', 'command', openAddonsWindow);
 	bindHandler('main-window-open-preferences-toolbarbutton', 'command', openPreferencesWindow);

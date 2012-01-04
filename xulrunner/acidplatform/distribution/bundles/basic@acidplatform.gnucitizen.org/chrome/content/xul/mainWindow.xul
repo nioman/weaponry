@@ -38,15 +38,17 @@
 		<menu id="help-menu"/>
 	</menubar>
 	
+	<records id="launchers"/>
+	
 	<vbox id="main-window-content-vbox" flex="1">
 		<richsidebox id="main-window-content-navigation-richsidebox" class="plain" flex="1">
 			<richsidepanel id="main-window-content-home-richsidepanel" icon="chrome://org.gnucitizen.acidplatform.basic/skin/xul/images/home.png" label="&main-window-content-home-richsidepanel-label;">
-				<dataroll id="main-window-applications-dataroll" flex="1">
+				<recordroll id="main-window-applications-recordroll" records="launchers" flex="1">
 					<vbox id="main-window-application-item-vbox" class="main-window-application-item-vbox" uri="?uri" dblclick="?dblclick">
 						<image id="main-window-application-item-image" class="main-window-application-item-image" src="?image"/>
 						<label id="main-window-application-item-label" class="main-window-application-item-label" value="?label" crop="right"/>
 					</vbox>
-				</dataroll>
+				</recordroll>
 			</richsidepanel>
 		</richsidebox>
 		
