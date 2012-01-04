@@ -30,6 +30,7 @@
 		
 		<content>
 			<xul:hbox class="locationbox-container" align="center" flex="1">
+				<children includes="hbox"/>
 				<xul:textbox class="locationbox-textbox" type="autocomplete" autocompletesearch="history" flex="1"/>
 				<children/>
 			</xul:hbox>
@@ -38,7 +39,7 @@
 		<implementation>
 			<property name="$container">
 				<getter><![CDATA[
-					return document.getAnonymousNodes(this)[0];
+					return this.$firstAnonymousNode;
 				]]></getter>
 			</property>
 			
