@@ -194,6 +194,28 @@ tree.sourcetree treechildren::-moz-tree-row(header) {
 
 /* ------------------------------------------------------------------------ */
 
+toolbar.cosmopolitan {
+	position: relative;
+}
+
+:root[lookandfeel="win"] toolbar.cosmopolitan {
+	border: 0px;
+	padding: 5px;
+	-moz-appearance: none;
+	background: -moz-linear-gradient(135deg, #eeeeee 50%, #dddddd 100%);
+}
+
+:root[lookandfeel="win"] toolbar.cosmopolitan toolbarbutton {
+	border: 0px;
+	-moz-appearance: none;
+}
+
+:root[lookandfeel="win"] toolbar.cosmopolitan toolbarbutton[disabled="false"]:hover {
+	background: #cccccc;
+}
+
+/* ------------------------------------------------------------------------ */
+
 :root[lookandfeel="mac"] toolbarbutton.native {
 	-moz-box-orient: vertical;
 }
