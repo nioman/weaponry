@@ -17,20 +17,5 @@
  *  Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
  */
 
-installHandler('org.gnucitizen.weaponry.common.demos.acidplatformMainWindow', {
-	onDOMContentLoaded: function (event) {
-		if (event.target != document) {
-			return;
-		}
-		
-		// TODO: needs better way of adding these into acidplatform
-		let $stringbundle = document.getElementById('weaponry-common-demos-main-window-stringbundle');
-		let $applicationsDataroll = document.getElementById('main-window-applications-dataroll');
-		
-		$applicationsDataroll.appendDataRow({label: $stringbundle.getString('common-demos-label'), uri: 'chrome://org.gnucitizen.weaponry.common.demos/content/xul/mainWindow.xul'});
-		//
-	}
-});
-
 /*  GNUCITIZEN (Information Security Think Tank)
  **********************************************/
