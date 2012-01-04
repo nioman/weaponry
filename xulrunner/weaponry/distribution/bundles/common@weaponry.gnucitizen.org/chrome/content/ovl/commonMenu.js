@@ -40,7 +40,7 @@ installHandler('org.gnucitizen.weaponry.common.commonMenu', {
 			let $stringbundle = document.getElementById('mac-menu-stringbundle');
 			let name = weaponryCommon.xulAppInfo.name;
 			
-			document.getElementById('help-menu-quit-menuitem').setAttribute('label', $stringbundle.getFormattedString('quit-label', [name]));
+			document.getElementById('file-menu-quit-menuitem').setAttribute('label', $stringbundle.getFormattedString('quit-label', [name]));
 			document.getElementById('help-menu-about-menuitem').setAttribute('label', $stringbundle.getFormattedString('about-label', [name]));
 		}
 	}
