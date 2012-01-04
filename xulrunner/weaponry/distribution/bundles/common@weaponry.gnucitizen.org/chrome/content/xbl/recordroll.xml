@@ -99,15 +99,13 @@
 						let nodes = $records.childNodes;
 						let nodesLength = nodes.length;
 						
-						let i, data, attributes, attributesLength, j, attribute;
-						
-						for (i = 0; i < nodesLength; i += 1) {
-							data = {};
-							attributes = nodes[i].attributes;
-							attributesLength = attributes.length;
+						for (let i = 0; i < nodesLength; i += 1) {
+							let data = {};
+							let attributes = nodes[i].attributes;
+							let attributesLength = attributes.length;
 							
-							for (j = 0; j < attributesLength; j += 1) {
-								attribute = attributes[j];
+							for (let j = 0; j < attributesLength; j += 1) {
+								let attribute = attributes[j];
 								
 								data[attribute.name] = attribute.value;
 							}
@@ -122,28 +120,32 @@
 						$currentRecords.addEventListener('DOMNodeRemoved', domNodeRemovedEventListener, false);
 					};
 					
-					if (!this.hasAttribute('records')) {
-						throw new Error('no records provided');
-					}
-					
 					let $records = document.getElementById(this.getAttribute('records'));
 					
 					if ($records) {
-						resource($records);
+						this._bindEvent(window, 'DOMContentLoaded', function (event) {
+							if (event.target != document) {
+								return;
+							}
+							
+							resource($records);
+						});
 					}
 					
-					this.addEventListener('DOMAttrModified', function (event) {
-						if (event.target == this && event.attrName == 'records') {
+					this._lockEvent(this, 'DOMAttrModified', function (event) {
+						if (event.attrName == 'records') {
 							let $records = document.getElementById(event.newValue);
 							
 							resource($records);
 						}
-					}, false);
+					});
 					
 					delete this.insertDataRow;
 					delete this.appendDataRow;
+					delete this.coupleDataRow;
 					delete this.updateDataRow;
 					delete this.removeDataRow;
+					delete this.rinseDataRows;
 					delete this.clearDataRows;
 				]]></action>
 			</constructor>

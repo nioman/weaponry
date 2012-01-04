@@ -66,10 +66,11 @@
 						},
 						
 						computeFields: function (fields) {
-							let computersLength = this.computers.length;
+							let computers = this.computers;
+							let computersLength = computers.length;
 							
 							for (let i = 0; i < computersLength; i += 1) {
-								let computer = this.computers[i];
+								let computer = computers[i];
 								
 								try {
 									computer(fields);

@@ -18,14 +18,12 @@
  */
 
 statusbox > .statusbox-container .statusbox-panel {
+	border: 0px;
 	color: InfoText;
 	box-shadow: none;
 	-moz-appearance: none;
-	border-left-width: 0px;
 	-moz-window-shadow: none;
-	border-bottom-width: 0px;
 	background: InfoBackground;
-	border-radius-topright: 3px;
 }
 
 /* ------------------------------------------------------------------------ */

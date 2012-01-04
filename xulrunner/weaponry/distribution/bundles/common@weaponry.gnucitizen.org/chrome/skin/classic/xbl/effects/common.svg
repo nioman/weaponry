@@ -13,14 +13,24 @@
 		<feComposite in="cloth" in2="SourceGraphic" operator="in"/>
 	</filter>
 	
-	<filter id="f4">
-		<feGaussianBlur in="SourceAlpha" result="blur-out" stdDeviation="4"/>
-		<feOffset in="blur-out" result="the-shadow" dx="0" dy="0"/> 
-		<feBlend in="SourceGraphic" in2="the-shadow" mode="normal"/>
-    </filter>
-	
-	<filter id="f5">
-		<feFlood flood-color="#ffffff" flood-opacity="0.8" result="tint"/>
+	<filter id="black">
+		<feFlood in="SourceAlpha" result="tint" flood-color="#000000" flood-opacity="0.8"/>
 		<feComposite in="tint" in2="SourceGraphic" operator="in"/>
     </filter>
+	
+	<filter id="white">
+		<feFlood in="SourceAlpha" result="tint" flood-color="#ffffff" flood-opacity="0.8"/>
+		<feComposite in="tint" in2="SourceGraphic" operator="in"/>
+    </filter>
+	
+	<filter id="blur">
+		<feGaussianBlur in="SourceAlpha" result="result1" stdDeviation="4"/>
+		<feOffset in="result1" result="result2" dx="0" dy="0"/> 
+		<feBlend in="SourceGraphic" in2="result2" mode="normal"/>
+    </filter>
+	
+	<filter id="invert">
+		<feColorMatrix in="SourceGraphic" result="result1" values="1" type="saturate"/>
+		<feColorMatrix in="result1" result="result2" values="-1 0 0 0 1 0 -1 0 0 1 0 0 -1 0 1 0 0 0 1 0"/>
+	</filter>
 </svg>

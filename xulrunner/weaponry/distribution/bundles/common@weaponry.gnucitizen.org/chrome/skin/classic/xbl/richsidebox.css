@@ -46,11 +46,11 @@ richsidebox.darkish:-moz-window-inactive > .richsidebox-container .richsidebox-r
 richsidebox.darkish > .richsidebox-container .richsidepanel-richlistitem {
 	color: #ffffff;
 	background: transparent;
-	filter: url("effects/common.svg#f4");
+	filter: url("effects/common.svg#blur");
 }
 
 richsidebox.darkish > .richsidebox-container .richsidepanel-richlistitem[selected="true"] {
-	filter: url("effects/common.svg#f5");
+	filter: url("effects/common.svg#white");
 }
 
 richsidebox.darkish > .richsidebox-container .richsidepanel-hbox {
@@ -154,15 +154,16 @@ richsidebox.cosmopolitan > .richsidebox-container .richsidebox-richlistbox {
 :root[lookandfeel="mac"] richsidebox.cosmopolitan > .richsidebox-container .richsidepanel-richlistitem {
 	color: #ffffff;
 	background: transparent;
-	filter: url("effects/common.svg#f4");
+	filter: url("effects/common.svg#blur");
 }
 
 :root[lookandfeel="win"] richsidebox.cosmopolitan > .richsidebox-container .richsidepanel-richlistitem[selected="true"] {
-	background: #eeeeee;
+	background: #000000;
+	filter: url("effects/common.svg#invert");
 }
 
 :root[lookandfeel="mac"] richsidebox.cosmopolitan > .richsidebox-container .richsidepanel-richlistitem[selected="true"] {
-	filter: url("effects/common.svg#f5");
+	filter: url("effects/common.svg#white");
 }
 
 richsidebox.cosmopolitan > .richsidebox-container .richsidepanel-hbox {
