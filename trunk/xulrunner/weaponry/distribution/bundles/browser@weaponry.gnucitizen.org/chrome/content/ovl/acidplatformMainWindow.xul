@@ -24,8 +24,12 @@
 	<script type="application/x-javascript" src="chrome://org.gnucitizen.weaponry.browser/content/ovl/acidplatformMainWindow.js"/>
 	
 	<stringbundleset id="main-window-stringbundleset">
-		<stringbundle id="weaponry-browser-main-window-stringbundle" src="chrome://org.gnucitizen.weaponry.browser/locale/ovl/acidplatformMainWindow.properties"/>
+		<stringbundle id="weaponry-browser-acidplatform-main-window-stringbundle" src="chrome://org.gnucitizen.weaponry.browser/locale/ovl/acidplatformMainWindow.properties"/>
 	</stringbundleset>
+	
+	<records id="launchers">
+		<record id="weaponry-browser-acidplatform-main-window-browser-record" label="&weaponry-browser-acidplatform-main-window-browser-record-label;" uri="chrome://org.gnucitizen.weaponry.browser/content/xul/browserPerspective.xul"/>
+	</records>
 	
 </overlay>
 <!--
