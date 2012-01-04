@@ -21,7 +21,7 @@
 
 /* ------------------------------------------------------------------------ */
 
-#main-window-applications-dataroll > .dataroll-container .dataroll-content {
+#main-window-applications-recordroll > .dataroll-container .dataroll-content {
 	display: block;
 	overflow: auto;
 	-moz-box-orient: horizontal;
